@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<clientinfo>
+	<servicetype>thai</servicetype>
+	<servertype>sakray</servertype>
+    <connection>
+        <display>Vidar</display>
+        <desc>None</desc>
+        <address>127.0.0.1</address>
+        <port>6900</port>
+        <version>0</version>
+		<langtype>5</langtype>		
+        <registrationweb>http://www.vidar.com</registrationweb>
+		<aid>
+			<admin>100001</admin>
+			<admin>100002</admin>
+		</aid>
+    </connection>
+</clientinfo>
