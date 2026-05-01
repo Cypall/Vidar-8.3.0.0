@@ -1,0 +1,491 @@
+//---------------------------------------------------------------------------------------- 
+// (Warper) NPC - From Weiss, maked by (Martijn) 
+// eWeiss Project 2003
+// Dungeon Warper
+//----------------------------------------------------------------------------------------
+
+prontera.vhm,162,194,4	script	"Dungeon Warper"	124,{
+	mes "[Dungeon Warper]";
+	mes "Hello, I'm the Dungeon Warper. I can warp you to almost any Dungeon.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Payon Dungeon",M_Payon,"Pyramids",M_Pyramids,"Bibalan Dungeon",M_Bil,"Sunken Ship",M_Sunken,"Hidden Temple",M_Prt_fild01,"Orc Dungeon",M_Gef_fild10,"Ant Hell",M_Moc_fild04,"Coal Mines",M_mjolnir_02,"Sphinx Dungeon",M_moc_fild19,"Glast Heim",M_gef_fild06,"Beach Dungeon",M_Beach,"Turtle Dungeon",M_Turtle,"Magma Dungeon",M_Magma;
+	close;
+M_Payon:
+	warp pay_arche,42,133;
+M_Pyramids:
+	warp moc_ruins,67,166;
+M_Bil:
+        warp "izlu2dun",108,52;	
+M_Sunken:
+        warp "alb2trea",43,53;	
+M_Prt_fild01:
+        warp "prt_fild01",136,368; 
+M_Gef_fild10:
+        warp "gef_fild10",67,334;
+M_Moc_fild04:
+        warp "moc_fild04",210,328;
+M_mjolnir_02:
+        warp "mjolnir_02",79,361;
+M_moc_fild19:
+        warp "moc_fild19",106,99;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+M_Beach:
+        warp "comodo",28,215;
+M_Turtle:
+        warp "tur_dun01",162,33;
+M_Magma:
+        warp "yuno_fild03",41,146;
+}
+
+//Hidden Temple
+prt_fild01.vhm,140,364,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Orc Dungeon
+gef_fild10.vhm,71,335,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Ant Hell
+moc_fild04.vhm,203,326,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Sphinx Dungeon
+mjolnir_02.vhm,83,360,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Glast Heim
+gef_fild06.vhm,27,306,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Beach Dungeon
+comodo.vhm,33,214,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Turtle Dungeon
+tur_dun01.vhm,162,30,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Magma Dungeon
+yuno_fild03.vhm,45,145,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Bibalan Dungeon
+izlu2dun.vhm,105,53,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Sunken Ship Dungeon
+alb2trea.vhm,44,57,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Payon Dungeon
+pay_arche.vhm,40,136,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Pyramids
+moc_ruins.vhm,64,166,4	script	"Town Warper"	124,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town.";
+	next;
+	mes "Where would you like to go?";
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Umbala",M_Umbala,"Yuno",M_Yuno,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",89,122;	
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}

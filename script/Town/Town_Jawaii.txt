@@ -1,0 +1,299 @@
+// ---------------------------------------------------------------------------------------
+//
+// Jawaii Town - Non Player Character Locations
+// - Some npc's are not final.
+// - Based on jawaii NPC script from jAthena
+// - Provided by Muad_Dib
+// - Alterations by L0ne_W0lf
+//
+//========================================================================================
+
+izlude.vhm,171,185,4 script "Marriage Companion" 71,{ 
+	mes "[Happy Wedding]"; 
+	mes "Those of you who just got married, those of you who are married"; 
+	mes "I will take you to a land of dreams, where you can dance around";
+	mes "and rest. ^3355ffJawaii^000000!";
+ 	next; 
+	menu "What is ^3355ffJawaii^000000?",-,"Go to ^3355ffJawaii^000000",L_Warp,"Cancel",L_End; 
+		mes "[Happy Wedding]"; 
+		mes "There is an island, far far away from Midgard."; 
+		mes "People always want to go there on vacation."; 
+		mes "It is a great resort!"; 
+		mes "It is famous amongst the newlyweds,"; 
+		mes "and many go there on their honeymoon."; 
+		next; 
+		mes "[Happy Wedding]"; 
+		mes "It is a special resort, so the price is expensive."; 
+		mes "It will cost 100,000 zeny!"; 
+		mes "Of course, you will be able to enjoy";
+		mes "the fabulous resort there."; 
+		next; 
+	L_End: 
+		mes "[Happy Wedding]"; 
+		mes "Have a pleasant journey!"; 
+		mes "We will be waiting in Jawaii...!"; 
+		close; 
+	L_Warp: 
+		//married? if () goto L_Error2; 
+		check Zeny >= 100000,-,L_Error1;
+		set Zeny - 100000; 
+		warp jawaii,241,116; 
+	L_Error1: 
+		mes "[Happy Wedding]"; 
+		mes "It seems you don't have enough money."; 
+		close; 
+	//L_Error2: 
+		//mes "[Happy Wedding]"; 
+		//mes "Those that aren't married"; 
+		//mes "cannot go to Jawaii."; 
+		//mes "When you find a nice partner,"; 
+		//mes "please come again!"; 
+		//close; 
+}
+
+jawaii.vhm,239,112,7 script "Sailor" 100,{
+ 	mes "[Sailor]"; 
+	mes "This boat will return to Izlude.";
+ 	mes "I hope you had a good time in Jawaii."; 
+	mes "Haven't left anything?"; 
+	mes "Might be good to check again."; 
+	next; 
+	menu "Return to Izlude",-,"Quit",L_End; 
+		warp "izlude",176,182; 
+	L_End: 
+		close;
+}
+
+jawaii.vhm,122,263,4 script "Sailor" 100,{
+	mes "[Sailor]";
+	mes "This boat will go to Alberta."; 
+	mes "I hope you had a good time in Jawaii."; 
+	mes "Haven't left anything?";
+ 	mes "Might be good to check again."; 
+	next; 
+	menu "Return to Alberta",-,"Quit",L_End; 
+		warp "alberta",192,169; 
+	L_End:
+		close;
+}
+
+jawaii.vhm,240,146,4 script "Jawaii local" 724,{ 
+	mes "[Waiwai]"; 
+	mes "Welcome to Jawaii!"; 
+	mes "The honeymoon is an unmissable"; 
+	mes "part of your marriage!"; 
+	mes "Please relax, and forget the stares"; 
+	mes "of the scary singles."; 
+	next;
+	mes "[Waiwai]"; 
+	mes "You may meet monsters occasionally,"; 
+	mes "but if you don't attack, you will be ok!"; 
+	mes "Please think of them as survivors"; 
+	mes "of monsters that were originally here."; 
+	close; 
+}
+
+jawaii.vhm,214,168,4 script "Marriage Companion" 71,{ 
+	mes "[Happy Wedding]"; 
+	mes "You can't walk along the Wedding March yet,"; 
+	mes "but you can relive your marriage"; 
+	mes "by checking your album!";
+	mes "For those who wish such magic,"; 
+	mes "I have prepared something specially."; 
+	next; 
+	mes "[Happy Wedding]"; 
+	mes "However, when much time has passed,"; 
+	mes "that memory is priceless."; 
+	mes "The feeling of, say, your first"; 
+	mes "tuxedo suit, that is important."; 
+	next; 
+	mes "[Happy Wedding]"; 
+	mes "There is no place better for newlyweds"; 
+	mes "than Jawaii. Since you are here,";
+	mes "it is better that you leave with lots of";
+	mes "happy memories."; 
+	next; 
+	mes "[Happy Wedding]";
+	mes "Namely...^3355ffMemory of Wedding^000000!!"; 
+	mes "You can briefly experience"; 
+	mes "the feeling of a wedding again!"; 
+	mes "The price is& 50000z. How about it?";
+	next; 
+	menu "Buy",L_Menu1,"Don't buy",-; 
+		close; 
+	L_Menu1: 
+		check Zeny < 50000,-,L_Error; 
+		set Zeny -= 50000,0; 
+		additem 681,1; 
+		mes "[Happy Wedding]"; 
+		mes "Please come again."; 
+		close; 
+	L_Error: 
+		mes "[Happy Wedding]"; 
+		mes "It seems that you don't have enough money."; 
+		close;
+}
+
+jawaii.vhm,165,120,0 script "Dancer" 724,{ 
+	mes "[Dancer]"; 
+	//mes "Data not found"; 
+	mes "Welcome to the lovely place of jawaii."; 
+	close; 
+}
+
+jawaii.vhm,112,173,0 script "Inn Care-taker" 93,{ 	
+	//mes "(sakro information)"; 
+	//mes "You can be alone together for 1000z."; 
+	//mes "You have a choice of:"; 
+	//mes "Suiteroom,"; 
+	//mes "Villaroom"; 
+	//mes "Honeyroom"; 
+	//mes "Antiqueroom"; 
+	//close;
+	// Custom Part // 
+	set @Suiteroom = 1000;
+	set @Villaroom = 1000;
+	set @Honeyroom = 1000;
+	set @Antiqueroom = 1000;
+	mes "[Inn Care-taker]";
+	mes "You can be alone together in..."; 
+	mes "- The ^3355ffSuite Room^000000 for ^ff0000$[@Suiteroom]^000000z.";
+	mes "- The ^3355ffVilla Room^000000 for ^ff0000$[@Villaroom]^000000z.";
+	mes "- The ^3355ffHoneymoon Suite^000000 for ^ff0000$[@Honeyroom]^000000z.";
+	mes "- The ^3355ffAntique Room^000000 for ^ff0000$[@Antiqueroom]^000000z.";
+	next;
+	menu "Suite room",Suite,"Villa room",Villa,"Honeymoon Suite",Honey,"Antique Room",Antique,"Maybe later",Later;
+		Suite:
+			setstr $room_name = "Suite Room";
+			check Zeny >= 1000,-,Error;
+			set Zeny - 1000; 
+			warp "jawaii_in",116,64; 
+		Villa:
+			setstr $room_name = "Villa Room";
+			check Zeny >= 1000,-,Error;
+			set Zeny - 1000; 
+			warp "jawaii_in",86,74; 
+		Honey:
+			setstr $room_name = "Honeymoon Suite";
+			check Zeny >= 1000,-,Error;
+			set Zeny - 1000; 
+			warp "jawaii_in",84,117; 
+		Antique:
+			setstr $room_name = "Antique Suite";
+			check Zeny >= 1000,-,Error;
+			set Zeny - 1000; 
+			warp "jawaii_in",128,111;
+		Error: 
+			mes "[Inn Care-taker]"; 
+			mes "Oh, I'm terribly sorry. I can't rent the $[$room_name] to you because you don't have enough money."; 
+			close;  
+	Later:
+		mes "[Inn Care-taker]"; 
+		mes "Allright, come back later."; 
+		close; 
+}
+
+jawaii_in.vhm,25,100,0 script "Dancer#1" 724,{
+ 	mes "[Dancer]"; 
+	mes "Welcome"; 
+	//donpcevent "::On_jemo"; 
+	//close; 
+	//On_jemo: 
+	emote 30; 
+	//end; 
+	close; 
+}
+
+jawaii_in.vhm,25,98,0 script "Dancer#2" 724,{
+ 	mes "[Dancer]"; 
+	mes "Welcome"; 
+	//donpcevent "::On_jemo"; 
+	//close; 
+	//On_jemo: 
+	emote 30; 
+	//end; 
+	close; 
+}
+
+jawaii_in.vhm,25,96,0 script "Dancer#3" 724,{
+ 	mes "[Dancer]"; 
+	mes "Welcome"; 
+	//donpcevent "::On_jemo"; 
+	//close; 
+	//On_jemo: 
+	emote 30; 
+	//end; 
+	close; 
+}
+
+jawaii_in.vhm,25,94,0 script "Dancer#4" 724,{
+ 	mes "[Dancer]"; 
+	mes "Welcome"; 
+	//donpcevent "::On_jemo"; 
+	//close; 
+	//On_jemo: 
+	emote 30; 
+	//end; 
+	close; 
+}
+
+jawaii_in.vhm,30,100,4 script "Dancer#5" 724,{
+ 	mes "[Dancer]"; 
+	mes "Welcome"; 
+	//donpcevent "::On_jemo"; 
+	//close; 
+	//On_jemo: 
+	emote 30; 
+	//end; 
+	close; 
+}
+
+jawaii_in.vhm,30,98,4 script "Dancer#6" 724,{
+ 	mes "[Dancer]"; 
+	mes "Welcome"; 
+	//donpcevent "::On_jemo"; 
+	//close; 
+	//On_jemo: 
+	emote 30; 
+	//end; 
+	close; 
+}
+
+jawaii_in.vhm,30,96,4 script "Dancer#7" 724,{
+ 	mes "[Dancer]"; 
+	mes "Welcome"; 
+	//donpcevent "::On_jemo"; 
+	//close; 
+	//On_jemo: 
+	emote 30; 
+	//end; 
+	close; 
+}
+
+jawaii_in.vhm,30,94,4 script "Dancer#8" 724,{
+ 	mes "[Dancer]"; 
+	mes "Welcome"; 
+	//donpcevent "::On_jemo"; 
+	//close; 
+	//On_jemo: 
+	emote 30; 
+	//end; 
+	close; 
+}
+
+ jawaii_in.vhm,27,124,0 script "Master" 46,{ 
+	mes "[Master]"; 
+	//mes "(sakRO Information)"; 
+	//mes "Seems you can offer"; 
+	//mes "ale of instant death."; 
+	mes "So, what do you want to drink?";
+	close; 
+}
+
+jawaii_in.vhm,15,104,4 script "Waitress" 80,{
+ 	mes "[Waitress]"; 
+	//mes "Data not found."; 
+ 	mes "What can I get you?";
+	close; 
+}
+

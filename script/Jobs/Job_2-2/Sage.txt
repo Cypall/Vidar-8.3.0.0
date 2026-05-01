@@ -1,0 +1,937 @@
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Nerehnus - Sage Job Quest - Main Session
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+yuno_in02.vhm,94,61,0	script	Nerehnus	0,0,0,0	742,{
+		mes "[^000080Nerehnus^000000]";
+	check Job = 0,-,NEXT;
+			mes "Welcome to the ^008000Academy of Yuno^000000.";
+			mes "If you decide to become a ^800000Mage^000000, you can come back here to become a ^800000Sage^000000.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "Hello, and welcome to the ^008000Academy of Yuno^000000.";
+			mes "I hope you find whatever you're looking for.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+		check Job_SA > 0,CONT,-;
+				mes "Welcome to the ^008000Academy of Yuno^000000.";
+				mes "Would you like to register to the Academy?";
+			next;
+				menu "Yes, I would.",-,"No, I'm not interested.",EXIT;
+						set Job_SA = 1;
+						mes "[^000080Nerehnus^000000]";
+						mes "All right.... $charaname.";
+						mes "Welcome to the ^008000Academy of Yuno^000000.";
+					next;
+						mes "[^000080Nerehnus^000000]";
+						mes "If you want to become a ^800000Sage^000000 talk to ^000080Haussenheim^000000 directly up the left pathway.";
+					close;
+				EXIT:
+						mes "[^000080Nerehnus^000000]";
+						mes "Oh, um... all right then.";
+					close;
+		CONT:
+				mes "Hello $charaname!";
+				mes "Welcome back to the ^008000Academy of Yuno^000000!";
+			close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Hello, welcome to the ^008000Academy of Yuno^000000.";
+			mes "I'm not sure what your business is here, but I hope you find whatever you're looking for.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "Hello, young ^800000Acolyte^000000.";
+			mes "I'm sorry, I'm a caretaker of this library, so I don't have time for baptism.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+			mes "Welcome to the ^008000Academy of Yuno.";
+			mes "Sorry, but I'm not up for buying anything.";
+		close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "I hope you're not thinking of stealing any books.";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "Welcome to the ^008000Academy of Yuno^000000, I hope you find whatever it is you've come here for.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Welcome to the ^008000Academy of Yuno^000000, whatever information you may be searching for I hope you'll be able to find.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "Welcome, whatever information you're looking for, I'm sure you'll find around here.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "Welcome to the ^008000Academy of Yuno^000000, I don't need anything if that's what you came for.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Hello, I'm not sure why you're here, but I hope you find whatever information you're looking for.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Whatever you do, don't make a mess in the Academy, or else I'll clean it with your face!";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Welcome to the ^008000Academy of Yuno^000000, I hope you find whatever you came to look for.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "I'm not sure of why you're here, but feel free to look around.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Welcome back, $charaname.";
+			mes "Whatever you may be looking for, I'm sure you'll find information about it here.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Don't be stealing any books.";
+			mes "If there's even a single book missing, I'll personally kill you.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Welcome, young ^800000Alchemist^000000.";
+			mes "Whatever information you need, I'm sure you'll find here.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Hello, whatever it may be that you're looking for, it should be in here.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Hello there, welcome to the ^008000Academy of Yuno^000000.";
+	close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+				mes "Sorry, but I don't have time to go to any parties.";
+				mes "By the way, who's the lucky guy?";
+			close;
+	MALE:
+			mes "Sorry, I don't have the time to be going to any parties.";
+		close;
+NEXT19:
+		mes "Um.. Hello.  Welcome to the ^008000Academy of Yuno^000000.";
+		mes "I hope you find whatever you're looking for.";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Haussenheim - Sage Job Quest - Main Session
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+yuno_in02.vhm,93,205,6	script	Haussenheim	0,0,1,0	743,{
+		mes "[^000080Haussenheim^000000]";
+	check Job = 0,-,NEXT;
+			mes "If you become a ^800000Mage^000000 I can train you to become a ^800000Sage^000000.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "Welcome, young ^800000Swordsman^000000.";
+			mes "Whatever your needs may be, I hope you find it.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+		check Job_SA = 1,-,EXIT;
+				mes "Hello $charaname.";
+				mes "Have you come to become a ^800000Sage^000000?";
+			next;
+				menu "That's why I'm here.",-,"No, I just happened to come by.",NO;
+						mes "[^000080Haussenheim^000000]";
+						mes "All right, in order to become a ^800000Sage^000000 you must answer all these questions correctly.";
+						mes "Should you get even one question incorrect, you will not qualify.";
+					next;
+						mes "[^000080Haussenheim^000000]";
+						mes "Do you still want to continue?";
+					next;
+						menu "Yes, of course.",-,"No, I don't think I'm ready.",NO;
+					BEGIN:
+								mes "[^000080Haussenheim^000000]";
+								mes "Very well, we shall begin then.";
+							next;
+								set @Q = 0;
+								set @Q1 = 0;
+								set @Q2 = 0;
+								set @Q3 = 0;
+								set @Q4 = 0;
+								set @Q5 = 0;
+								set @Q6 = 0;
+								set @Q7 = 0;
+								set @Q8 = 0;
+								set @Q9 = 0;
+								set @Q10 = 0;
+								set @Q11 = 0;
+								set @Q12 = 0;
+								set @Q13 = 0;
+								set @Q14 = 0;
+								set @Q15 = 0;
+								set @Q16 = 0;
+								set @Q17 = 0;
+								set @Q18 = 0;
+								set @Q19 = 0;
+								set @Q20 = 0;
+								set @Q21 = 0;
+								set @Q22 = 0;
+								set @Q23 = 0;
+								set @Q24 = 0;
+								set @Q25 = 0;
+								set @Q26 = 0;
+								set @Q27 = 0;
+								set @Q28 = 0;
+								set @Q29 = 0;
+								set @Q30 = 0;
+								set @Q31 = 0;
+								set @Q32 = 0;
+								set @Q33 = 0;
+								set @Q34 = 0;
+								set @Q35 = 0;
+								set @Q36 = 0;
+								set @Q37 = 0;
+								set @Q38 = 0;
+								set @Q39 = 0;
+								set @Q40 = 0;
+								set @Q41 = 0;
+								set @Q42 = 0;
+								set @Q43 = 0;
+								set @Q44 = 0;
+								set @Q45 = 0;
+								set @Q46 = 0;
+								set @Q47 = 0;
+								set @Q48 = 0;
+								set @Q49 = 0;
+								set @Q50 = 0;
+								set @ANS = 0;
+							RND:
+								check @Q < 20,-,DONE;
+										random @RND,50;
+									check @RND > 24,G1,-;
+										check @RND > 11,G1A,-;
+											check @RND > 5,G1A1,-;
+												check @RND > 2,G1A1A,-;
+													check @RND = 0,Q1,-;
+													check @RND = 1,Q2,Q3;
+												G1A1A:
+													check @RND = 3,Q4,-;
+													check @RND = 4,Q5,Q6;
+											G1A1:
+												check @RND > 8,G1A1B,-;
+													check @RND = 6,Q7,-;
+													check @RND = 7,Q8,Q9;
+												G1A1B:
+													check @RND = 9,Q10,-;
+													check @RND = 10,Q11,Q12;
+										G1A:
+											check @RND > 17,G1A2,-;
+												check @RND > 14,G1A2A,-;
+													check @RND = 12,Q13,-;
+													check @RND = 13,Q14,Q15;
+												G1A2A:
+													check @RND = 15,Q16,-;
+													check @RND = 16,Q17,Q18;
+											G1A2:
+												check @RND > 20,G1A2B,-;
+													check @RND = 18,Q19,-;
+													check @RND = 19,Q20,Q21;
+												G1A2B:
+													check @RND = 21,Q22,-;
+													check @RND = 22,Q23,-;
+													check @RND = 23,Q24,Q25;
+									G1:
+										check @RND > 36,G2,-;
+											check @RND > 30,G2A,-;
+												check @RND > 27,G2A1,-;
+													check @RND = 25,Q26,-;
+													check @RND = 26,Q27,Q28;
+												G2A1:
+													check @RND = 28,Q29,-;
+													check @RND = 29,Q30,Q31;
+											G2A:
+												check @RND > 33,G2A2,-;
+													check @RND = 31,Q32,-;
+													check @RND = 32,Q33,Q34;
+												G2A2:
+													check @RND = 34,Q35,-;
+													check @RND = 35,Q36,Q37;
+										G2:
+											check @RND > 42,G2B,-;
+												check @RND > 39,G2B1,-;
+													check @RND = 37,Q38,-;
+													check @RND = 38,Q39,Q40;
+												G2B1:
+													check @RND = 40,Q41,-;
+													check @RND = 41,Q42,Q43;
+											G2B:
+												check @RND > 45,G2B2,-;
+													check @RND = 43,Q44,-;
+													check @RND = 44,Q45,Q46;
+												G2B2:
+													check @RND = 46,Q47,-;
+													check @RND = 47,Q48,Q49;
+										check @Q50 = 0,-,RND;
+												set @Q50 = 1;
+												set @Q + 1;
+												mes "[^000080Haussenheim^000000]";
+												mes "Name the item required to use ^0000FFVolcano^000000";
+											next;
+												menu "Blue Gemstone",RND,"Red Blood",RND,"Yellow Gemstone",-,"Red Gemstone",RND;
+														set @ANS + 1;
+													goto RND;
+								Q1:
+									check @Q1 = 0,-,RND;
+											set @Q1 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the item required to use ^0000FFDeluge^000000";
+										next;
+											menu "Yellow Gemstone",-,"Green Gemstone",RND,"Blue Gemstone",RND,"Crystal Blue",RND;
+													set @ANS + 1;
+												goto RND;
+								Q2:
+									check @Q2 = 0,-,RND;
+											set @Q2 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the item required to use ^0000FFViolent Gale^000000";
+										next;
+											menu "Blue Gemstone",RND,"Wind of Vendure",RND,"Red Gemstone",RND,"Yellow Gemstone",-;
+													set @ANS + 1;
+												goto RND;
+								Q3:
+									check @Q3 = 0,-,RND;
+											set @Q3 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the item required to use ^0000FFLightning Loader^000000";
+										next;
+											menu "Red Gemstone",RND,"Blue Gemstone",RND,"Yellow Gemstone",RND,"Wind of Vendure",-;
+													set @ANS + 1;
+												goto RND;
+								Q4:
+									check @Q4 = 0,-,RND;
+											set @Q4 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the item required to use ^0000FFFlame Launcher^000000";
+										next;
+											menu "Red Gemstone",RND,"Red Blood",-,"Yellow Gemstone",RND,"Ruby",RND;
+													set @ANS + 1;
+												goto RND;
+								Q5:
+									check @Q5 = 0,-,RND;
+											set @Q5 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the item required to use ^0000FFFrost Weapon^000000";
+										next;
+											menu "Blue Gemstone",RND,"Yellow Gemstone",RND,"Crystal Blue",-,"Red Gemstone",RND;
+													set @ANS + 1;
+												goto RND;
+								Q6:
+									check @Q6 = 0,-,RND;
+											set @Q6 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Bonus Strength when you become a ^800000Sage^000000.";
+										next;
+											input @VAL;
+										check @VAL = 5,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q7:
+									check @Q7 = 0,-,RND;
+											set @Q7 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Bonus Agility when you become a ^800000Sage^000000.";
+										next;
+											input @VAL;
+										check @VAL = 5,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q8:
+									check @Q8 = 0,-,RND;
+											set @Q8 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Bonus Vitality when you become a ^800000Sage^000000.";
+										next;
+											input @VAL;
+										check @VAL = 3,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q9:
+									check @Q9 = 0,-,RND;
+											set @Q9 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Bonus Intelligence when you become a ^800000Sage^000000.";
+										next;
+											input @VAL;
+										check @VAL = 8,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q10:
+									check @Q10 = 0,-,RND;
+											set @Q10 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Bonus Dexterity when you become a ^800000Sage^000000.";
+										next;
+											input @VAL;
+										check @VAL = 5,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q11:
+									check @Q11 = 0,-,RND;
+											set @Q11 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Bonus Luck when you become a ^800000Sage^000000.";
+										next;
+											input @VAL;
+										check @VAL = 3,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q12:
+									check @Q12 = 0,-,RND;
+											set @Q12 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name an ingredient of ^FF0000Solution No. 1^000000";
+										next;
+											menu "Jellopy",-,"Red Herb",RND,"Sticky Mucus",RND,"Banana",RND;
+													set @ANS + 1;
+												goto RND;
+								Q13:
+									check @Q13 = 0,-,RND;
+											set @Q13 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name an ingredient of ^FF0000Solution No. 2^000000";
+										next;
+											menu "Apple",RND,"Milk",-,"Blue Gemstone",RND,"Payon Solution",RND;
+													set @ANS + 1;
+												goto RND;
+								Q14:
+									check @Q14 = 0,-,RND;
+											set @Q14 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name an ingredient of ^FF0000Solution No. 3^000000";
+										next;
+											menu "Unripe Apple",RND,"Milk",RND,"Fluff",-,"Sticky Mucus",RND;
+													set @ANS + 1;
+												goto RND;
+								Q15:
+									check @Q15 = 0,-,RND;
+											set @Q15 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name an ingredient of ^FF0000Solution No. 4^000000";
+										next;
+											menu "Sticky Mucus",RND,"Milk",RND,"Red Herb",RND,"Fluff",-;
+													set @ANS + 1;
+												goto RND;
+								Q16:
+									check @Q16 = 0,-,RND;
+											set @Q16 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the catalyst for ^FF0000Solution No. 1^000000";
+										next;
+											menu "Blue Gemstone",RND,"1 Carat Diamond",RND,"Yellow Gemstone",-,"Red Gemstone",RND;
+													set @ANS + 1;
+												goto RND;
+								Q17:
+									check @Q17 = 0,-,RND;
+											set @Q17 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the catalyst for ^FF0000Solution No. 2^000000";
+										next;
+											menu "Blue Gemstone",RND,"1 Carat Diamond",RND,"Yellow Gemstone",RND,"Red Gemstone",-;
+													set @ANS + 1;
+												goto RND;
+								Q18:
+									check @Q18 = 0,-,RND;
+											set @Q18 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the catalyst for ^FF0000Solution No. 3^000000";
+										next;
+											menu "Blue Gemstone",-,"1 Carat Diamond",RND,"Yellow Gemstone",RND,"Red Gemstone",RND;
+													set @ANS + 1;
+												goto RND;
+								Q19:
+									check @Q19 = 0,-,RND;
+											set @Q19 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Name the catalyst for ^FF0000Solution No. 4^000000";
+										next;
+											menu "Blue Gemstone",RND,"1 Carat Diamond",-,"Yellow Gemstone",RND,"Red Gemstone",RND;
+													set @ANS + 1;
+												goto RND;
+								Q20:
+									check @Q20 = 0,-,RND;
+											set @Q20 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFSpell Breaker^000000 at level 3";
+										next;
+											input @VAL;
+										check @VAL = 10,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q21:
+									check @Q21 = 0,-,RND;
+											set @Q21 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFFlame Launcher^000000 at level 1";
+										next;
+											input @VAL;
+										check @VAL = 40,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q22:
+									check @Q22 = 0,-,RND;
+											set @Q22 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFFrost Weapon^000000 at level 4";
+										next;
+											input @VAL;
+										check @VAL = 40,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q23:
+									check @Q23 = 0,-,RND;
+											set @Q23 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFLightning Loader^000000 at level 5";
+										next;
+											input @VAL;
+										check @VAL = 40,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q24:
+									check @Q24 = 0,-,RND;
+											set @Q24 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFSeismic Weapon^000000 at level 2";
+										next;
+											input @VAL;
+										check @VAL = 40,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q25:
+									check @Q25 = 0,-,RND;
+											set @Q25 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFVolcano^000000 at level 1";
+										next;
+											input @VAL;
+										check @VAL = 48,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q26:
+									check @Q26 = 0,-,RND;
+											set @Q26 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFVolcano^000000 at level 4";
+										next;
+											input @VAL;
+										check @VAL = 42,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q27:
+									check @Q27 = 0,-,RND;
+											set @Q27 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFDeluge^000000 at level 3";
+										next;
+											input @VAL;
+										check @VAL = 44,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q28:
+									check @Q28 = 0,-,RND;
+											set @Q28 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFViolent Gale^000000 at level 2";
+										next;
+											input @VAL;
+										check @VAL = 46,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q29:
+									check @Q29 = 0,-,RND;
+											set @Q29 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFLand Protector^000000 at level 1";
+										next;
+											input @VAL;
+										check @VAL = 66,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q30:
+									check @Q30 = 0,-,RND;
+											set @Q30 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFLand Protector^000000 at level 2";
+										next;
+											input @VAL;
+										check @VAL = 62,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q31:
+									check @Q31 = 0,-,RND;
+											set @Q31 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFLand Protector^000000 at level 3";
+										next;
+											input @VAL;
+										check @VAL = 58,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q32:
+									check @Q32 = 0,-,RND;
+											set @Q32 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFLand Protector^000000 at level 4";
+										next;
+											input @VAL;
+										check @VAL = 54,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q33:
+									check @Q33 = 0,-,RND;
+											set @Q33 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFLand Protector^000000 at level 5";
+										next;
+											input @VAL;
+										check @VAL = 50,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q34:
+									check @Q34 = 0,-,RND;
+											set @Q34 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFSpell Breaker^000000 at level 5";
+										next;
+											input @VAL;
+										check @VAL = 10,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q35:
+									check @Q35 = 0,-,RND;
+											set @Q35 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "SP consumption of ^0000FFSpell Breaker^000000 at level 1";
+										next;
+											input @VAL;
+										check @VAL = 10,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q36:
+									check @Q36 = 0,-,RND;
+											set @Q36 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFMagic Rod^000000";
+										next;
+											menu "Free Cast (7)",RND,"Auto Spell (2)",RND,"No skills",RND,"Advanced Book (4)",-;
+													set @ANS + 1;
+												goto RND;
+								Q37:
+									check @Q37 = 0,-,RND;
+											set @Q37 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFAuto Spell^000000";
+										next;
+											menu "Free Cast (4)",-,"No skills",RND,"Spell Breaker (2)",RND,"Cast Cancel (1)",RND;
+													set @ANS + 1;
+												goto RND;
+								Q38:
+									check @Q38 = 0,-,RND;
+											set @Q38 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFAdvanced Book^000000";
+										next;
+											menu "Basic Skill (9)",-,"Auto Spell (3)",RND,"No skills",RND,"Free Cast (4)",RND;
+													set @ANS + 1;
+												goto RND;
+								Q39:
+									check @Q39 = 0,-,RND;
+											set @Q39 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFAbracadabra^000000";
+										next;
+											menu "No skills",RND,"Dispell (3)",RND,"Auto Spell (2)",RND,"Dispell (1)",-;
+													set @ANS + 1;
+												goto RND;
+								Q40:
+									check @Q40 = 0,-,RND;
+											set @Q40 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFViolent Gale^000000";
+										next;
+											menu "Spell Breaker (3)",RND,"Cast Cancel (1)",RND,"Lightning Loader (2)",-,"No skills",RND;
+													set @ANS + 1;
+												goto RND;
+								Q41:
+									check @Q41 = 0,-,RND;
+											set @Q41 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FF^000000";
+										next;
+											menu "Blue Gemstone",RND,"Green Gemstone",RND,"No skills",-,"Red Gemstone",RND;
+													set @ANS + 1;
+												goto RND;
+								Q42:
+									check @Q42 = 0,-,RND;
+											set @Q42 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFLand Protector^000000";
+										next;
+											menu "Seismic Weapon (2)",-,"No skills",RND,"Seismic Weapon (5)",RND,"Dispell (1)",RND;
+													set @ANS + 1;
+												goto RND;
+								Q43:
+									check @Q43 = 0,-,RND;
+											set @Q43 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFDeluge^000000";
+										next;
+											menu "No skills",RND,"Frost Weapon (2)",-,"Magic Rod (1)",RND,"Free Cast (4)",RND;
+													set @ANS + 1;
+												goto RND;
+								Q44:
+									check @Q44 = 0,-,RND;
+											set @Q44 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFDragonology^000000";
+										next;
+											menu "No skills",RND,"Advanced Book (7)",RND,"Advanced Book (5)",RND,"Advanced Book (9)",-;
+													set @ANS + 1;
+												goto RND;
+								Q45:
+									check @Q45 = 0,-,RND;
+											set @Q45 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "A skill required to obtain ^0000FFFlame Launcher^000000";
+										next;
+											menu "Auto Spell (1)",RND,"Advanced Book (5)",-,"No skills",RND,"Dragonology (1)",RND;
+													set @ANS + 1;
+												goto RND;
+								Q46:
+									check @Q46 = 0,-,RND;
+											set @Q46 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Input code for the Mixing Machine for ^FF0000Solution No. 1^000000";
+										next;
+											input @VAL;
+										check @VAL = 8472,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q47:
+									check @Q47 = 0,-,RND;
+											set @Q47 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Input code for the Mixing Machine for ^FF0000Solution No. 2^000000";
+										next;
+											input @VAL;
+										check @VAL = 3735,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q48:
+									check @Q48 = 0,-,RND;
+											set @Q48 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Input code for the Mixing Machine for ^FF0000Solution No. 3^000000";
+										next;
+											input @VAL;
+										check @VAL = 2750,-,RND;
+												set @ANS + 1;
+											goto RND;
+								Q49:
+									check @Q49 = 0,-,RND;
+											set @Q49 = 1;
+											set @Q + 1;
+											mes "[^000080Haussenheim^000000]";
+											mes "Input code for the Mixing Machine for ^FF0000Solution No. 4^000000";
+										next;
+											input @VAL;
+										check @VAL = 5429,-,RND;
+												set @ANS + 1;
+											goto RND;
+							DONE:
+									set Job_SA = 2;
+									mes "You got $[@ANS] / 20 questions correct.";
+								check @ANS = 20,-,FAIL;
+										set Job_SA = 3;
+									check JobLevel > 39,-,EXIT0;
+										check SkillPoint = 0,-,EXIT1;
+											next;
+												mes "[^000080Haussenheim^000000]";
+												mes "Therefore, I congratulate you on your success!";
+												jobchange 16;
+												set JobLevel = 1,0;
+											close;
+										EXIT1:
+											next;
+												mes "[^000080Haussenheim^000000]";
+												mes "Before you can become a ^800000Sage^000000, you'll need to use up all of your available skill points.";
+											close;
+									EXIT0:
+										next;
+											mes "[^000080Haussenheim^000000]";
+											mes "Before you can become a ^800000Sage^000000, you'll need to obtain a job level of 40.";
+										close;
+								FAIL:
+									next;
+										mes "Sorry, you'll need to retake the test if you want to try again.";
+									close;
+			NO:
+					mes "Okay, if you want to become a ^800000Sage^000000 just ask.";
+				close;
+		EXIT:
+			check Job_SA = 2,CONT,-;
+			check Job_SA = 3,CONT0,-;
+					mes "Hello, if you've come here to become a ^800000Sage^000000, please talk to ^000080Nerehnus^000000 first to register.";
+				close;
+			CONT:
+					mes "Hello, have you come to retake the test?";
+				next;
+					menu "Yes.",BEGIN,"I don't think I'm ready.",NO;
+			CONT0:
+				check JobLevel > 39,-,EXIT0;
+					check SkillPoint = 0,-,EXIT1;
+						next;
+							mes "[^000080Haussenheim^000000]";
+							mes "I congratulate you on your success!";
+							jobchange 16;
+							set JobLevel = 1,0;
+						close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Welcome, whatever you're looking for, I hope you find it.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "Hello, I'm not sure what purpose you have coming here.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+			mes "I'm not interested in your wares";
+		close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Don't take anything that doesn't belong to you here.";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "Welcome, hope you find whatever you came for.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Sorry, I've no time for hearing you preach.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "Welcome to the Academy, everything you're looking for should be here.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "I'm not interested in buying anything from you.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Keep the library clean, please.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Don't make a mess, especially around where I'm standing.";
+			mes "If you want to kill someone, do it outside.";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Welcome, hope you can find whatever you're looking for.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "Welcome to the Academy.  Whatever information you're looking for should be here.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Well done on completing the test.";
+			mes "I'm sure you will make a good ^800000Sage^000000.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "I don't to steal any books, thank you.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Welcome to the ^008000Academy of Yuno^000000, everything you need should be here.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Welcome to the Academy, hope you find everything you need.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Hello, I hope you find what you're looking for.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+			mes "Congratulations on your marriage.";
+		check Gender = 0,-,MALE;
+				mes "So, who was the lucky guy?";
+			close;
+	MALE:
+		close;
+NEXT19:
+		mes "Hello, welcome to the Academy.";
+	close;
+}

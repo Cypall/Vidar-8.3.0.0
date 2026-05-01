@@ -1,0 +1,9 @@
+//--------------------------------------------------
+//  Amatsu Field 01                                |
+//--------------------------------------------------
+ama_fild01.vhm,0,0,0,0	monster	"Bigfoot" 1060,15,0,0,0
+ama_fild01.vhm,174,315,5,5	monster	"Hydra" 1068,10,0,0,0
+ama_fild01.vhm,0,0,0,0	monster	"Kapha" 1406,10,0,0,0
+ama_fild01.vhm,0,0,0,0	monster	"Karakasa" 1400,10,0,0,0
+ama_dun01.vhm,0,0,0,0	monster	"Miyaba Ningyu" 1404,5,0,0,0
+ama_fild01.vhm,0,0,0,0	monster	"Poporing" 1031,10,0,0,0

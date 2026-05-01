@@ -1,0 +1,621 @@
+//----------------------------------------------------------------------------
+//Script by: ?????????????????????????????
+//Script Provided by: Gotten from ASB Aegis.
+//Converted to Vidar by L0ne_W0lf
+//----------------------------------------------------------------------------
+alberta_in.vhm,133,55,3	script	"Louitz"	84,{
+	check molgenstain == 2,-,Next_Sec;
+	mes "[Louitz]";
+	mes "Oh....it's you.";
+	mes "So did you meet that Psychopatic Scientist?";
+	next;
+	menu "Speak of Morgenshtein",Speak_of,"Cancel",Cancel;
+		Speak_of:
+			mes "[Louitz]";
+			mes "You mean you went to Geffen and found out where he is but never met him yet?";
+			mes "Hmm..Why bother? You should meet him. Who knows? He would make an awesome stuff out of that solution...";
+			close;
+		Cancel:
+			mes "[Louitz]";
+			mes "Come on,Talk to me. If you don't want to talk..yeah I can't help it though...";
+			close;
+	Next_Sec:
+		mes "[Louitz]";
+		mes "What's the matter?";
+		next;
+		check Detrimindexta > 0,-,Next_Sec2;
+		check Karvodailnirol > 0,-,Next_Sec2;
+		menu "Talk",Talk,"Speak of Solutions",Speak_Sol,"Cancel",Cancel2;
+			Talk:
+				mes "[Louitz]";
+				mes "I'd stayed in Geffen to find Magic Tools for a while. In Geffen,I heard the Rumor about the Mad Scientist.";
+				mes "With Great Interest,I tried to meet him several time and finally I did.But it was no use... Because he was too immersed in his work,he didn't take a look on me at all .";
+				next;
+				mes "[Louitz]";
+				mes "Now I still remember what I heard from his murmuring at the next moment.";
+				mes "'Karvodailnirol... Detrimindexta...'";
+				mes "In the First place I thought it's just useless murmur, But after a while, I realised those things are new Solutions totally different from Water.";
+				close;
+			Speak_Sol:
+				set molgenstain = 1;
+				mes "[Louitz]";
+				mes "Ohh... Are they those solutions I'd Only heard by hearsay? You are very lucky to have these stuffs.";
+				mes "No no,Don't ask me how they work. Only that Mad Scientist would know Everything involved in these...";
+				next;
+				mes "[Louitz]";
+				mes "I can see how anxious you were to know about those things,my Adventurer.";
+				mes "I will let you know where he stays in return for showing me rare items. Unfortunately I can't remind of the correct residence due to my bad memory,";
+				mes "Anyhow as far as I know he'd lived in Geffen for a while. People said,his name is  ^0000ffMorgenshtein^000000.";
+				next;
+				mes "[Louitz]";
+				mes "You can get more information about him in Geffen.";
+				mes "Good Luck,my Adventurer.";
+				close;
+			Cancel2
+				mes "[Louitz]";
+				mes "";
+				mes "Um...Now I've seen everything.";
+				close;
+	Next_Sec2:
+		check Karvodailnirol > 0,-,Next_Sec3;
+		menu "Talk",Talk2,"Speak of Karvodailnirol",Speak_Kar,"Cancel",Cancel3;
+			Talk2:
+				mes "[Merchant Louitz]";
+				mes "I'd stayed in Geffen to find Magic Tools for a while. In Geffen,I heard the Rumor about the Mad Scientist.";
+				mes "With Great Interest,I tried to meet him several time and finally I did.But it was no use... Because he was too immersed in his work,he didn't take a look on me at all .";
+				next;
+				mes "[Merchant Louitz]";
+				mes "Now I still remember what I heard from his murmuring at the next moment.";
+				mes "'Karvodailnirol... Detrimindexta...'";
+				mes "In the First place I thought it's just useless murmur, But now I realised those things are new Solutions totally different from Water.";
+				close;
+			Speak_Kar:
+				set molgenstain = 1;
+				mes "[Merchant Louitz]";
+				mes "Ohh... Is this Karvodailnirol I'd Only heard by hearsay? You are very lucky to have this stuff.";
+				mes "No no,Don't ask me how it works. Only that Mad Scientist would know Everything involved in this...";
+				next;
+				mes "[Merchant Louitz]";
+				mes "I can see how anxious you were to know about this thing,my Adventurer.";
+				mes "I will let you know where he stays in return for showing me a rare item. Unfortunately I can't remind of the correct residence due to my bad memory,";
+				mes "Anyhow as far as I know he'd lived in Geffen for a while. People said,his name is  ^0000ffMorgenshtein^000000 in Geffen..";
+				next;
+				mes "[Merchant Louitz]";
+				mes "You can get more information about him in Geffen.";
+				mes "Good Luck,my Adventurer.";
+				close;
+			Cancel2:
+				mes "[Louitz]";
+				mes "";
+				mes "Um...Now I've seen everything.";
+				close;
+	Next_Sec3:
+		check Detrimindexta > 0,-,Next_Sec4;
+		menu "Talk",Talk3,"Speak of Detrimindexta",Speak_Dex,"Cancel",Cancel3;
+			Talk3:
+				mes "[Merchant Louitz]";
+				mes "I'd stayed in Geffen to find Magic Tools for a while. In Geffen,I heard the Rumor about the Mad Scientist.";
+				mes "With Great Interest,I tried to meet him several time and finally I did.But it was no use... Because he was too immersed in his work,he didn't take a look on me at all .";
+				next;
+				mes "[Merchant Louitz]";
+				mes "Now I still remember what I heard from his murmuring at the next moment.";
+				mes "'Karvodailnirol... Detrimindexta...'";
+				mes "In the First place I thought it's just useless murmur, But now I realised those things are new Solutions totally different from Water.";
+				close;
+			Speak_Dex:
+				set molgenstain = 1;
+				mes "[Louitz]";
+				mes "Ohh... Is this Detrimindexta I'd Only heard by hearsay? You are very lucky to have this stuff.";
+				mes "No no,Don't ask me how it works. Only that Mad Scientist would know Everything involved in this...";
+				next;
+				mes "[Merchant Louitz]";
+				mes "I can see how anxious you were to know about this thing,my Adventurer.";
+				mes "I will let you know where he stays in return for showing me a rare item. Unfortunately I can't remind of the correct residence due to my bad memory,";
+				mes "Anyhow as far as I know he'd lived in Geffen for a while. People said,his name is  ^0000ffMorgenshtein^000000 in Geffen..";
+				next;
+				mes "[Merchant Louitz]";
+				mes "You can find more information about him in Geffen.";
+				mes "Good Luck,my Adventurer.";
+				close;
+			Cancel3:
+				mes "[Louitz]";
+				mes "";
+				mes "Um...Now I've seen everything.";
+				close;
+	Next_Sec4:
+		menu "Talk",Talk4,"Cancel",Cancel4;
+			Talk4:
+				mes "[Merchant Louitz]";
+				mes "I'd stayed in Geffen to find Magic Tools for a while. In Geffen,I heard the Rumor about the Mad Scientist.";
+				mes "With Great Interest,I tried to meet him several time and finally I did.But it was no use... Because he was too immersed in his work,he didn't take a look on me at all .";
+				next;
+				mes "[Merchant Louitz]";
+				mes "Now I still remember what I heard from his murmuring at the next moment.";
+				mes "'Karvodailnirol... Detrimindexta...'";
+				mes "In the First place I thought it's just useless murmur, But now I realised those things are new Solutions totally different from Water.";
+				close;
+			Cancel4:
+				mes "[Louitz]";
+				mes "";
+				mes "Um...Now I've seen everything.";
+				close;
+}
+
+geffen.vhm,181,114,3	script	"Aure Dupon"	82,{
+	check molgenstain == 2,-,Next_Sec;
+	mes "[Aure Dupon]";
+	mes "I guess We were destined to meet again. I've been waiting for you.";
+	mes "So...Are you on the way back after meeting him?";
+	next;
+	menu "Speak of Morgenshtein",Speak_of_Dr,"Cancel",Cancel;
+		Speak_of_Dr:
+                        mes "[Aure Dupon]";
+			mes "You mean you didn't have much chance to meet him yet.";
+			mes "He lives on the Second Floor of the Forge. We've just seen each other for a little time but I don't want to think of you just a stranger, therefore I must say one thing for you! Keep away from such a mad man...";
+			close;
+		Cancel:
+			mes "[Aure Dupon]";
+			mes "I can see your strong will on your look. But you won't tell me anything.";
+			mes "I think I am your companian... Did I make a mistake?";
+			close;
+	Next_Sec:
+		mes "[Aure Dupon]";
+		mes "Time never waits for you. Even Magic can't make it slow. Now I can feel it still passing by while I am talking.";
+		mes "Anyway why did you call me to stop?";
+		next;
+		chekc molgenstain > 0,-,Next_Sec2;
+		menu "Talk",Talk,"Ask about Morgenshtein",Ask_About,"Cancel",Cancel2;
+			Talk:
+				mes "[Aure Dupon]";
+				mes "I don't think I am a normal person because I am bewitched by power of magic. However beside me it seems so many strange people are out there ...";
+				mes "If were you,would you stake your life on the one thing? Neglecting everything more important in your life ... as you're going insane...";
+				close;
+			Ask_About:
+				set molgenstain = 2;
+				mes "[Aure Dupon]";
+				mes "I presume you are not a normal person becuase you already know that mad man. Yeah I think your research about him is a littile bit shorter than I expect...";
+				mes "I am very uncomfortable to think of him. I apologise my rude behaviour... But please understand that I only can do is to let you know where he lives.";
+				next;
+				mes "[Aure Dupon]";
+				mes "He lives on the Second Floor of the Forge. We've just seen each other for a little time but I don't want to think of you stranger, therefore I must say one thing for you! Keep away from such a mad man...";
+				close;
+			Cancel2:
+				mes "[Aure Dupon]";
+				mes "I can see your strong will on your look. But you won't tell me anything.";
+				mes "I feel sorry but I can't help it... Human being is one part of Nature... The Human will is same as ... Mother Nature.";
+				close;
+	Next_sec2:
+		menu "Talk",Talk2,"Cancel",Cancel3;
+			Talk2:
+				mes "[Aure Dupon]";
+				mes "I don't think I am a normal person because I am bewitched by power of magic. However beside me it seems so many strange people are out there ...";
+				mes "If were you,would you stake your life on the one thing? Neglecting everything more important in your life... as you're gone insane...";
+				close;
+			Cancel3:
+	                        mes "[Aure Dupon]";
+				mes "I can see your strong will on your look. But you won't tell me anything.";
+				mes "I feel sorry but I can't help it... Human being is one part of Nature... The Human will is same as ... Mother Nature.";
+				close;
+}
+
+geffen_in.vhm,141,140,3	script	"Morgenshtein"	121,{
+	check molgenstain == 3,-,Next_Sec;
+	mes "[Chemist Morgenshtein]";
+	mes "Heheheheheh.... Come on in,Come on in. Heheheheheh.... Heheheheheh....";
+	next;
+	menu "Ask about his Research",Ask_Res,"Ask him to make new one",Ask_New,"Cancel",Cancel;
+		Ask_Res:
+			mes "[Chemist Morgenshtein]";
+			mes "Heheheheheh... Probably you heard me before ...";
+			mes "Okay.. I will tell you everything .. No... there is nothing to hide for me... Heheheheheh...";
+			next;
+			mes "[Chemist Morgenshtein]";
+			mes "As a matter of fact... My research has been accomplished already...at least in my point of view....";
+			mes "I am a genius you know,I can make everything...Heheheheh... The matter is only time... You know what I mean..time?.... Hehehehehehehya....";
+			next;
+			mes "[Chemist Morgenshtein]";
+			mes "...Did you say you want to know about the Research?... It is just a simple stuff... It is only to make something insoluble for Water.";
+			mes "Isn't it interesting,huh? The method to combine Stone and Iron into One after melting them into fluid stuff!!!";
+			mes "If it were used,Everything in the world turn into pulpy and Mushy~~~~ !! Hehe!!!...Heheheheheh!!!...squash squash!!!..Kekekekekekekelll!!!!";
+			next;
+			mes "[Chemist Morgenshtein]";
+			mes "Gasp...Gasp...Gasp....Gasp...... Any...Anyway.. For now I can't do that yet but I figured out something incredible.";
+			mes "I guess I will be able to make a lot of new things more than you can imagine.. I can make one for you right now,if you want!!";
+			mes "... Ahhhh.. This is the way I feel joy filled innerself... Now I am wallowing in pleasure... AhhhhAhhhh.....";
+			mes "You could feel this if you want..I can make you feel...";
+			close;
+		Ask_New:
+			mes "[Chemist Morgenshtein]";
+			mes "Hehehehehehehya.... After all you got interest on it,didn't you?";
+			mes "Yeah..Yeah..Who else wouldn't get interested on it... On this strikingly joyful and exciting thing... Kekekekekekeke";
+			mes "So which things you want me to make for you?? Huh? Heheheheheh";
+			next;
+			menu "Counteragent",Counter,"Mixture",Mixture;
+				Counter:
+					mes "[Chemist Morgenshtein]";
+					mes "Oh... You said Counteragent... Kekekekekekeke... Let's see..we need some preparations.";
+					mes "... Let me check... Oh... Oh...... Ahhhh..... Hmmm.....";
+					next;
+					mes "[Chemist Morgenshtein]";
+					mes "Oh..... I recall... Fine... We..need 1 Alcohol..... 1 Detrimindexta.... and 1 empty bottle for filling it within...";
+					mes "With these 3 things I can make one ... It is a different matter,I hope you will show your faith on my effort... Hehehehehehehya";
+					mes "It is not a big deal I think... .... Kekekekekekeke... Nothing big deal I must say.";
+					mes "Listen to me... You just pay me 3000 zeny as your great faith on me...Heheheheheh";
+					mes "Oh.... Oh..... Surely you don'ty think it is rip-off?... Uhhuh I see you... Now you think it's too expensive,don't you?.. HehehehehehHeheheheheh";
+					next;
+					mes "[Chemist Morgenshtein]";
+					mes "Alright..Let's get roll?....";
+					next;
+					menu "Make",Make_Counter,"Cancel",Cancel2;
+						Make_Counter:
+							checkitem 970,1,-,Not_Enough
+							checkitem 971,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 3000,-,Not_Enough;
+							mes "[Chemist Morgenshtein]";
+							mes "OhOhOhOh...... Heheheheheh...... Fine... Like this..... Fine... Keep... More........ Heheheheheh";
+							mes ".... Ahhhh.... ..... OhOh.... OhOh!..... OhOhOhOhOhOh!!!...!!!!!!";
+							next;
+							delitem 970,1;
+							delitem 971,1;
+							delitem 713,1;
+							set Zeny - 3000;
+							additem 973,1;
+							mes "[Chemist Morgenshtein]";
+							mes ".... Hmmm......";
+							close;
+						Cancel2:
+							mes "[Chemist Morgenshtein]";
+							mes "... Kekekekekekeke....";
+							close;
+				Mixture:
+					check Job = 5,-,CONT;
+					check Job_AL = 8,-,CONT;
+					set Job_AL = 9;
+					CONT:
+					mes "[Chemist Morgenshtein]";
+					mes "Oh... You said Mixture?... Kekekekekekeke... Let's see..we need some preparations.";
+					mes "... Let me check... Oh... Oh...... Ahhhh..... Hmmm.....";
+					next;
+					mes "[Chemist Morgenshtein]";
+					mes "Oh..... I recall... Fine... We..need 1 Alcohol.....1 Karvodailnirol.... and 1 empty bottle for filling it within...";
+					mes "With these 3 things I can make one ... It is a different matter,I hope you will show your faith on my effort... Hehehehehehehya";
+					mes "It is not a big deal I think... .... Kekekekekekeke... Nothing big deal I must say.";
+					mes "Listen to me... You just pay me 4000 zeny for my effort...Heheheheheh";
+					mes "Oh.... Oh..... Surely you don'ty think it is rip-off?... Uhhuh I see you... Now you think it's too expensive,don't you?.. HehehehehehHeheheheheh";
+					next;
+					mes "[Chemist Morgenshtein]";
+					mes "Alright..Let's get roll?....";
+					next;
+					menu "Make",Make_Mix,"Cancel",Cancel3;
+						Make_Mix:
+							checkitem 970,1,-,Not_Enough
+							checkitem 972,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 4000,-,Not_Enough;
+							mes "[Chemist Morgenshtein]";
+							mes "OhOhOhOh...... Heheheheheh...... Fine... Like this..... Fine... Keep... More........ Heheheheheh";
+							mes ".... Ahhhh.... ..... OhOh.... OhOh!..... OhOhOhOhOhOh!!!...!!!!!!";
+							next;
+							delitem 970,1;
+							delitem 972,1;
+							delitem 713,1;
+							set Zeny - 4000;
+							additem 974,1;
+							mes "[Chemist Morgenshtein]";
+							mes ".... Hmmm......";
+							close;
+						Cancel3:
+							mes "[Chemist Morgenshtein]";
+							mes "... Kekekekekekeke....";
+							close;
+		Cancel:
+			mes "[Chemist Morgenshtein]";
+			mes "... Kekekekekekeke....";
+			close;
+	Next_Sec:
+		check molgenstain == 2,-,Next_Sec2;
+		set molgenstain = 3;
+		mes "[Chemist Morgenshtein]";
+		mes "Heheheheheh.... Come on in,Come on in. Heheheheheh.... Heheheheheh....";
+		next;
+		mes "[Chemist Morgenshtein]";
+		mes "Ah..I apologise my strange behaviour... Heheheheheh... I'd rarely seen a living creature for a lonfg time before you visit me.";
+		mes "So..what do you want from me,my companian?";
+		next;
+		menu "Ask about his Research",Ask_Res2,"Cancel",Cancel4;
+			Ask_Res2:
+				mes "[Chemist Morgenshtein]";
+				mes "Heheheheheh... Probably you heard me before ...";
+				mes "Okay.. I will tell you everything .. No... there is nothing to hide for me... Heheheheheh...";
+				next;
+				mes "[Chemist Morgenshtein]";
+				mes "As a matter of fact... My research has been accomplished already...at least in my point of view....";
+				mes "I am a genius you know,I can make everything... .... The thing is only time... You know what I mean..time?.... Hehehehehehehya....";
+				next;
+				mes "[Chemist Morgenshtein]";
+				mes "...Did you say you want to know about the Research?... It is just a simple stuff... It is only to make something insoluble for Water.";
+				mes "Isn't it interesting,huh? The method to combine Stone and Iron into One after melting them into fluidlike stuff!!!";
+				mes "If it were used,Everything in the world turn into pulpy and Mushy~~~~ squash squash !!...Heheheheheh!!!...squash squash!!!..Kekekekekekekelll!!!!";
+				next;
+				mes "[Chemist Morgenshtein]";
+				mes "Gasp...Gasp...anyway.. For now I can't do that yet but I figured out something incredible.";
+				mes "I guess I can make a lot of new things more than you can imagine.. I can make one for you right now,if you want!!";
+				mes "... Ahhhh.. This is the way I feel joy filled in my body... Now I am wallowing in pleasure... AhhhhAhhhh.....";
+				mes "You could feel this if you want..I can make you feel...";
+				close;
+			Cancel4:
+				mes "[Chemist Morgenshtein]";
+				mes "....Heheheheheh....";
+				close;
+	Next_Sec2:
+		mes "[Chemist Morgenshtein]";
+		mes "Heheheheheh... Sniff Sniff....I can smell something appetizing here.";
+		mes "It is a Human Being...living one..umm yummy... Heheheheheh";
+		close;
+	Not_Enough:
+		mes "[Chemist Morgenshtein]";
+		mes "Kekekekekekeke.... Not enough...not yet.. Hmmm...Hmmm... Go..go get more items!!";
+		close;
+}
+
+morocc_in.vhm,146,99,3	script	"JavaDullihan"	0,0,0,0	58,{
+	mes "[Dye Maker JavaDullihan]";
+	mes "Oh... What a Beautiful day today. This is the Day for making Dyestuffs.";
+	next;
+	menu "Talk",Talk,"Make Dyestuffs",Make_Dye,"Cancel",Cancel;
+		Talk:
+			mes "[Dye Maker JavaDullihan]";
+			mes "I don't have much to say...";
+			mes "But if you would like to hear about my past, I can tell you some of the details.";
+			mes "Will you listen even if it's boring?";
+			next;
+			menu "Listen",Listen,"Reject",Reject;
+				Listen:
+					mes "[Dye Maker JavaDullihan]";
+					mes "My father'd been making dyestuffs since I was young...";
+					mes "I still see that memory of my father making dyestuffs all the time.";
+					mes "Even when my mother was dying, all he could do was work, work work...";
+					mes "I hated him then, for what he had done. How could he value work more than mother...?";
+					next;
+					mes "[Dye Maker JavaDullihan]";
+					mes "I hated him, and coudln't understand why he had done that... Because of this, I didn't want to be a Dye Maker... So I got out of his place and did a lot of things to get by.";
+					mes "However... as you see, I ended up becoming a Dye Maker after all, following in my father's footsteps. Like Father Like Son... It's been 15 years now...";
+					next;
+					mes "[Dye Maker JavaDullihan]";
+					mes "After such a long time... I can finally understand why my father fell in love with this job.";
+					mes "Why he sacrificed himself for the job...";
+					next;
+					mes "[Dye Maker JavaDullihan]";
+					mes "Maybe It was because of the beautiful colours he created time after time... He wanted to find his own colour, one he's only dreamed of...";
+					next;
+					mes "[Dye Maker JavaDullihan]";
+					mes "I could feel his eagerness for the colours... because... Now I am doing the same as he did. For a few years now...I have been able to hear the Colours from inside.";
+					mes "You will see. I will make it for my father.";
+					close;
+				Reject:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Hahahaha.. Well.. indeed. Who wanted to hear the story of a simple Dye Maker...";
+					close;
+		Make_Dye:
+			mes "[Dye Maker JavaDullihan]";
+			mes "Fine! I will make the exact colour you want.";
+			mes "So which colour do you want? Dyestuffs will cost you at a different fee following its quality.";
+			mes "Because there are 2 kinds of Dyestuffs. One you can find anywhere, easily but the other one not so much so. You wouldn't be able to see it, even in your entire life.";
+			mes "Don't think I'm charging you too much. All of them are my Masterpieces.";
+			next;
+			menu "Scarlet Dyestuffs",Scarlet,"Lemon Dyestuffs",Lemon,"Cobaltblue Dyestuffs",Cobalt,"Darkgreen Dyestuff",Darkgreen,"Orange Dyestuffs",Orange,"Violet Dyestuffs",Violet,"White Dyestuffs",White,"Black Dyestuffs",Black,"Cancel",Cancel_2;
+				Scarlet:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Hmm...to make a Scarlet Dyestuffs,I need 30 Red Herb and 1 Counteragent, and 1 Empty Bottle.";
+					mes "I set the fee at just 3000 zeny.";
+					mes "Ok are you ready ?";
+					next;
+					menu "Make Dyestuffs",Make_Scar,"Cancel",Cancel_2;
+						Make_Scar:
+							checkitem 507,30,-,Not_Enough;
+							checkitem 973,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 3000,-,Not_Enough;
+							delitem 507,30;
+							delitem 973,1;
+							delitem 713,1;
+							set Zeny - 3000;
+							additem 975,1;
+							mes "[Dye Maker JavaDullihan]";
+							mes "Umm...Very nice.I like this deep colour..";
+							mes "Of course I will keep trying to make better one...";
+							mes "Fare well,buddy.If you need me come anytime.";
+							close;
+				Lemon:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Um..to make a Lemon Dyestuffs I need 30 Yellow Herb, 1 Counteragent, and 1 Empty Bottle.";
+					mes "I set the fee only 3000 zeny.";
+					mes "Ok are you ready ?";
+					next;
+					menu "Make Dyestuffs",Make_Lemon,"Cancel",Cancel_2;
+						Make_Lemon:
+							checkitem 508,30,-,Not_Enough;
+							checkitem 973,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 3000,-,Not_Enough;
+							delitem 508,30;
+							delitem 973,1;
+							delitem 713,1;
+							set Zeny - 3000;
+							additem 976,1;
+							mes "[Dye Maker JavaDullihan]";
+							mes "Umm...Very nice.I like this deep colour..";
+							mes "Of course I will keep trying to make better one...";
+							mes "Fare well,buddy.If you need me come anytime.";
+							close;
+				Cobalt:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Um...to make a Cobaltblue Dyestuffs,I need 20 Blue Herb, 1 Counteragent, and 1 Empty Bottle.";
+					mes "Blue Herb is little bit dfficult to handle,so I set the fee 3500 zeny for that.";
+					mes "Ok are you ready ?";
+					next;
+					menu "Make Dyestuffs",Make_Cobalt,"Cancel",Cancel_2;
+						Make_Cobalt:
+							checkitem 510,20,-,Not_Enough;
+							checkitem 973,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 3500,-,Not_Enough;
+							delitem 510,20;
+							delitem 973,1;
+							delitem 713,1;
+							set Zeny - 3500;
+							additem 978,1;
+							mes "[Dye Maker JavaDullihan]";
+							mes "Umm...Very nice.I like this deep colour..";
+							mes "Of course I will keep trying to make better one...";
+							mes "Fare well,buddy.If you need me come anytime.";
+							close;
+				Darkgreen:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Um... to make a Darkgreen Dyestuff I need 5 Blue Herb, 20 Green Herb, 20 Yellow Herb,1 Counteragent,1 Mixture and 1 Empty Bottle.";
+					mes "Please rememeber all preparation items..gosh they are too many... I set the fee 5000 zeny.";
+					mes "Ok are you ready ?";
+ 					next;
+					menu "Make Dyestuffs",Make_Darkg,"Cancel",Cancel_2;
+						Make_Darkg:
+							checkitem 510,5,-,Not_Enough;
+							checkitem 511,20,-,Not_Enough;
+							checkitem 508,20,-,Not_Enough;
+							checkitem 973,1,-,Not_Enough;
+							checkitem 974,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 5000,-,Not_Enough;
+							delitem 510,5;
+							delitem 511,20;
+							delitem 508,20;
+							delitem 973,1;
+							delitem 974,1;
+							delitem 713,1;
+							set Zeny - 5000;
+							additem 979,1;
+							mes "[Dye Maker JavaDullihan]";
+							mes "Umm...Very nice.I like this deep colour..";
+							mes "Of course I will keep trying to make better one...";
+							mes "Fare well,buddy.If you need me come anytime.";
+							close;
+				Orange:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Umm...to make a Orange Dyestuffs,I need 20 Red Herb, 20 Yellow Herb, 1 Counteragent,1 Mixture and 1 Empty Bottle.";
+					mes "I set the fee 5000 zeny.";
+					mes "Ok are you ready ?";
+					next;
+					menu "Make Dyestuffs",Make_Orange,"Cancel",Cancel_2
+						Make_Orange:
+							checkitem 507,20,-,Not_Enough;
+							checkitem 508,20,-,Not_Enough;
+							checkitem 973,1,-,Not_Enough;
+							checkitem 974,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 5000,-,Not_Enough;
+							delitem 507,20;
+							delitem 508,20;
+							delitem 973,1;
+							delitem 974,1;
+							delitem 713,1;
+							set Zeny - 5000;
+							additem 980,1;
+							mes "[Dye Maker JavaDullihan]";
+							mes "Umm...Very nice.I like this deep colour..";
+							mes "Of course I will keep trying to make better one...";
+							mes "Fare well,buddy.If you need me come anytime.";
+							close;
+				Violet:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Umm...to make a Violet Dyestuffs,I need 10 Blue Herb, 30 Red Herb, 1 Counteragent ,1 Mixture and 1 Empty Bottle.";
+					mes "I set the fee 5000 zeny.";
+					mes "Ok are you ready ?";
+					next;
+					menu "Make Dyestuffs",Make_Vio,"Cancel",Cancel_2;
+						Make_Vio:
+							checkitem 510,10,-,Not_Enough;
+							checkitem 507,30,-,Not_Enough;
+							checkitem 973,1,-,Not_Enough;
+							checkitem 974,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 5000,-,Not_Enough;
+							delitem 510,10;
+							delitem 507,30;
+							delitem 973,1;
+							delitem 974,1;
+							delitem 713,1;
+							set Zeny - 5000;
+							additem 981,1;
+							mes "[Dye Maker JavaDullihan]";
+							mes "Umm...Very nice.I like this deep colour..";
+							mes "Of course I will keep trying to make better one...";
+							mes "Fare well,buddy.If you need me come anytime.";
+							close;
+				White:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Umm...to make a White Dyestuffs, I need 30 White Herb,1 Counteragent, and 1 Empty Bottle.";
+					mes "I set the fee only 3000 zeny.";
+					mes "Ok are you ready ?";
+					next;
+					menu "Make Dyestuffs",Make_Whi,"Cancel",Cancel_2;
+						Make_Whi:
+							checkitem 509,30,-,Not_Enough;
+							checkitem 973,1,-,Not_Enough;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 3000,-,Not_Enough;
+							delitem 509,30;
+							delitem 973,1;
+							delitem 713,1;
+							set Zeny - 3000;
+							additem 982,1;
+							mes "[Dye Maker JavaDullihan]";
+							mes "Umm...Very nice.I like this pale colour..";
+							mes "Of course I will keep trying to make better one...";
+							mes "Fare well,buddy.If you need me come anytime.";
+							close;
+				Black:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Umm.. to make a Black Dyestuffs, I need Red,Yellow,Green Herb as 30 by each kind, 5 Blue Herb,1 Counteragent,1 Mixture and 1 Empty Bottle.";
+					mes "This one takes quite long time to make with difficulty,I have to set the fee 7000 zeny for compensation.";
+					mes "Ok are you ready ?";
+					next;
+					menu "Make Dyestuffs",Make_Bla,"Cancel",Cancel_2;
+						make_Bla:
+							checkitem 507,30,-,Not_Enough;
+							checkitem 508,30,-,Not_Enough;
+							checkitem 511,30,-,Not_Enough;
+							checkitem 510,5,-,Not_Enough;
+							checkitem 973,1,Not_Enough,-;
+							checkitem 974,1,Not_Enough,-;
+							checkitem 713,1,-,Not_Enough;
+							check Zeny >= 7000,-,Not_Enough;
+							delitem 507,30;
+							delitem 508,30;
+							delitem 510,5;
+							delitem 511,30;
+							delitem 973,1;
+							delitem 974,1;
+							delitem 713,1;
+							set Zeny - 7000;
+							additem 983,1;
+							mes "[Dye Maker JavaDullihan]";
+							mes "Umm...Very nice.I like this deep colour..";
+							mes "Of course I will keep trying to make better one...";
+							mes "Fare well,buddy.If you need me come anytime.";
+							close;
+				Cancel_2:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Oh my god,What did you say?";
+					mes "How could you change your mind so quickly...oh boy...";
+					close;
+				Not_Enough:
+					mes "[Dye Maker JavaDullihan]";
+					mes "Hmm...not enough..not enough...";
+					mes "I don't think I can make the right one for you with just these items. Why don't you go outside and get more?";
+					close;
+		Cancel:
+			mes "[Dye Maker JavaDullihan]";
+			mes "I am not trying to show off but I have a skill to make the Dyestuffs.";
+			mes "Would you visit me if you need to make a Dyestuff? I will make the best for you.";
+			close;
+}

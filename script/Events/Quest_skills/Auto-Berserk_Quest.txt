@@ -1,0 +1,110 @@
+//- Swordsman Skills Quests - kobra_k88
+prt_in.vhm,94,57,3 script Juan 85,{
+	mes "[Juan]";
+		getskilllevel 2 @skill;
+		check @skill > 0 L_Start -;
+		getskilllevel 3 @skill;
+		check @skill > 0 L_Start -;
+//	if(callfunc("Is_Sword_Class")) goto L_Start;
+L_Other:
+	mes "So how's your adventure going? I hope there will be good days ahead of you.";
+	next;
+	mes "[Juan]";
+	mes "Who am I? Oh, I'm just a kind knight named Juan.  Don't mind me.  Hahahaha....";
+	emote 18;
+	close;
+L_Start:
+		check job == 1,-,L_Start1;
+		check JobLevel < 34,L_LowLvl,-;
+	L_Start1:
+		check BERSERK == 1,L_Check,-;
+		getskilllevel 146,@abskill;
+		check @abskill > 0,L_GotSkill,-;
+	mes "Oh no! You have more injuries since the last time I saw you.";
+	mes "You went into battle like this? It seems like you're straining yourself.";
+	next;
+	mes "[Juan]";
+	mes "Even though you may have a lot of strength, there is only so much you can do when you have reached your limits.";
+	mes "So don't overestimate your own power.";
+	next;
+	mes "[Juan]";
+	mes "Of course you could always use the ^5555FF'skill'^000000 we developed to overcome these limits.....";
+	next;
+	menu "Eh! What are you talking about?",M_0, "Haha! There's no such thing....",M_1, "Keuuuuuhhh!",M_3;
+	M_0:
+		mes "[Juan]";
+		mes "The skill is called ^5555FFBerserk^000000.  It has been deemed the flower of the battlefield!";
+		mes "When your health is low, you can call upon your hidden potential by provoking yourself.";
+		next;
+		mes "[Juan]";
+		mes "A surge of energy will flow through your body giving you a greater attack prowess at the cost of defensive strength.";
+		mes "With this you will be able to fight on with a FIREY RAGE and an absolute disregard to your own safety!!";
+		next;
+		mes "[Juan]";
+		mes "The enemy will be shocked by your new found strength!!";
+		mes "This skill is especially great for those who fight with a no-holds-bar mentality.";
+		next;
+		mes "[Juan]";
+		mes "In order to learn this skill you will need to bring me the following items:";
+		mes "^5555FF35 Powder of Butterfly,";
+		mes "10 Horrendous Mouth,";
+		mes "10 Decayed Nail^000000,";
+		mes "and ^5555FF10 Honeys^000000!";
+		next;
+		mes "[Juan]";
+		mes "Did you get all of that down? Please come back when you are ready.  I look forward to seeing you again.";
+		set BERSERK = 1;
+		close;
+	M_1:
+		mes "[Juan]";
+		mes "Bleh! Have you been a fool all of your life?? Go away and don't talk to me.";
+		emote 32;
+		close;
+	M_3:
+		mes "[Juan]";
+		mes "Keuuuuuuuuuuuuuuuuuuh!";
+		mes "Oooowwwwwwwwuuuuuuuuuuhhhhhh!";
+		mes "Keuaaaaaaaaaaaaaaaaaah!";
+		close;
+	L_LowLvl:
+		mes "Oh, nice to meet you.";
+		next;
+		mes "[Juan]";
+		mes "You can go on your way now.";
+		emote 33;
+		close;
+L_Check:
+		checkitem 924,35,-,L_NoItems;
+		checkitem 957,10,-,L_NoItems;
+		checkitem 958,10,-,L_NoItems;
+		checkitem 518,10,-,L_NoItems;
+	mes "Good job my dear friend.  You have all 4 of the items I asked for.";
+	mes "In return I will now teach you the skill: ^FF0000Berserk^000000.";
+	next;
+	mes "[Juan]";
+	mes "Great job you have done well and deserve this skill.";
+	next;
+	delitem 924,35;
+	delitem 958,10;
+	delitem 957,10;
+	delitem 518,10;
+	setskilllevel 0x92,1;
+	set BERSERK = 0;
+	mes "[Juan]";
+	mes "Muhahahaha!! Don't hold back young warrior, fight without any fears or regrets!!";
+	emote 29;
+	close;
+	L_NoItems:
+		mes "[Juan]";
+		mes "In order to learn this skill you will need to bring me the following items:";
+		mes "^5555FF35 Powder of Butterfly,";
+		mes "^10 Horrendous Mouth,";
+		mes "^10 Decayed Nail^000000,";
+		mes "and ^5555FF10 Honeys^000000!";
+		close;
+L_GotSkill:
+	mes "You have the eyes of a person who has seen death first hand!!";
+	mes "But, because of Berserk, I'm sure you have been able to escape it many times as well.";
+	emote 0;
+	close;
+}

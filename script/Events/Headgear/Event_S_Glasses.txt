@@ -1,0 +1,130 @@
+//----------------------------------------------------------------------------------------
+// Slotted Sunglasses From Aegis converted by amichan
+// eWeiss Project 2003 - http://eweiss.sf.net
+// Credits to the Aegis Forums
+//----------------------------------------------------------------------------------------
+
+alberta.vhm,88,193,5	script	"Sunglasses Trader" 0,0,0,0	73,{
+	check @SG_QUEST1 == 1,L_SG_Q1_Done,-;
+	mes "[Sunglasses Trader]";
+	mes "Hello.";
+	mes "What can I do for you?";
+	next;
+	menu "I heard that you can make ^0000FFSlotted Sunglasses^000000",L_SG_Yes,"Nothing, sorry to bother you.",-;
+	mes "[Sunglasses Trader]";
+	mes "Off you go, then.";
+	close;
+		L_SG_Yes:
+			mes "[Sunglasses Trader]";
+			mes "I don't make them, but I can tell you where to find the person who does.";
+			mes "For a small fee...";
+			next;
+			menu "How much?",L_SG_1,"No way, I'll find her, myself!",-;
+			mes "[Sunglasses Trader]";
+			mes "Suit yourself, the Maker won't make your ^0000FFSlotted Sunglasses^000000 unless she knows you're coming.";
+			mes "Only I can tell her you're coming.";
+			next;
+			mes "[Sunglasses Trader]";
+			mes "Come back to me, when you've given up.";
+			mes "Hahaha.";
+			close;
+		L_SG_1:
+			mes "[Sunglasses Trader]";
+			mes "^0000881 Carat Diamond^000000, ^00008850 Feathers^000000, and ^000088100000z^000000.";
+			next;
+			menu "Alright, here.",L_SG_1_Check,"That's too much!",-;
+			mes "[Sunglasses Trader]";
+			mes "Suit Yourself.";
+			close;
+		L_SG_1_Check:
+			checkitem 730,1,-,L_SG_Diamond;
+			checkitem 949,50,-,L_SG_Feathers;
+			check Zeny < 100000,L_SG_Funds,-;
+			delitem 730,1;
+			delitem 949,50;
+			set Zeny -= 100000,0;
+			set @SG_QUEST1 = 1;
+			mes "[Sunglasses Trader]";
+			mes "Great.";
+			mes "Now, listen carefully.";
+			next;
+			mes "[Sunglasses Trader]";
+			mes "Look for someone name Maseph somewhere in the east of Morroc.";
+			mes "I'll send her a message to let her know you're coming.";
+			close;
+			L_SG_Diamond:
+				mes "[Sunglasses Trader]";
+				mes "You don't have the ^0000881 Carat Diamond^000000.";
+				mes "Come back to me when you do.";
+				close;
+			L_SG_Feathers:
+				mes "[Sunglasses Trader]";
+				mes "You don't have ^00008850 Feathers^000000.";
+				mes "Come back to me when you do.";
+				close;
+			L_SG_Funds:
+				mes "[Sunglasses Trader]";
+				mes "You don't have ^000088100000z^000000.";
+				mes "Come back to me when you do.";
+				close;
+	L_SG_Q1_Done:
+		mes "[Sunglasses Trader]";
+		mes "There's nothing more I can tell you.";
+		next;
+		mes "[Sunglasses Trader]";
+		mes "Go see Maseph.";
+		mes "She's somewhere in the east of Morroc.";
+		close;
+}
+
+moc_fild09.vhm,209,128,5	script "Maseph" 0,0,0,0	702,{
+	check @SG_QUEST1 == 1,L_SG_2,-;
+		mes "[Maseph]";
+		mes "Lovely Day, isn't it?";
+		close;
+		L_SG_2:
+			mes "[Maseph]";
+			mes "Hello there.";
+			next;
+			mes "[Maseph]";
+			mes "You came for the ^000088Slotted Sunglasses^000000, right?";
+			next;
+			menu "Yes",L_SG_2_Start,"No, sorry to bother you.",-;
+			mes "[Maseph]";
+			mes "Off you go, then.";
+			close;
+			L_SG_2_Start:
+				mes "[Maseph]";
+				mes "To make one, I'll need one pair ^000088Sunglasses^000000 and 400000z";
+				next;
+				menu "Here you go...",L_SG_Q2_Check,"No, thanks.",-;
+				mes "[Maseph]";
+				mes "As you wish.";
+				close;
+			L_SG_Q2_Check:
+				checkitem 2201,1,-,L_SG_Sunglasses;
+				check Zeny < 400000,L_SG_Funds,-;
+				mes "[Maseph]";
+				mes "Thank you";
+				mes "I'll get on it right away.";
+				next;
+				delitem 2201,1;
+				set Zeny -= 100000,0;
+				additem 2202,1;
+				mes "[Maseph]";
+				mes "Here's you go.";
+				next;
+				mes "[Maseph]";
+				mes "Enjoy your ^000088Slotted Sunglasses^000000.";
+				close;
+			L_SG_Sunglasses:
+				mes "[Maseph]";
+				mes "I need one pair of ^000088Sunglasses^000000.";
+				mes "Come back to me when you have one.";
+				close;
+			L_SG_Funds:
+				mes "[Maseph]";
+				mes "You don't have enough money.";
+				mes "Come back to me when you do.";
+				close;
+}

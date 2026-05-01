@@ -1,0 +1,14 @@
+jawaii.vhm,114,172,0	warp	warpj001	1,1,jawaii_in.vhm,89,77
+jawaii_in.vhm,90,78,0	warp	warpj002	1,1,jawaii.vhm,116,173
+
+jawaii.vhm,109,186,0	warp	warpj003	1,1,jawaii_in.vhm,130,109
+jawaii_in.vhm,132,107,0	warp	warpj004	1,1,jawaii.vhm,110,186
+
+jawaii.vhm,110,199,0	warp	warpj005	1,1,jawaii_in.vhm,114,62
+jawaii_in.vhm,113,61,0	warp	warpj006	1,1,jawaii.vhm,111,198
+
+jawaii.vhm,139,203,0	warp	warpj007	1,1,jawaii_in.vhm,86,117
+jawaii_in.vhm,88,117,0	warp	warpj008	1,1,jawaii.vhm,138,201
+
+jawaii.vhm,191,214,0	warp	warpj009	1,1,jawaii_in.vhm,28,92
+jawaii_in.vhm,28,90,0	warp	warpj010	1,1,jawaii.vhm,191,216

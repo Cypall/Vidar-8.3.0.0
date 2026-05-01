@@ -1,0 +1,81 @@
+//============================================================================
+// Updated & Missing NPCs for Swordman Quest.
+//============================================================================
+// Quit option NPC warps.
+//============================================================================
+//Test 1 Staff
+sword_1-1.vhm,7,245,0	script	Warp 45,{
+OnTouch:
+	mes "[Test Hall Staff]";
+	mes "Applicant $charaname. Do you surrender??";
+	next;
+	menu "Yes.",-,"No.",Cont;
+		broadcast "Applicant $charaname quit the test..",20;
+		warp "izlude_in",65,165;
+	Cont:
+		warp "sword_1-1",10 245		
+}
+
+//Test 2 Staff
+sword_2-1.vhm,8,207,0	script	Warp 45,{
+OnTouch:
+	mes "[Test Hall Staff]";
+	mes "Applicant $charaname. Do you surrender??";
+	next;
+	menu "Yes.",-,"No.",Cont;
+		broadcast "Applicant $charaname quit the test..",20;
+		warp "izlude_in",65,165;
+	Cont:
+		warp "sword_2-1",11,207;
+}
+
+//Test 3 Staff
+sword_3-1.vhm,8,169,0	script	Warp 45,{
+OnTouch:
+	mes "[Test Hall Staff]";
+	mes "Applicant $charaname. Do you surrender??";
+	next;
+	menu "Yes.",-,"No.",Cont;
+		broadcast "Applicant $charaname quit the test..",20;
+		warp "izlude_in",65,165;
+	Cont:
+		warp "sword_3-1",11,169;
+}
+
+//============================================================================
+// Area End Warps
+//============================================================================
+//Test 1 Finish
+sword_1-1.vhm,194,243,0	script	"Test Hall Staff" 45,{
+OnTouch:
+	broadcast "Applicant $charaname has passed the 1st course.",20;
+	warp "sword_1-1",215,244;
+}
+
+//Test 2 Finish
+sword_2-1.vhm,193,207,0	script	"Test Hall Staff" 45,{
+OnTouch:
+	var name = PcName
+	broadcast "Applicant $charaname has passed the 2nd course.",20;
+	warp "sword_2-1",215,205;
+}
+
+//Test 3 Finish
+sword_3-1.vhm,193,168,0	script	"Test Hall Staff" 45,{
+OnTouch:
+	broadcast "Applicant $charaname has passed the 3rd course.",20;
+	warp "sword_3-1",215,167;
+}
+
+//============================================================================
+// Warp points
+//============================================================================
+//Test 1 - Test 2
+sword_1-1.vhm,223,243,0	warp checkp1-2	1,1,sword_2-1.vhm,11,206
+//Test 2 - Test 3
+sword_2-1.vhm,223,205,0	warp checkp1-2	1,1,sword_3-1.vhm,11,168
+// Pit warps.
+sword_1-1.vhm,65,117,0	warp	job_sword1	1,1,sword_1-1.vhm,10,245
+sword_2-1.vhm,97,27,0	warp	job_sword2	1,1,sword_2-1.vhm,10,207
+sword_2-1.vhm,161,27,0	warp	job_sword3	1,1,sword_2-1.vhm,10,207
+sword_3-1.vhm,239,117,0	warp	job_sword4	1,1,sword_3-1.vhm,11,169

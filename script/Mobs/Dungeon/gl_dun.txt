@@ -1,0 +1,4 @@
+gl_dun01.vhm,0,0,0,0	monster	Ambernite 1094,100,0,0,0
+gl_dun01.vhm,0,0,0,0	monster	Stalactic_Golem 1278,40,0,0,0
+gl_dun02.vhm,0,0,0,0	monster	Gargoyle 1253,20,0,0,0
+gl_dun02.vhm,0,0,0,0	monster	Majorous 1310,40,0,0,0

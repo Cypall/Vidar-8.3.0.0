@@ -1,0 +1,61 @@
+//Umbala Field links--------------------------------------------------------------
+cmd_fild01.vhm,179,370,0	warp	warp8013	1,1,um_fild03.vhm,239,27
+um_fild03.vhm,239,25,0	warp	warp8014	1,1,cmd_fild01.vhm,179,368
+cmd_fild01.vhm,78,367,0	warp	warp8015	1,1,um_fild03.vhm,117,51
+um_fild03.vhm,119,50,0	warp	warp8016	1,1,cmd_fild01.vhm,78,365
+um_fild03.vhm,31,150,0	warp	warp8017	1,1,um_fild02.vhm,372,329
+um_fild02.vhm,374,329,0	warp	warp8018	1,1,um_fild03.vhm,20,335
+um_fild03.vhm,18,335,0	warp	warp8019	1,1,um_fild02.vhm,372,148
+um_fild02.vhm,374,148,0	warp	warp8020	1,1,um_fild03.vhm,33,150
+um_fild02.vhm,21,272,0	warp	warp8021	1,1,um_fild01.vhm,368,275
+um_fild01.vhm,370,272,0	warp	warp8022	1,1,um_fild02.vhm,23,273
+um_fild01.vhm,39,280,0	warp	warp8023	1,1,beach_dun2.vhm,257,244
+beach_dun2.vhm,258,244,0	warp	warp8024	1,1,um_fild01.vhm,41,280
+um_fild02.vhm,191,374,0	warp	warp8025	1,1,um_fild04.vhm,179,13
+um_fild04.vhm,179,11,0	warp	warp8026	1,1,um_fild02.vhm,191,372
+um_fild04.vhm,215,340,0	warp	warp8027	1,1,umbala.vhm,130,80
+umbala.vhm,129,78,0	warp	warp8028	1,1,um_fild04.vhm,215,338
+
+//Dungeon Warps------------------------------------------------------------------
+umbala.vhm,106,286,0	warp	warp8029	1,1,um_dun01.vhm,42,28
+um_dun01.vhm,42,26,0	warp	warp8030	1,1,umbala.vhm,108,285
+um_dun01.vhm,149,198,0	warp	warp8031	1,1,um_dun02.vhm,48,30
+um_dun02.vhm,51,26,0	warp	warp8032	1,1,um_dun01.vhm,153,201
+//Dungeon warps from CoFFeiN
+um_dun02.vhm,222,259,0   warp   warp9013   1,1,um_dun02.vhm,234,255 
+um_dun02.vhm,231,255,0   warp   warp9014   1,1,um_dun02.vhm,219,260 
+um_dun02.vhm,216,84,0   warp   warp9015   1,1,um_dun02.vhm,214,74 
+um_dun02.vhm,216,77,0   warp   warp9016   1,1,um_dun02.vhm,217,88 
+um_dun02.vhm,113,208,0   warp   warp9017   1,1,um_dun02.vhm,100,208 
+um_dun02.vhm,103,208,0   warp   warp9019   1,1,um_dun02.vhm,116,208 
+um_dun02.vhm,33,249,0   warp   warp9020   1,1,um_dun02.vhm,23,242 
+um_dun02.vhm,25,244,0   warp   warp9021   1,1,um_dun02.vhm,35,251 
+um_dun02.vhm,60,88,0   warp   warp9022   1,1,um_dun02.vhm,66,77 
+um_dun02.vhm,63,80,0   warp   warp9023   1,1,um_dun02.vhm,59,92 
+um_dun02.vhm,169,38,0   warp   warp9024   1,1,um_dun02.vhm,180,38 
+um_dun02.vhm,177,38,0   warp   warp9025   1,1,um_dun02.vhm,166,38
+
+//----------------------------------- 
+//Umbala Town Warps by Wyvern 
+//----------------------------------- 
+//Witch House 
+umbala.vhm,219,189,0   warp   warp9050   1,1,um_in.vhm,32,70 
+um_in.vhm,28,70,0   warp   warp9051   1,1,umbala.vhm,217,187 
+//Weapons 
+umbala.vhm,125,157,0   warp   warp9052   1,1,um_in.vhm,155,114 
+um_in.vhm,155,111,0   warp   warp9053   1,1,umbala.vhm,126,152 
+//Fan Shack 
+umbala.vhm,138,129,0   warp   warp9054   1,1,um_in.vhm,99,114 
+um_in.vhm,99,110,0   warp   warp9055   1,1,umbala.vhm,136,127 
+//Lower Double Shack 
+umbala.vhm,95,186,0   warp   warp9056   1,1,um_in.vhm,142,42 
+um_in.vhm,141,39,0   warp   warp9057   1,1,umbala.vhm,95,183 
+//Upper Double Shack 
+umbala.vhm,100,202,0   warp   warp9058   1,1,um_in.vhm,163,70 
+um_in.vhm,166,70,0   warp   warp9059   1,1,umbala.vhm,102,204 
+//Small Shack 
+umbala.vhm,156,249,0   warp   warp9060   1,1,um_in.vhm,99,67 
+um_in.vhm,99,63,0   warp   warp9061   1,1,umbala.vhm,160,247 
+//Large Shack 
+umbala.vhm,108,164,0   warp   warp9062   1,1,um_in.vhm,38,112 
+um_in.vhm,38,110,0   warp   warp9063   1,1,umbala.vhm,104,163 

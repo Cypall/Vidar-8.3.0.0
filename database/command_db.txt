@@ -1,0 +1,71 @@
+//command trigger, target, gmmode, syntax,{
+//actions;
+//}
+
+command #global, 0, 0, "#global $string",{
+broadcast $string, 1;
+}
+
+command #global2, 0, 0, "#global2",{
+broadcast "hello world", 1;
+}
+
+command #local, 0, 0, "#local $string",{
+broadcast $string, 0;
+}
+
+command #setspawn, 0, 0, "#setspawn",{
+save;
+}
+
+command #respawn, 0, 0, "#respawn",{
+return;
+}
+
+command #store, 0, 0, "#store",{
+store;
+}
+
+command #mes, 0, 0, "#mes",{
+mes "Go Away";
+}
+
+command #mes2, 0, 0, "#mes2 $string",{
+mes $string;
+}
+
+command #mm, 0, 0, "#mm $mapname1,$param1,$param2",{
+warp $mapname1,$param1,$param2;
+}
+
+command #shift, 1, 0, "#shift $charaname,$mapname,$param1,$param2",{
+warp $mapname,$param1,$param2;
+}
+
+command #heal, 0, 0, "#heal $param1,$param2",{
+heal $param1,$param2;
+}
+
+command #summonitem, 0, 0, "#summonitem $param1,$param2",{
+additem $param1,$param2;
+}
+
+command #class, 0, 0, "#class $param1",{
+jobchange $param1;
+}
+
+command #dropitem, 0, 0, "#dropitem $param1,$param2",{
+delitem $param1,$param2;
+}
+
+command #bringall, 0, 0, "#bringall $mapname1,$param1,$param2",{
+warpall $mapname1,$param1,$param2;
+}
+
+command #reviveall, 0, 0, "#reviveall",{
+reviveall;
+}
+
+command #killall, 0, 0, "#killall",{
+killall;
+}

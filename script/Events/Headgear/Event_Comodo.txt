@@ -1,0 +1,129 @@
+///-- Comodo Issac Marie --///
+comodo.vhm,273,136,0	script "Issac Marie" 86,{
+mes "[Issac Marie]";
+mes "Oh hello there! What can i do for you?";
+next;
+mes  "  (1) . ^3355FFMine Helmet^000000 : 1 Safety Helm + 1 Candle + 1 Crystal Mirror + 25 Steel  ";
+mes  "  (2) . ^3355FFHandkerchief^000000 : 150 Fabric + 100 Resin + 1 Blue Dyestuff  ";
+mes  "  (3) . ^3355FFCash_Bag^000000 : 1 Circlet + 1 Gold + 20 Steel + 80 Feather + 800 Sticky Mucus  ";
+mes  "  (4) . ^3355FFOpera Ghost Mask^000000 : 1 Opera Mask + 50 Slender Snake ";
+menu "Mine Helmet",a1,"Handkerchief",a2,"Cash_Bag",a3,"Opera Ghost Mask",a4;
+a1:
+checkitem 5009,1,-,itemserror;
+checkitem 5048,1,-,itemserror;
+checkitem 747,1,-,itemserror;
+checkitem 999,25,-,itemserror;
+  mes "[Issac Marie]";
+  mes "Going to expore some deep caves now?";
+  mes "Well with helm you will be safe";
+  next;
+  delitem 5009,1;
+  delitem 5048,1;
+  delitem 747,1;
+  delitem 999,25;
+  additem 5031,1;
+  close;
+a2:
+checkitem 1059,150,-,itemserror;
+checkitem 907,100,-,itemserror;
+checkitem 978,1,-,itemserror;
+  mes "[Issac Marie]";
+  mes "Sneezing and coughing?";
+  mes "This Handkerchief can help you overcome any illness";
+  next;
+  delitem 1059,150;
+  delitem 907,100;
+  delitem 978,1;
+  additem 5023,1;
+  close;
+a3:
+checkitem 2232,1,-,itemserror;
+checkitem 969,1,-,itemserror;
+checkitem 999,20,-,itemserror;
+checkitem 949,80,-,itemserror;
+checkitem 938,800,-,itemserror;
+  mes "[Issac Marie]";
+  mes "Niffty merchant hat you got there";
+  mes "Aslong you got this you will never be poor";
+  next;
+  delitem 2232,1;
+  delitem 969,1;
+  delitem 999,20;
+  delitem 949,80;
+  delitem 938,800;
+  additem 5021,1;
+  close;
+a4:
+checkitem 2281,1,-,itemserror;
+checkitem 1048,50,-,itemserror;
+  mes "[Issac Marie]";
+  mes "This is what a real opera star wears";
+  mes "Be famous but no onw will know you true identidy";
+  next;
+  delitem 2281,1;
+  delitem 1048,50;
+  additem 5043,1;
+  close;
+itemserror:
+  mes "[Issac Marie]";
+  mes "Check the item requirements again.";
+  close;
+}
+
+//-- Comodo Hairband Girl --//
+comodo.vhm,228,158,4	script "Hairband Girl" 102,{
+mes "[Hairband Girl]";
+mes "We here in Comodo manufacture the newst and best types of Hairbands";
+mes "If you like i can show you a list of thing we require for work";
+next;
+mes  "  (1) . ^3355FFCross Hairband^000000 : 1 Rosary + 1 Broken Armor Piece  ";
+mes  "  (2) . ^3355FFLightbulb Hairband^000000 : 1 Circlet + 20 Glass_Beads  ";
+mes  "  (3) . ^3355FFStriped Bandana^000000 : 1500 Worn out Prison Uniform  ";
+mes  "  (4) . ^3355FFBlue Hairband^000000 : 1 Bandana + 1 Blue Dyestuff + 300 Anolian Skins ";
+menu "Cross Hairband",a1,"Lightbulb Hairband",a2,"Striped Bandana",a3,"Blue Hairband",a4;
+a1:
+checkitem 2608,1,-,itemserror;
+checkitem 7095,1,-,itemserror;
+  mes "[Hairband Girl]";
+  mes "An important item for any strong beliver";
+  next;
+  delitem 2608,1;
+  delitem 7095,1;
+  additem 5036,1;
+  close;
+a2:
+checkitem 2232,1,-,itemserror;
+checkitem 746,20,-,itemserror;
+  mes "[Hairband Girl]";
+  mes "This Hairband cn brighten up any situation";
+  next;
+  delitem 2232,1;
+  delitem 746,20;
+  additem 5034,1;
+  close;
+a3:
+checkitem 1099,1500,-,itemserror;
+  mes "[Hairband Girl]";
+  mes "Very Modern design";
+  mes "Dont' you think so too?";
+  next;
+  delitem 1099,1500;
+  additem 5049,1;
+  close;
+a4:
+checkitem 2211,1,-,itemserror;
+checkitem 978,1,-,itemserror;
+checkitem 7003,300,-,itemserror;
+  mes "[Hairband Girl]";
+  mes "The Blue Color give this bandana a nice touch";
+  next;
+  delitem 2211,1;
+  delitem 978,1;
+  delitem 7003,300;
+  additem 5052,1;
+  close;
+itemserror:
+  mes "[Hairband Girl]";
+  mes "Check the item requirements again.";
+  close;
+}

@@ -1,0 +1,240 @@
+//============================================================
+//Louyang Representative
+//============================================================
+louyang.vhm,224,104,4	script	"Representative"	818,{
+	mes "[Representative]";
+	mes "Welcome to Louyang,";
+	mes "a city with a long";
+	mes "and colorful history.";
+	next;
+	mes "[Representative]";
+	mes "Recently we've developed";
+	mes "an ocean lane to accomodate";
+	mes "positive exchange with";
+	mes "foregin nations.";
+	next;
+	mes "[Representative]";
+	mes "Louyang is well-known for various";
+	mes "specialties in addition to its rich";
+	mes "history. Here you can find many";
+	mes "things unique to our lang.";
+	next;
+	mes "[Representative]";
+	mes "Please take your time";
+	mes "and we invite you to enjoy";
+	mes "your trip here in Louyang.";
+	next;
+	menu "Ask Building Locations",-,"Remove all Marks from mini-map",Remove_Marks,"Cancel",Cancel;
+		mes "[Representative]";
+		mes "Where would you like to go?";
+		next;
+		menu "Dragon Castle",Dragon_Castle,"Doctor's Office",Doctor_Office,"City Hall",City_Hall,"Weapon Shop",Weapon_Shop,"Tool Shop",Tool_Shop,"Tavern",Tavern,Cancel,-;
+				mes "[Representative]";
+				mes "I guess it's fun";
+				mes "sometimes to go exploring";
+				mes "on your own. Take care.";
+				close;
+			Dragon_Castle:
+				mes "[Representative]";
+				mes "The Dragon Castle is located at /red+.";
+				mes "It is where the mobles reside,";
+				mes "including our lord.";
+				next;
+				mes "[Representative]";
+				mes "Since you're an outsider, I guess";
+				mes "it would be appropriete for you to";
+				mes "visit our lord first.";
+				close;
+			Doctor_Office:
+				mes "[Representative]";
+				mes "We have a very skilled doctor.";
+				mes "You can find her office at /red+.";
+				next;
+				mes "[Representative]";
+				mes "It is said that there";
+				mes "is no disease she cannot sure";
+				mes "Well, I can't guarantee if that's";
+				mes "true or not.";
+				close;
+			City_Hall:
+				mes "[Representative]";
+				mes "We have a City Hall where the";
+				mes "federal covernment operates";
+				mes "it is located at /grey+.";
+				next;
+				mes "[Representative]";
+				mes "If you have any problems,";
+				mes "you should talk with the";
+				mes "employees in the City Hall.";
+				close;
+			Weapon_Shop:
+				mes "[Representative]";
+				mes "The weapon shop is located at /aqua+. (145,171)";
+				next;
+				mes "[Representative]";
+				mes "You will see";
+				mes "marvelous weapons forged";
+				mes "by the well-experienced";
+				mes "blacksmiths of Louyang.";
+				close;
+			Tool_Shop:
+				mes "[Representative]";
+				mes "The tool shop is located at /blue+.";
+				next;
+				mes "[Representative]";
+				mes "Knowing your enemy";
+				mes "is half the battle!";
+				mes "It's also safer to prepare yourself";
+				mes "than to be sorry later. Why don't";
+				mes "you go check their supplies?";
+				close;
+			Tavern:
+				mes "[Representative]";
+				mes "When you get tired during your";
+				mes "trip, I suggest that you visit the";
+				mes "Tavern. It's located at /green+.";
+				next;
+				mes "[Representative]";
+				mes "The Tavern is a good place";
+				mes "to meet other tourists, as well as";
+				mes "hear of any nws that may be";
+				mes "helpful to know.";
+				close;
+	Remove_Marks:
+		mes "[Representative]";
+		mes "The weapon shop is located at /green+.";
+		mes "There, I've erased all the marks on";
+		mes "your mini-map. Feel free to ask me";
+		mes "about building locations whenever";
+		mes "you need to.";
+		close;
+	Cancel:
+		mes "[Soldier]";
+		mes "I guess it's fun";
+		mes "sometimes to go exploring";
+		mes "on your own. Take care.";
+		close;
+}
+
+//============================================================
+//Louyang Guides
+//============================================================
+louyang.vhm,160,175,4	script	"Soldier"	825,{
+	scriptlabel Lou_Soldier;
+	mes "[Soldier]";
+	mes "Welcome to Louyang,";
+	mes "a city with a long";
+	mes "and colorful history.";
+	next;
+	mes "[Soldier]";
+	mes "Recently we've developed";
+	mes "an ocean lane to accomodate";
+	mes "positive exchange with";
+	mes "foregin nations.";
+	next;
+	mes "[Soldier]";
+	mes "Louyang is well-known for various";
+	mes "specialties in addition to its rich";
+	mes "history. Here you can find many";
+	mes "things unique to our lang.";
+	next;
+	mes "[Soldier]";
+	mes "Please take your time";
+	mes "and we invite you to enjoy";
+	mes "your trip here in Louyang.";
+	next;
+	menu "Ask Building Locations",-,"Remove all Marks from mini-map",Remove_Marks,"Cancel",Cancel;
+		mes "[Soldier]";
+		mes "Where would you like to go?";
+		next;
+		menu "Dragon Castle",Dragon_Castle,"Doctor's Office",Doctor_Office,"City Hall",City_Hall,"Weapon Shop",Weapon_Shop,"Tool Shop",Tool_Shop,"Tavern",Tavern,Cancel,-;
+				mes "[Soldier]";
+				mes "I guess it's fun";
+				mes "sometimes to go exploring";
+				mes "on your own. Take care.";
+				close;
+			Dragon_Castle:
+				mes "[Soldier]";
+				mes "The Dragon Castle is located at /red+.";
+				mes "It is where the mobles reside,";
+				mes "including our lord.";
+				next;
+				mes "[Soldier]";
+				mes "Since you're an outsider, I guess";
+				mes "it would be appropriete for you to";
+				mes "visit our lord first.";
+				close;
+			Doctor_Office:
+				mes "[Soldier]";
+				mes "We have a very skilled doctor.";
+				mes "You can find her office at /pink+.";
+				next;
+				mes "[Soldier]";
+				mes "It is said that there";
+				mes "is no disease she cannot sure";
+				mes "Well, I can't guarantee if that's";
+				mes "true or not.";
+				close;
+			City_Hall:
+				mes "[Soldier]";
+				mes "We have a City Hall where the";
+				mes "federal covernment operates";
+				mes "it is located at /grey+.";
+				next;
+				mes "[Soldier]";
+				mes "If you have any problems,";
+				mes "you should talk with the";
+				mes "employees in the City Hall.";
+				close;
+			Weapon_Shop:
+				mes "[Soldier]";
+				mes "The weapon shop is located at /aqua+. (145,171)";
+				next;
+				mes "[Soldier]";
+				mes "You will see";
+				mes "marvelous weapons forged";
+				mes "by the well-experienced";
+				mes "blacksmiths of Louyang.";
+				close;
+			Tool_Shop:
+				mes "[Soldier]";
+				mes "The tool shop is located at /blue+.";
+				next;
+				mes "[Soldier]";
+				mes "Knowing your enemy";
+				mes "is half the battle!";
+				mes "It's also safer to prepare yourself";
+				mes "than to be sorry later. Why don't";
+				mes "you go check their supplies?";
+				close;
+			Tavern:
+				mes "[Soldier]";
+				mes "When you get tired during your";
+				mes "trip, I suggest that you visit the";
+				mes "Tavern. It's located at /green+.";
+				next;
+				mes "[Soldier]";
+				mes "The Tavern is a good place";
+				mes "to meet other tourists, as well as";
+				mes "hear of any nws that may be";
+				mes "helpful to know.";
+				close;
+	Remove_Marks:
+		mes "[Soldier]";
+		mes "The weapon shop is located at /green+.";
+		mes "There, I've erased all the marks on";
+		mes "your mini-map. Feel free to ask me";
+		mes "about building locations whenever";
+		mes "you need to.";
+		close;
+	Cancel:
+		mes "[Soldier]";
+		mes "I guess it's fun";
+		mes "sometimes to go exploring";
+		mes "on your own. Take care.";
+		close;
+}
+
+louyang.vhm,213,213,4	script	"Soldier"	825,{
+	script Lou_Soldier;
+}

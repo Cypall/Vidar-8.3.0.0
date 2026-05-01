@@ -1,0 +1,1706 @@
+// AREA 1
+sword_1-1.vhm,24,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,25,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,26,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,27,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,28,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,29,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,30,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,31,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,32,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,33,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,33,246,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,33,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,33,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,33,243,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,33,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,32,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,31,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,30,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,29,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,28,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,27,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,26,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,25,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,24,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,24,243,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,24,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,24,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,24,246,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+// AREA 2
+sword_1-1.vhm,54,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,55,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,56,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,57,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,58,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,59,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,60,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,61,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,62,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,63,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,64,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,65,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,66,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,67,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,68,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,69,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,70,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,71,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,71,246,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,71,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,71,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,71,243,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,71,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,70,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,69,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,68,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,67,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,66,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,65,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,64,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,63,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,62,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,61,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,60,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,59,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,58,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,57,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,56,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,55,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,54,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,54,243,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,54,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,54,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,54,246,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+// AREA 3
+sword_1-1.vhm,100,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,101,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,102,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,103,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,104,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,105,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,105,246,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,105,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,105,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,105,243,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,105,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,104,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,103,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,102,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,101,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,100,242,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,100,243,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,100,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,100,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,100,246,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,100,247,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+// AREA 4A
+sword_1-1.vhm,142,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,143,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,144,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,145,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,146,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,147,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,148,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,149,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,150,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,151,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,152,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,153,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,154,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,155,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,156,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,157,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,158,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,159,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,160,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,161,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,162,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,163,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,164,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,165,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,166,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,167,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,168,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,169,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,170,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,171,249,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,171,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,170,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,169,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,168,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,167,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,166,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,165,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,164,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,163,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,162,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,161,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,160,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,159,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,158,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,157,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,156,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,155,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,154,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,153,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,152,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,151,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,150,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,149,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,148,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,147,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,146,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,145,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,144,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,143,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,142,248,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+// AREA 4B
+sword_1-1.vhm,142,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,143,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,144,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,145,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,146,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,147,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,148,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,149,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,150,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,151,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,152,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,153,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,154,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,155,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,156,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,157,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,158,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,159,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,160,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,161,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,162,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,163,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,164,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,165,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,166,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,167,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,168,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,169,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,170,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,171,245,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,171,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,170,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,169,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,168,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,167,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,166,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,165,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,164,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,163,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,162,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,161,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,160,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,159,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,158,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,157,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,156,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,155,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,154,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,153,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,152,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,151,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,150,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,149,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,148,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,147,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,146,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,145,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,144,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,143,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,142,244,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+// AREA 4C
+sword_1-1.vhm,142,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,143,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,144,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,145,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,146,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,147,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,148,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,149,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,150,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,151,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,152,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,153,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,154,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,155,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,156,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,157,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,158,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,159,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,160,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,161,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,162,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,163,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,164,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,165,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,166,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,167,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,168,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,169,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,170,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,171,241,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,171,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,170,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,169,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,168,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,167,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,166,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,165,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,164,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,163,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,162,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,161,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,160,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,159,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,158,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,157,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,156,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,155,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,154,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,153,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,152,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,151,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,150,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,149,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,148,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,147,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,146,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,145,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,144,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,143,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,142,240,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+// MINOR SECTIONS
+
+sword_1-1.vhm,16,238,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,16,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,17,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,18,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,19,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,19,238,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,16,251,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,16,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,17,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,18,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,19,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,19,251,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,38,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,39,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,40,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,41,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,38,251,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,38,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,39,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,40,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,41,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,38,238,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,54,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,55,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,56,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,57,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,58,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,59,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,60,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,61,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,62,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,63,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,64,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,65,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,66,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,67,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,68,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,69,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,70,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,71,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,54,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,55,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,56,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,57,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,58,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,59,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,60,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,61,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,62,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,63,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,64,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,65,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,66,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,67,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,68,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,69,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,70,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,71,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,180,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,181,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,182,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,183,239,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,180,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,181,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,182,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+sword_1-1.vhm,183,250,0	script	warp	0,0,2,0	-1,{
+OnTouch:
+	warp "izlude_in",75,167;
+}
+
+// PART 1A - END
+sword_1-1.vhm,192,244,0	warp	warp	1,3,sword_1-1.vhm,215,243
+sword_1-1.vhm,223,243,0	warp	warp	1,1,sword_2-1.vhm,11,206

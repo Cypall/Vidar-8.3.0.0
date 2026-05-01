@@ -1,0 +1,199 @@
+// ---------------------------------------------------------------------------------------
+// Prontera Guild Flags
+// - Converted by L0ne_W0lf
+//========================================================================================
+prontera.vhm,155,190,4	 script	"Flag"	 722,{
+	guildreg "prtg_cas01";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As Law of Prontera";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As law of Prontera this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "prtg_cas01",96,173;
+		exit:
+			close;
+}
+
+prontera.vhm,146,194,3	 script	"Flag"	 722,{
+	guildreg "prtg_cas02";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As Law of Prontera";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As law of Prontera this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "prtg_cas02",71,36;
+		exit:
+			close;
+}
+
+prontera.vhm,143,203,2	 script	"Flag"	 722,{
+	guildreg "prtg_cas03";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As Law of Prontera";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As law of Prontera this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "prtg_cas03",181,215;
+		exit:
+			close;
+}
+
+prontera.vhm,167,203,6	 script	"Flag"	 722,{
+	guildreg "prtg_cas04";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As Law of Prontera";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As law of Prontera this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "prtg_cas04",258,247;
+		exit:
+			close;
+}
+
+prontera.vhm,165,194,5	 script	"Flag"	 722,{
+	guildreg "prtg_cas05";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As Law of Prontera";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Prontera ]";
+		mes " ";
+		mes "1. As law of Prontera this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "prtg_cas05",52,41;
+		exit:
+			close;
+}
+

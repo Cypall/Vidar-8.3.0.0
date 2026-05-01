@@ -1,0 +1,114 @@
+xmas.vhm,117,294,4	script "Hat Master" 86,{
+mes "[Hat Master]";
+mes "Good day to you.";
+mes "How can i be of service to you?";
+mes "Intressted in any of these fine Items?";
+next;
+mes  "  (1) . ^3355FFSmokie Hat^000000 : 1 Kitty Band + 20 Dragon Scale + 200 Tough Stem Scale  + 300 Sea Otter Furs  ";
+mes  "  (2) . ^3355FFSpore Hat^000000 : 850 Poison Spores + 300 Half-Burnt Logs + 1 Long and Thin Tougue  ";
+mes  "  (3) . ^3355FFMysterious Apple Hat^000000 : 1 Fruit Shell + 500 Wings of Dragonfly  ";
+mes  "  (4) . ^3355FFInnocence of Maiden^000000 : 100 Alice'S Aprons  ";
+mes  "  (5) . ^3355FFChef's Hat^000000 : 120 Piece of Cake + White Dye +  330 Feathers + 450 Dragon Scales  ";
+mes  "  (6) . ^3355FFCandle^000000 : 1 Bombwick + 50 Matchsticks + 100 Royal Jelly  ";
+mes  "  (7) . ^3355FFCake Hat^000000 : 10 Candy + 5 Candy Cane + 15 Well-Baked Cookie + 20 Piece of Cake + 10 Steel  ";
+next;
+menu "Smokie Hat",a1,"Spore Hat",a2,"Mysterious Apple Hat",a3,"Innocence of Maiden",a4,"Chef's Hat",a5,"Candle",a6,"Cake Hat",a7;
+a1:
+checkitem 2213,1,-,itemserror;
+checkitem 1036,20,-,itemserror;
+checkitem 7012,200,-,itemserror;
+checkitem 7065,300,-,itemserror;
+  mes "[Hat Master]";
+  mes "Good thing Smokie aren't an endangered species";
+  mes "Well they aren't yet endangered ...";
+  mes "What am I taking about? Let's get on with business";
+  next;
+  delitem 2213,1;
+  delitem 1036,20;
+  delitem 7012,200;
+  delitem 7065,300;
+  additem 5033,1;
+  close;
+a2:
+checkitem 4048,850,-,itemserror;
+checkitem 7068,300,-,itemserror;
+checkitem 1015,1,-,itemserror;
+  mes "[Hat Master]";
+  mes "The Latest Fashion, a Spore Hat ...";
+  mes "Here is your crafted item";
+  next;
+  delitem 4048,850;
+  delitem 7068,300;
+  delitem 1015,1;
+  additem 5029,1;
+  close;
+a3:
+checkitem 5037,1,-,itemserror;
+checkitem 7064,500,-,itemserror;
+  mes "[Hat Master]";
+  mes "Fruity Busniess you got there";
+  mes "Hope it fits you needs";
+  next;
+  delitem 5037,1;
+  delitem 7064,500;
+  additem 5050,1;
+  close;
+a4:
+checkitem 7047,100,-,itemserror;
+  mes "[Hat Master]";
+  mes "A Hand Maid May fanboy, eh heehee?";
+  mes "don't let it go to you head";
+  next;
+  delitem 7047,100;
+  additem 5040,1;
+  close;
+a5:
+checkitem 539,120,-,itemserror;
+checkitem 982,1,-,itemserror;
+checkitem 949,330,-,itemserror;
+checkitem 1036,450,-,itemserror;
+  mes "[Hat Master]";
+  mes "A real Master Chef is something rare";
+  mes "But so is this Hat;-)";
+  next;
+  delitem 539,120;
+  delitem 982,1;
+  delitem 949,330;
+  delitem 1036,450;
+  additem 5026,1;
+  close;
+a6:
+checkitem 2279,1,-,itemserror;
+checkitem 7035,50,-,itemserror;
+checkitem 526,100,-,itemserror;
+  mes "[Hat Master]";
+  mes "Spirtual and simplistic";
+  mes "only the best Jelly makes a Candle";
+  next;
+  delitem 2279,1;
+  delitem 7035,50;
+  delitem 526,100;
+  additem 5038,1;
+  close;
+a7:
+checkitem 529,10,-,itemserror;
+checkitem 530,15,-,itemserror;
+checkitem 538,15,-,itemserror;
+checkitem 539,20,-,itemserror;
+checkitem 999,10,-,itemserror;
+  mes "[Hat Master]";
+  mes "Now that what i would call good taste";
+  mes "you sure will get all attention with this hat";
+  next;
+  delitem 529,10;
+  delitem 530,15;
+  delitem 538,15;
+  delitem 539,20;
+  delitem 999,10;
+  additem 5024,1;
+  close;
+itemserror:
+  mes "[Hat Master]";
+  mes "Check the item requirements again.";
+  close;
+}

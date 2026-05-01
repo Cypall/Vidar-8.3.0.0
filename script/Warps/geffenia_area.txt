@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------
+// Geffenia Links 
+// By L0ne_W0lf
+// http://vidaronline.com
+//----------------------------------------------------------------------
+//Geffenia 1 <-> 2
+//Lower
+gefenia01.vhm,199,269,0	warp	gefwarp0003	3,1,gefenia02.vhm,203,34
+gefenia02.vhm,204,30,0	warp	gefwarp0004	3,1,gefenia01.vhm,199,266
+//upper
+gefenia01.vhm,236,259,0	warp	gefwarp0005	3,1,gefenia02.vhm,241,23
+gefenia02.vhm,240,20,0	warp	gefwarp0006	3,1,gefenia01.vhm,236,255
+
+//Geffenia 2 <-> 3
+//Lower
+gefenia02.vhm,16,174,0	warp	gefwarp0007	1,6,gefenia03.vhm,266,173
+gefenia03.vhm,269,173,0	warp	gefwarp0008	1,6,gefenia02.vhm,19,174
+//upper
+gefenia02.vhm,18,239,0	warp	gefwarp0009	1,6,gefenia03.vhm,266,236
+gefenia03.vhm,269,236,0	warp	gefwarp0010	1,6,gefenia02.vhm,22,239
+
+//Geffenia 3 <-> 4
+//Bottom-Left
+gefenia03.vhm,58,26,0	warp	gefwarp0011	6,1,gefenia04.vhm,36,270
+gefenia04.vhm,36,273,0	warp	gefwarp0012	6,1,gefenia03.vhm,58,30
+//Bottom-Right
+gefenia03.vhm,145,26,0	warp	gefwarp0013	6,1,gefenia04.vhm,129,271
+gefenia04.vhm,129,275,0	warp	gefwarp0014	6,1,gefenia03.vhm,145,30
+
+//Geffenia 4 <-> 1 
+gefenia01.vhm,37,103,0	warp	gefwarp0001	1,3,gefenia04.vhm,284,92
+gefenia04.vhm,287,92,0	warp	gefwarp0002	1,3,gefenia01.vhm,40,103

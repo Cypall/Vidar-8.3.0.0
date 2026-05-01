@@ -1,0 +1,449 @@
+//----------------------------------------------------------------------------------------
+// Rewrote for Vidar
+// Original Sources for reference: L0ne Wolf, Illogik and somewhere else.
+// Guildsman and Potion Mixer was Completely Rewroted by Zetex
+// v 1.07a
+// More comments to come!
+//----------------------------------------------------------------------------------------
+
+geffen_in.vhm,164,124,4 script Guildsman 123,{
+	mes "[Guildsman]";
+	mes "Hello there wonderer. What can I do for you?";
+	next;
+	menu "Change job to Magician",L_MageCH,"Requirements",L_RQuest,"End",-;
+	close;
+L_RQuest:
+	check Q_Mage == 1,L_SolReq,-;
+	check Q_Mage == 2,L_SolReq,-;
+	check Q_Mage == 3,L_SolReq,-;
+	check Q_Mage == 4,L_SolReq,L_Required;
+L_MageCH:
+	check Job == 2,L_Failed00,-;
+	// Job 2: Mage >> therefore you are already a mage!
+	check Job == 0,-,L_Failed01;
+	// Job 0: Novice >> Continue, else tell you that you can't.
+	check Q_Mage == 1,L_SolCHK1,-;
+	check Q_Mage == 2,L_SolCHK2,-;
+	check Q_Mage == 3,L_SolCHK3,-;
+	check Q_Mage == 4,L_SolCHK4,-;
+	mes "[Guildsman]";
+	mes "First I'll check if all the requirements have been met.";
+	next;
+	check JobLevel >= 10,-,L_Failed02;
+	check SkillPoint == 0,L_Qualified,L_Failed03;
+L_Failed00:
+	mes "[Guildsman]";
+	mes "You are already a Magician, go on now, get out there and do what you should.";
+	mes "Remember our code of honor!";
+	close;
+L_Failed01:
+	mes "[Guildsman]";
+	mes "You are not a Novice, you can not change to a Mage anymore!";
+	close;
+L_Failed02:
+	mes "[Guildsman]";
+	mes "You must be Level 10 before you can become a mage.";
+	close;
+L_Failed03:
+	mes "[Guildsman]";
+	mes "Please use up all your Skill Points before you continue.";
+	close;
+L_Qualified:
+	mes "[Guildsman]";
+	mes "Very good,you are qualified.";
+	next;
+	mes "[Guildsman]";
+	mes "In-order be a mage, you must reproduce the solution that I require you to make....";
+	next;
+	random @magran,4;
+	set @magran + 1;
+Solution:
+	set Q_Mage = @magran;
+	mes "[Guildsman]";
+	mes "Please reproduce Solution $[@magran], after you finish come to me to see if it's correct.";
+	mes "Details are to be found on the books in the book shelf over there.";
+	next;
+	additem 1092,1;
+	mes "[Guildsman]";
+	mes "Take this bottle to make the Solution.";
+	close;
+L_SolCHK1:
+	checkitem 1085,1,L_Change1,-;
+	checkitem 1071,1,L_Take0,-;
+	checkitem 1086,1,L_Take2,-;
+	checkitem 1087,1,L_Take3,-;
+	checkitem 1090,1,L_Take4,L_SolReq;
+L_SolCHK2:
+	checkitem 1086,1,L_Change1,-;
+	checkitem 1071,1,L_Take0,-;
+	checkitem 1085,1,L_Take1,-;
+	checkitem 1087,1,L_Take3,-;
+	checkitem 1090,1,L_Take4,L_SolReq;
+L_SolCHK3:
+	checkitem 1087,1,L_Change1,-;
+	checkitem 1071,1,L_Take0,-;
+	checkitem 1085,1,L_Take1,-;
+	checkitem 1086,1,L_Take2,-;
+	checkitem 1090,1,L_Take4,L_SolReq;
+L_SolCHK4:
+	checkitem 1090,1,L_Change1,-;
+	checkitem 1071,1,L_Take0,-;
+	checkitem 1085,1,L_Take1,-;
+	checkitem 1086,1,L_Take2,-;
+	checkitem 1087,1,L_Take3,L_SolReq;
+L_Take0:
+	delitem 1071,1;
+	goto L_TakeE;
+L_Take1:
+	delitem 1085,1;
+	goto L_TakeE;
+L_Take2:
+	delitem 1086,1;
+	goto L_TakeE;
+L_Take3:
+	delitem 1087,1;
+	goto L_TakeE;
+L_Take4:
+	delitem 1090,1;
+L_TakeE:
+	mes "[Guildsman]";
+	mes "What you've finished? Let me see...";
+	next;
+	mes "[Guildsman]";
+	mes "This is not the solution I want, please try again!";
+	close;
+L_SolReq:
+	mes "[Guildsman]";
+	mes "You haven't finished it, becareful don't make the wrong one.";
+	mes "What I want is Solution $[Q_Mage] from you.";
+	close;
+L_Change1:
+	mes "[Guildsman]";
+	mes "Very good, you've made the right solution, even though it's not perfect, but you qualified.";
+	next;
+	mes "[Guildsman]";
+	mes "Congratulations! Now as promised, I will turn you into a Magician.";
+	next;
+	mes "[Guildsman]";
+	mes "Click Next and see what happens.";
+	next;
+	set JobLevel = 1,0;
+	jobchange 2;
+	delitem 1085,1;
+	delitem 1086,1;
+	delitem 1087,1;
+	delitem 1090,1;
+	mes "[Guildsman]";
+	mes "Like the new look? Congratulations you're now a Magician.";
+	set Q_Mage = 5;
+	close;
+L_Required:
+	mes "[Guildsman]";
+	mes "You must complete what I've asked you to do.";
+	mes "Use the machine in the middle to make the Solution.";
+	next;
+	mes "[Guildsman]";
+	mes "I will ask you to make 1 of the 4 solutions for the test, to know what they are read books on the book shelf.";
+	close;
+}
+
+//==========
+//Book Shelf
+//==========
+geffen_in.vhm,177,112,4 script "Book Shelf" 111,{
+	setstr $@Sstone = " ";
+	set @pnum = 0;
+	mes "[Detail on Potion Mix]";
+	mes "Please select the following Solutions:";
+	next;
+	menu "Solution 1",Sol_1,"Solution 2",Sol_2,"Solution 3",Sol_3,"Solution 4",-;
+	mes "[Detail on Potion Mix]";
+	mes "Items required for Solution 4:";
+	mes "Solution: Morroc Solution";
+	mes "Jelleby x 2";
+	mes "Fluff x 3";
+	next;
+	setstr $@Sstone = "Clear Gemstone";
+	set @pnum = 5429;
+	goto End;
+Sol_1:
+	mes "[Detail on Potion Mix]";
+	mes "Items required for Solution 1:";
+	mes "Solution: Payon Solution";
+	mes "Jelleby x 2";
+	mes "Fluff x 3";
+	mes "Milk x 1";
+	next;
+	setstr $@Sstone = "Yellow Gemstone";
+	set @pnum = 8472;
+	goto End;
+Sol_2:
+	mes "[Detail on Potion Mix]";
+	mes "Items required for Solution 2:";
+	mes "Jelleby x 3";
+	mes "Fluff x 1";
+	mes "Milk x 1";
+	next;
+	setstr $@Sstone = "Red Gemstone";
+	set @pnum = 3735;
+	goto End;
+Sol_3:
+	mes "[Detail on Potion Mix]";
+	mes "Items required for Solution 3:";
+	mes "Solution: Payon Solution";
+	mes "Jelleby x 6";
+	mes "Fluff x 1";
+	next;
+	setstr $@Sstone = "Blue Gemstone";
+	set @pnum = 2750;
+End:
+	mes "[Detail on Potion Mix]";
+	mes "Stabling Stone: $[$@Sstone] ";
+	next;
+	mes "[Detail on Potion Mix]";
+	mes "Chemical Powder Number: $[@pnum] ";
+	close;
+}
+
+//============
+//Potion Mixer
+//============
+geffen_in.vhm,164,112,4 script "Mixing Machine" 111,{
+	mes "[Mixing Machine]";
+	mes "This is the Unique Machine only for Mixing Solution of Magic.";
+	mes "And is the property of the Geffen Mage Guild.";
+	next;
+	menu "Use Machine.",L_Part1,"Cancel.",-;
+	close;
+L_Part1:
+	set @soltype = 0;
+	set @jellvar = 0;
+	set @flufvar = 0;
+	set @milkvar = 0;
+	set @jellTotal = 0;
+	set @flufTotal = 0;
+	set @milkTotal = 0;
+	mes "[Mixing Machine]";
+	mes "Choose the Solution you want to Mix.";
+	next;
+	menu "Payon Solution.",payon,"Morroc Solution.",-,"Skip",L_Part2;
+	getitemamount 1088,@potionvar;
+	check @potionvar >= 1,-,L_Part1_NE;
+	set @soltype = 1;
+	goto L_Part2;
+payon:
+	getitemamount 1089,@potionvar;
+	check @potionvar >= 1,-,L_Part1_NE;
+	set @soltype = 2;
+L_Part2:
+	mes "[Mixing Machine]";
+	mes "Enter the variables:";
+	next;
+	menu "Jellopies",-,"Fluffs",L_Flufvar,"Milk",L_Milkvar,"Done",L_Part2_2;
+	mes "[Mixing Machine]";
+	mes "Enter the Number of Jellopies to add:";
+	next;
+	input @jellvar;
+	set @jellTotal + @jellvar;
+	getitemamount 909,@jellvar2;
+	check @jellTotal <= @jellvar2,-,L_NotEnough;
+	goto L_Part2;
+L_Part1_NE:
+	mes "[Mixing Machine]";
+	mes "Cannot find the Solution. Please Check again.";
+	mes "Finish the Mixing Progress.Thank you..";
+	close;
+L_Flufvar:
+	mes "[Mixing Machine]";
+	mes "Enter the Number of Fluffs to add:";
+	next;
+	input @flufvar;
+	set @flufTotal + @flufvar;
+	getitemamount 914,@flufvar2;
+	check @flufTotal <= @flufvar2,-,L_NotEnough;
+	goto L_Part2;
+L_Milkvar:
+	mes "[Mixing Machine]";
+	mes "Enter the Number of Milk Bottles to add:";
+	next;
+	input @milkvar;
+	set @milkTotal + @milkvar;
+	getitemamount 519,@milkvar2;
+	check @milkTotal <= @milkvar2,-,L_NotEnough;
+	goto L_Part2;
+L_Part2_2:
+	mes "[Mixing Machine]";
+	mes "Jellopies: $[@jellTotal]";
+	mes "Fluffs: $[@flufTotal]";
+	mes "Milk: $[@milkTotal] Bottle";
+	mes "Is this correct?";
+	next;
+	menu "Mix",L_Part3,"Add More",L_Part2,"Start Over",L_Part1,"Cancel",-;
+	close;
+L_NotEnough:
+	mes "[Mixing Machine]";
+	mes "You don't have enough of this item.";
+	mes "Come back again when you have enough.";
+	close;
+L_Part3:
+	mes "[Mixing Machine]";
+	mes "Please choose the Catalyst Stone";
+	menu "Yellow Gemstone",-,"Red Gemstone",L_CStoneR,"Blue Gemstone",L_CStoneB,"Clear Gemstone",L_CStoneC;
+	set @gemstone = 1;
+	goto L_Part3_2;
+L_CStoneR:
+	set @gemstone = 2;
+	goto L_Part3_2;
+L_CStoneB:
+	set @gemstone = 3;
+	goto L_Part3_2;
+L_CStoneC:
+	set @gemstone = 4;
+L_Part3_2:
+	mes "[Mixing Machine]";
+	mes "Enter the Chemical Number:";
+	next;
+	input @chemnumber;
+Part4:
+	mes "[Mixing Machine]";
+	mes "Catalyst Stone:";
+	check @gemstone == 1,L_CStoneY2,-;
+	check @gemstone == 2,L_CStoneR2,-;
+	check @gemstone == 3,L_CStoneB2,L_CStoneC2;
+L_CStoneY2:
+	mes "   Yellow Gemstone";
+	goto L_Part4_2;
+L_CStoneR2:
+	mes "   Red Gemstone";
+	goto L_Part4_2;
+L_CStoneB2:
+	mes "   Blue Gemstone";
+	goto L_Part4_2;
+L_CStoneC2:
+	mes "   Clear Gemstone";
+L_Part4_2:
+	mes "Chemical Number: $[@chemnumber]";
+	next;
+	menu "Continue",L_Part5,"Cancel",-;
+	close;
+L_Part5:
+	mes "[Mixing Machine]";
+	mes "Mixing potion please wait...";
+	next;
+	mes "[Mixing Machine]";
+	mes "Todays Quote: ";
+	mes "Logic always explains everything but magic!";
+	next;
+L_Part5_S1:
+	check @soltype == 2,-,L_Part5_S2;
+	check @jellTotal == 2,-,L_Part5_S2;
+	check @flufTotal == 3,-,L_Part5_S2;
+	check @milkTotal == 1,-,L_Part5_S2;
+	check @gemstone == 1,-,L_Part5_S2;
+	check @chemnumber == 8472,-,L_Part5_S2;
+	delitem 1089,1;
+	delitem 909,@jellTotal;
+	delitem 914,@flufTotal;
+	delitem 519,@milkTotal;
+	additem 1085,1;
+	goto L_END;
+L_Part5_S2:
+	check @soltype == 0,-,L_Part5_S3;
+	check @jellTotal == 3,-,L_Part5_S3;
+	check @flufTotal == 1,-,L_Part5_S3;
+	check @milkTotal == 1,-,L_Part5_S3;
+	check @gemstone == 2,-,L_Part5_S3;
+	check @chemnumber == 3735,-,L_Part5_S3;
+	delitem 909,@jellTotal;
+	delitem 914,@flufTotal;
+	delitem 519,@milkTotal;
+	additem 1086,1;
+	goto L_END;
+L_Part5_S3:
+	check @soltype == 2,-,L_Part5_S4;
+	check @jellTotal == 6,-,L_Part5_S4;
+	check @flufTotal == 1,-,L_Part5_S4;
+	check @milkTotal == 0,-,L_Part5_S4;
+	check @gemstone == 3,-,L_Part5_S4;
+	check @chemnumber == 2750,-,L_Part5_S4;
+	delitem 1089,1;
+	delitem 909,@jellTotal;
+	delitem 914,@flufTotal;
+	delitem 519,@milkTotal;
+	additem 1087,1;
+	goto L_END;
+L_Part5_S4:
+	check @soltype == 1,-,L_Part5_S5;
+	check @jellTotal == 2,-,L_Part5_S5;
+	check @flufTotal == 3,-,L_Part5_S5;
+	check @milkTotal == 0,-,L_Part5_S5;
+	check @gemstone == 4,-,L_Part5_S5;
+	check @chemnumber == 5429,-,L_Part5_S5;
+	delitem 1088,1;
+	delitem 909,@jellTotal;
+	delitem 914,@flufTotal;
+	delitem 519,@milkTotal;
+	additem 1090,1;
+	goto L_END;
+L_Part5_S5:
+	additem 1071,1;
+L_END:
+	mes "[Mixing Machine]";
+	mes "Thank You.";
+	close;
+}
+
+// Mage Guildsmans Provided by L0ne Wolf and Illogik
+moc_ruins.vhm,91,150,5 script "Ponka-Hontas" 93,{
+	mes "[Mage Guildsman]";
+	mes "You want the Solution? Then give me at least 1 Empty Testube and 50 Zenies.";
+	next;
+menu "Alright",-,"Forget it.",L_1;     
+	mes "[Mage Guildsman]";
+	checkitem 1092,1,-,L_notube;
+	check Zeny >= 50,-,L_nozeny;
+	mes "Ok, you have the empty Testube, that's good!";
+	delitem 1092,1;
+	set Zeny - 50;
+	next;
+	additem 1088,1;
+	mes "[Mage Guildsman]";
+	mes "Thank you, I think you will be a great mage, you are so generous.";
+	mes "I hope i'll see you soon again here";
+	close;
+L_notube:
+	mes "You can't Carry on Fluid without a bottle, are you sure you want to become a mage?";
+	mes "Bring an Empty Testube";
+	close;
+L_nozeny:
+	mes "You must have at least 50 Zenies!";
+L_1:
+	close;
+}
+
+pay_arche.vhm,122,100,5 script "Dollshoi" 88,{
+	mes "[Mage Guildsman]";
+	mes "You want the Solution? Then give me at least 1 Empty Testube and 50 Zenies.";
+	next;
+	menu "Alright",-,"Forget it.",L_1;
+	mes "[Mage Guildsman]";
+	checkitem 1092,1,-,L_notube;
+	check Zeny >= 50,-,L_nozeny;
+	mes "Ok, you have the empty Testube, that's good!";
+	delitem 1092,1;
+	set Zeny - 50;
+	next;
+	mes "[Mage Guildsman]";
+	additem 1089,1;
+	mes "Thank you, I think you will be a great mage, you are so generous.";
+	mes "I hope i'll see you soon again here";
+	close;
+L_notube:
+	mes "You can't Carry on Fluid without a bottle, are you sure you want to become a mage?";
+	mes "Bring an Empty Testube";
+	close;
+L_nozeny:
+	mes "You must have at least 50 Zenies!";
+L_1:
+	close;
+}

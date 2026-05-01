@@ -1,0 +1,39 @@
+//--Payon Weapon Shop Man--//
+payon_in01.vhm,140,6,6	script "Exculsive Armorer" 83,{
+mes "[Exculsive Armorer]";
+mes "I have been crafting Armors now for over 7 Centuries";
+mes "But today i take it easier then i used too";
+mes "If you bring me the following items i will makes these hats for you";
+next;
+mes  "  (1) . ^3355FFAngelic Helm^000000 : 1 Angel Wings + 1 sloted Helm (monster drop) + 5 Fang of Garm  ";
+mes  "  (2) . ^3355FFDeveruchi Hat^000000 : 600 Little Evil Horns + 40 Griffion Claws  ";
+menu "Angelic Helm",a1,"Deveruchi Hat",a2;
+a1:
+checkitem 2254,1,-,itemserror;
+checkitem 2229,1,-,itemserror;
+checkitem 7036,5,-,itemserror;
+  mes "[Lone Travler]";
+  mes "Ah yes a magnificant piece of armor";
+  mes "I'am sure you will enjoy this piece of craftship for a long time";
+  next;
+  delitem 2254,1;
+  delitem 2229,1;
+  delitem 7036,5;
+  additem 5025,1;
+  close;
+a2:
+checkitem 1038,600,-,itemserror;
+checkitem 7048,40,-,itemserror;
+  mes "[Lone Travler]";
+  mes "This will give you great power!";
+  mes "Beside it silly look";
+  next;
+  delitem 1038,600;
+  delitem 7048,40;
+  additem 5038,1;
+  close;
+itemserror:
+  mes "[Exculsive Armorer]";
+  mes "Check the item requirements again.";
+  close;
+}

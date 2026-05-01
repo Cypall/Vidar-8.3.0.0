@@ -1,0 +1,25 @@
+//----------------------------
+// Treasure Box
+// by: Burner
+//----------------------------
+
+prtg_cas05.vhm,276,178,0,0 monster "Treasure Box" 1324,1,3600000,1800000,0
+prtg_cas04.vhm,270,163,0,0 monster "Treasure Box" 1325,1,3600000,1800000,0
+prtg_cas03.vhm,188,134,0,0 monster "Treasure Box" 1326,1,3600000,1800000,0
+prtg_cas02.vhm,201,229,0,0 monster "Treasure Box" 1327,1,3600000,1800000,0
+prtg_cas01.vhm,10,210,0,0 monster "Treasure Box" 1328,1,3600000,1800000,0
+aldeg_cas05.vhm,62,11,0,0 monster "Treasure Box" 1329,1,3600000,1800000,0
+aldeg_cas04.vhm,86,15,0,0 monster "Treasure Box" 1330,1,3600000,1800000,0
+aldeg_cas03.vhm,229,273,0,0 monster "Treasure Box" 1331,1,3600000,1800000,0
+aldeg_cas02.vhm,136,232,0,0 monster "Treasure Box" 1332,1,3600000,1800000,0
+aldeg_cas01.vhm,120,224,0,0 monster "Treasure Box" 1333,1,3600000,1800000,0
+payg_cas05.vhm,157,137,0,0 monster "Treasure Box" 1334,1,3600000,1800000,0
+payg_cas04.vhm,146,53,0,0 monster "Treasure Box" 1335,1,3600000,1800000,0
+payg_cas03.vhm,158,169,0,0 monster "Treasure Box" 1336,1,3600000,1800000,0
+payg_cas02.vhm,145,149,0,0 monster "Treasure Box" 1337,1,3600000,1800000,0
+payg_cas01.vhm,291,13,0,0 monster "Treasure Box" 1338,1,3600000,1800000,0
+gefg_cas05.vhm,141,113,0,0 monster "Treasure Box" 1339,1,3600000,1800000,0
+gefg_cas04.vhm,119,120,0,0 monster "Treasure Box" 1340,1,3600000,1800000,0
+gefg_cas03.vhm,269,295,0,0 monster "Treasure Box" 1341,1,3600000,1800000,0
+gefg_cas02.vhm,141,118,0,0 monster "Treasure Box" 1342,1,3600000,1800000,0
+gefg_cas01.vhm,158,113,0,0 monster "Treasure Box" 1343,1,3600000,1800000,0

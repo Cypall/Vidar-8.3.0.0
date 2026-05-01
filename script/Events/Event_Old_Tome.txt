@@ -1,0 +1,196 @@
+// Old Tome Quest
+// Created by Black_Dragon
+yuno_in01.vhm,171,94,6	script	Arkyhm	705,{
+	check OTQ = 1,SEARCH2,-;
+	check OTQ = 2,CONTINUE,-;
+	check OTQ = 3,QUEST,-;
+	check OTQ = 4,QUEST2,-;
+	check OTQ = 5,-,START;
+		mes "[Arkyhm]";
+		mes "Thank you for all your help!";
+	close;
+START:
+	check OTQ = 6,EXIT2,-;
+		mes "[Arkyhm]";
+		mes "Hello there.";
+		mes "I'm searching for an old tome of spells.";
+	next;
+		mes "Do you think you can help me?";
+	next;
+		menu "Of course.",SEARCH,"Sorry.",-;
+			mes "Oh... All right.";
+	close;
+SEARCH:
+		mes "[Arkyhm]";
+		mes "Thank you so much.";
+	goto SEARCH3;
+SEARCH2:
+	mes "[Arkyhm]";
+SEARCH3:
+		mes "I've been looking through this library for hours.";
+		mes "Perhaps you should try looking around other libraries first.";
+		set OTQ = 1;
+	close;
+CONTINUE:
+		mes "[Arkyhm]";
+		mes "Oh my... Hm...";
+		mes "I think that ^FF00FFReisan^000000 may know of them.";
+		mes "He's usually at ^00FF00Alberta^000000.";
+	close;
+QUEST:
+		mes "[Arkyhm]";
+		mes "This is terrible.";
+		mes "I'm sorry to put you through all this trouble.";
+		mes "I don't know this man named ^FF00FFSanyo^000000.";
+	close;
+QUEST2:
+	checkitem 7117,1,-,EXIT;
+		mes "Thank you for your help.";
+		mes "I know!  I'll give you some status points.";
+		set StatusPoint + 20;
+		set OTQ = 5;
+	next;
+		mes "There you go.";
+	close;
+EXIT:
+		mes "[Arkyhm]";
+		mes "You did what?";
+		set OTQ = 6;
+EXIT2:
+		mes "I thought you were a good person >=(";
+	close;
+}
+
+// Replace the Ellen from Town_Prontera.txt with this one
+prt_in.vhm,175,50,0	script	Ellen	71,{
+	mes "[Ellen]";
+	mes "Welcome. You can look up books of monsters organized by thier properties. Also there are books about some skills of Merchant and Blacksmith.";
+	mes "Ah~! The next library also has many interesting reading materials so please visit theres too.";
+	check OTQ = 1,-,EXIT;
+		menu "Ask about tome",-,"Say nothing",EXIT;
+			mes "[Ellen]";
+			mes "Oh, hm... I'm sorry, there were 3 people that recently borrowed that tome.";
+			mes "I think their names were ^FF00FFLenna^000000, ^FF00FFMarkanus^000000 and ^FF00FFSelenis^000000.";
+			random BOOK,3;
+			set OTQ = 2;
+		next;
+			mes "[Ellen]";
+			mes "Sorry, I don't know where they could be.";
+		close;
+EXIT:
+	close;
+}
+
+alberta.vhm,210,35,4	script	Reisan	48,{
+	check OTQ = 2,-,EXIT;
+		mes "[Reisan]";
+		mes "Yes, what can I do for you?";
+	next;
+		menu "Ask about ^FF00FFLenna^000000",-,"Ask about ^FF00FFMarkanus^000000",MARK,"Ask about ^FF00FFSelenis^000000",SEL,"Never mind",EXIT2;
+			mes "[Reisan]";
+			mes "Hm... ^FF00FFLenna^000000 usually stays in the area of ^00FF00Payon^000000.";
+		close;
+MARK:
+		mes "[Reisan]";
+		mes "You'll probably find ^FF00FFMarkanus^000000 at ^00FF00Al de Baran^000000.";
+	close;
+SEL:
+		mes "[Reisan]";
+		mes "^FF00FFSelenis^000000 usually goes to ^00FF00[Place]^000000.";
+	close;
+EXIT:
+		mes "[Reisan]";
+		mes "I'm sorry, but I can't help you at the moment.";
+		mes "I'm busy.";
+	close;
+EXIT2:
+		mes "[Reisan]";
+		mes "Please do not disturb me.";
+	close;
+}
+
+payon_in01.vhm,142,45,0	script	Lenna	101,{
+		mes "[Lenna]";
+	check OTQ = 2,-,EXIT;
+	check BOOK = 1,-,EXIT2;
+		mes "Yes?  What do you want?";
+	next;
+		menu "Ask about tome",-,"Never mind",EXIT;
+			mes "[Lenna]";
+			mes "I gave it to a man named ^FF00FFSanyo^000000.";
+			mes "I believe he may still have it.";
+			set OTQ = 3;
+		close;
+EXIT:
+		mes "I don't have time to talk if you've got nothing important to say.";
+	close;
+EXIT2:
+		mes "I borrowed that tome a while back.";
+		mes "I've already returned it.";
+		mes "If it's not at the library, someone else must've borrowed it.";
+	close;
+}
+
+aldebaran.vhm,113,184,4	script	Markanus	740,{
+		mes "[Markanus]";
+	check OTQ = 2,-,EXIT;
+	check BOOK = 1,-,EXIT2;
+		mes "What is it?";
+	next;
+		menu "Ask about tome",-,"Never mind",EXIT;
+			mes "[Markanus]";
+			mes "I remember give it to a man named ^FF00FFSanyo^000000.";
+			mes "Likely, he may have it.";
+			set OTQ = 3;
+		close;
+EXIT:
+		mes "Sorry, but I'm busy right now.";
+	close;
+EXIT2:
+		mes "That was a long while ago.";
+		mes "I took it back to the library already.";
+		mes "If the librarian doesn't know, then I guess you're out of luck.";
+	close;
+}
+
+morocc.vhm,103,86,6	script	Selenis	123,{
+		mes "[Selenis]";
+	check OTQ = 2,-,EXIT;
+	check BOOK = 1,-,EXIT2;
+		mes "Yes?  Is there something you need?";
+	next;
+		menu "Ask about tome",-,"Never mind",EXIT;
+			mes "[Selenis]";
+			mes "I believe a man named ^FF00FFSanyo^000000 wanted it.";
+			mes "He should have it, if not then I don't know.";
+			set OTQ = 3;
+		close;
+EXIT:
+		mes "I'm sorry, but I tend to be busy.";
+	close;
+EXIT2:
+		mes "Hm... I borrowed a tome a while ago.";
+		mes "From what I remember, I brought it back already.";
+		mes "If you can't find it at the library, then don't look at me.";
+	close;
+}
+
+comodo.vhm,211,306,2	script	Sanyo	742,{
+		mes "[Sanyo]";
+	check OTQ = 3,-,EXIT;
+		mes "Yeah?";
+	next;
+		menu "Ask about tome",-,"Nothing",EXIT2;
+			mes "[Sanyo]";
+			mes "Oh, okay.";
+			mes "Here you go.";
+			additem 7117,1;
+			set OTQ = 4;
+		close;
+EXIT:
+		mes "I have no time to chat.";
+	close;
+EXIT2:
+		mes "Oh, um... okay.";
+	close;
+}

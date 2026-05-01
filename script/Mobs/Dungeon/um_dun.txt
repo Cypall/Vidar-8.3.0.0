@@ -1,0 +1,18 @@
+//RO-8.0官方怪物分布
+//怪物种类和数量竟可能的和官方靠齐
+//制作：LKM
+//http://coolro.cnnb.net
+
+
+
+um_dun01.vhm,0,0,0,0	monster	WOOTAN_SHOOTER	1498,35,0,0,0
+um_dun01.vhm,0,0,0,0	monster	WOODEN_GOLEM	1497,10,0,0,0
+um_dun01.vhm,0,0,0,0	monster	DUSTINESS 1114,25,0,0,0
+um_dun01.vhm,0,0,0,0	monster	STONE_SHOOTER 1495,10,0,0,0
+um_dun01.vhm,0,0,0,0	monster	STAINER 1174,10,0,0,0
+um_dun01.vhm,0,0,0,0	monster	WOOTAN_FIGHTER 1499,5,0,0,0
+um_dun02.vhm,0,0,0,0	monster	WOOTAN_FIGHTER 1499,35,0,0,0
+um_dun02.vhm,0,0,0,0	monster	WOOTAN_SHOOTER	1498,25,0,0,0
+um_dun02.vhm,0,0,0,0	monster	WOODEN_GOLEM	1497,30,0,0,0
+um_dun02.vhm,0,0,0,0	monster	STONE_SHOOTER 1495,25,0,0,0
+um_dun02.vhm,0,0,0,0	monster	DRYAD 1493,20,0,0,0

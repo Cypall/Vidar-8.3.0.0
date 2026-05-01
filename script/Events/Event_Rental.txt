@@ -1,0 +1,75 @@
+//----------------------------------------------------------------------------------------
+// Falcon & PecoPeco Breeder ( Support Crusader ) 
+// Script by DoMInAToR
+// Pecopeco Script redone by L0ne_W0lf
+//----------------------------------------------------------------------------------------
+prontera.vhm,55,350,5 script "Peco Peco Breeder" 0,0,0,0	105,{ 
+	mes "[PecoPeco Breeder]";
+	check Job == 7,Rent,-; 
+	check Job == 14,Rent,-;  
+	check Job == 31,Rent,-;  
+	check Job == 38,Rent,-;
+	mes "Peco Peco is only for the Knight and Crusader Classes.";
+	close;
+	Rent:
+		mes "Good Day your honor. Your Peco Peco is ready to ride.";
+		mes "You can rent a Peco Peco for 2500 Zeny.";
+		next;
+		menu "Give me one.",Rent_Peco,"Maybe some other time.",-;
+			mes "[PecoPeco Breeder]";					
+			mes "Alright. Have a nice day.";
+			close;
+			Rent_Peco:
+				check Zeny < 2500,-,Get_Peco; 
+				mes "[PecoPeco Breeder]";
+				mes "Your honor, you don't have enough money.";
+				close;
+				Get_Peco:
+					getskilllevel 63,@skilllv_riding; 
+					check @skilllv_riding => 1,-,Skill_Error; 
+					set Zeny -= 2500,0; 
+					option 2,1; 
+	Skill_Error: 
+		mes "[Peco Peco Breeder]"; 
+		mes "You need PecoPeco Ride to ride a Pecopeco."; 
+		close; 
+}
+
+in_hunter.vhm,146,99,2   script   "Falcon Breeder"   0,0,0,0	105,{ 
+	mes "[Falcon Breeder]"; 
+	check Job == 11,Rent,-;
+	check Job == 35,Rent,-;
+	mes "Sorry only Hunters can have a Falcon"; 
+	close; 
+	Rent: 
+		mes "Welcome, want a bird by your side young Hunter?"; 
+		next; 
+		menu "Yes",-,"No",L_MENU_1; 
+		check Zeny < 2500,-,L_SUB_1; 
+		mes "[Falcon Breeder]"; 
+		mes "Sorry, but you don't seem to have 2500z on you, come back later."; 
+		close; 
+		L_SUB_1: 
+			getskilllevel 127,@skilllv_falcon; 
+			check @skilllv_falcon = 1,-,Skill_Error; 
+			mes "[Falcon Breeder]"; 
+			mes "Say hello to your now best friend."; 
+			mes "When you have a Falcon by your side you don’t just have a new friend with you."; 
+			mes "You have a new ally"; 
+			mes "but it will cost you 2500z."; 
+			next; 
+			menu "I'll take one!",-,"Maybe later",L_ROOT_1; 
+			set Zeny -= 2500,0; 
+			option 1,1; 
+		L_ROOT_1: 
+			mes "Thanks for stopping by"; 
+			close; 
+		L_MENU_1: 
+			mes "[Falcon Breeder]"; 
+			mes "Okay, have a nice day!"; 
+			close; 
+		Skill_Error: 
+			mes "[Falcon Breeder]"; 
+			mes "You need the Falconry Mastery Skill"; 
+		close; 
+}

@@ -1,0 +1,21 @@
+//que_god01
+//===================================================================
+//Left Side
+que_god01.vhm,63,89,0	warp	qgwarp0001	1,1,que_god01.vhm,86,92
+que_god01.vhm,84,92,0	warp	qgwarp0002	1,1,que_god01.vhm,61,89
+
+//Left Bottom
+que_god01.vhm,47,80,0	warp	qgwarp0003	1,1,que_god01.vhm,50,53
+que_god01.vhm,50,55,0	warp	qgwarp0004	1,1,que_god01.vhm,47,83
+
+//Left Top
+que_god01.vhm,47,97,0	warp	qgwarp0005	1,1,que_god01.vhm,63,118
+que_god01.vhm,63,116,0	warp	qgwarp0006	1,1,que_god01.vhm,47,94
+
+//Right Bottom
+que_god01.vhm,16,80,0	warp	qgwarp0007	1,1,que_god01.vhm,13,53
+que_god01.vhm,13,55,0	warp	qgwarp0008	1,1,que_god01.vhm,16,83
+
+//Right top
+que_god01.vhm,16,97,0	warp	qgwarp0009	1,1,que_god01.vhm,13,118
+que_god01.vhm,13,116,0	warp	qgwarp0010	1,1,que_god01.vhm,16,94

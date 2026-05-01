@@ -1,0 +1,102 @@
+// ---------------------------------------------------------------------------------------
+//
+// Louyang Town/field Warps
+// - Created by L0ne_W0lf.
+// - Dungeon warps compliments 
+// - of Muad_Dib
+//========================================================================================
+
+//=====================================
+//Louyang Field
+//=====================================
+louyang.vhm,218,19,0	warp	Louyang1	1,1,lou_fild01.vhm,233,353
+lou_fild01.vhm,233,356,0	warp	Louyang2	1,1,louyang.vhm,218,22
+
+//=====================================
+//Dragon Castle
+//=====================================
+louyang.vhm,218,255,0	warp	Louyang3	1,1,lou_in01.vhm,101,122
+lou_in01.vhm,101,119,0	warp	Louyang4	1,1,louyang.vhm,218,252
+//Right Wing
+lou_in01.vhm,125,141,0	warp	Louyang5	1,1,lou_in01.vhm,156,141
+lou_in01.vhm,153,141,0	warp	Louyang6	1,1,lou_in01.vhm,122,141
+//Left Wing
+lou_in01.vhm,79,141,0	warp	Louyang7	1,1,lou_in01.vhm,47,141
+lou_in01.vhm,50,141,0	warp	Louyang8	1,1,lou_in01.vhm,82,141
+
+//=====================================
+// City Hall
+//=====================================
+louyang.vhm,309,80,0	warp	Louyang9	1,1,lou_in02.vhm,189,77
+lou_in02.vhm,189,74,0	warp	Louyang10	1,1,louyang.vhm,309,77
+// Stairs
+lou_in02.vhm,201,94,0	warp	Louyang11	1,1,lou_in02.vhm,173,46
+lou_in02.vhm,176,46,0	warp	Louyang12	1,1,lou_in02.vhm,203,94
+
+//=====================================
+// Doctor's Office
+//=====================================
+louyang.vhm,263,93,0	warp	Louyang13	1,1,lou_in02.vhm,245,59
+lou_in02.vhm,242,59,0	warp	Louyang14	1,1,louyang.vhm,260,93
+
+//=====================================
+// Tavern
+//=====================================
+louyang.vhm,280,167,0	warp	Louyang15	1,1,lou_in02.vhm,58,173
+lou_in02.vhm,58,170,0	warp	Louyang16	1,1,louyang.vhm,280,164
+// Left Wing
+lou_in02.vhm,80,190,0	warp	Louyang17	1,1,lou_in02.vhm,73,140
+lou_in02.vhm,71,140,0	warp	Louyang18	1,1,lou_in02.vhm,77,190
+// Right Wing
+lou_in02.vhm,35,190,0	warp	Louyang19	1,1,lou_in02.vhm,41,138
+lou_in02.vhm,44,138,0	warp	Louyang20	1,1,lou_in02.vhm,37,190
+
+//=====================================
+// Weapon/Armor shop
+//=====================================
+louyang.vhm,145,174,0	warp	Louyang21	1,1,lou_in02.vhm,126,168
+lou_in02.vhm,126,165,0	warp	Louyang22	1,1,louyang.vhm,145,171
+
+//=====================================
+// Tool shop
+//=====================================
+louyang.vhm,136,97,0	warp	Louyang23	1,1,lou_in02.vhm,247,171
+lou_in02.vhm,249,173,0	warp	Louyang24	1,1,louyang.vhm,136,99
+
+//=====================================
+// Storage Shed
+//=====================================
+louyang.vhm,129,121,0	warp	Louyang25	1,1,lou_in02.vhm,203,161
+lou_in02.vhm,203,159,0	warp	Louyang26	1,1,louyang.vhm,129,118
+louyang.vhm,125,121,0	warp	Louyang27	1,1,lou_in02.vhm,198,161
+lou_in02.vhm,198,159,0	warp	Louyang28	1,1,louyang.vhm,124,118
+
+//=====================================
+// Observation Tower
+//=====================================
+louyang.vhm,134,245,0	warp	Louyang29	1,1,lou_in01.vhm,25,19
+lou_in01.vhm,29,19,0	warp	Louyang30	1,1,louyang.vhm,136,245
+// Elevator
+lou_in01.vhm,14,18,0	warp	Louyang31	1,1,louyang.vhm,90,254
+
+//=====================================
+// Hermit's house
+//=====================================
+louyang.vhm,130,63,0	warp	Louyang32	1,1,lou_in02.vhm,72,31
+lou_in02.vhm,72,28,0	warp	Louyang33	1,1,louyang.vhm,130,60
+
+//=====================================
+// Poison King's House
+//=====================================
+louyang.vhm,317,176,0	warp	Louyang34	1,1,lou_in02.vhm,121,31
+lou_in02.vhm,121,28,0	warp	Louyang35	1,1,louyang.vhm,317,173
+
+//=====================================
+// Louyang Dungeon Warps
+//=====================================
+louyang.vhm,36,271,0	      warp	loud001	1,1,lou_dun01.vhm,221,195
+lou_dun01.vhm,222,195,0	      warp	loud002	1,1,louyang.vhm,39,271
+lou_dun01.vhm,41,200,0	      warp	loud003	1,1,lou_dun02.vhm,286,20
+lou_dun02.vhm,287,21,0	      warp	loud004	1,1,lou_dun01.vhm,40,201
+lou_dun03.vhm,165,34,0	      warp	loud005	1,1,lou_dun02.vhm,165,269
+lou_dun02.vhm,165,270,0	      warp	loud006	1,1,lou_dun03.vhm,165,35

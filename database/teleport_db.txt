@@ -1,0 +1,16 @@
+//Trigger,MapName,X-Coord,Y-Coord
+prontera,prontera,155,184
+izlude,izlude,128,93
+geffen,geffen,120,63
+alberta,alberta,30,234
+payon,payon,90,126
+morocc,morocc,158,282
+aldebaran,aldebaran,140,121
+xmas,xmas,149,129
+comodo,comodo,190,157
+yuno,yuno,158,69
+amatsu,amatsu,197,86
+gonryun,gonryun,159,117
+umbala,umbala,123,143
+louyang,louyang,217,97
+ayothaya,ayothaya,208,248

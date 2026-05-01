@@ -1,0 +1,599 @@
+//---------------------------------------------------------------------------------------- 
+// (Warper) NPC - From Weiss, maked by (Martijn) 
+// eWeiss Project 2003
+// Town Warper
+//----------------------------------------------------------------------------------------
+prontera.vhm,159,193,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Izlude
+izlude.vhm,134,90,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Geffen
+geffen.vhm,124,68,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Alberta
+alberta.vhm,32,239,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Payon
+payon.vhm,144,222,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Morocc
+morocc.vhm,164,281,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Aldebaran
+aldebaran.vhm,144,114,0 	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Lutie
+xmas.vhm,150,135,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Comodo
+comodo.vhm,192,165,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+
+//Yuno
+yuno.vhm,153,164,4 	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Amatsu
+amatsu.vhm,194,82,4	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Gon-Ryune",M_Gon,"Umbala",M_Umbala,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Umbala:
+	warp "umbala",123,143;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Gonryun
+gonryun.vhm,160,123,3	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Umbala
+umbala.vhm,126,140,3	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Yuno",M_Yuno,"Louyang",M_Lou,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Yuno:
+        warp "yuno",158,169;
+M_Lou:
+	warp "louyang",217,98;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}
+
+//Louyang
+louyang.vhm,223,94,3	script	"Town Warper"	125,{
+	mes "[Town Warper]";
+	mes "Hello, I'm the Town Warper. I can warp you to pretty much any Town you'd like.";
+	next;
+	mes "Where would you like to go?";
+	emote 1;
+	mes "Please choose your destination:";
+	next;
+L_MENU_0_1:
+	menu "Prontera",M_Prontera,"Izlude",M_Izlude,"Geffen",M_Geffen,"Alberta",M_Alberta,"Payon",M_Payon,"Morocc",M_Morocc,"Aldebaran",M_Aldebaran,"Lutie",M_Xmas,"Comodo",M_Comodo,"Amatsu",M_Ama,"Gon-Ryune",M_Gon,"Yuno",M_Yuno,"Umbala",M_Umbala,"Glast Heim",M_gef_fild06;
+	close;
+M_Prontera:
+	warp "prontera",155,184;	
+M_Izlude:
+        warp "izlude",128,93;	
+M_Geffen:
+	warp "geffen",120,63;
+M_Alberta:
+	warp "alberta",30,234;
+M_Payon:
+        warp "payon",146,217;
+M_Morocc:
+	warp "morocc",158,282;
+M_Aldebaran:
+	warp "aldebaran",140,121;
+M_Xmas:
+	warp "xmas",148,130;
+M_Comodo:
+        warp "comodo",191,153;
+M_Ama:
+	warp "amatsu",197,86;
+M_Gon:
+	warp "gon_fild01",257,90;
+M_Yuno:
+        warp "yuno",158,169;
+M_Umbala:
+	warp "umbala",123,143;
+M_gef_fild06:
+        warp "gef_fild06",23,304;
+}

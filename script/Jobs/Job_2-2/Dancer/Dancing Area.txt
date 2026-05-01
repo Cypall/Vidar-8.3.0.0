@@ -1,0 +1,1565 @@
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Dancer Job Quest - Dancing Area
+// By Black Dragon
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+comodo.vhm,186,166,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,187,166,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,188,166,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,189,166,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,190,166,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,191,166,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,186,165,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,187,165,0	script	1	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 11,OKAY,-;
+				check @DANCE = 12,EXIT1,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+				OKAY:
+						set @DANCE + 1;
+				close;
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,188,165,0	script	2	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 4,OKAY,-;
+		check @DANCE = 5,EXIT1,-;
+		check @DANCE = 24,OKAY,-;
+		check @DANCE = 25,EXIT1,-;
+		check @DANCE = 28,OKAY,-;
+		check @DANCE = 29,EXIT1,-;
+		check @DANCE = 30,OKAY,-;
+		check @DANCE = 31,EXIT1,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 15,OKAY,-;
+				check @DANCE = 16,EXIT1,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 11,OKAY,-;
+					check @DANCE = 12,EXIT1,-;
+					check @DANCE = 23,OKAY,-;
+					check @DANCE = 24,EXIT1,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,189,165,0	script	3	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 4,EXIT1,-;
+		check @DANCE = 9,EXIT1,-;
+		check @DANCE = 12,EXIT1,-;
+		check @DANCE = 18,EXIT1,-;
+		check @DANCE = 22,EXIT1,-;
+		check @DANCE = 24,EXIT1,-;
+		check @DANCE = 30,EXIT1,NEXT;
+	NEXT:
+		check @DANCE = 3,OKAY,-;
+		check @DANCE = 8,OKAY,-;
+		check @DANCE = 11,OKAY,-;
+		check @DANCE = 17,OKAY,-;
+		check @DANCE = 21,OKAY0,-;
+		check @DANCE = 23,OKAY,-;
+		check @DANCE = 29,OKAY,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		OKAY0:
+				set @DANCE + 1;
+				mes "[Aier]";
+				mes "You're doing great!";
+			next;
+				mes "[Aier]";
+				mes "Final Test!";
+				mes "4, 3, 2, 7, 10, 5, 2, 3, 2, 5, 10, 11, 14, 9, 6, 7, 12, 15, 10, 6, GO!";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 7,EXIT1,-;
+				check @DANCE = 23,EXIT1,-;
+				check @DANCE = 31,EXIT1,-;
+				check @DANCE = 37,EXIT1,-;
+				check @DANCE = 39,EXIT1,NEXT1;
+			NEXT1:
+				check @DANCE = 6,OKAY,-;
+				check @DANCE = 22,OKAY,-;
+				check @DANCE = 30,OKAY,-;
+				check @DANCE = 36,OKAY,-;
+				check @DANCE = 38,OKAY,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 11,EXIT1,-;
+					check @DANCE = 13,EXIT1,-;
+					check @DANCE = 28,EXIT1,-;
+					check @DANCE = 38,EXIT1,NEXT2;
+				NEXT2:
+					check @DANCE = 10,OKAY,-;
+					check @DANCE = 12,OKAY,-;
+					check @DANCE = 27,OKAY,-;
+					check @DANCE = 37,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,190,165,0	script	4	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 22,OKAY,-;
+		check @DANCE = 23,EXIT1,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,191,165,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,186,164,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,187,164,0	script	5	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 5,OKAY,-;
+		check @DANCE = 6,EXIT1,-;
+		check @DANCE = 27,OKAY,-;
+		check @DANCE = 28,EXIT1,-;
+		check @DANCE = 31,OKAY,-;
+		check @DANCE = 32,EXIT1,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 10,OKAY,-;
+				check @DANCE = 11,EXIT1,-;
+				check @DANCE = 12,OKAY,-;
+				check @DANCE = 13,EXIT1,-;
+				check @DANCE = 16,OKAY,-;
+				check @DANCE = 17,EXIT1,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 12,OKAY,-;
+					check @DANCE = 13,EXIT1,-;
+					check @DANCE = 24,OKAY,-;
+					check @DANCE = 25,EXIT1,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,188,164,0	script	6	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 8,-,NEXT;
+			mes "[Aier]";
+			mes "Yup right there, that's where you'll begin.";
+		next;
+			mes "[Aier]";
+			mes "The dancing area is set up as a square.";
+			mes "You are standing on spot 6.";
+			mes "To your left is 5 and on your right is 7.";
+		next;
+			mes "[Aier]";
+			mes "The dancing area is a 4 x 4 square.";
+			mes "The top left corner, which is one to the left and one up from your current location, is 1.";
+			mes "The bottom right corner is 16, which is two to your right and two down.";
+		next;
+			mes "[Aier]";
+			mes "Hope you understand, because now it's testing time!";
+		next;
+			mes "[Aier]";
+			mes "First pattern!";
+			mes "I suggest that you memorize this so you remember where you're at!";
+		next;
+			mes "[Aier]";
+			random @TEST,3;
+		check @TEST = 0,-,TEST;
+				mes "11, 8, 3, 2, 5, 10, 7, GO!";
+				set Job_DA = 9;
+				set @DANCE = 1;
+			close;
+		TEST:
+			check @TEST = 1,-,TEST0;
+					mes "7, 12, 15, 10, 6, 3, 8, GO!";
+					set Job_DA = 10;
+					set @DANCE = 1;
+				close;
+		TEST0:
+				mes "7, 12, 16, 12, 7, 10, 15, GO!";
+				set Job_DA = 11;
+				set @DANCE = 1;
+			close;
+	NEXT:
+		check Job_DA = 9,-,EXIT;
+			check @DANCE = 11,EXIT1,-;
+			check @DANCE = 17,EXIT1,-;
+			check @DANCE = 21,EXIT1,-;
+			check @DANCE = 37,EXIT1,-;
+			check @DANCE = 42,EXIT1,NEXT1;
+		NEXT1:
+			check @DANCE = 10,OKAY,-;
+			check @DANCE = 16,OKAY,-;
+			check @DANCE = 20,OKAY,-;
+			check @DANCE = 36,OKAY,-;
+			check @DANCE = 41,OKAY0,-;
+			check @DANCE > 0,-,EXIT;
+					set @DANCE = 0;
+					mes "[Aier]";
+					mes "I'm sorry, but you goofed up.";
+				next;
+					mes "[Aier]";
+					mes "You stepped on a spot that you weren't supposed to.";
+				close;
+			OKAY:
+					set @DANCE + 1;
+				close;
+			OKAY0:
+					set Job_DA = 12;
+					mes "[Aier]";
+					mes "Excellent work!";
+					mes "You passed the dancing test!";
+				close;
+			EXIT:
+				check Job_DA = 10,-,EXIT0;
+					check @DANCE = 6,EXIT1,-;
+					check @DANCE = 24,EXIT1,-;
+					check @DANCE = 26,EXIT1,-;
+					check @DANCE = 32,EXIT1,-;
+					check @DANCE = 38,EXIT1,-;
+					check @DANCE = 42,EXIT1,NEXT2;
+				NEXT2:
+					check @DANCE = 5,OKAY,-;
+					check @DANCE = 23,OKAY,-;
+					check @DANCE = 25,OKAY,-;
+					check @DANCE = 31,OKAY,-;
+					check @DANCE = 37,OKAY,-;
+					check @DANCE = 41,OKAY0,-;
+					check @DANCE > 0,-,EXIT0;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT0:
+					check Job_DA = 11,-,EXIT1;
+						check @DANCE = 16,OKAY,-;
+						check @DANCE = 17,EXIT1,-;
+						check @DANCE = 38,OKAY,-;
+						check @DANCE = 39,EXIT1,-;
+						check @DANCE > 0,-,EXIT1;
+								set @DANCE = 0;
+								mes "[Aier]";
+								mes "I'm sorry, but you goofed up.";
+							next;
+								mes "[Aier]";
+								mes "You stepped on a spot that you weren't supposed to.";
+					EXIT1:
+						close;
+}
+
+comodo.vhm,189,164,0	script	7	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 7,OKAY,-;
+		check @DANCE = 8,EXIT1,-;
+		check @DANCE = 25,OKAY0,-;
+		check @DANCE = 26,EXIT1,-;
+		check @DANCE = 37,OKAY0,-;
+		check @DANCE = 38,EXIT1,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+				mes "[Aier]";
+				mes "Good job!";
+			next;
+				mes "[Aier]";
+				mes "Second test!";
+				mes "3, 8, 6, 3, 8, 12, 15, 10, 6, 3, 8, 11, 6, 3, GO!";
+			close;
+		OKAY0:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 1,OKAY0,-;
+				check @DANCE = 2,EXIT1,-;
+				check @DANCE = 14,OKAY0,-;
+				check @DANCE = 15,EXIT1,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 2,EXIT1,-;
+					check @DANCE = 6,EXIT1,-;
+					check @DANCE = 27,EXIT1,-;
+					check @DANCE = 29,EXIT1,-;
+					check @DANCE = 33,EXIT1,-;
+				NEXT:
+					check @DANCE = 1,OKAY,-;
+					check @DANCE = 5,OKAY,-;
+					check @DANCE = 26,OKAY,-;
+					check @DANCE = 28,OKAY,-;
+					check @DANCE = 32,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,190,164,0	script	8	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 3,EXIT1,-;
+		check @DANCE = 10,EXIT1,-;
+		check @DANCE = 13,EXIT1,-;
+		check @DANCE = 19,EXIT1,-;
+	NEXT:
+		check @DANCE = 2,OKAY,-;
+		check @DANCE = 9,OKAY,-;
+		check @DANCE = 12,OKAY,-;
+		check @DANCE = 18,OKAY,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		OKAY0:
+// FINISH 1
+				set @DANCE + 1;
+			close;
+		OKAY1:
+// FINISH 2
+				set @DANCE + 1;
+			close;
+		OKAY2:
+// FINISH 2
+				set @DANCE + 1;
+			close;
+		OKAY3:
+				set Job_DA = 12;
+				mes "[Aier]";
+				mes "Excellent work!";
+				mes "You passed the dancing test!";
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 8,EXIT1,-;
+				check @DANCE = 22,EXIT1,-;
+				check @DANCE = 30,EXIT1,-;
+				check @DANCE = 36,EXIT1,-;
+				check @DANCE = 40,EXIT1,NEXT1;
+			NEXT1:
+				check @DANCE = 7,OKAY0,-;
+				check @DANCE = 21,OKAY1,-;
+				check @DANCE = 29,OKAY,-;
+				check @DANCE = 35,OKAY,-;
+				check @DANCE = 39,OKAY,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 10,EXIT1,-;
+					check @DANCE = 22,EXIT1,-;
+					check @DANCE = 37,EXIT1,-;
+					check @DANCE = 42,EXIT1,NEXT2;
+				NEXT2:
+					check @DANCE = 9,OKAY,-;
+					check @DANCE = 21,OKAY2,-;
+					check @DANCE = 36,OKAY,-;
+					check @DANCE = 41,OKAY3,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,191,164,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,186,163,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,187,163,0	script	9	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 36,EXIT1,-;
+		check @DANCE = 35,OKAY,-;
+		check @DANCE = 0,EXIT,-;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 18,EXIT1,-;
+				check @DANCE = 25,EXIT1,-;
+				check @DANCE = 17,OKAY,-;
+				check @DANCE = 24,OKAY,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 14,EXIT1,-;
+					check @DANCE = 18,EXIT1,-;
+					check @DANCE = 13,OKAY,-;
+					check @DANCE = 17,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,188,163,0	script	10	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 7,EXIT1,-;
+		check @DANCE = 16,EXIT1,-;
+		check @DANCE = 27,EXIT1,-;
+		check @DANCE = 33,EXIT1,-;
+		check @DANCE = 41,EXIT1,NEXT;
+	NEXT:
+		check @DANCE = 6,OKAY,-;
+		check @DANCE = 15,OKAY,-;
+		check @DANCE = 26,OKAY,-;
+		check @DANCE = 32,OKAY,-;
+		check @DANCE = 40,OKAY,-;
+		check @DANCE = 0,EXIT,-;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 5,EXIT1,-;
+				check @DANCE = 10,EXIT1,-;
+				check @DANCE = 14,EXIT1,-;
+				check @DANCE = 20,EXIT1,-;
+				check @DANCE = 33,EXIT1,NEXT1;
+			NEXT1:
+				check @DANCE = 4,OKAY,-;
+				check @DANCE = 9,OKAY,-;
+				check @DANCE = 13,OKAY,-;
+				check @DANCE = 19,OKAY,-;
+				check @DANCE = 32,OKAY,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 7,EXIT1,-;
+					check @DANCE = 26,EXIT1,-;
+					check @DANCE = 32,EXIT1,-;
+					check @DANCE = 34,EXIT1,-;
+					check @DANCE = 40,EXIT1,NEXT2;
+				NEXT2:
+					check @DANCE = 6,OKAY,-;
+					check @DANCE = 25,OKAY,-;
+					check @DANCE = 31,OKAY,-;
+					check @DANCE = 33,OKAY,-;
+					check @DANCE = 39,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,189,163,0	script	11	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 2,EXIT1,-;
+		check @DANCE = 20,EXIT1,-;
+		check @DANCE = 34,EXIT1,-;
+		check @DANCE = 1,OKAY,-;
+		check @DANCE = 19,OKAY,-;
+		check @DANCE = 33,OKAY,-;
+		check @DANCE = 0,EXIT,-;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 9,EXIT1,-;
+				check @DANCE = 21,EXIT1,-;
+				check @DANCE = 27,EXIT1,-;
+				check @DANCE = 29,EXIT1,-;
+				check @DANCE = 41,EXIT1,NEXT;
+			NEXT:
+				check @DANCE = 8,OKAY,-;
+				check @DANCE = 20,OKAY,-;
+				check @DANCE = 26,OKAY,-;
+				check @DANCE = 28,OKAY,-;
+				check @DANCE = 40,OKAY,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 16,EXIT1,-;
+					check @DANCE = 41,EXIT1,-;
+					check @DANCE = 15,OKAY,-;
+					check @DANCE = 40,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,190,163,0	script	12	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 14,EXIT1,-;
+		check @DANCE = 39,EXIT1,-;
+		check @DANCE = 13,OKAY,-;
+		check @DANCE = 38,OKAY,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 3,EXIT1,-;
+				check @DANCE = 35,EXIT1,-;
+				check @DANCE = 2,OKAY,-;
+				check @DANCE = 34,OKAY,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 3,EXIT1,-;
+					check @DANCE = 5,EXIT1,-;
+					check @DANCE = 9,EXIT1,-;
+					check @DANCE = 21,EXIT1,-;
+					check @DANCE = 30,EXIT1,-;
+					check @DANCE = 36,EXIT1,NEXT;
+				NEXT:
+					check @DANCE = 2,OKAY,-;
+					check @DANCE = 4,OKAY,-;
+					check @DANCE = 8,OKAY,-;
+					check @DANCE = 20,OKAY,-;
+					check @DANCE = 29,OKAY,-;
+					check @DANCE = 35,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,191,163,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,186,162,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,187,162,0	script	13	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 19,EXIT1,-;
+				check @DANCE = 18,OKAY,-;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,188,162,0	script	14	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 35,EXIT1,-;
+		check @DANCE = 34,OKAY,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 15,EXIT1,-;
+					check @DANCE = 19,EXIT1,-;
+					check @DANCE = 14,OKAY,-;
+					check @DANCE = 18,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,189,162,0	script	15	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE = 15,EXIT1,-;
+		check @DANCE = 40,EXIT1,-;
+		check @DANCE = 14,OKAY,-;
+		check @DANCE = 39,OKAY,-;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+			close;
+		OKAY:
+				set @DANCE + 1;
+			close;
+		OKAY0:
+// FINISH 1
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE = 4,EXIT1,-;
+				check @DANCE = 28,EXIT1,-;
+				check @DANCE = 34,EXIT1,-;
+				check @DANCE = 3,OKAY,-;
+				check @DANCE = 27,OKAY,-;
+				check @DANCE = 33,OKAY,-;
+				check @DANCE > 0,-,EXIT0;
+					set @DANCE = 0;
+					mes "[Aier]";
+					mes "I'm sorry, but you goofed up.";
+				next;
+					mes "[Aier]";
+					mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 8,EXIT1,-;
+					check @DANCE = 20,EXIT1,-;
+					check @DANCE = 31,EXIT1,-;
+					check @DANCE = 35,EXIT1,NEXT;
+				NEXT:
+					check @DANCE = 7,OKAY0,-;
+					check @DANCE = 19,OKAY,-;
+					check @DANCE = 30,OKAY,-;
+					check @DANCE = 34,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,190,162,0	script	16	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		OKAY:
+				set @DANCE + 1;
+			close;
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE = 4,EXIT1,-;
+					check @DANCE = 3,OKAY,-;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+			close;
+}
+
+comodo.vhm,191,162,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,186,161,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,187,161,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,188,161,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,189,161,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,190,161,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}
+
+comodo.vhm,191,161,0	script	DanceSpot	0,0,2,0	-1,{
+OnTouch:
+	check Job_DA = 9,-,EXIT;
+		check @DANCE > 0,-,EXIT;
+				set @DANCE = 0;
+				mes "[Aier]";
+				mes "I'm sorry, but you goofed up.";
+			next;
+				mes "[Aier]";
+				mes "You stepped on a spot that you weren't supposed to.";
+		EXIT:
+			check Job_DA = 10,-,EXIT0;
+				check @DANCE > 0,-,EXIT0;
+						set @DANCE = 0;
+						mes "[Aier]";
+						mes "I'm sorry, but you goofed up.";
+					next;
+						mes "[Aier]";
+						mes "You stepped on a spot that you weren't supposed to.";
+			EXIT0:
+				check Job_DA = 11,-,EXIT1;
+					check @DANCE > 0,-,EXIT1;
+							set @DANCE = 0;
+							mes "[Aier]";
+							mes "I'm sorry, but you goofed up.";
+						next;
+							mes "[Aier]";
+							mes "You stepped on a spot that you weren't supposed to.";
+				EXIT1:
+					close;
+}

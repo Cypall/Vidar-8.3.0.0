@@ -1,0 +1,753 @@
+//----------------------------------------------------------------------
+// Aldebaran guild house mob generator
+// These scripts put monsters in the guild house when it is empty.
+// By: L0ne_W0lf, with help from Illogik and Lordalfa. 
+// Monster info from ASB boards.
+//----------------------------------------------------------------------
+//Aldebaran house 1
+aldeg_cas01.vhm,28,254,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @aldeg1spawn == 0,-,SC_Close;
+		guildreg "aldeg_cas01";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob C_TOWER_MANAGER,216,23,0,0
+		callmymob C_TOWER_MANAGER,216,23,0,0
+		callmymob RAYDRIC_ARCHER,216,23,0,0
+		set @aldeg1spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Aldebaran House 2
+aldeg_cas02.vhm,68,157,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @aldeg2spawn == 0,-,SC_Close;
+		guildreg "aldeg_cas02";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob C_TOWER_MANAGER,213,23,0,0
+		callmymob C_TOWER_MANAGER,213,23,0,0
+		callmymob RAYDRIC_ARCHER,213,23,0,0
+		set @aldeg2spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Aldebaran House 3
+aldeg_cas03.vhm,114,294,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @aldeg3spawn == 0,-,SC_Close;
+		guildreg "aldeg_cas03";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob C_TOWER_MANAGER,205,31,0,0
+		callmymob C_TOWER_MANAGER,205,31,0,0
+		callmymob RAYDRIC_ARCHER,205,31,0,0
+		set @aldeg3spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Aldebaran House 4
+aldeg_cas04.vhm,149,12,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @aldeg4spawn == 0,-,SC_Close;
+		guildreg "aldeg_cas04";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob C_TOWER_MANAGER,36,217,0,0
+		callmymob C_TOWER_MANAGER,36,217,0,0
+		callmymob RAYDRIC_ARCHER,36,217,0,0
+		set @aldeg4spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Aldebaran House 5
+aldeg_cas05.vhm,216,110,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @aldeg5spawn == 0,-,SC_Close;
+		guildreg "aldeg_cas05";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob PENOMENA,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob ALARM,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob CLOCK,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob C_TOWER_MANAGER,27,101,0,0
+		callmymob C_TOWER_MANAGER,27,101,0,0
+		callmymob RAYDRIC_ARCHER,27,101,0,0
+		set @aldeg5spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//----------------------------------------------------------------------
+// Geffen guild house mob generator
+// These scripts put monsters in the guild house when it is empty.
+// By: L0ne_W0lf, with help from Illogik and Lordalfa. 
+// Monster infro from ASB boards.
+//----------------------------------------------------------------------
+//Geffen house 1 - West entrance
+gefg_cas01.vhm,40,138,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @gefg1spawn == 0,-,SC_Close;
+		guildreg "gefg_cas01";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob HIGH_ORC,197,181,0,0
+		callmymob HIGH_ORC,197,181,0,0
+		callmymob ORC_ARCHER,197,181,0,0
+		callmymob ORC_ARCHER,197,181,0,0
+		set @gefg1spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Geffen house 1 - East entrance
+//gefg_cas01.vhm,102,178,0	script	HIDDENNPC	-1,{
+//	OnInit:
+//		check @gefg1spawn == 0,-,SC_Close;
+//		guildreg "gefg_cas01";
+//		check guildid == 0,-,return;
+//		callmymob EVIL_DRUID,0,0,0,0
+//		callmymob EVIL_DRUID,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob BATHORY,0 0,0,0
+//		callmymob BATHORY,0 0,0,0
+//		callmymob JAKK,0,0,0,0
+//		callmymob JAKK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob RAYDRIC,0,0,0,0
+//		callmymob RAYDRIC,0,0,0,0
+//		callmymob HIGH_ORC,197,181,0,0
+//		callmymob HIGH_ORC,197,181,0,0
+//		callmymob ORC_ARCHER,197,181,0,0
+//		callmymob ORC_ARCHER,197,181,0,0
+//		set @gefg1spawn = 1;
+//		return;
+//	Return:
+//		return;
+//	SC_Close:
+//		close;
+//}
+
+//Geffen house 2
+gefg_cas02.vhm,76,150,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @gefg2spawn == 0,-,SC_Close;
+		guildreg "gefg_cas02";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob HIGH_ORC,176,178,0,0
+		callmymob HIGH_ORC,176,178,0,0
+		callmymob ORC_ARCHER,176,178,0,0
+		callmymob ORC_ARCHER,176,178,0,0
+		set @gefg2spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Geffen house 3 - North entrance
+gefg_cas03.vhm,58,291,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @gefg3spawn == 0,-,SC_Close;
+		guildreg "gefg_cas03";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob HIGH_ORC,244,166,0,0
+		callmymob HIGH_ORC,244,166,0,0
+		callmymob ORC_ARCHER,244,166,0,0
+		callmymob ORC_ARCHER,244,166,0,0
+		set @gefg3spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Geffen house 3 - South entrance
+//gefg_cas03.vhm,94,156,0	script	HIDDENNPC	-1,{
+//	OnInit:
+//		check @gefg3spawn == 0,-,SC_Close;
+//		guildreg "gefg_cas03";
+//		check guildid == 0,-,return;
+//		callmymob EVIL_DRUID,0,0,0,0
+//		callmymob EVIL_DRUID,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob BATHORY,0 0,0,0
+//		callmymob BATHORY,0 0,0,0
+//		callmymob JAKK,0,0,0,0
+//		callmymob JAKK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob RAYDRIC,0,0,0,0
+//		callmymob RAYDRIC,0,0,0,0
+//		callmymob HIGH_ORC,244,166,0,0
+//		callmymob HIGH_ORC,244,166,0,0
+//		callmymob ORC_ARCHER,244,166,0,0
+//		callmymob ORC_ARCHER,244,166,0,0
+//		set @gefg3spawn = 1;
+//		return;
+//	Return:
+//		return;
+//	SC_Close:
+//		close;
+//}
+
+//Geffen house 4
+gefg_cas04.vhm,35,143,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @gefg4spawn == 0,-,SC_Close;
+		guildreg "gefg_cas04";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob HIGH_ORC,174,177,0,0
+		callmymob HIGH_ORC,174,177,0,0
+		callmymob ORC_ARCHER,174,177,0,0
+		callmymob ORC_ARCHER,174,177,0,0
+		set @gefg4spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Geffen house 5 - West Entrance
+gefg_cas05.vhm,76,148,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @gefg5spawn == 0,-,SC_Close;
+		guildreg "gefg_cas05";
+		check guildid == 0,-,return;
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob EVIL_DRUID,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob WIND_GHOST,0,0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob BATHORY,0 0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob JAKK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob MARDUK,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob HIGH_ORC,194,184,0,0
+		callmymob HIGH_ORC,194,184,0,0
+		callmymob ORC_ARCHER,194,184,0,0
+		callmymob ORC_ARCHER,194,184,0,0
+		set @gefg5spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Geffen house 5 - East Entrance
+//gefg_cas05.vhm,89,202,0	script	HIDDENNPC	-1,{
+//	OnInit:
+//		check @gefg5spawn == 0,-,SC_Close;
+//		guildreg "gefg_cas05";
+//		check guildid == 0,-,return;
+//		callmymob EVIL_DRUID,0,0,0,0
+//		callmymob EVIL_DRUID,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob WIND_GHOST,0,0,0,0
+//		callmymob BATHORY,0 0,0,0
+//		callmymob BATHORY,0 0,0,0
+//		callmymob JAKK,0,0,0,0
+//		callmymob JAKK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob MARDUK,0,0,0,0
+//		callmymob RAYDRIC,0,0,0,0
+//		callmymob RAYDRIC,0,0,0,0
+//		callmymob HIGH_ORC,194,184,0,0
+//		callmymob HIGH_ORC,194,184,0,0
+//		callmymob ORC_ARCHER,194,184,0,0
+//		callmymob ORC_ARCHER,194,184,0,0
+//		set @gefg5spawn = 1;
+//		return;
+//	Return:
+//		return;
+//	SC_Close:
+//		close;
+//}
+
+//----------------------------------------------------------------------
+// Payon guild house mob generator
+// These scripts put monsters in the guild house when it is empty.
+// By: L0ne_W0lf, with help from Illogik and Lordalfa. 
+// Monster infro from ASB boards.
+//----------------------------------------------------------------------
+//Payon House 1
+payg_cas01.vhm,214,40,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @payg1spawn == 0,-,SC_Close;
+		guildreg "payg_cas01";
+		check guildid == 0,-,return;
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob MUTANT_DRAGON,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob MOONLIGHT,0,0,0,0
+		callmob "payg_cas01",0,0,"Eddgar",1115,0
+		callmymob HORONG,0,0,0,0
+		callmymob HORONG,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob GARGOYLE,0,0,0,0
+		callmymob WANDERER,138,138,0,0
+		callmymob RAYDRIC_ARCHER,138,138,0,0
+		callmymob RAYDRIC_ARCHER,138,138,0,0
+		set @payg1spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Payon House 2
+payg_cas02.vhm,273,65,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @payg2spawn == 0,-,SC_Close;
+		guildreg "payg_cas02";
+		check guildid == 0,-,return;
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob MUTANT_DRAGON,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob MOONLIGHT,0,0,0,0
+		callmob "payg_cas02",0,0,"Eddgar",1115,0
+		callmymob HORONG,0,0,0,0
+		callmymob HORONG,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob GARGOYLE,0,0,0,0
+		callmymob WANDERER,138,138,0,0
+		callmymob WANDERER,38,25,0,0
+		callmymob RAYDRIC_ARCHER,38,25,0,0
+		callmymob RAYDRIC_ARCHER,38,25,0,0
+		set @payg2spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Payon House 3
+payg_cas03.vhm,226,18,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @payg3spawn == 0,-,SC_Close;
+		guildreg "payg_cas03";
+		check guildid == 0,-,return;
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob MUTANT_DRAGON,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob MOONLIGHT,0,0,0,0
+		callmob "payg_cas03",0,0,"Eddgar",1115,0
+		callmymob HORONG,0,0,0,0
+		callmymob HORONG,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob GARGOYLE,0,0,0,0
+		callmymob WANDERER,138,138,0,0
+		callmymob WANDERER,268,264,0,0
+		callmymob RAYDRIC_ARCHER,268,264,0,0
+		callmymob RAYDRIC_ARCHER,268,264,0,0
+		set @payg3spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Payon House 4
+payg_cas04.vhm,252,278,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @payg4spawn == 0,-,SC_Close;
+		guildreg "payg_cas01";
+		check guildid == 0,-,return;
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob MUTANT_DRAGON,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob MOONLIGHT,0,0,0,0
+		callmob "payg_cas04",0,0,"Eddgar",1115,0
+		callmymob HORONG,0,0,0,0
+		callmymob HORONG,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob GARGOYLE,0,0,0,0
+		callmymob WANDERER,138,138,0,0
+		callmymob WANDERER,270,28,0,0
+		callmymob RAYDRIC_ARCHER,270,28,0,0
+		callmymob RAYDRIC_ARCHER,270,28,0,0
+		set @payg4spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Payon House 5
+payg_cas05.vhm,70,219,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @payg5spawn == 0,-,SC_Close;
+		guildreg "payg_cas05";
+		check guildid == 0,-,return;
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob GREATEST_GENERAL,0,0,0,0
+		callmymob WANDERER,0,0,0,0
+		callmymob MUTANT_DRAGON,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob BATHORY,0,0,0,0
+		callmymob MOONLIGHT,0,0,0,0
+		callmob "payg_cas05",0,0,"Eddgar",1115,0
+		callmymob HORONG,0,0,0,0
+		callmymob HORONG,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob KOBOLD_ARCHER,0,0,0,0
+		callmymob GARGOYLE,0,0,0,0
+		callmymob WANDERER,138,138,0,0
+		callmymob WANDERER,30,30,0,0
+		callmymob RAYDRIC_ARCHER,30,30,0,0
+		callmymob RAYDRIC_ARCHER,30,30,0,0
+		set @payg5spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//----------------------------------------------------------------------
+// Prontera guild house mob generator
+// These scripts put monsters in the guild house when it is empty.
+// By: L0ne_W0lf, with help from Illogik and Lordalfa. 
+// Monster infro from ASB boards.
+//----------------------------------------------------------------------
+//Prontera house 1
+prtg_cas01.vhm,105,39,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @prtg1spawn == 0,-,SC_Close;
+		guildreg "prtg_cas01";
+		check guildid == 0,-,return;
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob STORMY_KNIGHT,0,0,0,0
+		callmymob GARM,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob GRYPHON,0,0,0,0
+		callmymob CHIMERA,0,0,0,0
+		callmymob ALICE,0,0,0,0
+		callmymob ZEALOTUS,0,0,0,0
+		callmymob GARM,197,197,0,0
+		callmob "prtg_cas01",197,197,"Knight of Emperium Guardian",1219,0
+		callmymob RAYDRIC_ARCHER,197,197,0,0
+		callmymob RAYDRIC_ARCHER,197,197,0,0
+		set @prtg1spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Prontera House 2
+prtg_cas02.vhm,38,227,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @prtg2spawn == 0,-,SC_Close;
+		guildreg "prtg_cas02";
+		check guildid == 0,-,return;
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob STORMY_KNIGHT,0,0,0,0
+		callmymob GARM,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob GRYPHON,0,0,0,0
+		callmymob CHIMERA,0,0,0,0
+		callmymob ALICE,0,0,0,0
+		callmymob ZEALOTUS,0,0,0,0
+		callmymob GARM,157,174,0,0
+		callmob "prtg_cas02",157,174,"Knight of Emperium Guardian",1219,0
+		callmymob RAYDRIC_ARCHER,157,174,0,0
+		callmymob RAYDRIC_ARCHER,157,174,0,0
+		set @prtg2spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Prontera House 3
+prtg_cas03.vhm,168,4,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @prtg3spawn == 0,-,SC_Close;
+		guildreg "prtg_cas03";
+		check guildid == 0,-,return;
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob STORMY_KNIGHT,0,0,0,0
+		callmymob GARM,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob GRYPHON,0,0,0,0
+		callmymob CHIMERA,0,0,0,0
+		callmymob ALICE,0,0,0,0
+		callmymob ZEALOTUS,0,0,0,0
+		callmymob GARM,16,220,0,0
+		callmob "prtg_cas03",16,220,"Knight of Emperium Guardian",1219,0
+		callmymob RAYDRIC_ARCHER,16,220,0,0
+		callmymob RAYDRIC_ARCHER,16,220,0,0
+		set @prtg3spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Prontera House 4
+prtg_cas04.vhm,87,7,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @prtg4spawn == 0,-,SC_Close;
+		guildreg "prtg_cas04";
+		check guildid == 0,-,return;
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob STORMY_KNIGHT,0,0,0,0
+		callmymob GARM,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob GRYPHON,0,0,0,0
+		callmymob CHIMERA,0,0,0,0
+		callmymob ALICE,0,0,0,0
+		callmymob ZEALOTUS,0,0,0,0
+		callmymob GARM,291,14,0,0
+		callmob "prtg_cas04",291,14,"Knight of Emperium Guardian",1219,0
+		callmymob RAYDRIC_ARCHER,291,14,0,0
+		callmymob RAYDRIC_ARCHER,291,14,0,0
+		set @prtg4spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}
+
+//Prontera House 5
+prtg_cas05.vhm,15,227,0	script	HIDDENNPC	-1,{
+	OnInit:
+		check @prtg5spawn == 0,-,SC_Close;
+		guildreg "prtg_cas05";
+		check guildid == 0,-,return;
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob RAYDRIC,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob KHALITZBURG,0,0,0,0
+		callmymob STORMY_KNIGHT,0,0,0,0
+		callmymob GARM,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob RAYDRIC_ARCHER,0,0,0,0
+		callmymob GRYPHON,0,0,0,0
+		callmymob CHIMERA,0,0,0,0
+		callmymob ALICE,0,0,0,0
+		callmymob ZEALOTUS,0,0,0,0
+		callmymob GARM,266,266,0,0
+		callmob "prtg_cas05",266,266,"Knight of Emperium Guardian",1219,0
+		callmymob RAYDRIC_ARCHER,266,266,0,0
+		callmymob RAYDRIC_ARCHER,266,266,0,0
+		set @prtg5spawn = 1;
+		return;
+	Return:
+		return;
+	SC_Close:
+		close;
+}

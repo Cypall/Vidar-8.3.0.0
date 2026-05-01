@@ -1,0 +1,1826 @@
+//- JOBCHANGE QUEST - PRIEST - Translated By: Pgro Team (OwNaGe)
+//- Fixed by: illogik(tk)
+prt_church.vhm,16,41,4 script "Father Thomas" 60,{
+	mes "[Father Thomas]";
+	check job == 4,ApPr,-;
+	check job == 8,-,ChkNov;
+	mes "God bless you, son .";
+	mes "You are here again because you listened to god's orders.";
+	next;
+	mes "[Father Thomas]";
+	mes "I don't know if god's sons and daughters are going in the path of light or the path of darkness .";
+	mes "So why are you here today?";
+	next;
+menu "I just walked by and wanted to say how you are.",-,"I am here to help the acolytes.",PrMnu_1,"Life is really hard,I was wondering if you can help.",PrMnu_2;
+	mes "[Father Thomas]";
+	mes "Oh, well I am fine thank you";
+	mes "Help me ask how the other son's and daughters are doing.";
+	next;
+	mes "[Father Thomas]";
+	mes "We priests are here for one reason, to obey the orders of the god.";
+	mes "If you come across people that needs help, remember to help them...";
+	close;
+PrMnu_1:
+	mes "[Father Thomas]";
+	mes "Oh...thats a great idea";
+	mes "Since you're a priest, you can't forget that you have to help other acolytes when they need help .";
+	next;
+	mes "[Father Thomas]";
+	mes "Since we can't help the acolytes through all the way through their destinys.";
+	mes "They will need alot of experience and training ";
+	next;
+	mes "[Father Thomas]";
+	mes "I hope you can help the acolytes with the first level of ghost immunation.";
+	mes "Also, if you want to go in and help you'll need ^0000FFROSARY^000000.";
+	next;
+	mes "[Father Thomas]";
+	mes "You will help with the training right?";
+	next;
+menu "Yes, i will help them with all my might.",-,"I'll come back later.",PrMnu_1_1;
+	mes "[Father Thomas]";
+	checkitem 2608,1,-,ItmErr;
+	mes "Okay, then i'll send you to the training ground .";
+	mes "Please help me look after the others...";
+	next;
+	mes "[Father Thomas]";
+	mes "I hope you'll teach them well and help them become good priests.";
+	warp "job_prist",26,178;
+	close;
+ItmErr:
+	mes "[Father Thomas]";
+	mes "Hm..let see if you have the the ^0000FFROSARY^000000.";
+	next;
+	mes "[Father Thomas]";
+	mes "If you want to help with the training plz get a ^0000FFROSARY^000000 then come back later.";
+	close;
+PrMnu_1_1:
+	mes "[Father Thomas]";
+	mes "Okay, now get all your stuff ready.";
+	mes " I hope you can get a ^0000FFROSARY^000000 so you can help out the other acolytes";
+	close;
+PrMnu_2:
+	mes "[Father Thomas]";
+	mes "Keep up the good work, you are one of the people that god loves the most.";
+	mes "In the name of god, I will heal the wounds on your body.";
+	next;
+	heal 100,100;
+	mes "[Father Thomas]";
+	mes "God, please look after us.";
+	mes "So that under any conditions we can think clearly and have faith in ourselves...";
+	next;
+	mes "[Father Thomas]";
+	mes "God, some of your child here are suffering, please heal them";
+	mes "Please use your godly powers, to heal the wounds and make your child feel better.";
+	next;
+	mes "[Father Thomas]";
+	mes "You should be feeling better now, please go back and listen to god's orders.";
+	mes "God bless you.";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	check gender == 1,-,Grl_1;
+	mes "May God be with you, Son.";
+	goto TalkCont_1;
+Grl_1:
+	mes "God Bless you, Daughter.";
+TalkCont_1:
+	mes "This is Prontera Church. What are you here for?";
+	next;
+menu "I want to become an acolyote.",-,"I want to switch my job to Priest.",PrMnu_3,"I am just walking around.",PrMnu_4;
+	mes "[Father Thomas]";
+	mes "Haha.. so you want to become an acolyote eh?";
+	mes "To apply for acolyote go into the room opposite from here.";
+	goto TalkCont_2;
+PrMnu_3:
+	mes "[Father Thomas]";
+	mes "Haha...in order to become a priest you must first become an acolyote.";
+	mes "To become an acolyote, go to the opposite room and talk to the priest there.";
+	goto TalkCont_2;
+PrMnu_4:
+	mes "[Father Thomas]";
+	mes "Please feel free to rest, the church is the safest place in this world.";
+TalkCont_2:
+	next;
+	mes "[Father Thomas]";
+	mes "God bless you.";
+	close;
+DiffClass:
+	check gender == 1,-,Grl_2;
+	mes "May God be with you, Son.";
+	goto TalkCont_3;
+Grl_2:
+	mes "God Bless you, Daughter.";
+TalkCont_3:
+	mes "This is Prontera Church, what are you doing here?";
+	next;
+menu "Can you please tell me about the priests.",-,"I am just walking around.",PrMnu_5;
+	mes "[Father Thomas]";
+	mes "Priests are the people that follow the order of the god .";
+	mes "After you become a priest, all the hard work you did when you are an acolyte will be rewarded.";
+	next;
+	mes "[Father Thomas]";
+	mes "To become a priest, you must past a few tests and be at least job lvl 40.";
+	mes "With priest you can get skills that really power, also the supportive skills will be increased.";
+	next;
+	mes "[Father Thomas]";
+	mes "If you become a priest, you'll be really important, in towns, mazes and dungeons.";
+	mes "We priest have only one objective, to help others...";
+	next;
+	mes "[Father Thomas]";
+	mes "But, if you meet up if other priest, you can't judge them on how strong they are and how many people they have helped.";
+	mes "As a priest, you have a free will to help anyone you like.";
+	next;
+	mes "[Father Thomas]";
+	mes "If you want to help a person, you can't help them because you get profit, you got to help them because you want to.";
+	mes "You should be really polite and sincere when you help someone.";
+	next;
+	mes "[Father Thomas]";
+	mes "Now, I don't know if the things i said was really important..";
+	mes "How about you go meet the priest, and have a nice talk with him.";
+	goto TalkCont_2;
+PrMnu_5:
+	mes "[Father Thomas]";
+	mes "Please feel free to rest, the church is the safest place in this world.";
+	goto TalkCont_2;
+ApPr:
+	check job_prist_q == 0,-,ChkPr_M1;
+	check gender == 1,-,Grl_3;
+	mes "God bless you, son.";
+	goto TalkCont_4;
+Grl_3:
+	mes "God bless you, daughter.";
+TalkCont_4:
+	mes "What brought you here to me";
+	next;
+menu "I want to become a priest.",-,"I just want to see how you were doing.",PrMnu_6;
+	mes "[Father Thomas]";
+	mes "Oh..so you want to become a priest.";
+	mes "God will bless you for your determination.";
+	next;
+	mes "[Father Thomas]";
+	mes "My name is Thomas, I am in charge of getting rid of ghosts in Prontera";
+	mes "Please don't feel pressured, try to feel comfortable.";
+	next;
+	mes "[Father Thomas]";
+	mes "If you want to become a priest, you got to past a few requirements.";
+	mes "The first requirement is, to be job level 40 or above...";
+	next;
+	mes "[Father Thomas]";
+	mes "Please fill out to form to accept the training to become a priest.";
+	mes "Do you want to sign up for priest now?";
+	next;
+menu "Yes, i want to start my training now.",-,"I need a little time to decide.",PrMnu_7;
+	mes "[Father Thomas]";
+	check joblevel < 40,-,ChkPr;
+	mes "I am sorry, you can't become a priest right now...";
+	mes "Please go explore more and gain more experience before you come back.";
+	next;
+	mes "[Father Thomas]";
+	mes "Priest is Priest, Acolyte is Acolyte, they are both have a different destiny.";
+	mes "I hope when the time is right, you'll be back... I will wait for you here.";
+	close;
+ChkPr:
+	check skillpoint != 0,-,ChkPr_1;
+	mes "next;, you need to learn a certain skill before you can become a priest.";
+	mes "Please learn that specific skill, and come back later...";
+	close;
+ChkPr_1:
+	set job_prist_q = 1;
+	check gender == 1,-,Grl_4;
+	mes "Okay now, let me tell you about the trainings to become a priest.";
+	mes "The trainings are hard, I hope you can overcome everything. $charaname Good luck Son.";
+	goto TalkCont_5;
+Grl_4:
+	mes "Okay now, let me tell you about the trainings to become a priestess.";
+	mes "The trainings are hard, I hope you can overcome everything. $charaname Good luck Daughter.";
+TalkCont_5:
+	next;
+	mes "[Father Thomas]";
+	mes "In order to become a priest, this is the first task you need to do.";
+	mes "Go find 3 highly-trained priest in town and talk to them, after that come back here.";
+	next;
+	mes "[Father Thomas]";
+	mes "The second task you need to do is overcome ghost spirits.";
+	mes "Overcoming a ghost? All you need to do make it go away before it corrupts you.";
+	next;
+	mes "[Father Thomas]";
+	mes "The third task is to prove that you're a good priest.";
+	mes "We need to see how you help others and how good you follow god's orders.";
+	next;
+	mes "[Father Thomas]";
+	mes "But if you're a lvl 50 + (job) Acolyte, You can skip the first test.";
+	mes "If you're a lvl 50+ acolyte, that means you are a really hard-working person...";
+	next;
+	mes "[Father Thomas]";
+	check joblevel == 50,-,ChkPr_2;
+	mes "Wow, your already a job lvl 50.";
+	mes "I think your a really loyal and good acolyte.";
+	next;
+	mes "[Father Thomas]";
+	mes	"How about we start the second task now?.";
+	mes "The second task is a task for you only, no one can help you except youself.";
+	next;
+	mes "[Father Thomas]";
+	mes "I believe with your power, you can overcome this task easily...";
+	mes "If you work with other priests i think you'll learn more and do a lot better .";
+	next;
+	set job_prist_q = 5;
+	mes "[Father Thomas]";
+	mes "What you want to start the second task now?";
+	next;
+menu "Yes, please start.",-,"I need to get ready, I'll be back later.",PrMnu_8;
+	mes "[Father Thomas]";
+	mes "Okay, I'll bring you to the place where the second task is held.";
+	next;
+	mes "[Father Thomas]";
+	mes "When you reach the place where the task is held, go talk to Priest there, to start the task.";
+	next;
+	warp "job_prist",24,180;
+PrMnu_8:
+	mes "[Father Thomas]";
+	mes "Okay go get ready, then come back later.";
+	mes "I hope it'll be smooth for you to become a priest...";
+	close;
+ChkPr_2:
+	mes "[Father Thomas]";
+	mes "OK let me tell you what you have to do for the first task.";
+	mes "First you gotta find Father Rubalkubara, he is located somewhere near prontera.";
+	next;
+	mes "[Father Thomas]";
+	mes "Next you got to find a Mother Matilda.";
+	mes "She is located somewhere in Morroc, North i heard .";
+	next;
+	mes "[Father Thomas]";
+	mes "Last but not least, you have to find Father Yosuke.";
+	mes "I heard Father Yosuke is often seen on an island near prontera and geffen.";
+	next;
+	mes "[Father Thomas]";
+	mes "Please becareful on your journey. If you have any questions go talk to the priestess.";
+	mes "Come back after you complete the first task and we'll continue with the test.";
+	next;
+	mes "[Father Thomas]";
+	mes "May God Be with you...";
+	close;
+PrMnu_7:
+	mes "[Father Thomas]";
+	mes "Oh, please make up your decision soon.";
+	mes "Go decide if you'll be a priest or not, if yes come talk to me.";
+	next;
+	mes "[Father Thomas]";
+	mes "May God be with you...";
+	close;
+PrMnu_6:
+	mes "[Father Thomas]";
+	mes "Oh is that the case?... Well i am fine thank you.";
+	mes "Please don't forget your duty as a an acolyte. I hope you can walk the path of light for all eternity.";
+	next;
+	mes "[Father Thomas]";
+	mes "I hope you'll visit soon, and please tell me how the other acolytes are doing.";
+	mes "May god be with you...";
+	close;
+ChkPr_M1:
+	check job_prist_q == 1,-,ChkPr_M1_1;
+	mes "What? Why are you still here?";
+	mes "Did you forget the first task?";
+	next;
+menu "Yes, can you please tell me the procedures for the first task?",-,"NO! how can i forget.",PrMnu_9;
+	mes "[Father Thomas]";
+	mes "Oh, if your like this, you'll have a really hard time going through the tests.";
+	mes "I will tell you the procedures again, this time please remember it and complete the task as soon as possible.";
+	next;
+	mes "[Father Thomas]";
+	mes "First, you got to find Father Rubalkubara.";
+	mes "He is located somewhere near prontera.";
+	next;
+	mes "[Father Thomas]";
+	mes "After meeting Father Rubalkubara, you got to find a Mother Matilda..";
+	mes "She is located in somewhere, i heard north of morroc.";
+	next;
+	mes "[Father Thomas]";
+	mes "You got to find Father Yosuke to complete this task.";
+	mes "He is located in on an island in between prontera and geffen.";
+	next;
+	mes "[Father Thomas]";
+	mes "Please becareful on your journey. If you have any questions go talk to the priestess .";
+	mes "Come back after you complete the first task and we'll continue with the test.";
+	next;
+	mes "[Father Thomas]";
+	mes "May god be with you...";
+	close;
+PrMnu_9:
+	mes "[Father Thomas]";
+	mes "Oh if you have any questions, go ask the priestess near the entrance.";
+	next;
+	mes "[Father Thomas]";
+	mes "Please hurry and begin your journey, becareful.";
+	mes "May God look upon you...";
+	close;
+ChkPr_M1_1:
+	check job_prist_q == 2,-,ChkPr_M1_2;
+	mes "????? ???? ??? ??????.";
+	mes "? ???? ????? ?????... ??? ????????";
+	next;
+	mes "[Father Thomas]";
+	mes "Have you seen the priestess located in morroc?.";
+	mes "Even though morroc is far away, i know you can do it.";
+	close;
+ChkPr_M1_2:
+	check job_prist_q == 3,-,ChkPr_M1_3;
+	mes "Have you seen the priestess in morroc?.";
+	mes "She is one of the most hard-working priestess in the desert.";
+	next;
+	mes "[Father Thomas]";
+	mes "Lastly you got to find the priest.";
+	mes "He is located on an island east of Geffen... You must go SEE him!.";
+	close;
+ChkPr_M1_3:
+	check job_prist_q == 4,-,ChkPr_M2;
+	set job_prist_q = 5;
+	mes "So you seen all the priests.";
+	mes "Good job, you just completed the first task, now lets move on to the second task.";
+	next;
+	mes "[Father Thomas]";
+	mes "Now lets start the second task, where you have to face ghosts and evil.";
+	mes "As i said before, you can't work with other priests on this task, you are all alone.";
+	next;
+	mes "[Father Thomas]";
+	mes "Well, even though you can't get work with anyone right now, you'll be able to for the next task.";
+	mes "How bout we start the second task now?";
+	next;
+menu "Please start.",-,"Let me get ready first.",PrMnu_X;
+	mes "[Father Thomas]";
+	mes "very well, let me send you to the place where the second task takes place.";
+	next;
+	mes "[Father Thomas]";
+	mes "When you get there, talk to the priest and ask him about the task.";
+	next;
+	warp "job_prist",24,180;
+ChkPr_M2:
+	check job_prist_q == 5,-,ChkPr_M2_1;
+	mes "So, are you ready to begin the second task?..";
+	mes "How about we start now?";
+	next;
+menu "Yes, lets start.",-,"Let me get ready, i'll be back later.",PrMnu_X;
+	mes "[Father Thomas]";
+	mes "Okay let me bring you to where the second task takes place.";
+	next;
+	mes "[Father Thomas]";
+	mes "When you get there, go talk to the priest and ask him about the task.";
+	next;
+	warp "job_prist",24,180;
+PrMnu_X:
+	mes "[Father Thomas]";
+	mes "Please get ready soon and come back.";
+	mes "I hope you can pass the test easily...";
+	close;
+ChkPr_M2_1:
+	check job_prist_q == 6,-,ChkPr_M2_2;
+	mes "You look really tired... but guess what, you'll be even more tired when you're a priest.";
+	mes "Please don't give up. You want to try the task again?";
+	next;
+menu "Yes, i want to try it again.",-,"No, i'll come back next time.",PrMnu_X;
+	mes "[Father Thomas]";
+	mes "Okay, then i'll send you to the training ground now.";
+	next;
+	mes "[Father Thomas]";
+	mes "When you get there, ask the priest there for help.";
+	next;
+	warp "job_prist",24,180;
+ChkPr_M2_2:
+	check job_prist_q == 7,-,ChkPr_M2_3;
+	mes "Good job, you just passed the second task .";
+	mes "If you can past the last test, i bet you'll be one of the best priest ever.";
+	next;
+	mes "[Father Thomas]";
+	mes "Now to end the tests, please go find the priestess.";
+	mes "You just need to find her and come back, if you can do that you'll be a true priest.";
+	next;
+	mes "[Father Thomas]";
+	mes "Now, i'll wait here until your return.";
+	mes "Please becareful on your journey.";
+	close;
+ChkPr_M2_3:
+	check job_prist_q == 8,-,ChkPr_M2_C;
+	mes "Why haven't you finisht the test by now?";
+	mes "If you can't follow your promises you can be easily corrupted by evil spirits.";
+	next;
+	mes "[Father Thomas]";
+	mes "Now go find the priestess again, and please finish the priest tests.";
+	mes "If you're still fooling around, i'll make you go do the first task again.";
+	next;
+	mes "[Father Thomas]";
+	mes "Please becareful.";
+	mes "May god be with you...";
+	close;
+ChkPr_M2_C:
+	check skillpoint != 0,-,ChkPr;
+	mes "Wait, you have to use up all your skill points in order to become a priest.";
+	mes "Please use it up then come again...";
+	close;
+ChkPr:
+	mes "Congratulation, you just passed the priest tests.";
+	mes "I'll turn you into a priest immediately.";
+	next;
+	mes "[Father Thomas]";
+	mes "God, please give power to your child standing right here.";
+	mes "Please give strength to this child of yours and make him strong.";
+	next;
+	mes "[Father Thomas]";
+	mes "I hope you can help lead the other younger acolytes,and make them helpful.";
+	mes "Please do a good job doing what the god orders and create miracles in this world...";
+	next;
+	set job_prist_q = 0;
+	jobchange 8;
+	set joblevel = 1,0;
+	mes "[Father Thomas]";
+	mes "You are now a priest.";
+	mes "Congrats, as a priest, you can now help a lot of people in the name of god.";
+	next;
+	check joblevel == 50,-,ChkPr_1;
+	additem 1551,1;
+	mes "[Father Thomas]";
+	mes "Here, take this bible as a gift for successfully turning into a priest.";
+	mes "Go spread the words of god and make this world a better place for you and other people.";
+	goto ChkPrEnd;
+ChkPr_1:
+	additem 1550,1;
+	mes "[Father Thomas]";
+	mes "Here, take this book as a gift for successfully completing the tests.";
+	mes "This book will help you understand more about god.";
+	next;
+ChkPrEnd:
+	mes "[Father Thomas]";
+	mes "We'll end this ceremony now.";
+	mes "Go now, and follow the path thats lies ahead of you.";
+	close;
+}
+
+//- M2 Father Peter
+job_prist.vhm,24,187,4 script "Father Peter" 110,{
+	mes "[Father Peter]";
+	check job == 8,-,ChkPr;
+	mes "God Bless you??!! ????!";
+	next;
+	mes "[Father Peter]";
+	mes "Priest? you need to help some acolytes?";
+	mes "Very well, You have a kind heart. I believe that you'll be a really good priest.";
+	next;
+	mes "[Father Peter]";
+	mes "next;, before you go, remember this is not a quest for you.";
+	mes "Remember you are just aiding him, your not supposed to do everything for them!";
+	next;
+	mes "[Father Peter]";
+	mes "So, you want to help him now?";
+	next;
+menu "Yes.",-,"Hm..just wait a minute.",wait,"I want to go back to town.",town;
+	mes "[Father Peter]";
+	mes "Very well, when the acolytes go in, you'll follow.";
+	mes "This should remind you when your an acolyte haha!";
+	next;
+	warp "job_prist",24,44;
+wait:
+	mes "[Father Peter]";
+	mes "Oh? what do you need?";
+	mes "No problem, go get the stuff you need and come back.";
+	close;
+town:
+	mes "[Father Peter]";
+	mes "Okay then go back to town, and come back when you're ready.";
+	mes "God bless you, becareful!";
+	warp "prontera",232,313;
+ChkPr:
+	check job_prist_q == 5,-,ChkPr_1;
+	mes "God bless you!! Welcome back!";
+	mes "First i want to congratulated you for passing the first level.";
+	next;
+	mes "[Father Peter]";
+	mes "My name is Peter.";
+	mes "Hows, Thomas these days?";
+	next;
+	mes "[Father Peter]";
+	mes "Oh, so he's a father now eh? hahah...";
+	mes "I think i should call him Father Thomas!";
+	next;
+	mes "[Father Peter]";
+	mes "Since your here, i think you know about the overcoming evil quest.";
+	mes "You do know it right?";
+	next;
+menu "Yes, I do.",-,"No, i don't quiet know it..?",no1;
+	mes "[Father Peter]";
+	mes "Wow, your' pretty smart, but i think its better for you to listen to the things i got to say.";
+	mes "heheh!";
+	next;
+	goto talk1;
+no1:
+	mes "[Father Peter]";
+	mes "Oh, is that so, i think i'll need to explain it to you.";
+	mes "After listening to what i have to say, i think you'll understand.";
+	next;
+talk1:
+	mes "[Father Peter]";
+	mes "What is overcoming evil? its basically destroying it.";
+	mes "What is evil? its basically devil, ghosts etc...";
+	next;
+	mes "[Father Peter]";
+	mes "There's a lot of evil in this world.";
+	mes "The evil usually tease people that prey to god.";
+	next;
+	mes "[Father Peter]";
+	mes "We priests are supposed to get rid of all the evil!";
+	mes "thats the only way we can bring peace to this world!";
+	next;
+	mes "[Father Peter]";
+	mes "You should understand this quest.";
+	mes "This quest is quiet hard, you can get another priest to help if you want.";
+	next;
+	mes "[Father Peter]";
+	mes "Do you know any expert priests that can help you?";
+	mes "Well, can we start now?";
+	next;
+menu "Yes.",-,"wait a minute.",wait,"I want to go back to town.",go3;
+	mes "[Father Peter]";
+	mes "Okay, lets start the test.";
+	mes "Its pretty simple, you just need to kill all the evil spirit you see.";
+	next;
+	set \@startpst = 1;
+	mes "[Father Peter]";
+	mes "There's different levels, so becareful!";
+	next;
+	enablenpc "job_prist","Father Peter",0;
+	enablenpc "job_prist","Father Peter ",1;
+	warp "job_prist",24,44;
+go3:
+	set job_prist_q = 6;
+	mes "[Father Peter]";
+	mes "What? you want to go back? but you just arrived?";
+	mes ".....";
+	next;
+	mes "[Father Peter]";
+	mes "Maybe because its your first time thats why your scared.";
+	mes "You can come back when you get more courage.";
+	next;
+	warp "prontera",232,313;
+ChkPr_1:
+	check job_prist_q == 6,-,ChkPr_2;
+	mes "You should be well-prepared this time right?";
+	mes "Its harder for you to complete this quest if you next; this long, the quest is easy if you just do it!";
+	next;
+	mes "[Father Peter]";
+	mes "Can we start now?";
+	next;
+menu "Yes.",-,"Please wait a minute.",wait,"I want to go back to town.",a3;
+	mes "[Father Peter]";
+	mes "Okay lets start the quest now.";
+	mes "Its really simple, you just need to destroy all the evil spirits you see.";
+	next;
+	mes "[Father Peter]";
+	mes "There's a few levels, so becareful.";
+	mes "okay, Go in now!";
+	next;
+	set \@startpst = 1;
+	resetmymob "job_prist";
+	enablenpc "job_prist","zombieoh",0;
+	enablenpc "job_prist","Father Peter",0;
+	enablenpc "job_prist","Father Peter ",1;
+	warp "job_prist",24,44;
+a3:
+	mes "[Father Peter]";
+	mes "What you want to go back to town now?";
+	mes "Why would you want to become a priest when your so weak?";
+	next;
+	mes "[Father Peter]";
+	mes "I don't think you should be here right now.";
+	mes "Go train and come back when you're ready.";
+	next;
+	warp "prontera",232,313;
+ChkPr_2:
+	mes "Go back NOW!";
+	next;
+	warp "prontera",232,313;
+}
+
+//- Someone else is doing the test
+job_prist.vhm,24,187,4 script "Father Peter " 110,{
+	mes "[Father Peter]";
+	check job == 8,-,other1;
+	mes "God bless you!! Come back quickly!";
+	next;
+	mes "[Father Peter]";
+	mes "Priest, you need to help other acolytes?";
+	mes "Very well, i can sense that you have a kind heart, i think you'll be a good priest.";
+	next;
+	mes "[Father Peter]";
+	mes "But right now, there's other acolytes training...";
+	mes "You got to next; a bit.";
+	next;
+	mes "[Father Peter]";
+	mes "Please come back later, and when the training ends, you training will begin.";
+	close;
+other1:
+	check job_prist_q == 5,-,sub1;
+	mes "Hey, wait, some other acolytes are taking the test right now.";
+	next;
+	mes "[Father Peter]";
+	mes "If you want to take the test, you got to wait a little bit.";
+	close;
+sub1:
+	check job_prist_q == 6,-,sub2;
+	mes "Hey, wait, there are some acolytes taking the test right now.";
+	next;
+	mes "[Father Peter]";
+	mes "If you want to take the test, come back later.";
+	close;
+sub2:
+	mes "Go back now!";
+	next;
+	warp "prontera",232,313;
+OnInit:
+	enablenpc "job_prist","Father Peter ",0;
+	return;
+}
+
+job_prist.vhm,24,44,1 script "ZombieMenu" 139,{
+OnTouch:
+	mes "[Father Peter]";
+	check job == 8,-,else;
+	mes "When an acolyte enter the training ground, there's only 5 mins!";
+	mes "Keep moving forward -- but move slowly.";
+	next;
+	mes "[Father Peter]";
+	mes "You will eventually see a warp, go through it and you'll end up in another training ground.";
+	mes "You got to get out of there in 5 mins, so becareful.";
+	close;
+else:
+	mes "Starting now, you have 5 mins!";
+	mes "Slowly move forward and kill all the zombies.";
+	next;
+	mes "[Father Peter]";
+	mes "You got to kill all the zombies, and go though the warp in order to pass this quest.";
+	mes "Remember you got to kill ALL the zombies.";
+	close;
+}
+
+job_prist.vhm,24,52,0 script "zombie1_1" 139,{
+OnTouch:
+	scriptlabel round1;
+	check \@startpst = 1,start,-;
+	return;
+start:
+	set \@mobsprst1 = 0;
+	callmob "job_prist",24,52,"Robbery",1015,1,"mobs1";
+	callmob "job_prist",18,52,"Evilness",1015,1,"mobs1";
+	callmob "job_prist",30,52,"Jealousy",1015,1,"mobs1";
+	set \@startpst = 2;
+	enablenpc "job_prist","zombie1_1",0;
+	return;
+}
+job_prist.vhm,18,52,0 script "zombie1_1a" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,19,52,0 script "zombie1_1b" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,20,52,0 script "zombie1_1c" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,21,52,0 script "zombie1_1d" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,22,52,0 script "zombie1_1e" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,23,52,0 script "zombie1_1f" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,25,52,0 script "zombie1_1g" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,26,52,0 script "zombie1_1h" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,27,52,0 script "zombie1_1i" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,28,52,0 script "zombie1_1j" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,29,52,0 script "zombie1_1k" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,30,52,0 script "zombie1_1l" 139,{
+OnTouch:
+ script round1;
+}
+job_prist.vhm,31,52,0 script "zombie1_1m" 139,{
+OnTouch:
+ script round1;
+}
+
+job_prist.vhm,0,0,0 script "mobs1" -1,{
+	set \@mobsprst1 + 1;
+	check \@mobsprst1 < 3,-,mobdead;
+mobdead:
+	return;
+}
+
+//======== The second round
+job_prist.vhm,21,62,1 script "zombie2_1" 139,{
+OnTouch:
+	scriptlabel round2;
+	check \@startpst = 2,start,-;
+	return;
+start:
+	set \@mobsprst2 = 0;
+	callmob "job_prist",21,62,"Anger",1015,1,"mobs2";
+	callmob "job_prist",27,62,"Wonderness",1015,1,"mobs2";
+	set \@startpst = 3;
+	return;
+}
+job_prist.vhm,15,62,1 script "zombie2_1a" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,16,62,1 script "zombie2_1b" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,17,62,1 script "zombie2_1c" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,18,62,1 script "zombie2_1d" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,19,62,1 script "zombie2_1e" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,20,62,1 script "zombie2_1f" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,22,62,1 script "zombie2_1g" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,23,62,1 script "zombie2_1h" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,24,62,1 script "zombie2_1i" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,25,62,1 script "zombie2_1j" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,26,62,1 script "zombie2_1k" 139,{
+OnTouch:
+ script round2;
+}
+job_prist.vhm,27,62,1 script "zombie2_1l" 139,{
+OnTouch:
+ script round2;
+}
+
+job_prist.vhm,0,0,0 script "mobs2" -1,{
+	set \@mobsprst2 + 1;
+	check \@mobsprst2 < 2,-,mobdead;
+mobdead:
+	return;
+}
+
+//======== The third round
+job_prist.vhm,24,72,1 script "zombie3_1" 139,{
+OnTouch:
+	scriptlabel round3;
+	check \@startpst = 3,start,-;
+	return;
+start:
+	set \@mobsprst3 = 0;
+	callmob "job_prist",24,72,"Cockyness",1015,1,"mobs3";
+	callmob "job_prist",18,72,"Slutty",1015,1,"mobs3";
+	callmob "job_prist",30,72,"Lazyness",1015,1,"mobs3";
+	set \@startpst = 4;
+	return;
+}
+job_prist.vhm,18,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,19,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,20,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,21,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,22,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,23,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,25,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,26,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,27,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,28,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,29,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+job_prist.vhm,30,72,1 script "zombie3_1" 139,{
+OnTouch:
+ script round3;
+}
+
+job_prist.vhm,0,0,0 script "mobs3" -1,{
+	set \@mobsprst3 + 1;
+	check \@mobsprst3 < 3,-,mobdead;
+mobdead:
+	return;
+}
+
+//======== The fourth round
+job_prist.vhm,21,82,1 script "zombie4_1" 139,{
+OnTouch:
+	scriptlabel round4;
+	check \@startpst = 4,start,-;
+	return;
+start:
+	set \@mobsprst4 = 0;
+	callmob "job_prist",21,82,"Greed",1015,1,"mobs4";
+	callmob "job_prist",27,82,"Greedyness",1015,1,"mobs4";
+	set \@startpst = 5;
+	return;
+}
+job_prist.vhm,15,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,16,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,17,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,18,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,19,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,20,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,22,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,23,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,24,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,25,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,26,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+job_prist.vhm,27,82,1 script "zombie4_1" 139,{
+OnTouch:
+ script round4;
+}
+
+job_prist.vhm,0,0,0 script "mobs4" -1,{
+	set \@mobsprst4 + 1;
+	check \@mobsprst4 < 2,-,mobdead;
+mobdead:
+	return;
+}
+
+//======== The fifth round
+job_prist.vhm,24,92,1 script "zombie5_1" 139,{
+OnTouch:
+	scriptlabel round5;
+	check \@startpst = 5,start,-;
+	return;
+start:
+	set \@mobsprst5 = 0;
+	callmob "job_prist",24,92,"Faithless",1015,1,"mobs5";
+	callmob "job_prist",18,92,"Nobelieves",1015,1,"mobs5";
+	callmob "job_prist",30,92,"Scaryness",1015,1,"mobs5";
+	set \@startpst = 6;
+	return;
+}
+job_prist.vhm,18,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,19,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,20,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,21,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,22,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,23,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,25,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,26,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,27,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,28,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,29,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+job_prist.vhm,30,92,1 script "zombie5_1" 139,{
+OnTouch:
+ script round5;
+}
+
+job_prist.vhm,0,0,0 script "mobs5" -1,{
+	set \@mobsprst5 + 1;
+	check \@mobsprst5 < 3,-,mobdead;
+	return;
+mobdead:
+	enablenpc "job_prist","prst1_2",1;
+	return;
+}
+
+//- Devil No.1
+job_prist.vhm,168,45,4 script "Little Devil" 738,{
+	mes "[Little Devil]";
+	check job == 8,-,ChkPr;
+	mes "Hey, whats priest like you doing in a place like this? go back to town.";
+	mes "You like wasting you time here eh?";
+	next;
+	mes "[Little Devil]";
+	mes "I feel happy today, so i'll spare you, now go.";
+	mes "next time you come, I am gonna take to you down.";
+	close;
+ChkPr:
+	mes "Hey, isn't that a acolyte? I haven't seen one in ages.";
+	mes "Looks like you're going to become a priest soon...";
+	next;
+	mes "[Little Devil]";
+	mes "I can tell how sad it is to become a servant of god.";
+	mes "I think its weird that you're here.";
+	next;
+	mes "[Little Devil]";
+	mes "The path your walking is going to be difficult.";
+	mes "isn't there better jobs you can be?";
+	next;
+	mes "[Little Devil]";
+	mes "Doesn't matter if its in a town, in a cave, all the people always asks you to help them.";
+	mes "itsn't funny that they never helped you?";
+	next;
+	mes "[Little Devil]";
+	mes "I'll give you an advice, you should give up now.";
+	mes "The tests will be hard, and the path you're gonna walk will be difficult.";
+	next;
+menu "Yea, I am going to give up.",-,"Devil, Be gone NOW!.",PrMnu_1;
+	mes "[Little Devil]";
+	mes "Yeap thats a good choice, you don't have to come to this place again!";
+	mes "Since you decided to give up, i'll give you a present.";
+	next;
+	mes "[Little Devil]";
+	mes "I'll let you meet my friends...FOR FREE  HAHAHAHAH!";
+	warp "c_tower2",168,33;
+PrMnu_1:
+	mes "[Little Devil]";
+	mes "Oh.. I am so scared..hahaha.";
+	mes "Don't be like this, listen to what i have to say.";
+	next;
+	mes "[Little Devil]";
+	mes "If you give up now, i'll give you a nice gift.";
+	mes "This gift is so hard to find.";
+	next;
+	cutin "데비루치카드.bmp",4;
+	mes "[Little Devil]";
+	mes "Do you think you can find a card like that?";
+	mes "Decide now, don't regret when you become a priest...";
+	next;
+menu "I accept your card.",-,"Devil, Be GONE!!",PrMnu_2;
+	mes "[Little Devil]";
+	mes "Hahaha all the human beings are like this, good choice!";
+	mes "Okay, let me give you this card!";
+	next;
+	cutin "데비루치카드.bmp",255;
+	mes "[Little Devil]";
+	mes "Well, too bad i can't give it to you.";
+	mes "Go look for it YOURSELF!";
+	warp "mjolnir_05",200,200;
+PrMnu_2:
+	cutin "데비루치카드.bmp",255;
+	mes "[Little Devil]";
+	mes "Wow, your one tough acolyte, if you keep denying you better becareful.";
+	mes "I will be watching, I'll see if you can become a good priest or not.";
+	next;
+	mes "[Little Devil]";
+	mes "One day, you'll regret and want to come back to me!";
+	close;
+}
+
+//- Devil No.2
+job_prist.vhm,168,80,4 script "Doppel" 739,{
+	mes "[Doppel]";
+	check job == 8,-,ChkPr;
+	mes "What good is it to be here?.";
+	mes "Are you this bored? you're already a priest why are you here?.";
+	next;
+	mes "[Doppel]";
+	mes "You don't need to help these acolytes, go home.";
+	mes "You're doing something that is wasting your time, leave now.";
+	close;
+ChkPr:
+	mes "Hey, Acolyte wait, listen to what i have to say.";
+	next;
+	mes "[Doppel]";
+	mes "You came here because you want to become a priest eh?";
+	mes "I don't think you should become a priest.";
+	next;
+	mes "[Doppel]";
+	mes "If you want, i can use my powers to let you start over again.";
+	mes "You can become a novice again, and you can choose what job you want to be.";
+	next;
+	mes "[Doppel]";
+	mes "Well, the job you choose depends on your level hhehe.";
+	mes "Isn't this a good deal? if you want i can help you right now.";
+	next;
+menu "I hope you can help me!",PrMnu_1,"Devil Be gone!",PrMnu_2;
+PrMnu_1:
+	mes "[Doppel]";
+	mes "Yes thats a good choice.";
+	mes "Let me turn you into a novice now.";
+	next;
+	mes "[Doppel]";
+	mes "You know it takes a long time to ressurect when you DIE!!";
+	warp "gef_dun02",210,177;
+PrMnu_2:
+	mes "[Doppel]";
+	mes "I don't think you understand what i mean.";
+	mes "This is one of the best things that can happen to you.";
+	next;
+	mes "[Doppel]";
+	mes "You just need to tell me that you don't want to become a priest.";
+	mes "If you do that, i can turn you into any job you want, you want to become a swordman like me?";
+	next;
+menu "I don't want to become a priest!",PrMnu_1,"Devil, Be GONE!",-;
+	mes "[Doppel]";
+	mes "okay fine, i'll spare you today.";
+	next;
+	mes "[Doppel]";
+	mes "If i see you next time, I am gonna make you die painfully.";
+	close;
+}
+
+//- Devil No.3
+job_prist.vhm,168,115,4 script "Dark Lord" 737,{
+	mes "[Dark Lord]";
+	check job == 8,-,ChkPr;
+	mes "Let you feel hatred and anger!!";
+	mes "Let you feel how it feels when your friend betrays you!";
+	next;
+	mes "[Dark Lord]";
+	mes "Stay here, and train with us and next; until you are strong enough then you can go back!";
+	mes "Stay with us and learn to curse!";
+	close;
+ChkPr:
+	mes "[Dark Lord]";
+	mes "Stop right there human!.";
+	mes "Whose permission do you have to pass through here!";
+	next;
+	mes "[Dark Lord]";
+	mes "If you want to become a priest, you can't pass through here,";
+	mes "Go now, before i kill you.";
+	next;
+	mes "[Dark Lord]";
+	mes "Even more annoying than ants you humans, leave and stop bothering me!";
+	next;
+menu "I am sorry, please spare me.",PrMnu_1,"Devil, Be GONE!.",PrMnu_2;
+PrMnu_1:
+	mes "[Dark Lord]";
+	mes "Don't come here again!";
+	warp "gl_church",145,170;
+PrMnu_2:
+	mes "[Dark Lord]";
+	mes "Don't try to act like a tough guy.";
+	mes "I can cut u in many pieces with my pinky.";
+	next;
+	mes "[Dark Lord]";
+	mes "Before i use my dark powers on you, leave!";
+	next;
+menu "Please, Spare me.",PrMnu_1,"Devil, BE GONE!",-;
+	mes "[Dark Lord]";
+	mes "So you decided to stay eh? you pesky human, killing you will dirty my hands.";
+	next;
+	mes "[Dark Lord]";
+	mes "If i see you again, I am gonna kill you.";
+	close;
+}
+
+//- Devil No.4
+job_prist.vhm,168,150,4 script "Baphomet" 736,{
+	mes "[Baphomet]";
+	check job == 8,-,ChkPr;
+	mes "Annoying Priests...";
+	next;
+	mes "[Baphomet]";
+	mes "I have nothing to talk to you about, leave now.";
+	close;
+ChkPr:
+	mes "[Baphomet]";
+	mes "Hey, Human.";
+	next;
+	mes "[Baphomet]";
+	mes "You interested in a deal?";
+	next;
+	mes "[Baphomet]";
+	mes "I can get you all the rich and fame in this world.";
+	mes "Infinite money and weapons which no humans have...";
+	next;
+	mes "[Baphomet]";
+	mes "Also, if you want, you can always summon me.";
+	mes "If you did that, everyone will be afraid of you hahahaha.";
+	next;
+	mes "[Baphomet]";
+	mes "I think you should give up being a priest and just accept my deal.";
+	mes "If you accept my deal, the world is yours.";
+	next;
+menu "I give up being a priest.",-,"Devil be GONE!",PrMnu_1;
+	mes "[Baphomet]";
+	mes "Okay, let us sign the contract...";
+	mes "you will not forget this...";
+	next;
+	mes "[Baphomet]";
+	mes "You go find where i live.";
+	mes "When your there, come and sign the contract.";
+	warp "glast_01",200,203;
+PrMnu_1:
+	mes "[Baphomet]";
+	mes "Okay fine, i'll leave.";
+	mes "But, you won't leave that easily.";
+	next;
+	mes "[Baphomet]";
+	mes "I already set up a lot of evil stuff for you...";
+	mes "I want to see how long you can last.";
+	next;
+	mes "[Baphomet]";
+	mes "OKay go now.";
+	close;
+}
+
+job_prist.vhm,90,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+	scriptlabel round1a;
+	check \@startpst = 6,start,-;
+	return;
+start:
+	callmob "job_prist",90,55,"ca",1041,1;
+	callmob "job_prist",105,55,"ah",1041,1;
+	set \@startpst = 7;
+	return;
+}
+job_prist.vhm,91,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,92,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,93,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,94,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,95,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,96,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,97,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,98,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,99,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,100,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,101,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,102,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,103,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,104,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+job_prist.vhm,105,55,1 script "MUMMY1_1" 139,{
+OnTouch:
+ script round1a;
+}
+
+job_prist.vhm,90,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+	scriptlabel round2a;
+	check \@startpst = 7,start,-;
+	return;
+start:
+	callmob "job_prist",90,70,"men",1041,1;
+	callmob "job_prist",105,70,"ahke",1041,1;
+	set \@startpst = 8;
+	return;
+}
+job_prist.vhm,90,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,91,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,92,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,93,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,94,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,95,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,96,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,97,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,98,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,99,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,100,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,101,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,102,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,103,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,104,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+job_prist.vhm,105,70,1 script "MUMMY2_1" 139,{
+OnTouch:
+ script round2a;
+}
+
+job_prist.vhm,90,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+	scriptlabel round3a;
+	check \@startpst = 8,start,-;
+	return;
+start:
+	callmob "job_prist",90,85,"mea",1041,1;
+	callmob "job_prist",105,85,"sne",1041,1;
+	return;
+}
+
+job_prist.vhm,91,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,92,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,93,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,94,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,95,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,96,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,97,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,98,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,99,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,100,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,101,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,102,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,103,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,104,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+job_prist.vhm,105,85,1 script "MUMMY3_1" 139,{
+OnTouch:
+ script round3a;
+}
+//======== 1 -> 2
+job_prist.vhm,24,109,4 script "prst1_2" 45,{
+OnTouch:
+	enablenpc "job_prist","prst1_2",0;
+	warp "job_prist",168,17;
+	return;
+OnInit:
+	enablenpc "job_prist","prst1_2",0;
+	return;
+}
+
+//- 2 -> 3
+job_prist.vhm,168,179,4 script "prst2_1" 45,{
+OnTouch:
+	warp "job_prist",98,40;
+}
+
+//- Moved back to prontera
+job_prist.vhm,98,105,0 script "prst3_1" 45,{
+OnTouch:
+	check job == 8,-,other1;
+	warp "prt_church",15,36;
+other1:
+	set \@startpst = 0;
+	enablenpc "job_prist","Father Peter",1;
+	enablenpc "job_prist","Father Peter ",0;
+	set job_prist_q = 7;
+	resetmymob "job_prist";
+	warp "prt_church",16,37;
+}
+
+prt_church.vhm,27,24,1 script Priestess 79,{
+	mes "[Sister Cecile]";
+	check job == 4,ApPr,-;
+	check job == 8,-,ChkNov;
+	check gender == 1,-,Grl_1;
+	mes "God bless you, brother priest.";
+	mes "Hope you will have a good day today.";
+	goto TalkCont_1;
+Grl_1:
+	mes "God bless you, sister Sister Cecile.";
+	mes "Wish you will have a good day today.";
+	goto TalkCont_1;
+ChkNov:
+	check job == 0,-,DiffClass;
+	check gender == 1,-,Grl_2;
+	mes "God bless you, brother.";
+	goto TalkCont_2;
+Grl_2:
+	mes "God bless you, sister.";
+TalkCont_2:
+	mes "The Prontera Church welcomes you.";
+	next;
+	mes "[Sister Cecile]";
+	mes "Have you chosen your job yet? Do you want to be one of god's helpers?";
+	mes "Becoming an Acolyte and helping people is very nice thing.";
+	next;
+	mes "[Sister Cecile]";
+	mes "If you want to change your job to an acolyte go talk to the priest in the other room.";
+	mes "You know whats the best thing in the world? following god's orders.";
+	next;
+	mes "[Sister Cecile]";
+	mes "If your an acolyte, and you reached job level 40,";
+	mes "You can come back here and become a priest.";
+	next;
+	mes "[Sister Cecile]";
+	mes "Since your a novice, you decide on what job you want to pick.";
+DiffClass:
+	check gender == 1,-,Grl_3;
+	mes "God bless you, brother.";
+	goto TalkCont_3;
+Grl_3:
+	mes "God bless you, sister.";
+TalkCont_3:
+	mes "This is the Prontera Church, what are you doing here?";
+	next;
+menu "Please tell me about priests.",-,"I am just walking around.",PrMnu_X;
+	mes "[Sister Cecile]";
+	mes "Priests are the people who do the orders of the god.";
+	mes "First, you got to become a acolyte, when you reached a certain level, you can change your job from an acolyte to a priest";
+	next;
+	mes "[Sister Cecile]";
+	mes "Servants of the god are banned from using swords and other blade weapons.";
+	mes "Even if a priest approached a evil spirit, they can't think about killing it.";
+	next;
+	mes "[Sister Cecile]";
+	mes "Of course, if you want to know more about priests, go talk to a priest...";
+	mes "Do you want to talk to the Father Thomas? he's just in the other room";
+	next;
+	mes "[Sister Cecile]";
+	mes "He can answer more specific questions about the priests.";
+	mes "I think you should talk to Father Thomas if you really want to know about priests.";
+	goto TalkCont_1;
+PrMnu_X:
+	mes "[Sister Cecile]";
+	mes "Please Relax, wondering around can be a work of art.";
+TalkCont_1:
+	next;
+	mes "[Sister Cecile]";
+	mes "Well, God bless you";
+	close;
+ApPr:
+	mes "[Sister Cecile]";
+	check job_prist_q == 0,-,ChkPr;
+	check gender == 1,-,Grl_4;
+	mes "God bless you, brother.";
+	goto TalkCont_4;
+Grl_4:
+	mes "God bless you, sister.";
+TalkCont_4:
+	mes "Why are you here?";
+	next;
+menu "I want to become a priest.",-,"I am just wondering around.",PrMnu_X;
+	mes "[Sister Cecile]";
+	mes "Oh so you want to become a priest?";
+	mes "A lot of acolytes want to become priests.";
+	next;
+	mes "[Sister Cecile]";
+	mes "My name is Sister Cecile, I am responsible for helping acolytes become priests.";
+	check gender == 1,-,Grl_5;
+	mes "I hope i can help you become a priest.";
+	goto TalkCont_5;
+Grl_5:
+	mes "I hope i can help you become a Sister Cecile.";
+TalkCont_5:
+	next;
+	mes "[Sister Cecile]";
+	mes "Because I am born here, i see a lot of people becoming priests.";
+	mes "Thats why i like to help people become priests now.";
+	next;
+	mes "[Sister Cecile]";
+	mes "In order to become a priest, you got to do three tasks.";
+	mes "Self Disipline test, Overcoming a evil spirit, ... then you can become a priest.";
+	next;
+	mes "[Sister Cecile]";
+	mes "If you want to change your job now, you can go talk to Father Thomas,";
+	mes "We can now start the priest test.";
+	next;
+	mes "[Sister Cecile]";
+	mes "If you encounter any problems while doing the tasks come talk to me and i might be able to help.";
+	mes "I will help you with all my might.";
+	close;
+ChkPr:
+	check job_prist_q == 1,-,ChkPr_M1_1;
+	mes "Oh, so you already started the self-disipline test, good job.";
+	mes "First, you got to find Father Rubalkubara.";
+	next;
+	mes "[Sister Cecile]";
+	mes "I don't know his exact location.";
+	mes "but i think he's near prontera.";
+	next;
+	mes "[Sister Cecile]";
+	mes "try going 1 map north and 2 maps east.";
+	mes "Hopefully you'll find him.";
+	next;
+	mes "[Sister Cecile]";
+	mes "There are often monkeys in the place where Father Rubalkubara lives.";
+	mes "I heard that the skins of the monkey is black.";
+	next;
+	mes "[Sister Cecile]";
+	mes "You got to find Father Rubalkubara, find Mather Matilda and Father Yosuke .";
+	mes "If you're not sure if you find a priest or not, come check back here.";
+	next;
+	mes "[Sister Cecile]";
+	mes "Please becareful on your journey.";
+	mes "Please don't give up until the end.";
+	close;
+ChkPr_M1_1:
+	check job_prist_q == 2,-,ChkPr_M1_2;
+	mes "So you found Father Rubalkubara , good job, its time for you to find Mather Matilda.";
+	mes "She is located somewhere in the Morroc section.";
+	next;
+	mes "[Sister Cecile]";
+	mes "I heard that she's training near North of Morroc.";
+	mes "Please look carefully for her";
+	next;
+	mes "[Sister Cecile]";
+	mes "I would like to go train with them, but i got to stay here and help";
+	mes "I think this is one of god's orders...";
+	next;
+	mes "[Sister Cecile]";
+	mes "PLease becareful on your journey";
+	mes "I know its difficult to find Mather Matilda but please, don't give up hope";
+	close;
+ChkPr_M1_2:
+	check job_prist_q == 3,-,ChkPr_M1_3;
+	mes "You should go find Father Yosuke now.";
+	mes "I heard he's training on an island in between prontera and geffen.";
+	next;
+	mes "[Sister Cecile]";
+	mes "Go 1 map north and 2 maps west.";
+	mes "If you west, it'll be a lot easier for you.";
+	next;
+	mes "[Sister Cecile]";
+	mes "Even if you find Father Yosuke, your priest test is not over yet.";
+	mes "So please becareful and come back after you find Father Yosuke.";
+	close;
+ChkPr_M1_3:
+	check job_prist_q == 4,-,ChkPr_M2;
+	mes "Welcome back, how was the journey?";
+	mes "You can now talk to Father Thomas for the second task.";
+	next;
+	mes "[Sister Cecile]";
+	check gender == 1,-,Grl_6;
+	mes "Even though overcoming evil is hard, i believe you can do it.";
+	mes "I really want to help you, but i got to stay here and help people become priests.";
+	goto  TalkCont_6;
+Grl_6:
+	mes "Even though overcoming evil is hard, i believe you can do it.";
+	mes "I really want to help you, but i got to stay here and help people become priestess.";
+	next;
+TalkCont_6:
+	mes "[Sister Cecile]";
+	mes "If someone can aid you through the second task, it'll be good.";
+	mes "So, becareful!";
+	close;
+ChkPr_M2:
+	check job_prist_q == 5,-,ChkPr_M2_1;
+	mes "You didn't start the second quest yet?.";
+	mes "Well, i can't give u any specific details about this task.";
+	next;
+	mes "[Sister Cecile]";
+	mes "I can only tell you to be well-prepared and to not get seduced by anything...";
+	mes "You must trust in yourself in order to complete the second quest.";
+	next;
+	mes "[Sister Cecile]";
+	mes "If you want more specific details go talk to the priest in the training ground.";
+	mes "Father Thomas is a very nice person, he'll help you too.";
+	close;
+ChkPr_M2_1:
+	check job_prist_q == 6,-,ChkPr_M2_2;
+	mes "Training is hard, but don't give up.";
+	mes "You must overcome anything in order to be a good priest.";
+	next;
+	mes "[Sister Cecile]";
+	mes "If there's experienced priest, you can ask them to help you train.";
+	mes "They might be able to help you pass the first level of the second task.";
+	next;
+	mes "[Sister Cecile]";
+	mes "God bless you...";
+	mes "When you complete the second quest, come back here.";
+	close;
+ChkPr_M2_2:
+	check job_prist_q == 7,-,ChkPr_1;
+	mes "Good job, you successfully completed the second quest...!";
+	mes "You are now ready to becoming a priest.";
+	next;
+Redo:
+	mes "[Sister Cecile]";
+	check gender == 1,-,Grl_7;
+	mes "If you want to become a Priest, the last step is to answer my questions honestly.";
+	goto TalkCont_7;
+Grl_7:
+	mes "If you want to become a Priestess, the last step is to answer my questions honestly.";
+TalkCont_7:
+	mes "Please be honest and answer my question.";
+	next;
+	mes "[Sister Cecile]";
+	mes "Okay let me ask you some questions.";
+	next;
+	mes "[Sister Cecile]";
+	mes "From today on, do you wish to help the god for all eternity?";
+	next;
+menu "Yes.",PrQ1,"No.",-;
+	mes "[Sister Cecile]";
+	mes "Why..Why would you say that?...";
+	mes "I don't think your suitable to become a priest...";
+	goto EndPrQ;
+PrQ1:
+	mes "[Sister Cecile]";
+	mes "Will you use god's power for your own profit?";
+	next;
+menu "Yes.",-,"No.",PrQ2;
+	mes "[Sister Cecile]";
+	mes "No, that doesn't work, if you use god's power to do what you wish, you're just like a theif.";
+	mes "How can you become a good priest if you think like that?";
+	goto EndPrQ;
+PrQ2:
+	mes "[Sister Cecile]";
+	mes "Will you help others in battle when they need help?";
+	next;
+menu "Yes.",PrQ3,"No.",-;
+	mes "[Sister Cecile]";
+	mes "Thats wrong, when someone needs help, we will do our best to help them.";
+	mes "It doesn't matter who that person is, our job is to help everyone.";
+	goto EndPrQ;
+PrQ3:
+	mes "[Sister Cecile]";
+	mes "Will you sacrafice yourself for others?";
+	next;
+menu "Yes.",PrQ4,"No.",-;
+	mes "[Sister Cecile]";
+	mes "No, thats not what god thinks.";
+	mes "If we can sacrafice ourselves for something that helps the world, its worth it.";
+	goto EndPrQ;
+PrQ4:
+	mes "[Sister Cecile]";
+	mes "Will you talk bad to people you meet?";
+	next;
+menu "Yes.",-,"No.",PrQ5;
+	mes "[Sister Cecile]";
+	mes "That is not right, priests are supposed to help people.";
+	mes "If you talk bad, you don't deserver to be a priest.";
+	goto EndPrQ;
+PrQ5:
+	mes "[Sister Cecile]";
+	mes "Will you bring any kind of devil to help others in battle?";
+	next;
+menu "Yes.",-,"No.",PrQ6;
+	mes "[Sister Cecile]";
+	mes "You can't do that.";
+	mes "It doesn't matter if the devil is good or bad, priests should never talk to a devil .";
+	goto EndPrQ;
+PrQ6:
+	mes "[Sister Cecile]";
+	mes "If God wants to you to live or die, will you listen to him?";
+	next;
+menu "Yes.",PrQ7,"No.",-;
+	mes "[Sister Cecile]";
+	mes "If your like that you can't become a priest.";
+	mes "If God wants you to die, you have to listen to him.";
+	goto EndPrQ;
+PrQ7:
+	mes "[Sister Cecile]";
+	mes "I just witness what you said.";
+	mes "Lastly, please promise that you'll remember the things you said today.";
+	next;
+menu "I promise.",-,"No.",PrQ8;
+	set job_prist_q = 9;
+	mes "[Sister Cecile]";
+	mes "Now, you passed all the tests.";
+	mes "Please go talk to Father Thomas to become a priest.";
+	next;
+	mes "[Sister Cecile]";
+	mes "Please remember the things you said today.";
+	goto TalkCont_1;
+PrQ8:
+	mes "[Sister Cecile]";
+	mes "..............";
+EndPrQ:
+	next;
+	set job_prist_q = 8;
+	mes "[Sister Cecile]";
+	check gender == 1,-,Grl_8;
+	mes "I'm sorry, you can't become a Priest right now.";
+	goto TalkCont_8;
+Grl_8:
+	mes "I'm sorry, you can't become a Priestess right now.";
+TalkCont_8:
+	next;
+	mes "[Sister Cecile]";
+	mes "I think you should go do the self-disipline test again...";
+	mes "When you're ready, come back here.";
+	goto TalkCont_1;
+ChkPr_1:
+	check job_prist_q == 8,-,ChkPr_2;
+	mes ".............";
+	next;
+	mes "[Sister Cecile]";
+	mes "...Oh your back.";
+	mes "I hope you can be honest this time.";
+	next;
+	goto Redo;
+ChkPr_2:
+	mes "You just completed all the tests.";
+	mes "Go talk to Father Thomas to become a priest.";
+	goto TalkCont_1;
+}

@@ -1,0 +1,22 @@
+//Louyang Floor 1
+lou_dun01.vhm,0,0,0,0	monster	Shining_Plant 1083,5,0,0,0
+lou_dun01.vhm,0,0,0,0	monster	Black_Mushroom 1084,10,0,0,0
+lou_dun01.vhm,0,0,0,0	monster	Horong 1129,20,0,0,0
+lou_dun01.vhm,0,0,0,0	monster	Leib_Olmai 1306,15,0,0,0
+lou_dun01.vhm,0,0,0,0	monster	Grizzly 1381,10,0,0,0
+lou_dun01.vhm,0,0,0,0	monster	Dancing_Dragon 1514,10,0,0,0
+lou_dun01.vhm,0,0,0,0	monster	Living_Soil 1516,15,0,0,0
+lou_dun01.vhm,0,0,0,0	monster	Li_Me_Mang_Ryang 1517,30,0,0,0
+lou_dun01.vhm,0,0,0,0	monster	Side_Winder 1025,15,0,0,0
+
+//Louyang Floor 2
+lou_dun02.vhm,0,0,0,0	monster	Munak 1026,20,0,0,0
+lou_dun02.vhm,0,0,0,0	monster	Mimc 1191,4,0,0,0
+lou_dun02.vhm,0,0,0,0	monster	Dancing_Dragon 1514,15,0,0,0
+lou_dun02.vhm,0,0,0,0	monster	Hyegun 1512,25,0,0,0
+
+//Louyang Floor 3
+lou_dun03.vhm,0,0,0,0	monster	Gajomart 1309,15,0,0,0
+lou_dun03.vhm,0,0,0,0	monster	Civil_Servant 1513,20,0,0,0
+lou_dun03.vhm,0,0,0,0	monster	Dancing_Dragon 1512,20,0,0,0
+lou_dun03.vhm,0,0,0,0	monster	Hyegun 1512,20,0,0,0

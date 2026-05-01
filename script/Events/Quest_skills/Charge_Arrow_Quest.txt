@@ -1,0 +1,69 @@
+//- Archer Skill Quest
+payon.vhm,190,176,5 script Jason 88,{
+	mes "[Jason]";
+		getskilllevel 43 @skill;
+		check @skill > 0 L_Start -;
+//	if (callfunc("Is_Bow_Class")) goto L_Start;
+L_Other:
+	mes "What does life need from a lonely lad like me?";
+	close;
+L_Start:
+		getskilllevel 148 @skill;
+		check @skill > 0,L_GotSkill,-;
+		check job == 3,-,L_Start1;
+		check JobLevel < 35,L_LowLvl,-;
+	L_Start1:
+		check ARWREP == 1,L_Check,-;
+	mes "Hi, I'm the master of the skill ^0033FFArrow Repel^000000. I might be able to";
+	mes "teach you the skill, but only if you help me get the ingredients";
+	mes "for my Grandma's soup.";
+	next;
+	mes "[Jason]";
+	mes "Arrow Repel allows you to use your arrows to repel, push back, an";
+	mes "enemy and keep them at a distance.  This is a great skill for us";
+	mes "Archer types.";
+	next;
+	L_List:
+	mes "[Jason]";
+	mes "I need the following:";
+	mes "- 2 ^FF0000Emeralds^000000";
+	mes "- 3 ^FF0000Yoyo tails^000000";
+	mes "- 10 ^FF0000Tentacles^000000";
+	mes "- 10 ^FF0000Bill of birds^000000";
+	mes "- 36 ^FF0000Banana Juices^000000";
+	next;
+	mes "[Jason]";
+	mes "Hurry hurry!";
+	set ARWREP = 1;
+	close;
+L_LowLvl:
+	mes "Oh I think you're a bit inexperienced to learn anything from me,";
+	mes "come back later!  Maybe around ^5533FFjob level 35^000000 or so.....";
+	close;
+L_Check:
+		checkitem 721,2,-,L_NotEnuf;
+		checkitem 942,3,-,L_NotEnuf;
+		checkitem 962,10,-,L_NotEnuf;
+		checkitem 925,10,-,L_NotEnuf;
+		checkitem 532,36,-,L_NotEnuf;
+	mes "OH! Marvelous you brought me all the ingredients!";
+	mes "Now It'll be my pleasure to teach you the skill ^0033FFArrow Repel^000000";
+	next;
+	delitem 721,2;
+	delitem 942,3;
+	delitem 962,10;
+	delitem 925,10;
+	delitem 532,36;
+	setskilllevel 148,1;
+	set ARWREP = 0;
+	mes "[Jason]";
+	mes "There you go! Happy hunting in the future.";
+	close;
+	L_NotEnuf:
+		mes "You don't have everything I need.";
+		next;
+		goto L_List;
+L_GotSkill:
+	mes "Hey! It's you again? I'm afraid I've taught you everything I know.";
+	close;
+}

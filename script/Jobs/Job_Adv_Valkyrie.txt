@@ -1,0 +1,61 @@
+valkyrie.vhm,49,86,4	script	"Valkryie"	0,0,0,0	811,{
+	check zeny == 0,-,No_Req;
+	check baselevel >= 99,-,No_Req;
+	check job >=7,-,No_Req;
+	check job <=20,-,No_Req;
+	mes "[^4040FFValkryie^000000]";
+	mes "What business does a mere mortal such as yourself have in this sacred place?";
+	next;
+	menu "I wish to become stronger",L_Menu1,"Excuse me, I'm sorry to bother you.",-;
+		mes "[^4040FFValkryie^000000]";
+		mes "I see... Begone then, mortal. You have no right to be here.";
+		next;
+		warp "prontera",158,183;
+	close;
+		L_Menu1:
+			mes "[^4040FFValkryie^000000]";
+			mes "So you wish to be more powerful, ^C00000$charaname^000000? But you have already reached your peak strength.";
+			next;
+			mes "[^4040FFValkryie^000000]";
+			mes "Though, come to think of it now, I do way to grant you more strength, but you most prove your worth of such a gift from I, The Valkryie.";
+			next;
+			mes "[^4040FFValkryie^000000]";
+			mes "Mortal, will you accept the gift of The Valkryie?";
+			next;
+			menu "Yes, honorable Valkryie, I accept.",Accept_Gift,"What do you plan to do?",Tell_Gift,"I am not worthy.",-;
+			mes "[^4040FFValkryie^000000]";
+			mes "In that case, be gone.";
+			close;
+	Accept_Gift:
+		mes "[^4040FFValkryie^000000]";
+		mes "As you wish, ^C00000$charaname^000000, receive my gift, and prove your worth.";
+		next;
+		jobchange 24;
+		set BaseLevel = 1,0;
+		set JobLevel = 1,0;
+		//set Experience,1,1;
+		resetstat;
+		heal 40,1;
+		mes "[^4040FFValkryie^000000]";
+		mes "Fear not the change that has befallen you, warrior, for in time you will become more powerful than you ever hoped! But listen carefully to my words, you have already chosen your path, do not stray form it or you will be punished.";
+		next;
+		mes "[^4040FFValkryie^000000]";
+		mes "Now go, ^C00000$charaname^000000, prove to me that my gift to you was not a waste!";
+		next;
+		warp "prontera",158,183;
+		close;
+	No_Req:
+		mes "[^4040FFValkryie^000000]";
+		mes "How did you get here? Leave at once.";
+		close;
+	Tell_Gift:
+		mes "[^4040FFValkryie^000000]";
+		mes "Are you questioning me, mortal? Be gone, one who would not trust the Great Battle Maiden, Valkryie!";
+		next;
+		warp "prontera",158,183;
+		close;
+}
+
+
+valkyrie.vhm,49,66,0	warp	warpvalk1	1,1,valkyrie.vhm,49,79
+valkyrie.vhm,49,72,0	warp	warpvalk2	1,1,valkyrie.vhm,49,63

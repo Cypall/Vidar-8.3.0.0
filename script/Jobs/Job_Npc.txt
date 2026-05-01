@@ -1,0 +1,219 @@
+//========================== Class Change Girl ==========================
+//======================= By Drauka36s feat. Kaze =======================
+//---------------------------------------------------------------------------
+// Original Job Changer NPC (supports all classes, including 2-2)
+// by melz (for LameRO)
+//
+// Converted by L0ne_W0lf to Vidar with additions - confirms job change.
+//---------------------------------------------------------------------------
+
+prontera.vhm,149,194,4	script	"Class Change Girl"	0,0,0,0	68,{
+	mes "[Change Class Girl]";
+	mes "Hello, I am the Class Change girl.. I can change your class!";
+	mes "You are only able to change into a class that you are normally able to turn into..";
+	mes "Make sure you have all your skill points spent befor trying to change classes";
+	next;
+	check Job == 0,-,SECOND_CHOICE;
+	check JobLevel >= 10,-,ERROR_1;
+	check SkillPoint == 0,-,ERROR_2;
+	check baselevel >=45,SUPERNOVICE,-;
+	menu "Acolyte",JOB_ACO,"Archer",JOB_ARCH,"Mage",JOB_MAGE,"Merchant",JOB_MERCH,"Swordman",JOB_SWORD,"Thief",JOB_THIEF,"Cancel",CANCEL;
+	JOB_ACO:
+		mes "[Change Class Girl]";
+		mes "Are you sure you want to become an ^0000FFAcolyte^000000?";
+		menu "Yes",-,"No",CANCEL;
+		set JobLevel = 1,0;
+		jobchange 4;
+		close;
+	JOB_ARCH:
+		mes "[Change Class Girl]";
+		mes "Are you sure you want to become a ^0000FFArcher^000000?";
+		menu "Yes",-,"No",CANCEL;
+		set JobLevel = 1,0;
+		jobchange 3;
+		close;
+	JOB_MAGE:
+		mes "[Change Class Girl]";
+		mes "Are you sure you want to become a ^0000FFMagician^000000?";
+		menu "Yes",-,"No",CANCEL;
+		set JobLevel = 1,0;
+		jobchange 2;
+		close;
+	JOB_MERCH:
+		mes "[Change Class Girl]";
+		mes "Are you sure you want to become a ^0000FFMerchant^000000?";
+		menu "Yes",-,"No",CANCEL;
+		set JobLevel = 1,0;
+		jobchange 5;
+		close;
+	JOB_SWORD:
+		mes "[Change Class Girl]";
+		mes "Are you sure you want to become a ^0000FFSwordman^000000?";
+		menu "Yes",-,"No",CANCEL;
+		set JobLevel = 1,0;
+		jobchange 1;
+		close;
+	JOB_THIEF:
+		mes "[Change Class Girl]";
+		mes "Are you sure you want to become a ^0000FFThief^000000?";
+		menu "Yes",-,"No",CANCEL;
+		set JobLevel = 1,0;
+		jobchange 6;
+		close;
+	SUPERNOVICE:
+		mes "[Change Class Girl]";
+		mes "Hey! You're pretty strnog for a novice. Want to change into a ^0000FFSuper Novice^000000?";
+		next;
+		menu "Yes",-,"No",MENU;
+		set JobLevel = 1,0;
+		jobchange 23;
+		close;
+		MENU:
+			mes "[Change Class Girl]";
+			mes "That's the way it goes, I guess! Maybe you would like one of these other jobs?";
+			next;
+			menu "Acolyte",JOB_ACO,"Archer",JOB_ARCH,"Mage",JOB_MAGE,"Merchant",JOB_MERCH,"Swordman",JOB_SWORD,"Thief",JOB_THIEF,"Cancel",CANCEL;
+//=================================================================================
+//Start selection for second Job/alternate second job.
+//=================================================================================
+SECOND_CHOICE:
+	check JobLevel > 39,-,ERROR_1;
+	check SkillPoint == 0,-,ERROR_2;
+	check Job == 4,PRIEST_MONK,-;
+	check Job == 3,HUNTER_BARD,-;
+	check Job == 2,WIZARD_SAGE,-;
+	check Job == 5,BLACKSMITH_ALCHEMIST,-;
+	check Job == 1,KNIGHT_CRUSADER,-;
+	check Job == 6,ASSASSIN_ROGUE,ERROR_1;
+	PRIEST_MONK:
+		mes "[Change Class Girl]";
+		mes "Would you like to change into a Priest or a Monk?";
+		next;
+		menu "Priest",JOB_PRIEST,"Monk",JOB_MONK,"Cancel",CANCEL;
+		JOB_PRIEST:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become a ^0000FFPriest^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 8;
+			close;
+		JOB_MONK:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become a ^0000FFMonk^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 15;
+			close;
+	HUNTER_BARD:
+		mes "[Change Class Girl]";
+		mes "Would you like to change into a Hunter or a Bard/Dancer?";
+		next;
+		menu "Hunter",JOB_HUNT,"Bard/Dancer",JOB_BARD,"Cancel",CANCEL;
+		JOB_HUNT:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become a ^0000FFHunter^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 11;
+			close;
+		JOB_BARD:
+			mes "[Change Class Girl]";
+			check Gender == 1,-,CHANGE_DANCER;
+				mes "Are you sure you want to become a ^0000FFBard^000000?";
+				menu "Yes",-,"No",CANCEL;
+				set JobLevel = 1,0;
+				jobchange 19
+				close;
+			CHANGE_DANCER:
+				mes "Are you sure you want to become a ^0000FFDancer^000000?";
+				menu "Yes",-,"No",CANCEL;
+				set JobLevel = 1,0;	
+				jobchange 20;
+				close;
+	WIZARD_SAGE:
+		mes "[Change Class Girl]";
+		mes "Would you like to change into a Wizard or a Sage?";
+		next;
+		menu "Wizard",JOB_WIZ,"Sage",JOB_SAGE,"Cancel",CANCEL;
+		JOB_WIZ:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become a ^0000FFWizard^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 9;
+			close;
+		JOB_SAGE:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become a ^0000FFSage^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 16;
+			close;
+	BLACKSMITH_ALCHEMIST:
+		mes "[Change Class Girl]";
+		mes "Would you like to change into a Blacksmith or an Alchemist?";
+		next;
+		menu "Blacksmith",JOB_BLACK,"Alchemist",JOB_ALCHEM,"Cancel",CANCEL;
+		JOB_BLACK:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become a ^0000FFBlacksmith^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 10;
+			close;
+		JOB_ALCHEM:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become an ^0000FFAlchemist^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 18;
+			close;
+	KNIGHT_CRUSADER:
+		mes "[Change Class Girl]";
+		mes "Would you like to change into a Knight or a Crusader?";
+		next;
+		menu "Knight",JOB_KNIGHT,"Crusader",JOB_CRUS,"Cancel",CANCEL;
+		JOB_KNIGHT:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become an ^0000FFKnight^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 7;
+			close;
+		JOB_CRUS:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become an ^0000FFCrusader^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 14;
+			close;
+	ASSASSIN_ROGUE: 
+		mes "[Change Class Girl]";
+		mes "Would you like to change into an Assassin or a Rogue?";
+		next;
+		menu "Assassin",JOB_ASS,"Rogue",JOB_ROGUE,"Cancel",CANCEL;
+		JOB_ASS:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become an ^0000FFAssassin^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 12;
+			close;
+		JOB_ROGUE:
+			mes "[Change Class Girl]";
+			mes "Are you sure you want to become an ^0000FFRogue^000000?";
+			menu "Yes",-,"No",CANCEL;
+			set JobLevel = 1,0;
+			jobchange 17;
+			close;
+	ERROR_1:
+		mes "[Change Class Girl]";
+		mes "Sorry, you cannot change classes at this time.";
+		close;
+	ERROR_2:
+		mes "[Change Class Girl]";
+		mes "Sorry, you cannot change classes at this time because you did not use all your skill points.";
+		close;
+	CANCEL:
+		close;
+}

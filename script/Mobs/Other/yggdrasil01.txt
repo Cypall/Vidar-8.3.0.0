@@ -1,0 +1,7 @@
+yggdrasil01.vhm,0,0,0,0	monster	"Green Plant"	1078,30,0,0,0
+yggdrasil01.vhm,0,0,0,0	monster	"Red Plant"	1080,20,0,0,0
+yggdrasil01.vhm,235,256,20,20	monster	"Blue Plant"	1079,5,180000,90000,0
+yggdrasil01.vhm,128,199,15,15	monster	"Blue Plant"	1079,5,180000,90000,0
+yggdrasil01.vhm,95,238,30,30	monster	"Yellow Plant"	1081,7,180000,90000,0
+yggdrasil01.vhm,74,233,20,20	monster	"White Plant"	1082,6,180000,90000,0
+yggdrasil01.vhm,0,0,0,0		monster	"Shining Plant"	1083,10,180000,90000,1

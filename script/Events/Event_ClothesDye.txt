@@ -1,0 +1,139 @@
+//----------------------------------------------------------------------------------------
+// Clothes Colourer
+// Based off script by SilentDragon
+// Script merge with Event_Dye.txt.
+// Vidar - http://vidar.sigh.org
+//----------------------------------------------------------------------------------------
+// To make clothing dye accessable to all classes:
+// Comment out or remove the following "check job" lines.
+//
+// These lines are here to keep people from getting 
+// pallette errors if they do not have the 2-2 pallettes.
+// And to also prevent the errors gotten when a dyed
+// character uses a skill such as Two Hand Quicken.
+//----------------------------------------------------------------------------------------
+prt_in.vhm,284,168,3	script	"Jineda"	0,0,0,0	55,{ 
+	//check job = 2,L_NoChange,-; 
+	//check job = 7,L_NoChange,-;
+	//check job = 9,L_NoChange,-;
+	//check job = 10,L_NoChange,-;
+	//check job = 14,L_NoChange,-;
+	//check job = 15,L_NoChange,-;
+	//check job = 16,L_NoChange,-;
+	//check job = 17,L_NoChange,-;
+	//check job = 18,L_NoChange,-;
+	//check job = 19,L_NoChange,-;
+	//check job = 20,L_NoChange,-;
+	//check job = 22,L_NoChange,-;
+	//check job = 23,L_NoChange,-;
+	mes "[Dyer Ginedin Rephere]";
+	mes "11... 12... Um...Great. I'll have the clothes ready for the party in time for this evening.";
+	mes "Oh! I didn't notice that you were here. Anyway how may I assist you?";
+	next;
+	menu "Talk",Talk,"Dye Clothing",Dye_Cloth,"Cancel",Cancel;
+		Talk:
+			mes "[Dyer Ginedin Rephere]";
+			mes "I think our country is getting richer when I see so many girls booking their orders with me.";
+			mes "They brighten up our world with their pretty Dresses.";
+			mes "Of course this is just my opinion... but Human beings are truly great becausee they can be beautiful through nice clothing unlike animals and their petty furs and bland colors.";
+			next;
+			mes "[Dyer Ginedin Rephere]";
+			mes "Hahahah...That point will enhance my job with loftiness. Because I sacrifice myself on the dying job.";
+			mes "Can't you feel it? When leathers and fabrics are reborn in various colors...I feel a rush of energy and desire to do more wonderful things...";
+			mes "I love my work..  It's it's own greatest reward.";
+			close;
+		Dye_Cloth:
+			mes "[Dyer Ginedin Rephere]";
+			mes "Oh... You mean you need my work? Well...okay. It sounds good.";
+			mes "You'll need the appropriate dyestuffs for my work.";
+			mes "due to the inflexibility of some materials, only minor tints may appear.  Also, 2nd class has more available dye options than 1st class and novice";
+			next;
+			mes "Oh yeah, novices are free to change whenever they want with no dyes needed and no fees.";
+			check job = 0,Nov_Dye,-;
+			menu "Normal",Style_Normal,"Red",Style_Red,"Blue",Style_Blue,"Green",Style_Green,"Black",Style_Black;
+				Style_Normal: 
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 1;
+					close;
+				Style_Red: 
+					checkitem 975,1,-,NoDyeRed;
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 2;
+					delitem 975,1;
+					close;
+				Style_Blue: 
+					checkitem 978,1,-,NoDyeBlue;
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 3;
+					delitem 978,1;
+					close;
+				Style_Green: 
+					checkitem 979,1,-,NoDyeGreen;
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 4;
+					delitem 979,1;
+					close;
+				Style_Black: 
+					checkitem 983,1,-,NoDyeBlack;
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 5;
+					delitem 983,1;
+					close;
+				L_NoChange:
+					mes "[Dyer Ginedin Rephere]";
+					mes "Sorry but we are fresh out of dye for your clothing. You'll have to wait until the next shipment.";
+					mes "I am sorry for this inconvience.";
+					close;
+				NoDyeRed:
+					mes "[Dyer Ginedin Rephere]";
+					mes "You are missing the essential dye needed for this job. You need Red Dystuffs.";
+					close;
+				NoDyeGreen:
+					mes "[Dyer Ginedin Rephere]";
+					mes "You are missing the essential dye needed for this job. You need Green Dystuffs.";
+					close;
+				NoDyeBlue:
+					mes "[Dyer Ginedin Rephere]";
+					mes "You are missing the essential dye needed for this job. You need Blue Dystuffs.";
+					close;
+				NoDyeBlack:
+					mes "[Dyer Ginedin Rephere]";
+					mes "You are missing the essential dye needed for this job. You need Black Dystuffs.";
+					close;
+			Nov_Dye:
+			menu "Normal",NStyle_Normal,"Red",NStyle_Red,"Blue",NStyle_Blue,"Green",NStyle_Green,"Black",NStyle_Black;
+				NStyle_Normal: 
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 1;
+					close;
+				NStyle_Red: 
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 2;
+					close;
+				NStyle_Blue: 
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 3;
+					close;
+				NStyle_Green: 
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 4;
+					close;
+				NStyle_Black: 
+					mes "[Dyer Ginedin Rephere]";
+					mes "And I think we're done here. Hope you're satisfied with my work.";
+					ccolor 5;
+					close;
+			Cancel:
+				mes "[Dyer Ginedin Rephere]";
+				mes "Make yourself at home. And let me know if you need anything.";
+				close;
+}

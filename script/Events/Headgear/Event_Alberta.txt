@@ -1,0 +1,138 @@
+//--Alberta Fashion Merchant --//
+
+alberta.vhm,120,52,2	script "Fashion Merchant" 48,{
+mes "[Fashion Merchant]";
+mes "People from close and far come here to me for the most";
+mes "That because only i have these magnificant object";
+mes "Here take a look for what i exclusively can offer you";
+next;
+mes  "  (1) . ^3355FFDumpling Decoration^000000 : 1 Silk_Ribbon + 50 Heroic Emblem  ";
+mes  "  (2) . ^3355FFCrescent Hairpin^000000 : 1 Heart Hairpin + 10 Steel  ";
+mes  "  (3) . ^3355FFFashion Sunglass^000000 : 1 Jack a Dandy + 1 Red_Dyestuff  ";
+mes  "  (4) . ^3355FFHeart Hairpin^000000 : 1200 Corals ";
+menu "Dumpling Decoration",a1,"Crescent Hairpin",a2,"Fashion Sunglass",a3,"Heart Hairpin",a4;
+a1:
+checkitem 10007,1,-,itemserror;
+checkitem 968,50,-,itemserror;
+  mes "[Fashion Merchant]";
+  mes "Orginal Design";
+  mes "Very popular this spring";
+  next;
+  delitem 10007,1;
+  delitem 968,50;
+  additem 5042,1;
+  close
+a2:
+checkitem 5041,1,-,itemserror;
+checkitem 999,10,-,itemserror;
+  mes "[Fashion Merchant]";
+  mes "A good accessory for any girl";
+  mes "It can brighten and light up any hairstyle";
+  next;
+  delitem 5041,1;
+  delitem 999,10;
+  additem 10011,1;
+  close;
+a3:
+checkitem 2271,1,-,itemserror;
+checkitem 975,1,-,itemserror;
+  mes "[Fashion Merchant]";
+  mes "These Sunglasses are the best of the best";
+  mes "And you are one selected of few to have them";
+  next;
+  delitem 2271,1;
+  delitem 975,1;
+  additem 5047,1;
+  close;
+a4:
+checkitem 7013,1200,-,itemserror;
+  mes "[Fashion Merchant]";
+  mes "This one a favorite with the girls";
+  mes "can really help to express compasion";
+  next;
+  delitem 7013,1200;
+  additem 5041,1;
+  close;
+itemserror:
+  mes "[Fashion Merchant]";
+  mes "Check the item requirements again.";
+  close;
+}
+
+//--Alberta Hat Shop--//
+alberta.vhm,136,78,4	script "Lone Traveler" 64,{
+mes "[Lone Traveler]";
+mes "I have known of you arrival for some time now...";
+mes "And i know that you want to ask about what hats i can make for you...";
+mes "*sight* why must you commoners always be so predicble";
+next;
+mes  "  (1) . ^3355FFSunshine Hat^000000 : 250 Fabric + 1 sloted Hat (monster drop) + 1 sloted Capp (monster drop) + 600 Soft Feather of Bird  ";
+mes  "  (2) . ^3355FFHat of Magic Instructor^000000 : 1 Wizard Hat + 400 Dragon's Scale + 50 Mould Powder + 1 Elder Wilow Card ";
+mes  "  (3) . ^3355FFMage Hat^000000 : 1 Wizard Hat + 450 Lip of Ancient Fish + 1200 Solid Shell  ";
+mes  "  (4) . ^3355FFHelm of the Solar God^000000 : 1 Solar Bead + 10 Gold + 40 Steel + 50 Coal + 2 Oridecon  ";
+menu "Sunshine Hat",a1,"Hat of Magic Instructor",a2,"Mage Hat",a3,"Helm of the Solar God",a4;
+a1:
+checkitem 7071,250,-,itemserror;
+checkitem 2221,1,-,itemserror;
+checkitem 2227,1,-,itemserror;
+checkitem 7063,600,-,itemserror;
+  mes "[Lone Traveler]";
+  mes "I wonder how much longer i gotta do this?";
+  mes "Making these hats is such a pain";
+  next;
+  delitem 7071,250;
+  delitem 2221,1;
+  delitem 2227,1;
+  delitem 7063,600;
+  additem 5032,1;
+  close;
+a2:
+checkitem 2252,1,-,itemserror;
+checkitem 1036,400,-,itemserror;
+checkitem 7001,50,-,itemserror;
+checkitem 4052,1,-,itemserror;
+  mes "[Lone Travler]";
+  mes "A Wizard hat is an important item for any Instructor of Magic";
+  mes "Do not mess with it powers! It might be more then you can Handle";
+  next;
+  delitem 2252,1;
+  delitem 1036,400;
+  delitem 7001,50;
+  delitem 4052,1;
+  additem 5027,1;
+  close;
+a3:
+checkitem 2252,1,-,itemserror;
+checkitem 1054,450,-,itemserror;
+checkitem 943,1200,-,itemserror;
+  mes "[Lone Traveler]";
+  mes "A common Hat used in many magic tricks";
+  mes "It just Fleshy, for show you know? Doesnt't really do anything";
+  next;
+  delitem 2252,1;
+  delitem 1054,450;
+  delitem 943,1200;
+  additem 5045,1;
+  close;
+a4:
+checkitem 7086,1,-,itemserror;
+checkitem 969,10,-,itemserror;
+checkitem 999,40,-,itemserror;
+checkitem 1003,50,-,itemserror;
+checkitem 984,2,-,itemserror;
+  mes "[Lone Travler]";
+  mes "Gah, you are still here?";
+  mes "Take you helm and shove it! I don't have all day to hang out with low life.";
+  next;
+  delitem 7086,1;
+  delitem 969,10;
+  delitem 999,40;
+  delitem 1003,50;
+  delitem 984,2;
+  additem 5022,1;
+  close;
+itemserror:
+  mes "[Lone Traveler]";
+  mes "Check the item requirements again.";
+  close;
+}

@@ -1,0 +1,129 @@
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Fighting Area - Crusader Job Quest - 4th Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_cru.vhm,167,175,0	script	"Test 4"	0,0,2,0	-1,{
+OnTouch:
+	check \@CRU2 = 0,-,EXIT;
+		check Job_CR = 12,-,EXIT;
+				set \@CRU2 = 1;
+				broadcast "Defeat all the enemies in less than 5 minutes.";
+				resetmymob "job_cru";
+				enablenpc "job_cru",Exit4,0;
+				callmob "job_cru",163,42,Bongun,1188,0,"kill";
+				callmob "job_cru",171,66,Bongun,1188,0,"kill";
+				callmob "job_cru",163,89,Bongun,1188,0,"kill";
+				callmob "job_cru",171,115,Bongun,1188,0,"kill";
+				callmob "job_cru",166,141,Bongun,1188,0,"kill";
+				callmob "job_cru",168,166,Bongun,1188,0,"kill";
+				callmob "job_cru",164,170,Munak,1026,0,"kill";
+				callmob "job_cru",173,153,Munak,1026,0,"kill";
+				callmob "job_cru",164,138,Munak,1026,0,"kill";
+				callmob "job_cru",166,128,Munak,1026,0,"kill";
+				callmob "job_cru",171,117,Munak,1026,0,"kill";
+				callmob "job_cru",163,102,Munak,1026,0,"kill";
+				callmob "job_cru",172,84,Munak,1026,0,"kill";
+				callmob "job_cru",162,76,Munak,1026,0,"kill";
+				callmob "job_cru",167,65,Munak,1026,0,"kill";
+				callmob "job_cru",171,58,Munak,1026,0,"kill";
+				callmob "job_cru",162,48,Munak,1026,0,"kill";
+				callmob "job_cru",170,33,Munak,1026,0,"kill";				
+				callmob "job_cru",170,26,Skeleton,1076,0,"kill";
+				callmob "job_cru",166,37,Skeleton,1076,0,"kill";
+				callmob "job_cru",171,47,Skeleton,1076,0,"kill";
+				callmob "job_cru",165,61,Skeleton,1076,0,"kill";
+				callmob "job_cru",172,65,Skeleton,1076,0,"kill";
+				callmob "job_cru",163,77,Skeleton,1076,0,"kill";
+				callmob "job_cru",164,86,Skeleton,1076,0,"kill";
+				callmob "job_cru",165,98,Skeleton,1076,0,"kill";
+				callmob "job_cru",170,101,Skeleton,1076,0,"kill";
+				callmob "job_cru",163,110,Skeleton,1076,0,"kill";
+				callmob "job_cru",164,117,Skeleton,1076,0,"kill";
+				callmob "job_cru",166,129,Skeleton,1076,0,"kill";
+				callmob "job_cru",165,139,Skeleton,1076,0,"kill";
+				callmob "job_cru",166,151,Skeleton,1076,0,"kill";
+				callmob "job_cru",168,160,Skeleton,1076,0,"kill";
+				callmob "job_cru",162,169,Skeleton,1076,0,"kill";
+				callmob "job_cru",171,171,Skeleton,1076,0,"kill";
+				callmob "job_cru",162,32,Zombie,1015,0,"kill";
+				callmob "job_cru",165,51,Zombie,1015,0,"kill";
+				callmob "job_cru",172,73,Zombie,1015,0,"kill";
+				callmob "job_cru",170,92,Zombie,1015,0,"kill";
+				callmob "job_cru",173,111,Zombie,1015,0,"kill";
+				callmob "job_cru",170,124,Zombie,1015,0,"kill";
+				callmob "job_cru",171,147,Zombie,1015,0,"kill";
+				callmob "job_cru",163,162,Zombie,1015,0,"kill";
+			return;
+		EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Kills - Crusader Job Quest - 4th Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_cru.vhm,1,1,0	script	"kill"	0,0,0,0	-1,{
+	scriptlabel "kill";
+		set \@CR_T4 + 1;
+	check \@CR_T4 = 43,-,EXIT;
+			broadcast "Test 4: Please make your way to the exit.",10;
+			set \@TIME4 = 2;
+			enablenpc "job_cru",Exit4,1;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Test 4 Exit - Crusader Job Quest - 4th Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_cru.vhm,167,17,0	warp	Exit4	1,1,prt_in.vhm,81,100
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Timer - Crusader Job Quest - 4th Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_cru.vhm,167,175,0	script	"Test 4"	0,0,2,0	-1,{
+OnTouch:
+	check \@TIME4 = 0,-,EXIT;
+			set \@TIME4 = 1;
+			addnpctimer "Crusader",300000;
+			npctimer 1;
+		return;
+	OnTimer60000:
+		check \@TIME4 != 2,-,EXIT;
+				broadcast "Test 4: 4 minutes remaining",10;
+			return;
+	OnTimer120000:
+		check \@TIME4 != 2,-,EXIT;
+				broadcast "Test 4: 3 minutes remaining",10;
+			return;
+	OnTimer180000:
+		check \@TIME4 != 2,-,EXIT;
+				broadcast "Test 4: 2 minutes remaining",10;
+			return;
+	OnTimer240000:
+		check \@TIME4 != 2,-,EXIT;
+				broadcast "Test 4: 1 minute remaining",10;
+			return;
+	OnTimer270000:
+		check \@TIME4 != 2,-,EXIT;
+				broadcast "Test 4: 30 seconds remaining",10;
+			return;
+	OnTimer285000:
+		check \@TIME4 != 2,-,EXIT;
+				broadcast "Test 4: 15 seconds remaining",10;
+			return;
+	OnTimer300000:
+		check \@TIME4 != 2,-,EXIT;
+				npctimer 0;
+				warpallpc "prt_in",81,100,1;
+			return;
+EXIT:
+}

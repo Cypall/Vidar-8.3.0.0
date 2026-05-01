@@ -1,0 +1,2243 @@
+//- JOBCHANGE QUEST - ASSASIN - Translated By: Pgro Team (OwNaGe)
+//- Fixed by: illogik(tk)
+in_moc_16.vhm,19,33,1 script "Guildsman" 55,{
+			mes "[Person that can sense anger]";
+			check skillpoint != 0,-,ChkSin;
+		SkpErr:
+	       		mes "If you have un-used skills, you can't change your job.";
+	       		mes "Come back after you use up all your skills.";
+	       		close;
+	ChkSin:
+	check job_assasin == 4,-,ChkSin_1;
+			mes "[Person that can sense anger]";
+			mes "Ohh..so you fainted.";
+			mes "Come, let me heal you, so you can go fight again!";
+			heal 100,100;
+			next;
+			mes "[Person that can sense anger]";
+			mes "But,you'll keep fainting...";
+			mes "Want to come back next time for the job change?";
+			mes "Cause it looks to me that you're barely staying alive!";
+			next;
+				menu "I want to continue, I have to be an assassin!",-,"Yes, iam barely staying alive, I'll come back next time.",SinMnu_X;
+					mes "[Person that can sense anger]";
+					mes "Well...okay then, Good luck";
+					next;
+					set job_assasin = 0;
+					warp "in_moc_16" 19 76;
+				SinMnu_X:
+					mes "[Person that can sense anger]";
+					mes "Oh..,come back when your ready.";
+					next;
+					mes "Oh, Yea, If you want to go back to town, you got to walk back, and, don't forget that there's a storage in town.";
+					next;
+					set job_assasin = 0;
+					set thief_joblvl = 0;
+					set asn_skill = 0;
+					save "in_moc_16" 18 14;
+					warp "in_moc_16" 18 14;
+	ChkSin_1:
+	check job == 6,-,ChkSin_4;
+	check job_assasin == 0,ApSin,-;
+	checkitem 1008,1,ChkSin_2,-;
+	check job_assasin > 7,-,ChkSin_2;
+		mes "Yea...on your way there...did anything go wrong?";
+		mes "Why do you not have the item 'Necklace of Oblivion' ?";
+		next;
+		mes "[Old Assassin 'Hueyi']";
+		mes "You are supposed to have it...  Where did you put it??!!";
+		next;
+		mes "[Old Assassin 'Hueyi']";
+		mes "This time I'll pretend I did not see anything! But you have to be sneaky and get the 'Necklace of Oblivion' before the Assassin Master finds out!";
+		next;
+		mes "[Old Assassin 'Hueyi']";
+		mes "Hurry and find the 'Necklace of Oblivion'. You have to find it no matter what! GO NOW!";
+		next;
+		mes "[Old Assassin 'Hueyi']";
+		mes "When you find the 'Necklace of Oblivion' come back here...*cough* *cough*";
+		close;
+	ChkSin_2:
+	check job_assasin > 7,-,ChkSin_3;
+		mes "Congratulations, you can finally become an Assassin.";
+		mes "Oh...but before that...Let see the evidence that the Assassin Master gave you.";
+		next;
+		mes "[Old Assassin 'Hueyi']";
+		mes ".........";
+		mes ".....";
+		mes "...hmmm";
+		next;
+		delitem 1008,1;
+		mes "[Old Assassin 'Hueyi']";
+		mes "Yes, Thats it.";
+		next;
+		jobchange 12;
+		set joblevel = 1,0;
+		mes "[Old Assassin 'Hueyi']";
+		mes "Very well done, you are now offically an Assassin";
+		mes "By the way never forget what you have to do..";
+		mes "If you have free time, come back and visit, congrats for successfully becoming an Assassin.";
+		close;
+	ChkSin_3:
+	check job_assasin < 7,-,ChkSin_4;
+		mes "Yes? What are you doing in a place like this?";
+		next;
+		mes "[Person that can sense anger]";
+		mes "You're holding the 'Necklace of Oblivion' to switch your job eh?";
+		mes "What. . .";
+		next;
+		mes ".................";
+		next;
+		mes "[Person that can sense anger]";
+		mes "You bastard....!!";
+		mes "The 'Necklace of Oblivion' you're holding is FAKE, you want to trick me don't you?";
+		mes "I am gonna kill you instantly!";
+		next;
+		warp "moc_fild16",206,229;
+ChkSin_4:
+	mes "[Person that can sense anger]";
+	mes "Yes? What are you doing in a place like this?";
+	mes "...Your not going to do anything suspicious?";
+	mes ".....right?!";
+	next;
+	mes "[Person that can sense anger]";
+	check job == 0,JobNov,-;
+	check job == 1,JobSwrd,-;
+	check job == 7,JobSwrd,-;
+	check job == 2,JobMage,-;
+	check job == 9,JobMage,-;
+	check job == 3,JobArch,-;
+	check job == 11,JobArch,-;
+	check job == 4,JobAco,-;
+	check job == 8,JobAco,-;
+	check job == 5,JobMerc,-;
+	check job == 10,JobMerc,-;
+	check job == 12,JobSin,-;
+JobNov:
+	mes "....HEY. Novice. Get out of here now!. I am not going to do a thing if u run into stuff.";
+	close;
+JobSwrd:
+	mes "....What are you doing here, Mr?";
+	mes "Doing what you're ordered to do eh? You guys are nothing but dogs that listen to their owners.";
+	close;
+JobMage:
+	mes "...What is a mage like you doing here?";
+	mes "You should be paying more attention to your own training..?";
+	close;
+JobArch:
+	mes "......You're the type of person with bows right?.";
+	mes "There's no cute pets here for you to kill.";
+	mes "You're not here to create trouble? eh?";
+	mes "....LEAVE AT ONCE!!";
+	close;
+JobAco:
+	mes "...Oh God's little helper..What you doing down in a dreadful place like this?.";
+	mes "You can't find your god here, Leave immediately.";
+	close;
+JobMerc:
+	mes "We don't like to get along with greedy people.";
+	mes "You should leave now, Don't stay here!";
+	close;
+JobSin:
+	mes "Oohh, hey you! it's me Hueyi.";
+	mes "you are....$charaname right?";
+	next;
+	mes "[Old Assassin 'Hueyi']";
+	mes "Too bad theres nothing to do now.";
+	mes "You should go train more. Bye.";
+	close;
+ApSin:
+	check joblevel >= 40,-,JLvLErr;
+	check skillpoint == 0,-,SkpErr;
+	mes "Eh. A thief..?";
+	mes "You look like a thief with enough experience. We are in need of people like you.";
+	mes "Do you want to switch your job to an assassin?";
+	next;
+menu "Yes. I am here because I want a job change.",-,"What is the requirements for job change?",SinMnu_1,"....Don't want to change jobs yet.",SinMnu_2;
+	mes "[Person that can sense anger]";
+	mes "Heheh....We didn't have guests for a long time. Let me send you to the place where you sign up.";
+	next;
+	set job_assasin = 0;
+	warp "in_moc_16",19,76;
+SinMnu_1:
+	mes "[Person that can sense anger]";
+	mes "Requirements:";
+	mes "#1. Has to be a thief.";
+	mes "#2. Thief's job level has to be at least job level 40.";
+	mes "#3. You have to past the assassin guild test.";
+	next;
+	mes "[Person that can sense anger]";
+	mes "Thats all the requirements.";
+	mes "If your thief is strong, the test will be a piece of cake.";
+	close;
+SinMnu_2:
+	mes "[Person that can sense anger]";
+	mes "Oh...you sure? Alright I can't do anything about it.";
+	close;
+JLvLErr:
+	mes "[Person that can sense anger]";
+	mes "Oh, your thief is not strong enough.";
+	mes "In order to become an assassin, you gotta train your thief well.";
+	mes "The thief has to be at least a certain level before it can become an assassin.";
+	next;
+	mes "[Person that can sense anger]";
+	mes "What..Go train a bit more then come back later.";
+	mes "...The requirement is that you have to be at least job level 40.";
+	mes "..If your job level is higher than 40... Well. It doesn't really matter.";
+	close;
+}
+
+//- Dummy
+in_moc_16.vhm,21,91,1 script "Assassin" 730,{
+	mes "[Assassin 'Kaì']";
+	mes "Yes?!";
+	enablenpc "in_moc_16","Kai ",1;
+	enablenpc "in_moc_16","Assassin",0;
+	close;
+}
+
+//- Checks the job level
+in_moc_16.vhm,25,90,1	script "Kai " 730,{
+	mes "[Assassin 'Kai']";
+	check asn_skill == 4,-,ChkSin;
+	mes "Eh? Didn't you just pass the test?";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Oh.....! So you failed it?";
+	mes "HAHAHAHAAHAHAHAHA!!!!";
+	next;
+	mes "[Assassin 'Kaì']";
+	check gender == 1,-,Grl_1;
+	mes "Nothing..I haven't seen someone like you in ages...";
+	mes "I haven't seen someone like you that wants to be an assassin without knowing this?";
+	goto TalkCont_1;
+Grl_1:
+	mes "I just think you're a really interesting lady..";
+	mes "If you want to become an assassin, you have to know this...hehehe";
+TalkCont_1:
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Hehe...HAHA...*cough*..Damn....";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Oh...sorry for laughing like this in front of you..but this is really funny haha..";
+	mes "So...you want some tips?";
+	next;
+menu "...Yes...",-,"Stop laughing and just tell me the tips!.",AsnMnu_1,"...No thanks!!",AsnMnu_2;
+		mes "[Assassin 'Kai']";
+		mes "Heheheh...hahaahhaha!!!";
+		mes "Even your personality is so ... !!";
+		mes "Haha....My stomach...ouch my stomach hurts!! Stop making me laugh for now!!!";
+		next;
+		mes "[Nameless One]";
+		mes ".....Hahaha.";
+		next;
+		mes "[Assasin 'Kai']";
+		mes "HAHAHAHAHAHA!!!! 'Nameless'!! You think its funny too?";
+		next;
+		mes "[Nameless One]";
+		mes ".....hehe..";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "...haha..";
+		next;
+		mes "[Assassin 'Kai']";
+		mes ".....You want the tips don't you?";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "...";
+		next;
+		mes "[Assassin 'Kai']";
+		mes ".....";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "......Haha too bad I am not going to tell you.";
+		next;
+		mes "[Assassin 'Kai']";
+		mes ".....Hehehe.....yes... Ohh... Hahah..";
+		close;
+	AsnMnu_1:
+		mes "[Assassin 'Kai']";
+		check gender == 1,-,Grl_2;
+		mes "Yes...for a theif, You're one with a lot of confidence.";
+		mes "Good. Sorry that I was laughing at you.";
+		goto TalkCont_2;
+	Grl_2:
+		mes "Oh...you're brave.. thats good but don't forget to have confidence in yourself.";
+		mes "Sorry that I was laughing at you for so long....";
+	TalkCont_2:
+		next;
+		mes "[Assassin 'Kai']";
+		mes "The tips are some what...  I'll just tell you something about the assassin.";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "We assassins need a lot of confidence....One day, we will use our powers for the good of mankind. Waiting for that day is an asassin's destiny.";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "Also, it'll be nice if a group of people talk to you.";
+		mes "Because we assassins are lonely people. If your family,lover, and friends see you kill, then...";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "...If that happens, there's nothing you can do. You'll be all alone. And you'll be resposible for the lonely journey.";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "Even though you'll be alone, it wouldn't be that bad, because you chosed this path to be an assassin yourself.";
+		mes "It's just like you and I, We got our own destinys.";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "What?! Thats all the things I can tell you. Is it too short?";
+		close;
+	AsnMnu_2:
+		random @assassin_quiz,3;
+		mes "[Assassin 'Kai']";
+		mes "...Okay.";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "Well Good. Thats the spirit. You can't let anything bring down your confidence.";
+		mes "No matter what....";
+		mes "Sorry I was laughing at you before.";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "There have been people fooling around with us lately.";
+		mes "Let us not talk about what you have to do right now..";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "If an assassin loses faith in him/herself...it'll just be like losing a part of your memory!!!";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "So please.";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "If you become an assassin, keep your confidence high and always have faith in yourself!";
+		mes "Remember your katar, will be responsible for all the blood that's on it!!";
+		next;
+		menu "...okay.",-,"...I don't think this is right for me.",AsnMnu_3;
+			mes "[Assassin 'Kai']";
+			mes "...Yes. I can sense that you are going to be a good assassin from what you are saying.";
+			mes "Here, let me tell you the tips.";
+			next;
+			mes "[Assassin 'Kai']";
+			check @assassin_quiz == 0,-,Sub_1;
+			mes "First, grimtooth is a skill only for katar type weapons. Useless on daggers.";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Poison is a must for all assassins.";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Have you used double attack? ...It hits the enemy twice.";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Red Gemstone is what assassins use , Blue gemstones are useless to assassins!";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Water is stronger than fire, so water is good against fire element monsters";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Water is moved by wind, so water is weak against wind.";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "You can only use cloak when your next to a wall, and can only be 1 cell away from the wall or else you'll be seen.";
+			goto TalkCont_3;
+		Sub_1:
+			check @assassin_quiz == 1,-,Sub_2;
+			mes " Some katars have element powers";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "What weapon is worth your zeny to buy? If you don't know, look at your hands.";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Katar is dropped by a monster in the desert. It's very useful";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Katar is one of the strongest weapon a assassin can use?";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "I don't want to raise frogs.";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Fire is effective against ground type.";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "If you want to know what element your weapon is, look at the name.";
+			goto TalkCont_3;
+		Sub_2:
+			mes "Elder willow card adds intelligence";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "We assassins are design to be good at attack and dodge, our defense is not that good";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "......";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Dagger class weapons can be used on two hands!";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "I haven't been to morroc for a long time";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Stealing mushrooms...what good memory.....";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "...";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Baphomet jr card adds 3 agility and 1 critical";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "We assassins have the highest agility, at the end,we get 10 extra points in agility.";
+		TalkCont_3:
+			next;
+			mes "[Assassin 'Kai']";
+			mes "....hehe its tired talking so much.";
+			next;
+			mes "[Assassin 'Kai']";
+			mes "Thats all the tips I can give you.";
+			mes "I have I told you all that I can.";
+			mes "When you reach 'Nameless' do your best on the test.";
+			next;
+			enablenpc "in_moc_16","Assassin",1;
+			enablenpc "in_moc_16","Kai ",0;
+			warp "in_moc_16",19,144;
+	AsnMnu_3:
+		mes "[Assassin 'Kai']";
+		mes "...HAHAH are you begging me??";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "Don't you have any faith in yourself?!";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "HAHAHHAHAHAHAHA!!!!";
+		mes "I see, you want to beg and be a dog now eh?!!!";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "Leave NOW, you don't qualify to become an assassin!!!";
+		next;
+		mes "[Assassin 'Kai']";
+		mes "Hahahaha!!!!!!!!";
+		next;
+		enablenpc "in_moc_16","Assassin",1;
+		enablenpc "in_moc_16","Kai ",0;
+		warp "c_tower4",64,76;
+		close;
+ChkSin:
+	mes "[Assassin'Kai']";
+	mes "So you're here for a job change.";
+	mes "well, I am used to hiding when someone approaches me...";
+	mes "Oh well, I can see that it took you a long time to get here.";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Are you here to become an assassin?";
+	next;
+menu "Yes. ",-,"...No.",AsnMnu_4;
+	mes "[Assassin 'Kai']";
+	mes "Okay, please fill out this form first.";
+	mes "Please write your name and your job level down";
+Check:
+	next;
+	set joblvl = joblevel;
+	mes "[Assassin'Kai']";
+	mes "Oh so you're..$charaname...";
+	mes "Your job level $[joblvl].....";
+	next;
+	mes "[Assassin'Kai']";
+	check joblevel > 48,-,ChkSin_1;
+	mes "Wow you are job level $[joblvl] you've been training hard haven't you.";
+	mes "People upstairs will be happy someone like you came to become an assassin..";
+	mes "Oh, I am just talking to myself, keep writing.";
+	next;
+	mes "[Assassin 'Kai']";
+	mes ".........";
+	next;
+	mes "[Assassin 'Kai']";
+	mes ".....";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Your done..?";
+	mes "Okay, give it to me..";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Okay let me send you over, Good luck.";
+	next;
+	set thief_joblvl = 1;
+	set job_assasin = 1;
+	enablenpc "in_moc_16","Assassin",1;
+	enablenpc "in_moc_16","Kai ",0;
+	warp "in_moc_16",19,144;
+ChkSin_1:
+	check joblevel < 49,-,ChkSin_2;
+	mes "Oh, you just barely passed the job level requirement, oh well doesn't really matter.";
+	mes "These days a lot of people without skills come to try out for assassin...";
+	mes "Oh, I am just talking to myself, forget what I just said.";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "..............";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Finished..?";
+	mes "Okay give it to me then..";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Okay, I'll send you over now, Good Luck.";
+	next;
+	set thief_joblvl = 2;
+	set job_assasin = 1;
+	enablenpc "in_moc_16","Assassin",1;
+	enablenpc "in_moc_16","Kai ",0;
+	warp "in_moc_16",19,144;
+ChkSin_2:
+	mes "...How did you get in here? Get out now.";
+	next;
+	enablenpc "in_moc_16","Assassin",1;
+	enablenpc "in_moc_16","Kai ",0;
+	warp "moc_fild16",206,229;
+AsnMnu_4:
+	mes "[Assassin 'Kai']";
+	mes "Oh, so you walked by didn't you?...";
+	mes "............";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "You want to chat with me don't you?";
+	mes "............";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "you really don't want to change your job?";
+	mes ".............";
+	next;
+menu "Yes.",-,"No, I want to change my job.",AsnMnu_5;
+	mes "[Assassin 'Kai']";
+	mes "....Well, if thats the case, GET OUT.";
+	next;
+	set job_assasin = 0;
+	enablenpc "in_moc_16","Waiting Room",1;
+	set thief_joblvl = 0;
+	set asn_skill = 0;
+	enablenpc "in_moc_16","Assassin",1;
+	enablenpc "in_moc_16","Kai ",0;
+	warp "moc_fild16" 206 229;
+AsnMnu_5:
+	mes "[Assassin 'Kai']";
+	mes "......";
+	mes "Are you playing a joke on me?";
+	mes "Anyways if you need to change your job.";
+	next;
+	mes "[Assassin 'Kai']";
+	mes "Please fill our your name and job level on this form";
+	goto Check;
+OnInit:
+	enablenpc "in_moc_16","Kai ",0;
+	return;
+}
+
+//-The hidden Npc
+in_moc_16.vhm,19,154,8 script nameless_one 139,{
+OnTouch:
+	scriptlabel "quiz";
+	mes "[Nameless One]";
+	check asn_skill == 0,-,ChkSin;
+	mes "Oh, its a costumer.";
+	mes "It's useless looking around.";
+	mes "I already hidden myself perfectly...";
+	mes "Cloaking is super easy for an assassin!";
+	mes "Heheheh...";
+	next;
+	mes "[Nameless One]";
+	mes "You asked me why I don't have a name?";
+	mes ".....Hahaha. You're a interesting person? You feel scared seeing me?";
+	mes "You don't know when my knife will go into your back!??";
+	next;
+menu "I am..Scared~",-,"I can sense that you don't want to kill.",AsnMnu_1;
+	mes "[Nameless One]";
+	mes "Oh, is that it, you're scared.";
+	next;
+	mes "[Nameless One]";
+	mes "...I don't want to talk to wussies.";
+	close;
+AsnMnu_1:
+	mes "[Nameless One]";
+	mes ".....Oh, you can sense anger.";
+	next;
+	mes "[Nameless One]";
+	mes "................";
+	next;
+	mes "[Nameless One]";
+	mes "Okay, let me tell you..";
+	next;
+	mes "[Nameless One]";
+	mes "....I am a person that kills for a living..the smell of fresh blood never leaves my hand.";
+	next;
+	mes "[Nameless One]";
+	mes "We assassins don't need names, we are basically knives working for the guild..";
+	mes "I am in charge of all the killing...but deciding who to kill is the guild's decision. I am just a tool, so I don't need a name.";
+	next;
+	mes "[Nameless One]";
+	mes "Well, I don't actually like you being an assasin!";
+	mes "But if you want to become an assassin, you got to answer my questions...!!";
+	next;
+	mes "[Nameless One]";
+	mes "But before I start the quiz, you can ask me some basic questions.";
+	mes "Ask what you want to know!";
+	next;
+	set asn_skill = 0;
+End_1:
+menu "...What are the skills?",-,"...What is the most important thing about an assassin?",AsnMnu_2,"...Thats enough.",AsnMnu_3;
+	mes "[Nameless One]";
+	mes "Yes, the skills.";
+	mes "Skills are very useful in this world";
+	mes "it can change a lot of things..";
+	mes "The basic skills are the masteries'";
+	mes "I'll tell you those first.";
+	next;
+	mes "[Nameless One]";
+	mes "First, there's katar mastery'";
+	mes "If you add into katar mastery";
+	mes "It will increases the attack when you use a katar.";
+	mes "This will definetly help.";
+	next;
+	mes "[Nameless One]";
+	mes "'Left hand mastery' 'Right hand mastery'";
+	mes "Assassins have the ability to use two weapons at the same time";
+	mes "They can use two weapons.";
+	mes "But";
+	mes "It'll be a lot harder than using only one weapon?";
+	mes "Thats why the damage you do will be less.";
+	mes "thats why you'll need to add into the masteries.";
+	mes "...But if you're not using two weapons, you won't need those masteries.";
+	mes "'Left hand 'can be learned when 'Right hand mastery'";
+	mes "is at level 2.";
+	next;
+	mes "[Nameless One]";
+	mes "'Sonic Blow'";
+	mes "its a fast attack, it'll attack the enemy 8 times.";
+	mes "Well, you can only use this skill";
+	mes "when you use a katar type weapon.";
+	mes "The attack of sonic boom depends on the weapon and the user's strength.";
+	mes "If you want to learn this skill, you got to have at least a level 4 Katar Mastery";
+	mes "When you get level 4 Katar Mastery, you'll be able to learn sonic blow.";
+	next;
+	mes "[Nameless One]";
+	mes "'Grimtooth'";
+	mes "...How would you feel if you get attacked by someone you can't see?";
+	mes "You can only use grimtooth when you use hide";
+	mes "Grimtooth can help you attack things on land when your underground.";
+	mes "The higher the level of grimtooth";
+	mes "the farther it can attack.";
+	next;
+	mes "This skill is also good when you're surrounded";
+	mes "When you're getting mobbed, its a good idea to hide and use grimtooth.";
+	mes "...But thats only for special occassions.";
+	mes "..Remember assassins should kill people in a shadowy way.";
+	mes "In order to use grimtooth your body got to hide easier underground";
+	mes "so you'll need at least a level 2 cloak..";
+	next;
+	mes "[Nameless One]";
+	mes "'Cloak'";
+	mes "Once you got a level 2 hide, you can learn cloak.";
+	mes "...like me now";
+	mes "you can hide yourself and move.";
+	mes "But, you got to be close; to a wall in order to cloak.";
+	next;
+	mes "[Nameless One]";
+	mes "'Enchant Poison'";
+	mes "This is the technique where you put poison on your weapon.";
+	mes "when you use this skill, your weapon turns into a poison type weapon.";
+	mes "and if you hit an enemy you can poison them.";
+	mes "You will need at least a level 1 envemon to use this skill. ";
+	mes "If you know more about poison, you can eventually raise your attack.";
+	mes "and also you can make your weapons poisonious.";
+	mes "and then use them on something...";
+	next;
+	mes "[Nameless One]";
+	mes "'Poison React'";
+	mes "You'll be somewhat immune to poison";
+	mes "You can be able to make yourself immune to poison.";
+	mes "and you can also make someone immune ot poison.";
+	mes "If you want to learn Poison React you got to have at least a level 3 Enchant posion.";
+	next;
+	mes "[Nameless One]";
+	mes "'Vemon Dust'";
+	mes "You can make an area contaminated with poison, but you'll need a red gemstone in order to use this skill!";
+	mes "The higher the level of the skill, the longer the poison stays.";
+	mes "You'll need at least a level 5 enchant poison in order to use Venom Dust.";
+	next;
+	mes "[Nameless One]";
+	mes "Splasher";
+	mes "Enemies health usually drop after a little while after they get poisoned.";
+	mes "If you use this skill, after 3 seconds, the enemy will get hurt and it'll be agressive!";
+	mes "This skill makes venom splash everywhere.";
+	mes "this is the most difficult skill to learn for an assassin...";
+	mes "You'll need at least a level 5 venom dust and a level 5 poison react";
+	mes "to learn this skill";
+	next;
+	mes "[Nameless One]";
+	mes "Thats all the assassin skills above.";
+	set asn_skill = 1;
+	goto End_1;
+AsnMnu_2:
+	mes "[Nameless One]";
+	mes "Yes, the most important thing.";
+	mes "The most important thing to an assassin";
+	mes "is always Agility, it raises your dodge and your attack speed at the same time.";
+	next;
+	mes "[Nameless One]";
+	mes "Also, if you want to do more damage";
+	mes "Strength is a good thing to put in.";
+	mes "I can't tell you anymore about stats.";
+	mes "You should go figure out what stats works the best for you.";
+	set asn_skill = 2;
+	goto End_1;
+AsnMnu_3:
+	mes "[Nameless One]";
+	check asn_skill == 0,-,ChkSin_1;
+	mes "Hahaha you cocky bastard!";
+	mes "Don't want to listen to what I have to say eh!!";
+	next;
+	mes "[Nameless One]";
+	mes "and you have to say its enough.?!?!?!!?";
+	mes "K, now I want to see how you can pass this quiz...";
+	next;
+ChkSin_1:
+	set asn_skill = 4;
+	mes "I am going to start now!";
+	mes "I can only allow you to get one wrong.";
+	next;
+	mes "[Nameless One]";
+	mes "you will need to answer at least 9 questions correctly.";
+	mes "I won't tell you if you got it wrong or not..";
+	next;
+retake:
+	random @assassin_quiz,3;
+	set @assassin_t = 0;
+	mes "[Nameless One]";
+	mes "Okay, get ready, I am going to start asking.";
+	next;
+	mes "[Nameless One]";
+	check @assassin_quiz == 0,-,SinQP2;
+	mes "1. What here is not the preq of Grimtooth?";
+	next;
+menu "cloak Lv 2",SinQ2,"Sonic Blow Lv 5",SinQ2,"Hide Lv 4",SinQ2,"Left hand mastery Lv 2",-;
+	set @assassin_t + 10;
+SinQ2:
+	mes "[Nameless One]";
+	mes "2. Enchant Poison makes your weapon what element?";
+	next;
+menu "Poison",-,"Earth",SinQ3,"Fire",SinQ3,"Wind",SinQ3;
+	set @assassin_t + 10;
+SinQ3:
+	mes "[Nameless One]";
+	mes "3. What is the function of level 4 left hand mastery?";
+	next;
+menu "Attack +80% ",SinQ4,"Attack +70%",-,"Attack +90%",SinQ4,"Attack +108%!!",SinQ4;
+	set @assassin_t + 10;
+SinQ4:
+	mes "[Nameless One]";
+	mes "4. What item do you need to use when you use the skill ' Venom Dust '?";
+	next;
+menu "Green Gemstone",SinQ5,"Blue Gemstone",SinQ5,"Yellow Gemstone",SinQ5,"Red Gemstone",-;
+	set @assassin_t + 10;
+SinQ5:
+	mes "[Nameless One]";
+	mes "5. When Enchant Poison goes up to level 5 what new skill appear?";
+	next;
+menu "Splasher",SinQ6,"Grimtooth",SinQ6,"Sonic Blow",SinQ6,"Venom Dust",-;
+	set @assassin_t + 10;
+SinQ6:
+	mes "[Nameless One]";
+	mes "6. What skill listed below allows you to be walk around unseen?";
+	next;
+menu "Hide",SinQ7,"Backslide",SinQ7,"Cloak",-,"Throw Sand",SinQ7;
+	set @assassin_t + 10;
+SinQ7:
+	mes "[Nameless One]";
+	mes "7. What is the requirement for Venom Dust?";
+	next;
+menu "Enemy must be weak.",SinQ8,"Must use a red gemstone.",-,"You got to have a certain health.",SinQ8;
+	set @assassin_t + 10;
+SinQ8:
+	mes "[Nameless One]";
+	mes "8. What monster card listed before adds to Intelligence?";
+	next;
+menu "Steel Chonchon",SinQ9,"Deviruchi",SinQ9,"Elder Willow",-,"Baphomet",SinQ9;
+	set @assassin_t + 10;
+SinQ9:
+	mes "[Nameless One]";
+	mes "9. How much sp do you use when you do a double hit using a dagger?";
+	next;
+menu "15",SinQ10," 0 ",-,"10",SinQ10,"54",SinQ10;
+	set @assassin_t + 10;
+SinQ10:
+	mes "[Nameless One]";
+	mes "10. What is the best type of sword used in bybalan dungeon?";
+	next;
+menu "Sword of Piercing Wind",-,"Sword of Ice",SinQEnd,"Sword of Earth",SinQEnd,"Sword of Fire",SinQEnd;
+	set @assassin_t + 10;
+	goto SinQEnd;
+SinQP2:
+	check @assassin_quiz == 1,-,SinQP3;
+	mes "1. What card listed below can be inserted into a katar?";
+	next;
+menu "Male Thief Bug",SinQ11,"PecoPeco",SinQ11,"Desert wolf",-,"Kobold",SinQ11;
+	set @assassin_t + 10;
+SinQ11:
+	mes "[Nameless One]";
+	mes "2. What card listed below can be inserted into a dagger?";
+	next;
+menu "Caramel",-,"Ghostring",SinQ12,"Baphomet Jr",SinQ12,"DoppelGanger",SinQ12;
+	set @assassin_t + 10;
+SinQ12:
+	mes "[Nameless One]";
+	mes "3. What is the class that can forge weapons?";
+	next;
+menu "Merchant",SinQ13,"Blacksmith",-,"Thief",SinQ13,"Priest",SinQ13;
+	set @assassin_t + 10;
+SinQ13:
+	mes "[Nameless One]";
+	mes "4. Which weapon listed below isn't a katar class weapon?";
+	next;
+menu "Jur",SinQ14,"Jamadhar",SinQ14,"Infiltrator",SinQ14,"Grimtooth",-;
+	set @assassin_t + 10;
+SinQ14:
+	mes "[Nameless One]";
+	mes "5. In Bybalan Dungeon a large amount of monsters are what type?";
+	next;
+menu "Water",-,"Fire",SinQ15,"Wind",SinQ15,"Earth",SinQ15;
+	set @assassin_t + 10;
+SinQ15:
+	mes "[Nameless One]";
+	mes "6. What monster listed below can't be tamed?";
+	next;
+menu "Poring",SinQ16,"Condor",-,"lunatic",SinQ16,"Poison Spore",SinQ16;
+	set @assassin_t + 10;
+SinQ16:
+	mes "[Nameless One]";
+	mes "7. Choose the monster that is weakest to fire.";
+	next;
+menu "Kobold (Sword)",SinQ17,"Kobold (Mace)",SinQ17,"Kobold (Hammer)",SinQ17,"Kobold (Axe)",-;
+	set @assassin_t + 10;
+SinQ17:
+	mes "[Nameless One]";
+	mes "8. Pick out the fake element.";
+	next;
+menu "Holy",SinQ18,"Shadow/Undead",SinQ18,"Ice",SinQ18,"Dust",-;
+	set @assassin_t + 10;
+SinQ18:
+	mes "[Nameless One]";
+	mes "9. Pick out the monster that doesn't belong in the group.";
+	next;
+menu "Poring",SinQ19,"Poporing",SinQ19,"Creamy",-,"Drop",SinQ19;
+	set @assassin_t + 10;
+SinQ19:
+	mes "[Nameless One]";
+	mes "10. What monster listed below is an mvp?";
+	next;
+menu "Ghostring",SinQEnd,"Angeling",SinQEnd,"Drake",-,"Ancient Mummy",SinQEnd;
+	set @assassin_t + 10;
+	goto SinQEnd;
+SinQP3:
+	mes "1. How much dodge does 'Whisper card' give you?";
+	next;
+menu "20",-,"30",SinQ20,"15",SinQ20,"25",SinQ20;
+	set @assassin_t + 10;
+SinQ20:
+	mes "[Nameless One]";
+	mes "2. Which monster I listed before can detect hidden?";
+	next;
+menu "Willows",SinQ21,"Whispers",-,"Porings",SinQ21,"Munaks",SinQ21;
+	set @assassin_t + 10;
+SinQ21:
+	mes "[Nameless One]";
+	mes "3. Assassins can use dual weapons, which set of weapon below can an assassin use?";
+	next;
+menu "Jur and Jamadhar",SinQ22,"Damascus and claymore",SinQ22,"Damascus and Stiletto",-,"Axe and Stiletto",SinQ22;
+	set @assassin_t + 10;
+SinQ22:
+	mes "[Nameless One]";
+	mes "4. Where do you become a thief?";
+	next;
+menu "Prontera",SinQ23,"Lutie",SinQ23,"AldeBaren",SinQ23,"Morroc",-;
+	set @assassin_t + 10;
+SinQ23:
+	mes "[Nameless One]";
+	mes "5. What is the card that does nothing to agility?";
+	next;
+menu "Baphomet Jr card",SinQ24,"Ghostring card",-,"Male Thief Bug card",SinQ24,"Mimic card",SinQ24;
+	set @assassin_t + 10;
+SinQ24:
+	mes "[Nameless One]";
+	mes "6. Why is Assassin better than other classes?";
+	next;
+menu "They can sing",-,"They can do good drama",-,"They can dance",-,"They can dodge",-;
+	set @assassin_t + 10;
+SinQ25:
+	mes "[Nameless One]";
+	mes "7. When an assassin gets to job 50, how much agility bonus is given to him/her?";
+	next;
+menu "7",SinQ26,"8",SinQ26,"9",SinQ26,"10",-;
+	set @assassin_t + 10;
+SinQ26:
+	mes "[Nameless One]";
+	mes "8. What can an assassin not use?";
+	next;
+menu "Sword",SinQ27,"Golden helm",-,"Dagger",SinQ27,"jur",SinQ27;
+	set @assassin_t + 10;
+SinQ27:
+	mes "[Nameless One]";
+	mes "9. When a novice wants to become a thief what mushrooms do they need to steal?";
+	next;
+menu "Orange Net Mushrooms",-,"Mushrooms",SinQ28,"Orange Gooey Mushrooms",-,"Poison Mushrooms",SinQ28;
+	set @assassin_t + 10;
+SinQ28:
+	mes "[Nameless One]";
+	mes "10. What card listed below is useless to an assassin?";
+	next;
+menu "Ghostring card",end,"Elder willow card",-,"Skeleton Soldier card",end,"Kobold card",end;
+	set @assassin_t + 10;
+SinQEnd:
+	mes "[Nameless One]";
+	mes "Thanks for your time..";
+	next;
+	mes "[Nameless One]";
+	mes "This is what you got $[@assassin_t] ....";
+	check @assassin_t > 80,-,ChkSin_2;
+	set asn_skill = 5;
+	mes "... Very well, you passed the quiz.";
+	next;
+	mes "[Nameless One]";
+	mes "wait, don't get so excited yet, there's still another test...";
+	mes "When we get inside, i'll tell you about the second test..";
+	close;
+ChkSin_2:
+	set asn_skill = 4;
+	set @assassin_quiz = 0;
+	mes "No, you failed the quiz!";
+	next;
+	mes "[Nameless One]";
+	mes "You can't become an assassin with the skills you have right now?";
+	mes "Go and Study harder than come back.";
+	next;
+	mes "[Nameless One]";
+	mes "If you really don't know, I can give you tips..";
+	next;
+	mes "[Nameless One]";
+	mes "Go check talk to the Old assassin that helps you become an assasin, look in his shelf,";
+	mes "ro.gameflier.com ...Remember this code.";
+	mes "I heard, this password is very useful  cough cough..";
+	warp "in_moc_16",19,76;
+	close;
+ChkSin:
+	check asn_skill < 5,-,End;
+	mes "So, your still obsess in becoming an assassin eh?";
+	next;
+	mes "[Nameless One]";
+	mes "If you want to, i'll help you...";
+	next;
+	mes "[Nameless One]";
+	mes "This time if you fail again, I suggest you give up on being an assassin!";
+	next;
+menu "I want to become a normal thief.",-,"I want to take the challenge and become an assassin.",SinMnu_R;
+	mes "[Nameless One]";
+	mes "cough cough... thats a good choice...";
+	mes "Being an assassin is lonely.....";
+	next;
+	mes "[Nameless One]";
+	mes "leave the assassin guild now.";
+	mes "go back to the town you came from!";
+	warp "moc_fild16",206,241;
+	close;
+SinMnu_R:
+	set @assassin_quiz = 0;
+	mes "[Nameless One]";
+	mes "cough cough...okay...";
+	mes "I will try to help you become a lonely assassin hahahahah.";
+	next;
+	goto retake;
+End:
+	mes "[Nameless One]";
+	mes "we'll see each other soon bye.";
+	close;
+}
+
+in_moc_16.vhm,12,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,13,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,14,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,15,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,16,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,17,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,18,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,20,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,21,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,22,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,23,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,24,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,25,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,26,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,27,154,8 script nameless_one 139,{
+OnTouch:
+	script "quiz";
+}
+
+in_moc_16.vhm,21,165,4 script Barkadi 725,{
+	mes "[Barkadi]";
+	check asn_skill < 5,-,ChkSin;
+	mes "...Go unlock the topic of the test then come back...";
+	mes "I can't believe you want to just skip the basic tests..";
+	next;
+	warp "in_moc_16",19,76;
+ChkSin:
+	mes "[Barkadi]";
+	check job_assasin == 1,-,ChkSin_1;
+	check asn_skill == 5,-,ChkSin_1;
+	mes " $charaname...";
+	mes "You did well on the written test..?";
+	next;
+	mes "[Barkadi]";
+	mes "Yes, even though I want to let you become an assassin..";
+	mes "I can't because some people can't even do the basic stuff right.";
+	next;
+	mes "[Barkadi]";
+	mes "thats why we assassins need a lot of faith and courage in ourselves!";
+	mes "....One day, God will use our assassin powers.";
+	next;
+	mes "[Barkadi]";
+	mes "There have been many people that can't do basic stuff right.";
+	next;
+	mes "[Barkadi]";
+	mes "They don't have determination and faith in themselves!!!";
+	next;
+	mes "[Barkadi]";
+	mes "Please.";
+	next;
+	mes "[Barkadi]";
+	mes "Please, if you become an assassin please have faith and determination! ";
+	mes "You will be responsible to the blood on your katar!!";
+	next;
+	mes "[Barkadi]";
+	mes "I'll tell you the detail for this test.";
+	mes "The basic to assassination is to find a target!";
+	next;
+	mes "[Barkadi]";
+	mes "that means you need to find the right target, he can't be too weak not can he be too strong!";
+	mes "....";
+	next;
+	mes "[Barkadi]";
+	mes "...";
+	mes "you just need to pick a target and then capture them.";
+	next;
+	mes "[Barkadi]";
+	mes "You must capture 6 targets!!";
+	mes "there are different types of targets, so becareful and only hit the target you choice~";
+	mes "...If you did something wrong, you got to start all over again~";
+	next;
+	mes "[Barkadi]";
+	mes "If you go north from here to the waiting room, you'll be transferred to the training ground.";
+	next;
+	mes "[Barkadi]";
+	mes "Only 1 person can take the test at one time,";
+	mes "If there's someone inside, you got to wait until they are finished.";
+	close;
+ChkSin_1:
+	mes "....Don't be sad because you failed!!";
+	mes "If you want I can help you arrange another test?";
+	next;
+menu "Yes I want to continue!!",-,"...I want to give up.",AsnMnu_1;
+	mes "[Barkadi]";
+	mes "Yes, thats the determination I am talking about!";
+	mes "Okay, let me tell you once again,  you got to capture the targets!";
+	mes "Good luck, Please becareful...";
+	close;
+AsnMnu_1:
+	mes "[Barkadi]";
+	mes "...Okay, come back when you have enough rest.";
+	next;
+	check \@startsin = 1,End,-;
+	enablenpc "in_moc_16","Waiting Room",1;
+End:
+	set job_assasin = 0;
+	set thief_joblvl = 0;
+	set asn_skill = 0;
+	warp "in_moc_16",19,13;
+}
+
+//- Test 1
+//- Start
+in_moc_16.vhm,21,165,4 script "Waiting Room" 725,{
+return;
+	OnInit:
+	waitingroom "Waiting Room",2;
+	check \@startsin = 0,start,-;
+	return;
+start:
+	set \@startsin = 1;
+	enablenpc "in_moc_16","door monster",0;
+	enablenpc "in_moc_16","Guild Chief ",0;
+	enablenpc "in_moc_16","backers",0;
+	enablenpc "in_moc_16","Examiner",1;
+	enablenpc "in_moc_16","observer ",1;
+	enablenpc "in_moc_16","traps",1;
+	enablenpc "in_moc_16","Waiting Room",0;
+	warpallpc "in_moc_16",64,149,2;
+	return;
+}
+
+in_moc_16.vhm,1,1,1 script "Examiner" 139,{
+	return;
+OnInit:
+	check \@startsin = 1,start,-;
+	return;
+start:
+	set \@mobssin1 = 0;
+	callmob "in_moc_16",62,161,"TARGET",1002,0,"mobs1";
+	callmob "in_moc_16",85,169,"TARGET",1063,0,"mobs1";
+	callmob "in_moc_16",88,152,"TARGET",1002,0,"mobs1";
+	callmob "in_moc_16",90,143,"TARGET",1113,0,"mobs1";
+	callmob "in_moc_16",74,167,"TARGET",1031,0,"mobs1";
+	callmob "in_moc_16",77,173,"TARGET",1002,0,"mobs1";
+	callmob "in_moc_16",62,161,"Hit This Target",1063,0,"mobs2";
+	callmob "in_moc_16",85,169,"Cute Poring",1031,0,"mobs2";
+	callmob "in_moc_16",79,174,"Good Luck",1113,0,"mobs2";
+	callmob "in_moc_16",85,156,"Target For Practice",1063,0,"mobs2";
+	callmob "in_moc_16",74,171,"Dont come closer",1002,0,"mobs2";
+	callmob "in_moc_16",68,173,"You okay?",1113,0,"mobs2";
+	callmob "in_moc_16",65,158,"Battle Target",1002,0,"mobs2";
+	callmob "in_moc_16",60,158,"Soldier Target",1113,0,"mobs2";
+	callmob "in_moc_16",64,169,"Why me?",1002,0,"mobs2";
+	callmob "in_moc_16",71,173,"I'am not Target",1063,0,"mobs2";
+	callmob "in_moc_16",77,172,"Don't hit me",1002,0,"mobs2";
+	callmob "in_moc_16",76,172,"Target Yourself",1063,0,"mobs2";
+	callmob "in_moc_16",75,172,"Not me",1113,0,"mobs2";
+	callmob "in_moc_16",67,167,"Keep up the good work",1063,0,"mobs2";
+	callmob "in_moc_16",86,170,"Target me",1031,0,"mobs2";
+	callmob "in_moc_16",86,171,"Little one",1002,0,"mobs2";
+	callmob "in_moc_16",86,170,"Target Near",1113,0,"mobs2";
+	callmob "in_moc_16",86,173,"Hope you can become an assassin..",1063,0,"mobs2";
+	callmob "in_moc_16",85,170,"Battle Monster",1031,0,"mobs2";
+	callmob "in_moc_16",89,156,"Dont hit me",1002,0,"mobs2";
+	callmob "in_moc_16",89,156,"Speed182",1113,0,"mobs2";
+	callmob "in_moc_16",89,156,"Battle Target",1063,0,"mobs2";
+	callmob "in_moc_16",89,156,"Battlefield Tears",1113,0,"mobs2";
+	callmob "in_moc_16",89,156,"Job Change Tears",1031,0,"mobs2";
+	callmob "in_moc_16",83,169,"Evil Servant",1002,0,"mobs2";
+	callmob "in_moc_16",63,158,"Dead soul",1063,0,"mobs2";
+	callmob "in_moc_16",63,157,"Your Target",1002,0,"mobs2";
+	callmob "in_moc_16",64,159,"Battle Target",1002,0,"mobs2";
+	callmob "in_moc_16",63,159,"Target Sighted",1063,0,"mobs2";
+	callmob "in_moc_16",63,159,"Archer Target",1002,0,"mobs2";
+	callmob "in_moc_16",63,159,"Swordman Target",1002,0,"mobs2";
+	callmob "in_moc_16",83,148,"Thief Target",1002,0,"mobs2";
+	callmob "in_moc_16",82,148,"Acolyte Target",1002,0,"mobs2";
+	callmob "in_moc_16",84,148,"Merchant Target",1002,0,"mobs2";
+	npctimer 1;
+	goto CheckT;
+OnTimer1000:
+	broadcast "Test is starting! Kill all  the 'TARGET' Killing ones such as 'Merc Target' will fail you.",10;
+	goto CheckT;
+OnTimer3000:
+	broadcast "We are doing this test so that you can practice on focusing on a target.",10;
+	goto CheckT;
+OnTimer4000:
+	broadcast "You only got 3 minutes to complete this test.",10;
+	goto CheckT;
+OnTimer5000:
+	broadcast "You have three minutes left",10;
+	goto CheckT;
+OnTimer65000:
+	broadcast "You have two minutes left, the monster you want to focus on 'Target' ",10;
+	goto CheckT;
+OnTimer125000:
+	broadcast "One minute left.",10;
+	goto CheckT;
+OnTimer180000:
+	broadcast "Test ending in 5 secs....",10;
+	goto CheckT;
+OnTimer181000:
+	broadcast "4 seconds....",10;
+	goto CheckT;
+OnTimer182000:
+	broadcast "3 seconds...",10;
+	goto CheckT;
+OnTimer183000:
+	broadcast "2 seconds..",10;
+	goto CheckT;
+OnTimer184000:
+	broadcast "1 second.",10;
+	goto CheckT;
+OnTimer185000:
+	broadcast "Okay times up. ",10;
+CheckT:
+	check \@startsin == 2,OnTimer185100,-;
+	check \@startsin == 3,OnTimer188000,-;
+	return;
+OnTimer185100:
+	set \@startsin = 0;
+	resetmymob "in_moc_16";
+	broadcast "You've Failed...please try again.",10;
+	enablenpc "in_moc_16","backers",1;
+	return;
+OnTimer186000:
+	broadcast " Goto exit.. ",10;
+	enablenpc "in_moc_16","backers",1;
+	return;
+OnTimer188000:
+	npctimer 0;
+}
+
+in_moc_16.vhm,0,0,0	script "mobs1" -1,{
+	set \@mobssin1 + 1;
+	check \@mobssin1 < 6,-,mobdead;
+	return;
+mobdead:
+	set \@startsin = 3;
+	set job_assasin = 3;
+	broadcast "Nicely done, You pass!",10;
+	enablenpc "in_moc_16","door monster",1;
+	return;
+}
+
+in_moc_16.vhm,68,158,0 script "mobs2" -1,{
+	set \@startsin = 2;
+	resetmymob "in_moc_16";
+	broadcast " WRONG MONSTER! FAIL!!",10;
+	broadcast " Goto Exit. ",10;
+	enablenpc "in_moc_16","backers",1;
+}
+
+in_moc_16.vhm,62,153,1 script Observer 55,{
+	mes "[Observer]";
+	mes "Don't mind me, I'm just here to see how well you do on your test.....";
+	close;
+}
+
+//Portals
+in_moc_16.vhm,18,8,1 warp "guild_to_16" 1,1,moc_fild16.vhm,205,291
+moc_fild16.vhm,205,296,1 warp "16_to_guild" 1,1,in_moc_16.vhm,18,11
+
+//- Warp
+in_moc_16.vhm,87,137,1	script "door monster" 45,{
+OnTouch:
+	resetmymob "in_moc_16";
+	check job_assasin == 2,-,other1;
+	set job_assasin = 3;
+	goto sub1;
+other1:
+	set job_assasin = 4;
+sub1:
+	save "in_moc_16",16,13;
+	warp "in_moc_16",87,102;
+	return;
+OnInit:
+	enablenpc "in_moc_16","door monster",0;
+	return;
+}
+
+in_moc_16.vhm,182,169,1	script "inter_maze" 45,{
+OnTouch:
+	check job_assasin == 5,-,other1;
+	set job_assasin = 6;
+	warp "in_moc_16",181,183;
+other1:
+	check job_assasin == 6,-,other2;
+	set job_assasin = 7;
+	warp "in_moc_16",181,183;
+other2:
+	broadcast "$charaname go in the Guild Chief room.";
+	save "in_moc_16",181,183;
+	enablenpc "in_moc_16","Guild Chief",1;
+	warp "in_moc_16",167,113;
+}
+
+in_moc_16.vhm,64,149,1 script "backers" 45,{
+OnTouch:
+	set \@startsin = 0;
+	set job_assasin = 2;
+	enablenpc "in_moc_16","backers",0;
+	enablenpc "in_moc_16","Waiting Room",1;
+	warp "in_moc_16",19,161;
+}
+
+//- Warp Traps
+in_moc_16.vhm,68,158,0	script "a01_1" 139,{
+OnTouch:
+	scriptlabel SinTraps;
+	resetmymob "in_moc_16";
+	set \@startsin = 0;
+	enablenpc "in_moc_16","Waiting Room",1;
+	broadcast " $charaname, fell into a trap, send him back to original spot.",10;
+	set job_assasin = 2;
+	enablenpc "in_moc_16","Examiner",0;
+	warp "in_moc_16",19,161;
+}
+in_moc_16.vhm,69,158,0	script "a01_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,68,159,0	script "a01_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,69,159,0	script "a01_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,64,162,0	script "a02_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,65,162,0	script "a02_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,64,163,0	script "a02_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,65,163,0	script "a02_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,62,168,0	script "a03_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,63,168,0	script "a03_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,62,169,0	script "a03_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,63,169,0	script "a03_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,66,170,0	script "a04_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,67,170,0	script "a04_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,66,171,0	script "a04_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,67,171,0	script "a04_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,64,174,0	script "a05_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,64,175,0	script "a05_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,65,174,0	script "a05_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,65,175,0	script "a05_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,72,174,0	script "a06_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,72,175,0	script "a06_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,73,174,0	script "a06_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,73,175,0	script "a06_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,72,166,0	script "a07_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,72,167,0	script "a07_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,73,166,0	script "a07_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,73,167,0	script "a07_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,72,168,0	script "a08_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,72,169,0 script "a08_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,73,168,0	script "a08_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,73,169,0	script "a08_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,78,168,0	script "a09_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,78,169,0	script "a09_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,79,168,0	script	"a09_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,79,169,0	script "a09_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,80,172,0	script "a10_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,81,172,0	script "a10_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,82,172,0	script "a10_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,83,172,0	script "a10_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,80,173,0	script "a10_5" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,81,173,0	script "a10_6" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,82,173,0	script "a10_7" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,83,173,0	script "a10_8" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,88,174,0	script "a11_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,88,175,0	script "a11_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,89,174,0	script "a11_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,88,175,0	script "a11_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,86,166,0	script "a12_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,86,167,0	script "a12_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,87,166,0	script "a12_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,87,167,0	script "a12_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,90,164,0	script "a13_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,90,165,0	script "a13_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,91,164,0	script "a13_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,91,165,0	script "a13_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,84,160,0	script "a14_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,85,160,0	script "a14_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,86,160,0	script "a14_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,87,160,0	script "a14_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,88,160,0	script "a14_5" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,89,160,0	script "a14_6" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,84,161,0	script "a14_7" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,85,161,0	script "a14_8" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,86,161,0	script "a14_9" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,87,161,0	script "a14_10" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,88,161,0	script "a14_11" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,89,161,0	script "a14_12" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,86,154,0	script "a15_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,86,155,0	script "a15_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,87,154,0	script "a15_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,87,155,0	script "a15_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,84,150,0	script "a16_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,84,151,0	script "a16_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,85,150,0	script "a16_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,85,151,0	script "a16_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,90,150,0	script "a17_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,90,151,0	script "a17_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,91,150,0	script "a17_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,91,151,0	script "a17_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,86,146,0	script "a18_1" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,86,147,0	script "a18_2" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,87,146,0	script "a18_3" 139,{
+OnTouch:
+	script SinTraps;
+}
+in_moc_16.vhm,87,147,0	script "a18_4" 139,{
+OnTouch:
+	script SinTraps;
+}
+
+//- Test 2
+in_moc_16.vhm,89,98,1 script "Dante" 118,{
+	mes "[Dante]";
+	check job_assasin == 4,other1,-;
+	mes "Oh, you just fainted.";
+	mes "Let me heal you so you can try again!";
+	heal 100,100;
+	next;
+	mes "[Dante]";
+	mes "I didn't know you would faint like this?";
+	mes "Do you want to try next time?";
+	mes "Cause it looks like your trying your best but its too hard for you...";
+	next;
+menu "I must continue! I have to become an assassin!",-,"...Okay, i'll come back next time.",brb;
+	mes "[Dante]";
+	mes "Oh. okay good luck my friend!";
+	close;
+brb:
+	mes "[Dante]";
+	mes ".....Oh yes,I hope I can see you next time.";
+	next;
+	mes "[Dante]";
+	mes "Oh yea the only way to town is to walk there...";
+	broadcast " $charaname gave up, please allow the next thief to be tested.",10;
+	next;
+	resetmymob "in_moc_16";
+	set job_assasin = 0;
+	set thief_joblvl = 0;
+	set asn_skill = 0;
+	enablenpc "in_moc_16","Waiting Room",1;
+	save "in_moc_16",18,14;
+	warp "in_moc_16",18,14;
+other1:
+	mes "I am in charge of this test,  my name is Dante.";
+	mes "The topic for this test is to run away from danger.";
+	next;
+	mes "[Dante]";
+	mes "We can also see how good you are at hiding.";
+	mes "You can't kill anyone in this test.";
+	next;
+	mes "[Dante]";
+	mes "You got to get to Barkadi in order to complete the test!";
+	mes "Also you can't touch any enemy.";
+	next;
+	mes "[Dante]";
+	mes "If you faint or run away from the training ground, you fail. Okay, lets start now.";
+	set job_assasin = 4;
+	callmymob MUMMY,81,77,0,0;
+	callmymob MUMMY,82,77,0,0;
+	callmymob MUMMY,83,77,0,0;
+	callmymob MUMMY,84,77,0,0;
+	callmymob MUMMY,85,77,0,0;
+	callmymob MUMMY,86,77,0,0;
+	callmymob MUMMY,88,77,0,0;
+	callmymob MUMMY,89,77,0,0;
+	callmymob MUMMY,90,77,0,0;
+	callmymob MUMMY,77,56,0,0;
+	callmymob MUMMY,78,56,0,0;
+	callmymob MUMMY,79,56,0,0;
+	callmymob MUMMY,80,56,0,0;
+	callmymob MUMMY,81,55,0,0;
+	callmymob MUMMY,91,56,0,0;
+	callmymob MUMMY,92,56,0,0;
+	callmymob MUMMY,93,56,0,0;
+	callmymob MUMMY,94,56,0,0;
+	callmymob MUMMY,95,56,0,0;
+	callmymob MUMMY,96,56,0,0;
+	callmymob MUMMY,97,56,0,0;
+	callmymob HYDRA,76,62,0,0;
+	callmymob HYDRA,79,62,0,0;
+	callmymob HYDRA,79,65,0,0;
+	callmymob HYDRA,76,65,0,0;
+	callmymob HYDRA,96,62,0,0;
+	callmymob HYDRA,96,65,0,0;
+	callmymob HYDRA,99,62,0,0;
+	callmymob HYDRA,99,65,0,0;
+	close;
+OnMyMobDead:
+	resetmymob "in_moc_16";
+	set \@sinstat = 3;
+	broadcast "If you come in contact with an enemy you fail.",10;
+	broadcast "I will send you back to your original spot, please try again.",10;
+	warp "in_moc_16",86,101;
+}
+
+in_moc_16.vhm,87,48,2	script "Barkadi" 725,{
+	set job_assasin = 5;
+	enablenpc "in_moc_16","timestopper#1",0;
+	mes "[Barkadi]";
+	mes "Oh Congrats!";
+	mes "There's only one test left, good luck!!";
+	next;
+	warp "in_moc_16",181,183;
+}
+
+in_moc_16.vhm,86,101,0 script "checker" -1,{
+OnTouch:
+	check \@sinstat = 3,sub,-;
+	set job_assasin = 2;
+	close;
+sub:
+	set job_assasin = 3;
+	close;
+}
+
+in_moc_16.vhm,167,110,3	script "Guild Chief " 139,{
+OnTouch:
+	save "in_moc_16",167,110;
+	mes "[Guild Chief]";
+	mes "Oh, you are here... this is my room, and one of the important rooms in this guild.";
+	next;
+	mes "[Guild Chief]";
+	mes "You know if you want to get to where I am,  you will have to go through a maze.";
+	mes "well thats not a pretty good test but...";
+	mes "can you please come here.";
+	mes "I built this maze because a lot of people tried to infiltrate through here.";
+	next;
+	mes "[Guild Chief]";
+	mes "Okay, I'll see you later.";
+	close;
+}
+
+in_moc_16.vhm,149,80,4	script "Guild Chief" 106,{
+	save "morocc",100,100;
+	mes "[Guild Chief]";
+	check job_assasin == 7,-,other1;
+	set job_assasin = 8;
+	mes "I welcome you to this place, I have to apologize for making you walk through the maze .";
+	mes "I just looked at your report and it says that you are a really good thief.";
+	mes "There hasn't been experts like you lately.";
+	next;
+	mes "[Guild Chief]";
+	mes "Can I ask you a few questions?";
+	mes "I just want to know what you think, just answer me honestly.";
+	next;
+	mes "[Guild Chief]";
+	mes "First, what do you think is the purpose of being an assassin";
+	next;
+menu "I can be the strongest out of all the other jobs...",-,"The faith and determination that an assassin has..",part1_1,"I can keep training until I die...",part1_2;
+	mes "[Guild Chief]";
+	mes "Well, Assassin is strong compared to a thief.";
+	next;
+	mes "[Guild Chief]";
+	mes "But, why do you want to be strongest?";
+	mes "Do you need to revenge on someone or do you have a better reason?";
+	next;
+	mes "[Guild Chief]";
+	mes "What do you think is good about the assassin?";
+	next;
+menu "...It gives me the power to revenge...",-,"It is easier to earn zeny.",part1a,"..I can travel around more.",part1b;
+	mes "[Guild Chief]";
+	mes "Revenge huh.";
+	mes "Looks like everyone hates someone.";
+	next;
+	mes "[Guild Chief]";
+	mes "Although, we assassins can not do things that is controlled by emotions.";
+	mes "You have to know your duty and your job, that is the way of an assassin.";
+	next;
+	mes "[Guild Chief]";
+	mes "Please, think of another way to let out the hatred.  Revenge -- is not the best path.";
+	goto talk1;
+part1a:
+	mes "[Guild Chief]";
+	mes "Oh, so there is a zeny problem! Well actually you need a little bit of zeny, but.. an assassin can live without it.";
+	goto talk1;
+part1b:
+	mes "[Guild Chief]";
+	mes "Thats a pretty good idea, you can always self-disipline.";
+	next;
+	mes "[Guild Chief]";
+	mes "Well, traveling with 2 or 3 other people is okay, but traveling with a lot is not a good thing for an assassin. I think you know why?";
+	goto talk1;
+part1_1:
+	mes "[Guild Chief]";
+	mes "Determination. Did the old assassin inside taught you that?";
+	next;
+	mes "[Guild Chief]";
+	mes "Well determination is good, but it will not help you complete your destiny.";
+	mes "I don't know what part of the assassin attracts you.";
+	next;
+	mes "[Guild Chief]";
+	mes "Most of the people you met have been through a tough time, that is why they have such a strong determination.";
+	mes "What part of the assassin attracts you?";
+	next;
+menu "I like to move around myself.",-,"Looks like a easy job to earn money.",part1_1a,"The assassin looks cool.",part1_2b;
+	mes "[Guild Chief]";
+	mes "Yes, we assassins are lonely people.";
+	mes "It does not matter where we are, we always feel lonely.";
+	next;
+	mes "[Guild Chief]";
+	mes "Maybe your life will be better, if you lived like an assassin.";
+	next;
+	mes "[Guild Chief]";
+	mes "Well, some assassins have a partner.";
+	mes "If you are going to find yourself a partner, you have to seek one with your heart.";
+	goto talk1;
+part1_1a:
+	mes "[Guild Chief]";
+	mes "Yes, money is important.";
+	mes "However, you as an assassin would have more important things to deal with.";
+	goto talk1;
+part1_2a:
+	mes "[Guild Chief]";
+	mes "So, you just think assassins are cool.";
+	mes "Well that is really sad, because some people just rely on the looks and they forget what assassins are really for.";
+	next;
+	mes "[Guild Chief]";
+	mes "You should always remember what assassins are for, we are not actors.";
+	goto talk1;
+part1_2:
+	mes "[Guild Chief]";
+	mes "Training, yes, I can see that you are a really strong thief already, but do you have another specific reason why you want to become an assassin?";
+	next;
+	mes "[Guild Chief]";
+	mes "Thiefs can be immature, but we assassins are always mature.";
+	mes "If you are not mature, sometimes you can not find the power you need.";
+	next;
+	mes "[Guild Chief]";
+	mes "So, which area do you think you need more training in?";
+	next;
+menu "The techniques.",-,"The targets.",part1_2a,"The spirit.",part1_2b;
+	mes "[Guild Chief]";
+	mes "When you become an assassin, skills won't be so important...";
+	mes "Even though you get the skills you want now when you become an assassin, you might want more when you become an assasin.";
+	goto talk1;
+part1_2a:
+	mes "[Guild Chief]";
+	mes "Yes, it is a good thing always trying to find a new target.";
+	mes "Your mind has fully become of an assassin.";
+	goto talk1;
+part1_2b:
+	mes "[Guild Chief]";
+	mes "Yes it is a very important thing to keep the spirit up.";
+	mes "you should always train you spirit when you train your body.";
+	next;
+	mes "[Guild Chief]";
+	mes "I hope you can be a good assassin with a great spirit.";
+talk1:
+	next;
+	mes "[Guild Chief]";
+	mes "You can live a good life if you follow the way of the assassin.";
+ 	next;
+	mes "[Guild Chief]";
+	mes "I know why you want to become an assassin, but some people don't know if they want to become an assassin or not.";
+	next;
+	mes "[Guild Chief]";
+	mes "Thats the thing that causes the problem.";
+	next;
+	mes "[Guild Chief]";
+	mes "Also, once you turn into an assassin, there's no turning back, you can't become a thief anymore.";
+	mes "also you are responsible for yourself.";
+	next;
+	mes "[Guild Chief]";
+	mes "If you can become an assassin now, what will be the first thing you do?";
+	next;
+menu "Go battle someone now.",-,"There's a lot of people waiting for me to go home.",part2_1,"I would want to know more about assassins.",part2_2;
+	mes "[Guild Chief]";
+	mes "Battle and then...?";
+	next;
+menu "want to grow up in a short.",-,"I want to know how good I am.",part2a,"I want to explore lands where I have not seen.",part2b;
+	mes "[Guild Chief]";
+	mes "Even if your an assassin, you're still you, being an assassin doesn't make you grow up faster.";
+	mes "You got to train slowly you know?";
+	goto talk2;
+part2a:
+	mes "[Guild Chief]";
+	mes "Yes self-training is a good thing.";
+	mes "When you figure that you've gorwn stronger its a good thing, but don't forget the heart of an assassin.";
+	goto talk2;
+part2b:
+	mes "[Guild Chief]";
+	mes "Thats nice, traveling around.";
+	mes "Even if you became an assasin, that doesn't change your personality.";
+	next;
+	mes "you don't have to pretend to be scary, just go at it at a slow rate.";
+	goto talk2;
+part2_1:
+	mes "[Guild Chief]";
+	mes "Someone's waiting for you?";
+	next;
+menu "Its People from this guild.",-,"Its a partner.",part2_1a,"Its my lover.",part2_1b;
+	mes "[Guild Chief]";
+	mes "Yes I think that they are happy for you...";
+	mes "When your lonely, you can always think about us.";
+	goto talk2;
+part2_1a:
+	mes "[Guild Chief]";
+	mes "A partner that will risk his/her life for yours, thats a good thing.";
+	mes "As an assassin, you should do something for your partner..";
+	goto talk2;
+part2_1b:
+	mes "[Guild Chief]";
+	mes "Oh, its a lover!!";
+	check gender == 1,-,fem1;
+	mes "then become her shadow and protect her.";
+	goto continue;
+fem1:
+	mes "then become his shadow and protect him .";
+continue:
+	next;
+	mes "[Guild Chief]";
+	mes "never changed this heart, love your lover to the end.";
+	mes "you can't have your beauty twice in a life time.";
+	next;
+part2_2:
+	mes "[Guild Chief]";
+	mes "Your a nice guy, what do you want to know?";
+	next;
+menu "I want to know which place is the easiest for an assassin...",-,"Where do assassins usually grow up...",part2_2a,"How does an assassin make money...",part2_2b;
+	mes "[Guild Chief]";
+	mes "There's comfortable and uncomfortable places in this world?";
+	mes "We assassins must try to survive in any situation.";
+	goto talk2;
+part2_2a:
+	mes "[Guild Chief]";
+	mes "If you go outside from here, you'll see a bunch of assassins.";
+	mes "They will be willing to help you, go ask them the questions on your mind.";
+	next;
+	mes "[Guild Chief]";
+	mes "I hope you can gain more experience and become a good assassin.";
+	mes "I hope when you get enough experience you'll come back to help teach the youngers.";
+	goto talk2;
+part2_2b:
+	mes "[Guild Chief]";
+	mes "Damit, is money that important to you?";
+	mes "Assassins are not like that, go think about it...";
+talk2:
+	next;
+	mes "[Guild Chief]";
+	mes "I am glad I talked to you, that conversation brought back old memories.";
+	next;
+	mes "[Guild Chief]";
+	mes "Okay, lets gather everyone...?";
+	next;
+	broadcast "Everyone that tested $charaname please come to my office.";
+	mes "[Guild Chief]";
+	mes "Everyone that tested $charaname please come to my office .";
+	next;
+	mes "[Guild Chief]";
+	mes "They will be here soon.";
+	next;
+	enablenpc "in_moc_16","[Hueyi]",1;
+	enablenpc "in_moc_16","[Kai]",1;
+	enablenpc "in_moc_16","[Nameless One]",1;
+	enablenpc "in_moc_16","[Barkadi]",1;
+	enablenpc "in_moc_16","[Observer]",1;
+	enablenpc "in_moc_16","[Dante]",1;
+	enablenpc "in_moc_16","[Gail]",1;
+	mes "[Nameless One]";
+	mes "You called, Chief?";
+	next;
+	mes "[Guild Chief]";
+	mes "I want to know your opinions about $charaname becoming an assassin.";
+	mes "what do you guys think?";
+	next;
+	mes "[Nameless One]";
+	mes "if its that guy, I have no problem.";
+	next;
+	mes "[Guild Chief]";
+	mes "'Nameless' So you agreed.";
+	mes "Hueyi?";
+	next;
+	check thief_joblvl == 1,-,sub1;
+	mes "[Hueyi]";
+	mes "...He's one of the best thiefs i've seen in the last few weeks.";
+	next;
+	mes "[Hueyi]";
+	mes "I agree.";
+	mes "Oh, I have to go back now, you know that I can't leave my spot for a long time.";
+	mes "and master can you help me give him a present.";
+	next;
+	mes "[Guild Chief]";
+	mes "Okay..";
+	goto continuetalk;
+sub1:
+	mes "[Hueyi]";
+	mes "...He looks like a good person, I think he'll become a good assassin...";
+	mes "I agree.. Oh yea I got to go now, I can't leave my spot for a long time.";
+	next;
+	mes "[Guild Chief]";
+	mes "Okay then go back.";
+continuetalk:
+	next;
+	mes "[Guild Chief]";
+	mes "So...'Observer' what you think?";
+	mes "...??";
+	next;
+	enablenpc "in_moc_16","[Hueyi]",0;
+	mes "[Observer]";
+	mes "....even though he didn't break the records. well he still passed so.";
+	mes "I don't think there's a problem.";
+	next;
+	mes "[Guild Chief]";
+	mes "Okay a large portion of us agrees. good, I also admire this person too..";
+	next;
+	mes "[Guild Chief]";
+	check thief_joblvl == 1,-,sub_1;
+	check job_assasin > 6,-,sub_1;
+	set thief_joblvl = 2;
+	mes "Wow, we talked for a long time, here take this present.";
+	mes "Here's a jur, katar,main guache, and a gladius.";
+	mes "This are my favorite equipments, here choose one.";
+	next;
+menu "Jur",-,"Katar",c1,"Main Gauche",c2,"Gladius",c3;
+	mes "[Guild Chief]";
+	mes "Jur eh? I hope you use it well!";
+	additem 1251,1;
+	goto othertalk;
+c1:
+	mes "[Guild Chief]";
+	mes "Katar! That was my favorite weapon, even though it looks old, it works great.";
+	additem 1253,1;
+	goto othertalk;
+c2:
+	mes "[Guild Chief]";
+	mes "Oh want to use a main gauche eh? here take this one.";
+	additem 1208,1;
+	goto othertalk;
+c3:
+	mes "[Guild Chief]";
+	mes "Here's a gladius, use it well.";
+	additem 1220,1;
+	goto othertalk;
+sub_1:
+	mes "Looks like we talked for a long time.";
+	mes "Here take this gift,";
+	random @asn_item,5;
+	check @asn_item == 0,subs1,-;
+	check @asn_item == 1,subs2,-;
+	check @asn_item == 2,subs3,-;
+	check @asn_item == 3,subs4,-;
+	additem 1207,1;
+	goto othertalk;
+subs1:
+	additem 1250,1;
+	goto othertalk;
+subs2:
+	additem 1216,1;
+	goto othertalk;
+subs3:
+	additem 1201,1;
+	goto othertalk;
+subs4:
+	additem 1252,1;
+othertalk:
+	next;
+	mes "[Guild Chief]";
+	mes "Now go talk to Hueyi.";
+	mes "he's the person that can sense anger.";
+	mes "he will help you become an assassin.";
+	next;
+	mes "[Guild Chief]";
+	mes "Hereby $charaname....";
+	mes "Will walk the path of the assassins..";
+	mes "It doesn't matter if the path is lonely and hard.";
+	mes "He will never give up hope!";
+	additem 1008,1;
+	next;
+	mes "[Guild Chief]";
+	mes "Okay, everyone you can leave now.";
+	mes "I'll will come with you guys.";
+	mes "Everyone move out.";
+	next;
+	set \@startsin = 0;
+	enablenpc "in_moc_16","[Hueyi]",0;
+	enablenpc "in_moc_16","[Kai]",0;
+	enablenpc "in_moc_16","[Nameless One]",0;
+	enablenpc "in_moc_16","[Barkadi]",0;
+	enablenpc "in_moc_16","[Observer]",0;
+	enablenpc "in_moc_16","[Dante]",0;
+	enablenpc "in_moc_16","[Gail]",0;
+	mes "[Guild Chief]";
+	mes "Okay, everyone meeting dismissed.";
+	mes "I will walk you guys to the door.";
+	mes "Everyone move out.";
+	next;
+	warp "in_moc_16",17,19;
+other1:
+	mes "Yes? So why are you here?!";
+	next;
+	mes "[Guild Chief]";
+	mes "The tests are over, you should go change your job now!! you should have the item right?!";
+	next;
+	warp "in_moc_16",17,19;
+}
+
+in_moc_16.vhm,186,81,1	script "Guild Chief Botogun" 55,{
+	mes "[Guild Chief Botogun]";
+	mes "Yes. I am not the person in charged for job change.";
+	mes "Job change is the Guild-Chief opposite to me.";
+	close;
+}
+in_moc_16.vhm,170,90,0	script "info_1" 139,{
+OnTouch:
+	mes "[Guild Chief]";
+	mes "there's no way to walk there, try another way.";
+	close;
+}
+in_moc_16.vhm,153,85,1	script "info_2" 139,{
+OnTouch:
+	mes "[Guild Chief]";
+	mes "You can't walk there..";
+	mes "Good, your almost there, keep walking.";
+	mes "You have to walk in between a pole and a.....";
+	mes "you got to turn a round in order to get in.";
+	close;
+}
+in_moc_16.vhm,160,85,1	script "info_3" 139,{
+OnTouch:
+	mes "[Guild Chief]";
+	mes "there's no way to walk there, try another way.";
+	close;
+}
+in_moc_16.vhm,175,89,1	script "info_4" 139,{
+OnTouch:
+	mes "[Guild Chief]";
+	mes "that way leads to Botogun..";
+	mes "what are going to do there?";
+	close;
+}
+in_moc_16.vhm,164,88,0	script "info_5" 139,{
+OnTouch:
+	mes "[Guild Chief]";
+	mes "Yes, good, your almost there.";
+	mes "I can sense you.";
+	close;
+}
+in_moc_16.vhm,149,95,1	script "info_6" 139,{
+OnTouch:
+	mes "[Guild Chief]";
+	mes "Good, you found the path.";
+	close;
+}
+in_moc_16.vhm,180,101,1	script "info_7" 139,{
+OnTouch:
+	mes "[Guild Chief]";
+	mes "... It looks like its not that way...";
+	close;
+}
+in_moc_16.vhm,186,107,1	script "info_8" 139,{
+OnTouch:
+	mes "[Guild Chief]";
+	mes "...Not that way either...";
+	close;
+}
+in_moc_16.vhm,156,87,1	script "[Hueyi]" 55,{
+	return;
+OnInit:
+	enablenpc "in_moc_16","[Hueyi]",0;
+	return;
+}
+in_moc_16.vhm,156,85,1	script "[Kai]" 730,{
+	return;
+OnInit:
+	enablenpc "in_moc_16","[Kai]",0;
+	return;
+}
+in_moc_16.vhm,156,83,1	script "[Nameless one]" 106,{
+	return;
+OnInit:
+	enablenpc "in_moc_16","[Nameless one]",0;
+	return;
+}
+in_moc_16.vhm,156,82,2	script "[Barkadi]" 725,{
+	return;
+OnInit:
+	enablenpc "in_moc_16","[Barkadi]",0;
+	return;
+}
+in_moc_16.vhm,156,79,1	script "[Observer]" 118,{
+	return;
+OnInit:
+	enablenpc "in_moc_16","[Observer]",0;
+	return;
+}
+in_moc_16.vhm,156,77,1	script "[Dante]" 118,{
+	return;
+OnInit:
+	enablenpc "in_moc_16","[Dante]",0;
+	return;
+}
+in_moc_16.vhm,156,75,1	script "[Gail]" 55,{
+	return;
+OnInit:
+	enablenpc "in_moc_16","[Gail]",0;
+	return;
+}

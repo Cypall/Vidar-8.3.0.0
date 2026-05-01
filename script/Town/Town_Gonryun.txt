@@ -1,0 +1,790 @@
+//- Gonryun Town NPC's
+//- Converted to Aegis By KitsuneStarwind 
+//- Converted to Vidar by illogik(tk)
+//- Translated By Knightess (Brisbane Anime Society)
+alberta.vhm,245,69,4	script	"Gonryun Publicity" 776,{
+	mes "[Waba]";
+	mes "Hello!";
+	mes "I have returned to my hometown Gonryun,";
+	mes "to invite you all!!";
+	mes "It is to my utmost joy that many people";
+	mes "are visting our Gonryun,";
+	mes "different from the Midgard's Kingdom.";
+	next;
+menu "Gonryun?",-,"Go to Gonryun",Go,"Forget it",Leave;
+	mes "[Waba]";
+	mes "Gonryun enchants on each visit,";
+	mes "making it a very beautiful place. Gonryun Village's";
+	mes "speechless enchantment is like floating on the edge";
+	mes "of a great volume of light, stretching for the sky.";
+	next;
+	mes "[Waba]";
+	mes "Gonryun?because it floats in the sky";
+	mes "we can enjoy its beautiful shadows. Yes,";
+	mes "that is so beautiful!!";
+	mes "Among Gonryun's special products, our manju and peaches";
+	mes "are both exquisite. Please try them at least once.";
+	next;
+	mes "[Waba]";
+	mes "Only, there are dangerous places where you shouldn't";
+	mes "get close to the villagers, so, in case you meet";
+	mes "them in Gonryun, I will give you some advice so as";
+	mes "not to neglect preparations.";
+	close
+Go:
+	mes "[Waba]";
+	mes "Paying passage to Gonryun of ^0000ff10,000zeny^000000";
+	mes "is a necessity. Returning is impossible.";
+	mes "Well then?it's time to prepare for departure but";
+	mes "is that all right with you?";
+	next;
+menu "Let's go!",-,"No, forget it.",Leave;
+	check zeny < 10000,-,Sub1;
+	mes "My deepest apologies, but you will need";
+	mes "^0000ff10,000zeny^000000 to pay for passage.";
+	mes "I need confirmation of your funds.";
+	close;
+Sub1:
+	set zeny - 10000;
+	warp "gon_fild01",258,82;
+Leave:
+	mes "[Waba]";
+	mes "Well then, once you leave for Gonryun,";
+	mes "please, you must do exactly as I tell you.";
+	mes "Guiding around honored guests from the continent";
+	mes "is also my greatest joy.";
+	close;
+}
+
+gon_fild01.vhm,255,79,6	script	"Gonryun Publicity" 776,{
+	mes "[Waba]";
+	mes "Oh?are you returning?";
+	mes "We haven't been able to enjoy time";
+	mes "in Gonryun, have we?";
+	next;
+menu "Return to Alberta.",-,"Forget it.",Leave;
+	mes "[Waba]";
+	mes "Next time, by all means, everybody is an acquaintance and a friend";
+	mes "Your Welcome to visit Gonryun anytime";
+	mes "So, Shall we Set off together?";
+	next;
+	warp "alberta",243,67;
+Leave:
+	mes "[Waba]";
+	mes "Oh?is that so?";
+	mes "Please be sure to take your time.";
+	mes "Gonryun has many places to see so";
+	mes "you must, you must.";
+	close;
+}
+
+gon_fild01.vhm,187,239,4	script	"Gonryun Publicity" 776,{
+	mes "[Cho Seiryu]";
+	mes "Welcome to Gonryun!";
+	mes "If you keep climbing upwards, you will find";
+	mes "Gonryun.";
+	mes "Please take with you many memories of";
+	mes "this place.";
+	close;
+}
+
+
+gonryun.vhm,153,64,0	script	"Gonryun Publicity" 776,{
+	mes "[Cho Seiryu]";
+	mes "How is Gonryun?";
+	mes "Are you enjoying yourself?";
+	mes "If you'd like to go home?I can take you back";
+	mes "to the port.";
+	next;
+menu "Return to the port.",-,"Stay a little longer.",Stay;
+	mes "[Cho Seiryu]";
+	mes "Please be sure to come back to Gonryun again.";
+	mes "Ok!";
+	next;
+	warp "gon_fild01",258,82;
+Stay:
+	mes "[Cho Seiryu]";
+	mes "Oh?is that so?";
+	mes "Please be sure to take your time.";
+	mes "Gonryun has many places to see so";
+	mes "you must, you must.";
+	close;
+}
+
+
+
+
+ //===============================================================================
+//In Inn
+//===============================================================================
+gon_in.vhm,153,35,4	script	"Innkeeper" 702,{
+check event_gonryun == 1,Sub1,-;
+check event_gonryun == 2,Sub1,-;
+check event_gonryun == 3,Sub2,-;
+check event_gonryun == 4,Sub3,-;
+check event_gonryun == 98,Sub4,-;
+check event_gonryun == 99,Sub5,-;
+	mes "[Mayoban]";
+	mes "Why, this is the first time I've seen you.";
+	mes "Did you come from the outside?";
+	mes "Recently, there've been many visitors from outside the village~.";
+	mes "Thanks to them we've been short of hands,";
+	mes "and I've been at such a loss.";
+	goto Continue;
+Sub1:
+	mes "[Mayoban]";
+	mes "The truth is that I heard this from a little birdie~.";
+	mes "Last night, it seems a thief entered the chief's";
+	mes "house. Lately, there has been such a problem";
+	mes "with thieves……My heart is so frail~.";
+	next;
+	mes "[Mayoban]";
+	mes "With thieves entering even the chief's house";
+	mes "what are commoners like me supposed to";
+	mes "do?";
+	mes "Oh, excuse me. This isn't something";
+	mes "I should be discussing with guests.";
+	mes "Never mind. Please enjoy yourself.";
+	set event_gonryun = 2;
+	goto Continue;
+Sub2:
+	mes "[Mayoban]";
+	mes "Ah, Visitor! I heard~.";
+	mes "You're going to help the chief.";
+	mes "I really want those thieves caught.";
+	mes "My heart is really frail, you know~.";
+	next;
+	mes "[Mayoban]";
+	mes "Ah, do you know that person over there?";
+	mes "The one at that table.";
+	mes "That person, since he awoke outside";
+	mes "and must have walked last night, might";
+	mes "have seen the thief……";
+	set event_gonryun = 4;
+	goto Continue;
+Sub3:
+	mes "[Mayoban]";
+	mes "Welcome~";
+	mes "Around this time, thieves come out……";
+	mes "Because of them business has been at a standstill.";
+	mes "Really……";
+	goto Continue;
+Sub4:
+	mes "[Mayoban]";
+	mes "Lately, the village has settled a little~.";
+	mes "Still, the sooner those thieves are caught, the better.";
+	goto Continue;
+Sub5:
+	mes "[Mayoban]";
+	mes "I heard all about it!";
+	mes "You caught the thieves.";
+	mes "That is such a relief~.";
+	mes "From now on I can continue business";
+	mes "without worry~. Now, I'll";
+	mes "bring you some saké at once.";
+	next;
+	mes "[Mayoban]";
+	mes "Since you've nearly drunk all you";
+	mes "can afford, I'm afraid I can't bring";
+	mes "you anymore. Well then,";
+	mes "please come back again~.";
+	mes "You're welcome anytime~.";
+Continue:
+	next;
+	mes "[Mayoban]";
+	mes "Oh, excuse me. This isn't something";
+	mes "I should be discussing with guests~.";
+	mes "Please tell me if there's";
+	mes "anything you need.";
+	next;
+menu "Saké.",-,"Nothing, really.",No;
+	mes "[Mayoban]";
+	mes "Why, please excuse me……";
+	mes "At this time, there are usually many guests,";
+	mes "so the sake that is set aside disappears";
+	mes "before we know it~. Although the visitors are only going";
+	mes "to increase. Really, this is serious~.";
+	close;
+No:
+	mes "[Mayoban]";
+	mes "Is that so? Well, please have a good journey~.";
+	mes "Please be sure to call again~.";
+	close;
+}
+
+//===============================================================================
+gon_in.vhm,173,27,3	script	"Kuhau" 774,{
+	mes "[Kuhau]";
+	mes "Thought so……. Even when I";
+	mes "go to the Inn, no one will sell me";
+	mes "any saké. The adults are all";
+	mes "drinking it so, I really wanted to know";
+	mes "what it tastes like……Haa.";
+	next;
+	mes "[Kuhau]";
+	mes "But, I heard they're researching a delicious";
+	mes "type of tea that even children like me";
+	mes "can drink. Still, I wonder when they'll";
+	mes "be able to do that……. I don't";
+	mes "really know but, when I think of drinking";
+	mes "that delicious tea, my heart starts pounding.";
+	close;
+}
+
+//===============================================================================
+
+gon_in.vhm,165,16,4	script	"Two Days' Drunk" 748,{
+	check event_gonryun == 4,-,Sub1;
+	check event_gonryun == 98,Sub1_3,Sub1_4;
+	mes "[Sorbun]";
+	mes "Oooo~oooooooooooooooooooooo";
+	mes "Drank too much……Head hurts……";
+	mes "Somebody……ooo……";
+	next;
+	checkitem 506,1,Sub1,-;
+	close;
+Sub1:
+	mes "[Sorbun]";
+	mes "Ooooo, Hey you……";
+	mes "^00ff00 Green Portion……^000000 give me some?";
+	mes "Ooooo, head hurts……";
+	next;
+menu "No way.",-,"Alright.",Sub1_1;
+	mes "[Sorbun]";
+	mes "Ooo……";
+	mes "My head is splitting……";
+	next;
+menu "I meant it.",-,"Oh here.",Sub1_1;
+	mes "[Sorbun]";
+	mes "O~ooooooooooo";
+	mes "Bastard……";
+	set event_gonryun = 98;
+	close;
+Sub1_1:
+	delitem 506,1;
+	mes "[Sorbun]";
+	mes "Oo……Ah, thanks.";
+	mes "Gulp, gulp……Oooh~.";
+	mes "I feel so much better thanks to you.";
+	mes "By the way, you're generous to give me";
+	mes "medicine - did you perhaps want something from me?";
+	next;
+menu "Don't you know something about the thieves?",-;
+	mes "Ah~, thieves, huh?";
+	mes "Yeah, truth is, after sleeping off";
+	mes "the saké, I went outside for a moment.";
+	mes "Then, I heard someone humming.";
+	next;
+	mes "[Sorbun]";
+	mes "To see things properly, the village chief's house";
+	mes "is pretty sunny. I went there, even got a";
+	mes "little closer, and then something moved on";
+	mes "the roof!!";
+	next;
+	mes "[Sorbun]";
+	mes "It disappeared so quick, I don't really";
+	mes "know what it was. ……Hmmm……";
+	mes "I wonder what that was.";
+	next;
+menu "Which way did it go?",-,"You sure it wasn't a cat or something?",Sub1_2;
+	mes "[Sorbun]";
+	mes "Ye-ah, Ye-ah";
+	mes "Ye-ah, that maybe right……";
+	mes "He appeared over there, and snuck around that way,";
+	mes "murmuring something……";
+	next;
+	mes "- He was mumbling something to himself";
+	mes "- ";
+	mes "………………";
+	next;
+	mes "[Sorbun]";
+	mes "Ah~, that's it!!";
+	mes "He disappeared towards the shrine that way!!";
+	mes "I don't know if it was a person or a cat, but";
+	mes "it was a large shape so maybe it was a person~.";
+	mes "It was dark, and I had a bit of a hangover~.";
+	next;
+	mes "[Sorbun]";
+	mes "Is there anything else?";
+	mes "I want to thank you for the medicine. Anything else at all?";
+	next;
+menu "That's all.",-;
+	mes "[Sorbun]";
+	mes "Oh-, really? Well, see ya~.";
+	mes "If there's anything else, just ask~.";
+	close;
+Sub1_2:
+	mes "Further Investigation";
+	close;
+Sub1_3:
+	emote 16;
+	mes "[Sorbun]";
+	mes "O~ooooooooooo";
+	mes "That guy, this guy…………";
+	mes "Don't you have any feelings?……";
+	mes "Pest……";
+	close;
+Sub1_4:
+	emote 4;
+	mes "[Sorbun]";
+	mes "Oooo~oooooooooooooooooooooo";
+	mes "I knew I shouldn'ta drunk so much yesterday";
+	mes "Oooo~oooooooooooooooooooooo";
+	close;
+}
+
+//===============================================================================
+gonryun.vhm,139,142,5	script	"Young Girl" 772,{
+	check event_gonryun == 99,-,Sub1;
+	mes "[Sanfayon]";
+	mes "Lately, really good things keep happening.";
+	mes "Many visitors are coming, the chief's";
+	mes "stolen items have been recovered.";
+	mes "I bet the person who caught the thief";
+	mes "is very beautiful~.";
+	close;
+Sub1:
+	emote 20;
+	mes "[Sanfayon]";
+	mes "………………";
+	mes "Lately, with so many guests to the village, it's";
+	mes "been so much fun but……now the thieves";
+	mes "are coming out, it's so scary.";
+	close;
+}
+
+
+//===============================================================================
+gonryun.vhm,113,135,6	script	"Gatekeeper" 780,{
+scriptlabel GonryunG;
+	mes "[Gatekeeper]";
+	mes "Welcome. Here is where the";
+	mes "ruler of Konron, Sayomun,";
+	mes "lives in this, his mansion.";
+	next;
+	mes "[Gatekeeper]";
+	mes "I'm telling you this just to remind you but,";
+	mes "if, by any chance, there is any suspicious movement,";
+	mes "I will stand against it at once.";
+	next;
+	mes "[Gatekeeper]";
+	mes "Well, such a thing is rare";
+	mes "so, don't pay any attention.";
+	mes "Now, please feel free to take your time.";
+	close;
+}
+
+//===============================================================================
+gonryun.vhm,113,127,6	script	"Gatekeeper" 780,{
+	script GonryunG;
+}
+
+//===============================================================================
+//Village Chief's House
+//===============================================================================
+gon_in.vhm,18,27,4	script	"Wife" 771,{
+	mes "[Sangfayon]";
+	mes "Hohohohohohoho. What an honor indeed!";
+	mes "If it isn't a very important visitor";
+	mes "from the outside.";
+	next;
+menu "Hello.",-,"Where is the village chief?",Sub1;
+	mes "[Sangfayon]";
+	mes "Hello,";
+	mes "it's been so long since we've had visitors.";
+	mes "I welcome you, so please make yourself at home.";
+	mes "Hohohohoho";
+	close;
+Sub1:
+	mes "[Sangfayon]";
+	mes "Hohoho, the husband of this house is on the upper level.";
+check gender == 1,Male,-;
+	mes "Darling, you have such a graceful face.";
+	mes "But I request you do not fall for the";
+	mes "master of the house. Hohohohoho.";
+	close;
+Male:
+	mes "Oh, why, you're very handsome too.";
+	mes "But, nowhere near as much as my husband.";
+	mes "Hohohohoho";
+	close;
+}
+
+//===============================================================================
+gon_in.vhm,17,93,4	script	"Village Chief" 775,{
+//Invocation of this is still vague therefore Comment Out
+	check event_gonryun == 2,Start,-;
+	check event_gonryun == 3,Sub1,-;
+	check event_gonryun == 89,Sub1_1,-;
+	check event_gonryun == 98,Sub1_2,-;
+	check event_gonryun == 99,Sub1_3,-;
+	check flag == 15,Sub1_4,Sub1_5;
+Start:
+	mes "[Sayomun]";
+	mes "Hey, Traveller. Might you be interested in our village?";
+	mes "It's just a guess but recently the mood of";
+	mes "the village hasn't been good……";
+	next;
+menu "I'm interested",-,"I heard that thieves are here……"Sub2;
+	mes "[Sayomun]";
+	mes "Oh fantastic!";
+	mes "Only, be careful of the thieves…….";
+	mes "Oh, and don't let the villagers";
+	mes "see anything they won't like.";
+	close;
+Sub2:
+	mes "[Sayomun]";
+	mes "……Oh, have you heard that as well?";
+	mes "The truth is last night, thieves broke into";
+	mes "the house. Recently, I heard the culprit was";
+	mes "lurking around so security was intensified";
+	mes "but..";
+	next;
+menu ".....",-,"Was something stolen?",Sub2_1,"Any injuries?",Sub2_2;
+	mes "[Sayomun]";
+	mes "If you see anyone suspicious";
+	mes "please inform me right away.";
+	set event_gonryun = 3;
+	close;
+Sub2_1:
+	mes "[Sayomun]";
+	mes "Yes, there was, but...";
+	mes "Really...A family heirloom blade";
+	mes "was taken.";
+	next;
+	mes "[Sayomun]";
+	mes "Anyway I want to go look for it but";
+	mes "because I hold the position of chief, there is no need";
+	mes "for me to proceed so directly with the search...";
+	next;
+	goto Talk;
+Sub2_2:
+	mes "[Sayomun]";
+	mes "No, fortunately no one was hurt.";
+	mes "However our precious blade was stolen...";
+	next;
+	mes "[Sayomun]";
+	mes "It's been in the family for generations. I want to go";
+	mes "look for it but, as the chief there is no need";
+	mes "for me to proceed so directly with the search...";
+	next;
+Talk:
+	mes "[Sayomun]";
+	mes "Because of that I'm pretty much at a loss.";
+	next;
+menu "I hope you find it.",-,"Is there any way to help?",Sub3;
+	mes "[Sayomun]";
+	mes "From my heart, I thank you.";
+	mes "If you find the blade";
+	mes "please contact me.";
+	set event_gonryun = 89;
+	close;
+Sub3:
+	mes "[Sayomun]";
+	mes "Oh, you can!? You can help me?";
+	mes "Ever since the village was opened, people from";
+	mes "outside and the villagers have both come to";
+	mes "settle here but....";
+	mes "If you would help us find the blade, surely";
+	mes "that would lead to so much more.";
+	set event_gonryun = 3;
+	close;
+Sub1:
+	mes "[Sayomun]";
+	mes "Was some sort of clue seized?";
+	mes "No, it's fine even if nothing is gathered.";
+	mes "Your strong sense of responsibility is";
+	mes "great but please look after yourself.";
+	close;
+Sub1_1:
+	mes "[Sayomun]";
+	mes "Right now, the village is in disorder";
+	mes "so please take it easy and go quietly.";
+	close;
+Sub1_2:
+	mes "[Sayomun]";
+	mes "Oh, right……Without traces, what search?";
+	mes "……Oh well. You've been such a help to";
+	mes "us. Thanks.";
+	next;
+	additem 504,1;
+	set event_gonryun = 99;
+	mes "[Sayomun]";
+	mes "These are only feelings.";
+	mes "Better to next;.";
+	close;
+Sub1_3:
+	mes "[Sayomun]";
+	mes "Right now, the village is laced";
+	mes "with danger so be cautious.";
+	close;
+Sub1_4:
+	mes "[Sayomun]";
+	mes "finally the family heirloom has returned to us";
+	mes "please accept this as a token of my appreciation";
+	additem 638,1;
+	set zeny + 200000;
+	set flag = 0;
+	close;
+Sub1_5:
+	mes "[Sayomun]";
+	mes "Uuuuh...";
+	mes "......";
+	mes "Aahh....";
+	next;
+	mes "[Sayomun]";
+	mes "Aah, a visitor. Please come closer.";
+	mes "I am the chief of this village,";
+	mes "Sayomun.";
+	mes "Welcome to Konron. It seems you've been welcomed.";
+	next;
+	mes "[Sayomun]";
+	mes "Up until now, there weren't any outside areas";
+	mes "or streets. Recently, we finally,";
+	mes "barely surpassing Alberta with its streets, reached the stage";
+	mes "where we receive people from foreign continents.";
+	next;
+	mes "[Sayomun]";
+	mes "Frankly, the reason we always remained";
+	mes "in isolation is because there are";
+	mes "a lot of people who hold no feeling";
+	mes "towards outsiders.";
+	next;
+	mes "[Sayomun]";
+	mes "On top of that lately, our peace....";
+	mes "Thieves are having their own way....";
+	set event_gonryun = 1;
+	close;
+}
+
+//===============================================================================
+gonryun.vhm,119,111,4	script "Chen Wonsok" 89,{
+	mes "[Chen Wonsok]";
+	mes "This chief is, really,";
+	mes "a sociable person. But it seems there";
+	mes "are people who hate that forthcoming";
+	mes "personality. Uuuu~hhh....";
+	next;
+	mes "[Chen Wonsok]";
+	mes "It's because of the chief, that the opening";
+	mes "of this village has gone so well but....";
+	mes "It would be great if humans who";
+	mes "cause mischief never came out.";
+	close;
+}
+
+gonryun.vhm,100,241,0	script	"Unpleasant Man" 733,{
+	emote 20;
+	mes "[Saunso]";
+	mes "Hn……";
+	mes "I'm busy right now. Be out with it!";
+	close;
+}
+
+gonryun.vhm,268,88,4	script	"Ryan Chunho" 776,{
+	mes "[Ryan Chunho]";
+	mes "We are a lonely people.";
+	mes "Without giving in to the aggressors,";
+	mes "we've come to draw our efforts in";
+	mes "protecting this blessed soil.";
+	next;
+	mes "[Ryan Chunho]";
+	mes "I believe in our victory!";
+	mes "That is our glory!!";
+	close;
+}
+
+gonryun.vhm,181,161,4	script	"Chon Munjin" 773,{
+	mes "[Chon Munjin]";
+	mes "The men of Konron, all of them,";
+	mes "are so tough and strong-willed.";
+	mes "However, those men lately,";
+	mes "haven't been able to marry…….";
+	next;
+	mes "[Chon Munjin]";
+	mes "That's because, since there are";
+	mes "many men now, there has been a";
+	mes "relative lack in women.";
+	mes "I wonder if my son will be";
+	mes "able to marry……? Huuu~.";
+	close;
+}
+
+gonryun.vhm,237,225,4	script	"Han Yonkyo" 776,{
+	mes "[Han Yonkyo]";
+	mes "Aaaah~!What am going to do!?";
+	mes "I've lost my precious knife!!";
+	mes "Aaaaaa~h!";
+	next;
+	mes "[Han Yonkyo]";
+	mes "Even if I wanted to go down, the monsters";
+	mes "are too scary and I can't…….";
+	mes "This, am I supposed to die!?";
+	close;
+}
+
+gon_in.vhm,73,82,4	script	"Gi Sonchoru" 778,{
+	mes "[Gi Sonchoru]";
+	mes "......";
+	next;
+	mes "[Gi Sonchoru]";
+	mes "Aa.....,";
+	mes "I'm so worried, so worried.";
+	close;
+}
+
+gonryun.vhm,166,196,4	script	"Soldier" 780,{
+	mes "[Waguo]";
+	mes "Hey you, do you know what this is?";
+	mes "Here, there was originally a small shrine.";
+	mes "However, one day it became a place";
+	mes "for evil spirits to settle,";
+	mes "a monster nest even.";
+	mes "Because of that, the small shrine was ruined…….";
+	close;
+//Dragon Boat Festivial Event During
+//	next;
+//	mes "[Waguo]";
+//	mes "Soon, the festival should start.";
+//	mes "However, this time, it seems";
+//	mes "fairly delayed. Until now,";
+//	mes "there hasn't been anything like this.";
+//	close;
+}
+
+gonryun.vhm,169,71,4	script	"Guide" 770,{
+	mes "[Iheemin]";
+	mes "Welcome.";
+	mes "Before you enter the village, have";
+	mes "you explored the lower section?";
+	mes "The buildings outside this village were";
+	mes "constructed painstakingly by people like myself.";
+	next;
+	mes "[Iheemin]";
+	mes "In the same way as the city of Rune midgard";
+	mes "Kingdom is simple to investigate, a small";
+	mes "model was made…….";
+	mes "However, for a long time, there";
+	mes "wasn't much of an outside exchange";
+	mes "so it was very difficult.";
+	next;
+	mes "[Iheemin]";
+	mes "When you wander all over,";
+	mes "you can find many";
+	mes "beautiful views.";
+	close;
+}
+
+//Broken Blade Drop =============================================================
+//Invocation fairly vague, rights are transferred in D's interior. Details unknown.
+gon_dun01.vhm,130,184,0	script "#F1-1" -1,{
+OnTouch:
+	scriptlabel Hidden;
+	check flag == 15,-,Sub1;
+	return;
+Sub1:
+	mes "^ff0000Broken Blade^000000 acquired.";
+	mes "Looks like the chief's heirloom blade fragment.";
+	set flag + 1;
+	close;
+}
+
+gon_dun01.vhm,138,256,0	script	"#F1-2" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun01.vhm,164,53,0	script "#F1-3" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun01.vhm,191,159,0	script	"#F1-4" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun01.vhm,202,25,0	script	"#F1-5" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun02.vhm,24,105,0	script "#F2-1" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun02.vhm,150,74,0	script "#F2-2" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun02.vhm,249,38,0	script "#F2-3" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun02.vhm,248,129,0	script "#F2-4" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun02.vhm,256,200,0	script "#F2-5" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun03.vhm,10,75,0	script "#F3-1" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun03.vhm,14,162,0	script "#F3-2" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun03.vhm,68,211,0	script "#F3-3" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun03.vhm,169,189,0	script "#F3-4" -1,{
+OnTouch:
+	script Hidden;
+}
+
+gon_dun03.vhm,198,101,0	script "#F3-5" -1,{
+OnTouch:
+	script Hidden;
+}
+
+//3F Corpse======================================================================
+gon_dun03.vhm,63,221,0	script "Corpse" -1,{
+	mes "It's a monster-eaten corpse.";
+	mes "Hanging from inside the bone, paper can be seen";
+	mes "waving slightly.";
+	mes "Can you see it well?";
+	next;
+menu "See.",-,"Pass.",Pass;
+	mes "The writing is old and hard to read.";
+	mes "The dark red makes it seem like blood was used.";
+	mes "The words are legible in places....";
+	next;
+	mes "^ff0000Shit……up to here……failure...";
+	mes "Sayo....if it's for him...if nothing...";
+	mes "uh...";
+	mes "But...his...brok...en";
+	mes "stray...3...search....";
+	mes "there...^000000";
+	next;
+	mes "Might have run out of strength. After that";
+	mes "there's only a scatter of bloodstains.";
+	close;
+Pass:
+	mes "You're interested in the scrap of paper";
+	mes "caught in the corpse, but left it as it is";
+	mes "and went....";
+	close;
+}
+

@@ -1,0 +1,167 @@
+//----------------------------------------------------------------------------------------
+// PVP Warper
+// Script by L0ne_W0lf
+// Vidar - http://vidar.sigh.org/forum/
+//
+// Just a basic script, something to kick start PVPIng. (*EDITED*)
+//----------------------------------------------------------------------------------------
+prontera.vhm,146,205,5	script	"PVPster"	0,0,0,0	725,{
+        mes "[PVP Master]";
+        mes "I may not seem it, but I'm the master of PVP.";
+	emote 32;
+	mes "I can send you anywhere you desire.";
+	next;
+        mes "[PVP Master]";
+	mes "Where can I send you?";
+        menu "Zone 1 (Four Room)",Z_1,"Zone 2 (Undercross)",Z_2,"Zone 3 (Compas)",Z_3,"Zone 4",Z_4,"Nothing",-;
+	close;
+                Z_1:
+			random @spawnpoint,4;
+			check @spawnpoint = 1,arena_spawn_1,-;
+			check @spawnpoint = 2,arena_spawn_2,-;
+			check @spawnpoint = 3,arena_spawn_3,-;
+			check @spawnpoint = 4,arena_spawn_4,-;
+			arena_spawn_1:
+		       	warp "pvp_n_1-3",100,139;
+			arena_spawn_2:			
+				warp "pvp_n_1-3",141,100;
+			arena_spawn_3:
+				warp "pvp_n_1-3",60,100;
+			arena_spawn_4:
+				warp "pvp_n_1-3",100,57;
+		Z_2:
+			random @spawnpoint,4;
+			check @spawnpoint = 1,arena2_spawn_1,-;
+			check @spawnpoint = 2,arena2_spawn_2,-;
+			check @spawnpoint = 3,arena2_spawn_3,-;
+			check @spawnpoint = 4,arena2_spawn_4,-;
+			arena2_spawn_1:
+			      warp "pvp_n_1-4",40,120;
+			arena2_spawn_2:
+				warp "pvp_n_1-4",160,120;
+			arena2_spawn_3:
+				warp "pvp_n_1-4",100,175;
+			arena2_spawn_4:
+				warp "pvp_n_1-4",100,20;
+		Z_3:
+			random @spawnpoint,4;
+			check @spawnpoint = 1,arena3_spawn_1,-;
+			check @spawnpoint = 2,arena3_spawn_2,-;
+			check @spawnpoint = 3,arena3_spawn_3,-;
+			check @spawnpoint = 4,arena3_spawn_4,-;
+			arena3_spawn_1:
+				warp "pvp_n_1-5",65,100;
+			arena3_spawn_2:
+				warp "pvp_n_1-5",135,100;
+			arena3_spawn_3:
+				warp "pvp_n_1-5",100,135;
+			arena3_spawn_4:
+				warp "pvp_n_1-5",100,65;
+		Z_4:
+			random @spawnpoint,4;
+			check @spawnpoint = 1,arena_spawn_1,-;
+			check @spawnpoint = 2,arena_spawn_2,-;
+			check @spawnpoint = 3,arena_spawn_3,-;
+			check @spawnpoint = 4,arena_spawn_4,-;
+			arena_spawn_1:
+		       	warp "pvp_2vs2",39,62;
+			arena_spawn_2:			
+				warp "pvp_2vs2",62,40;
+			arena_spawn_3:
+				warp "pvp_2vs2",40,17;
+			arena_spawn_4:
+				warp "pvp_2vs2",17,39;
+}
+
+pvp_2vs2.vhm,32,22,2	script	"PVP Worker"	0,0,0,0	733,{
+	mes "[PVP Worker]";
+	mes "What can I do for you?";
+	emote 1;
+	menu "Heal - 900z",heal,"Send me back",sendback,"Nothing",-;
+	close;
+		heal:
+			mes "That'll be 900z please";
+			next;
+			check Zeny < 900,-,SUB_1;
+			mes "[PVP Worker]";
+			mes "You don't have enough money.";
+			close;
+			SUB_1:
+				set Zeny -= 900,0;
+				mes "[PVP Worker]";
+				mes "There, all better";			
+				heal 30000,30000;
+				close;
+		sendback:		
+			warp "prontera",150,190;
+			close;
+}
+pvp_n_2-5.vhm,133,100,2	script	"PVP Worker"	0,0,0,0	733,{
+	mes "[PVP Worker]";
+	mes "What can I do for you?";
+	emote 1;
+	menu "Heal - 900z",heal,"Send me back",sendback,"Nothing",-;
+	close;
+		heal:
+			mes "That'll be 900z please";
+			next;
+			check Zeny < 900,-,SUB_1;
+			mes "[PVP Worker]";
+			mes "You don't have enough money.";
+			close;
+			SUB_1:
+				set Zeny -= 900,0;
+				mes "[PVP Worker]";
+				mes "There, all better";			
+				heal 30000,30000;
+				close;
+		sendback:		
+			warp "prontera",150,190;
+			close;
+}
+pvp_n_2-4.vhm,100,118,2	script	"PVP Worker"	0,0,0,0	733,{
+	mes "[PVP Worker]";
+	mes "What can I do for you?";
+	emote 1;
+	menu "Heal - 900z",heal,"Send me back",sendback,"Nothing",-;
+	close;
+		heal:
+			mes "That'll be 900z please";
+			next;
+			check Zeny < 900,-,SUB_1;
+			mes "[PVP Worker]";
+			mes "You don't have enough money.";
+			close;
+			SUB_1:
+				set Zeny -= 900,0;
+				mes "[PVP Worker]";
+				mes "There, all better";			
+				heal 30000,30000;
+				close;
+		sendback:		
+			warp "prontera",150,190;
+			close;
+}
+pvp_n_2-3.vhm,111,90,2	script	"PVP Worker"	0,0,0,0	733,{
+	mes "[PVP Worker]";
+	mes "What can I do for you?";
+	emote 1;
+	menu "Heal - 900z",heal,"Send me back",sendback,"Nothing",-;
+	close;
+		heal:
+			mes "That'll be 900z please";
+			next;
+			check Zeny < 900,-,SUB_1;
+			mes "[PVP Worker]";
+			mes "You don't have enough money.";
+			close;
+			SUB_1:
+				set Zeny -= 900,0;
+				mes "[PVP Worker]";
+				mes "There, all better";			
+				heal 30000,30000;
+				close;
+		sendback:		
+			warp "prontera",150,190;
+			close;
+}

@@ -1,0 +1,995 @@
+// Error reports / Fixes by behemoth, HaLLa, jdroger
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Lothar - Crusader Job Quest - Main Session
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_castle.vhm,178,99,6	script	Lothar	0,0,0,0	752,{
+		mes "[^000080Lothar^000000]";
+	check Job = 0,-,NEXT;
+		check Job_SW > 0,-,NOV;
+				mes "Hello $charaname.";
+				mes "I see that you've registered to the ^008000Swordsman's Association^000000.";
+		TALK:
+			next;
+				mes "[^000080Lothar^000000]";
+				mes "If you become a ^800000Swordsman^000000, you will gain the privelege of becoming a ^800000Knight^000000 or ^800000Crusader^000000.";
+			next;
+				mes "[^000080Lothar^000000]";
+				mes "If you decide to go along the path of the ^800000Crusader^000000, come back here.";
+				mes "Just take note that you must obtain a job level of at least 40 first before you can move up to the 2nd job.";
+			close;
+		NOV:
+				mes "Hello there.";
+			goto TALK;
+NEXT:
+	check Job = 1,-,NEXT0;
+		check Job_CR = 1,CONT,-;
+		check Job_CR = 2,CONT0,-;
+		check Job_CR = 3,CONT1,-;
+		check Job_CR = 4,CONT2,-;
+		check Job_CR > 4,CONT3,-;
+				mes "Welcome, can I help you with something?";
+			next;
+				menu "I want to become a ^800000Crusader^000000.",JOB,"What's being a ^800000Crusader^000000 like?",ASK,"What is the purpose of a ^800000Crusader^000000?",ASK0,"I was just looking around.",-;
+						mes "[^000080Lothar^000000]";
+						mes "Oh, all right.";
+					next;
+						mes "[^000080Lothar^000000]";
+						mes "If you decide to take the path of the ^800000Crusader^000000, feel free to come back.";
+					close;
+				JOB:
+						mes "[^000080Lothar^000000]";
+						mes "All right, let me take a look at you first.";
+					next;
+						mes "[^000080Lothar^000000]";
+					check JobLevel = 50,-,SKIP;
+							set JLCC = 1;
+				SKIP:
+					check JobLevel > 39,OKAY,-;
+							mes "[^000080Lothar^000000]";
+							mes "I'm sorry, but you need to be at least at a job level of 40.";
+						next;
+							mes "[^000080Lothar^000000]";
+							mes "All 2nd jobs require that.";
+						close;
+					OKAY:
+						check SkillPoint = 0,OKAY0,-;
+							JOB0:
+									mes "[^000080Lothar^000000]";
+									mes "In order to become a ^800000Crusader^000000, you have to have used all your available skill points first.";
+								close;
+							OKAY0:
+									mes "[^000080Lothar^000000]";
+									mes "Everything looks all right.";
+									set Job_CR = 1;
+								next;
+									mes "[^000080Lothar^000000]";
+									mes "All right, shall we begin the tests?";
+								next;
+									menu "Yes, of course.",OKAY1,"Not yet.",-;
+											mes "[^000080Lothar^000000]";
+											mes "Oh, all right.  Come back when you're ready.";
+										close;
+								OKAY1:
+									check SkillPoint = 0,-,JOB0;
+											set Job_CR = 2;
+											mes "[^000080Lothar^000000]";
+											mes "All right, the first test requires you to collect items.";
+										next;
+											random Job_CR,2;
+											set Job_CR + 3;
+											set @ITEM = 15;
+											mes "[^000080Lothar^000000]";
+											mes "Bring back the following items:";
+										check Job_CR = 3,-,TEST0;
+									TEST:
+											check @ITEM > 7,-,ITEM;
+												mes "- 10 ^FF0000Nails of Deceased^000000";
+												set @ITEM - 8;
+										ITEM:
+											check @ITEM > 3,-,ITEM0;
+												mes "- 10 ^FF0000Danggies^000000";
+												set @ITEM - 4;
+										ITEM0:
+											check @ITEM > 1,-,ITEM1;
+												mes "- 10 ^FF0000Rotten Scales^000000";
+												set @ITEM - 2;
+										ITEM1:
+											check @ITEM > 0,-,ITEM2;
+												mes "- 10 ^FF0000Momentos^000000";
+										ITEM2:
+											close;
+									TEST0:
+										check @ITEM > 7,-,ITEM3;
+											mes "- 10 ^FF0000Skel-Bones^000000";
+											set @ITEM - 8;
+									ITEM3:
+										check @ITEM > 3,-,ITEM4;
+											mes "- 10 ^FF0000Nails of Orc^000000";
+											set @ITEM - 4;
+									ITEM4:
+										check @ITEM > 1,-,ITEM5;
+											mes "- 1 ^FF0000Ball 'n Chain^000000";
+											set @ITEM - 2;
+									ITEM5:
+										check @ITEM > 0,-,ITEM6;
+											mes "- 10 ^FF0000Danggie^000000";
+									ITEM6:
+										close;
+				ASK:
+						mes "[^000080Lothar^000000]";
+						mes "To be a ^800000Crusader^000000 is to fight for the righteous people.";
+						mes "Not always those who are in power, but rather for the justly cause.";
+					next;
+						mes "[^000080Lothar^000000]";
+						mes "I hope that you consider to become one.";
+						mes "To fight for good is a job that should be done by everyone to some extent.";
+					close;
+				ASK0:
+						mes "[^000080Lothar^000000]";
+						mes "The purpose of a ^800000Crusader^000000 is to work for the good in the world.";
+						mes "A ^800000Crusader^000000 is a person of righteousness at work.";
+					close;
+		CONT:
+				mes "Have you changed your mind?";
+			next;
+				menu "Yes, I want to become a ^800000Crusader^000000.",JOB,"Sorry, but I don't want to.",-;
+						mes "[^000080Lothar^000000]";
+						mes "I see... That's a shame.";
+					next;
+						mes "[^000080Lothar^000000]";
+						mes "Come back if you do want to.";
+					close;
+		CONT0:
+				mes "Well, hm...";
+			next;
+				mes "[^000080Lothar^000000]";
+				mes "I was expecting that someone like you would pass.";
+			next;
+				mes "[^000080Lothar^000000]";
+				mes "Mind to try again?";
+			next;
+				menu "Yes, of course.",OKAY1,"No, I'm all right.",-;
+						mes "[^000080Lothar^000000]";
+						mes "Oh, all right.";
+					close;
+		CONT1:
+				set @ITEM = 0;
+			checkitem 957,10,ITEM7,-;
+					set @ITEM + 8;
+		ITEM7:
+			checkitem 901,10,ITEM8,-;
+					set @ITEM + 4;
+		ITEM8:
+			checkitem 959,10,ITEM9,-;
+					set @ITEM + 2;
+		ITEM9:
+			checkitem 934,10,ITEM10,-;
+					set @ITEM + 1;
+		ITEM10:
+			check @ITEM > 0,-,DONE;
+					mes "You still need to get the following items:";
+				goto TEST;
+		DONE:
+					mes "Good job!";
+					mes "You collected everything!";
+					delitem 957,10;
+					delitem 901,10;
+					delitem 959,10;
+					delitem 1099,10;
+					set Job_CR = 5;
+			TEST1:
+				next;
+					mes "[^000080Lothar^000000]";
+					mes "All right, let's move on to the 2nd test.";
+				next;
+					mes "[^000080Lothar^000000]";
+					mes "Go to the prison, it's in the basement";
+					mes "Before you do, make sure that you bring a ^FF0000Rosary^000000 with you.";
+				close;
+		CONT2:
+				set @ITEM = 0;
+			checkitem 932,10,ITEM11,-;
+					set @ITEM + 8;
+		ITEM11:
+			checkitem 1043,10,ITEM12,-;
+					set @ITEM + 4;
+		ITEM12:
+			checkitem 2408,1,ITEM13,-;
+					set @ITEM + 2;
+		ITEM13:
+			checkitem 901,10,ITEM14,-;
+					set @ITEM + 1;
+		ITEM14:
+			check @ITEM > 0,-,DONE0;
+					mes "You still need to get the following items:";
+				goto TEST0;
+		DONE0:
+					mes "Good job!";
+					mes "You collected everything!";
+					delitem 932,10;
+					delitem 1043,10;
+					delitem 2408,1;
+					delitem 901,10;
+					set Job_CR = 5;
+				goto TEST1;
+		CONT3:
+			check Job_CR = 8,CONT4,-;
+			check Job_CR > 8,CONT5,-;
+					mes "Please talk to the man in the prison to continue.";
+					mes "Make sure you bring a ^FF0000Rosary^000000 with you.";
+				close;
+		CONT4:
+				mes "Great job in accomplishing the ^FF80000Patience Test^000000!";
+			next;
+				mes "[^000080Lothar^000000]";
+				mes "Now to move on to the ^FF80000Knowledge Test^000000.";
+				mes "Please talk to the Knight at the Cathedral, he will test your knowledge.";
+				set Job_CR = 9;
+			close;
+		CONT5:
+			check Job_CR = 13,CONT6,-;
+			check Job_CR = 14,CONT7,-;
+					mes "Please go talk to the Knight at the Cathedral to continue.";
+				close;
+			CONT6:
+					mes "Excellent work in completing all the necessary tests!";
+					mes "Now let me examine you before you become a ^800000Crusader^000000.";
+				next;
+					set Job_CR = 14;
+					mes "[^000080Lothar^000000]";
+			CONT7:
+				check SkillPoint = 0,GOOD,-;
+						mes "I'm sorry, but you'll need to use up all your skill points first.";
+					close;
+				GOOD:
+							mes "This is to compliment your job change.";
+					check JLCC = 1,-,OTHR;
+							additem 1408,1;
+						goto END;
+					OTHR:
+							additem 1409,1;
+					END:
+							jobchange 14;
+							set JobLevel = 1,0;
+						close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "Hello, welcome to the ^008000Castle of Prontera^000000.";
+			mes "Hope you have a good day!";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Good luck in your hunting.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "Good day to you!";
+			mes "Hope you do well to find your path.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+			mes "Hello, we don't currently need anything, sorry about that.";
+		close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Better watch yourself.";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "Good day to you, $charaname.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Good day, $charaname.";
+			mes "I would hope to believe that all is going well.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "Hello, welcome to the ^008000Castle of Prontera^000000.";
+			mes "Nice to have you wish us.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "Hello, we're not in need of any weapons or armour at the moment, thank you.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Hello, wish you luck for your success.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Stay out of trouble, you don't want the guards to come after you, now do you?";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Good day, $charaname.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "Hello, welcome to the ^008000Castle of Prontera^000000.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Welcome to the ^008000Castle of Prontera^000000, I hope you enjoy your stay.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Stay out of trouble if you know what's good for you.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "So, how are the experiments going down in ^00FF00Al de Baran^000000?";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Welcome to the castle, good sir.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Good day, miss.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+			mes "Hello, welcome to the ^008000Castle of Prontera^000000.";
+		close;
+	MALE:
+			mes "Well done, sir!";
+		close;
+NEXT19:
+		mes "Hello and good day!";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Man in Pain - Crusader Job Quest - 2nd Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_castle.vhm,163,33,0	script	"Man in Pain"	0,0,0,0	107,{
+	check Job_CR = 7,CONT,-;
+	check Job_CR > 7,CONT0,-;
+		mes "[^000080Man in Pain^000000]";
+		mes "Who... who are you?";
+	next;
+		check Job_CR = 5,-,OTHER;
+				//lockitem 1;
+				set @Rosary = 0;
+			checkequip 2608,8,-,ITEM;
+					set @Rosary + 1;
+		ITEM:
+			checkequip 2608,128,-,ITEM0;
+					set @Rosary + 1;
+		ITEM0:
+//			check @Rosary > 0,-,NOT;
+					mes "[^000080Man in Pain^000000]";
+					mes "I see, you're here for the job.";
+				next;
+					mes "[^000080Man in Pain^000000]";
+					mes "It's torture.";
+					mes "They send me to that room time and time again.";
+				next;
+					mes "[^000080Man in Pain^000000]";
+					mes "I've grown awefully weak from it.";
+				next;
+					mes "[^000080Man in Pain^000000]";
+					mes "But if it's your wish, I will send to there.";
+				next;
+					menu "Yes.",-,"On second thought...",EXIT;
+							mes "[^000080Man in Pain^000000]";
+							mes "All right then... I'll tell you where to go.";
+					GO:
+						next;
+							getmapusers "job_cru",@USE;
+							save "prt_castle",162,27;
+						check @USE = 0,-,EXIT0;
+							check \@CRU_IN = 0,-,EXIT0;
+								set \@FAIL_CR = 0;
+								set \@CRU_IN = 1;
+								set Job_CR = 6;
+								warp "job_cru",23,42;
+						EXIT0:
+								mes "[^000080Man in Pain^000000]";
+								mes "I'm sorry, there's already another person there right now.";
+								mes "Please wait a little longer.";
+							close;
+					EXIT:
+							mes "[^000080Man in Pain^000000]";
+							mes "Please do not disturb me then!";
+						close;
+		NOT:
+				mes "[^000080Man in Pain^000000]";
+				mes "Leave me alone!";
+				mes "Can't you leave someone in pain alone?";
+			close;
+	OTHER:
+		check Job_CR = 6,EXIT1,-;
+			mes "[^000080Man in Pain^000000]";
+			mes "What do you want?";
+			mes "Leave me alone~!";
+		close;
+	CONT:
+				mes "[^000080Man in Pain^000000]";
+				mes "I see you've passed.  Good work.";
+				set Job_CR = 8;
+			close;
+		EXIT1:
+				mes "[^000080Man in Pain^000000]";
+				mes "Sorry but you're going to need to go again.";
+			goto GO;
+	CONT0:
+			mes "[^000080Man in Pain^000000]";
+			mes "There is nothing else you need from me.";
+			mes "Let me be...";
+		close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Arthur - Crusader Job Quest - Knowledge Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_church.vhm,94,116,0	script	Arthur	0,0,0,0	56,{
+		mes "[^000080Arthur^000000]";
+	check Job = 0,-,NEXT;
+			mes "Hello young traveler.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "Hello, $charaname.";
+		next;
+			check Job_CR = 9,-,EXIT;
+		BEGIN:
+				menu "Take the Knowledge test.",-,"Nothing.",EXIT;
+						mes "[^000080Arthur^000000]";
+						mes "Oh, on your way to become a ^800000Crusader^000000 huh?";
+						mes "Okay...";
+					next;
+				START:
+						set @Q = 0;
+						set @Q1 = 0;
+						set @Q2 = 0;
+						set @Q3 = 0;
+						set @Q4 = 0;
+						set @Q5 = 0;
+						set @Q6 = 0;
+						set @Q7 = 0;
+						set @Q8 = 0;
+						set @Q9 = 0;
+						set @Q10 = 0;
+						set @Q11 = 0;
+						set @Q12 = 0;
+						set @Q13 = 0;
+						set @Q14 = 0;
+						set @Q15 = 0;
+						set @Q16 = 0;
+						set @Q17 = 0;
+						set @Q18 = 0;
+						set @Q19 = 0;
+						set @Q20 = 0;
+						set @ANS = 0;
+				RND:
+					check @Q < 10,-,DONE;
+						random @RND,20;
+					check @RND > 9,G1,-;
+						check @RND > 4,G1A,-;
+							check @RND < 3,-,G1A1;
+								check @RND = 0,Q1,-;
+								check @RND = 1,Q2,Q3;
+							G1A1:
+								check @RND = 3,Q4,Q5;
+						G1A:
+							check @RND < 8,-,G1A2;
+								check @RND = 5,Q6,-;
+								check @RND = 6,Q7,Q8;
+							G1A2:
+								check @RND = 8,Q9,Q10;
+					G1:
+						check @RND > 14,G2A,-;
+							check @RND < 13,-,G2A1;
+								check @RND = 10,Q11,-;
+								check @RND = 11,Q12,Q13;
+							G2A1:
+								check @RND = 13,Q14,Q15;
+						G2A:
+							check @RND < 18,-,G2A2;
+								check @RND = 15,Q16,-;
+								check @RND = 16,Q17,Q18;
+							G2A2:
+								check @RND = 18,Q19,-;
+								check @Q20 = 0,-,RND;
+										set @Q20 = 1;
+										set @Q + 1;
+										mes "[^000080Arthur^000000]";
+										mes "Are you willing to risk your life to save someone else?";
+									next;
+										menu "Yes",-,"No",RND;
+												set @ANS + 1;
+											goto RND;
+					Q1:
+						check @Q1 = 0,-,RND;
+								set @Q20 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "If someone asks you to help them for a good cause, will you oblige?";
+							next;
+								menu "Yes",-,"No",RND;
+										set @ANS + 1;
+									goto RND;
+					Q2:
+						check @Q2 = 0,-,RND;
+								set @Q2 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "Would you allow a robber to get away with stolen goods?";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q3:
+						check @Q3 = 0,-,RND;
+								set @Q3 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "Do you wish that the world was at harmony?";
+							next;
+								menu "Yes",-,"No",RND;
+										set @ANS + 1;
+									goto RND;
+					Q4:
+						check @Q4 = 0,-,RND;
+								set @Q4 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "Will you ever attempt suicide?";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q5:
+						check @Q5 = 0,-,RND;
+								set @Q5 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "Will you intoxicate yourself at parties?";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q6:
+						check @Q6 = 0,-,RND;
+								set @Q6 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "Will you openly massacre?";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q7:
+						check @Q7 = 0,-,RND;
+								set @Q7 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "Will you hold your temper during arguments?";
+							next;
+								menu "Yes",-,"No",RND;
+										set @ANS + 1;
+									goto RND;
+					Q8:
+						check @Q8 = 0,-,RND;
+								set @Q8 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "Would you allow alchemists to perform illegal experiments?";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q9:
+						check @Q9 = 0,-,RND;
+								set @Q9 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "If someone threw a stone at you, you'd become furious.";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q10:
+						check @Q10 = 0,-,RND;
+								set @Q10 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "If someone offered you money that belongs to someone poor, would you take it?";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q11:
+						check @Q11 = 0,-,RND;
+								set @Q11 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "You think highly of yourself.";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q12:
+						check @Q12 = 0,-,RND;
+								set @Q12 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "You are humble before others.";
+							next;
+								menu "Yes",-,"No",RND;
+										set @ANS + 1;
+									goto RND;
+					Q13:
+						check @Q13 = 0,-,RND;
+								set @Q13 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "You answer people full of respect and with kindness.";
+							next;
+								menu "Yes",-,"No",RND;
+										set @ANS + 1;
+									goto RND;
+					Q14:
+						check @Q14 = 0,-,RND;
+								set @Q14 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "You fight when you feel like it.";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q15:
+						check @Q15 = 0,-,RND;
+								set @Q15 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "You go to the pub every night.";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q16:
+						check @Q16 = 0,-,RND;
+								set @Q16 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "You believe in the Father, Son and Holy Spirit.";
+							next;
+								menu "Yes",-,"No",RND;
+										set @ANS + 1;
+									goto RND;
+					Q17:
+						check @Q17 = 0,-,RND;
+								set @Q17 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "You believe that the Devil is evil and cruel and should be treated the same way.";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q18:
+						check @Q18 = 0,-,RND;
+								set @Q18 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "You believe that talk is for wimps and that action plays the main role in peace-making";
+							next;
+								menu "Yes",RND,"No",-;
+										set @ANS + 1;
+									goto RND;
+					Q19:
+						check @Q19 = 0,-,RND;
+								set @Q19 = 1;
+								set @Q + 1;
+								mes "[^000080Arthur^000000]";
+								mes "If all other means to keep peace fail, THEN it is all right to resort to violence.";
+							next;
+								menu "Yes",-,"No",RND;
+										set @ANS + 1;
+									goto RND;
+				DONE:
+						mes "[^000080Arthur^000000]";
+						mes "You got $[@ANS] / 10 questions correct.";
+					next;
+						check Job_CR != 10,-,2ND;
+							check @ANS > 8,-,NO;
+						PASS:
+									mes "[^000080Arthur^000000]";
+									mes "Excellent work!  You qualify to pass the ^FF8000Knowledge Test^000000!";
+									mes "You're almost done, you are now at the ^FF8000Purification Test^000000, find the Guardian Knight at ^008000Prontera Castle^000000.";
+									set Job_CR = 11;
+								close;
+							NO:
+									set Job_CR = 10;
+									mes "[^000080Arthur^000000]";
+									mes "I'm sorry, you didn't get enough to qualify.";
+								next;
+									mes "[^000080Arthur^000000]";
+									mes "Try giving it another go when you feel you're ready.";
+									mes "I'll only expect you to get at least 8 correct from now on.";
+								close;
+						2ND:
+							check @ANS > 7,PASS,-;
+									mes "[^000080Arthur^000000]";
+									mes "I'm sorry, you didn't get enough correct.";
+								close;
+			EXIT:
+				check Job_CR = 10,BEGIN,-;
+				check Job_CR > 10,FINISH,-;
+					close;
+		FINISH:
+				mes "[^000080Arthur^000000]";
+				mes "Please go to the Guardian Knight at ^008000Prontera Castle^000000 to continue on to the ^FF8000Purification Test^000000.";
+			close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "Hello, welcome to the ^008000Castle of Prontera^000000.";
+			mes "Hope you have a good day!";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Good luck in your hunting.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "Good day to you!";
+			mes "Hope you do well to find your path.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+			mes "Hello, we don't currently need anything, sorry about that.";
+		close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Better watch yourself.";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "Good day to you, $charaname.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Good day, $charaname.";
+			mes "I would hope to believe that all is going well.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "Hello!  Nice to have you wish us.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "Hello, we're not in need of any weapons or armour at the moment, thank you.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Hello, wish you luck for your success.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Stay out of trouble, you don't want the guards to come after you, now do you?";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Good day, $charaname.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "Hello, welcome to the ^008000Knight's Headquarters^000000.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Welcome to the ^008000Knight's Headquarters^000000, I hope you enjoy your stay.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Stay out of trouble if you know what's good for you.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "So, how are the experiments going down in ^00FF00Al de Baran^000000?";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Welcome to the castle, good sir.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Good day, miss.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+			mes "Hello, welcome to the ^008000Knight's Headquarters^000000.";
+		close;
+	MALE:
+			mes "Well done, sir!";
+		close;
+NEXT19:
+		mes "Hello and good day!";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Harrison - Crusader Job Quest - Purification Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_in.vhm,83,97,0	script	Harrison	0,0,0,0	734,{
+		mes "[^000080Harrison^000000]";
+	check Job = 0,-,NEXT;
+			mes "Hello, young traveler.";
+			mes "Welcome.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+		check Job_CR = 11,PART1,-;
+		check Job_CR = 12,PART2,-;
+		check Job_CR = 13,-,EXIT;
+				mes "Well done!";
+				mes "Go talk to ^000080Lothar^000000, he will turn you into a ^800000Crusader^000000.";
+			close;
+	PART2:
+		check \@TIME4 = 2,EXIT2,-;
+	PART2A:
+			mes "So, do you want to try again?";
+		next;
+			menu "Yes",TEST,"No",-;
+					mes "[^000080Harrison^000000]";
+					mes "Oh, okay then.";
+				close;
+	PART1:
+				mes "Hello, $charaname.";
+				mes "I see that you've passed thus far.";
+			next;
+				mes "[^000080Harrison^000000]";
+				mes "Don't let me down in this test.";
+				mes "This is the ^FF8000Purification Test^000000.";
+				mes "I will take you to the proper location when you are ready.";
+			next;
+				menu "I want to go now.",-,"All right, just a second.",EXIT0;
+					TEST:
+							mes "[^000080Harrison^000000]";
+							mes "Let me make sure it's empty first.";
+						next;
+							check \@JOB_CR4 = 0,-,EXIT1;
+									set \@JOB_CR4 = $aid;
+									save "prt_in",81,100;
+									getmapusers "job_cru",@USE;
+								check @USE = 0,-,EXIT1;
+										set Job_CR = 12;
+									warp "job_cru",167,175;
+							EXIT1:
+									mes "[^000080Harrison^000000]";
+									mes "I'm sorry, but someone else is inside at the moment.";
+								close;
+				EXIT0:
+						mes "[^000080Harrison^000000]";
+						mes "No problem, take as long as you need.";
+					close;
+		EXIT:
+				mes "Hello, $charaname.";
+				mes "So how are things coming along with building up your abilities?";
+				mes "Are you strong enough to become a ^800000Crusader^000000 yet?";
+			next;
+				mes "[^000080Harrison^000000]";
+				mes "If you do, you'll find yourself coming back to me for one of the tests.";
+			close;
+		EXIT2:
+				getmapusers "job_cru",@USE;
+			check @USE = 0,-,PART2A;
+					mes "Well done!";
+					set Job_CR = 13;
+				next;
+					mes "Return to ^000080Lothar^000000 and he will make you a ^800000Crusader^000000.";
+				close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "It's nice to see you.";
+			mes "Hope we'll be able to work together to keep ^00FF00Prontera^000000 safe.";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Welcome, I hope you have a great day!";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "Good day to you!";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+			mes "Hello, sorry but I'm not in need of anything.";
+		close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Don't think you can get away with theft in ^00FF00Prontera^000000, we have soldiers watching everywhere.";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "Welcome!";
+			mes "I hope you have a great day!";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Welcome to ^00FF00Prontera^000000!";
+			mes "Hope you have a good day!";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "Hello!  Glad to see people of your stature here!";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "I appreciate your presence, but I don't need anything at the moment.";
+			mes "Sorry about that.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "How goes the hunting campaign?";
+			mes "Hope everything is going all right.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Stay out of trouble, you hear me?";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Welcome!  Good day to you!";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "Good day, I hope your stay in ^00FF00Prontera^000000 will be a peaceful one.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "It's good to see people of your stature here in ^00FF00Prontera^000000!";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Be careful if you don't want to get caught.";
+			mes "I don't want to have to hang you or something.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "I hope the experiments in ^00FF00Al de Baran^000000 are legal, or we'll have to send someone to clear it up.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Ah, what a fine day it is to have such a person as yourself to come and visit.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Welcome, good day to you!";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+				mes "Wow!  Congratulations on your marriage!";
+			close;
+	MALE:
+			mes "Well done!  I congratulate you upon your marriage!";
+		close;
+NEXT19:
+		mes "Good day to you!";
+	close;
+}
+
+prt_in.vhm,81,100,0	script	Enter	0,0,2,0	-1,{
+	check $aid = \@JOB_CR4,-,EXIT;
+			set \@JOB_CR4 = 0;
+EXIT:
+}

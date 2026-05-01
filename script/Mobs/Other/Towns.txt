@@ -1,0 +1,4 @@
+yuno.vhm,0,0,0,0	monster	Wild_Rose 1261,10,0,0,0
+amatsu.vhm,0,0,0,0	monster	Wild_Rose 1261,10,0,0,0
+umbala.vhm,0,0,0,0		monster	Wild_Rose 1261,10,0,0,0
+gonryun.vhm,0,0,0,0	monster	Wild_Rose 1261,10,0,0,0

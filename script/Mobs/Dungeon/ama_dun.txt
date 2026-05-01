@@ -1,0 +1,34 @@
+//RO-8.0官方怪物分布
+//怪物种类和数量竟可能的和官方靠齐
+//制作：LKM
+//http://coolro.cnnb.net
+
+
+
+//--------------------------------------------------
+//  Amatsu Dungeon 01                              |
+//--------------------------------------------------
+ama_dun01.vhm,0,0,0,0	monster	MIYABI_NINGYO 1404,25,0,0,0
+ama_dun01.vhm,0,0,0,0	monster	ANTIQUE_FIRELOCK 1403,35,0,0,0
+ama_dun01.vhm,0,0,0,0	monster	SHINOBI 1401,25,0,0,0
+
+//--------------------------------------------------
+//  Amatsu Dungeon 02                              |
+//--------------------------------------------------
+ama_dun02.vhm,0,0,0,0	monster	ANTIQUE_FIRELOCK 1403,35,0,0,0
+ama_dun02.vhm,0,0,0,0	monster	HORONG 1129,20,0,0,0
+ama_dun02.vhm,0,0,0,0	monster	MIYABI_NINGYO 1404,25,0,0,0
+ama_dun02.vhm,0,0,0,0	monster	POISON_TOAD 1402,20,0,0,0
+ama_dun02.vhm,0,0,0,0	monster	SHINOBI 1401,25,0,0,0
+ama_dun02.vhm,0,0,0,0	monster	THE_PAPER 1375,20,0,0,0
+
+//--------------------------------------------------
+//  Amatsu Dungeon 03                              |
+//--------------------------------------------------
+ama_dun03.vhm,0,0,0,0	monster	ANTIQUE_FIRELOCK 1403,35,0,0,0
+ama_dun03.vhm,0,0,0,0	monster	MIYABI_NINGYO 1404,25,0,0,0
+ama_dun03.vhm,0,0,0,0	monster	SHINOBI 1401,25,0,0,0
+ama_dun03.vhm,0,0,0,0	monster	TENGU 1405,25,0,0,0
+ama_dun03.vhm,0,0,0,0	monster	THE_PAPER 1375,20,0,0,0
+ama_dun03.vhm,0,0,0,0	monster	MIMIC 1191,20,0,0,0
+ama_dun03.vhm,0,0,0,0	monster	INCANTATION_SAMURAI 1492,1,3600000,7200000,1

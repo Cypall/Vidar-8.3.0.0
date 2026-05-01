@@ -1,0 +1,147 @@
+//- Swordsman Skills Quests - kobra_k88
+prt_in.vhm,75,88,5 script Leon 85,{
+	mes "[Leon]";
+		getskilllevel 2 @skill;
+		check @skill > 0 L_Start -;
+		getskilllevel 3 @skill;
+		check @skill > 0 L_Start -;
+//	if(callfunc("Is_Sword_Class")) goto L_Start;
+		check job == 0,L_Novice,-;
+	mes "Hello there.  I am Leon, a well known and well respected member of the famous Prontera Chivalry.";
+	next;
+	mes "[Leon]";
+	mes "Are you here to learn more about the Chivalry, or are you hear to bask in the glory of us Knights? Hahahaha!";
+	emote 18;
+	close;
+L_Novice:
+	mes "Oh a novice.... I'm afraid I have nothing to offer you.";
+	mes "I have no fun or nice things to say to anyone other then Swordsmen.";
+	next;
+	mes "[Leon]";
+	mes "See you in a better world!";
+	close;
+L_Start:
+		check FATALBLOW == 1,L_Check,-;
+		getskilllevel 145 @skill;
+		check @skill > 0,L_Done,-;
+		check gender == 1,-,GrlTalk1;
+		mes "Oooh! I see that you are quite a strong Swordsman.";
+		goto Cont_Talk1;
+	GrlTalk1:
+		mes "Oooh! I see that you are quite a strong Swordswoman.";
+Cont_Talk1:
+	mes "How did I know? Hahaha! Just look at that strong arm of yours!";
+	next;
+	mes "[Leon]";
+	mes "You must enjoy using ^0000ff'Bash'^000000, huh? Hahaha!";
+	emote 18;
+	next;
+	mes "[Leon]";
+		check gender == 1,-,GrlTalk2;
+		mes "I like a Swordsman who isn't afraid to use a powerfull skill such as that.";
+		goto Cont_Talk2;
+	GrlTalk2:
+		mes "Now, now, don't be shy.  It's ok for girls to like Bash.";
+		mes "Afterall, whether your a Swordsman or Swordswoman, there's no denying the power of Bash!";
+Cont_Talk2:
+	next;
+	mes "[Leon]";
+	mes "As great as Bash is though, I often felt that it could be even better if there was someway to stun an opponent with it.";
+	mes "I decided to withdraw from the battlefield and research ways of making bash more powerfull.";
+	next;
+	mes "[Leon]";
+	mes "I discovered that if one could strike an enemy's weak point with a precisely placed Bash, an opponent would be left utterly parralyzed!!";
+	next;
+	mes "[Leon]";
+	mes "I then went on to develop the skill, ^ff0000'Fatal Blow'^000000, which allows you to do just that!";
+	mes "Will rigorous training, one can learn to stun an opponent with a mighty Bash.";
+	next;
+	mes "[Leon]";
+	mes "Since you seem to be so fond of Bash, I'd be willing to teach you the skill.";
+	mes "However, I must warn you that a lot of hard work will be required.";
+	next;
+	mes "[Leon]";
+	mes "So what do you think? Are you interested?";
+	next;
+	menu "You betcha!!",M_0, "Nah.... Not really.",M_1, "Any advice on how to eat sushi?",M_2;
+	M_0:
+		set FATALBLOW = 1;
+		mes "[Leon]";
+		mes "Hahaha! I knew you love Bash as much as I do.";
+		next;
+		mes "[Leon]";
+		mes "In order for me to teach you Fatal Blow, you must have at least ^5555FFlevel 5 Bash^000000.  You then need to give me these items:";
+		mes "- 10 ^FF0000Fire Arrows^000000,";
+		mes "- 10 ^FF0000Silver Arrows^000000,";
+		mes "- 1 ^FF0000Banana Juice^000000,";
+		mes "- 30 ^FF0000Tentacles^000000,";
+		mes "- and 5 ^FF0000Royal Jelly^000000.";
+		next;
+		mes "[Leon]";
+		mes "When you have gathered all of these items come back and see me.";
+		close;
+	M_1:
+		mes "[Leon]";
+		mes "I see... I must have misjudged you...";
+		close;
+	M_2:
+		mes "[*Sushi King* Leon]";
+		mes "The best way to eat sushi is with your hands.  That is the basic method.  Oh, and dip the FISH, NOT the RICE, into the soy sauce.";
+		next;
+		mes "[*Sushi King* Leon]";
+		mes "That way you get a richer flavor.  Also, always eat the kind that is in season.";
+		mes "Eating in the order of white fish, then blue fish, will make it taste even better!";
+		next;
+		mes "[*Sushi King* Leon]";
+		mes "Mmmmm..... I love sushi!!!";
+		emote 33;
+		close;
+L_Check:
+	mes "So your back.  Did you get what I asked for?";
+	next;
+	mes "[Leon]";
+		checkitem 1752,10,-,L_NoItems;
+		checkitem 1751,10,-,L_NoItems;
+		checkitem 532,1,-,L_NoItems;
+		checkitem 962,30,-,L_NoItems;
+		checkitem 526,5,-,L_NoItems;
+		getskilllevel 5 @skill;
+		check @skill > 4 - L_BashLvl;
+	mes "Great work.  You have everything I need for me to teach you Fatal Blow.";
+	next;
+	mes "[Leon]";
+	mes "Ok, lets get started.";
+	next;
+	mes "!SMACK!~!CRACK!~!THWACK!~!BASH!.......... !SMACK!~!CRACK!~!THWACK!~!BASH!..........";
+	next;
+	mes "(5 hours later)";
+	next;
+	mes "[Leon]";
+	mes "Yes! That's it! You have just mastered Fatal Blow!";
+	emote 21;
+	next;
+	delitem 1752,10;
+	delitem 1751,10;
+	delitem 532,1;
+	delitem 962,30;
+	delitem 526,5;
+	setskilllevel 0x91,1;
+	set FATALBLOW = 0;
+	mes "[Leon]";
+	mes "Use it wisely young warrior!!";
+	close;
+	L_NoItems:
+		mes "Hmm... you still don't have enough items.  Come back when you do.";
+		close;
+	L_BashLvl:
+		mes "Wait a minute... you have to train a little more before learning this skill.";
+		mes "You need to have at least a ^5555FFlevel 5 Bash^000000.";
+		close;
+L_Done:
+	mes "So how is Fatal Blow? Isn't it great!! Hahaha! I knew you'd like it.";
+	next;
+	mes "[Leon]";
+	mes "Go on and Bash the heck out of those monsters! Hahaha.";
+	emote 18;
+	close;
+}

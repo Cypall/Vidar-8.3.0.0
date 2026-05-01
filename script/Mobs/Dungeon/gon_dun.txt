@@ -1,0 +1,30 @@
+//--------------------------------------------------
+//  Gonryun Dungeon 01                             |
+//--------------------------------------------------
+gon_dun01.vhm,0,0,0,0	monster	"Zipper Bear" 1417,15,0,0,0
+gon_dun01.vhm,0,0,0,0	monster	"Rice Cake Boy" 1409,10,0,0,0
+gon_dun01.vhm,0,0,0,0	monster	"Baby Leopard" 1415,10,0,0,0
+gon_dun01.vhm,0,0,0,0	monster	"Wild Ginsing" 1413,7,0,0,0
+gon_dun01.vhm,0,0,0,0	monster	"Evil Cloud Hermit" 1412,3,300000,300000,0
+gon_dun01.vhm,0,0,0,0	monster	"Blood Butterfly" 1408,5,300000,300000,0
+
+//--------------------------------------------------
+//  Gonryun Dungeon 02                             |
+//--------------------------------------------------
+gon_dun02.vhm,0,0,0,0	monster	"Baby Leopard" 1415,20,0,0,0
+gon_dun02.vhm,0,0,0,0	monster	"Wild Ginsing" 1413,5,0,0,0
+gon_dun02.vhm,0,0,0,0	monster	"Blood Butterfly" 1408,2,300000,300000,0
+gon_dun02.vhm,0,0,0,0	monster	"Evil Cloud Hermit" 1412,2,300000,300000,0
+gon_dun02.vhm,0,0,0,0	monster	"Zipper Bear" 1417,5,0,0,0
+gon_dun02.vhm,0,0,0,0	monster	"Wicked Nymph" 1416,5,300000,300000,0
+
+//--------------------------------------------------
+//  Gonryun Dungeon 03                             |
+//--------------------------------------------------
+gon_dun03.vhm,0,0,0,0	monster	"Baby Leopard" 1415,20,0,0,0
+gon_dun03.vhm,0,0,0,0	monster	"Wild Ginsing" 1413,5,0,0,0
+gon_dun03.vhm,0,0,0,0	monster	"Zipper Bear" 1417,5,0,0,0
+gon_dun03.vhm,0,0,0,0	monster	"Blood Butterfly" 1408,2,300000,300000,0
+gon_dun03.vhm,0,0,0,0	monster	"Evil Cloud Hermit" 1412,2,300000,300000,0
+gon_dun03.vhm,0,0,0,0	monster	"Wicked Nymph" 1416,5,300000,300000,0
+gon_dun03.vhm,0,0,0,0	monster	"Dark Snake Lord" 1418,1,1300000,720000,0

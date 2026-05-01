@@ -1,0 +1,19 @@
+//RO-8.0官方怪物分布
+//怪物种类和数量竟可能的和官方靠齐
+//制作：LKM
+//http://coolro.cnnb.net
+
+
+
+nif_fild01.vhm,0,0,0,0	monster	LUDE 1509,35,0,0,0
+nif_fild01.vhm,0,0,0,0	monster	QUVE 1508,20,0,0,0
+nif_fild01.vhm,0,0,0,0	monster	HYLOZOIST 1510,20,0,0,0
+nif_fild01.vhm,0,0,0,0	monster	DISGUISE 1506,20,0,0,0
+nif_fild01.vhm,0,0,0,0	monster	GIBBET 1503,15,0,0,0
+nif_fild01.vhm,0,0,0,0	monster	DULLAHAN 1504,15,0,0,0
+nif_fild02.vhm,0,0,0,0	monster	HYLOZOIST 1510,20,0,0,0
+nif_fild02.vhm,0,0,0,0	monster	LUDE 1509,20,0,0,0
+nif_fild02.vhm,0,0,0,0	monster	GIBBET 1503,10,0,0,0
+nif_fild02.vhm,0,0,0,0	monster	DULLAHAN 1504,15,0,0,0
+nif_fild02.vhm,0,0,0,0	monster	LOLI_RURI 1505,15,0,0,0
+nif_fild02.vhm,0,0,0,0	monster	BLOODY_MURDERER 1507,20,0,0,0

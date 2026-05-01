@@ -1,0 +1,7 @@
+//turtle island CR4.0?			
+tur_dun01.vhm,154,242,0	warp	warp1526	1,1,tur_dun02.vhm,147,263
+tur_dun02.vhm,147,269,0	warp	warp1527	1,1,tur_dun01.vhm,154,239
+tur_dun02.vhm,168,19,0	warp	warp1528	1,1,tur_dun03.vhm,131,191
+tur_dun03.vhm,131,194,0	warp	warp1529	1,1,tur_dun02.vhm,168,23
+tur_dun03.vhm,218,70,0	warp	warp1530	1,1,tur_dun04.vhm,99,194
+tur_dun04.vhm,99,197,0	warp	warp1531	1,1,tur_dun03.vhm,218,74

@@ -1,0 +1,18 @@
+//---------------------------------------------------------- 
+//                       Umbala NPC Scripts 
+//---------------------------------------------------------- 
+um_in.vhm,39,125,4   script   "Umbala Healer"   71,{ 
+   mes "[Umbala Healer]"; 
+   mes "Welcome. Do you need healing?"; 
+   next; 
+   menu "Yes",UH1,"No Thanks",UH2; 
+UH1: 
+   mes "[Umbala Healer]"; 
+   mes "Very Well"; 
+   heal 30000,30000; 
+   close; 
+UH2: 
+   mes "[Umbala Healer]";
+   mes "Well, if you ever need healing you know where we're at."; 
+   close; 
+}

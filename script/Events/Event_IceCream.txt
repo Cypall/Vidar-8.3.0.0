@@ -1,0 +1,129 @@
+//----------------------------------------------------------------------------------------
+// Ice Cream
+// Script by Kyuushi
+//----------------------------------------------------------------------------------------
+//ALBERTA
+alberta.vhm,120,53,5	script	"Ice Cream Maker"	0,0,0,0	85,{
+	mes "[Ice Cream Maker]";
+	mes "Fresh Ice Cream made with snow from Lutie!";
+	mes "Enjoy it now, it won't be on sale for long!";
+	mes "^0000FF100 Zeny^000000 Ice Cream,";
+	mes "Ice Cream!";
+	next;
+	menu "Gimme Ice Cream!",L0,"Cancel Trade",LEnd;
+	L0:
+		mes "[Ice Cream Maker]";
+		mes "Fresh Ice Cream made with snow from Lutie!";
+		mes "Everyone wants our delicious ice cream, but we have limited amount,";
+		mes "so you can only purchase 5 at a time!!";
+		next;
+		input @icAmount;
+		mes "[Ice Cream Maker]";
+		check @icAmount > 0,-,inpC;
+		check @icAmount > 5,inpM,-;
+		set @icAmount *= 100;
+		check zeny >= @icAmount,-,NoZ;
+		set zeny -= @icAmount;
+		set @icAmount /= 100;
+		additem 536,@icAmount;
+		mes "Here you go $[@icAmount] Ice Cream for you.";
+		close;
+		inpC:
+			mes "Deal is canceled.";
+			close;
+		inpM:
+			mes "Sorry, but you can only buy 5 at a time.";
+			close;
+		NoZ:
+			mes "Sorry, but you need more money.";
+			close;
+	LEnd:
+		mes "[Ice Cream Maker]";
+		mes "Are you sure you don't want any?";
+		mes "I won't be selling it for long, and once I run out, there won't be anymore!!!";
+		close;
+}
+
+//MORROC FIELD
+moc_fild16.vhm,88,304,4	script	"Ice Cream Maker"	0,0,0,0	85,{
+	mes "[Ice Cream Maker]";
+	mes "Fresh Ice Cream made with snow from Lutie!";
+	mes "Enjoy it now, it won't be on sale for long!";
+	mes "^0000FF100 Zeny^000000 Ice Cream,";
+	mes "Ice Cream!";
+	next;
+	menu "Gimme Ice Cream!",L0,"Cancel Trade",LEnd;
+	L0:
+		mes "[Ice Cream Maker]";
+		mes "Fresh Ice Cream made with snow from Lutie!";
+		mes "Everyone wants our delicious ice cream, but we have limited amount,";
+		mes "so you can only purchase 5 at a time!!";
+		next;
+		input @icAmount;
+		mes "[Ice Cream Maker]";
+		check @icAmount > 0,-,inpC;
+		check @icAmount > 5,inpM,-;
+		set @icAmount *= 100;
+		check zeny >= @icAmount,-,NoZ;
+		set zeny -= @icAmount;
+		set @icAmount /= 100;
+		additem 536,@icAmount;
+		mes "Here you go $[@icAmount] Ice Cream for you.";
+		close;
+		inpC:
+			mes "Deal is canceled.";
+			close;
+		inpM:
+			mes "Sorry, but you can only buy 5 at a time.";
+			close;
+		NoZ:
+			mes "Sorry, but you need more money.";
+			close;
+	LEnd:
+		mes "[Ice Cream Maker]";
+		mes "Are you sure you don't want any?";
+		mes "I won't be selling it for long, and once I run out, there won't be anymore!!!";
+		close;
+}
+
+//MORROC
+morocc.vhm,160,144,4	script	"Ice Cream Maker"	0,0,0,0	85,{
+	mes "[Ice Cream Maker]";
+	mes "Fresh Ice Cream made with snow from Lutie!";
+	mes "Enjoy it now, it won't be on sale for long!";
+	mes "^0000FF100 Zeny^000000 Ice Cream,";
+	mes "Ice Cream!";
+	next;
+	menu "Gimme Ice Cream!",L0,"Cancel Trade",LEnd;
+	L0:
+		mes "[Ice Cream Maker]";
+		mes "Fresh Ice Cream made with snow from Lutie!";
+		mes "Everyone wants our delicious ice cream, but we have limited amount,";
+		mes "so you can only purchase 5 at a time!!";
+		next;
+		input @icAmount;
+		mes "[Ice Cream Maker]";
+		check @icAmount > 0,-,inpC;
+		check @icAmount > 5,inpM,-;
+		set @icAmount *= 100;
+		check zeny >= @icAmount,-,NoZ;
+		set zeny -= @icAmount;
+		set @icAmount /= 100;
+		additem 536,@icAmount;
+		mes "Here you go $[@icAmount] Ice Cream for you.";
+		close;
+		inpC:
+			mes "Deal is canceled.";
+			close;
+		inpM:
+			mes "Sorry, but you can only buy 5 at a time.";
+			close;
+		NoZ:
+			mes "Sorry, but you need more money.";
+			close;
+	LEnd:
+		mes "[Ice Cream Maker]";
+		mes "Are you sure you don't want any?";
+		mes "I won't be selling it for long, and once I run out, there won't be anymore!!!";
+		close;
+}

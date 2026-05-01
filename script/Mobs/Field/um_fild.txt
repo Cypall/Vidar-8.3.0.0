@@ -1,0 +1,25 @@
+//RO-8.0官方怪物分布
+//怪物种类和数量竟可能的和官方靠齐
+//制作：LKM
+//http://coolro.cnnb.net
+
+
+
+um_fild01.vhm,0,0,0,0	monster	WOOTAN_FIGHTER	1499,35,0,0,0
+um_fild01.vhm,0,0,0,0	monster	HARPY	1376,15,0,0,0
+um_fild01.vhm,0,0,0,0	monster	STEM_WORM	1215,30,0,0,0
+um_fild01.vhm,0,0,0,0	monster	DRYAD	1493,25,0,0,0
+um_fild02.vhm,0,0,0,0	monster	WOOTAN_FIGHTER	1499,30,0,0,0
+um_fild02.vhm,0,0,0,0	monster	WOOTAN_SHOOTER	1498,30,0,0,0
+um_fild02.vhm,0,0,0,0	monster	BEETLE_KING	1494,20,0,0,0
+um_fild02.vhm,0,0,0,0	monster	DUSTINESS	1114,30,0,0,0
+um_fild03.vhm,0,0,0,0	monster	GRYPHONt	1259,1,0,0,0
+um_fild03.vhm,0,0,0,0	monster	ALLIGATOR	1271,30,0,0,0
+um_fild03.vhm,0,0,0,0	monster	PEST	1256,10,0,0,0
+um_fild03.vhm,0,0,0,0	monster	DRAGON_TAIL	1321,30,0,0,0
+um_fild03.vhm,0,0,0,0	monster	PARASITE	1500,20,0,0,0
+um_fild04.vhm,0,0,0,0	monster	WOOTAN_FIGHTER	1499,30,0,0,0
+um_fild04.vhm,0,0,0,0	monster	WOOTAN_SHOOTER	1498,30,0,0,0
+um_fild04.vhm,0,0,0,0	monster	CHOCO	1214,20,0,0,0
+um_fild04.vhm,0,0,0,0	monster	STAINER	1174,10,0,0,0
+um_fild04.vhm,0,0,0,0	monster	BEETLE_KING	1494,15,0,0,0

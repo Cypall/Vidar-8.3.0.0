@@ -1,0 +1,23 @@
+//Trigger,Message,Option
+save,"Position Saved.",succeed
+return,"Returned you to your last save point.",succeed
+die,"You have been killed.",succeed
+alive,"You have been revived.",succeed
+wmessage,"Welcome message turned $param1.",succeed
+hcolor,"Changed your hair colour.",succeed
+ccolor,"Changed your clothing colour.",succeed
+hstyle,"Changed your hair style.",succeed
+kill,"$targetname has been killed.",succeed
+warp,"You have Warped to $mapname.",succeed
+teleport,"You have Teleported to $mapname.",succeed
+kick,"$targetname has been kicked from the game.",succeed
+ban,"$targetname has been banned from the game.",succeed
+gvg,"GvG has been turned $param1.",succeed
+pvp,"PvP has been turned $param1.",succeed
+statall,"Stats have been maxed out.",succeed
+skillall,"Skills have been maxed out.",succeed
+monster,"$param1 has been spawned.",succeed
+speed,"Your speed has been changed to $param1.",succeed
+option,"Your option has been changed.",succeed
+option,"Your current class can not use this option.",fail
+blevel,"Your base level has been changed to $param1.",succeed

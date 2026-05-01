@@ -1,0 +1,2100 @@
+//----------------------------------------------------------------------
+// Script : Town_Siglude v1.0
+//----------------------------------------------------------------------
+//edited by: bomber32 (fix payon refiner compatible for new payon maps)
+// ----------------------------
+// --- 金物屋青年プロンテラ ---
+// ----------------------------
+
+prt_in.vhm,63,69,4	script	Dietrich	84,{
+	mes "[Dietrich]";
+	mes "If you bring Rough Oridecons and";
+	mes "Rough Eluniums to me,";
+	mes "I can refine them for you.";
+	mes "However, you must bring 5 of each.";
+	next;
+	menu "Make Oridecon",-,"Make Elunium",L_MENU_1,"Ask about enchanted stones",L_MENU_2;
+		checkitem 756,5,-,L_START_1;
+		delitem 756,5;
+		additem 984,1;
+		mes "[Dietrich]";
+		mes "As promised, here's your oridecon.";
+		mes "Come back again anytime.";
+		close;
+	L_START_1:
+		mes "[Dietrich]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an oridecon unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_1:
+		checkitem 757,5,-,L_START_2;
+		delitem 757,5;
+		additem 985,1;
+		mes "[Dietrich]";
+		mes "As promised, here's your elunium.";
+		mes "Come back again anytime.";
+		close;
+	L_START_2:
+		mes "[Dietrich]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an elunium unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_2:
+		mes "[Dietrich]";
+		mes "Enchanted stones, huh ....";
+		mes "Well, in 20 years of my life as a";
+		mes "stonesmith I've heard of it many";
+		mes "times...though I've never seen it before.";
+		mes "What I heard is this: there are";
+		mes "enchanted stones out there which";
+		mes "possesses different elemental";
+		mes "properties - Water, Earth, Fire, Wind.";
+		next;
+		mes "[Dietrich]";
+		mes "If someone combines an Enchanted Stone";
+		mes "with a weapon while smithing, that weapon";
+		mes "will possess the same property as the stone.";
+		mes "Of course, that person needs to be skillful";
+		mes "enough to work on it.";
+		close;
+}
+
+prt_in.vhm,63,60,4	script	Hollgrehenn	85,{
+setstr $@REF_NPC_NAME = "[Hollgrehenn]";
+// Refine permissions - @POS[N]_ALLOW = 1 -> ENABLE; @POS[N]_ALLOW = 0 -> DISABLE
+	set @POS1_ALLOW = 1;
+	set @POS2_ALLOW = 1;
+	set @POS3_ALLOW = 1;
+	set @POS4_ALLOW = 1;
+	set @POS5_ALLOW = 1;
+	set @POS6_ALLOW = 1;
+	set @POS7_ALLOW = 0;
+	set @POS8_ALLOW = 0;
+	set @POS9_ALLOW = 1;
+	set @POS10_ALLOW = 1;
+// Refine costs
+	set @LV0_REF_PRC = 20000;
+	set @LV1_REF_PRC = 500;
+	set @LV2_REF_PRC = 2000;
+	set @LV3_REF_PRC = 25000;
+	set @LV4_REF_PRC = 50000;
+// NCP
+		lockitem 1;
+		mes "$[$@REF_NPC_NAME]";
+		mes "I am the Armsmith and I can refine any weapon and armor.";
+		mes "Tell me which equipment you wish to refine.";
+		next;
+		equipmenu @POSITION,@WEAPONLEVEL,@REFINELEVEL;
+		check @POSITION == 0,L_LOOT_7,-;
+		check @WEAPONLEVEL == 99,-,RPCHK;
+		check @POSITION == 1,-,L_LOOT_1;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want me to refine that dumb brain of yours?";
+			goto L_EXIT;
+	L_LOOT_1:
+		check @POSITION == 2,-,L_LOOT_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Let me melt your body with my heat!";
+			goto L_EXIT;
+	L_LOOT_2:
+		check @POSITION == 3,-,L_LOOT_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't make your left hand into some super weapon.";
+			goto L_EXIT;
+	L_LOOT_3:
+		check @POSITION == 4,-,L_LOOT_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Even with modern science, I can't make your right hand into a drill.";
+			goto L_EXIT;
+	L_LOOT_4:
+		check @POSITION == 5,-,L_LOOT_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You're not wearing any robe!";
+			goto L_EXIT;
+	L_LOOT_5:
+		check @POSITION == 6,-,L_LOOT_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Your feet sure stinks!";
+			goto L_EXIT;
+	L_LOOT_6:
+		check @POSITION <= 8,-,L_LOOT_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "So where's this accesory of yours?";
+			goto L_EXIT;
+	L_LOOT_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "What did you say you want to refine?";
+			mes "It's some other item, right?";
+			goto L_EXIT;
+// Refine permission check
+	RPCHK:
+		check @POSITION = 1,CHK_POS1_ALLOW,-;
+		check @POSITION = 2,CHK_POS2_ALLOW,-;
+		check @POSITION = 3,CHK_POS3_ALLOW,-;
+		check @POSITION = 4,CHK_POS4_ALLOW,-;
+		check @POSITION = 5,CHK_POS5_ALLOW,-;
+		check @POSITION = 6,CHK_POS6_ALLOW,-;
+		check @POSITION = 7,CHK_POS7_ALLOW,-;
+		check @POSITION = 8,CHK_POS8_ALLOW,-;
+		check @POSITION = 9,CHK_POS9_ALLOW,-;
+		check @POSITION = 10,CHK_POS10_ALLOW,-;
+	CHK_POS1_ALLOW:
+		check @POS1_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS2_ALLOW:
+		check @POS2_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS3_ALLOW:
+		check @POS3_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS4_ALLOW:
+		check @POS4_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS5_ALLOW:
+		check @POS5_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS6_ALLOW:
+		check @POS6_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS7_ALLOW:
+		check @POS7_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS8_ALLOW:
+		check @POS8_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS9_ALLOW:
+		check @POS9_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS10_ALLOW:
+		check @POS10_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	NOT_ALLOWED:
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_1:
+		check @REFINELEVEL == 99,-,L_START_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_2:
+		check @REFINELEVEL == 10,-,L_START_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't refine that item anymore.";
+			goto L_EXIT;
+	L_START_3:
+		check @WEAPONLEVEL == 0,-,L_START_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "To refine that, I'll need an";
+			mes "^ff9999Elunium^000000 and";
+			mes "a service fee of $[@LV0_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_3_1;
+				check @REFINELEVEL == 4,-,L_LOOT_3_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_3_0;
+	L_LOOT_3_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_3_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_3_0;
+	L_LOOT_3_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_3_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_3_0;
+	L_LOOT_3_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_3_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_3_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_3_1:
+					checkitem 985,1,-,L_SUB_3_2;
+					check Zeny >= @LV0_REF_PRC,-,L_SUB_3_2;
+					delitem 985,1;
+					set Zeny -= @LV0_REF_PRC,0;
+					goto L_START_8;
+	L_SUB_3_2:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Is that all you've got?";
+				mes "Sorry, but it's not enough to cover";
+				mes "the cost of the materials.";
+				mes "I can't just do this for free, you know.";
+				goto L_EXIT;
+	L_MENU_3_1:
+				mes "$[$@REF_NPC_NAME]";
+				mes "If you don't want to, that's fine ...";
+				goto L_EXIT;
+	L_START_4:
+		check @WEAPONLEVEL == 1,-,L_START_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 1 weapon?";
+			mes "To refine that, I'll need a ^ff9999Phracon^000000";
+			mes "and a service fee of $[@LV1_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 7,-,L_SUB_4_1;
+				check @REFINELEVEL == 7,-,L_LOOT_4_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_4_0;
+	L_LOOT_4_1:
+				check @REFINELEVEL == 8,-,L_LOOT_4_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_4_0;
+	L_LOOT_4_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_4_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_4_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_4_1:
+					checkitem 1010,1,-,L_SUB_3_2;
+					check Zeny >= @LV1_REF_PRC,-,L_SUB_3_2;
+					delitem 1010,1;
+					set Zeny -= @LV1_REF_PRC,0;
+					goto L_START_8;
+	L_START_5:
+		check @WEAPONLEVEL == 2,-,L_START_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 2 weapon?";
+			mes "To refine that, I'll need a ^ff9999Emveretarcon^000000";
+			mes "and a service fee of $[@LV2_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 6,-,L_SUB_5_1;
+				check @REFINELEVEL == 6,-,L_LOOT_5_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_5_0;
+	L_LOOT_5_1:
+				check @REFINELEVEL == 7,-,L_LOOT_5_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_5_0;
+	L_LOOT_5_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_5_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_5_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_5_1:
+					checkitem 1011,1,-,L_SUB_3_2;
+					check Zeny >= @LV2_REF_PRC,-,L_SUB_3_2;
+					delitem 1011,1;
+					set Zeny -= @LV2_REF_PRC,0;
+					goto L_START_8;
+	L_START_6:
+		check @WEAPONLEVEL == 3,-,L_START_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 3 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV3_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 5,-,L_SUB_6_1;
+				check @REFINELEVEL == 5,-,L_LOOT_6_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_6_0;
+	L_LOOT_6_1:
+				check @REFINELEVEL == 6,-,L_LOOT_6_2;
+					set @REF_SUCCESS = 50;
+					goto L_SUB_6_0;
+	L_LOOT_6_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_6_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_6_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV3_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV3_REF_PRC,0;
+					goto L_START_8;
+	L_START_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 4 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV4_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_7_1;
+				check @REFINELEVEL == 4,-,L_LOOT_7_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_7_0;
+	L_LOOT_7_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_7_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_7_0;
+	L_LOOT_7_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_7_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_7_0;
+	L_LOOT_7_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_7_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_7_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV4_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV4_REF_PRC,0;
+	L_START_8:
+		mes "$[$@REF_NPC_NAME]";
+		mes "Clang! Clang! Clang!!";
+		next;
+		random @REF_RAND,100;
+		check @REF_RAND < @REF_SUCCESS,-,L_START_9;
+			set @REFINELEVEL += 1;
+			refinery @POSITION,0,@REFINELEVEL;
+			mes "$[$@REF_NPC_NAME]";
+			mes "There you go!";
+			mes "It's been awhile since I've attained such perfection.";
+			mes "Aren't you happy now that your weapon is stronger?";
+			goto L_EXIT;
+	L_START_9:
+			refinery @POSITION,1,0;
+			mes "$[$@REF_NPC_NAME]";
+			emote 23;
+			mes "Oh noooooo......";
+			next;
+			mes "$[$@REF_NPC_NAME]";
+			emote 17;
+			mes "Sorry!";
+			mes "Your weapon broke during the refining process...";
+			mes "See! Didn't I say earlier not to force me to do it?";
+	L_EXIT:
+		lockitem 0;
+		close;
+}
+
+// ----------------------------
+// ----- 金物屋青年モロク -----
+// ----------------------------
+
+morocc_in.vhm,72,32,4	script	Abdul	99,{
+	mes "[Abdul]";
+	mes "If you bring Rough Oridecons and";
+	mes "Rough Eluniums to me,";
+	mes "I can refine them for you.";
+	mes "However, you must bring 5 of each";
+	next;
+	menu "Make Oridecon",-,"Make Elunium",L_MENU_1,"Ask about enchanted stones",L_MENU_2;
+		checkitem 756,5,-,L_START_1;
+		delitem 756,5;
+		additem 984,1;
+		mes "[Abdul]";
+		mes "As promised, here's your oridecon.";
+		mes "Come back again anytime.";
+		close;
+	L_START_1:
+		mes "[Abdul]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an oridecon unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_1:
+		checkitem 757,5,-,L_START_2;
+		delitem 757,5;
+		additem 985,1;
+		mes "[Abdul]";
+		mes "As promised, here's your elunium.";
+		mes "Come back again anytime.";
+		close;
+	L_START_2:
+		mes "[Abdul]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an elunium unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_2:
+		mes "[Abdul]";
+		mes "Enchanted stones, huh ....";
+		mes "Well, in 20 years of my life as a";
+		mes "stonesmith I've heard of it many";
+		mes "times...though I've never seen it before.";
+		mes "What I heard is this: there are";
+		mes "enchanted stones out there which";
+		mes "possesses different elemental";
+		mes "properties - Water, Earth, Fire, Wind.";
+		next;
+		mes "[Abdul]";
+		mes "If someone combines an Enchanted Stone";
+		mes "with a weapon while smithing, that weapon";
+		mes "will possess the same property as the stone.";
+		mes "Of course, that person needs to be skillful";
+		mes "enough to work on it.";
+		close;
+}
+
+morocc_in.vhm,73,38,4	script	Aragham	99,{
+setstr $@REF_NPC_NAME = "[Aragham Salre]";
+// Refine permissions - @POS[N]_ALLOW = 1 -> ENABLE; @POS[N]_ALLOW = 0 -> DISABLE
+	set @POS1_ALLOW = 1;
+	set @POS2_ALLOW = 1;
+	set @POS3_ALLOW = 1;
+	set @POS4_ALLOW = 1;
+	set @POS5_ALLOW = 1;
+	set @POS6_ALLOW = 1;
+	set @POS7_ALLOW = 0;
+	set @POS8_ALLOW = 0;
+	set @POS9_ALLOW = 1;
+	set @POS10_ALLOW = 1;
+// Refine costs
+	set @LV0_REF_PRC = 20000;
+	set @LV1_REF_PRC = 500;
+	set @LV2_REF_PRC = 2000;
+	set @LV3_REF_PRC = 25000;
+	set @LV4_REF_PRC = 50000;
+// NCP
+		lockitem 1;
+		mes "$[$@REF_NPC_NAME]";
+		mes "I am the Armsmith and I can refine any weapon and armor.";
+		mes "Tell me which equipment you wish to refine.";
+		next;
+		equipmenu @POSITION,@WEAPONLEVEL,@REFINELEVEL;
+		check @POSITION == 0,L_LOOT_7,-;
+		check @WEAPONLEVEL == 99,-,RPCHK;
+		check @POSITION == 1,-,L_LOOT_1;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want me to refine that dumb brain of yours?";
+			goto L_EXIT;
+	L_LOOT_1:
+		check @POSITION == 2,-,L_LOOT_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Let me melt your body with my heat!";
+			goto L_EXIT;
+	L_LOOT_2:
+		check @POSITION == 3,-,L_LOOT_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't make your left hand into some super weapon.";
+			goto L_EXIT;
+	L_LOOT_3:
+		check @POSITION == 4,-,L_LOOT_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Even with modern science, I can't make your right hand into a drill.";
+			goto L_EXIT;
+	L_LOOT_4:
+		check @POSITION == 5,-,L_LOOT_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You're not wearing any robe!";
+			goto L_EXIT;
+	L_LOOT_5:
+		check @POSITION == 6,-,L_LOOT_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Your feet sure stinks!";
+			goto L_EXIT;
+	L_LOOT_6:
+		check @POSITION <= 8,-,L_LOOT_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "So where's this accesory of yours?";
+			goto L_EXIT;
+	L_LOOT_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "What did you say you want to refine?";
+			mes "It's some other item, right?";
+			goto L_EXIT;
+// Refine permission check
+	RPCHK:
+		check @POSITION = 1,CHK_POS1_ALLOW,-;
+		check @POSITION = 2,CHK_POS2_ALLOW,-;
+		check @POSITION = 3,CHK_POS3_ALLOW,-;
+		check @POSITION = 4,CHK_POS4_ALLOW,-;
+		check @POSITION = 5,CHK_POS5_ALLOW,-;
+		check @POSITION = 6,CHK_POS6_ALLOW,-;
+		check @POSITION = 7,CHK_POS7_ALLOW,-;
+		check @POSITION = 8,CHK_POS8_ALLOW,-;
+		check @POSITION = 9,CHK_POS9_ALLOW,-;
+		check @POSITION = 10,CHK_POS10_ALLOW,-;
+	CHK_POS1_ALLOW:
+		check @POS1_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS2_ALLOW:
+		check @POS2_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS3_ALLOW:
+		check @POS3_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS4_ALLOW:
+		check @POS4_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS5_ALLOW:
+		check @POS5_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS6_ALLOW:
+		check @POS6_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS7_ALLOW:
+		check @POS7_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS8_ALLOW:
+		check @POS8_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS9_ALLOW:
+		check @POS9_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS10_ALLOW:
+		check @POS10_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	NOT_ALLOWED:
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_1:
+		check @REFINELEVEL == 99,-,L_START_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_2:
+		check @REFINELEVEL == 10,-,L_START_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't refine that item anymore.";
+			goto L_EXIT;
+	L_START_3:
+		check @WEAPONLEVEL == 0,-,L_START_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "To refine that, I'll need an";
+			mes "^ff9999Elunium^000000 and";
+			mes "a service fee of $[@LV0_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_3_1;
+				check @REFINELEVEL == 4,-,L_LOOT_3_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_3_0;
+	L_LOOT_3_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_3_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_3_0;
+	L_LOOT_3_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_3_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_3_0;
+	L_LOOT_3_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_3_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_3_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_3_1:
+					checkitem 985,1,-,L_SUB_3_2;
+					check Zeny >= @LV0_REF_PRC,-,L_SUB_3_2;
+					delitem 985,1;
+					set Zeny -= @LV0_REF_PRC,0;
+					goto L_START_8;
+	L_SUB_3_2:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Is that all you've got?";
+				mes "Sorry, but it's not enough to cover";
+				mes "the cost of the materials.";
+				mes "I can't just do this for free, you know.";
+				goto L_EXIT;
+	L_MENU_3_1:
+				mes "$[$@REF_NPC_NAME]";
+				mes "If you don't want to, that's fine ...";
+				goto L_EXIT;
+	L_START_4:
+		check @WEAPONLEVEL == 1,-,L_START_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 1 weapon?";
+			mes "To refine that, I'll need a ^ff9999Phracon^000000";
+			mes "and a service fee of $[@LV1_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 7,-,L_SUB_4_1;
+				check @REFINELEVEL == 7,-,L_LOOT_4_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_4_0;
+	L_LOOT_4_1:
+				check @REFINELEVEL == 8,-,L_LOOT_4_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_4_0;
+	L_LOOT_4_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_4_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_4_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_4_1:
+					checkitem 1010,1,-,L_SUB_3_2;
+					check Zeny >= @LV1_REF_PRC,-,L_SUB_3_2;
+					delitem 1010,1;
+					set Zeny -= @LV1_REF_PRC,0;
+					goto L_START_8;
+	L_START_5:
+		check @WEAPONLEVEL == 2,-,L_START_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 2 weapon?";
+			mes "To refine that, I'll need a ^ff9999Emveretarcon^000000";
+			mes "and a service fee of $[@LV2_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 6,-,L_SUB_5_1;
+				check @REFINELEVEL == 6,-,L_LOOT_5_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_5_0;
+	L_LOOT_5_1:
+				check @REFINELEVEL == 7,-,L_LOOT_5_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_5_0;
+	L_LOOT_5_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_5_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_5_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_5_1:
+					checkitem 1011,1,-,L_SUB_3_2;
+					check Zeny >= @LV2_REF_PRC,-,L_SUB_3_2;
+					delitem 1011,1;
+					set Zeny -= @LV2_REF_PRC,0;
+					goto L_START_8;
+	L_START_6:
+		check @WEAPONLEVEL == 3,-,L_START_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 3 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV3_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 5,-,L_SUB_6_1;
+				check @REFINELEVEL == 5,-,L_LOOT_6_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_6_0;
+	L_LOOT_6_1:
+				check @REFINELEVEL == 6,-,L_LOOT_6_2;
+					set @REF_SUCCESS = 50;
+					goto L_SUB_6_0;
+	L_LOOT_6_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_6_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_6_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV3_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV3_REF_PRC,0;
+					goto L_START_8;
+	L_START_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 4 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV4_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_7_1;
+				check @REFINELEVEL == 4,-,L_LOOT_7_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_7_0;
+	L_LOOT_7_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_7_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_7_0;
+	L_LOOT_7_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_7_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_7_0;
+	L_LOOT_7_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_7_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_7_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV4_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV4_REF_PRC,0;
+	L_START_8:
+		mes "$[$@REF_NPC_NAME]";
+		mes "Clang! Clang! Clang!!";
+		next;
+		random @REF_RAND,100;
+		check @REF_RAND < @REF_SUCCESS,-,L_START_9;
+			set @REFINELEVEL += 1;
+			refinery @POSITION,0,@REFINELEVEL;
+			mes "$[$@REF_NPC_NAME]";
+			mes "There you go!";
+			mes "It's been awhile since I've attained such perfection.";
+			mes "Aren't you happy now that your weapon is stronger?";
+			goto L_EXIT;
+	L_START_9:
+			refinery @POSITION,1,0;
+			mes "$[$@REF_NPC_NAME]";
+			emote 23;
+			mes "Oh noooooo......";
+			next;
+			mes "$[$@REF_NPC_NAME]";
+			emote 17;
+			mes "Sorry!";
+			mes "Your weapon broke during the refining process...";
+			mes "See! Didn't I say earlier not to force me to do it?";
+	L_EXIT:
+		lockitem 0;
+		close;
+}
+
+// ----------------------------
+// --- 金物屋青年フェイヨン ---
+// ----------------------------
+
+payon_in01.vhm,103,26,4	script	Hakhim	88,{
+	mes "[Hakhim]";
+	mes "If you bring Rough Oridecons and";
+	mes "Rough Eluniums to me,";
+	mes "I can refine them for you.";
+	mes "However, you must bring 5 of each";
+	next;
+	menu "Make Oridecon",-,"Make Elunium",L_MENU_1,"Ask about enchanted stones",L_MENU_2;
+		checkitem 756,5,-,L_START_1;
+		delitem 756,5;
+		additem 984,1;
+		mes "[Hakhim]";
+		mes "As promised, here's your oridecon.";
+		mes "Come back again anytime.";
+		close;
+	L_START_1:
+		mes "[Hakhim]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an oridecon unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_1:
+		checkitem 757,5,-,L_START_2;
+		delitem 757,5;
+		additem 985,1;
+		mes "[Hakhim]";
+		mes "As promised, here's your elunium.";
+		mes "Come back again anytime.";
+		close;
+	L_START_2:
+		mes "[Hakhim]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an elunium unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_2:
+		mes "[Hakhim]";
+		mes "Enchanted stones, huh ....";
+		mes "Well, in 20 years of my life as a";
+		mes "stonesmith I've heard of it many";
+		mes "times...though I've never seen it before.";
+		mes "What I heard is this: there are";
+		mes "enchanted stones out there which";
+		mes "possesses different elemental";
+		mes "properties - Water, Earth, Fire, Wind.";
+		next;
+		mes "[Hakhim]";
+		mes "If someone combines an Enchanted Stone";
+		mes "with a weapon while smithing, that weapon";
+		mes "will possess the same property as the stone.";
+		mes "Of course, that person needs to be skillful";
+		mes "enough to work on it.";
+		close;
+}
+
+payon_in01.vhm,95,24,4	script	Antonio	88,{
+setstr $@REF_NPC_NAME = "[Antonio]";
+// Refine permissions - @POS[N]_ALLOW = 1 -> ENABLE; @POS[N]_ALLOW = 0 -> DISABLE
+	set @POS1_ALLOW = 1;
+	set @POS2_ALLOW = 1;
+	set @POS3_ALLOW = 1;
+	set @POS4_ALLOW = 1;
+	set @POS5_ALLOW = 1;
+	set @POS6_ALLOW = 1;
+	set @POS7_ALLOW = 0;
+	set @POS8_ALLOW = 0;
+	set @POS9_ALLOW = 1;
+	set @POS10_ALLOW = 1;
+// Refine costs
+	set @LV0_REF_PRC = 20000;
+	set @LV1_REF_PRC = 500;
+	set @LV2_REF_PRC = 2000;
+	set @LV3_REF_PRC = 25000;
+	set @LV4_REF_PRC = 50000;
+// NCP
+		lockitem 1;
+		mes "$[$@REF_NPC_NAME]";
+		mes "I am the Armsmith and I can refine any weapon and armor.";
+		mes "Tell me which equipment you wish to refine.";
+		next;
+		equipmenu @POSITION,@WEAPONLEVEL,@REFINELEVEL;
+		check @POSITION == 0,L_LOOT_7,-;
+		check @WEAPONLEVEL == 99,-,RPCHK;
+		check @POSITION == 1,-,L_LOOT_1;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want me to refine that dumb brain of yours?";
+			goto L_EXIT;
+	L_LOOT_1:
+		check @POSITION == 2,-,L_LOOT_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Let me melt your body with my heat!";
+			goto L_EXIT;
+	L_LOOT_2:
+		check @POSITION == 3,-,L_LOOT_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't make your left hand into some super weapon.";
+			goto L_EXIT;
+	L_LOOT_3:
+		check @POSITION == 4,-,L_LOOT_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Even with modern science, I can't make your right hand into a drill.";
+			goto L_EXIT;
+	L_LOOT_4:
+		check @POSITION == 5,-,L_LOOT_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You're not wearing any robe!";
+			goto L_EXIT;
+	L_LOOT_5:
+		check @POSITION == 6,-,L_LOOT_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Your feet sure stinks!";
+			goto L_EXIT;
+	L_LOOT_6:
+		check @POSITION <= 8,-,L_LOOT_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "So where's this accesory of yours?";
+			goto L_EXIT;
+	L_LOOT_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "What did you say you want to refine?";
+			mes "It's some other item, right?";
+			goto L_EXIT;
+// Refine permission check
+	RPCHK:
+		check @POSITION = 1,CHK_POS1_ALLOW,-;
+		check @POSITION = 2,CHK_POS2_ALLOW,-;
+		check @POSITION = 3,CHK_POS3_ALLOW,-;
+		check @POSITION = 4,CHK_POS4_ALLOW,-;
+		check @POSITION = 5,CHK_POS5_ALLOW,-;
+		check @POSITION = 6,CHK_POS6_ALLOW,-;
+		check @POSITION = 7,CHK_POS7_ALLOW,-;
+		check @POSITION = 8,CHK_POS8_ALLOW,-;
+		check @POSITION = 9,CHK_POS9_ALLOW,-;
+		check @POSITION = 10,CHK_POS10_ALLOW,-;
+	CHK_POS1_ALLOW:
+		check @POS1_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS2_ALLOW:
+		check @POS2_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS3_ALLOW:
+		check @POS3_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS4_ALLOW:
+		check @POS4_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS5_ALLOW:
+		check @POS5_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS6_ALLOW:
+		check @POS6_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS7_ALLOW:
+		check @POS7_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS8_ALLOW:
+		check @POS8_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS9_ALLOW:
+		check @POS9_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS10_ALLOW:
+		check @POS10_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	NOT_ALLOWED:
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_1:
+		check @REFINELEVEL == 99,-,L_START_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_2:
+		check @REFINELEVEL == 10,-,L_START_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't refine that item anymore.";
+			goto L_EXIT;
+	L_START_3:
+		check @WEAPONLEVEL == 0,-,L_START_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "To refine that, I'll need an";
+			mes "^ff9999Elunium^000000 and";
+			mes "a service fee of $[@LV0_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_3_1;
+				check @REFINELEVEL == 4,-,L_LOOT_3_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_3_0;
+	L_LOOT_3_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_3_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_3_0;
+	L_LOOT_3_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_3_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_3_0;
+	L_LOOT_3_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_3_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_3_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_3_1:
+					checkitem 985,1,-,L_SUB_3_2;
+					check Zeny >= @LV0_REF_PRC,-,L_SUB_3_2;
+					delitem 985,1;
+					set Zeny -= @LV0_REF_PRC,0;
+					goto L_START_8;
+	L_SUB_3_2:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Is that all you've got?";
+				mes "Sorry, but it's not enough to cover";
+				mes "the cost of the materials.";
+				mes "I can't just do this for free, you know.";
+				goto L_EXIT;
+	L_MENU_3_1:
+				mes "$[$@REF_NPC_NAME]";
+				mes "If you don't want to, that's fine ...";
+				goto L_EXIT;
+	L_START_4:
+		check @WEAPONLEVEL == 1,-,L_START_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 1 weapon?";
+			mes "To refine that, I'll need a ^ff9999Phracon^000000";
+			mes "and a service fee of $[@LV1_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 7,-,L_SUB_4_1;
+				check @REFINELEVEL == 7,-,L_LOOT_4_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_4_0;
+	L_LOOT_4_1:
+				check @REFINELEVEL == 8,-,L_LOOT_4_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_4_0;
+	L_LOOT_4_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_4_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_4_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_4_1:
+					checkitem 1010,1,-,L_SUB_3_2;
+					check Zeny >= @LV1_REF_PRC,-,L_SUB_3_2;
+					delitem 1010,1;
+					set Zeny -= @LV1_REF_PRC,0;
+					goto L_START_8;
+	L_START_5:
+		check @WEAPONLEVEL == 2,-,L_START_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 2 weapon?";
+			mes "To refine that, I'll need a ^ff9999Emveretarcon^000000";
+			mes "and a service fee of $[@LV2_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 6,-,L_SUB_5_1;
+				check @REFINELEVEL == 6,-,L_LOOT_5_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_5_0;
+	L_LOOT_5_1:
+				check @REFINELEVEL == 7,-,L_LOOT_5_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_5_0;
+	L_LOOT_5_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_5_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_5_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_5_1:
+					checkitem 1011,1,-,L_SUB_3_2;
+					check Zeny >= @LV2_REF_PRC,-,L_SUB_3_2;
+					delitem 1011,1;
+					set Zeny -= @LV2_REF_PRC,0;
+					goto L_START_8;
+	L_START_6:
+		check @WEAPONLEVEL == 3,-,L_START_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 3 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV3_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 5,-,L_SUB_6_1;
+				check @REFINELEVEL == 5,-,L_LOOT_6_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_6_0;
+	L_LOOT_6_1:
+				check @REFINELEVEL == 6,-,L_LOOT_6_2;
+					set @REF_SUCCESS = 50;
+					goto L_SUB_6_0;
+	L_LOOT_6_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_6_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_6_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV3_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV3_REF_PRC,0;
+					goto L_START_8;
+	L_START_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 4 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV4_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_7_1;
+				check @REFINELEVEL == 4,-,L_LOOT_7_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_7_0;
+	L_LOOT_7_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_7_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_7_0;
+	L_LOOT_7_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_7_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_7_0;
+	L_LOOT_7_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_7_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_7_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV4_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV4_REF_PRC,0;
+	L_START_8:
+		mes "$[$@REF_NPC_NAME]";
+		mes "Clang! Clang! Clang!!";
+		next;
+		random @REF_RAND,100;
+		check @REF_RAND < @REF_SUCCESS,-,L_START_9;
+			set @REFINELEVEL += 1;
+			refinery @POSITION,0,@REFINELEVEL;
+			mes "$[$@REF_NPC_NAME]";
+			mes "There you go!";
+			mes "It's been awhile since I've attained such perfection.";
+			mes "Aren't you happy now that your weapon is stronger?";
+			goto L_EXIT;
+	L_START_9:
+			refinery @POSITION,1,0;
+			mes "$[$@REF_NPC_NAME]";
+			emote 23;
+			mes "Oh noooooo......";
+			next;
+			mes "$[$@REF_NPC_NAME]";
+			emote 17;
+			mes "Sorry!";
+			mes "Your weapon broke during the refining process...";
+			mes "See! Didn't I say earlier not to force me to do it?";
+	L_EXIT:
+		lockitem 0;
+		close;
+}
+
+
+// -------------------------------
+// --- 金物屋青年 (アルベルタ) ---
+// -------------------------------
+
+alberta_in.vhm,21,63,5	script	Xenophon	84,{
+	mes "[Xenophon Zolotas]";
+	mes "If you bring Rough Oridecons and";
+	mes "Rough Eluniums to me,";
+	mes "I can refine them for you.";
+	mes "However, you must bring 5 of each";
+	next;
+	menu "Make Oridecon",-,"Make Elunium",L_MENU_1,"Ask about enchanted stones",L_MENU_2;
+		checkitem 756,5,-,L_START_1;
+		delitem 756,5;
+		additem 984,1;
+		mes "[Xenophon Zolotas]";
+		mes "As promised, here's your oridecon.";
+		mes "Come back again anytime.";
+		close;
+	L_START_1:
+		mes "[Xenophon Zolotas]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an oridecon unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_1:
+		checkitem 757,5,-,L_START_2;
+		delitem 757,5;
+		additem 985,1;
+		mes "[Xenophon Zolotas]";
+		mes "As promised, here's your elunium.";
+		mes "Come back again anytime.";
+		close;
+	L_START_2:
+		mes "[Xenophon Zolotas]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an elunium unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_2:
+		mes "[Xenophon Zolotas]";
+		mes "Enchanted stones, huh ....";
+		mes "Well, in 20 years of my life as a";
+		mes "stonesmith I've heard of it many";
+		mes "times...though I've never seen it before.";
+		mes "What I heard is this: there are";
+		mes "enchanted stones out there which";
+		mes "possesses different elemental";
+		mes "properties - Water, Earth, Fire, Wind.";
+		next;
+		mes "[Xenophon Zolotas]";
+		mes "If someone combines an Enchanted Stone";
+		mes "with a weapon while smithing, that weapon";
+		mes "will possess the same property as the stone.";
+		mes "Of course, that person needs to be skillful";
+		mes "enough to work on it.";
+		close;
+}
+
+alberta_in.vhm,28,58,4	script	Fredrik	85,{
+setstr $@REF_NPC_NAME = "[Fredrik Hermanthorn]";
+// Refine permissions - @POS[N]_ALLOW = 1 -> ENABLE; @POS[N]_ALLOW = 0 -> DISABLE
+	set @POS1_ALLOW = 1;
+	set @POS2_ALLOW = 1;
+	set @POS3_ALLOW = 1;
+	set @POS4_ALLOW = 1;
+	set @POS5_ALLOW = 1;
+	set @POS6_ALLOW = 1;
+	set @POS7_ALLOW = 0;
+	set @POS8_ALLOW = 0;
+	set @POS9_ALLOW = 1;
+	set @POS10_ALLOW = 1;
+// Refine costs
+	set @LV0_REF_PRC = 20000;
+	set @LV1_REF_PRC = 500;
+	set @LV2_REF_PRC = 2000;
+	set @LV3_REF_PRC = 25000;
+	set @LV4_REF_PRC = 50000;
+// NCP
+		lockitem 1;
+		mes "$[$@REF_NPC_NAME]";
+		mes "I am the Armsmith and I can refine any weapon and armor.";
+		mes "Tell me which equipment you wish to refine.";
+		next;
+		equipmenu @POSITION,@WEAPONLEVEL,@REFINELEVEL;
+		check @POSITION == 0,L_LOOT_7,-;
+		check @WEAPONLEVEL == 99,-,RPCHK;
+		check @POSITION == 1,-,L_LOOT_1;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want me to refine that dumb brain of yours?";
+			goto L_EXIT;
+	L_LOOT_1:
+		check @POSITION == 2,-,L_LOOT_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Let me melt your body with my heat!";
+			goto L_EXIT;
+	L_LOOT_2:
+		check @POSITION == 3,-,L_LOOT_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't make your left hand into some super weapon.";
+			goto L_EXIT;
+	L_LOOT_3:
+		check @POSITION == 4,-,L_LOOT_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Even with modern science, I can't make your right hand into a drill.";
+			goto L_EXIT;
+	L_LOOT_4:
+		check @POSITION == 5,-,L_LOOT_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You're not wearing any robe!";
+			goto L_EXIT;
+	L_LOOT_5:
+		check @POSITION == 6,-,L_LOOT_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Your feet sure stinks!";
+			goto L_EXIT;
+	L_LOOT_6:
+		check @POSITION <= 8,-,L_LOOT_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "So where's this accesory of yours?";
+			goto L_EXIT;
+	L_LOOT_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "What did you say you want to refine?";
+			mes "It's some other item, right?";
+			goto L_EXIT;
+// Refine permission check
+	RPCHK:
+		check @POSITION = 1,CHK_POS1_ALLOW,-;
+		check @POSITION = 2,CHK_POS2_ALLOW,-;
+		check @POSITION = 3,CHK_POS3_ALLOW,-;
+		check @POSITION = 4,CHK_POS4_ALLOW,-;
+		check @POSITION = 5,CHK_POS5_ALLOW,-;
+		check @POSITION = 6,CHK_POS6_ALLOW,-;
+		check @POSITION = 7,CHK_POS7_ALLOW,-;
+		check @POSITION = 8,CHK_POS8_ALLOW,-;
+		check @POSITION = 9,CHK_POS9_ALLOW,-;
+		check @POSITION = 10,CHK_POS10_ALLOW,-;
+	CHK_POS1_ALLOW:
+		check @POS1_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS2_ALLOW:
+		check @POS2_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS3_ALLOW:
+		check @POS3_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS4_ALLOW:
+		check @POS4_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS5_ALLOW:
+		check @POS5_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS6_ALLOW:
+		check @POS6_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS7_ALLOW:
+		check @POS7_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS8_ALLOW:
+		check @POS8_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS9_ALLOW:
+		check @POS9_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS10_ALLOW:
+		check @POS10_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	NOT_ALLOWED:
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_1:
+		check @REFINELEVEL == 99,-,L_START_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_2:
+		check @REFINELEVEL == 10,-,L_START_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't refine that item anymore.";
+			goto L_EXIT;
+	L_START_3:
+		check @WEAPONLEVEL == 0,-,L_START_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "To refine that, I'll need an";
+			mes "^ff9999Elunium^000000 and";
+			mes "a service fee of $[@LV0_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_3_1;
+				check @REFINELEVEL == 4,-,L_LOOT_3_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_3_0;
+	L_LOOT_3_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_3_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_3_0;
+	L_LOOT_3_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_3_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_3_0;
+	L_LOOT_3_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_3_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_3_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_3_1:
+					checkitem 985,1,-,L_SUB_3_2;
+					check Zeny >= @LV0_REF_PRC,-,L_SUB_3_2;
+					delitem 985,1;
+					set Zeny -= @LV0_REF_PRC,0;
+					goto L_START_8;
+	L_SUB_3_2:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Is that all you've got?";
+				mes "Sorry, but it's not enough to cover";
+				mes "the cost of the materials.";
+				mes "I can't just do this for free, you know.";
+				goto L_EXIT;
+	L_MENU_3_1:
+				mes "$[$@REF_NPC_NAME]";
+				mes "If you don't want to, that's fine ...";
+				goto L_EXIT;
+	L_START_4:
+		check @WEAPONLEVEL == 1,-,L_START_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 1 weapon?";
+			mes "To refine that, I'll need a ^ff9999Phracon^000000";
+			mes "and a service fee of $[@LV1_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 7,-,L_SUB_4_1;
+				check @REFINELEVEL == 7,-,L_LOOT_4_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_4_0;
+	L_LOOT_4_1:
+				check @REFINELEVEL == 8,-,L_LOOT_4_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_4_0;
+	L_LOOT_4_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_4_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_4_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_4_1:
+					checkitem 1010,1,-,L_SUB_3_2;
+					check Zeny >= @LV1_REF_PRC,-,L_SUB_3_2;
+					delitem 1010,1;
+					set Zeny -= @LV1_REF_PRC,0;
+					goto L_START_8;
+	L_START_5:
+		check @WEAPONLEVEL == 2,-,L_START_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 2 weapon?";
+			mes "To refine that, I'll need a ^ff9999Emveretarcon^000000";
+			mes "and a service fee of $[@LV2_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 6,-,L_SUB_5_1;
+				check @REFINELEVEL == 6,-,L_LOOT_5_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_5_0;
+	L_LOOT_5_1:
+				check @REFINELEVEL == 7,-,L_LOOT_5_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_5_0;
+	L_LOOT_5_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_5_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_5_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_5_1:
+					checkitem 1011,1,-,L_SUB_3_2;
+					check Zeny >= @LV2_REF_PRC,-,L_SUB_3_2;
+					delitem 1011,1;
+					set Zeny -= @LV2_REF_PRC,0;
+					goto L_START_8;
+	L_START_6:
+		check @WEAPONLEVEL == 3,-,L_START_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 3 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV3_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 5,-,L_SUB_6_1;
+				check @REFINELEVEL == 5,-,L_LOOT_6_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_6_0;
+	L_LOOT_6_1:
+				check @REFINELEVEL == 6,-,L_LOOT_6_2;
+					set @REF_SUCCESS = 50;
+					goto L_SUB_6_0;
+	L_LOOT_6_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_6_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_6_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV3_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV3_REF_PRC,0;
+					goto L_START_8;
+	L_START_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 4 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV4_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_7_1;
+				check @REFINELEVEL == 4,-,L_LOOT_7_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_7_0;
+	L_LOOT_7_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_7_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_7_0;
+	L_LOOT_7_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_7_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_7_0;
+	L_LOOT_7_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_7_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_7_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV4_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV4_REF_PRC,0;
+	L_START_8:
+		mes "$[$@REF_NPC_NAME]";
+		mes "Clang! Clang! Clang!!";
+		next;
+		random @REF_RAND,100;
+		check @REF_RAND < @REF_SUCCESS,-,L_START_9;
+			set @REFINELEVEL += 1;
+			refinery @POSITION,0,@REFINELEVEL;
+			mes "$[$@REF_NPC_NAME]";
+			mes "There you go!";
+			mes "It's been awhile since I've attained such perfection.";
+			mes "Aren't you happy now that your weapon is stronger?";
+			goto L_EXIT;
+	L_START_9:
+			refinery @POSITION,1,0;
+			mes "$[$@REF_NPC_NAME]";
+			emote 23;
+			mes "Oh noooooo......";
+			next;
+			mes "$[$@REF_NPC_NAME]";
+			emote 17;
+			mes "Sorry!";
+			mes "Your weapon broke during the refining process...";
+			mes "See! Didn't I say earlier not to force me to do it?";
+	L_EXIT:
+		lockitem 0;
+		close;
+}
+// Yuno ore refiner
+yuno_in01.vhm,164,27,4	script	Dillemat	88,{
+	mes "[Dillemat]";
+	mes "If you bring Rough Oridecons and";
+	mes "Rough Eluniums to me,";
+	mes "I can refine them for you";
+	mes "However, you must bring 5 of each.";
+	next;
+	menu "Make Oridecon",-,"Make Elunium",L_MENU_1,"Ask about enchanted stones",L_MENU_2;
+		checkitem 756,5,-,L_START_1;
+		delitem 756,5;
+		additem 984,1;
+		mes "[Dillemat]";
+		mes "As prmised, here's your oridecon.";
+		mes "Come back again anytime.";
+		close;
+	L_START_1:
+		mes "[Dillemat]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an oridecon unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_1:
+		checkitem 757,5,-,L_START_2;
+		delitem 757,5;
+		additem 985,1;
+		mes "[Dillemat]";
+		mes "As prmosed, here's your elunium.";
+		mes "Come back again anytime.";
+		close;
+	L_START_2:
+		mes "[Dillemat]";
+		mes "Huh? You're kidding, right?";
+		mes "Didn't I say I can't make you";
+		mes "an elunium unless you bring me";
+		mes "5 rough ones.";
+		close;
+	L_MENU_2:
+		mes "[Dillemat]";
+		mes "Enchanted stones, huh ....";
+		mes "Well, in 20 years of my life as a";
+		mes "stonesmith I've hear of it many";
+		mes "times...though I've never seen it before.";
+		mes "what i heard is this: there are";
+		mes "enchanted stones out there which";
+		mes "possesses different elemental";
+		mes "properties - Water, Earth, Fire, Wind.";
+		next;
+		mes "[Dillemat]";
+		mes "If someone combines an Enchanted Stone";
+		mes "with a weapon while smithing, that weapon";
+		mes "will possess the same porperty as the stone";
+		mes "of course, that person needs to be skillful";
+		mes "enough to work on it.";
+ 		close;
+}
+// Yuno item upgrader
+yuno_in01.vhm,171,21,4	script	Disturb	88,{
+setstr $@REF_NPC_NAME = "[Disturb]";
+// Refine permissions - @POS[N]_ALLOW = 1 -> ENABLE; @POS[N]_ALLOW = 0 -> DISABLE
+	set @POS1_ALLOW = 1;
+	set @POS2_ALLOW = 1;
+	set @POS3_ALLOW = 1;
+	set @POS4_ALLOW = 1;
+	set @POS5_ALLOW = 1;
+	set @POS6_ALLOW = 1;
+	set @POS7_ALLOW = 0;
+	set @POS8_ALLOW = 0;
+	set @POS9_ALLOW = 1;
+	set @POS10_ALLOW = 1;
+// Refine costs
+	set @LV0_REF_PRC = 20000;
+	set @LV1_REF_PRC = 500;
+	set @LV2_REF_PRC = 2000;
+	set @LV3_REF_PRC = 25000;
+	set @LV4_REF_PRC = 50000;
+// NCP
+		lockitem 1;
+		mes "$[$@REF_NPC_NAME]";
+		mes "I am the Armsmith and I can refine any weapon and armor.";
+		mes "Tell me which equipment you wish to refine.";
+		next;
+		equipmenu @POSITION,@WEAPONLEVEL,@REFINELEVEL;
+		check @POSITION == 0,L_LOOT_7,-;
+		check @WEAPONLEVEL == 99,-,RPCHK;
+		check @POSITION == 1,-,L_LOOT_1;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want me to refine that dumb brain of yours?";
+			goto L_EXIT;
+	L_LOOT_1:
+		check @POSITION == 2,-,L_LOOT_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Let me melt your body with my heat!";
+			goto L_EXIT;
+	L_LOOT_2:
+		check @POSITION == 3,-,L_LOOT_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't make your left hand into some super weapon.";
+			goto L_EXIT;
+	L_LOOT_3:
+		check @POSITION == 4,-,L_LOOT_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Even with modern science, I can't make your right hand into a drill.";
+			goto L_EXIT;
+	L_LOOT_4:
+		check @POSITION == 5,-,L_LOOT_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You're not wearing any robe!";
+			goto L_EXIT;
+	L_LOOT_5:
+		check @POSITION == 6,-,L_LOOT_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "Your feet sure stinks!";
+			goto L_EXIT;
+	L_LOOT_6:
+		check @POSITION <= 8,-,L_LOOT_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "So where's this accesory of yours?";
+			goto L_EXIT;
+	L_LOOT_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "What did you say you want to refine?";
+			mes "It's some other item, right?";
+			goto L_EXIT;
+// Refine permission check
+	RPCHK:
+		check @POSITION = 1,CHK_POS1_ALLOW,-;
+		check @POSITION = 2,CHK_POS2_ALLOW,-;
+		check @POSITION = 3,CHK_POS3_ALLOW,-;
+		check @POSITION = 4,CHK_POS4_ALLOW,-;
+		check @POSITION = 5,CHK_POS5_ALLOW,-;
+		check @POSITION = 6,CHK_POS6_ALLOW,-;
+		check @POSITION = 7,CHK_POS7_ALLOW,-;
+		check @POSITION = 8,CHK_POS8_ALLOW,-;
+		check @POSITION = 9,CHK_POS9_ALLOW,-;
+		check @POSITION = 10,CHK_POS10_ALLOW,-;
+	CHK_POS1_ALLOW:
+		check @POS1_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS2_ALLOW:
+		check @POS2_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS3_ALLOW:
+		check @POS3_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS4_ALLOW:
+		check @POS4_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS5_ALLOW:
+		check @POS5_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS6_ALLOW:
+		check @POS6_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS7_ALLOW:
+		check @POS7_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS8_ALLOW:
+		check @POS8_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS9_ALLOW:
+		check @POS9_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	CHK_POS10_ALLOW:
+		check @POS10_ALLOW = 1,L_START_1,NOT_ALLOWED;
+	NOT_ALLOWED:
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_1:
+		check @REFINELEVEL == 99,-,L_START_2;
+			mes "$[$@REF_NPC_NAME]";
+			mes "That item can't be refined.";
+			goto L_EXIT;
+	L_START_2:
+		check @REFINELEVEL == 10,-,L_START_3;
+			mes "$[$@REF_NPC_NAME]";
+			mes "I can't refine that item anymore.";
+			goto L_EXIT;
+	L_START_3:
+		check @WEAPONLEVEL == 0,-,L_START_4;
+			mes "$[$@REF_NPC_NAME]";
+			mes "To refine that, I'll need an";
+			mes "^ff9999Elunium^000000 and";
+			mes "a service fee of $[@LV0_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_3_1;
+				check @REFINELEVEL == 4,-,L_LOOT_3_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_3_0;
+	L_LOOT_3_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_3_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_3_0;
+	L_LOOT_3_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_3_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_3_0;
+	L_LOOT_3_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_3_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_3_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_3_1:
+					checkitem 985,1,-,L_SUB_3_2;
+					check Zeny >= @LV0_REF_PRC,-,L_SUB_3_2;
+					delitem 985,1;
+					set Zeny -= @LV0_REF_PRC,0;
+					goto L_START_8;
+	L_SUB_3_2:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Is that all you've got?";
+				mes "Sorry, but it's not enough to cover";
+				mes "the cost of the materials.";
+				mes "I can't just do this for free, you know.";
+				goto L_EXIT;
+	L_MENU_3_1:
+				mes "$[$@REF_NPC_NAME]";
+				mes "If you don't want to, that's fine ...";
+				goto L_EXIT;
+	L_START_4:
+		check @WEAPONLEVEL == 1,-,L_START_5;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 1 weapon?";
+			mes "To refine that, I'll need a ^ff9999Phracon^000000";
+			mes "and a service fee of $[@LV1_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 7,-,L_SUB_4_1;
+				check @REFINELEVEL == 7,-,L_LOOT_4_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_4_0;
+	L_LOOT_4_1:
+				check @REFINELEVEL == 8,-,L_LOOT_4_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_4_0;
+	L_LOOT_4_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_4_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_4_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_4_1:
+					checkitem 1010,1,-,L_SUB_3_2;
+					check Zeny >= @LV1_REF_PRC,-,L_SUB_3_2;
+					delitem 1010,1;
+					set Zeny -= @LV1_REF_PRC,0;
+					goto L_START_8;
+	L_START_5:
+		check @WEAPONLEVEL == 2,-,L_START_6;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 2 weapon?";
+			mes "To refine that, I'll need a ^ff9999Emveretarcon^000000";
+			mes "and a service fee of $[@LV2_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 6,-,L_SUB_5_1;
+				check @REFINELEVEL == 6,-,L_LOOT_5_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_5_0;
+	L_LOOT_5_1:
+				check @REFINELEVEL == 7,-,L_LOOT_5_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_5_0;
+	L_LOOT_5_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_5_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_5_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_5_1:
+					checkitem 1011,1,-,L_SUB_3_2;
+					check Zeny >= @LV2_REF_PRC,-,L_SUB_3_2;
+					delitem 1011,1;
+					set Zeny -= @LV2_REF_PRC,0;
+					goto L_START_8;
+	L_START_6:
+		check @WEAPONLEVEL == 3,-,L_START_7;
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 3 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV3_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 5,-,L_SUB_6_1;
+				check @REFINELEVEL == 5,-,L_LOOT_6_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_6_0;
+	L_LOOT_6_1:
+				check @REFINELEVEL == 6,-,L_LOOT_6_2;
+					set @REF_SUCCESS = 50;
+					goto L_SUB_6_0;
+	L_LOOT_6_2:
+					set @REF_SUCCESS = 20;
+	L_SUB_6_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_6_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV3_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV3_REF_PRC,0;
+					goto L_START_8;
+	L_START_7:
+			mes "$[$@REF_NPC_NAME]";
+			mes "You want to refine a Level 4 weapon?";
+			mes "To refine that, I'll need a ^ff9999Oridecon^000000";
+			mes "and a service fee of $[@LV4_REF_PRC] zeny.";
+			mes "Do you wish to proceed?";
+			next;
+			menu "Yes",-,"No",L_MENU_3_1;
+				set @REF_SUCCESS = 99;
+				check @REFINELEVEL >= 4,-,L_SUB_7_1;
+				check @REFINELEVEL == 4,-,L_LOOT_7_1;
+					set @REF_SUCCESS = 60;
+					goto L_SUB_7_0;
+	L_LOOT_7_1:
+				check @REFINELEVEL <= 6,-,L_LOOT_7_2;
+					set @REF_SUCCESS = 40;
+					goto L_SUB_7_0;
+	L_LOOT_7_2:
+				check @REFINELEVEL <= 8,-,L_LOOT_7_3;
+					set @REF_SUCCESS = 20;
+					goto L_SUB_7_0;
+	L_LOOT_7_3:
+					set @REF_SUCCESS = 10;
+	L_SUB_7_0:
+				mes "$[$@REF_NPC_NAME]";
+				mes "Hold it there! It appears that this has been";
+				mes "refined too many times... It could be";
+				mes "destroyed if it's refined further.";
+				mes "If it's destroyed, it will be rendered useless...";
+				mes "Do you still wish to refine it?";
+				next;
+				menu "Yes",L_SUB_6_1,"No",-;
+					mes "$[$@REF_NPC_NAME]";
+					mes "Good decision.";
+					mes "I don't feel good destroying another";
+					mes "person's weapons with my hands....";
+					goto L_EXIT;
+	L_SUB_7_1:
+					checkitem 984,1,-,L_SUB_3_2;
+					check Zeny >= @LV4_REF_PRC,-,L_SUB_3_2;
+					delitem 984,1;
+					set Zeny -= @LV4_REF_PRC,0;
+	L_START_8:
+		mes "$[$@REF_NPC_NAME]";
+		mes "Clang! Clang! Clang!!";
+		next;
+		random @REF_RAND,100;
+		check @REF_RAND < @REF_SUCCESS,-,L_START_9;
+			set @REFINELEVEL += 1;
+			refinery @POSITION,0,@REFINELEVEL;
+			mes "$[$@REF_NPC_NAME]";
+			mes "There you go!";
+			mes "It's been awhile since I've attained such perfection.";
+			mes "Aren't you happy now that your weapon is stronger?";
+			goto L_EXIT;
+	L_START_9:
+			refinery @POSITION,1,0;
+			mes "$[$@REF_NPC_NAME]";
+			emote 23;
+			mes "Oh noooooo......";
+			next;
+			mes "$[$@REF_NPC_NAME]";
+			emote 17;
+			mes "Sorry!";
+			mes "Your weapon broke during the refining process...";
+			mes "See! Didn't I say earlier not to force me to do it?";
+	L_EXIT:
+		lockitem 0;
+		close;
+}

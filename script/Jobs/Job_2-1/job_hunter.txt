@@ -1,0 +1,2635 @@
+//- JOBCHANGE QUEST - HUNTER - made by EREMES THE CANIVALIZER - Translated by yoshiki 
+//- Fixed by: illogik(tk)
+in_hunter.vhm,99,99,4 script Guildsman 727,{
+	mes "[Guildsman]";
+	check job == 3,-,ChkClass;
+	check joblevel >= 40,ChkHnt,-;
+	mes "You need to go level more.";
+	mes "Only archers can be hunters.";
+	mes "Go train more.";
+	next;
+	mes "[Guildsman]";
+	mes "Go finish your training";
+	mes "To changes jobs, you must be at least job level 40.";
+	mes "You can go farther then 40 if you wish.";
+	mes "I will see you then.";
+	close;
+ChkClass:
+	check job == 0,JobNov,-;
+	check job == 1,JobSword,-;
+	check job == 2,JobMage,-;
+	check job == 4,JobAco,-;
+	check job == 5,JobMerc,-;
+	check job == 6,JobThief,-;
+	check job == 7,JobSword,-;
+	check job == 8,JobAco,-;
+	check job == 9,JobMage,-;
+	check job == 10,JobMerc,-;
+	check job == 11,JobHnt,-;
+	check job == 12,JobThief,JobOther;
+JobNov:
+	mes "Whats a novice like you doing here? Leave, we have nothing for you.";
+	close;
+JobSword:
+	mes "A follower of the way of the blade!";
+	mes "We have nothing for you here, please leave.";
+	close;
+JobMage:
+	mes "Hello sir mage.";
+	mes "If you have no business here, please leave,";
+	close;
+JobAco:
+	mes "Good day, believers!";
+	mes "It's nice to meet you and all, but you have no buisiness here.";
+	close;
+JobMerc:
+	mes "Hey, how's buisiness?";
+	mes "Perhaps if you want to sell something, go back to town.";
+	close;
+JobThief:
+	mes "Eeep.";
+	mes "There's nothing to steal here >_> Leave us and go kill someone or something";
+	close;
+JobHnt:
+	mes "What up! $charaname . ";
+	mes "Why did you come back? Falcon run away or something?";
+	mes "Just because you're part of our guild doesn't mean you get anything free.";
+	mes "I hope this trip wasn't a waste >_>";
+	close;
+JobOther:
+	mes "What brings you here?";
+	close;
+ChkHnt:
+	check skillpoint == 0,ApHnt,-;
+	mes "You have left over skill points.";
+	mes "Return after you used them!";
+	close;
+ApHnt:
+	check job_hunter_q == 17,-,ChkHnt_1;
+	checkitem 1007,1,ApHnt_C,-;
+	mes "Hmmm, I received news of your success.";
+	mes "But you don't seem to have the HaeAhn as proof.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Well, I'll be nice today and I'll recruit you behind the guild master's back..........";
+	mes "But you better bring a HaeAhn one day.";
+	close;
+ApHnt_C:
+	mes "Huh? Did you pass the test!?";
+	mes "Congratulations!!";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Now I'll change you to a hunter!";
+	next;
+	delitem 1007,1;
+	mes "[Hunter Sharin]";
+	mes "There you go!";
+	mes "You look great in the hunter outfit";
+	jobchange 11;
+	set joblevel = 1,0;
+	next;
+	mes "[Hunter Sharin]";
+	mes "Now, do the guild a favor and act responsible,";
+	mes "and love and respect nature!";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Now, for working so hard.";
+	mes "The guild has a small prize for you.";
+	check job_hunter_q == 17,-,ApHnt_C_1;
+	check joblevel > 49,-,ApHnt_C_1;
+	additem 1718,1;
+	close;
+ApHnt_C_1:
+	additem 1710,1;
+	close;
+ChkHnt_1:
+	check joblevel > 39,-,ChkHnt_2;
+	check job_hunter_q == 0,-,ChkHnt_3;
+	mes "Hey archer!!";
+	mes "Hmmm, you look like you trained well.";
+	mes "You're here to be a hunter, aren't you!";
+	next;
+menu "Of course!",-,"What's the requirements",HntMnu_1,"Not now.",HntMnu_X;
+	mes "[Guildsman]";
+	mes "Heh, I knew it. Here, I'll apply you in the guild.";
+	next;
+	mes "[Guildsman]";
+	mes "Then we shall start from the interview.";
+	mes "Ok, let me find the interview form";
+	next;
+	mes "Rustle rustle";
+	next;
+	mes "[Guildsman]";
+	mes "Ah....";
+	mes "Here we go!";
+	mes "First of all, my name is Sharin, nice to meet you.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Do you want to do the interview now?";
+	next;
+menu "Yea, lets start",-,"Nah, I'll come back in a bit.",HntMnu_X;
+	mes "[Hunter Sharin]";
+	mes "Just tell me what you think.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "I'm just going to ask you why you want be a hunter and your opinions.";
+	next;
+retake:
+	set @hunter_t = 0;
+	mes "[Hunter Sharin]";
+	mes "Let's start then.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "You're a archer, you had to have gone hunting some times. When you don't know where to go hunt, what do you do?";
+	next;
+menu "Walk around the streets screaming",HntQ1,"Where should i go hunt!?",-,"Ask someone politely.",-,"Just explore.",HntQ1;
+	set @hunter_t + 10;
+HntQ1:
+	mes "[Hunter Sharin]";
+	mes "You picked your hunting spot!";
+	mes "You plan to go to the Sograt Desert to hunt Hodes.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "But you're in Payon! How do you get to the desert?";
+	next;
+menu "Go beg priests for warps",HntQ2,"Kafra warp",-,"Walk there with a friend",-;
+	set @hunter_t + 10;
+HntQ2:
+	mes "[Hunter Sharin]";
+	mes "There's no priests around, all your friends are busy, and you don't have enough money for a kafra warp.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "How do you get the money?";
+	next;
+menu "Beg",HntQ3,"Sell useless items",-,"Go hunting at a nearby fields",-;
+	set @hunter_t + 10;
+HntQ3:
+	mes "[Hunter Sharin]";
+	mes "You somehow got to the deserts";
+	mes "But now you feel too weak to hunt hodes.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "What do you do now??";
+	next;
+menu "Go cliff hunting.",HntQ4,"Go rest at Morroc.",-,"Start shooting the hodes that other people are attacking.",HntQ4;
+	set @hunter_t + 10;
+HntQ4:
+	mes "[Hunter Sharin]";
+	mes "It's too much, you can't do it. You go to Morroc.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "By the time you return to town, you have no hp left, but you see a priest. How do you ask for a heal?";
+	next;
+menu "If it's ok, can i have a heal please?",-,"Heal please.",HntQ5,"heal plz",HntQ5;
+	set @hunter_t + 10;
+HntQ5:
+	mes "[Hunter Sharin]";
+	mes "While hunting, you find a rare item.";
+	mes "You go to the market to sell it, and find lots of people and chat rooms.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "What do you do to sell the item quicker?";
+	next;
+menu "Go into preexisting chat rooms and ask",HntQ6,"Make your own chat room.",-,"See if anyone is buying.",-;
+	set @hunter_t + 10;
+HntQ6:
+	mes "[Hunter Sharin]";
+	mes "After a while, a person starts to beg you.";
+	mes "What do you do?";
+	next;
+menu "Give some items and money",HntQ7,"Ignore",HntQ7,"Tell them where to level and make money.",-;
+	set @hunter_t + 10;
+HntQ7:
+	mes "[Hunter Sharin]";
+	mes "You decide to go hunting in the woods.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "But you find someone who's lost.";
+	mes "What do you do?";
+	next;
+menu "Tell them directions.",-,"Personnaly escort.",-,"Ignore.",HntQ8;
+	set @hunter_t + 10;
+HntQ8:
+	mes "[Hunter Sharin]";
+	mes "You take the person to a safe place and resume hunting.";
+	mes "While hunting, you see someone fighting a mvp!";
+	next;
+	mes "[Hunter Sharin]";
+	mes "What do you do?";
+	next;
+menu "Watch and attack if asked for help.",-,"Start attacking.",HntQ9,"Return to town in panic.",HntQ9;
+	set @hunter_t + 10;
+HntQ9:
+	mes "[Hunter Sharin]";
+	mes "Now you're done hunting for the day.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "You find a rare item on the streets while going back to town";
+	mes "What do you do?";
+	next;
+menu "Finders keepers.",HntQ10,"Try to find owner.",-,"Walk past it.",-;
+	set @hunter_t + 10;
+HntQ10:
+	mes "[Hunter Sharin]";
+	mes "Now we're done!!";
+	next;
+	mes "[Hunter Sharin]";
+	check @hunter_t == 100,-,ChkHnt_4;
+	set job_hunter_q = 2;
+	mes "Great! If you lived in this manner, everything will work out fine!";
+	mes "You're indeed fit to be a hunter.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "You passed the interview, I'll make a record of it.";
+	close;
+ChkHnt_4:
+	check @hunter_t == 90,-,ChkHnt_5;
+	set job_hunter_q = 2;
+	mes "There's some parts unfavorable,";
+	mes "but I'll pass you, even though I don't know what the guild master will think of you..";
+	mes "Think carefully and maybe you'll find what's wrong.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Work hard on the next test. Make Sharin happy, okies?";
+	close;
+ChkHnt_5:
+	set job_hunter_q = 1;
+	mes "I....don't think I can pass you.";
+	mes "If your ways aren't acceptable, we cant recruit you..";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Think about my questions and your answers.";
+	mes "Working well with people are just as important as loving nature.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Return and you can take the test again.";
+	close;
+HntMnu_X:
+	mes "[Hunter Sharin]";
+	mes "Think about your ways and come back.";
+	close;
+HntMnu_1:
+	mes "[Guildsman]";
+	mes "The requirements?";
+	mes "1. Be a archer";
+	mes "2. Be past job level 40";
+	mes "3. Bring the item the guild will request.";
+	mes "4. Pass the test";
+	mes "If you trained well as a archer,";
+	mes "You shouldn't have much problems";
+	close;
+ChkHnt_3:
+	check job_hunter_q > 1,-,ChkHnt_6;
+	check job_hunter_q < 10,-,ChkHnt_7;
+	mes "You just need to get Mr. Demon Hunter over  to the left the item.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "When you become a hunter, make sure to visit me.";
+	check gender == 1,-,Grl_1;
+	mes "I want to see you again as a hunter.";
+	close;
+Grl_1:
+	mes "I wanna see how nice you look as a hunter. =P";
+	close;
+ChkHnt_7:
+	check job_hunter_q == 2,-,ChkHnt_8;
+	mes "????";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Can't you find the demon hunter?";
+	mes "Mr. Demon Hunter is to the left, heh.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "Quit dawdling and go become a hunter!";
+	mes "Come visit me again when you're a hunter!";
+	close;
+ChkHnt_6:
+	mes "You returned!";
+	mes "We'll do the interview again.";
+	mes "I'll take you step by step again.";
+	next;
+	goto retake;
+ChkHnt_8:
+	mes "You have to talk to someone else?";
+	mes "The guild master? He's out right now.";
+	next;
+	mes "[Hunter Sharin]";
+	mes "If i remember right, the Payon Castle,";
+	mes "or Archer Ville.";
+	mes "He'll be in one of those.";
+	close;
+ChkHnt_2:
+	mes "Hmmm...I think you need to train more.";
+	mes "To be a hunter, you have to train hard ";
+	mes "as a archer";
+	next;
+	mes "[Guildsman]";
+	mes "Please go train more.";
+	mes "To job level 40 or more.";
+	mes "Though you can go farther.";
+	mes "I'll see you later!";
+	close;
+}
+
+in_hunter.vhm,55,99,4 script "Demon Hunter" 732,{
+	mes "[Examiner]";
+	check job_hunter_q == 2,-,ChkItem1;
+	mes "Hello, I'm the test examiner they call me, The Demon Hunter.";
+	mes "Is $charaname your name?";
+	next;
+	menu "Yes",HntMnu_1,"Uhhh.... no -.-;",HntMnu_X;
+HntMnu_1:
+	mes "[Demon Hunter]";
+	mes "Yup, I'll tell you the items you need to pass the test.";
+	mes "Because we make the arrows used during the test.";
+	mes "We need ingredients to make the arrows with";
+	mes "Our guild isnt too rich >_>";
+	mes "Let's see... the needed item is.....";
+	next;
+	random @item_need,6;
+	mes "[Demon Hunter]";
+	check @item_need == 1,-,HntItm1;
+	check @item_need == 2,-,HntItm2;
+	check @item_need == 3,-,HntItm3;
+	check @item_need == 4,-,HntItm4;
+	check @item_need == 5,-,HntItm5;
+	mes "5 Claws of Desert Wolf for arrow heads";
+	mes "5 Trunks for here and there.";
+	mes "and 3 white herbs.";
+	set job_hunter_q = 3;
+	goto End_2;
+HntItm1:
+	mes "3 Beak of Birds for arrow heads.";
+	mes "5 Skel Bones used here and there.";
+	mes "and 3 green herbs.";
+	set job_hunter_q = 4;
+	goto End_2;
+HntItm2:
+	mes "3 Venomous Fangs.";
+	mes "3 Animal Skins.";
+	mes "and 5 red herbs.";
+	set job_hunter_q = 5;
+	goto End_2;
+HntItm3:
+	mes "3 Dokaebi Horns";
+	mes "3 Pieces of Egg Shell.";
+	mes "and 10 Feathers.";
+	set job_hunter_q = 6;
+	goto End_2;
+HntItm4:
+	mes "9 Shells";
+	mes "9 Chrysalis";
+	mes "9 Yellow herbs";
+	set job_hunter_q = 7;
+	goto End_2;
+HntItm5:
+	mes "3 Bat tooths.";
+	mes "1 Stick Mucus.";
+	mes "and 1 Bear foot skin";
+	set job_hunter_q = 8;
+	goto End_2;
+HntMnu_X:
+	mes "[Demon Hunter]";
+	mes "Stop playing around";
+	mes "$charaname, that's your name, right?";
+	next;
+menu "Yes -.-",HntMnu_1,"uhhh no -.-",-;
+	mes "[Demon Hunter]";
+	mes "If your just going to fool around, leave!.";
+	mes "Don't you mess around with me!";
+	next;
+	warp "pay_fild10",133,235;
+	close;
+ChkItem1:
+	mes "Yes? ";
+	next;
+	check job_hunter_q == 3,-,ChkItem2;
+	setstr $@hunter_testid1 = "5 Desert Wolf Claws";
+	setstr $@hunter_testid2 = "5 Trunks";
+	setstr $@hunter_testid3 = "3 White Herbs";
+	checkitem 7030,5,-,items_error;
+	checkitem 1019,5,-,items_error;
+	checkitem 509,3,-,items_error;
+	delitem 7030,5;
+	delitem 1019,5;
+	delitem 509,3;
+	goto End;
+ChkItem2:
+	check job_hunter_q == 4,-,ChkItem3;
+	setstr $@hunter_testid1 = "3 Beak of Birds";
+	setstr $@hunter_testid2 = "5 Skel Bone";
+	setstr $@hunter_testid3 = "3 Green Herb";
+	checkitem 925,3,-,items_error;
+	checkitem 932,5,-,items_error;
+	checkitem 511,3,-,items_error;
+	delitem 925,3;
+	delitem 932,5;
+	delitem 511,3;
+	goto End;
+ChkItem3:
+	check job_hunter_q == 5,-,ChkItem4;
+	setstr $@hunter_testid1 = "3 Venom Canines";
+	setstr $@hunter_testid2 = "3 Animal Skin";
+	setstr $@hunter_testid3 = "5 Red Herbs";
+	checkitem 937,3,-,items_error;
+	checkitem 919,3,-,items_error;
+	checkitem 507,5,-,items_error;
+	delitem 937,3;
+	delitem 919,3;
+	delitem 507,5;
+	goto End;
+ChkItem4:
+	check job_hunter_q == 6,-,ChkItem5;
+	setstr $@hunter_testid1 = "3 Dokaebi Horns";
+	setstr $@hunter_testid2 = "3 Pieces of Egg Shell";
+	setstr $@hunter_testid3 = "10 Feathers";
+	checkitem 1021,3,-,items_error;
+	checkitem 7032,3,-,items_error;
+	checkitem 949,10,-,items_error;
+	delitem 1021,3;
+	delitem 7032,3;
+	delitem 949,10;
+	goto End;
+ChkItem5:
+	check job_hunter_q == 7,-,ChkItem6;
+	setstr $@hunter_testid1 = "9 Shells";
+	setstr $@hunter_testid2 = "9 Chrysalis";
+	setstr $@hunter_testid3 = "9 Yellow Herbs";
+	checkitem 935,9,-,items_error;
+	checkitem 915,9,-,items_error;
+	checkitem 508,9,-,items_error;
+	delitem 935,9;
+	delitem 915,9;
+	delitem 508,9;
+	goto End;
+ChkItem7:
+	check job_hunter_q == 8,-,ChkEnd;
+	setstr $@hunter_testid1 = "3 Bat Teeth";
+	setstr $@hunter_testid2 = "1 Sticky Mucus";
+	setstr $@hunter_testid3 = "1 Bear Footskin";
+	checkitem 913,3,-,items_error;
+	checkitem 938,1,-,items_error;
+	checkitem 948,1,-,items_error;
+	delitem 913,3;
+	delitem 938,1;
+	delitem 948,1;
+	goto End;
+ChkEnd:
+	check job_hunter_q > 9,-,ChkHnt;
+	check job_hunter_q < 17,-,ChkHnt_1;
+	mes "[Demon Hunter]";
+	mes "Huh? Can't you find the guild master?";
+	mes "He should be either in Payon Castle or Archer ville. Go find him.";
+	close;
+ChkHnt_1:
+	check job_hunter_q == 17,-,ChkHnt;
+	mes "[Demon Hunter]";
+	mes "Ah, you passed the test! Congrats, go see Sharin now.";
+	close;
+ChkHnt:
+	mes "[Demon Hunter]";
+	mes "You have to go register to become a hunter.";
+	close;
+Items_Error:
+	mes "[Demon Hunter]";
+	mes "You didn't bring everything needed!";
+	mes "The needed items are: ";
+	mes "$[$@hunter_testid1]";
+	mes "$[$@hunter_testid2]";
+	mes "$[$@hunter_testid3]";
+	mes "When you get them all, please return.";
+	close;
+End:
+	mes "[Demon HunterÍ]";
+	mes "You brought all the items!";
+	mes "Go find the guild master at the Payon Castle and he'll tell you where the training grounds are";
+	check job_hunter_q <= 6,-,End_1;
+	set job_hunter_q = 10;
+	close;
+End_1:
+	set job_hunter_q = 11;
+	close;
+End_2:
+	next;
+	mes "[Demon Hunter]";
+	mes "Also, we need you to talk to the";
+	mes "Guild Master, who's at the Payon Castle";
+	mes "You need to find him";
+	mes "He's one of the examiners, you'll see.";
+	mes "When you do all these, return!";
+	close;
+}
+
+//- Guild Master A
+payon_in01.vhm,25,100,1 script "Hunter" 59,{
+	mes "[Guild Master]";
+	check job_hunter_q == 10,-,other1;
+	mes "So, you came to take the test.";
+	mes "First, I should tell you what the test is.";
+	mes "But, do you have any questions?";
+	set a0 = 1;
+	next;
+menu "What's the test?",-,"What do i have to do to pass?",pass,"Anything, I should know?",know,"Start the test..",start;
+what:
+	mes "[Guild Master]";
+	mes "You have to go get the monster assigned to you.";
+	mes "While avoiding the traps we've set.";
+	next;
+	mes "[Guild Master]";
+	mes "This will teach you the important abilities";
+	mes "a hunter needs, mobilitiy and tracking.";
+	set a0 + 1;
+	close;
+pass:
+	mes "[Guild Master]";
+	mes "You have to within the time limit";
+	mes "start from the south of the map, capture the monster assigned.";
+	next;
+	mes "[Guild Master]";
+	mes "Press the switch that will appear in the middle,";
+	mes "and leave through the exit in the north.";
+	set a0 + 1;
+	close;
+know:
+	mes "[Guild Master]";
+	mes "Well, then be careful.";
+	mes "Pretty obvious, but if you get caught in a trap, you'll get disqualified.";
+	next;
+	mes "[Guild Master]";
+	mes "You will take the test one at a time.";
+	mes "When you get to the testing grounds, you'll find the Waiting Room.";
+	mes "If there's someone being tested, you'll next; in the chat room.";
+	next;
+	mes "[Guild Master]";
+	mes "If the person ahead of you is disqualified or successful.";
+	mes "If there's no one ahead, you'll start the test when you enter the chat room.";
+	set a0 + 1;
+	close;
+start:
+	mes "[Guild Master]";
+	check a0 == 1,-,sub1;
+	mes "Okay, but when you realize you don't know anything, don't come crying to me.";
+	goto talk;
+sub1:
+	mes "Good luck, I'll send you to the training ground now.";
+talk:
+	next;
+	set job_hunter_q = 12;
+	mes "[Guild Master]";
+	check job_hunter_q > 11,-,Cont_Talk;
+	check job_hunter_q < 16,talk1,-;
+Cont_Talk:
+	mes "The guild should have made arrows out of the ingredients you've brought,";
+	mes "but I'll give you these too.";
+	additem 1751,200;
+	next;
+	mes "[Guild Master]";
+	mes "See you then.";
+	next;
+	warp "job_hunte",176,22;
+	close;
+other1:
+	check job_hunter_q > 1,-,other2;
+	check job_hunter_q < 10,-,other2;
+	mes "Yes?";
+	mes "What would a archer want from me?";
+	mes "The guild didn't send me a msg about you.";
+	mes "Did you talk to the guild recruiters";
+	mes "and get all the items needed? You have to";
+	mes "get them the items first.";
+	close;
+other2:
+	check job_hunter_q == 11,-,other3;
+	mes "Hmm? Is there something you want of me?";
+	mes "If you wish to change job, you'll need to talk to the hunter at Archer Ville.";
+	close;
+other3:
+	check job_hunter_q > 11,-,other4;
+	check job_hunter_q < 16,-,other4;
+	mes "Ah, you're one of the archers that failed.";
+	mes "You're ready right?";
+	mes "Well, any questions before I send you?.";
+menu "What is the test?",what,"What do I have to do to pass?",pass,"Anything I should know?",know,"Start test",start;
+talk1:
+	mes "What? You want silver arrows?";
+	mes "I can't give you anything without you providing the ingredients.";
+	mes "Well, I hope you're ready.";
+	next;
+menu "Yes, let's start.",-,"wait a sec",holdon;
+	mes "[Guild Master]";
+	set job_hunter_q = 12;
+	mes "Okay then! Make sure you succeed this time!";
+	next;
+	warp "job_hunte",176,22;
+holdon:
+	mes "[Guild Master]";
+	mes "Get back after you're ready then.";
+	close;
+other4:
+	check job_hunter_q == 16,-,other5;
+	mes "I see you suceeded! Great job!";
+	mes "Now I will give you the proof of your success.";
+	mes "I've got some work left here.";
+	set job_hunter_q = 17;
+	save "payon",100,100;
+	next;
+	additem 1007,1;
+	mes "[Guild Master]";
+	mes "Here you go";
+	mes "I will see you then.";
+	close;
+other5:
+	check job_hunter_q == 17,-,other6;
+	mes "You want to be a hunter bad, don't you?";
+	mes "In my days, I worked for over a month to become a hunter, hehe.";
+	next;
+	mes "[Guild Master]";
+	mes "Go back to the guild!";
+	close;
+other6:
+	mes "Is there something you want of me?";
+	mes "I'm out on buisiness, please be quiet.";
+	close;
+}
+
+//- Guild Master B
+payon_in02.vhm,21,31,1 script "Hunter" 59,{
+	mes "[Guild Master]";
+	check job_hunter_q == 11,-,other1;
+	mes "So, you came to take the test.";
+	mes "First, I should tell you what the test is.";
+	mes "But, do you have any questions?";
+	set a0 = 1;
+	next;
+menu "What's the test?",-,"What do i have to do to pass?",pass,"Anything I should know?",know,"Start the test..",start;
+what:
+	mes "[Guild Master]";
+	mes "You have to go get the monster assigned to you.";
+	mes "While avoiding the traps we've set.";
+	next;
+	mes "[Guild Master]";
+	mes "This will teach you the important abilities";
+	mes "a hunter needs, mobilitiy and tracking.";
+	set a0 + 1;
+	close;
+pass:
+	mes "[Guild Master]";
+	mes "You have to within the time limit";
+	mes "start from the south of the map, capture the monster assigned.";
+	next;
+	mes "[Guild Master]";
+	mes "Press the switch that will appear in the middle,";
+	mes "and leave through the exit in the north.";
+	set a0 + 1;
+	close;
+know:
+	mes "[Guild Master]";
+	mes "Well, then be careful.";
+	mes "Pretty obvious, but if you get caught in a trap, you'll get disqualified.";
+	next;
+	mes "[Guild Master]";
+	mes "You will take the test one at a time.";
+	mes "When you get to the testing grounds, you'll find the Waiting Room.";
+	mes "If there's someone being tested, you'll next; in the chat room.";
+	next;
+	mes "[Guild Master]";
+	mes "If the person ahead of you is disqualified or successful.";
+	mes "If there's no one ahead, you'll start the test when you enter the chat room.";
+	set a0 + 1;
+	close;
+start:
+	mes "[Guild Master]";
+	check a0 == 1,-,sub1;
+	mes "Okay, but when you realize you don't know anything, don't come crying to me.";
+	goto talk;
+sub1:
+	mes "Good luck, I'll send you to the training ground now.";
+talk:
+	next;
+	mes "[Guild Master]";
+	check job_hunter_q > 11,-,Cont_Talk;
+	check job_hunter_q < 16,talk1,other4;
+Cont_Talk:
+	mes "The guild should have made arrows out of the ingredients you've brought,";
+	mes "but I'll give you these too.";
+	additem 1751,200;
+	set job_hunter_q = 12;
+	next;
+	mes "[Guild Master]";
+	mes "See you then.";
+	next;
+	warp "job_hunte",176,22;
+other1:
+	check job_hunter_q > 1,-,other6;
+	check job_hunter_q < 10,-,other2;
+	mes "Yes?";
+	mes "What would a archer want from me?";
+	mes "The guild didn't send me a msg about you.";
+	mes "Did you talk to the guild recruiters";
+	mes "and get all the items needed? You have to";
+	mes "get them the items first.";
+	close;
+other2:
+	check job_hunter_q == 11,-,other3;
+	mes "Hmm? Is there something you want of me?";
+	mes "If you wish to change job, you'll need to talk to the hunter at Archer Ville.";
+	close;
+other3:
+	check job_hunter_q > 11,-,other4;
+	check job_hunter_q < 16,-,other4;
+	mes "Ah, you're one of the archers that failed.";
+	mes "You're ready right?";
+	mes "Well, any questions before I send you?.";
+menu "What is the test?",what,"What do I have to do to pass?",pass,"Anything I should know?",know,"Start test",start;
+talk1:
+	mes "What? You want silver arrows?";
+	mes "I can't give you anything without you providing the ingredients.";
+	mes "Well, I hope you're ready.";
+	next;
+menu "Yes, let's start.",-,"wait a sec",holdon;
+	mes "[Guild Master]";
+	mes "Okay then! Make sure you succeed this time!";
+	set job_hunter_q = 12;
+	next;
+	warp "job_hunte",176,22;
+holdon:
+	mes "[Guild Master]";
+	mes "Get back after you're ready then.";
+	close;
+other4:
+	check job_hunter_q == 16,-,other5;
+	mes "I see you suceeded! Great job!";
+	mes "Now I will give you the proof of your success.";
+	mes "I've got some work left here.";
+	set job_hunter_q = 17;
+	save "payon",100,100;
+	next;
+	additem 1007,1;
+	mes "[Guild Master]";
+	mes "Here you go";
+	mes "I will see you then.";
+	close;
+other5:
+	check job_hunter_q == 17,-,other6;
+	mes "You want to be a hunter bad, don't you?";
+	mes "In my days, I worked for over a month to become a hunter, hehe.";
+	next;
+	mes "[Guild Master]";
+	mes "Go back to the guild!";
+	close;
+other6:
+	mes "Is there something you want of me?";
+	mes "I'm out on buisiness, please be quiet.";
+	close;
+}
+
+//- Guide
+job_hunte.vhm,178,32,1 script "Guide" 107,{
+	mes "[Guide]";
+	check job_hunter_q == 12,-,other1;
+	mes "Welcome to the hunter's guild training grounds.";
+	next;
+	mes "[Guide]";
+	mes "Please enter the Waiting Room";
+	mes "after hearing my explaination.";
+	next;
+	mes "[Guide]";
+	mes "Move from the starting point and you'll find";
+	mes " ' Job Change Monsters ', you need to kill";
+	mes "at least 6 for the switch in the";
+	mes "center that opens the exit to appear.";
+	next;
+	mes "[Guide]";
+	mes "You must destroy the switch for the exit up north";
+	mes "to open, but you must leave before the time runs out";
+	mes "and the door closes.";
+	next;
+	mes "[Guide]";
+	mes "You're disqualified if you get k.o.ed, get caught in a trap, or run out of time.";
+	mes "You must start over then.";
+	next;
+	mes "[Guide]";
+	mes "Don't worry about arrows, we'll provide it.";
+	mes "So, if you're ready, go to the Waiting Room.";
+	save "job_hunte",176,22;
+	close;
+other1:
+	check job_hunter_q > 12,-,other2;
+	check job_hunter_q < 16,-,other2;
+	mes "What's wrong?";
+	mes "I'll restore some hp and sp for you..";
+	heal 100,100;
+	mes "If you're having trouble, you COULD do it later.....";
+	mes "Would you like to quit?";
+	next;
+menu "Continue",-,"Try later.",later;
+	mes "[Guide]";
+	mes "Alright, try hard and I know you can be a great hunter..";
+	mes "Continue on to the Waiting Room.";
+	close;
+later:
+	mes "[Guide]";
+	broadcast "$charaname has given up, next challenger come in please..";
+	mes "Alright, I'll send you back to Payon.";
+	mes "I'll see you again later.";
+	mes "Don't forget to save!";
+End:
+	save "payon",104,99;
+	set job_hunter_q = 13;
+	next;
+	warp "payon",104,99;
+	close;
+other2:
+	check job_hunter_q > 15,-,other1;
+	mes "´You shouldn't be here! You need to get yourself a HaeAhn.";
+	next;
+	save "payon",104,99;
+	warp "payon",104,99;
+	close;
+}
+
+//- Waiting Room
+job_hunte.vhm,178,32,1 script "Waiting Room" 111,{
+	return;
+OnInit:
+	waitingroom "Waiting Room",2;
+	check \@starthunt = 0,start,-;
+	return;
+start:
+	set \@starthunt = 1;
+	enablenpc "job_hunte","Examiner",1;
+	enablenpc "job_hunte","switch",0;
+	enablenpc "job_hunte","hnt_backers",0;
+	enablenpc "job_hunte","Waiting Room",0;
+	warpallpc "job_hunte",90,67,2;
+	return;
+}
+
+//- Examiner
+job_hunte.vhm,1,1,1	script "Examiner" 66,{
+	return;
+OnInit:
+	check \@starthunt = 1,start,-;
+	return;
+start:
+	set \@mobshunt1 = 6;
+	callmob "job_hunte",67,80,"Job Change Monster",1015,0,mobs1;
+	callmob "job_hunte",114,78,"Job Change Monster",1015,0,mobs1; 
+	callmob "job_hunte",89,127,"Job Change Monster",1002,0,mobs1;
+	callmob "job_hunte",53,73,"Job Change Monster",1041,0,mobs1;
+	callmob "job_hunte",125,70,"Job Change Monster",1016,0,mobs1;
+	callmob "job_hunte",90,92,"Job Change Monster",1015,0,mobs1;
+//don't kill these
+	callmob "job_hunte",85,100,"Test Monster",1016,0,mobs2;
+	callmob "job_hunte",72,102,"Test Monster",1041,0,mobs2;
+	callmob "job_hunte",108,103,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",88,127,"Test Monster",1002,0,mobs2;
+	callmob "job_hunte",125,69,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",77,112,"Test Monster",1016,0,mobs2;
+	callmob "job_hunte",53,106,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",53,73,"Test Monster",1002,0,mobs2;
+	callmob "job_hunte",125,70,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",90,91,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",67,80,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",77,112,"Test Monster",1016,0,mobs2;
+	callmob "job_hunte",53,106,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",53,73,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",125,70,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",90,91,"Test Monster",1041,0,mobs2;
+	callmob "job_hunte",85,100,"Test Monster",1002,0,mobs2;
+	callmob "job_hunte",72,102,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",108,103,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",77,112,"Test Monster",1015,0,mobs2;
+	callmob "job_hunte",112,139,"Vinnie Paul",1015,0,mobs2;
+	callmob "job_hunte",112,139,"Dimeback Darrel",1015,0,mobs2;
+	callmob "job_hunte",112,139," Rex",1015,0,mobs2;
+	callmob "job_hunte",112,139,"Phillip Angelmo",1015,0,mobs2;
+	callmob "job_hunte",90,91,"Anolian",1015,0,mobs2;
+	callmob "job_hunte",53,73,"monster sample",1002,0,mobs2;
+	callmob "job_hunte",53,106,"I'm not the one you want",1015,0,mobs2;
+	callmob "job_hunte",77,112,"SPARE ME~",1015,0,mobs2;
+	callmob "job_hunte",72,102,"Don't hurt me!",1015,0,mobs2;
+	callmob "job_hunte",108,103,"aspd 184",1015,0,mobs2;
+	set \@starthunt = 2;
+	npctimer 1;
+	return;
+OnTimer1000:
+	broadcast "Okay! Test starts now!";
+	goto CheckT;
+OnTimer3000:
+	broadcast "Like the guide told you, remember you need to kill the ' Job Change Monsters ' ";
+	goto CheckT;
+OnTimer5000:
+	broadcast "****Don't forget to avoid traps!***";
+	goto CheckT;
+OnTimer7000:
+	broadcast "Kill 6 ' Job Change Monsters ' and the switch will appear!.";
+	goto CheckT;
+OnTimer9000:
+	broadcast "Destroy the switch and the door will open!.";
+	goto CheckT;
+OnTimer11000:
+	broadcast "You have to pass within 3 minutes!";
+	goto CheckT;
+OnTimer13000:
+	broadcast "We'll start the count now! I'll tell you each minute.";
+	goto CheckT;
+OnTimer14000:
+	broadcast " ****** 3 minutes left! ****** ";
+	goto CheckT;
+OnTimer74000:
+	broadcast " ****** 2 minutes left! ****** ";
+	goto CheckT;
+OnTimer134000:
+	broadcast " ****** 1 minute left! ****** ";
+	goto CheckT;
+OnTimer164000:
+	broadcast " ****** 30 sec left! ****** ";
+	goto CheckT;
+OnTimer187000:
+	broadcast " 5 . . . .";
+	goto CheckT;
+OnTimer188000:
+	broadcast " 4. . . .";
+	goto CheckT;
+OnTimer189000:
+	broadcast " 3. . .";
+	goto CheckT;
+OnTimer191000:
+	broadcast " 2. .";
+	goto CheckT;
+OnTimer192000:
+	broadcast " 1...";
+CheckT:
+	check \@starthunt = 3,OnTimer194000,-;
+	return;
+OnTimer193000:
+	broadcast " 0! ";
+	resetmymob "job_hunte";
+	return;
+OnTimer194000:
+	set \@starthunt = 0;
+	broadcast " Proceed to Exit! ";
+	return;
+OnTimer195000:
+	enablenpc "job_hunte","hnt_backers",1;
+	return;
+OnTimer198000:
+	npctimer 0;
+}
+
+job_hunte.vhm,0,0,0 script mobs1 -1,{
+	set \@mobshunt1 - 1;
+	check \@mobshunt1 == 0,mobdead,-;
+	broadcast "$[\@mobshunt1] Monster(s) Left",10;
+	return;
+mobdead:
+	resetmymob "job_hunte";
+	broadcast "Great job! Go destroy the switch now!",10;
+	enablenpc "job_hunte","switch",1;
+	enablenpc "job_hunte","Examiner",0;
+	return;
+}
+
+job_hunte.vhm,0,0,0 script mobs2 -1,{
+	broadcast "You killed the wrong monster >_> Try again!",10;
+	set \@starthunt = 3;
+	resetmymob "job_hunte";
+}
+
+//- Timeout
+job_hunte.vhm,89,103,0 script "hnt_backers" 45,{
+OnTouch:
+	set job_hunter_q = 13;
+	enablenpc "job_hunte","Waiting Room",1;
+	warp "job_hunte",176,22;
+	return;
+}
+
+//- Switch
+job_hunte.vhm,93,101,1 script "switch" 139,{
+OnTouch:
+	scriptlabel switch1;
+	check job_hunter_q == 15,-,Cont;
+	return;
+Cont:
+	mes "You see 3 buttons on the switch.";
+	set job_hunter_q = 15;
+	next;
+menu "Escape",-,"Cancel",quit,"Retry Test",redo;
+	mes "The exit has been activated.";
+	enablenpc "job_hunte","exit",1;
+	broadcast " ** The exit has been activated!. ** ",10;
+	enablenpc "job_hunte","switch",0;
+	close;
+quit:
+	mes "Action Canceled";
+	broadcast " ** Action Canceled ** ",10;
+	close;
+redo:
+	set job_hunter_q = 13;
+	set \@starthunt = 0;
+	broadcast " ** Gave up on test.... ** ",10;
+	mes "You will be returned to the Waiting Room.";
+	enablenpc "job_hunte","hnt_backers",0;
+	enablenpc "job_hunte","Waiting Room",1;
+	next;
+	warp "job_hunte",176,22;
+	close;
+}
+job_hunte.vhm,94,101,1 script "switch" 139,{
+OnTouch:
+	script switch1;
+}
+job_hunte.vhm,94,102,1 script "switch" 139,{
+OnTouch:
+	script switch1;
+}
+job_hunte.vhm,93,102,1 script "switch" 139,{
+OnTouch:
+	script switch1;
+}
+
+//- Exit
+job_hunte.vhm,89,139,0 script "exit" 45,{
+OnTouch:
+	set \@starthunt = 0;
+	set job_hunter_q = 16;
+	save "payon",100,100;
+	resetmymob "job_hunte";
+	random @whe,2;
+	check @whe == 1,-,other1;
+	warp "payon_in02",21,28;
+other1:
+	warp "payon_in01",23,100;
+	return;
+OnInit:
+	enablenpc "job_hunte","exit",0;
+	return;
+}
+
+//- Traps
+job_hunte.vhm,52,140,0 script "1-1" 139,{
+OnTouch:
+	scriptlabel HunterTraps;
+	set job_hunter_q = 13;
+	set \@starthunt = 0;
+	broadcast "$charaname has fallen into a trap and is now disqualified.",10;
+	enablenpc "job_hunte","Waiting Room",1;
+	resetmymob "job_hunte";
+	enablenpc "job_hunte","Examiner",0;
+	enablenpc "job_hunte","Examiner ",0;
+	warp "job_hunte",176,22;
+	return;
+}
+job_hunte.vhm,53,140,0 script "1-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,141,0 script "1-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,141,0 script "1-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,140,0 script "1-5" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,140,0 script "1-6" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,138,0 script "1-7" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,138,0 script "1-8" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,62,140,0 script "2-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,63,140,0 script "2-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,140,0 script "2-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,141,0 script "2-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,140,0 script "2-5" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,141,0 script "2-6" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,62,138,0 script "2-7" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,63,138,0 script "2-8" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,72,140,0 script "3-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,73,140,0 script "3-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,72,138,0 script "3-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,72,138,0 script "3-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,78,140,0 script "4-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,78,141,0 script "4-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,79,140,0 script "4-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,79,141,0 script "4-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,138,0 script "5-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,139,0 script "5-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,138,0 script "5-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,139,0 script "5-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,99,138,0 script "6-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,99,139,0 script "6-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,138,0 script "6-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,139,0 script "6-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,106,140,0 script "7-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,107,140,0 script "7-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,106,138,0 script "7-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,107,138,0 script "7-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,140,0 script "8-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,141,0 script "8-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,140,0 script "8-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,141,0 script "8-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,116,140,0 script "9-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,116,141,0 script "9-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,117,140,0 script "9-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,117,141,0 script "9-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,120,138,0 script "10-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,120,139,0 script "10-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,121,138,0 script "10-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,121,139,0 script "10-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,139,0 script "11-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,139,0 script "11-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,136,0 script "11-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,136,0 script "11-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,134,0 script "12-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,134,0 script "12-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,132,0 script "12-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,132,0 script "12-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,124,130,0 script "13-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,124,131,0 script "13-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,130,0 script "13-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,131,0 script "13-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,128,0 script "14-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,129,0 script "14-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,128,0 script "14-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,129,0 script "14-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,68,126,0 script "15-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,68,127,0 script "15-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,69,126,0 script "15-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,69,127,0 script "15-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,75,128,0 script "16-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,75,129,0 script "16-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,128,0 script "16-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,129,0 script "16-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,126,0 script "17-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,127,0 script "17-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,126,0 script "17-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,127,0 script "17-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,96,128,0 script "18-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,96,129,0 script "18-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,97,128,0 script "18-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,97,129,0 script "18-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,100,126,0 script "19-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,100,127,0 script "19-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,126,0 script "19-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,127,0 script "19-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,106,128,0 script "20-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,106,129,0 script "20-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,107,128,0 script "20-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,107,129,0 script "20-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,126,0 script "21-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,127,0 script "21-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,126,0 script "21-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,127,0 script "21-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,126,0 script "22-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,127,0 script "22-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,126,0 script "22-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,127,0 script "22-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,122,0 script "23-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,122,0 script "23-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,120,0 script "23-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,121,0 script "23-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,121,0 script "23-5" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,120,0 script "23-6" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,120,0 script "24-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,121,0 script "24-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,120,0 script "24-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,121,0 script "24-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,118,0 script "25-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,119,0 script "25-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,118,0 script "25-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,119,0 script "25-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,124,120,0 script "26-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,120,0 script "26-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,124,118,0 script "26-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,118,0 script "26-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,116,0 script "27-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,117,0 script "27-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,116,0 script "27-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,117,0 script "27-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,114,0 script "28-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,115,0 script "28-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,114,0 script "28-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,115,0 script "28-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,116,0 script "29-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,117,0 script "29-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,116,0 script "29-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,117,0 script "29-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,86,114,0 script "30-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,86,115,0 script "30-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,87,114,0 script "30-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,87,115,0 script "30-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,92,115,0 script "31-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,92,114,0 script "31-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,90,115,0 script "31-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,102,116,0 script "32-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,102,117,0 script "32-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,116,0 script "32-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,117,0 script "32-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,114,0 script "33-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,115,0 script "33-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,114,0 script "33-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,115,0 script "33-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,110,0 script "34-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,110,0 script "34-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,108,0 script "34-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,108,0 script "34-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,112,0 script "35-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,113,0 script "35-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,112,0 script "35-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,113,0 script "35-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,80,110,0 script "36-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,80,111,0 script "36-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,81,110,0 script "36-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,81,111,0 script "36-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,90,108,0 script "37-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,91,108,0 script "37-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,91,102,0 script "37-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,98,109,0 script "38-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,99,109,0 script "38-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,109,0 script "38-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,108,0 script "38-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,97,106,0 script "39-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,96,107,0 script "39-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,94,108,0 script "39-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,95,109,0 script "39-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,95,108,0 script "40-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,94,106,0 script "40-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,96,102,0 script "40-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,97,102,0 script "40-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,95,98,0 script "41-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,94,99,0 script "42-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,92,98,0 script "43-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,110,0 script "44-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+
+job_hunte.vhm,112,111,0 script "44-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,110,0 script "44-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,111,0 script "44-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,108,0 script "45-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,108,0 script "45-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,106,0 script "45-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,106,0 script "45-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,102,0 script "46-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,102,0 script "46-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,100,0 script "46-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,100,0 script "46-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,106,0 script "47-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,107,0 script "47-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,106,0 script "47-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,107,0 script "47-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,100,0 script "48-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,101,0 script "48-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,100,0 script "48-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,101,0 script "48-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,86,106,0 script "49-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,87,106,0 script "49-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,104,0 script "49-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,81,105,0 script "49-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,105,0 script "50-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,104,0 script "50-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,78,101,0 script "50-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,79,101,0 script "50-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,99,0 script "51-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,98,0 script "51-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,74,99,0 script "51-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,74,98,0 script "51-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,100,0 script "53-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,101,0 script "53-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,100,0 script "53-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,101,0 script "53-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,106,104,0 script "54-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,106,105,0 script "54-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,107,104,0 script "54-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,107,105,0 script "54-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,104,0 script "55-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,104,0 script "55-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,102,0 script "55-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,102,0 script "55-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,92,0 script "56-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,93,0 script "56-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,92,0 script "56-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,93,0 script "56-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,90,0 script "56-5" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,91,0 script "56-6" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,90,0 script "56-7" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,91,0 script "56-8" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,92,0 script "57-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,93,0 script "57-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,92,0 script "57-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,93,0 script "57-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,94,0 script "58-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,95,0 script "58-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,94,0 script "58-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,95,0 script "58-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,78,92,0 script "59-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,78,93,0 script "59-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,79,92,0 script "59-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,79,93,0 script "59-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,86,92,0 script "60-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,86,93,0 script "60-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,87,92,0 script "60-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,87,93,0 script "60-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,90,96,0 script "61-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,90,97,0 script "61-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,91,96,0 script "61-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,91,97,0 script "61-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,99,95,0 script "62-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,99,94,0 script "62-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,94,0 script "62-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,100,93,0 script "62-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,100,92,0 script "63-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,92,0 script "63-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,102,98,0 script "64-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,102,99,0 script "64-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,98,0 script "64-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,99,0 script "64-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,102,90,0 script "65-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,102,91,0 script "65-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,90,0 script "65-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,91,0 script "65-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,96,0 script "66-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,97,0 script "66-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,96,0 script "66-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,97,0 script "66-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,90,0 script "67-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,112,91,0 script "67-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,90,0 script "67-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,113,91,0 script "67-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,97,0 script "68-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,96,0 script "68-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,96,0 script "68-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,97,0 script "68-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,86,0 script "69-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,87,0 script "69-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,86,0 script "69-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,87,0 script "69-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,88,0 script "70-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,89,0 script "70-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,88,0 script "70-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,89,0 script "70-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,84,0 script "71-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,85,0 script "71-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,84,0 script "71-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,85,0 script "71-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,86,0 script "72-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,87,0 script "72-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,86,0 script "72-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,87,0 script "72-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,80,0 script "73-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,80,0 script "73-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,78,0 script "73-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,78,0 script "73-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,82,0 script "74-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,82,0 script "74-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,64,80,0 script "74-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,65,80,0 script "74-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,78,0 script "75-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,66,79,0 script "75-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,78,0 script "75-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,67,79,0 script "75-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,74,78,0 script "76-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,74,79,0 script "76-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,75,78,0 script "76-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,75,79,0 script "76-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,78,80,0 script "77-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,78,81,0 script "77-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,79,80,0 script "77-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,79,81,0 script "77-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,78,0 script "78-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,79,0 script "78-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,78,0 script "78-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,79,0 script "78-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,94,78,0 script "79-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,94,79,0 script "79-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,95,78,0 script "79-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,95,79,0 script "79-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,80,0 script "80-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,81,0 script "80-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,81,0 script "80-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,103,80,0 script "80-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,104,78,0 script "81-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,104,79,0 script "81-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,105,78,0 script "81-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,105,79,0 script "81-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,110,78,0 script "82-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,110,79,0 script "82-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,111,78,0 script "82-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,111,79,0 script "82-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,80,0 script "83-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,114,81,0 script "83-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,80,0 script "83-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,115,81,0 script "83-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,124,78,0 script "84-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,124,79,0 script "84-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,78,0 script "84-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,79,0 script "84-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,82,0 script "85-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,83,0 script "85-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,82,0 script "85-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,83,0 script "85-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,68,0 script "86-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,68,0 script "86-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,52,66,0 script "86-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,53,66,0 script "86-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,70,0 script "87-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,70,0 script "87-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,54,68,0 script "87-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,55,68,0 script "87-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,59,66,0 script "88-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,59,67,0 script "88-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,61,67,0 script "88-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,61,66,0 script "88-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,68,68,0 script "89-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,69,68,0 script "89-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,68,66,0 script "89-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,69,66,0 script "89-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,66,0 script "90-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,76,67,0 script "90-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,66,0 script "90-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,77,67,0 script "90-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,68,0 script "91-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,82,69,0 script "91-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,68,0 script "91-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,83,69,0 script "91-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,96,66,0 script "92-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,96,67,0 script "92-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,97,66,0 script "92-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,97,67,0 script "92-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,100,68,0 script "93-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,100,69,0 script "93-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,68,0 script "93-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,101,69,0 script "93-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,107,66,0 script "94-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,107,67,0 script "94-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,109,67,0 script "94-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,109,66,0 script "94-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,117,69,0 script "95-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,117,68,0 script "95-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,119,69,0 script "95-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,119,68,0 script "95-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,124,66,0 script "96-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,124,67,0 script "96-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,66,0 script "96-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,125,67,0 script "96-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,70,0 script "97-1" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,126,71,0 script "97-2" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,70,0 script "97-3" 139,{
+OnTouch:
+	script HunterTraps;
+}
+job_hunte.vhm,127,71,0 script "97-4" 139,{
+OnTouch:
+	script HunterTraps;
+}
+
+pay_fild10.vhm,148,252,4 script Hunter 98,{
+	mes "[Hunter]";
+	mes "You came for the Hunter job?";
+	menu "Yes",-,"No",no;
+	mes "[Hunter]";
+	mes "Alright, follow me.";
+	next;
+	warp "in_hunter",100,18;
+no:
+	mes "[Hunter]";
+	mes "Have a nice day.";
+	close;
+}

@@ -1,0 +1,452 @@
+//- Signs\Boards
+//- Town Geffen
+geffen.vhm,119,190,0 script "Sign Post" 111,{
+	mes "^996633- The Sign Post Reads -^000000";
+	mes "North to Geffen Fields";
+	mes "Northeast to Al De Baran";
+	mes "Northwest to Glast Heim";
+	mes "East to Geffen Fields";
+	mes "South to Morroc";
+	mes "Southeast to Prontera";
+	mes "Southeast to Alberta";
+	mes "Southwest to Comodo";
+	mes "West to Geffen Fields";
+	close;
+}
+
+geffen.vhm,183,61,0 script Sign 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "Welcome.";
+	close;
+}
+
+geffen.vhm,116,58,0 script "Bulletin Board" 111,{
+	mes "^996633- The Geffen Bulletin Reads -^000000";
+	mes "Remember Wizard's .... it's not how";
+	mes "many skills you know, it's the";
+	mes "magic that counts.";
+	close;
+}
+
+geffen.vhm,124,65,5 script "Bulletin Board" 837,{
+	mes "[Geffen: The City of Magic]";
+	mes "Welcome to Geffen, The City of";
+	mes "Magic. Geffen is well known for its ";
+	mes "various legends related to magic.";
+	next;
+	mes "[Geffen: The City of Magic]";
+	mes "Points of interest in the city";
+	mes "include the forge, where people can";
+	mes "change their jobs to Blacksmith,";
+	mes "the Magic Academy for aspiring";
+	mes "Mages, and the Geffen Tower for the";
+	mes "Wizard job change.";
+	next;
+	mes "[Geffen: The City of Magic]";
+	mes "Underneath the Geffen Tower lies a";
+	mes "dungeon in which dreadful monsters";
+	mes "are rumored to appear.";
+	next;
+	mes "[Geffen: The City of Magic]";
+	mes "It is said that the lost city of";
+	mes "Geffenia, a place of elven lore and";
+	mes "legend, is hidden within depths";
+	mes "of this dungeon.";
+	next;
+	mes "[Geffen: The City of Magic]";
+	mes "From Geffen, the ^CCCC00Orc Village^000000 is ";
+	mes "located to the South, ^009900Glast Heim^000000 to";
+	mes "the West, ^0000FFProntera^000000 to the far East,";
+	mes "and ^FF0000Mt Mjolnir^000000 to the North. Enjoy";
+	mes "your stay here in Geffen.";
+	close;
+}
+
+geffen.vhm,113,104,0 script "Bulletin Board" 111,{
+	mes "^996633- The Billboard Reads -^000000";
+	mes "Selling: Brand new Chon Chon Doll!";
+	mes "What a great gift to give to a ";
+	mes "loved one, contact me now!";
+	mes "- Name seems to be smeared -";
+	mes " ";
+	mes "Buying: Manteau!";
+	mes "I'm freezing and I have no zeny,";
+	mes "please help me!";
+	mes "Contact Edionyus";
+	close;
+}
+
+geffen.vhm,168,175,0 script Sign 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "Your always welcomed in Geffen.";
+	close;
+}
+
+gef_tower.vhm,55,142,3 script "Bulletin Board" 837,{
+	mes "[Geffen Dungeon]";
+	mes "^FF0000Caution!^000000";
+	mes "Geffen Dungeon consists";
+	mes "of 3 levels that are too dangerous";
+	mes "for new adventurers.";
+	next;
+	mes "[Geffen Dungeon]";
+	mes "Monsters commonly found in the";
+	mes "first level of this dungeon include";
+	mes "Hunter Flies, Nightmares and Jakks.";
+	mes "Nightmares and Jakks only appear in";
+	mes "this dungeon.";
+	next;
+	mes "[Geffen Dungeon]";
+	mes "In the second level of this";
+	mes "dungeon, you may encounter ";
+	mes "Ogretooth, a creature of one od the";
+	mes "doomed swords, and ^CC0000 Dracula, the";
+	mes "nefarious boss monster, without";
+	mes "warning.";
+	next;
+	mes "[Geffen Dungeon]";
+	mes "On the 3rd level, ^CC0000 Doppelganger^000000,";
+	mes "one of the strongest boss monsters,";
+	mes "will also manifest at certain";
+	mes "times.";
+	close;
+}
+
+
+geffen.vhm,61,174,0 script Sign 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "- Seems to be written in a language";
+	mes "unfamiliar to you- ";
+	close;
+}
+
+//- Town Izlude
+izlude.vhm,131,116,5 script "Bulletin Board" 837,{
+	mes "[Izlude: The Satellite City]";
+	mes "Welcome to Izlude, the Satellite of";
+	mes "Prontera. Izlude was built to";
+	mes "support Prontera's defense and to";
+	mes "accomodate its burgeoning";
+	mes "population.";
+	next;
+	mes "[Izlude: The Satellite City]";
+	mes "Points of interest include the";
+	mes "Swordman Association building which";
+	mes "allows adventurers to change their";
+	mes "job to Swordman, and the battle";
+	mes "area that is North of Izlude.";
+	next;
+	mes "[Izlude: The Satellite City]";
+	mes "At the docks, you make take a ship ";
+	mes "and travel to ^0000CCAlberta^000000 or ^CC0000Byalan Island^000000.";
+	next;
+	mes "[Izlude: The Satellite City]";
+	mes "From Izlude, ^0000FFProntera^000000 is located to ";
+	mes "the Northwest, and ^009933Payon^000000 is located";
+	mes "to the South. enjoy your travels in";
+	mes "the Rune-Midgards Kingdom.";
+	close;
+}
+
+//- Town Prontera
+prontera.vhm,149,50,5 script "Bulletin Board" 837,{
+	mes "[Prontera: Capital of the]";
+	mes "[Rune-Midgards Kingdom]";
+	mes "Welcome to Prontera, the Capital";
+	mes "City of Rune-Midgards";
+	next;
+	mes "[Prontera: Capital of the]";
+	mes "[Rune-Midgards Kingdom]";
+	mes "Prontera is located in the center";
+	mes "of the Rune-Midgard Kingdom continent and";
+	mes "is very-well-known as a City of";
+	mes "Flourishing Commerece";
+	next;
+	mes "[Prontera: Capital of the]";
+	mes "[Rune-Midgards Kingdom]";
+	mes "In this city, you can find the";
+	mes "Sanctuary, where people can change";
+	mes "their jobs to Acolyte and Priest.";
+	next;
+	mes "[Prontera: Capital of the]";
+	mes "[Rune-Midgards Kingdom]";
+	mes "You can also find the castle, where";
+	mes "people can change their jobs to Crusader.";
+	next;
+	mes "[Prontera: Capital of the]";
+	mes "[Rune-Midgards Kingdom]";
+	mes "Please feel free to explore the";
+	mes "streets of Prontera, as there are";
+	mes "various tourist attractions within";
+	mes "the city.";
+	next;
+	mes "[Prontera: Capital of the]";
+	mes "[Rune-Midgards Kingdom]";
+	mes "When you need to upgrade your weapons and armors, please visit";
+	mes "the building in the 5 o'clock ";
+	mes "direction from the the fountain in the ";
+	mes "center of Prontera.";
+	next;
+	mes "[Prontera: Capital of the]";
+	mes "[Rune-Midgards Kingdom]";
+	mes "From Prontera, ^0000FFIzlude^000000 is located to ";
+	mes "the Southeast, ^00FF33Payon^000000 to the far";
+	mes "South, ^FF0000Geffen^000000 to the far West, and";
+	mes "^000099Al De Baran^000000 to the far North. Enjoy";
+	mes "your time in Prontera.";
+	close;
+}
+
+
+prontera.vhm,31,212,0 script Billboard 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "~WANTED~";
+	mes "ROGM01";
+	mes "DEAD or ALIVE";
+	mes "*Kill Stealing in glast heim*";
+	mes "~REWARD~";
+	mes "50,000 zeny";
+	mes "contact: ROGM02";
+	close;
+}
+
+prontera.vhm,156,197,0 script "Prontera Bulletin" 111,{
+	mes "^996633- The Prontera Bulletin Reads -^000000";
+	mes "Wanted: Two clip accessories";
+	mes "please contact...";
+	mes "- Name appears to be worn off -";
+	mes " ";
+	mes "Selling: used Bastard Sword";
+	mes "will take any offer!";
+	mes "Contact Abramulious";
+	mes " ";
+	mes "Help Wanted: buying or selling a ";
+	mes "used Peco Peco?";
+	mes "Contact Grasisium in Morroc now!";
+	close;
+}
+
+prontera.vhm,165,305,0 script Billboard 111,{
+	mes "^996633- The Billboard Reads -^000000";
+	mes "We hope you enjoy your stay in";
+	mes "Prontera.";
+	close;
+}
+
+prontera.vhm,278,212,0 script Sign 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "Please help keep Prontera a clean place.";
+	close;
+}
+
+prontera.vhm,158,214,0 script "Sign Post" 111,{
+	mes "^996633- The Sign Post Reads -^000000";
+	mes "North to Prontera Castle";
+	mes "North to Al De Baran";
+	mes "Northwest to Geffen";
+	mes "East to Prontera Fields";
+	mes "South to Prontera Fields";
+	mes "Southeast to Alberta";
+	mes "Southwest to Morroc";
+	mes "Southwest to Comodo";
+	mes "West to Prontera Fields";
+	close;
+}
+
+prontera.vhm,147,305,0 script Sign 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "- Old, torn gibberish you can't";
+	mes "read -";
+	close;
+}
+
+
+prontera.vhm,145,304,0 script Sign 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "Note:";
+	mes "I lost my cart in Mt. Mjolnir, if";
+	mes "someone finds it please tell me, my";
+	mes "life was in that bucket of goods!";
+	close;
+}
+
+//- Town Morroc
+morocc.vhm,168,266,0 script Sign 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "Welcome to Morroc";
+	close;
+}
+
+morocc.vhm,168,264,0 script Billboard 111,{
+	mes "^996633- The Billboard Reads -^000000";
+	mes "^FF0000Battle Royal!^000000";
+	mes "So you know what it takes to battle";
+	mes "someone in no holds  barred,";
+	mes "Player vs Player game of death!";
+	mes "head to Prontera if you think you";
+	mes "have what it takes!";
+	close;
+}
+
+morocc.vhm,298,211,0 script Sign 111,{
+	mes "^996633- The Sign Reads -^000000";
+	mes "Welcome to Morrorc.";
+	close;
+}
+
+moc_fild19.vhm,107,101,5 script "Bulletin Board" 111,{
+	mes "[Sphinx]";
+	mes "^FF0000Caution!^000000";
+	mes "The Sphix consists of 5 levels.";
+	mes "the dungeon is suited for training";
+	mes "well-experienced adventurers.";
+	next;
+	mes "[Sphinx]";
+	mes "There are many aggressive monsters";
+	mes "residing in the Sphinx, and it is";
+	mes "advised to run away if you happen";
+	mes "to be surrounded by them.";
+	next;
+	mes "[Sphinx]";
+	mes "In the fifth level, the boss";
+	mes "monster ^CC0000Pharaoh^000000 will appear at";
+	mes "certain times. exorcise with";
+	mes "extreme prejudice.";
+	close;
+}
+
+moc_ruins.vhm,61,164,5 script "Bulletin Board" 837,{
+	mes "[Pyramids]";
+	mes "^FF0000Caution!^000000";
+	mes "The Pyramids are made up of a total";
+	mes "of 7 levels: 4 levels are above the ";
+	mes "earth, and the rest are ";
+	mes "underground.";
+	next;
+	mes "[Pyramids]";
+	mes "The Thief guild, where people can";
+	mes "change their jobs to Thief, is";
+	mes "loacted in the first level.";
+	next;
+	mes "[Pyramids]";
+	mes "The first few levels are suited for";
+	mes "newer adventurers to explore, but";
+	mes "the dangers grow greater as you";
+	mes "explorer deeper into the dungeon.";
+	next;
+	mes "[Pyramids]";
+	mes "In the fourth level, the boss";
+	mes "monster ^CC0000Osiris^000000 will reveal himself";
+	mes "at certain times. in the seventh";
+	mes "level, the boss ^CC0000Amon Ra^000000 will";
+	mes "manifest as well.";
+	close;
+}
+
+morocc.vhm,32,174,0 script Bulletin 111,{
+	mes "^996633- The Bulletin Reads -^000000";
+	mes "^00CCFFMorroc women up in arms!^000000";
+	mes "A recent study has shown that the";
+	mes "majority of male citizens in";
+	mes "Morroc prefer to women of Feffen.";
+	mes "90 of the 100 male citizens";
+	mes "of Morroc claimed that they have";
+	next;
+	mes "^996633- The Bulletin Continued -";
+	mes " 'I just prefer their company";
+	mes "better, that's all...' said one";
+	mes "Morroc man.";
+	mes " ";
+	mes " 'It's not like I'm against Morroc";
+	mes " women or anything, so what's the";
+	mes " problem...' ";
+	close;
+}
+
+morocc.vhm,152,110,5 script "Bulletin Board" 837,{
+	mes "[Morroc: The Frontier Town]";
+	mes "Welcome to Morroc, the City of the";
+	mes "Desert. Morroc was built on an";
+	mes "oasis, so this town can accomodate";
+	mes "its many visitors and travelers.";
+	next;
+	mes "[Morroc: The Frontier Town]";
+	mes "Morroc Castle lies in the center of";
+	mes "this city. please feel free to";
+	mes "explore this town, and enjoy its";
+	mes "unique atmosphere. However, watch";
+	mes "your pockets and beware of rogues";
+	mes "and theives.";
+	next;
+	mes "[Morroc: The Frontier Town]";
+	mes "From Morroc, the ^FF0000Pyramid Dungeon^000000";
+	mes "can be found to the Northwest, and";
+	mes "the ^FF0000Sphinx Dungeon^000000 can be found to";
+	mes "the West. To the Southeast, you may";
+	mes "find ^FF0000Ant Hell^000000.";
+	next;
+	mes "[Morroc: The Frontier Town]";
+	mes "The Assassin guild is rumored to be";
+	mes "located to the Southeast. When you";
+	mes "head East from Morroc, and then";
+	mes "North, you will arrive at";
+	mes "^0000FFProntera^000000. ";
+	close;
+}
+
+//- Town Payon
+payon.vhm,178,108,4 script "Bulletin Board" 837,{
+	mes "[Payon: The Mountain City]";
+	mes "Welcome to Payon, the mountain city.";
+	mes "Payon has recently been renovated, so we hope you enjoy the clean, nice streets and buildings.";
+	next;
+	mes "[Payon: The Mountain City]";
+	mes "Payon is famous for being a city of archery.";
+	mes "For a long time, it's citizens have made their living by hunting with bows and arrows.";
+	mes "Bow crafting and trainign have also been developed here in Payon.";
+	next;
+	mes "[Payon: The Mountain City]";
+	mes "Payon has various armor and weapons, especially for the Archer class.";
+	mes "If you wish to become an Archer, it would be best to become familiar with this city.";
+	next;
+	mes "[Payon: The Mountain City]";
+	mes "Payon Palace is located in the center of the city.";
+	mes "The Archer Village is located in the Northern part of Payon.";
+	mes "There, people can change their jobs to Archer.";
+	next;
+	mes "[Payon: The Mountain City]";
+	mes "Near the Arhcer Village, you can find the ^663333Payon Cave^000000 where Undead monsters reside.";
+	next;
+	mes "[Payon: The Mountain City]";
+	mes "From Payon, ^333366Alberta^000000 is located to the Southeast, and ^996633Morroc^000000 is to the West.";
+	mes "^666699Izlude^000000 and ^3366CCProntera^000000 are North of Payon.";
+	mes "Enjoy your travels.";
+	close;
+}
+
+pay_arche.vhm,39,134,4 script "Bulletin Board" 837,{
+	mes "[Payon Cave]";
+	mes "^0000FFCaution!";
+	mes "The Payon Cave sonsists of 5 levels full of Undead and Demon monssters.";
+	mes "Beware of swarms of Hydra's on the 3rd and 4th level.";
+	next;
+	mes "[Payon Cave]";
+	mes "on the 5th level, there is a oretty, yet dreadfull boss monster known as ^0000FFMoonlight^000000 that spawns at certain times.";
+	mes "Approach with exstreme caution.";
+	close;
+}
+
+pay_arche.vhm,79,31,4 script "Bulletin Board" 837,{
+	mes "[Archer Village]";
+	mes "Welcome to the Payon Archer Village where Novices can change their jobs to Archer.";
+	next;
+	mes "[Archer Village]";
+	mes "The Archer Village provides Bows and Tights that are available for purchase.";
+	mes "These are necessities for new Archers and Hunters.";
+	next;
+	mes "[Archer Village]";
+	mes "If you wish to become an Archer, it is suggested to become fammiliar with this village.";
+	mes "For aspiring Hunters, the Hunter Guild is located in a field that is East of Payon.";
+	close;
+}
+

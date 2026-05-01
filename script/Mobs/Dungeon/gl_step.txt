@@ -1,0 +1,4 @@
+gl_step.vhm,0,0,0,0	monster	Mimic 1191,30,60000,30000,0
+gl_step.vhm,0,0,0,0	monster	Raydric_Archer 1276,30,0,0,0
+gl_step.vhm,0,0,0,0	monster	Wind_Ghost 1263,15,0,0,0
+gl_step.vhm,0,0,0,0	monster	Wraith 1192,50,0,0,0

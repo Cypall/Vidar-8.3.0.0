@@ -1,0 +1,809 @@
+//===========================================
+// Emperium.org
+// Credits: CutyCat of RagnaGate.net 
+// Translation: Lune, who else?  
+// scripted by illogik(tk)
+// edited by: bomber32 ( npc konekone and nan hyang 
+//            relocate position compatible for new payon maps)
+//==========================================
+payon_in03.vhm,10,30,5 script Konekone 70,{
+	mes "[Konekone]";
+	mes "What a fine day fellow Adventurer";
+	mes "Have you heard about the hairband?";
+	next;
+	menu "Tell me about the Hairband?",info,"Exchange",give,"Cancel",close;
+info:
+	mes "[Konekone]";
+	mes "Well to start off its a black, small hairband representing the look of a ear of a cat. This is based upon hair ornament Morroc's Hwikebain had. It doesn't move.";
+	next;
+	mes "[Konekone]";
+	mes "It requires:";
+	mes "1 - Cat Hairband";
+	mes "200 - Soft Feather";
+	mes "1 - Black Dyestuff";
+	mes "10,000 zeny";
+	close;
+give:
+	checkitem 2213,1,-,items;
+	checkitem 7063,200,-,items;
+	checkitem 983,1,-,items;
+	check zeny > 9999,-,items;
+	delitem 2213,1;
+	delitem 983,1;
+	delitem 7063,200;
+	set zeny - 10000;
+	additem 5057,1;
+	mes "[Konekone]";
+	mes "Congradulations, here they are. Have fun!";
+close:
+	close;
+items:
+	mes "[Konekone]";
+	mes "You are missing certain requirements please check them again.";
+	close;
+}
+
+payon_in03.vhm,56,30,5 script "Nan Hyang" 70,{
+	mes "[Nan Hyang]";
+	mes "Pssst... ever heard of a Posture hat?";
+	next;
+	menu "No, what is it?",info,"Exchange",give,"Cancel",close;
+info:
+	mes "[Nan Hyang]";
+	mes "You put a book, then an apple at top of it, and you walk with it on top of your head to learn how to have a proper posture when you walk. You have to walk without dropping the apple or the book. Maybe it'll be a great way for people who are careless to become careful.";
+	next;
+	mes "[Nan Hyang]";
+	mes "Requirements:";
+	mes "1 - Apple of Archer";
+	mes "1 - Book";
+	close;
+give:
+	checkitem 2285,1,-,items;
+	checkitem 1550,1,-,items;
+	delitem 2285,1;
+	delitem 1550,1;
+	additem 5073,1;
+	mes "[Nan Hyang]";
+	mes "Congradulations, here they are. Have fun!";
+close:
+	close;
+items:
+	mes "[Nan Hyang]";
+	mes "You are missing certain requirements please check them again.";
+	close;
+}
+
+pay_dun04.vhm,120,124,5 script "Nine Tails" 1180,{
+	checkitem 1022,999,-,leave;
+	delitem 1022,999;
+	mes "[Nine Tails]";
+	mes "Ahh yes just what I need extra Fur :D, I thank you for this and shall reward you.";
+	additem 5069,1;
+	next;
+	mes "[Nine Tails]";
+	mes "This is a mask based upon masks some assassination group wears to hide their identity. It gives you that strange feeling of speed when you wear it.";
+	close;
+leave:
+	mes "[Nine Tails]";
+	mes "I need 999 Fox's Tail";
+	close;
+}
+
+prontera.vhm,164,232,3 script Netpia 91,{
+	mes "[Netpia]";
+	mes "This big red ribbon is based upon the same ribbon a nature-loving dancer used to wear.";
+	next;
+	menu "I want one!!",info,"Exchange",give;
+info:
+	mes "[Netpia]";
+	mes "Requirements:";
+	mes "1 - Big Ribbon";
+	mes "1 - Slotted Ribbon";
+	mes "1 - Silk Ribbon";
+	close;
+give:
+	checkitem 2244,1,-,info;
+	checkitem 2209,1,-,info;
+	checkitem 10007,1,-,info;
+	delitem 2244,1;
+	delitem 2209,1;
+	delitem 10007,1;
+	mes "[Netpia]";
+	mes "I thank you for these, here you go.";
+	additem 5083,1;
+	close;
+}
+
+geffen.vhm,128,148,5 script Arjen 125,{
+	mes "[Arjen]";
+	mes "Hey there.. how can I help you today?";
+	next;
+	menu "X-Shaped",sub1,"Bandage",sub2,"Flower Hairpin",sub3;
+sub1:
+	set @hat_q = 1;
+	goto menu_c;
+sub2:
+	set @hat_q = 2;
+	goto menu_c;
+sub3:
+	set @hat_q = 3;
+	goto menu_c;
+info:
+	check @hat_q = 1,info1,-;
+	check @hat_q = 2,info2,-;
+	check @hat_q = 3,info3,-;
+	close;
+menu_c:
+	menu "Make item",-,"Info",info;
+	check @hat_q = 2,check2,-;
+	check @hat_q = 3,check3,-;
+	checkitem 2294,1,-,info1;
+	checkitem 7220,400,-,info1;
+	delitem 2294,1;
+	delitem 7220,400;
+	mes "[Arjen]";
+	mes "A cute hairpin in the shape of X. ";
+	additem 5079,1;
+	close;
+check2:
+	checkitem 970,1,-,info3;
+	checkitem 930,500,-,info3;
+	delitem 970,1;
+	delitem 930,500;
+	mes "[Arjen]";
+	mes "Made by putting two white bandages in a cross shape. Try to use this to act like you are hurt. ";
+	additem 5063,1;
+	close;
+check3:
+	check zeny < 20000,info3,-;
+	checkitem 2270,1,-,info3;
+	checkitem 999,10,-,info3;
+	delitem 2270,1;
+	delitem 999,10;
+	set zeny - 20000;
+	mes "[Arjen]";
+	mes "A hairpin with bright red flower on top of it. Used to stop your hair from falling down. ";
+	additem 5061,1;
+	close;
+info1:
+	mes "[Arjen]";
+	mes "Required items:";
+	mes "1 - Stellar";
+	mes "400 - Ectoplasm";
+	close;
+info2:
+	mes "[Arjen]";
+	mes "Required items:";
+	mes "1 - Alcohol";
+	mes "500 - Rotten Bandage";
+	close;
+info3:
+	mes "[Arjen]";
+	mes "Required items:";
+	mes "1 - Romantic Leaf";
+	mes "10 - Steel";
+	mes "20,000 Zeny";
+	close;
+}
+
+geffen.vhm,84,189,5 script Ses 73,{
+	mes "[Ses]";
+	mes "A cute red hairpin with a shape of a tulip. ";
+	next;
+	menu "Sounds interesting..",info,"Exchange",give;
+info:
+	mes "[Ses]";
+	mes "Requirements:";
+	mes "1 - Smile Mask";
+	mes "1 - Red Dyestuff";
+	close;
+give:
+	checkitem 2278,1,-,info;
+	checkitem 975,1,-,info;
+	delitem 2278,1;
+	delitem 975,1;
+	mes "[Ses]";
+	mes "I always keep my word.";
+	additem 5077,1;
+	close;
+}
+
+geffen.vhm,66,87,5 script Aipo 50,{
+	mes "[Aipo]";
+	mes "Made with a ... head of the mushroom that somehow grew on its own in a cold, damp place. Obviously, you can't eat it. :P";
+	next;
+	menu "OMG I WANT ONE!!!",info,"Exchange",give;
+info:
+	mes "[Aipo]";
+	mes "Requirements:";
+	mes "300 - Mushroom Spore";
+	close;
+give:
+	checkitem 921,300,-,info;
+	delitem 921,300;
+	mes "[Aipo]";
+	mes "Weee more for me :D";
+	additem 5082,1;
+	close;
+}
+
+morocc.vhm,274,79,5 script Traveler 82,{
+	mes "[Traveler]";
+	mes "I can make acouple headgears.. which one will it be?";
+	next;
+	menu "Annoyed Raccoon Dog",info1,"Fresh Bluish Fish",info2,"Droping Cat",info3,"Transform Leaf",info4;
+info1:
+	set @hats_q = 1;
+	mes "[Traveler]";
+	mes "I require the following items:";
+	mes "10 - Raccoon Leaf";
+	mes "100 - Seo Otter skin";
+	mes "1000 - Acorn";
+	next;
+	goto menu_q;
+info2:
+	set @hats_q = 2;
+	mes "[Traveler]";
+	mes "I require the following items:";
+	mes "1 - Rotten Fish";
+	mes "1 - Fish Tail";
+	mes "50 - Sushi";
+	mes "100 - Sticky Mucus";
+	mes "300 - Rotten Scale";
+	next;
+	goto menu_q;
+info3:
+	set @hats_q = 3;
+	mes "[Traveler]";
+	mes "I require the following items:";
+	mes "1 - Slotted Circlet";
+	mes "1 - Black Dyestuff";
+	mes "300 - Cat Doll";
+	next;
+	goto menu_q;
+info4:
+	set @hats_q = 4;
+	mes "[Traveler]";
+	mes "I require the following items:";
+	mes "600 - Raccoon Leaf";
+	next;
+	goto menu_q;
+menu_q:
+menu "Make it.",-,"Quit",leave;
+	check @hats_q = 4,sub3,-;
+	check @hats_q = 3,sub2,-;
+	check @hats_q = 2,sub1,-;
+	check @hats_q = 1,-,leave;
+	checkitem 945,10,-,info1;
+	checkitem 7065,100,-,info1;
+	checkitem 1026,1000,-,info1;
+	delitem 945,10;
+	delitem 7065,100;
+	delitem 1026,1000;
+	mes "[Traveler]";
+	mes "A doll based upon the look of bored and tired Smokey in the hot summer.";
+	additem 5084,1;
+	close;
+sub1:
+	checkitem 624,1,-,info2;
+	checkitem 1023,1,-,info2;
+	checkitem 551,50,-,info2;
+	checkitem 938,100,-,info2;
+	checkitem 959,300,-,info2;
+	delitem 624,1;
+	delitem 1023,1;
+	delitem 551,50;
+	delitem 938,100;
+	delitem 959,300;
+	mes "[Traveler]";
+	mes "A helm that looks like a tasty, fat, bluish-colored fish. It feels like it smells... if it does, it's probably just you.";
+	additem 5065,1;
+	close;
+sub2:
+	checkitem 2233,1,-,info3;
+	checkitem 983,1,-,info3;
+	checkitem 7206,300,-,info3;
+	delitem 2233,1;
+	delitem 983,1;
+	delitem 7206,300;
+	mes "[Traveler]";
+	mes "A doll made to allow users to carry it above their head. If you somehow hear a cat crying or feeling something's moving on your head... it's just you.";
+	additem 5051,1;
+	close;
+sub3:
+	checkitem 945,600,-,info4;
+	delitem 945,600;
+	mes "[Traveler]";
+	mes "A same leaf a Smokey uses to transform itself. Although... it seems the transformation power is only for Smokies.";
+	additem 5064,1;
+	close;
+leave:
+	close;
+}
+
+xmas.vhm,147,134,5 script Traveler 713,{
+	checkitem 5030,1,-,items;
+	checkitem 7213,100,-,items;
+	checkitem 7127,100,-,items;
+	checkitem 7161,300,-,items;
+	delitem 5030,1;
+	delitem 7213,100;
+	delitem 7217,100;
+	delitem 7161,300;
+	mes "[Traveler]";
+	mes "A hat that shows very cute facial expression of a cute little bear. Would make a great gift.";
+	additem 5059,1;
+	close;
+items:
+	mes "[Traveler]";
+	mes "I need the following:";
+	mes "1 - Panda Hat";
+	mes "100 - Needle Pouch";
+	mes "100 - Reel";
+	mes "300 - Leather of Black Bear";
+	close;
+}
+
+xmas.vhm,184,267,5 script "Pretty Rency" 714,{
+	checkitem 5084,1,-,items;
+	checkitem 5064,1,-,items;
+	delitem 5084,1;
+	delitem 5064,1;
+	mes "[Pretty Rency]";
+	mes "A hat based upon the look of a cute sea otter. There's a strange power vested within, maybe because process of making this hat is magical.";
+	additem 5078,1;
+	close;
+items:
+	mes "[Pretty Rency]";
+	mes "I need the following:";
+	mes "1 - Annoyed Raccoon Hat";
+	mes "1 - Transform Leaf";
+	close;
+}
+
+xmas_in.vhm,36,39,0 script Seller 70,{
+	mes "[Seller]";
+	mes "I have the skill to make you headgears... which will it be for today?";
+	next;
+	menu "Party Hat",give1a,"Straw Hat",give2a,"Cowboy's Hat",give3a,"Sombrero",give4a,"Furry Hat",give5a;
+give1a:
+	checkitem 2236,1,-,items1a;
+	checkitem 7111,100,-,items1a;
+	checkitem 7151,100,-,items1a;
+	delitem 2236,1;
+	delitem 7111,100;
+	delitem 7151,100;
+	mes "[Seller]";
+	mes "A hat used in parties where everyone gathers, when you wear it, it gives you that happy feeling.";
+	additem 5060,1;
+	close;
+items1a:
+	mes "[Seller]";
+	mes "Requirements:";
+	mes "1 - Santa Hat";
+	mes "100 - Waxed Paper";
+	mes "100 - Oily Paper";
+	close;
+give2a:
+	checkitem 2280,1,-,items2a;
+	checkitem 7197,300,-,items2a;
+	checkitem 7150,300,-,items2a;
+	delitem 2280,1;
+	delitem 7197,300;
+	delitem 7150,300;
+	mes "[Seller]";
+	mes "A cool hat made with straws. Somehow, it gives you the wish to go out, and do some farm work.";
+	additem 5062,1;
+	close;
+items2a:
+	mes "[Seller]";
+	mes "Requirements:";
+	mes "1 - Sakkat";
+	mes "300 - Tough Wood Vines";
+	mes "300 - Bamboo Piece";
+	close;
+give3a:
+	checkitem 2248,1,-,items3a;
+	checkitem 7120,4,-,items3a;
+	checkitem 7030,108,-,items3a;
+	checkitem 7198,108,-,items3a;
+	delitem 2248,1;
+	delitem 7120,4;
+	delitem 7030,108;
+	delitem 7198,108;
+	mes "[Seller]";
+	mes "A hat that gives you feeling of sand wind in the vast nothingness in Wild West. Gives you that desire to suddenly act all tragic around. ";
+	additem 5075,1;
+	close;
+items3a:
+	mes "[Seller]";
+	mes "Requirements:";
+	mes "1 - Western Grace";
+	mes "4 - Burning Horseshoe";
+	mes "108 - Claw of Desert Wolf";
+	mes "108 - Soft Leaf";
+	close;
+give4a:
+	checkitem 5062,1,-,items4a;
+	checkitem 1907,1,-,items4a;
+	checkitem 952,50,-,items4a;
+	delitem 5062,1;
+	delitem 1907,1;
+	delitem 952,50;
+	mes "A traditional hat of a race of people living in a very hot region. It has a small round horn-like top.";
+	additem 5067,1;
+	close;
+items4a:
+	mes "[Seller]";
+	mes "Requirements:";
+	mes "1 - Straw Hat";
+	mes "1 - Guitar";
+	mes "50 - Needle of Cactus";
+	close;
+give5a:
+	checkitem 2226,1,-,items5a;
+	checkitem 7038,500,-,items5a;
+	delitem 2226,1;
+	delitem 7038,500;
+	mes "A furry hat designed to keep your head warm and comfortable... but there seems to be people who just wears this for the coolness factor of it.";
+	additem 5076,1;
+	close;
+items5a:
+	mes "[Seller]";
+	mes "Requirements:";
+	mes "1 - Cap";
+	mes "500 - Fur Strand";
+	close;
+}
+
+yuno.vhm,301,188,3 script Genbolt 97,{
+	checkitem 7216,300,-,items;
+	checkitem 7097,300,-,items;
+	checkitem 982,1,-,items;
+	checkitem 2211,1,-,items;
+	delitem 7216,300;
+	delitem 7097,300;
+	delitem 982,1;
+	delitem 2211,1;
+	mes "[Genbolt]";
+	mes "Created with burning desire and determination, when you wear this, it makes you suddenly clench your fist without you knowing.";
+	additem 5070,1;
+	close;
+items:
+	mes "[Genbolt]";
+	mes "I require the following items:";
+	mes "300 - Red Muffler";
+	mes "300 - Burning Heart";
+	mes "1 - White Dyestuff";
+	mes "1 - Bandana";
+	close;
+}
+
+yuno.vhm,246,51,6 script "Old Blacksmith" 63,{
+	mes "[Old Blacksmith]";
+	mes "Which path do you take?";
+	next;
+	menu "Angel",give1a,"Devil",give2a;
+give2a:
+	checkitem 2255,1,-,items2a;
+	checkitem 2286,1,-,items2a;
+	check zeny > 19999,-,items2a;
+	delitem 2255,1;
+	delitem 2286,1;
+	set zeny - 20000;
+	mes "[Old Blacksmith]";
+	mes "An ear accessory made with black wings, you can feel devil's refined nobility and charisma. The wing seems to give you mysterious power when you equip it.";
+	additem 5068,1;
+	close;
+items2a:
+	mes "[Old Blacksmith]";
+	mes "Requirements: ";
+	mes "1 - Demon Wing";
+	mes "1 - Elven Ears";
+	mes "20,000 Zeny";
+	close;
+give1a:
+	checkitem 2254,1,-,items1a;
+	checkitem 2286,1,-,items1a;
+	check zeny > 19999,-,items1a;
+	delitem 2254,1;
+	delitem 2286,1;
+	set zeny - 20000;
+	mes "[Old Blacksmith]";
+	mes "An ear accessory made with beautiful, white, and holy wing of the angel. The wings seem to give you mysterious strength upon equipping.";
+	additem 5074,1;
+	close;
+items1a:
+	mes "[Old Blacksmith]";
+	mes "Requirements: ";
+	mes "1 - Angel Wing";
+	mes "1 - Elven Ears";
+	mes "20,000 Zeny";
+	close;
+}
+
+yuno_in03.vhm,30,19,5 script Neris 101,{
+	mes "[Neris]";
+	mes "I am capabale of making headgears.. Which one will it be for today?";
+	next;
+	menu "Large Goldenbell",give1a,"Crown of Mistress",give2a,"Crown of the Ancient Queen",give3a;
+give1a:
+	checkitem 10016,1,-,items1a;
+	checkitem 714,1,-,items1a;
+	checkitem 969,3,-,items1a;
+	check zeny > 19999,-,items1a;
+	delitem 10016,1;
+	delitem 714,1;
+	delitem 969,3;
+	set zeny - 20000;
+	mes "[Neris]";
+	mes "This is based upon accessory that popular monster Sohee wears on her head. The large bell signifies extreme cuteness of this.";
+	additem 5091,1;
+	close;
+items1a:
+	mes "[Neris]";
+	mes "Requirements:";
+	mes "1 - Goldenbell";
+	mes "1 - Emperium";
+	mes "3 - Gold";
+	mes "20,000 Zeny";
+	close;
+give2a:
+	checkitem 2249,1,-,items2a;
+	checkitem 714,1,-,items2a;
+	checkitem 969,3,-,items2a;
+	check zeny > 19999,-,items2a;
+	delitem 2249,1;
+	delitem 714,1;
+	delitem 969,3;
+	set zeny - 20000;
+	mes "[Neris]";
+	mes "This is based upon the very crown that Mistress wears to show that she is indeed the queen of her hive. The crown itself seems to give the feeling of refinement.";
+	additem 5081,1;
+	close;
+items2a:
+	mes "[Neris]";
+	mes "Requirements:";
+	mes "1 - Coronet";
+	mes "1 - Emperium";
+	mes "3 - Gold";
+	mes "20,000 Zeny";
+	close;
+give3a:
+	checkitem 10006,1,-,items3a;
+	checkitem 714,1,-,items3a;
+	checkitem 969,3,-,items3a;
+	check zeny > 19999,-,items3a;
+	delitem 10006,1;
+	delitem 714,1;
+	delitem 969,3;
+	set zeny - 20000;
+	mes "[Neris]";
+	mes "A hair ornament for the ancient queen, it was made to give feelings of high refinement of the queen. It is decorated with gold, and other fine jewelry.";
+	additem 5080,1;
+	close;
+items3a:
+	mes "[Neris]";
+	mes "Requirements:";
+	mes "1 - Queen's Hair Ornament";
+	mes "1 - Emperium";
+	mes "3 - Gold";
+	mes "20,000 Zeny";
+	close;
+}
+
+
+alde_alche.vhm,87,181,4	script Muslam	89,{
+	checkitem 1095,3000,-,info;
+	checkitem 2288,1,-,info;
+	delitem 1095,3000;
+	delitem 2288,1;
+	mes "[Muslam]";
+	mes "This is a mask of the clocktower's popular monster, Alarm. It is very tough-built. ";
+	additem 5086,1;
+	close;
+info:
+	mes "[Muslam]";
+	mes "If you obtain me the following item I will trade you a mask for it. Deal?";
+	mes "Items:";
+	mes "1 - Scratch Mask";
+	mes "3000 - Needle of Alarm";
+	close;
+}
+
+aldebaran.vhm,238,218,3	script Merunte 72,{
+	checkitem 1403,1,-,info;
+	checkitem 5049,1,-,info;
+	checkitem 7101,10,-,info;
+	check zeny >= 10000,-,info;
+	delitem 1403,1;
+	delitem 5049,1;
+	delitem 7107,10;
+	set zeny - 10000;
+	mes "[Merunte]";
+	mes "A hairband of specific race, it has a blue triangle shape, with a large white feather. When you yell while wearing this, you could feel the great nature. ";
+	additem 5071,1;
+	close;
+info:
+	mes "[Merunte]";
+	mes "Get me the following item and I'll get you a better looking gear. :D";
+	mes "Items:";
+	mes "1 - Indian Fillet";
+	mes "1 - Striped Bandana";
+	mes "10 - Peco's Feather";
+	close;
+}
+
+gef_fild14.vhm,124,264,5 script "High Orc" 1213,{
+	check orc_helm_q = 1,give1a,-;
+	check orc_helm_q = 2,give2a,-;
+	check orc_helm_q = 3,give3a,-;
+	check orc_helm_q = 4,give4a,-;
+	mes "[High Orc]";
+	mes "What is it that you want?";
+	next;
+	menu "Continue",info,"Cancel",-;
+	close;
+info:
+	mes "[High Orc]";
+	mes "I am able to forge an Orc Hero Helmet for you.. but I will require certain items before I can make it.";
+	next;
+	menu "What is it?",desc,"Requirements",items;
+desc:
+	mes "[High Orc]";
+	mes "A helm given only to the true Orc Warrior. This proves that the orc wearing this is the most brave and greatest orc of them all.";
+	close;
+items:
+	set orc_helm_q = 1;
+	mes "[High Orc]";
+	mes "First I require that you give me 10,000 Jellopies, before we can continue.";
+	close;
+give1a:
+	check orc_helm_jellopy >= 10000,quest1done,-;
+	mes "[HIgh Orc]";
+	mes "I see you've returned..";
+	next;
+	menu "Check Jellopy stats",checkj,"Give Jellopy",-;
+	mes "[High Orc]";
+	mes "So how much jellopy are you going to give me today?";
+	next;
+	getitemamount 909,@jellopy;
+	check @jellopy == 0,leave1a,-;
+	delitem 909,@jellopy;
+	set orc_helm_jellopy + @jellopy;
+	check orc_helm_jellopy >= 10000,quest1done,-;
+	goto leave1a;
+quest1done:
+	set orc_helm_q = 2;
+	mes "[High Orc]";
+	mes "Very good... now I will require 100 Orcish Voucher!";
+	next;
+	close;
+checkj:
+	set @num = 10000;
+	set @total = orc_helm_jellopy;
+	set @num - @total;
+	mes "[High Orc]";
+	mes "hmm your current jellopy stats.. ";
+	mes "TotalGiven:";
+	mes "$[orc_helm_jellopy]";
+	mes " ";
+	mes "How many more to go?";
+	mes "$[@num]";
+	close;
+give2a:
+	check orc_helm_ov >= 100,quest2done,-;
+	mes "[High Orc]";
+	mes "ahh what a nice day..";
+	next;
+	menu "Check Orc Vouch stats",checkov,"Give Orc Vouch",-;
+	getitemamount 931,@orcv1;
+	check @orcv1 == 0,leave2a,-;
+	delitem 931,@orcv1;
+	set orc_helm_ov + @orcv1;
+	check orc_helm_ov >= 100,quest2done,-;
+	goto leave2a;
+quest2done:
+	set orc_helm_q = 3;
+	mes "[High Orc]";
+	mes "Ahh nicely done... now get me 10,000 Orcish Voucher since you did so well with 100!";
+	close;
+checkov:
+	set @num3 = 100;
+	set @total3 = orc_helm_ov;
+	set @num3 - @total3;
+	mes "[High Orc]";
+	mes "hmm your current orc voucher stats.. ";
+	mes "TotalGiven:";
+	mes "$[orc_helm_ov]";
+	mes " ";
+	mes "How many more to go?";
+	mes "$[@num3]";
+	close;
+give3a:
+	check orc_helm_ov1 >= 10000,quest3done,-;
+	mes "[High Orc]";
+	mes "ahh what a nice day..";
+	next;
+	menu "Check Orc Vouch stats",checkov1,"Give Orc Vouch",-;
+	getitemamount 931,@orcv;
+	check @orcv == 0,leave3a,-;
+	delitem 931,@orcv;
+	set orc_helm_ov1 + @orcv;
+	check orc_helm_ov1 >= 10000,quest3done,-;
+	goto leave3a;
+quest3done:
+	set orc_helm_q = 4;
+	mes "[High Orc]";
+	mes "You are indeed good at this... here you will need to hold on to these for i will need them later.";
+	additem 968,1;
+	additem 2299,1;
+	next;
+	mes "[High Orc]";
+	mes "You are almost done... i will now need 100 Orc Emblem";
+	close;
+checkov1:
+	set @num2 = 10000;
+	set @total2 = orc_helm_ov1;
+	set @num2 - @total2;
+	mes "[High Orc]";
+	mes "hmm your current orc voucher stats.. ";
+	mes "TotalGiven:";
+	mes "$[orc_helm_ov1]";
+	mes " ";
+	mes "How many more to go?";
+	mes "$[@num2]";
+	close;
+give4a:
+	check orc_helm_oe >= 100,quest4done,-;
+	mes "[High Orc]";
+	mes "ahh what a nice day..";
+	next;
+	menu "Check Orc Emblem stats",checkoe,"Give Orc Emblem",-;
+	getitemamount 968,@orce;
+	check @orce == 0,leave4a,-;
+	delitem 968,@orce;
+	set orc_helm_oe + @orce;
+	check orc_helm_oe >= 100,quest4done,-;
+	goto leave4a;
+quest4done:
+	checkitem 2299,1,-,leave4a;
+	delitem 2299,1;
+	set orc_helm_q = 0;
+	set orc_helm_ov = 0;
+	set orc_helm_oe = 0;
+	set orc_helm_ov1 = 0;
+	set orc_helm_jellopy = 0;
+	mes "[High Orc]";
+	mes "Congradulations, Here is your $charaname Orc Hero Helmet.";
+	additem 5094,1;
+	close;
+checkoe:
+	set @num3 = 100;
+	set @total3 = orc_helm_oe;
+	set @num3 - @total3;
+	mes "[High Orc]";
+	mes "hmm your current orc emblem stats.. ";
+	mes "TotalGiven:";
+	mes "$[orc_helm_oe]";
+	mes " ";
+	mes "How many more to go?";
+	mes "$[@num3]";
+	close;
+leave1a:
+	mes "[High Orc]";
+	mes "Hurry up then! 10,000 jellopies REMEMBER!!";
+	close;
+leave2a:
+	mes "[High Orc]";
+	mes "Hurry up! 100 Orcish Voucher REMEMBER!!";
+	close;
+leave3a:
+	mes "[High Orc]";
+	mes "Hurry up! 10,000 Orcish Voucher REMEMBER!!";
+	close;
+leave4a:
+	mes "[High Orc]";
+	mes "Hurry up! 100 Orc Emblem and an Orc Helm REMEMBER!!";
+	close;
+}

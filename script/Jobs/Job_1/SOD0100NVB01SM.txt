@@ -1,0 +1,262 @@
+//Swordsman Job Quest
+//Writer: Shadow of Death
+
+//Comments:
+//  Users of this script are free to make any personal changes that they see fit, but do NOT, I repeat, do NOT, change the name of the original writer
+
+//Variables in use:
+  
+
+//===========================
+
+//  NPC 1 - Swordsman Leader
+
+//===========================
+
+izlude_in.vhm,74,172,4		script			"Markaelus Ikhran"		119,{
+mes "[^000080 Markaelus Ikhran ^000000]";
+check SJQM = 0,-,ELS;
+  set SJQM = 1;
+  check Job > 24,AB1,-;
+    check Job > 6,AB2,-;
+      check Job = 0,NVA,-;
+        check Job = 1,SWA,-;
+      OTA:
+// Job: Other
+          mes "Good day, um...";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "^...000080$charaname^000000, thank you.  Welcome to the ^401010Swordsman Association^000000.";
+          close;
+        SWA:
+// Job: Swordsman
+          mes "Good day young ^800000Swordsman^000000, what's your name?";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "All right ^000080$charaname^000000, good to see you.";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "I hope you'll be able to help restore the peace around here.";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "Well, I guess I should waste too much of your time, so I'll end there.";
+          close;
+      NVA:
+// Job: Novice
+        mes "Good day, what's your name?";
+        next;
+        mes "[^000080 Markaelus Ikhran ^000000]";
+        mes "Okay ^000080$charaname^000000, what can I do for you?";
+      MNU:
+        next;
+        menu "Apply for ^800000Swordsman^000000",APP,"Ask about ^800000Swordsman^000000",ASK,"Never mind",-;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "Take care, I hope you will find your rightful path.";
+          close;
+        APP:
+          set SJQ = 1;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "Okay, let me take a good look at you first.";
+          next;
+        REG:
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          check JobLevel = 10,-,QT1;
+            check SkillPoint = 0,-,QT2;
+              mes "Looks like everything's ready to go.  All right then, would you like to start now?";
+              next;
+              menu Yes,NOW,No,-;
+                set SJQ = 2;
+                mes "[^000080 Markaelus Ikhran ^000000]";
+                mes "Well, it shouldn't take too long to prepare for.  I think you should've just gone for it.";
+                close;
+              NOW:
+                set SJQ = 3;
+                warp sword_1-1 11 245;
+            QT2:
+              mes "Looks like you've still got a few unused skill points.  Skill points are non-transferrable, they MUST be used for the job that they are acquired.";
+              close;
+          QT1:
+            mes "I'm sorry to say this, but I'm going to need to put down your application for now.  Do you know why?";
+            next;
+            menu No,-,Yes,EXT;
+              mes "[^000080 Markaelus Ikhran ^000000]";
+              mes "You need to have a job level of 10 in order to move up to an actual job.";
+              next;
+              mes "[^000080 Markaelus Ikhran ^000000]";
+              mes "Don't look at it too harshly though, you'll get there in no time.  Once that's taken care of, you can come back to take the test.";
+              close;
+            EXT:
+              mes "[^000080 Markaelus Ikhran ^000000]";
+              mes "Well, if you knew, you should have taken care of it already.  That way we wouldn't run into this mess.";
+              close;
+        ASK:
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "As the name implies, a ^800000Swordsman^000000 focuses on the skills of the sword.";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "A ^800000Swordsman ^000000 can train to become either a ^800000Knight^000000 or a ^800000Crusader^000000.";
+          close;
+    AB2:
+      check Job = 7,KNA,-;
+        check Job = 24,-,OTA;
+// Job: Novice High
+          mes "Well well, a high class.  Well done on your achievements.  May I have your name?";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "Simply magnificant, ^000080$charaname^000000.  Such a task is the dream of many, and many are not able to obtain that.";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "I'm sorry if I'm wasting your time, so I'll stop there.";
+          close;
+      KNA:
+// Job: Knight
+        mes "Well done, you've managed to become a ^800000Knight^000000!  That's something to be proud of.";
+        next;
+        mes "[^000080 Markaelus Ikhran ^000000]";
+        mes "So, what's your name?";
+        next;
+        mes "[^000080 Markaelus Ikhran ^000000]";
+        mes "^000080$charaname^000000, okay.  I'll let you carry on now.";
+        close;
+    AB1:
+      check Job = 25,SHA,-;
+        check Job = 31,LKA,-;
+          check Job = 38,-,OTA;
+// Job: Paladin
+            mes "A ^800000Paladin^000000!  I have long heard of one, this is certainly something to be proud of.";
+            next;
+            mes "[^000080 Markaelus Ikhran ^000000]";
+            mes "I'm glad that of all people, you were able to accomplish such.";
+            next;
+            mes "[^000080 Markaelus Ikhran ^000000]";
+            mes "By the way, what's your name?";
+            next;
+            mes "[^000080 Markaelus Ikhran ^000000]";
+            mes "I see... So it's ^000080$charaname^000000.";
+        LKA:
+// Job: Lord Knight
+          mes "I'm honored to meet you, what's your name?";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "Okay, so it's ^000080$charaname^000000.  Nice to meet you.";
+          close;
+      SHA:
+// Job: Swordsman High
+        mes "Wow, you're looking great.  What's your name?";
+        next;
+        mes "[^000080 Markaelus Ikhran ^000000]";
+        mes "^000080$charaname^000000, all right then.";
+        close;
+ELS:
+  check Job > 24,AB3,-;
+    check Job > 6,AB4,-;
+      check Job = 0,NVB,-;
+        check Job = 1,SWB,-;
+      OTB:
+// Job: Other
+          mes "Good day, and welcome back to the ^401010Swordsman Association^000000.";
+          close;
+        SWB:
+// Job: Swordsman
+          mes "Welcome back, ^000080$charaname^000000.  I hope to see you when you become a ^800000Knight^000000 or a ^800000Crusader^000000.";
+          close;
+      NVB:
+// Job: Novice
+        check SJQ > 1,ABV,-;
+          check SJQ = 0,-,S1;
+// State 0
+            mes "Welcome back to the ^401010Swordsman Association^000000, ^000080$charaname^000000.";
+            next;
+            mes "[^000080 Markaelus Ikhran ^000000]";
+            mes "Do you have a question?";
+            goto MNU;
+          S1:
+// State 1
+            mes "Would you like to try to complete the registration now?";
+            next;
+            menu No,-,Yes,REG;
+              mes "[^000080 Markaelus Ikhran ^000000]";
+              mes "All right, well, if you change your mind let me know.";
+              close;
+        ABV:
+          check SJQ = 2,S2,-;
+            check SJQ = 3,S3,-;
+// State 4
+              mes "Well done in completing the quest, ^000080$charaname^000000.";
+              next;
+              mes "[^000080 Markaelus Ikhran ^000000]";
+              mes "I shall now initiate you into the community.";
+              set JobLevel = 1;
+              set Job = 1;
+              close;
+            S3:
+// State 3
+              mes "Hm... Looks like you didn't complete the quest yet, would you like to go back and try again?";
+              next;
+              menu Yes,NOW,No,-;
+                mes "[^000080 Markaelus Ikhran ^000000]";
+                mes "All right then, I'll just wait for you to come back.";
+                close;
+          S2:
+// State 2
+            mes "Would you like to begin the quest now?";
+            next;
+            menu No,-,Yes,NOW;
+              mes "[^000080 Markaelus Ikhran ^000000]";
+              mes "Very well.  I'll await your return.";
+              close;
+    AB4:
+      check Job = 7,KNB,-;
+        check Job = 24,-,OTB;
+// Job: Novice High
+          mes "Hello, ^000080$charaname^000000, it's good to see you again.  Looks like you're doing well.";
+          close;
+      KNB:
+// Job: Knight
+        mes "It's good to see you again, ^000080$charaname^000000.  Looks like you've managed to make your way past being just an ordinary swordsman.";
+        next;
+        mes "[^000080 Markaelus Ikhran ^000000]";
+        mes "A knight, that's impressive.  Many would love to fight for their home.";
+        close;
+    AB3:
+      check Job = 25,SHB,-;
+        check Job = 31,LKB,-;
+          check Job = 38,-,OTB;
+// Job: Paladin
+            mes "Your achievements never fail to please me, ^000080$charaname^000000.";
+            next;
+            mes "[^000080 Markaelus Ikhran ^000000]";
+            mes "In my eyes, you're already a legend.  Few would be able to obtain the status that you have.";
+            close;
+        LKB:
+// Job: Lord Knight
+          mes "Every time I hear your name, it brings me joy to think that you came in here and made your way through successfully.";
+          next;
+          mes "[^000080 Markaelus Ikhran ^000000]";
+          mes "Surely that determination has not yet died, and for that, I am well pleased.";
+          close;
+      SHB:
+// Job: Swordsman High
+        mes "Moving on up, huh?  You're not far from achieving the greatest goal yet.";
+        next;
+        mes "[^000080 Markaelus Ikhran ^000000]";
+        mes "I assure you that someone such as you will not find little to no difficulty getting there.";
+        close;
+}
+
+//===========================
+
+//  NPC 2 - Test Keeper
+
+//===========================
+
+sword_3-1.vhm,223,168,2		script			"Hellena Fohrstine"		92,{
+mes "[^000080 Hellena Fohrstine ^000000]";
+mes "Good job in making your way here, I will now acknowledge that you, ^000080$charaname^000000, have completed the quest.";
+set SJQ = 4;
+next;
+mes "[^000080 Hellena Fohrstine ^000000]";
+mes "I believe you will make a fine ^800000Swordsman^000000.  Take care now.";
+next;
+warp izlude_in 75 167;
+}

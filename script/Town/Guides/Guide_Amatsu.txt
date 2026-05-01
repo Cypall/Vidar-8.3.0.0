@@ -1,0 +1,75 @@
+amatsu.vhm,207,89,4 script "Miss Ama" 757,{
+	mes "Welcome to a peaceful town of Amatsu,";
+	mes "where beautoful cherry blossoms gently";
+	mes "blooms all the time"; 
+	next; 
+	mes "I am ^0000FF<The 13th Miss Amatsu>^000000 Ama-Chan";
+	mes "As a Miss Amatsu, I will be responsible for a tour";
+	mes "around Amatsu, if u have any question, do not";
+	mes "Hesitate to ask";
+	menu "Castle",castle,"Item Shop",itemshop,"Weapon Shop",weaponshop,"Pub",pub,"Cancel",cancel0101; 
+	castle:
+		viewpoint 1,85,235,5,0x3355FF; 
+		mes "If you go to the + sign in the minimap,";
+		mes "You will find the castle.";
+		mes "I wish you a good time in Amatsu";
+		close;
+	itemshop:
+		viewpoint 1,96,118,5,0x3355FF; 
+		mes "If you go to the + sign in the minimap,";
+		mes "You will find the Item Shop.";
+		mes "I wish you a good time in Amatsu";
+		close;
+	weaponshop:
+		viewpoint 1,132,117,5,0x3355FF;
+		mes "If you go to the + sign in the minimap,";
+		mes "You will find the Weapon shop.";
+		mes "I wish you a good time in Amatsu"; 
+		close;
+	pub:
+		viewpoint 1,217,116,5,0x3355FF;
+		mes "If you go to the + sign in the minimap,";
+		mes "You will find the Pub.";
+		mes "I wish you a good time in Amatsu";
+		close;
+	cancel0101:
+		close;
+}
+
+amatsu.vhm,251,283,4 script "Miss Ama" 757,{
+	mes "Welcome to a peaceful town of Amatsu,";
+	mes "where beautoful cherry blossoms gently"; 
+	mes "blooms all the time";
+	next; 
+	mes "I am ^0000FF<The 13th Miss Amatsu>^000000 Ama-Chan"; 
+	mes "As a Miss Amatsu, I will be responsible for a tour";
+	mes "around Amatsu, if u have any question, do not";
+	mes "Hesitate to ask";
+	menu "Castle",castle2,"Item Shop",itemshop2,"Weapon Shop",weaponshop2,"Pub",pub2,"Cancel",cancel01012; 
+	castle2:
+		viewpoint 1,85,235,5,0x3355FF; 
+		mes "If you go to the + sign in the minimap,";
+		mes "You will find the castle.";
+		mes "I wish you a good time in Amatsu";
+		close;
+	itemshop2:
+		viewpoint 1,96,118,5,0x3355FF; 
+		mes "If you go to the + sign in the minimap,";
+		mes "You will find the Item Shop.";
+		mes "I wish you a good time in Amatsu";
+		close;
+	weaponshop2:
+		viewpoint 1,132,117,5,0x3355FF;
+		mes "If you go to the + sign in the minimap,";
+		mes "You will find the Weapon shop.";
+		mes "I wish you a good time in Amatsu"; 
+		close;
+	pub2:
+		viewpoint 1,217,116,5,0x3355FF;
+		mes "If you go to the + sign in the minimap,";
+		mes "You will find the Pub.";
+		mes "I wish you a good time in Amatsu";
+		close;
+	cancel01012:
+		close;
+}

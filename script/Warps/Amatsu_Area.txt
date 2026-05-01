@@ -1,0 +1,61 @@
+//Amatsu - Tools Shop 
+amatsu.vhm,97,117,0	warp	warp1962	1,1,ama_in01.vhm,31,23
+ama_in01.vhm,32,23,0	warp	warp1963	1,1,amatsu.vhm,98,117
+
+//Amatsu - Arms Shop 
+amatsu.vhm,128,117,0	warp	ama0003	1,1,ama_in01.vhm,89,23
+ama_in01.vhm,87,23,0	warp	ama0004	1,1,amatsu.vhm,125,117
+
+//Amatsu - ?
+amatsu.vhm,168,180,0	warp	ama0005	1,1,ama_in01.vhm,34,99
+ama_in01.vhm,34,97,0	warp	ama0006	1,1,amatsu.vhm,168,178
+
+//Amatsu - ?
+amatsu.vhm,249,160,0	warp	ama0007	1,1,ama_in01.vhm,79,178
+ama_in01.vhm,77,177,0	warp	ama0008	1,1,amatsu.vhm,244,160
+
+//Amatsu- Restaurant of Japanese vinegared rice delicacies 
+amatsu.vhm,215,116,0	warp	ama0009	1,1,ama_in01.vhm,162,25
+ama_in01.vhm,157,25,0	warp	ama0010	1,1,amatsu.vhm,213,116
+ama_in01.vhm,161,35,0	warp	ama0025	1,1,ama_in01.vhm,166,75
+ama_in01.vhm,166,72,0	warp	ama0026	1,1,ama_in01.vhm,161,32
+
+//Amatsu - Toku Castle 
+amatsu.vhm,86,235,0	warp	ama0013	1,1,ama_in02.vhm,223,45
+ama_in02.vhm,224,45,0	warp	ama0014	1,1,amatsu.vhm,88,235
+
+//1st floor -> 2nd floor 
+ama_in02.vhm,195,44,0	warp	ama0015	1,1,ama_in02.vhm,65,40
+ama_in02.vhm,65,38,0	warp	ama0016	1,1,ama_in02.vhm,195,41
+
+//2nd floor -> 3rd floor 
+ama_in02.vhm,56,42,0	warp	ama0017	1,1,ama_in02.vhm,59,144
+ama_in02.vhm,59,141,0	warp	ama0018	1,1,ama_in02.vhm,56,41
+
+//3rd floor -> 4th floor 
+ama_in02.vhm,59,161,0	warp	ama0019	1,1,ama_in02.vhm,215,155
+ama_in02.vhm,215,150,0	warp	ama0020	1,1,ama_in02.vhm,59,157
+
+//4th floor -> 5th floor(?) 
+ama_in02.vhm,222,161,0	warp	ama0021	1,1,ama_in02.vhm,130,163
+ama_in02.vhm,127,163,0	warp	ama0022	1,1,ama_in02.vhm,220,161
+
+//Amatsu -> Amatsu Field 
+amatsu.vhm,248,290,0	warp	ama0023	1,1,ama_fild01.vhm,75,33
+ama_fild01.vhm,73,32,0	warp	ama0024	1,1,amatsu.vhm,248,288
+
+//Amatsu Dungeon Warps. Info from Japanese file posted by Soulfang
+ama_fild01.vhm,174,332,0	warp	warp8003	1,1,ama_in01.vhm,174,172
+ama_in01.vhm,174,170,0	warp	warp8004	1,1,ama_fild01.vhm,174,330
+//ama_fild01.vhm,174,332,0	warp	warp8003	1,1,ama_test.vhm,50,19
+//ama_test.vhm,50,16,0	warp	warp8003	1,1,ama_fild01.vhm,174,330
+//ama_test.vhm,50,44,0	warp	warp8004	1,1,ama_test.vhm,50,82
+//ama_test.vhm,50,79,0	warp	warp8005	1,1,ama_test.vhm,50,41
+//ama_test.vhm,50,90,0	warp	warp8006	1,1,ama_dun01.vhm,228,9
+//ama_dun01.vhm,228,6,0	warp	warp8007	1,1,ama_test.vhm,50,87
+ama_dun01.vhm,234,143,0	warp	warp8008	1,1,ama_dun02.vhm,31,41
+ama_dun02.vhm,29,41,0	warp	warp8009	1,1,ama_dun01.vhm,231,143
+ama_dun02.vhm,196,124,0	warp	warp8010	1,1,ama_dun03.vhm,119,14
+ama_dun03.vhm,119,9,0	warp	warp8011	1,1,ama_dun02.vhm,196,121
+
+

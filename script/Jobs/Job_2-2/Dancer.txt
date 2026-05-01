@@ -1,0 +1,882 @@
+// Error reports / fixes by eldeuce
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Aier - Dancer Job Quest - Main Session
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+comodo.vhm,184,166,5	script	Aier	0,0,0,0	724,{
+		mes "[^000080Aier^000000]";
+	check Gender = 0,-,MAN;
+		check Job = 0,-,NEXT;
+	DANCE:
+			check Job_DA = 1,CONT,-;
+			check Job_DA = 2,CONT0,-;
+			check Job_DA = 3,OKAY,-;
+			check Job_DA = 4,CHECK,-;
+			check Job_DA = 5,CONT1,-;
+			check Job_DA = 6,CONT2,-;
+			check Job_DA = 7,CONT3,-;
+			check Job_DA > 7,CONT4,-;
+				TALK:
+						set Job_DA = 1;
+						mes "Hey there.";
+						mes "What's your name?";
+					next;
+						mes "[^000080Aier^000000]";
+						mes "$charaname?  Cool?";
+					next;
+						mes "[^000080Aier^000000]";
+						mes "Hey, $charaname.";
+						mes "Have you ever gotten the feeling that you wanted to dance?";
+					next;
+						menu "All the time.",JOB,"Occasionally",JOB,"Actually, no.",-;
+								mes "[^000080Aier^000000]";
+								mes "Really?  That's freaky.";
+							close;
+					JOB:
+							set Job_DA = 2;
+							mes "[^000080Aier^000000]";
+							mes "Cool, how would you like to become a ^800000Dancer^000000?";
+						next;
+							menu "Sounds interesting.",OKAY,"Nah...",-;
+									mes "[^000080Aier^000000]";
+									mes "Oh, um.... okay...";
+								close;
+						OKAY:
+								set Job_DA = 3;
+							check Job = 0,-,NOT;
+									mes "[^000080Aier^000000]";
+									mes "If you want to learn how to be a ^800000Dancer^000000, you'll need to become an ^800000Archer^000000 first.";
+								close;
+							NOT:
+									set Job_DA = 4;
+									mes "[^000080Aier^000000]";
+									mes "Sweet!";
+								next;
+									mes "[^000080Aier^000000]";
+								CHECK:
+									check DA = 1,ITM1,-;
+									check DA = 2,ITM2,-;
+									check DA = 3,ITM3,-;
+									check DA = 4,ITM4,-;
+									check DA = 5,ITM5,-;
+										check JobLevel > 39,OKAY0,-;
+												mes "I'm sorry, but you need more experience.";
+												mes "Come back when your job level is at least 40, okay?";
+											close;
+										OKAY0:
+											check SkillPoint = 0,OKAY1,-;
+													mes "You'll need to use up all your skill points first.";
+												close;
+											OKAY1:
+													mes "Everything looks all right.";
+													mes "Okay.";
+												next;
+													mes "[^000080Aier^000000]";
+													mes "In order to become a ^800000Dancer^000000, you'll need to gather a few things first.";
+												next;
+														random DA,5;
+														set DA + 1;
+														mes "[^000080Aier^000000]";
+													check DA = 1,ITEM1,-;
+													check DA = 2,ITEM2,-;
+													check DA = 3,ITEM3,-;
+													check DA = 4,ITEM4,-;
+															mes "You will need to obtain the following items:";
+														next;
+															mes "[^000080Aier^000000]";
+															mes "- 1 ^FF0000Garnets^000000";
+															mes "- 1 ^FF0000Ruby^000000";
+															mes "- 1 unslotted ^FF0000Shoe^000000";
+														close;
+													ITEM1:
+															mes "You will need to obtain the following items:";
+														next;
+															mes "[^000080Aier^000000]";
+															mes "- 1 ^FF0000Amethyst^000000";
+															mes "- 1 ^FF0000Pearl^000000";
+															mes "- 1 ^FF0000Emerald^000000";
+															mes "- 1 unslotted ^FF0000Shoe^000000";
+														close;
+													ITEM2:
+															mes "You will need to obtain the following items:";
+														next;
+															mes "[^000080Aier^000000]";
+															mes "- 1 ^FF0000Aquamarine^000000";
+															mes "- 1 ^FF0000Sardonyx^000000";
+															mes "- 1 ^FF0000Blue Gemstone^000000";
+															mes "- 1 unslotted ^FF0000Shoe^000000";
+														close;
+													ITEM3:
+															mes "You will need to obtain the following items:";
+														next;
+															mes "[^000080Aier^000000]";
+															mes "- 1 ^FF0000Sapphire^000000";
+															mes "- 1 ^FF0000Topaz^000000";
+															mes "- 1 unslotted ^FF0000Shoe^000000";
+														close;
+													ITEM4:
+															mes "You will need to obtain the following items:";
+														next;
+															mes "[^000080Aier^000000]";
+															mes "- 1 ^FF0000Opal^000000";
+															mes "- 1 ^FF0000Zircon^000000";
+															mes "- 1 ^FF0000Yellow Gemstone^000000";
+															mes "- 1 unslotted ^FF0000Shoe^000000";
+														close;
+									ITM1:
+												set @ITEM = 0;
+										checkitem 718,1,CHK1,-;
+												set @ITEM + 4;
+									CHK1:
+										checkitem 723,1,CHK2,-;
+												set @ITEM + 2;
+									CHK2:
+										checkitem 2403,1,CHK3,-;
+												set @ITEM + 1;
+									CHK3:
+										check @ITEM > 0,-,DONE;
+											mes "[^000080Aier^000000]";
+											mes "";											
+										close;
+									ITM2:
+												set @ITEM = 0;
+										checkitem 719,1,CHK4,-;
+									CHK4:
+												set @ITEM + 8;
+										checkitem 722,1,CHK5,-;
+												set @ITEM + 4;
+									CHK5:
+										checkitem 721,1,CHK6,-;
+												set @ITEM + 2;
+									CHK6:
+										checkitem 2403,1,CHK7,-;
+												set @ITEM + 1;
+									CHK7:
+											mes "[^000080Aier^000000]";
+											mes "";
+										close;
+									ITM3:
+												set @ITEM = 0;
+										checkitem 720,1,CHK8,-;
+												set @ITEM + 8;
+									CHK8:
+										checkitem 725,1,CHK9,-;
+												set @ITEM + 4;
+									CHK9:
+										checkitem 717,1,CHK10,-;
+												set @ITEM + 2;
+									CHK10:
+										checkitem 2403,1,CHK11,-;
+												set @ITEM + 1;
+									CHK11:
+											mes "[^000080Aier^000000]";
+											mes "";
+										close;
+									ITM4:
+												set @ITEM = 0;
+										checkitem 726,1,CHK12,-;
+												set @ITEM + 4;
+									CHK12:
+										checkitem 728,1,CHK13,-;
+												set @ITEM + 2;
+									CHK13:
+										checkitem 2403,1,CHK14,-;
+												set @ITEM + 1;
+									CHK14:
+											mes "[^000080Aier^000000]";
+											mes "";
+										close;
+									ITM5:
+												set @ITEM = 0;
+										checkitem 727,1,CHK15,-;
+												set @ITEM + 8;
+									CHK15:
+										checkitem 729,1,CHK16,-;
+												set @ITEM + 4;
+									CHK16:
+										checkitem 715,1,CHK17,-;
+												set @ITEM + 2;
+									CHK17:
+										checkitem 2403,1,CHK18,-;
+												set @ITEM + 1;
+									CHK18:
+											mes "[^000080Aier^000000]";
+											mes "";
+										close;
+								DONE:
+										mes "[^000080Aier^000000]";
+										mes "Good work in obtaining all the items.";
+										delitem 718,1;
+										delitem 723,1;
+										delitem 2403,1;
+									goto DUN;
+								DONE0:
+										mes "[^000080Aier^000000]";
+										mes "Good work in obtaining all the items.";
+										delitem 719,1;
+										delitem 722,1;
+										delitem 721,1;
+										delitem 2403,1;
+									goto DUN;
+								DONE1:
+										mes "[^000080Aier^000000]";
+										mes "Good work in obtaining all the items.";
+										delitem 720,1;
+										delitem 725,1;
+										delitem 717,1;
+										delitem 2403,1;
+									goto DUN;
+								DONE2:
+										mes "[^000080Aier^000000]";
+										mes "Good work in obtaining all the items.";
+										delitem 726,1;
+										delitem 728,1;
+										delitem 2403,1;
+									goto DUN;
+								DONE3:
+										mes "[^000080Aier^000000]";
+										mes "Good work in obtaining all the items.";
+										delitem 727,1;
+										delitem 729,1;
+										delitem 715,1;
+										delitem 2403,1;
+								DUN:
+									next;
+										mes "[^000080Aier^000000]";
+										mes "We shall move on to the questionaire.";
+										mes "Please find the man named ^0000FFBourwajue^000000 he will test you.";
+										set Job_DA = 5;
+									close;
+			CONT:
+					mes "So, um...";
+					mes "Have you changed your view of dancing?";
+			TALK0:
+				next;
+					menu "Yeah, I want to learn.",JOB,"No, I'm not inerested.",-;
+							mes "[^000080Aier^000000]";
+							mes "Oh.... That makes me sad.";
+						close;
+			CONT0:
+					mes "So, uh...";
+					mes "Have you changed your mind about becoming a ^800000Dancer^000000?";
+				goto TALK0;
+			CONT1:
+					mes "What's wrong?  Can't find ^000080Bourwajue^000000?";
+				next;
+					mes "[^000080Aier^000000]";
+					mes "He should be around here somewhere...";
+				close;
+			CONT2:
+					mes "Please talk to ^000080Bourwajue^000000 to continue the test.";
+				close;
+			CONT3:
+					mes "Great!  Now I'll take you to the ^008000Dancing Hall^000000 where you will be truly tested on your dancing skills!";
+				next;
+					warp "job_duncer",69,48;
+			CONT4:
+				check Job_DA = 10,CONT5,-;
+						mes "Heading back to the ^008000Dancing Hall^000000?";
+					next;
+						menu "Yes",-,"No",NOGO;
+								mes "[^000080Aier^000000]";
+								mes "All right.";
+								mes "Off you go!";
+							next;
+								save "comodo",189,160;
+								warp "job_duncer",69,48;
+					NOGO:
+							mes "[^000080Aier^000000]";
+							mes "Oh, okay.";
+						close;
+			CONT5:
+		MAN:
+				mes "Teehee";
+				mes "Have you come to watch me dance?";
+			next;
+				menu "Yeah!",-,"Um... no.",NOPE;
+						mes "[^000080Aier^000000]";
+						mes "He he.";
+						mes "I was just kidding.";
+					close;
+			NOPE:
+					mes "[^000080Aier^000000]";
+					mes "Oh, well...  Too bad for you then.";
+				close;
+	NEXT:
+		check Job = 1,-,NEXT0;
+				mes "Hello, welcome to ^00FF00Comodo^000000.";
+			close;
+	NEXT0:
+		check Job = 2,-,NEXT1;
+				mes "Hello there.  Please keep your magic arts to yourself.";
+			close;
+	NEXT1:
+		check Job = 3,-,NEXT2;
+			check Gender = 0,DANCE,-;
+					mes "Hello, don't be silly, you can't apply to become a ^800000Dancer^000000.";
+				close;
+	NEXT2:
+		check Job = 4,-,NEXT3;
+				mes "Welcome to ^00FF00Comodo^000000, may the light guide your path.";
+			close;
+	NEXT3:
+		check Job = 5,-,NEXT4;
+				mes "I'm sorry, I'm not interested in buying anything.";
+			close;
+	NEXT4:
+		check Job = 6,-,NEXT5;
+				mes "Um... Hello.";
+			close;
+	NEXT5:
+		check Job = 7,-,NEXT6;
+				mes "Hi there, welcome to ^00FF00Comodo^000000, hope you can help keep the place safe.";
+			close;
+	NEXT6:
+		check Job = 8,-,NEXT7;
+				mes "Hello, I hope you can help to keep things safe.";
+			close;
+	NEXT7:
+		check Job = 9,-,NEXT8;
+				mes "Welcome to ^00FF00Comodo^000000, please restrain yourself from using any spells unless necessary.";
+			close;
+	NEXT8:
+		check Job = 10,-,NEXT9;
+				mes "I'm sorry, I don't need anything.";
+			close;
+	NEXT9:
+		check Job = 11,-,NEXT10;
+				mes "Um... Hello.  Welcome to ^00FF00Comodo^000000.";
+			close;
+	NEXT10:
+		check Job = 12,-,NEXT11;
+				mes "Please keep the area clean.";
+			close;
+	NEXT11:
+		check Job = 14,-,NEXT12;
+				mes "Hello!  Welcome to ^00FF00Comodo^000000, hope you enjoy your stay!";
+			close;
+	NEXT12:
+		check Job = 15,-,NEXT13;
+				mes "Isn't a place like this against your religion o.o";
+			close;
+	NEXT13:
+		check Job = 16,-,NEXT14;
+				mes "Please try not to use your magic arts unless needed.";
+			close;
+	NEXT14:
+		check Job = 17,-,NEXT15;
+				mes "Go away scoundrel!";
+				mes "I don't want to talk to you!";
+			close;
+	NEXT15:
+		check Job = 18,-,NEXT16;
+				mes "Welcome to ^00FF00Comodo^000000, please help keep the area clean by not throwing around bottles, thanks.";
+			close;
+	NEXT16:
+		check Job = 19,-,NEXT17;
+				mes "Hello, nice to meet you.";
+			close;
+	NEXT17:
+		check Job = 20,-,NEXT18;
+				mes "Hello $charaname!";
+				mes "Great to see you again!";
+			close;
+	NEXT18:
+		check Job = 22,-,NEXT19;
+			check Gender = 0,-,MALE;
+					mes "Welcome to ^00FF00Comodo^000000, play the night away!";
+				close;
+			MALE:
+					mes "Welcome to ^00FF00Comodo^000000, try not to get too drunk!";
+				close;
+	NEXT19:
+			mes "Hello, welcome to ^00FF00Comodo^000000, play some games, they're fun!";
+		close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Bourwajue - Dancer Job Quest - Questionaire
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+comodo.vhm,128,244,2	script	Bourwajue	0,0,0,0	102,{
+		mes "[^000080Bourwajue^000000]";
+	check Job = 0,-,NEXT;
+			mes "Hello there, welcome to ^00FF00Comodo^000000.";
+			mes "Just relax and have fun.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "Welcome to ^00FF00Comodo^000000.";
+			mes "Nice to have you here, at least someone can make sure people don't cheat at the tables.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "Hey there, put down the magic items.";
+			mes "We don't want anyone to get hurt.";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+		check Gender = 0,-,MAN;
+			check Job_DA = 5,START,-;
+			check Job_DA = 6,CONT,-;
+		START:
+				mes "Hello, have you come for the test?";
+			next;
+				menu "That's why I'm here.",OKAY,"No, actually, I just happened to come by.",-;
+						mes "[^000080Bourwajue^000000]";
+						mes "Oh, carry on then.";
+					close;
+			OKAY:
+					set Job_DA = 6;
+					mes "[^000080Bourwajue^000000]";
+					mes "The test consists of 10 questions, if you get at least 5 right, I will qualify you.";
+				next;
+					mes "[^000080Bourwajue^000000]";
+					mes "So, shall we begin?";
+				next;
+					menu "Yes, right away.",BEGIN,"Not yet, I'll be right back.",-;
+							mes "[^000080Bourwajue^000000]";
+							mes "All right, I'll wait for you to get ready.";
+						close;
+				BEGIN:
+						mes "[^000080Bourwajue^000000]";
+						mes "Good good, let's begin then.";
+					next;
+						set @Q = 0;
+						set @ANS = 0;
+						set @Q1 = 0;
+						set @Q2 = 0;
+						set @Q3 = 0;
+						set @Q4 = 0;
+						set @Q5 = 0;
+						set @Q6 = 0;
+						set @Q7 = 0;
+						set @Q8 = 0;
+						set @Q9 = 0;
+						set @Q10 = 0;
+						set @Q11 = 0;
+						set @Q12 = 0;
+						set @Q13 = 0;
+						set @Q14 = 0;
+						set @Q15 = 0;
+						set @Q16 = 0;
+						set @Q17 = 0;
+						set @Q18 = 0;
+						set @Q19 = 0;
+						set @Q20 = 0;
+				RND:
+					check @Q < 10,-,DONE;
+							random @RND,20;
+					check @RND < 10,-,SECTA;
+						check @RND < 5,-,SECTA1;
+							check @RND < 2,-,SECTA1A;
+								check @RND = 0,Q1,Q2;
+							SECTA1A:
+								check @RND = 2,Q3,-;
+								check @RND = 3,Q4,Q5;
+						SECTA1:
+							check @RND < 7,-,SECTA1B;
+								check @RND = 5,Q6,Q7;
+							SECTA1B:
+								check @RND = 7,Q8,-;
+								check @RND = 8,Q9,Q10;
+					SECTA:
+						check @RND < 15,-,SECTA2;
+							check @RND < 12,-,SECTA1C;
+								check @RND = 10,Q11,Q12;
+							SECTA1C:
+								check @RND = 12,Q13,-;
+								check @RND = 13,Q14,Q15;
+						SECTA2:
+							check @RND < 18,-,SECTA1D;
+								check @RND = 15,Q16,-;
+								check @RND = 16,Q17,Q18;
+							SECTA1D:
+								check @RND = 18,Q19,-;
+							check @Q20 = 0,-,RND;
+									set @Q20 = 1;
+									set @Q + 1;
+									mes "Bonus strength given with ^800000Dancer^000000 class.";
+								next;
+									input @VAL;
+								check @VAL = 2,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q1:
+							check @Q1 = 0,-,RND;
+									set @Q1 = 1;
+									set @Q + 1;
+									mes "Bonus agility given with ^800000Dancer^000000 class.";
+								next;
+									input @VAL;
+								check @VAL = 7,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q2:
+							check @Q2 = 0,-,RND;
+									set @Q2 = 1;
+									set @Q + 1;
+									mes "Bonus vitality given with ^800000Dancer^000000 class.";
+								next;
+									input @VAL;
+								check @VAL = 3,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q3:
+							check @Q3 = 0,-,RND;
+									set @Q3 = 1;
+									set @Q + 1;
+									mes "Bonus intelligence given with ^800000Dancer^000000 class.";
+								next;
+									input @VAL;
+								check @VAL = 5,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q4:
+							check @Q4 = 0,-,RND;
+									set @Q4 = 1;
+									set @Q + 1;
+									mes "Bonus dexterity given with ^800000Dancer^000000 class.";
+								next;
+									input @VAL;
+								check @VAL = 4,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q5:
+							check @Q5 = 0,-,RND;
+									set @Q5 = 1;
+									set @Q + 1;
+									mes "Bonus luck given with ^800000Dancer^000000 class.";
+								next;
+									input @VAL;
+								check @VAL = 8,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q6:
+							check @Q6 = 0,-,RND;
+									set @Q6 = 1;
+									set @Q + 1;
+									mes "^0000FFUgly Dance^000000 damages how much SP at level 4";
+								next;
+									input @VAL;
+								check @VAL = 40,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q7:
+							check @Q7 = 0,-,RND;
+									set @Q7 = 1;
+									set @Q + 1;
+									mes "^0000FFScream^000000 needs this much SP to use at level 1";
+								next;
+									input @VAL;
+								check @VAL = 12,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q8:
+							check @Q8 = 0,-,RND;
+									set @Q8 = 1;
+									set @Q + 1;
+									mes "^0000FFHumming^000000 requires ^0000FFUgly Dance^00000 at what level?";
+								next;
+									input @VAL;
+								check @VAL = 3,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q9:
+							check @Q9 = 0,-,RND;
+									set @Q9= 1;
+									set @Q + 1;
+									mes "^0000FFService For You^000000 at level 1 gives how much bonus SP in %?";
+								next;
+									input @VAL;
+								check @VAL = 11,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q10:
+							check @Q10 = 0,-,RND;
+									set @Q10 = 1;
+									set @Q + 1;
+									mes "^0000FFCry of Loki^000000 uses this much SP on the initial use.";
+								next;
+									input @VAL;
+								check @VAL = 15,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q11:
+							check @Q11 = 0,-,RND;
+									set @Q11 = 1;
+									set @Q + 1;
+									mes "^0000FFInto the Abyss^000000 lasts for this long in seconds.";
+								next;
+									input @VAL;
+								check @VAL = 60,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q12:
+							check @Q12 = 0,-,RND;
+									set @Q12 = 1;
+									set @Q + 1;
+									mes "When ^0000FFEternal Chaos^000000 is used, enemies' defenses are reduced to this.";
+								next;
+									input @VAL;
+								check @VAL = 0,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q13:
+							check @Q13 = 0,-,RND;
+									set @Q13 = 1;
+									set @Q + 1;
+									mes "^0000FFRing of Nibelungen^000000 at level 5 adds this much as bonus to attack in %";
+								next;
+									input @VAL;
+								check @VAL = 350,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q14:
+							check @Q14 = 0,-,RND;
+									set @Q14 = 1;
+									set @Q + 1;
+									mes "EXP bonus in % when using ^0000FFMr. Kim A Rich Man^000000 at level 2.";
+								next;
+									input @VAL;
+								check @VAL = 175,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q15:
+							check @Q15 = 0,-,RND;
+									set @Q15 = 1;
+									set @Q + 1;
+									mes "ASPD reduction when using level 10 ^0000FFPlease Don't Forget Me^000000.";
+								next;
+									input @VAL;
+								check @VAL = 30,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q16:
+							check @Q16 = 0,-,RND;
+									set @Q16 = 1;
+									set @Q + 1;
+									mes "^0000FFThrow Arrow^000000 requires ^0000FFDancing Lesson^000000 at this level.";
+								next;
+									input @VAL;
+								check @VAL = 3,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q17:
+							check @Q17 = 0,-,RND;
+									set @Q17 = 1;
+									set @Q + 1;
+									mes "^0000FFUgly Dance^000000 requires ^0000FFAdaptation^000000 at what level?";
+								next;
+									input @VAL;
+								check @VAL = 1,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q18:
+							check @Q18 = 0,-,RND;
+									set @Q18 = 1;
+									set @Q + 1;
+									mes "^0000FFHumming^000000 requires ^0000FFUgly Dance^000000 at what level?";
+								next;
+									input @VAL;
+								check @VAL = 3,-,RND;
+										set @ANS + 1;
+									goto RND;
+						Q19:
+							check @Q19 = 0,-,RND;
+									set @Q19 = 1;
+									set @Q + 1;
+									mes "^0000FFFortune Kiss^000000 requires ^0000FFUgly Dance^000000 at what level?";
+								next;
+									input @VAL;
+								check @VAL = 3,-,RND;
+										set @ANS + 1;
+									goto RND;
+					DONE:
+							mes "[^000080Bourwajue^000000]";
+							mes "Let's see, you got $[@ANS] / 10 questions correct.";
+						next;
+							mes "[^000080Bourwajue^000000]";
+						check @ANS > 4,FINISH,-;
+								mes "I'm sorry, but that's not enough to qualify for a ^800000Dancer^000000.";
+								mes "Feel free to redo the test whenever you feel like it.";
+							close;
+						FINISH:
+								set Job_DA = 7;
+								mes "[^000080Bourwajue^000000]";
+								mes "Excellent work!";
+							next;
+								mes "[^000080Bourwajue^000000]";
+								mes "You qualify to become a ^800000Dancer^000000!";
+								mes "Go back to ^0000FFAier^000000 for the final test and she will make you a ^800000Dancer^000000.";
+							close;
+			CONT:
+					mes "I was hoping to see better results.";
+					mes "Have you come to retake the test?";
+				next;
+					menu "I sure would.",BEGIN,"No way, not again.",-;
+							mes "[^000080Bourwajue^000000]";
+							mes "Oh, that's a shame.";
+						next;
+							mes "[^000080Bourwajue^000000]";
+							mes "Don't tell me you've given up becoming a ^800000Dancer^000000.";
+						close;
+	MAN:
+			mes "Hey, you should become a ^800000Bard^000000 :D";
+			mes "I'd like to listen while you play.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "Welcome to ^00FF00Comodo^000000.";
+			mes "Try out some of the games!";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+			mes "Hello and welcome to ^00FF00Comodo^000000, I'm not interested in your wares.";
+		close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "As long as you don't act like your normal self, welcome to ^00FF00Comodo^000000.";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "Welcome, I hope you enjoy your stay in ^00FF00Comodo^000000.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Welcome to ^00FF00Comodo^000000, hope you have a great time.  Oh and try to stay sober so someone can take care of the ruffians ;)";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "Hello, welcome to ^00FF00Comodo^000000.  It's nice to see someone like you here, but try not to use spells unless needed.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "I don't need anything, but welcome to ^00FF00Comodo^000000.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Welcome to ^00FF00Comodo^000000, please don't throw any traps around, have fun!";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Please help keep ^00FF00Comodo^000000 clean, we don't need any blood sports, other than that, welcome!";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Welcome to ^00FF00Comodo^000000, hope everything turns out all right.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "Welcome to ^00FF00Comodo^000000, hope you have a great time here.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Hello, welcome to ^00FF00Comodo^000000, please refrain from using any spells unless you desperately need to do so.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Welcome to ^00FF00Comodo^000000, please refrain from your regular day activities here.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Welcome to ^00FF00Comodo.";
+			mes "Be careful not to drop any potions, don't want a mess around here.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Welcome to ^00FF00Comodo^000000, perhaps I can come by and listen while you play a song sometime :)";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Hello, great to see that you made it through the tests!";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+				mes "Congratulations and welcome to ^00FF00Comodo^000000!  I hope you have a great time!";
+			close;
+	MALE:
+			mes "Congratulations sir!  Welcome to ^00FF00Comodo^000000, don't get drunk!";
+		close;
+NEXT19:
+		mes "Welcome to ^00FF00Comodo^000000, I hope you enjoy your stay.";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Haruna - Dancer Job Quest - Final Tester
+// By Black Dragon
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_duncer.vhm,72,51,3	script	Haruna	0,0,0,0	724,{
+		mes "[^000080Haruna^000000]";
+		mes "Hello, planning on heading back to ^00FF00Comodo^000000?";
+	next;
+		menu "No.",-,"Yes",LEAVE;
+				mes "[^000080Haruna^000000]";
+				mes "Come back if you want to leave.";
+			close;
+	LEAVE:
+		warp "comodo",189,160;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Karina - Dancer Job Quest - Final Tester
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_duncer.vhm,63,115,5	script	Karina	0,0,0,0	724,{
+		mes "[^000080Karina^000000]";
+	check Job_DA = 8,PART1,-;
+	check Job_DA = 9,PART2,-;
+			set Job_DA = 8;
+			mes "Hello, welcome to the ^008000Dancing Hall^000000.";
+			mes "Would you like to come to the dancing floor?";
+		next;
+	START:
+			mes "First, let me go through what you're expected of.";
+		START0:
+			mes "Before you, are 5 3x3 squares.";
+			mes "Each 1 is named based on their position, being: U for up, L for left, M for middle, R for right and D for down.";
+			mes "Each 3x3 square is numbered in a standard fashion.";
+			mes "The top row, from left to right are 1, 2 and 3, and goes to 9 being the lower right square.";
+		next;
+			mes "So, are you ready?";
+		next;
+			menu "Yes",GO,"No",-;
+		NO:
+					mes "Okay, let me know when you're ready.";
+					mes "Or perhaps you want to leave?";
+				next;
+					menu "No, I want to stay.",-,"Yes, I want to go back.",EXIT;
+							mes "Okay, that's good.";
+						close;
+				EXIT:
+					warp "comodo",189,160;
+		GO:
+			check \@DA_TEST = 0,-,EXIT0;
+					set \@DA_TEST = 1;
+				warp "job_duncer",69,110;
+			EXIT0:
+					mes "I'm sorry, there's too many people on the dancing floor at the moment.";
+				close;
+	PART1:
+			mes "Hi, have you come back to test for a job change?";
+		next;
+			menu "Yes, I have.",START,"No.",NO;
+	PART2:
+			mes "Hello, would you like to try again?";
+		next;
+			menu "Yes, please.",-,"No, I don't want to.",NO;
+					mes "All right then.";
+					mes "I'll go over it, in case you've forgotten anything.";
+				next;
+					goto START0;
+}

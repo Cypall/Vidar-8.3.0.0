@@ -1,0 +1,291 @@
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 1
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,21,39,0	script	Start1	0,0,2,0	-1,{
+OnTouch:
+	check \@MONK1 = 1,-,EXIT;
+		check Job_MO = 16,-,EXIT;
+				set \@MONK1 = 2;
+				broadcast "Monk Test - Room 1: Defeat all monsters within 90 seconds.",10;
+				enablenpc "monk_in",warp0655,0;
+				callmob "monk_in",34,41,Ghoul,1423,0,"monk1";
+				callmob "monk_in",29,45,Ghoul,1423,0,"monk1";
+				callmob "monk_in",24,44,Ghoul,1423,0,"monk1";
+				callmob "monk_in",21,41,Ghoul,1423,0,"monk1";
+				callmob "monk_in",16,45,Ghoul,1423,0,"monk1";
+				callmob "monk_in",17,39,Ghoul,1423,0,"monk1";
+				callmob "monk_in",20,35,Ghoul,1423,0,"monk1";
+				callmob "monk_in",23,32,Ghoul,1423,0,"monk1";
+				callmob "monk_in",28,35,Ghoul,1423,0,"monk1";
+				callmob "monk_in",32,37,Ghoul,1423,0,"monk1";
+			return;
+		EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 1 Timer
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,21,39,0	script	Timer1	0,0,2,0	-1,{
+OnTouch:
+	check \@MO_T1 = 0,-,EXIT;
+			set \@MO_T1 = 1;
+			addnpctimer "MT1",90000;
+			npctimer 1;
+		return;
+	OnTimer30000:
+		check \@MO_T1 = 1,-,EXIT;
+				broadcast "Monk Test - Room 1: 60 seconds remaining",10;
+			return;
+	OnTimer60000:
+		check \@MO_T1 = 1,-,EXIT;
+				broadcast "Monk Test - Room 1: 30 seconds remaining",10;
+			return;
+	OnTimer75000:
+		check \@MO_T1 = 1,-,EXIT;
+				broadcast "Monk Test - Room 1: 15 seconds remaining",10;
+			return;
+	OnTimer90000:
+		check \@MO_T1 = 1,-,EXIT;
+				set \@MONK1 = 0;
+				set \@MO_T1 = 0;
+				npctimer 0;
+				warpallpc "prt_monk",232,174,1;
+			return;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 1 Timer
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,1,1,0	script	monk1	0,0,2,0	-1,{
+		scriptlabel "monk1";
+		set \@MO_K1 + 1;
+	check \@MO_K1 = 10,-,EXIT;
+			broadcast "Monk Test - Room 1: Please make your way to the exit.",10;
+			set \@MO_T1 = 2;
+			enablenpc "monk_in",warp0655,1;
+		return;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 1 Success
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,71,46,0	script	OK1	0,0,2,0	-1,{
+OnTouch:
+	check @ROOM = 1,-,EXIT;
+	check \@MO_T1 = 2,-,EXIT;
+		check Job_MO = 16,-,EXIT;
+				set \@MO_T1 = 0;
+				set \@MO_K1 = 0;
+				set \@ROOM1 = 1;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 2
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,23,93,0	script	Start2	0,0,2,0	-1,{
+OnTouch:
+	check \@MONK2 = 1,-,EXIT;
+		check Job_MO = 16,-,EXIT;
+				set \@MONK2 = 2;
+				broadcast "Monk Test - Room 2: Defeat all monsters within 90 seconds.",10;
+				enablenpc "monk_in",warp0656,0;
+				callmob "monk_in",28,98,Ghoul,1423,0,"monk2";
+				callmob "monk_in",24,95,Ghoul,1423,0,"monk2";
+				callmob "monk_in",16,95,Ghoul,1423,0,"monk2";
+				callmob "monk_in",19,92,Ghoul,1423,0,"monk2";
+				callmob "monk_in",16,88,Ghoul,1423,0,"monk2";
+				callmob "monk_in",20,86,Ghoul,1423,0,"monk2";
+				callmob "monk_in",25,88,Ghoul,1423,0,"monk2";
+				callmob "monk_in",32,85,Ghoul,1423,0,"monk2";
+				callmob "monk_in",34,89,Ghoul,1423,0,"monk2";
+				callmob "monk_in",34,93,Ghoul,1423,0,"monk2";
+			return;
+	EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 2 Timer
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,23,93,0	script	Timer2	0,0,2,0	-1,{
+OnTouch:
+	check \@MO_T2 = 0,-,EXIT;
+			set \@MO_T2 = 1;
+			addnpctimer "MT2",90000;
+			npctimer 1;
+		return;
+	OnTimer30000:
+		check \@MO_T2 = 1,-,EXIT;
+				broadcast "Monk Test - Room 2: 60 seconds remaining",10;
+			return;
+	OnTimer60000:
+		check \@MO_T2 = 1,-,EXIT;
+				broadcast "Monk Test - Room 2: 30 seconds remaining",10;
+			return;
+	OnTimer75000:
+		check \@MO_T2 = 1,-,EXIT;
+				broadcast "Monk Test - Room 2: 15 seconds remaining",10;
+			return;
+	OnTimer90000:
+		check \@MO_T2 = 1,-,EXIT;
+				set \@MONK2 = 0;
+				set \@MO_T2 = 0;
+				set \@MO_K2 = 0;
+				npctimer 0;
+				warpallpc "prt_monk",232,174,1;
+			return;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 2 Timer
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,1,1,0	script	"monk2"	0,0,2,0	-1,{
+		scriptlabel "monk2";
+		set \@MO_K2 + 1;
+	check \@MO_K2 = 10,-,EXIT;
+			broadcast "Monk Test - Room 2: Please make your way to the exit.",10;
+			set \@MO_T2 = 2;
+			enablenpc "monk_in",warp0656,1;
+		return;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 2 Success
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,71,84,0	script	OK2	0,0,2,0	-1,{
+OnTouch:
+	check @ROOM = 2,-,EXIT;
+	check \@MO_T2 = 2,-,EXIT;
+		check Job_MO = 16,-,EXIT;
+				set \@MO_T2 = 0;
+				set \@MO_K2 = 0;
+				set \@ROOM2 = 1;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 3
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,175,38,0	script	Start3	0,0,2,0	-1,{
+OnTouch:
+	check \@MONK3 = 1,-,EXIT;
+		check Job_MO = 16,-,EXIT;
+				set \@MONK3 = 2;
+				broadcast "Monk Test - Room 3: Defeat all monsters within 90 seconds.",10;
+				enablenpc "monk_in",warp0665,0;
+				callmob "monk_in",166,42,Ghoul,1423,0,"monk3";
+				callmob "monk_in",172,40,Ghoul,1423,0,"monk3";
+				callmob "monk_in",172,45,Ghoul,1423,0,"monk3";
+				callmob "monk_in",179,46,Ghoul,1423,0,"monk3";
+				callmob "monk_in",183,39,Ghoul,1423,0,"monk3";
+				callmob "monk_in",182,31,Ghoul,1423,0,"monk3";
+				callmob "monk_in",178,35,Ghoul,1423,0,"monk3";
+				callmob "monk_in",173,35,Ghoul,1423,0,"monk3";
+				callmob "monk_in",167,33,Ghoul,1423,0,"monk3";
+				callmob "monk_in",172,41,Ghoul,1423,0,"monk3";
+			return;
+		EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 3 Timer
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,175,38,0	script	Timer3	0,0,2,0	-1,{
+OnTouch:
+	check \@MO_T3 = 0,-,EXIT;
+			set \@MO_T3 = 1;
+			addnpctimer "MT3",90000;
+			npctimer 1;
+		return;
+	OnTimer30000:
+		check \@MO_T3 = 1,-,EXIT;
+				broadcast "Monk Test - Room 3: 60 seconds remaining",10;
+			return;
+	OnTimer60000:
+		check \@MO_T3 = 1,-,EXIT;
+				broadcast "Monk Test - Room 3: 30 seconds remaining",10;
+			return;
+	OnTimer75000:
+		check \@MO_T3 = 1,-,EXIT;
+				broadcast "Monk Test - Room 3: 15 seconds remaining",10;
+			return;
+	OnTimer90000:
+		check \@MO_T3 = 1,-,EXIT;
+				set \@MONK3 = 0;
+				set \@MO_T3 = 0;
+				set \@MO_K3 = 0;
+				npctimer 0;
+				warpallpc "prt_monk",232,174,1;
+			return;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 3 Timer
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,1,1,0	script	"monk3"	0,0,2,0	-1,{
+		scriptlabel "monk3";
+		set \@MO_K3 + 1;
+	check \@MO_K3 = 10,-,EXIT;
+			broadcast "Monk Test - Room 3: Please make your way to the exit.",10;
+			set \@MO_T3 = 2;
+			enablenpc "monk_in",warp0665,1;
+		return;
+EXIT:
+}
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Monk Job Quest - Fighting Room 2 Success
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,126,46,0	script	OK3	0,0,2,0	-1,{
+OnTouch:
+	check @ROOM = 3,-,EXIT;
+	check \@MO_T3 = 2,-,EXIT;
+		check Job_MO = 16,-,EXIT;
+				set \@MO_T3 = 0;
+				set \@MO_K3 = 0;
+				set \@ROOM3 = 1;
+EXIT:
+}

@@ -1,0 +1,1176 @@
+//NOTES
+//- Please remove the following warps from the miscellaneous warp text file
+//monk_in.vhm,69,46,0	warp	warp0657	1,3,monk_in.vhm,38,38
+//monk_in.vhm,69,84,0	warp	warp0658	1,3,monk_in.vhm,38,92
+//monk_in.vhm,128,46,0	warp	warp0663	1,3,monk_in.vhm,161,38
+//
+// Error reports / Fixes by dannylak23, mudvayne819, newbieguy_01
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Si Fu - Monk Job Quest - Starter
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_monk.vhm,246,80,0	script	"Si Fu"	0,0,0,0	753,{
+		mes "[Si Fu]";
+	check Job_MO > 0,CONT,-;
+			mes "Hello traveler.";
+		next;
+			mes "[Si Fu]";
+		check Job = 4,ACO,-;
+				mes "It is a beautiful day out, don't you think?";
+			close;
+		ACO:
+				mes "How may I help you?";
+			next;
+				menu "Tell of your interest in becoming a ^800000Monk^000000",JOB,"Leave",-;
+						mes "[Si Fu]";
+						mes "Carry on.";
+					close;
+			JOB:
+					mes "[Si Fu]";
+					mes "Oh, well, if you find ^000080Elder Wuhai^000000, perhaps he can guide you.";
+					set Job_MO = 1;
+				close;
+	CONT:
+		check Job = 15,MONK,-;
+				mes "Good luck to you.";
+			close;
+		MONK:
+				mes "Hello $charaname, nice to see you.";
+			close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Elder Wuhai - Monk Job Quest - Main Session
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_monk.vhm,274,202,2	script	"Elder Wuhai"	0,0,0,0	809,{
+		mes "[Elder Wuhai]";
+	check Job = 4,START,-;
+	check Job = 15,MONK,-;
+		OTHER:
+				mes "Hello traveler.";
+				mes "Welcome to ^00FF00St. Capitolina Abbey^000000.";
+			close;
+	START:
+	check Job_MO = 1,PART1,-;
+	check Job_MO = 2,PART2,-;
+	check Job_MO = 3,PART3,-;
+	check Job_MO > 3,CONT,OTHER;
+	PART1:
+		next;
+			menu "Apply to become a ^800000Monk^000000",JOB,"Leave",-;
+					mes "[Elder Wuhai]";
+					mes "Take care.";
+				close;
+		JOB:
+				check JobLevel = 50,-,SKIP;
+						set Job_MO = 3;
+						set JLMO = 1;
+						mes "Please see ^000080Wutao^000000, he will guide you for now.";
+					close;
+			SKIP:
+				set Job_MO = 2;
+				mes "To begin, please bring these items: 3 ^FF0000Shells^000000, 5 ^FF0000Mantis Scythes^000000 and 4 ^FF0000Fangs^000000.";
+			close;
+	PART2:
+			set @ITEM = 0;
+		checkitem 935,3,ITEM,-;
+			set @ITEM + 4;
+	ITEM:
+		checkitem 1031,5,ITEM0,-;
+			set @ITEM + 2;
+	ITEM0:
+		checkitem 1063,4,ITEM1,-;
+			set @ITEM + 1;
+	ITEM1:
+			mes "[Elder Wuhai]";
+		check @ITEM > 0,-,DONE;
+				mes "You need to locate some items:";
+			check @ITEM > 3,-,ITEM2;
+					mes "- 3 ^FF0000Shells^000000";
+					set @ITEM - 4;
+		ITEM2:
+			check @ITEM > 1,-,ITEM3;
+					mes "- 5 ^FF0000Mantis Scythes^000000";
+					set @ITEM - 2;
+		ITEM3:
+			check @ITEM > 0,-,ITEM4;
+					mes "- 4 ^FF0000Fangs^000000";
+		ITEM4:
+			close;
+		DONE:
+				delitem 935,3;
+				delitem 1031,5;
+				delitem 1063,4;
+				set Job_MO = 3;
+				mes "Well done.";
+			next;
+				mes "[Elder Wuhai]";
+				mes "Please consult to ^000080Wutao^000000 for further instructions.";
+			close;
+	CONT:
+		check Job_MO = 18,PART3,-;
+		check Job_MO = 19,PART4,-;
+		check Job_MO = 20,PART5,-;
+		check Job_MO = 21,PART6,-;
+		check Job_MO = 22,PART7,-;
+		check Job_MO = 23,FIN,-;
+				mes "Good luck.";
+			close;
+		PART3:
+				mes "Oh, good.";
+				mes "You have completed all the tasks thus far.";
+			next;
+				mes "[Elder Wuhai]";
+				mes "Are you ready to continue?";
+		PART4A:
+			next;
+				menu "Of course.",-,"Not yet.",EXIT;
+						set Job_MO = 20;
+						mes "[Elder Wuhai]";
+						mes "Good.  Please collect these items: 3 ^FF0000Yoyo Tails^000000, 5 ^FF0000Grasshopper's Legs^000000, 5 ^FF0000Skel-Bones^000000, 4 ^FF0000Shells^000000 and 3 ^FF0000Fangs^000000.";
+					close;
+			EXIT:
+					set Job_MO = 19;
+					mes "[Elder Wuhai]";
+					mes "Oh, all right.  Return when you are ready.";
+				close;
+		PART4:
+				mes "Are you ready to continue now?";
+			goto PART4A;
+		PART5:
+			checkitem 942,3,ITEMA,-;
+				set @ITEM + 16;
+		ITEMA:
+			checkitem 940,5,ITEMA0,-;
+				set @ITEM + 8;
+		ITEMA0:
+			checkitem 932,5,ITEMA1,-;
+				set @ITEM + 4;
+		ITEMA1:
+			checkitem 935,4,ITEMA2,-;
+				set @ITEM + 2;
+		ITEMA2:
+			checkitem 1063,3,ITEMA3,-;
+				set @ITEM + 1;
+		ITEMA3:
+			check @ITEM > 0,-,DONE0;
+					mes "You're missing some items:";
+				check @ITEM > 15,-,ITEMA4;
+						mes "- 3 ^FF0000Yoyo Tails^000000";
+						set @ITEM - 16;
+			ITEMA4:
+				check @ITEM > 7,-,ITEMA5;
+						mes "- 5 ^FF0000Grasshopper's Legs^000000";
+						set @ITEM - 8;
+			ITEMA5:
+				check @ITEM > 3,-,ITEMA6;
+						mes "- 5 ^FF0000Skel-Bones^000000";
+						set @ITEM - 4;
+			ITEMA6:
+				check @ITEM > 1,-,ITEMA7;
+						mes "- 4 ^FF0000Shells^000000";
+						set @ITEM - 2;
+			ITEMA7:
+				check @ITEM > 0,-,ITEMA8;
+						mes "- 3 ^FF0000Fangs^000000";
+			ITEMA8:
+				close;
+			DONE0:
+					delitem 942,3;
+					delitem 940,5;
+					delitem 932,5;
+					delitem 935,4;
+					delitem 1063,3;
+					set Job_MO = 21;
+					mes "Excellent work.";
+					mes "Shall we move on now?";
+			CONT0:
+				next;
+					menu "Yes",-,"No",EXIT;
+							set Job_MO = 22;
+							set @ANS = 0;
+							mes "[Elder Wuhai]";
+							mes "Good, let's begin then.";
+						next;
+							mes "[Elder Wuhai]";
+							mes "Will you give the rest of your life to serving God?";
+						next;
+							menu "Yes",-,"No",Q1;
+								set @ANS + 1;
+					Q1:
+							mes "[Elder Wuhai]";
+							mes "Will you use your power for your own good?";
+						next;
+							menu "Yes",Q2,"No",-;
+								set @ANS + 1;
+					Q2:
+							mes "[Elder Wuhai]";
+							mes "When you are judging those who oppose God, will you hesitate in punishing them?";
+						next;
+							menu "Yes",-,"No",Q3;
+								set @ANS + 1;
+					Q3:
+							mes "[Elder Wuhai]";
+							mes "Will you help to eradicate those who oppose God, and are you willing to sacrifice yourself?";
+						next;
+							menu "Yes",-,"No",Q4;
+								set @ANS + 1;
+					Q4:
+							mes "[Elder Wuhai]";
+							mes "Will you drag a lot of monsters behind you, and help other people fight?";
+						next;
+							menu "Yes",Q5,"No",-;
+								set @ANS + 1;
+					Q5:
+							mes "[Elder Wuhai]";
+							mes "Will you spam?";
+						next;
+							menu "Yes",Q6,"No",-;
+								set @ANS + 1;
+					Q6:
+							mes "[Elder Wuhai]";
+							mes "Do you feel as if you're a messenger of God, and are willing to die for God?";
+						next;
+							menu "Yes",-,"No",Q7;
+								set @ANS + 1;
+					Q7:
+							mes "[Elder Wuhai]";
+							mes "Those who oppose God will die, those who listen to God will live.";
+							mes "What is life and death to you?";
+							mes "Ponder that well.";
+							mes "Lastly, promise to keep to what you have answered.";
+						next;
+							menu "I promise.",-,"I refuse.",DONE1;
+								set @ANS + 1;
+						DONE1:
+								mes "[Elder Wuhai]";
+							check @ANS = 8,-,EXIT0;
+									set Job_MO = 23;
+							FIN:
+								check Job = 15,MONK,-;
+									check SkillPoint = 0,-,EXIT1;
+											jobchange 15;
+											set JobLevel = 1,0;
+											mes "Well done.";
+										next;
+											mes "[Elder Wuhai]";
+											mes "Here is a gift from us to congratulate you.";
+										check JLMO = 1,-,OTHER;
+												additem 1801,1;
+											goto END;
+										OTHER:
+												additem 1804,1;
+										END:
+											close;
+									EXIT1:
+											mes "I'm sorry, skill points cannot be transferred to your next job.";
+										close;
+								MONK:
+										mes "Hello $charaname.";
+										mes "Welcome back to ^008000St. Capitolina Abbey^000000.";
+									close;
+							EXIT0:
+									mes "I'm sorry, you'll need to retake the test.";
+								close;
+		PART6:
+				mes "Care to continue?";
+			goto CONT0;
+		PART7:
+				mes "Would you like to try again?";
+			goto CONT0;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Wutao - Monk Job Quest - Test NPC 1
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_monk.vhm,239,237,0	script	Wutao	0,0,0,0	808,{
+		mes "[^000080Wutao^000000]";
+	check Job = 4,START,-;
+	check Job = 15,MONK,-;
+		OTHER:
+				mes "Hello, welcome to ^008000St. Capitolina Abbey^000000.";
+			close;
+	START:
+		check Job_MO = 3,PART1,-;
+		check Job_MO = 4,PART2,-;
+		check Job_MO = 5,PART3,-;
+		check Job_MO = 6,PART4,-;
+		check Job_MO > 6,CONT,OTHER;
+		PART1:
+				mes "Hello, have you come for the test?";
+			next;
+				menu "Yes, thank you.",JOB,"No.",-;
+			NO:
+						mes "[^000080Wutao^000000]";
+						mes "Oh, I see.";
+						mes "Take care then.";
+						set Job_MO = 4;
+					close;
+			JOB:
+					set Job_MO = 5;
+					mes "Very good.";
+					mes "In this part of the test, you will have to memorize a paragraph.";
+					mes "Once you finish reading it, you must tell me the paragraph back.";
+				next;
+					mes "[^000080Wutao^000000]";
+					mes "All right, let's begin.";
+				next;
+					set @ANS = 0;
+					random @RND,5;
+				check @RND = 0,P1,-;
+				check @RND = 1,P2,-;
+				check @RND = 2,P3,-;
+				check @RND = 3,P4,-;
+						mes "[^000080Wutao^000000]";
+						mes "'Supported by dragon and phoenix,";
+						mes "So flies he westward.";
+						mes "But the phoenix shall fall to the earth.";
+						mes "And the dragon shall soar to the sky;";
+						mes "There shall be successes and failures,";
+						mes "For such is the eternal law.";
+						mes "See that ye act when occasion offers,";
+						mes "Lest ye descend to the Nine Golden Springs.'";
+					next;
+						mes "[^000080Wutao^000000]";
+						mes "Now it's your turn.";
+					next;
+						menu "So flies he westward",P5A,"See that ye act when occasion offers",P5A,"There shall be successes and failures",P5A,"And the dragon shall soar to the sky",P5A,"But the phoenix shall fall to the earth",P5A,"Lest ye descend to the Nine Golden Springs",P5A,"Supported by dragon and phoenix",-,"For such is the eternal law",P5A;
+							set @ANS + 1;
+					P5A:
+						menu "For such is the eternal law",P5B,"See that ye act when occasion offers",P5B,"Supported by dragon and phoenix",P5B,"Lest ye descend to the Nine Golden Springs",P5B,"And the dragon shall soar to the sky",P5B,"So flies he westward",-,"But the phoenix shall fall to the earth",P5B,"There shall be successes and failures",P5B;
+							set @ANS + 1;
+					P5B:
+						menu "See that ye act when occasion offers",P5C,"Lest ye descend to the Nine Golden Springs",P5C,"And the dragon shall soar to the sky",P5C,"There shall be successes and failures",P5C,"For such is the eternal law",P5C,"Supported by dragon and phoenix",P5C,"So flies he westward",P5C,"But the phoenix shall fall to the earth",-;
+							set @ANS + 1;
+					P5C:
+						menu "Supported by dragon and phoenix",P5D,"And the dragon shall soar to the sky",-,"But the phoenix shall fall to the earth",P5D,"There shall be successes and failures",P5D,"Lest ye descend to the Nine Golden Springs",P5D,"So flies he westward",P5D,"For such is the eternal law",P5D,"See that ye act when occasion offers",P5D;
+							set @ANS + 1;
+					P5D:
+						menu "But the phoenix shall fall to the earth",P5E,"And the dragon shall soar to the sky",P5E,"Supported by dragon and phoenix",P5E,"So flies he westward",P5E,"For such is the eternal law",P5E,"See that ye act when occasion offers",P5E,"There shall be successes and failures",-,"Lest ye descend to the Nine Golden Springs",P5E;
+							set @ANS + 1;
+					P5E:
+						menu "Lest ye descend to the Nine Golden Springs",P5F,"And the dragon shall soar to the sky",P5F,"See that ye act when occasion offers",P5F,"For such is the eternal law",-,"But the phoenix shall fall to the earth",P5F,"There shall be successes and failures",P5F,"So flies he westward",P5F,"Supported by dragon and phoenix",P5F;
+							set @ANS + 1;
+					P5F:
+						menu "See that ye act when occasion offers",-,"So flies he westward",P5G,"Lest ye descend to the Nine Golden Springs",P5G,"There shall be successes and failures",P5G,"For such is the eternal law",P5G,"Supported by dragon and phoenix",P5G,"But the phoenix shall fall to the earth",P5G,"And the dragon shall soar to the sky",P5G;
+							set @ANS + 1;
+					P5G:
+						menu "So flies he westward",P5H,"For such is the eternal law",P5H,"Lest ye descend to the Nine Golden Springs",-,"Supported by dragon and phoenix",P5H,"See that ye act when occasion offers",P5H,"There shall be successes and failures",P5H,"But the phoenix shall fall to the earth",P5H,"And the dragon shall soar to the sky",P5H;
+							set @ANS + 1;
+					P5H:
+						check @ANS = 8,-,FAIL;
+					SUCCESS:
+							mes "[^000080Wutao^000000]";
+							mes "Well done.";
+							set Job_MO = 6;
+						next;
+							mes "[^000080Wutao^000000]";
+							mes "Please seek ^000080Fuhai^000000 to continue.";
+						close;
+					FAIL:
+							mes "[^000080Wutao^000000]";
+							mes "I'm sorry, looks like you didn't memorize it all.";
+						close;
+				P1:
+						mes "[^000080Wutao^000000]";
+						mes "He boasted not a handsome face,";
+						mes "Nor was his body blessed with grace.";
+						mes "His words streamed like a waterfall,";
+						mes "He read a book and knew it all.";
+						mes "Shu's glories could he well rehearse,";
+						mes "His lore embraced the universe.";
+						mes "Or text or note of scholiast";
+						mes "Once read, his memory held fast.";
+					next;
+						mes "[^000080Wutao^000000]";
+						mes "Now it's your turn.";
+					next;
+						menu "His words streamed like a waterfall",P1A,"His lore embraced the universe",P1A,"Shu's glories could he well rehearse",P1A,"Nor was his body blessed with grace",P1A,"He read a book and knew it all",P1A,"Once read, his memory held fast",P1A,"Or text or note of scholiast",P1A,"He boasted not a handsome face",-;
+							set @ANS + 1;
+					P1A:
+						menu "Shu's glories could he well rehearse",P1B,"Or text or note of scholiast",P1B,"Once read, his memory held fast",P1B,"Nor was his body blessed with grace",-,"His lore embraced the universe",P1B,"He boasted not a handsome face",P1B,"He read a book and knew it all",P1B,"His words streamed like a waterfall",P1B;
+							set @ANS + 1;
+					P1B:
+						menu "His lore embraced the universe",P1C,"Shu's glories could he well rehearse",P1C,"He boasted not a handsome face",P1C,"Once read, his memory held fast",P1C,"His words streamed like a waterfall",-,"Or text or note of scholiast",P1C,"Nor was his body blessed with grace",P1C,"He read a book and knew it all",P1C;
+							set @ANS + 1;
+					P1C:
+						menu "Once read, his memory held fast",P1D,"He read a book and knew it all",-,"Or text or note of scholiast",P1D,"Shu's glories could he well rehearse",P1D,"His words streamed like a waterfall",P1D,"His lore embraced the universe",P1D,"Nor was his body blessed with grace",P1D,"He boasted not a handsome face",P1D;
+							set @ANS + 1;
+					P1D:
+						menu "His lore embraced the universe",P1E,"Once read, his memory held fast",P1E,"Nor was his body blessed with grace",P1E,"He read a book and knew it all",P1E,"His words streamed like a waterfall",P1E,"He boasted not a handsome face",P1E,"Shu's glories could he well rehearse",-,"Or text or note of scholiast",P1E;
+							set @ANS + 1;
+					P1E:
+						menu "He boasted not a handsome face",P1F,"Once read, his memory held fast",P1F,"Or text or note of scholiast",P1F,"His lore embraced the universe",-,"He read a book and knew it all",P1F,"Shu's glories could he well rehearse",P1F,"Nor was his body blessed with grace",P1F,"His words streamed like a waterfall",P1F;
+							set @ANS + 1;
+					P1F:
+						menu "Or text or note of scholiast",-,"He read a book and knew it all",P1G,"He boasted not a handsome face",P1G,"His words streamed like a waterfall",P1G,"Nor was his body blessed with grace",P1G,"Once read, his memory held fast",P1G,"His lore embraced the universe",P1G,"Shu's glories could he well rehearse",P1G;
+							set @ANS + 1;
+					P1G:
+						menu "Once read, his memory held fast",-,"Nor was his body blessed with grace",P1H,"His words streamed like a waterfall",P1H,"Shu's glories could he well rehearse",P1H,"He boasted not a handsome face",P1H,"Or text or note of scholiast",P1H,"He read a book and knew it all",P1H,"His lore embraced the universe",P1H;
+							set @ANS + 1;
+					P1H:
+						check @ANS = 8,SUCCESS,FAIL;
+				P2:
+						mes "[^000080Wutao^000000]";
+						mes "Seek ye a noble one? Then take ye the way of Jieliang,";
+						mes "Watch ye how all people revere Guan Yu,";
+						mes "Each excelling others to honor him,";
+						mes "Him, one of the three brothers of the Peach Garden Oath,";
+						mes "Who have won sacrifices, as emperor and king.";
+						mes "Incomparable their aura spreads through the world;";
+						mes "They are resplendent as the great lights of the firmament;";
+						mes "Temples to our Lord Guan Yu abound, no village lacks one,";
+						mes "Their venerable trees at sundown are the resting places for birds.";
+					next;
+						mes "[^000080Wutao^000000]";
+						mes "Now it's your turn.";
+					next;
+						menu "Him, one of the three brothers of the Peach Garden Oath",P2A,"They are resplendent as the great lights of the firmament",P2A,"Their venerable trees at sundown are the resting places for birds",P2A,"Watch ye how all people revere Guan Yu",-,"Incomparable their aura spreads through the world",P2A,"Who have won sacrifices, as emperor and king",P2A,"Temples to our Lord Guan Yu abound, no village lacks one",P2A,"Seek ye a noble one? Then take ye the way of Jieliang",-,"Each excelling others to honor him",P2A;
+							set @ANS + 1;
+					P2A:
+						menu "Temples to our Lord Guan Yu abound, no village lacks one",P2B,"Seek ye a noble one? Then take ye the way of Jieliang",P2B,"They are resplendent as the great lights of the firmament",P2B,"Who have won sacrifices, as emperor and king",P2B,"Each excelling others to honor him",P2B,"Watch ye how all people revere Guan Yu",-,"Incomparable their aura spreads through the world",P2B,"Their venerable trees at sundown are the resting places for birds",P2B,"Him, one of the three brothers of the Peach Garden Oath",P2B;
+							set @ANS + 1;
+					P2B:
+						menu "Each excelling others to honor him",-,"Watch ye how all people revere Guan Yu",P2C,"Temples to our Lord Guan Yu abound, no village lacks one",P2C,"Who have won sacrifices, as emperor and king",P2C,"Him, one of the three brothers of the Peach Garden Oath",P2C,"Incomparable their aura spreads through the world",P2C,"Their venerable trees at sundown are the resting places for birds",P2C,"They are resplendent as the great lights of the firmament",P2C,"Seek ye a noble one? Then take ye the way of Jieliang",P2C;
+							set @ANS + 1;
+					P2C:
+						menu "They are resplendent as the great lights of the firmament",P2D,"Their venerable trees at sundown are the resting places for birds",P2D,"Each excelling others to honor him",P2D,"Who have won sacrifices, as emperor and king",P2D,"Temples to our Lord Guan Yu abound, no village lacks one",P2D,"Seek ye a noble one? Then take ye the way of Jieliang",P2D,"Incomparable their aura spreads through the world",P2D,"Him, one of the three brothers of the Peach Garden Oath",-,"Watch ye how all people revere Guan Yu",P2D;
+							set @ANS + 1;
+					P2D:
+						menu "Incomparable their aura spreads through the world",P2E,"They are resplendent as the great lights of the firmament",P2E,"Seek ye a noble one? Then take ye the way of Jieliang",P2E,"Temples to our Lord Guan Yu abound, no village lacks one",P2E,"Their venerable trees at sundown are the resting places for birds",P2E,"Watch ye how all people revere Guan Yu",P2E,"Him, one of the three brothers of the Peach Garden Oath",P2E,"Who have won sacrifices, as emperor and king",-,"Each excelling others to honor him",P2E;
+							set @ANS + 1;
+					P2E:
+						menu "Their venerable trees at sundown are the resting places for birds",P2F,"Watch ye how all people revere Guan Yu",P2F,"Temples to our Lord Guan Yu abound, no village lacks one",P2F,"Each excelling others to honor him",P2F,"Him, one of the three brothers of the Peach Garden Oath",P2F,"Incomparable their aura spreads through the world",-,"Seek ye a noble one? Then take ye the way of Jieliang",P2F,"They are resplendent as the great lights of the firmament",P2F,"Who have won sacrifices, as emperor and king",P2F;
+							set @ANS + 1;
+					P2F:
+						menu "Incomparable their aura spreads through the world;",P2G,"Temples to our Lord Guan Yu abound, no village lacks one",P2G,"Watch ye how all people revere Guan Yu",P2G,"Seek ye a noble one? Then take ye the way of Jieliang",P2G,"Who have won sacrifices, as emperor and king",P2G,"Their venerable trees at sundown are the resting places for birds",P2G,"Each excelling others to honor him",P2G,"They are resplendent as the great lights of the firmament",-,"Him, one of the three brothers of the Peach Garden Oath",P2G;
+							set @ANS + 1;
+					P2G:
+						menu "Seek ye a noble one? Then take ye the way of Jieliang",P2H,"Him, one of the three brothers of the Peach Garden Oath",P2H,"Who have won sacrifices, as emperor and king",P2H,"Watch ye how all people revere Guan Yu",P2H,"They are resplendent as the great lights of the firmament",P2H,"Their venerable trees at sundown are the resting places for birds",P2H,"Temples to our Lord Guan Yu abound, no village lacks one",-,"Incomparable their aura spreads through the world",P2H,"Each excelling others to honor him",P2H;
+							set @ANS + 1;
+					P2H:
+						menu "Who have won sacrifices, as emperor and king",P2I,"Incomparable their aura spreads through the world",P2I,"Their venerable trees at sundown are the resting places for birds",P2I,"Temples to our Lord Guan Yu abound, no village lacks one",P2I,"Each excelling others to honor him",P2I,"They are resplendent as the great lights of the firmament",P2I,"Him, one of the three brothers of the Peach Garden Oath",P2I,"Seek ye a noble one? Then take ye the way of Jieliang",P2I,"Watch ye how all people revere Guan Yu",P2I;
+							set @ANS + 1;
+					P2I:
+						check @ANS = 9,SUCCESS,FAIL;
+				P3:
+						mes "[^000080Wutao^000000]";
+						mes "Both king and courtiers, willing, bowed the knee,";
+						mes "One son alone was grieved and would not live.";
+						mes "The western kingdom fell to rise no more,";
+						mes "A noble prince stood forth, for aye renowned";
+						mes "As one who died to save his forbears' shame.";
+						mes "With grievous mien and falling tears he bowed";
+						mes "His head, declaring his intent to die.";
+						mes "While such a memory lingers none may say";
+						mes "That the Han Dynasty has perished.";
+					next;
+						mes "[^000080Wutao^000000]";
+						mes "Now it's your turn.";
+					next;
+						menu "His head, declaring his intent to die",P3A,"One son alone was grieved and would not live",P3A,"With grievous mien and falling tears he bowed",P3A,"As one who died to save his forbears' shame",P3A,"While such a memory lingers none may say",P3A,"The western kingdom fell to rise no more",P3A,"A noble prince stood forth, for aye renowned",P3A,"That the Han Dynasty has perished",P3A,"Both king and courtiers, willing, bowed the knee",-;
+							set @ANS + 1;
+					P3A:
+						menu "Both king and courtiers, willing, bowed the knee",P3B,"One son alone was grieved and would not live",-,"As one who died to save his forbears' shame",P3B,"A noble prince stood forth, for aye renowned",P3B,"That the Han Dynasty has perished",P3B,"With grievous mien and falling tears he bowed",P3B,"The western kingdom fell to rise no more",P3B,"While such a memory lingers none may say",P3B,"His head, declaring his intent to die",P3B;
+							set @ANS + 1;
+					P3B:
+						menu "With grievous mien and falling tears he bowed",P3C,"The western kingdom fell to rise no more",-,"A noble prince stood forth, for aye renowned",P3C,"While such a memory lingers none may say",P3C,"That the Han Dynasty has perished",P3C,"Both king and courtiers, willing, bowed the knee",P3C,"One son alone was grieved and would not live",P3C,"His head, declaring his intent to die",P3C,"As one who died to save his forbears' shame",P3C;
+							set @ANS + 1;
+					P3C:
+						menu "One son alone was grieved and would not live",P3D,"With grievous mien and falling tears he bowed",P3D,"Both king and courtiers, willing, bowed the knee",P3D,"While such a memory lingers none may say",P3D,"A noble prince stood forth, for aye renowned",-,"That the Han Dynasty has perished",P3D,"As one who died to save his forbears' shame",P3D,"The western kingdom fell to rise no more",P3D,"His head, declaring his intent to die",P3D;
+							set @ANS + 1;
+					P3D:
+						menu "Both king and courtiers, willing, bowed the knee",P3E,"With grievous mien and falling tears he bowed",P3E,"That the Han Dynasty has perished",P3E,"As one who died to save his forbears' shame",-,"A noble prince stood forth, for aye renowned",P3E,"The western kingdom fell to rise no more",P3E,"His head, declaring his intent to die",P3E,"While such a memory lingers none may say",P3E,"One son alone was grieved and would not live",P3E;
+							set @ANS + 1;
+					P3E:
+						menu "As one who died to save his forbears' shame",P3F,"His head, declaring his intent to die",P3F,"The western kingdom fell to rise no more",P3F,"One son alone was grieved and would not live",P3F,"That the Han Dynasty has perished",P3F,"While such a memory lingers none may say",P3F,"Both king and courtiers, willing, bowed the knee",P3F,"A noble prince stood forth, for aye renowned",P3F,"With grievous mien and falling tears he bowed",-;
+							set @ANS + 1;
+					P3F:
+						menu "The western kingdom fell to rise no more",P3G,"With grievous mien and falling tears he bowed",P3G,"A noble prince stood forth, for aye renowned",P3G,"As one who died to save his forbears' shame",P3G,"Both king and courtiers, willing, bowed the knee",P3G,"His head, declaring his intent to die",-,"One son alone was grieved and would not live",P3G,"While such a memory lingers none may say",P3G,"That the Han Dynasty has perished",P3G;
+							set @ANS + 1;
+					P3G:
+						menu "As one who died to save his forbears' shame",P3H,"His head, declaring his intent to die",P3H,"While such a memory lingers none may say",-,"Both king and courtiers, willing, bowed the knee",P3H,"A noble prince stood forth, for aye renowned",P3H,"One son alone was grieved and would not live",P3H,"With grievous mien and falling tears he bowed",P3H,"The western kingdom fell to rise no more",P3H,"That the Han Dynasty has perished",P3H;
+							set @ANS + 1;
+					P3H:
+						menu "One son alone was grieved and would not live",P3I,"Both king and courtiers, willing, bowed the knee",P3I,"The western kingdom fell to rise no more",P3I,"As one who died to save his forbears' shame",P3I,"That the Han Dynasty has perished",-,"While such a memory lingers none may say",P3I,"With grievous mien and falling tears he bowed",P3I,"A noble prince stood forth, for aye renowned",P3I,"His head, declaring his intent to die",P3I;
+							set @ANS + 1;
+					P3I:
+						check @ANS = 9,SUCCESS,FAIL;
+				P4:
+						mes "[^000080Wutao^000000]";
+						mes "'Spring and the green of the tender grass,";
+						mes "Flushes with joy as the swallows pass;";
+						mes "The wayfarers pause by the rippling stream,";
+						mes "And their eyes will new born gladness gleam;";
+						mes "With lingering gaze the roofs I see";
+						mes "Of the Palace that one time sheltered me.";
+						mes "But those whom I sheltered in all righteousness,";
+						mes "Let's not stay in silence when the days pass useless?'";
+					next;
+						mes "[^000080Wutao^000000]";
+						mes "Now it's your turn.";
+					next;
+						menu "Flushes with joy as the swallows pass",P4A,"And their eyes will new born gladness gleam",P4A,"Spring and the green of the tender grass",-,"With lingering gaze the roofs I see",P4A,"Let's not stay in silence when the days pass useless",P4A,"But those whom I sheltered in all righteousness",P4A,"The wayfarers pause by the rippling stream",P4A,"Of the Palace that one time sheltered me",P4A;
+							set @ANS + 1;
+					P4A:
+						menu "The wayfarers pause by the rippling stream",P4B,"Of the Palace that one time sheltered me",P4B,"With lingering gaze the roofs I see",P4B,"Flushes with joy as the swallows pass",-,"But those whom I sheltered in all righteousness",P4B,"And their eyes will new born gladness gleam",P4B,"Spring and the green of the tender grass",P4B,"Let's not stay in silence when the days pass useless",P4B;
+							set @ANS + 1;
+					P4B:
+						menu "And their eyes will new born gladness gleam",P4C,"Spring and the green of the tender grass",P4C,"Let's not stay in silence when the days pass useless",P4C,"With lingering gaze the roofs I see",P4C,"Of the Palace that one time sheltered me",P4C,"Flushes with joy as the swallows pass",P4C,"But those whom I sheltered in all righteousness",P4C,"The wayfarers pause by the rippling stream",-;
+							set @ANS + 1;
+					P4C:
+						menu "The wayfarers pause by the rippling stream",P4D,"Flushes with joy as the swallows pass",P4D,"But those whom I sheltered in all righteousness",P4D,"Of the Palace that one time sheltered me",P4D,"And their eyes will new born gladness gleam",-,"Spring and the green of the tender grass",P4D,"Let's not stay in silence when the days pass useless",P4D,"With lingering gaze the roofs I see",P4D;
+							set @ANS + 1;
+					P4D:
+						menu "Spring and the green of the tender grass",P4E,"With lingering gaze the roofs I see",-,"But those whom I sheltered in all righteousness",P4E,"The wayfarers pause by the rippling stream",P4E,"Flushes with joy as the swallows pass",P4E,"Let's not stay in silence when the days pass useless",P4E,"Of the Palace that one time sheltered me",P4E,"And their eyes will new born gladness gleam",P4E;
+							set @ANS + 1;
+					P4E:
+						menu "And their eyes will new born gladness gleam",P4F,"Flushes with joy as the swallows pass",P4F,"Of the Palace that one time sheltered me",-,"But those whom I sheltered in all righteousness",P4F,"With lingering gaze the roofs I see",P4F,"The wayfarers pause by the rippling stream",P4F,"Let's not stay in silence when the days pass useless",P4F,"Spring and the green of the tender grass",P4F;
+							set @ANS + 1;
+					P4F:
+						menu "Flushes with joy as the swallows pass",P4G,"With lingering gaze the roofs I see",P4G,"Let's not stay in silence when the days pass useless",P4G,"And their eyes will new born gladness gleam",P4G,"But those whom I sheltered in all righteousness",-,"Spring and the green of the tender grass",P4G,"Of the Palace that one time sheltered me",P4G,"The wayfarers pause by the rippling stream",P4G;
+							set @ANS + 1;
+					P4G:
+						menu "The wayfarers pause by the rippling stream",P4H,"But those whom I sheltered in all righteousness",P4H,"Spring and the green of the tender grass",P4H,"Let's not stay in silence when the days pass useless",P4H,"With lingering gaze the roofs I see",P4H,"And their eyes will new born gladness gleam",P4H,"Flushes with joy as the swallows pass",P4H,"Of the Palace that one time sheltered me",P4H;
+							set @ANS + 1;
+					P4H:
+						check @ANS = 8,SUCCESS,FAIL;
+		PART2:
+				mes "Hello, would you like to take the test now?";
+			next;
+				menu "Yes",JOB,"No",NO;
+		PART3:
+				mes "Hello, have you come back to retake the test?";
+			next;
+				menu "Yes",JOB,"No",-;
+						mes "[^000080Wutao^000000]";
+						mes "All right, when you decide to take the test, feel free to come back and ask.";
+					close;
+		PART4:
+				mes "Please seek ^000080Fuhai^000000 for further guidance.";
+			close;
+		CONT:
+			check Job_MO = 10,PART5,-;
+					mes "I wish you luck in becoming a ^800000Monk^000000.";
+				close;
+		MONK:
+				mes "Welcome back.";
+			close;
+		PART5:
+			check MO_Test1 = 0,-,PART6;
+				mes "Hello, I'm in need of some items.";
+				mes "I'm looking for 3 ^FF0000Brigans^000000 and 7 ^FF0000Steel^000000.";
+				set MO_Test1 = 1;
+			close;
+		PART6:
+				set @ITEM = 0;
+			checkitem 7054,3,ITEM,-;
+					set @ITEM + 2;
+		ITEM:
+			checkitem 999,7,ITEM0,-;
+					set @ITEM + 1;
+		ITEM0:
+			check @ITEM > 0,-,DONE;
+					mes "You're missing a few things.";
+				check @ITEM > 1,-,ITEM1;
+						mes "- 3 ^FF0000Brigans^000000";
+			ITEM1:
+				check @ITEM > 0,-,ITEM2;
+						mes "- 7 ^FF0000Steel^000000";
+			ITEM2:
+				close;
+			DONE:
+					mes "Good job!";
+					set Job_MO = 12;
+					delitem 7054,3;
+					delitem 999,7;
+					mes "Please go back to ^000080Bashu^000000 to tell him that you've completed this test.";
+				close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Fuhai - Monk Job Quest - Test NPC 2
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_monk.vhm,157,173,4	script	Fuhai	0,0,0,0	746,{
+		mes "[Fuhai]";
+	check Job = 4,START,-;
+	check Job = 15,MONK,-;
+		OTHER:
+				mes "Welcome traveler.";
+				mes "Nice to meet you.";
+			close;
+	START:
+	check Job_MO > 8,P1,-;
+		check Job_MO = 6,PART1,-;
+		check Job_MO = 7,PART2,PART3;
+P1:
+	check Job_MO = 9,PART4,-;
+	check Job_MO > 9,CONT,OTHER;
+	PART1:
+			set Job_MO = 7;
+			mes "Oh, you've come to become a ^800000Monk^000000.";
+			mes "Okay.";
+		next;
+			mes "[Fuhai]";
+			mes "Would you like to begin now?";
+	START:
+		next;
+			menu "Yes.",BEGIN,"No.",-;
+					mes "[Fuhai]";
+					mes "Oh, all right.";
+					mes "Come back when you're ready.";
+				close;
+		BEGIN:
+				set Job_MO = 8;
+				set @Q = 0;
+				set @Q1 = 0;
+				set @Q2 = 0;
+				set @Q3 = 0;
+				set @Q4 = 0;
+				set @Q5 = 0;
+				set @Q6 = 0;
+				set @Q7 = 0;
+				set @Q8 = 0;
+				set @Q9 = 0;
+				set @Q10 = 0;
+				set @Q11 = 0;
+				set @Q12 = 0;
+				set @Q13 = 0;
+				set @Q14 = 0;
+				set @Q15 = 0;
+				set @Q16 = 0;
+				set @Q17 = 0;
+				set @Q18 = 0;
+				set @Q19 = 0;
+				set @Q20 = 0;
+				set @ANS = 0;
+		RND:
+			check @Q < 10,-,DONE;
+					random @RND,20;
+				check @RND < 10,SECTB,SECTA;
+			SECTB:
+					check @RND < 5,SECTB1,SECTA1;
+				SECTB1:
+						check @RND < 2,SECTB1A,SECTA1A;
+					SECTB1A:
+							check @RND = 0,Q1,Q2;
+						SECTA1A:
+							check @RND = 2,Q3,-;
+							check @RND = 3,Q4,Q5;
+					SECTA1:
+						check @RND < 7,SECTB1B,SECTA1B;
+					SECTB1B:
+							check @RND = 5,Q6,Q7;
+						SECTA1B:
+							check @RND = 7,Q8,-;
+							check @RND = 8,Q9,Q10;
+				SECTA:
+					check @RND < 15,SECTB2,SECTA2;
+				SECTB2:
+						check @RND < 12,SECTB1C,SECTA1C;
+					SECTB1C:
+							check @RND = 10,Q11,Q12;
+						SECTA1C:
+							check @RND = 12,Q13,-;
+							check @RND = 13,Q14,Q15;
+					SECTA2:
+						check @RND < 18,SECTB1D,SECTA1D;
+					SECTB1D:
+							check @RND = 15,Q16,-;
+							check @RND = 16,Q17,Q18;
+						SECTA1D:
+							check @RND = 18,Q19,-;
+					check @Q20 = 0,-,RND;
+							set @Q + 1;
+							set @Q20 = 1;
+							mes "[Fuhai]";
+							mes "If someone came up to you and asked for something, you would...";
+						next;
+							menu "Tell them to go away.",RND,"Run away.",RND,"Try to help.",-,"Beat them up.",RND;
+									set @ANS + 1;
+								goto RND;
+				Q1:
+					check @Q1 = 0,-,RND;
+							set @Q + 1;
+							set @Q1 = 1;
+							mes "[Fuhai]";
+							mes "Will you take sides in an argument?";
+						next;
+							menu "Yes",RND,"No",-;
+									set @ANS + 1;
+								goto RND;
+				Q2:
+					check @Q2 = 0,-,RND;
+							set @Q + 1;
+							set @Q2 = 1;
+							mes "[Fuhai]";
+							mes "Do you believe that peace is the answer?";
+						next;
+							menu "Yes",-,"No",RND;
+									set @ANS + 1;
+								goto RND;
+				Q3:
+					check @Q3 = 0,-,RND;
+							set @Q + 1;
+							set @Q3 = 1;
+							mes "[Fuhai]";
+							mes "The amount of strength you receive as a ^800000Monk^000000.";
+						next;
+							input @VAL;
+						check @VAL = 8,-,RND;
+								set @ANS + 1;
+							goto RND;
+				Q4:
+					check @Q4 = 0,-,RND;
+							set @Q + 1;
+							set @Q4 = 1;
+							mes "[Fuhai]";
+							mes "The amount of agility you receive as a ^800000Monk^000000.";
+						next;
+							input @VAL;
+						check @VAL = 6,-,RND;
+								set @ANS + 1;
+							goto RND;
+				Q5:
+					check @Q5 = 0,-,RND;
+							set @Q + 1;
+							set @Q5 = 1;
+							mes "[Fuhai]";
+							mes "The amount of vitality you receive as a ^800000Monk^000000.";
+						next;
+							input @VAL;
+						check @VAL = 6,-,RND;
+								set @ANS + 1;
+							goto RND;
+				Q6:
+					check @Q6 = 0,-,RND;
+							set @Q + 1;
+							set @Q6 = 1;
+							mes "[Fuhai]";
+							mes "The amount of intelligence you receive as a ^800000Monk^000000.";
+						next;
+							input @VAL;
+						check @VAL = 2,-,RND;
+								set @ANS + 1;
+							goto RND;
+				Q7:
+					check @Q7 = 0,-,RND;
+							set @Q + 1;
+							set @Q7 = 1;
+							mes "[Fuhai]";
+							mes "The amount of dexterity you receive as a ^800000Monk^000000.";
+						next;
+							input @VAL;
+						check @VAL = 4,-,RND;
+								set @ANS + 1;
+							goto RND;
+				Q8:
+					check @Q8 = 0,-,RND;
+							set @Q + 1;
+							set @Q8 = 1;
+							mes "[Fuhai]";
+							mes "The amount of luck you receive as a ^800000Monk^000000.";
+						next;
+							input @VAL;
+						check @VAL = 3,-,RND;
+								set @ANS + 1;
+							goto RND;
+				Q9:
+					check @Q9 = 0,-,RND;
+							set @Q + 1;
+							set @Q9 = 1;
+							mes "[Fuhai]";
+							mes "^0000FFTriple Blows^000000 at level 5, gives a bonus attack of this.";
+						next;
+							input @VAL;
+						check @VAL = 200,-,RND;
+								set @ANS + 1;
+							goto RND;
+				Q10:
+					check @Q10 = 0,-,RND;
+							set @Q + 1;
+							set @Q10 = 1;
+							mes "[Fuhai]";
+							mes "Will you fight only if it is necessary?";
+						next;
+							menu "Yes",-,"No",RND;
+									set @ANS + 1;
+								goto RND;
+				Q11:
+					check @Q11 = 0,-,RND;
+							set @Q + 1;
+							set @Q11 = 1;
+							mes "[Fuhai]";
+							mes "Will you keep all of your zeny to yourself?";
+						next;
+							menu "Yes",RND,"No",-;
+									set @ANS + 1;
+								goto RND;
+				Q12:
+					check @Q12 = 0,-,RND;
+							set @Q + 1;
+							set @Q12 = 1;
+							mes "[Fuhai]";
+							mes "Will you try to cheat other people of material goods?";
+						next;
+							menu "Yes",RND,"No",-;
+									set @ANS + 1;
+								goto RND;
+				Q13:
+					check @Q13 = 0,-,RND;
+							set @Q + 1;
+							set @Q13 = 1;
+							mes "[Fuhai]";
+							mes "Will you try to impersonate another to try to get around security?";
+						next;
+							menu "Yes",RND,"No",-;
+									set @ANS + 1;
+								goto RND;
+				Q14:
+					check @Q14 = 0,-,RND;
+							set @Q + 1;
+							set @Q14 = 1;
+							mes "[Fuhai]";
+							mes "Will you help where you can?";
+						next;
+							menu "Yes",-,"No",RND;
+									set @ANS + 1;
+								goto RND;
+				Q15:
+					check @Q15 = 0,-,RND;
+							set @Q + 1;
+							set @Q15 = 1;
+							mes "[Fuhai]";
+							mes "Do you believe that zeny controls everything?";
+						next;
+							menu "Yes",RND,"No",-;
+									set @ANS + 1;
+								goto RND;
+				Q16:
+					check @Q16 = 0,-,RND;
+							set @Q + 1;
+							set @Q16 = 1;
+							mes "[Fuhai]";
+							mes "If someone got hurt, would you try to help?";
+						next;
+							menu "Yes",-,"No",RND;
+									set @ANS + 1;
+								goto RND;
+				Q17:
+					check @Q17 = 0,-,RND;
+							set @Q + 1;
+							set @Q17 = 1;
+							mes "[Fuhai]";
+							mes "If you ran into a ^800000Thief^000000 would you allow him to get away with goods?";
+						next;
+							menu "Yes",RND,"No",-;
+									set @ANS + 1;
+								goto RND;
+				Q18:
+					check @Q18 = 0,-,RND;
+							set @Q + 1;
+							set @Q18 = 1;
+							mes "[Fuhai]";
+							mes "If someone got caught in a fire, would you jump in to save them?";
+						next;
+							menu "Yes",-,"No",RND;
+									set @ANS + 1;
+								goto RND;
+				Q19:
+					check @Q19 = 0,-,RND;
+							set @Q + 1;
+							set @Q19 = 1;
+							mes "[Fuhai]";
+							mes "Do you believe that all life is precious?";
+						next;
+							menu "Yes",-,"No",RND;
+									set @ANS + 1;
+								goto RND;
+					DONE:
+							mes "[Fuhai]";
+						check @ANS = 10,-,FAIL;
+								set Job_MO = 9;
+								mes "Congratulations, you got them all correct.";
+								mes "Please seek ^800000Bashu^000000 for further guidance.";
+							close;
+						FAIL:
+								mes "Sorry, you'll need to retake this test.";
+							close;
+	PART2:
+			mes "Would you like to begin now?";
+		goto START;
+	PART3:
+			mes "Have you come back to retake the test?";
+		goto START;
+	PART4:
+			mes "Please look for ^800000Bashu^000000 to continue.";
+		close;
+	CONT:
+		check Job_MO = 11,PART5,-;
+				mes "Good luck to you.";
+			close;
+	MONK:
+			mes "Welcome back $charaname.";
+		close;
+	PART5:
+		check MO_Test2 = 0,-,PART6;
+			mes "Hello, I'm in need of some items.";
+			mes "I'm looking for an ^FF0000Osiris Doll^000000 and ^FF0000Sacred Marks^000000.";
+			set MO_Test2 = 1;
+		close;
+	PART6:
+			set @ITEM = 0;
+		checkitem 751,1,ITEM,-;
+				set @ITEM + 2;
+	ITEM:
+		checkitem 1009,1,ITEM0,-;
+				set @ITEM + 1;
+	ITEM0:
+		check @ITEM > 0,-,DONE0;
+				mes "You're missing a few things.";
+			check @ITEM > 1,-,ITEM1;
+					mes "- 1 ^FF0000Osiris Doll^000000";
+		ITEM1:
+			check @ITEM > 0,-,ITEM2;
+					mes "- 1 ^FF0000Sacred Marks^000000";
+		ITEM2:
+			close;
+		DONE0:
+				mes "Good job!";
+				set Job_MO = 12;
+				delitem 751,3;
+				delitem 1009,7;
+				mes "Please go back to ^000080Bashu^000000 to tell him that you've completed this test.";
+			close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Bashu - Monk Job Quest - Test NPC 3
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_monk.vhm,198,227,2	script	Bashu	0,0,0,0	808,{
+		mes "[Bashu]";
+	check Job = 4,START,-;
+	check Job = 15,MONK,-;
+		OTHER:
+				mes "Welcome to ^00FF00St. Capitolina Abbey^000000.";
+				mes "May the light shine on your path.";
+			close;
+	START:
+	check Job_MO = 9,PART1,-;
+	check Job_MO = 10,PART2,-;
+	check Job_MO = 11,PART3,-;
+	check Job_MO = 12,PART4,-;
+	check Job_MO > 13,CONT,OTHER;
+	PART1:
+			mes "Hello $charaname.";
+			mes "I heard that you're willing to become a ^800000Monk^000000.";
+		next;
+			mes "[Bashu]";
+			mes "Please select a test.  If you cannot complete one, you may switch to the other whenever you feel like it.";
+		next;
+			menu "Test 1",-,"Test 2",T2;
+		T1:
+				mes "[^000080Bashu^000000]";
+				mes "All right then.";
+				mes "Please go to ^000080Wutao^000000 for instructions.";
+				set Job_MO = 10;
+				set MO_Test2 = 0;
+			close;
+		T2:
+				mes "[^000080Bashu^000000]";
+				mes "All right then.";
+				mes "Please go to ^000080Fuhai^000000 for instructions.";
+				set Job_MO = 11;
+				set MO_Test2 = 0;
+			close;
+	PART2:
+			mes "You are currently under Test 1.";
+			mes "Would you like to switch to Test 2 instead?";
+		next;
+			menu "No",-,"Yes",T2;
+					mes "[^000080Bashu^000000]";
+					mes "Very well, I will be waiting for you to finish Test 1.";
+				next;
+					mes "[^000080Bashu^000000]";
+					mes "Please visit ^000080Wutao^000000 for instructions.";
+				close;
+	PART3:
+			mes "You are currently under Test 2.";
+			mes "Would you like to switch to Test 1 instead?";
+		next;
+			menu "No",-,"Yes",T1;
+					mes "[^000080Bashu^000000]";
+					mes "Very well, I will be waiting for you to finish Test 2.";
+				next;
+					mes "[^000080Bashu^000000]";
+					mes "Please visit ^000080Fuhai^000000 for instructions.";
+				close;
+	PART4:
+			mes "Well done!";
+			mes "Very well then, seek ^000080Daowen^000000 for further instructions on how to become a ^800000Monk^000000.";
+			set Job_MO = 13;
+		close;
+	CONT:
+				mes "I hope you do well.";
+			close;
+	MONK:
+			mes "Hello again $charaname.";
+		close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Daowen - Monk Job Quest - Test NPC 4
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_monk.vhm,227,174,6	script	Daowen	0,0,0,0	753,{
+		mes "[Daowen]";
+	check Job = 4,START,-;
+	check Job = 15,MONK,-;
+		OTHER:
+				mes "Hello traveler.";
+				mes "Welcome to ^00FF00St. Capitolina Abbey^000000.";
+			close;
+	START:
+	check Job_MO = 13,PART1,-;
+	check Job_MO = 14,PART2,-;
+	check Job_MO = 15,PART3,-;
+	check Job_MO > 15,CONT,OTHER;
+	PART1:
+			set Job_MO = 14;
+			mes "Hello, can I help you?";
+		next;
+			menu "Continue test.",-,"Never mind.",EXIT;
+		TEST:
+					set Job_MO = 15;
+					mes "[Daowen]";
+					mes "Oh, okay.";
+					mes "I'll send you off now.";
+				next;
+					save "prt_monk",232,174;
+					warp "monk_in",98,58;
+		EXIT:
+				mes "[Daowen]";
+				mes "All right.";
+				mes "Come back when you're ready.";
+			close;
+	PART2:
+			mes "Would you like to take the test now?";
+		next;
+			menu "Yes.",TEST,"No.",EXIT;
+	PART3:
+			mes "Please take the test.";
+			mes "Would you like to be sent there again?";
+		next;
+			menu "Yes.",TEST,"No.",EXIT;
+	CONT:
+			mes "Good luck in completing the test.";
+		close;
+	MONK:
+			mes "Good day, $charaname.";
+		close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Musha - Monk Job Quest - Test NPC 5
+// By Black Dragon based on information from RO Empire
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+monk_in.vhm,98,63,0	script	Musha	0,0,0,0	809,{
+		mes "[Musha]";
+	check Job = 4,START,-;
+	check Job = 15,MONK,-;
+		OTHER:
+				mes "Hello traveler.";
+			close;
+	START:
+	check Job_MO = 15,PART1,-;
+	check Job_MO = 16,PART2,-;
+	check Job_MO = 17,PART3,-;
+	check Job_MO > 17,CONT,OTHER;
+	PART1:
+			mes "Hello $charaname.";
+			mes "Come to take the test?";
+		next;
+			menu "Yes.",-,"No.",EXIT;
+		TEST:
+				mes "[Musha]";
+			check \@MONK1 = 0,-,NEXT;
+					mes "I will now send you off to Room 1.";
+					set \@MONK1 = 1;
+					set Job_MO = 16;
+					set \@ROOM = 1;
+					enablenpc "monk_in","warp0655",0;
+				warp "monk_in",21,39;
+			NEXT:
+				check \@MONK2 = 0,-,NEXT0;
+						mes "I will now send you off to Room 2.";
+						set \@MONK2 = 1;
+						set Job_MO = 16;
+						set \@ROOM = 2;
+						enablenpc "monk_in","warp0656",0;
+					warp "monk_in",23,93;
+				NEXT0:
+					check \@MONK3 = 0,-,NEXT1;
+							mes "I will now send you off to Room 3.";
+							set \@MONK3 = 1;
+							set Job_MO = 16;
+							set \@ROOM = 3;
+							enablenpc "monk_in","warp0665",0;
+						warp "monk_in",175,38;
+					NEXT1:
+							mes "Sorry, seems all the rooms are currently full.";
+						close;
+		EXIT:
+				mes "[Musha]";
+				mes "Okay, come back when you're ready.";
+			close;
+	PART2:
+		check \@ROOM1 = 1,-,NEXT2;
+			check Job_MO = 16,-,NEXT4;
+					set \@ROOM1 = 0;
+					set \@MONK1 = 0;
+				goto PART3;
+	NEXT2:
+		check \@ROOM2 = 1,-,NEXT3;
+			check Job_MO = 16,-,NEXT4;
+					set \@ROOM2 = 0;
+					set \@MONK2 = 0;
+				goto PART3;
+	NEXT3:
+		check \@ROOM3 = 1,-,NEXT4;
+			check Job_MO = 16,-,NEXT4;
+					set \@ROOM3 = 0;
+					set \@MONK3 = 0;
+				goto PART3;
+	NEXT4:
+			mes "Would you like to try again?";
+		next;
+			menu "Yes.",TEST,"No.",EXIT;
+	PART3:
+			set Job_MO = 18;
+			mes "Well done, return to ^000080Elder Wuhai^000000 to continue the quest.";
+		close;
+	CONT:
+			mes "I wish you luck on your journey to become a ^800000Monk^000000.";
+		close;
+	MONK:
+			mes "Welcome back, $charaname.";
+		close;
+}

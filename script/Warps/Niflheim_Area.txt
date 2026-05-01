@@ -1,0 +1,32 @@
+//Field warps------------------------------------------------------
+um_dun02.vhm,125,163,0	warp	nwarp1	1,1,yggdrasil01.vhm,40,63
+yggdrasil01.vhm,36,62,0	warp	nwarp2	1,1,um_dun02.vhm,126,147
+
+yggdrasil01.vhm,271,51,0	warp	nwarp3	1,1,yggdrasil01.vhm,26,196
+yggdrasil01.vhm,26,193,0	warp	nwarp4	1,1,yggdrasil01.vhm,269,53
+
+yggdrasil01.vhm,249,262,0	warp	nwarp5	1,1,nif_fild01.vhm,315,66
+nif_fild01.vhm,315,63,0	warp	nwarp6	1,1,yggdrasil01.vhm,247,262
+
+//Niflheim Field 1 <-> Niflheim Field 2
+nif_fild01.vhm,345,323,0	warp	nwarp7	1,1,nif_fild02.vhm,23,312
+nif_fild02.vhm,21,312,0	warp	nwarp8	1,1,nif_fild01.vhm,343,322
+
+//Niflheim feild 2 <-> Niflheim
+nif_fild02.vhm,379,235,0	warp	nwarp9	1,1,niflheim.vhm,20,153
+niflheim.vhm,18,151,0	warp	nwarp10	1,1,nif_fild02.vhm,376,235
+
+//Inside warps----------------------------------------------------
+//Weapon shop
+niflheim.vhm,220,169,0	warp	nwarp11	1,1,nif_in.vhm,14,88
+nif_in.vhm,11,88,0	warp	nwarp12	1,1,niflheim.vhm,218,170
+
+//Item shop: 134,12
+niflheim.vhm,219,199,0	warp	nwarp13	1,1,nif_in.vhm,136,14
+nif_in.vhm,134,12,0	warp	nwarp14	1,1,niflheim.vhm,218,197
+
+//House on the hill
+niflheim.vhm,255,194,0	warp	nwarp15	1,1,nif_in.vhm,20,156
+nif_in.vhm,18,154,0	warp	nwarp16	1,1,niflheim.vhm,254,192
+nif_in.vhm,65,168,0	warp	nwarp17	1,1,nif_in.vhm,141,174
+nif_in.vhm,140,171,0	warp	nwarp18	1,1,nif_in.vhm,65,165

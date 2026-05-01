@@ -1,0 +1,1762 @@
+// Error reports / Fixes by dannylak23, mudvayne819
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Alkeine - Alchemist Job Quest - Starter
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+alde_alche.vhm,146,25,0	script	Alkeine	0,0,0,0	55,{
+		mes "[^000080Alkeine^000000]";
+	check Job = 0,-,NEXT;
+			mes "Hello, if you become a ^800000Merchant^000000, I can teach you how you can become an ^800000Alchemist^000000.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "Welcome to ^00FF00Yuno^000000, whatever business you have here I do not know.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "What business have you here?";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Keep your arrows to yourself.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "I don't need you to baptise me.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+		check Job_AL = 1,CONT,-;
+		check Job_AL = 2,CONT0,-;
+		check Job_AL = 3,CONT1,-;
+		check Job_AL > 3,CONT2,-;
+				set @ITEM = 0;
+			checkitem 1005,1,-,ITEM;
+					set @ITEM + 1;
+		ITEM:
+			checkitem 1006,1,-,ITEM0;
+					set @ITEM + 1;
+		ITEM0:
+			check @ITEM = 2,-,JOB;
+					mes "Hey, you've got an ^FF0000Old Magic Book^000000 and a ^FF0000Hamer of Blacksmith^000000.";
+					mes "If you give those items to me, I'll tell you who you can go to in order to become an ^800000Alchemist^000000.";
+				next;
+					menu "Sure",OKAY,"No.",-;
+							mes "[^000080Alkeine^000000]";
+							mes "Oh, all right.";
+							mes "If you change your mind, let me know.";
+						close;
+				OKAY:
+						delitem 1005,1;
+						delitem 1006,1;
+						mes "[^000080Alkeine^000000]";
+						mes "Thanks a lot!";
+					next;
+						mes "[^000080Alkeine^000000]";
+						mes "Go to the basement and talk to ^000080Rasputin^000000.  He will guide you.";
+						set Job_AL = 3;
+			JOB:
+					mes "Oh, hello.  I'm having trouble finding some items, care to lend a hand?";
+				next;
+					menu "Sure, I'll help.",-,"Sorry, I'm busy.",NO;
+							mes "[^000080Alkeine^000000]";
+							mes "Excellent!";
+						next;
+							random @RND,2;
+						check RND = 0,RND,-;
+								set Job_AL = 1;
+								mes "Please bring 2 ^FF0000Drug Cups^000000, 4 ^FF0000Empty Bottles^000000, 3 ^FF0000Yellow Herbs^000000 and a ^FF0000Yggdrasilberry^000000.";
+							close;
+						RND:
+								set Job_AL = 2;
+								mes "Please bring 3 ^FF0000Drug Cups^000000, 4 ^FF0000White Potions^000000, 6 ^FF0000Yellow Herbs^000000 and a ^FF0000Mastella Fruit^000000.";
+							close;
+					NO:
+							mes "[^000080Alkeine^000000]";
+							mes "Oh, all right.";
+						close;
+		CONT:
+			checkitem 7134,2,ITEMA,-;
+					set @ITEM + 8;
+		ITEMA:
+			checkitem 713,4,ITEMA0,-;
+					set @ITEM + 4;
+		ITEMA0:
+			checkitem 504,3,ITEMA1,-;
+					set @ITEM + 2;
+		ITEMA1:
+			checkitem 607,1,ITEMA2,-;
+					set @ITEM + 1;
+		ITEMA2:
+				mes "[^000080Alkeine^000000]";
+			check @ITEM > 0,-,DONE;
+					mes "You still need to find:";
+				check @ITEM > 7,-,ITC;
+						mes "- 2 ^FF0000Drug Cups^000000";
+						set @ITEM - 8;
+			ITC:
+				check @ITEM > 3,-,ITC0;
+						mes "- 4 ^FF0000Empty Bottles^000000";
+						set @ITEM - 4;
+			ITC0:
+				check @ITEM > 1,-,ITC1;
+						mes "- 3 ^FF0000White Potions^000000";
+						set @ITEM - 2;
+			ITC1:
+				check @ITEM > 0,-,ITC2;
+						mes "- 1 ^FF0000Yggdrasilberry^000000";
+			ITC2:
+				close;
+		DONE:
+				set Job_AL = 3;
+				delitem 7134,2;
+				delitem 713,4;
+				delitem 504,3;
+				delitem 607,1;
+				mes "Excellent!  You've obtained all the required items!";
+				mes "Hey, I know!";
+				mes "How would you like to become an ^800000Alchemist^000000?";
+			next;
+				menu "Sure.",-,"Nah...",NO0;
+						mes "[^000080Alkeine^000000]";
+						mes "Okay.  Go to the basement and speak with ^000080Rasputin^000000.";
+					close;
+			NO0:
+					mes "[^000080Alkeine^000000]";
+					mes "Oh, okay.  If you change your mind talk to ^000080Rasputin^000000, he's in the basement.";
+				close;
+		CONT0:
+			checkitem 7134,3,ITEMB,-;
+					set @ITEM + 8;
+		ITEMB:
+			checkitem 504,4,ITEMB0,-;
+					set @ITEM + 4;
+		ITEMB0:
+			checkitem 508,6,ITEMB1,-;
+					set @ITEM + 2;
+		ITEMB1:
+			checkitem 522,1,ITEMB2,-;
+					set @ITEM + 1;
+		ITEMB2:
+				mes "[^000080Alkeine^000000]";
+			check @ITEM > 0,-,DONE0;
+					mes "You still need to find:";
+				check @ITEM > 7,-,ITC3;
+						mes "- 3 ^FF0000Drug Cups^000000";
+						set @ITEM - 8;
+			ITC3:
+				check @ITEM > 3,-,ITC4;
+						mes "- 4 ^FF0000White Potions^000000";
+						set @ITEM - 4;
+			ITC4:
+				check @ITEM > 1,-,ITC5;
+						mes "- 6 ^FF0000Yellow Leaves^000000";
+						set @ITEM - 2;
+			ITC5:
+				check @ITEM > 0,-,ITC6;
+						mes "- 1 ^FF0000Mastella Fruit^000000";
+			ITC6:
+				close;
+		DONE0:
+				set Job_AL = 3;
+				delitem 7134,3;
+				delitem 504,4;
+				delitem 508,6;
+				delitem 522,1;
+				mes "Excellent!  You've obtained all the required items!";
+				mes "Hey, I know!";
+				mes "How would you like to become an ^800000Alchemist^000000?";
+			next;
+				menu "Sure.",-,"Nah...",NO0;
+						mes "[^000080Alkeine^000000]";
+						mes "Okay.  Go to the basement and speak with ^000080Rasputin^000000.";
+					close;
+		CONT1:
+				mes "If you want to become an ^800000Alchemist^000000 talk to ^000080Rasputin^000000.";
+			close;
+		CONT2:
+				mes "Hope you do well.";
+			close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Don't steal anything, or I'll hunt you down!";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "We're not conducting anything illegal, if that's what you're thinking.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "I don't have time to listen to your lectures.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "We don't need your help, we have everything under control.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "I'm not interested in whatever you have to sell.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Keep the area clean, we don't need bodies lying around.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Don't make a mess, we had the floors cleaned recently.";
+			mes "If you do, we'll clean it with your face.";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Um... Hello.  Whatever you're looking for isn't here.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "I don't need someone to enlighten me.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Please keep your magic arts to yourself.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Don't think you'll get away with stealing something from here.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Welcome fellow ^800000Alchemist^000000, I'm rather busy now.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "I didn't call to be entertained.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Hello, sorry but, I don't need to be distracted while I work.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+				mes "Well well, who's the lucky man?";
+			close;
+	MALE:
+			mes "I'm sorry, I don't have time to go to your party.";
+		close;
+NEXT19:
+		mes "Go play someplace else.";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Rasputin - Alchemist Job Quest - Starter 2
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+alde_alche.vhm,26,9,0	script	Rasputin	0,0,0,0	54,{
+		mes "[^000080Rasputin^000000]";
+	check Job = 0,-,NEXT;
+			mes "Hello, if you become a ^800000Merchant^000000, I can teach you how you can become an ^800000Alchemist^000000.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "Welcome to ^00FF00Yuno^000000, whatever business you have here I do not know.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "What business have you here?";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Keep your arrows to yourself.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "I don't need you to baptise me.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+		check Job_AL = 3,CONT,-;
+		check Job_AL = 4,CONT0,-;
+		check Job_AL = 5,CONT1,-;
+		check Job_AL > 5,CONT2,-;
+				mes "Hello, I test individuals to see if they qualify to be ^800000Alchemists^000000.";
+			close;
+	CONT:
+			mes "Oh, hello.  Have you come for the test?";
+		next;
+			menu "Yes.",-,"No.",NO;
+		START:
+					set Job_AL = 4;
+					set @Q = 0;
+					set @Q1 = 0;
+					set @Q2 = 0;
+					set @Q3 = 0;
+					set @Q4 = 0;
+					set @Q5 = 0;
+					set @Q6 = 0;
+					set @Q7 = 0;
+					set @Q8 = 0;
+					set @Q9 = 0;
+					set @Q10 = 0;
+					set @Q11 = 0;
+					set @Q12 = 0;
+					set @Q13 = 0;
+					set @Q14 = 0;
+					set @Q15 = 0;
+					set @Q16 = 0;
+					set @Q17 = 0;
+					set @Q18 = 0;
+					set @Q19 = 0;
+					set @Q20 = 0;
+					set @ANS = 0;
+			RND:
+				check @Q < 10,-,DONE;
+						random @RND,20;
+					check @RND < 10,-,SECTA;
+						check @RND < 5,-,SECTA1;
+							check @RND < 2,-,SECTA1A;
+								check @RND = 0,Q1,Q2;
+							SECTA1A:
+								check @RND = 2,Q3,-;
+								check @RND = 3,Q4,Q5;
+						SECTA1:
+							check @RND < 7,-,SECTA1B;
+								check @RND = 5,Q6,Q7;
+							SECTA1B:
+								check @RND = 7,Q8,-;
+								check @RND = 8,Q9,Q10;
+					SECTA:
+						check @RND < 15,-,SECTA2;
+							check @RND < 12,-,SECTA1C;
+								check @RND = 10,Q11,Q12;
+							SECTA1C:
+								check @RND = 12,Q13,-;
+								check @RND = 13,Q14,Q15;
+						SECTA2:
+							check @RND < 18,-,SECTA1D;
+								check @RND = 15,Q16,-;
+								check @RND = 16,Q17,Q18;
+							SECTA1D:
+								check @RND = 18,Q19,-;
+						check @Q20 = 0,-,RND;
+								set @Q20 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Bonus strength given to ^800000Alchemist^000000.";
+							next;
+								input @VAL;
+							check @VAL = 5,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q1:
+						check @Q1 = 0,-,RND;
+								set @Q1 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Bonus agility given to ^800000Alchemist^000000.";
+							next;
+								input @VAL;
+							check @VAL = 6,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q2:
+						check @Q2 = 0,-,RND;
+								set @Q2 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Bonus vitality given to ^800000Alchemist^000000.";
+							next;
+								input @VAL;
+							check @VAL = 3,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q3:
+						check @Q3 = 0,-,RND;
+								set @Q3 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Bonus intelligence given to ^800000Alchemist^000000.";
+							next;
+								input @VAL;
+							check @VAL = 7,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q4:
+						check @Q4 = 0,-,RND;
+								set @Q4 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Bonus dexterity given to ^800000Alchemist^000000.";
+							next;
+								input @VAL;
+							check @VAL = 8,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q5:
+						check @Q5 = 0,-,RND;
+								set @Q5 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Bonus luck given to ^800000Alchemist^000000.";
+							next;
+								input @VAL;
+							check @VAL = 0,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q6:
+						check @Q6 = 0,-,RND;
+								set @Q6 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "To make a ^FF0000Red Potion^000000, you need";
+							next;
+								menu "Red Herb and Empty Bottle",-,"Red Herb and Drug Cup",RND,"Red Blood and Empty Bottle",RND,"Red Blood and Drug Cup",RND;
+										set @ANS + 1;
+									goto RND;
+					Q7:
+						check @Q7 = 0,-,RND;
+								set @Q7 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "To make a ^FF0000Yellow Potion^000000, you need";
+							next;
+								menu "Yellow Herb and Drug Cup",RND,"Yellow Gemstone and Drug Cup",RND,"Yellow Herb and Empty Bottle",-,"Yellow Gemstone and Empty Bottle",RND;
+										set @ANS + 1;
+									goto RND;
+					Q8:
+						check @Q8 = 0,-,RND;
+								set @Q8 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "To make a ^FF0000White Potion^000000, you need";
+							next;
+								menu "1 Carat Diamond and Empty Bottle",RND,"2 Carat Diamond and Drug Cup",RND,"3 Carat Diamond and Drug Cup",RND,"White Herb and Empty Bottle",-;
+										set @ANS + 1;
+									goto RND;
+					Q9:
+						check @Q9 = 0,-,RND;
+								set @Q9 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "To make ^FF0000Alcohol^000000, you need";
+							next;
+								menu "15 Plant Stems and 8 Poison Spores",RND,"20 Plant Stems and 8 Poison Spores",-,"10 Plant Stems and 12 Poison Spores",RND,"20 Plant Stems and 6 Poison Spores",RND;
+										set @ANS + 1;
+									goto RND;
+					Q10:
+						check @Q10 = 0,-,RND;
+								set @Q10 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "To make a ^FF0000Flame Bottle^000000, you need";
+							next;
+								menu "2 Fabrics and 2 Alcohols",RND,"2 Fabrics and 1 Alcohol",RND,"3 Fabrics and 3 Alcohols",RND,"3 Fabrics and 1 Alcohol",-;
+										set @ANS + 1;
+									goto RND;
+					Q11:
+						check @Q11 = 0,-,RND;
+								set @Q11 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "To make an ^FF0000Acid Bottle^000000, you need";
+							next;
+								menu "9 Immortal Hearts and 1 Empty Bottle",RND,"6 Immortal Hearts and 1 Empty Bottle",-,"3 Immortal Hearts and 1 Empty Bottle",RND,"6 Immortal Hearts and 2 Empty Bottles",RND;
+										set @ANS + 1;
+									goto RND;
+					Q12:
+						check @Q12 = 0,-,RND;
+								set @Q12 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "To make a ^FF0000Man-eating Plant Bottle^000000, you need";
+							next;
+								menu "6 Flower of Man-Eaters + 1 Empty Bottle",-,"5 Flower of Man-Eaters + 1 Empty Bottle",RND,"4 Flower of Man-Eaters + 1 Empty Bottle",RND,"3 Flower of Man-Eaters + 1 Empty Bottle",RND;
+										set @ANS + 1;
+									goto RND;
+					Q13:
+						check @Q13 = 0,-,RND;
+								set @Q13 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "What potion can you throw only at level 5 ^0000FFPotion Pitcher^000000?";
+							next;
+								menu "Red Potion",RND,"Yellow Potion",RND,"Orange Potion",RND,"Blue Potion",-;
+										set @ANS + 1;
+									goto RND;
+					Q14:
+						check @Q14 = 0,-,RND;
+								set @Q14 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "What skill is required to obtain ^0000FFChemical Protection - Shield^000000?";
+							next;
+								menu "Chemical Protection - Weapon (1)",RND,"Chemical Protection - Shield (2)",RND,"Chemical Protection - Helm (3)",-,"Bio-cannibalize",RND;
+										set @ANS + 1;
+									goto RND;
+					Q15:
+						check @Q15 = 0,-,RND;
+								set @Q15 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "What skill is required to obtain ^0000FFChemical Protection - Helm^000000?";
+							next;
+								menu "Pharmacy (2)",-,"Chemical Protection - Weapon (3)",RND,"Call Homunculus (1)",RND,"No requirements",RND;
+										set @ANS + 1;
+									goto RND;
+					Q16:
+						check @Q16 = 0,-,RND;
+								set @Q16 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Attack power in % of ^0000FFDemonstration^000000 at level 5";
+							next;
+								input @VAR;
+							check @VAR = 200,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q17:
+						check @Q17 = 0,-,RND;
+								set @Q17 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Attack bonus from ^0000FFAxe Mastery^000000 level 3";
+							next;
+								input @VAR;
+							check @VAR = 12,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q18:
+						check @Q18 = 0,-,RND;
+								set @Q18 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "^0000FFCultivation^000000 masters at what level?";
+							next;
+								input @VAR;
+							check @VAR = 5,-,RND;
+									set @ANS + 1;
+								goto RND;
+					Q19:
+						check @Q19 = 0,-,RND;
+								set @Q19 = 1;
+								set @Q + 1;
+								mes "[^000080Rasputin^000000]";
+								mes "Attack power in % of ^0000FFAcid Terror^000000 at level 1";
+							next;
+								input @VAR;
+							check @VAR = 140,-,RND;
+									set @ANS + 1;
+								goto RND;
+				DONE:
+						mes "[^000080Rasputin^000000]";
+						mes "You got $[@ANS] / 10 correct.";
+					check @ANS > 7,-,FAIL;
+							set Job_AL = 5;
+						next;
+							mes "[^000080Rasputin^000000]";
+							mes "Good work, now talk to ^000080Darsia^000000 to continue.";
+						close;
+				FAIL:
+						next;
+							mes "[^000080Rasputin^000000]";
+							mes "I'm sorry, you needed to study more.";
+						close;
+		CONT0:
+				mes "Have you come to retake the test?";
+			next;
+				menu "Yes.",START,"No.",-;
+			NO:
+						mes "[^000080Rasputin^000000]";
+						mes "Oh, well when you're ready come back.";
+					close;
+		CONT1:
+				mes "Please talk to ^000080Darsia^000000 to continue.";
+			close;
+		CONT2:
+			check Job_AL = 14,CONT3,-;
+					mes "Good luck on becoming an ^800000Alchemist^000000.";
+				close;
+		CONT3:
+				mes "Oh good, you're all done?";
+				mes "All right.";
+			check JobLevel > 39,-,EXIT;
+				check SkillPoint = 0,-,EXIT0;
+						jobchange 18;
+						set JobLevel = 1,0;
+					close;
+		EXIT:
+			next;
+				mes "[^000080Rasputin^000000]";
+				mes "I'm sorry, you need a job level of at least 40 first.";
+			close;
+		EXIT0:
+			next;
+				mes "[^000080Rasputin^000000]";
+				mes "I'm sorry, you can't transfer unused skill points to a different job.";
+			close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Don't steal anything, or I'll hunt you down!";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "We're not conducting anything illegal, if that's what you're thinking.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "I don't have time to listen to your lectures.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "We don't need your help, we have everything under control.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "I'm not interested in whatever you have to sell.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Keep the area clean, we don't need bodies lying around.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Don't make a mess, we had the floors cleaned recently.";
+			mes "If you do, we'll clean it with your face.";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Um... Hello.  Whatever you're looking for isn't here.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "I don't need someone to enlighten me.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Please keep your magic arts to yourself.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Don't think you'll get away with stealing something from here.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Welcome fellow ^800000Alchemist^000000, I'm rather busy now.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "I didn't call to be entertained.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Hello, sorry but, I don't need to be distracted while I work.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+				mes "Well well, who's the lucky man?";
+			close;
+	MALE:
+			mes "I'm sorry, I don't have time to go to your party.";
+		close;
+NEXT19:
+		mes "Go play someplace else.";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Darsia - Alchemist Job Quest - Tester 3
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+alde_alche.vhm,171,162,6	script	Darsia	0,0,0,0	83,{
+		mes "[^000080Darsia^000000]";
+	check Job = 0,-,NEXT;
+			mes "Hello, if you become a ^800000Merchant^000000, I can teach you how you can become an ^800000Alchemist^000000.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "Welcome to ^00FF00Yuno^000000, whatever business you have here I do not know.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "What business have you here?";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Keep your arrows to yourself.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "I don't need you to baptise me.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+		check Job_AL = 5,CONT,-;
+		check Job_AL = 6,CONT0,-;
+		check Job_AL = 7,CONT1,-;
+		check Job_AL = 8,CONT2,-;
+		check Job_AL > 8,CONT3,-;
+				mes "Hello, being an ^800000Alchemist^000000 is an interesting job.";
+				mes "I explores the unseem wordering.";
+			close;
+	CONT:
+			mes "Hello, have you come to become an ^800000Alchemist^000000?";
+		next;
+			menu "Yes, I have.",-,"No.",NO;
+					set Job_AL = 6;
+					mes "Oh good.";
+					mes "You need to make a solution.";
+				next;
+					mes "[Darsia]";
+					mes "Let's see.... You'll need 3 ^FF0000Drug Cups^000000, 3 ^FF0000Empty Bottles^000000, 1 ^FF0000Red Herb^000000, 1 ^FF0000Yellow Herb^000000 and 1 ^FF0000White Herb^000000.";
+					mes "Please collect them all.";
+				close;
+		NO:
+				mes "[Darsia]";
+				mes "Okay, if you want to become an ^800000Alchemist^000000, just ask.";
+			close;
+	CONT0:
+			mes "[Darsia]";
+			set @ITEM = 0;
+		checkitem 7134,3,ITEM,-;
+				set @ITEM + 16;
+	ITEM:
+		checkitem 713,3,ITEM0,-;
+				set @ITEM + 8;
+	ITEM0:
+		checkitem 507,1,ITEM1,-;
+				set @ITEM + 4;
+	ITEM1:
+		checkitem 508,1,ITEM2,-;
+				set @ITEM + 2;
+	ITEM2:
+		checkitem 509,1,ITEM3,-;
+				set @ITEM + 1;
+	ITEM3:
+		check @ITEM > 0,-,DONE;
+				mes "You're missing some items:";
+			check @ITEM > 15,-,ITC;
+					mes "- 3 ^FF0000Drug Cups^000000";
+					set @ITEM - 16;
+		ITC:
+			check @ITEM > 7,-,ITC0;
+					mes "- 3 ^FF0000Empty Bottles^000000";
+					set @ITEM - 8;
+		ITC0:
+			check @ITEM > 3,-,ITC1;
+					mes "- 1 ^FF0000Red Herb^000000";
+					set @ITEM - 4;
+		ITC1:
+			check @ITEM > 1,-,ITC2;
+					mes "- 1 ^FF0000Yellow Herb^000000";
+					set @ITEM - 2;
+		ITC2:
+			check @ITEM > 0,-,ITC3;
+					mes "- 1 ^FF0000White Herb^000000";
+		ITC3:
+			close;
+		DONE:
+				set Job_AL = 7;
+				mes "Good work.";
+				mes "Listen very carefully.  You must fully these steps exactly.";
+			next;
+		TRY:
+				mes "[Darsia]";
+				mes "Place the ^FF0000White Herb^000000 into one of the ^FF0000Drug Cups^000000 and crush it into pieces.  Leave that aside for now.  Now take the ^FF0000Red Herb^000000 and cut it into strips.  Roll the strips length-ways so it's like a coil.  Next take the ^FF0000Yellow Herb^000000 and cut it into squares.  Wrap the ^FF0000Red Herbs^000000 with the cut pieces and roll it into a ball.  I will provide the substance to keep it together.  Now, using the same substance roll the balls in the bits and pieces of ^FF000White Herb^000000.  When it's dry, fill all 3 ^FF0000Empty Bottles^000000 with water, I'll provide it.  Stick two balls into each bottle.  For the first one, shake it.  The second one needs to be stirred and the last one you just leave to settle.  After about a minute, Pour 100 mL of each bottle into one ^FF0000Drug Cup^000000, mix them around and they will eventually become a uniform substance.  Once you get to that point, put it back into the 3rd ^FF0000Empty Bottle^000000 and shake it until it's ready.";
+			next;
+				mes "[Darsia]";
+				mes "Got it?";
+				mes "You repeat the steps now.";
+			next;
+				delitem 7134,3;
+				delitem 713,3;
+				delitem 507,1;
+				delitem 508,1;
+				delitem 509,1;
+				set @FAIL = 0;
+				menu "Place a ^FF0000Red Herb^000000 in a ^FF0000Drug Cup^000000",-,"Place a ^FF0000Yellow Herb^000000 in an ^FF0000Empty Bottle^000000",-,"Place a ^FF0000White Herb^000000 in a ^FF0000Drug Cup^000000",STEP,"Place a ^FF0000Red Herb^000000 in an ^FF0000Empty Bottle^000000",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP:
+				menu "Crush it",STEP0,"Peal it",-,"Tear it",-,"Cut it",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP0:
+				menu "Cut a ^FF0000White Herb^000000 into pieces",-,"Rip a ^FF0000Yellow Herb^000000 into squares",-,"Tear a ^FF0000Red Herb^000000 into squares",-,"Cut a ^FF0000Yellow Herb^000000 into squares",STEP1;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP1:
+				menu "Cut a ^FF0000White Herb^000000 into strips",-,"Cut a ^FF0000Red Herb^000000 into strips",STEP2,"Add water to the substance",-,"Rip a ^FF0000Red Herb^000000 into pieces",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP2:
+				menu "Add water to the pieces",-,"Roll the strips width-ways",-,"Crush the pieces",-,"Roll the strips length-ways",STEP3;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP3:
+				menu "Cut a ^FF0000Yellow Herb^000000 into squares",STEP4,"Break the ^FF0000White Herb^000000 into squares",-,"Slice the ^FF0000Yellow Herb^000000 in half",-,"Roll up the ^FF0000Red Herb^000000",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP4:
+				menu "Break the ^FF0000Red Herbs^000000 into little pieces",-,"Chop the ^FF0000White Herb^000000 in half",-,"Sprinkle water onto the substance",-,"Wrap the ^FF0000Red Herbs^000000 with the squares",STEP5;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP5:
+				menu "Roll it into a coil",-,"Roll it into a ball",STEP6,"Roll it into a tube",-,"Fold it",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP6:
+				menu "Roll the balls in the ^FF0000White Herb^000000",STEP7,"Mash it up into one substance",-,"Stuff it with the ^FF0000White Herb^000000 pieces",-,"Smother the substances together",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP7:
+				menu "Wait a few seconds",-,"Wait a second",-,"Don't wait",-,"Wait till dry",STEP8;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP8:
+				menu "Fill all 3 ^FF0000Empty Bottles^000000 with water",STEP9,"Sprinkle water on the substance",-,"Flatten the substance with a rolling pin",-,"Fill an ^FF0000Empty Bottle^000000 with water",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP9:
+				menu "Throw them all in one bottle",-,"Stick 2 balls in each bottle",STEP10,"Stick 1 ball in each bottle",-,"Stick one sheet into each bottle",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP10:
+				menu "Stir the first",-,"Let the first sit",-,"Whirl the first around",-,"Shake the first",STEP11;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP11:
+				menu "Stir the second",STEP12,"Let the second sit",-,"Shake the second",-,"Shake the first",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP12:
+				menu "Stir the second",-,"Shake the second",-,"Leave the third",STEP13,"Shake the third",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP13:
+				menu "Wait about a minute",STEP14,"Wait a second",-,"Wait overnight",-,"Don't wait",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP14:
+				menu "Pour 1 L of each bottle into a ^FF0000Drug Cup^000000",-,"Pour 250 mL of each bottle into a ^FF0000Drug Cup^000000",-,"Pour 10 mL of each bottle into a ^FF0000Drug Cup^000000",-,"Pour 100 mL of each bottle into a ^FF0000Drug Cup^000000",STEP15;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP15:
+				menu "Keep them separated",-,"Mix them around",STEP16,"Waft them to test them",-,"Stir them with a spoon",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP16:
+				menu "Stop after a minute",-,"Stop after a few seconds",-,"Let it sit",-,"Continue until uniform",STEP17;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP17:
+				menu "Place contents back into 1st bottle",-,"Place contents back into 3rd bottle",STEP18,"Place contents back into 2nd bottle",-,"Place contents back into ^FF0000Drug Cup^000000",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			STEP18:
+				menu "Shake it without end",-,"Let it sit until ready",-,"Shake until ready",END,"Stir until ready",-;
+						set @FAIL = 1;
+						set Job_AL = 6;
+			END:
+				check @FAIL = 0,-,FAIL;
+						set Job_AL = 8;
+						additem 1071,1;
+						mes "[Darsia]";
+						mes "Excellent work!";
+						mes "You accomplished making the solution.";
+					next;
+						mes "[Darsia]";
+						mes "FInd ^000080Banhelmont^000000 to continue the test.";
+					close;
+				FAIL:
+						mes "Hm... Looks like you messed up somewhere.";
+					close;
+		CONT1:
+				mes "Come to try the test again?";
+			next;
+				menu "Yes.",TRY,"No.",-;
+						mes "[Darsia]";
+						mes "Oh, all right.";
+					close;
+		CONT2:
+				mes "Please locate ^000080Banhelmont^000000, he will guide you further.";
+			close;
+		CONT3:
+				mes "I wish you luck in your quest to become an ^800000Alchemist^000000.";
+			close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Don't steal anything, or I'll hunt you down!";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "We're not conducting anything illegal, if that's what you're thinking.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "I don't have time to listen to your lectures.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "We don't need your help, we have everything under control.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "I'm not interested in whatever you have to sell.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Keep the area clean, we don't need bodies lying around.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Don't make a mess, we had the floors cleaned recently.";
+			mes "If you do, we'll clean it with your face.";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Um... Hello.  Whatever you're looking for isn't here.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "I don't need someone to enlighten me.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Please keep your magic arts to yourself.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Don't think you'll get away with stealing something from here.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Welcome fellow ^800000Alchemist^000000, I'm rather busy now.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "I didn't call to be entertained.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Hello, sorry but, I don't need to be distracted while I work.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+				mes "Well well, who's the lucky man?";
+			close;
+	MALE:
+			mes "I'm sorry, I don't have time to go to your party.";
+		close;
+NEXT19:
+		mes "Go play someplace else.";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Banhelmont - Alchemist Job Quest - Tester 4
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+alde_alche.vhm,145,11,6	script	Banhelmont	0,0,0,0	748,{
+		mes "[^000080Banhelmont^000000]";
+	check Job = 0,-,NEXT;
+			mes "Go someplace else to play!";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "I don't have time for you!";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "Don't bother me, I'm busy!";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Do your target practise some place else!";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "I have no time to be enlightened!";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+		check Job_AL = 8,CONT,-;
+				mes "Go away, I'm busy!";
+			close;
+		CONT:
+				mes "What do you want, I'm busy!";
+			next;
+				menu "I want to become an ^800000Alchemist^000000.",-,"Sorry.",EXIT;
+						mes "[^000080Banhelmont^000000]";
+						mes "Find ^000080Professor Molgenstien^000000 and learn how to make mixtures and whatnot.";
+						mes "When you're done, find that good-for-nothing Nicholas, he will help you.";
+					close;
+			EXIT:
+					mes "[^000080Banhelmont^000000]";
+					mes "Don't bother me then.";
+				close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Get out of here!";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "I have no time to hear about your valour!";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Baptise me another day!";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "";
+		//Code for Wizard
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "";
+		//Code for Blacksmith
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "";
+		//Code for Hunter
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "";
+		//Code for Assassin
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Don't talk to me about your crusades!";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "I've no need for you to be here!";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Do your practise someplace else!";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Leave my sight, now!";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Good for you, now leave me alone.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Go play music someplace else, I need my concentration!";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Sorry, I have no time to be entertained.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+			mes "Go someplace else for your ceremony!";
+		close;
+NEXT19:
+		mes "I have no need for your presence!";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Nicholas - Alchemist Job Quest - Tester 5
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+alde_alche.vhm,79,17,6	script	Nicholas	0,0,0,0	750,{
+		mes "[^000080Nicholas^000000]";
+	check Job = 0,-,NEXT;
+			mes "Hello, if you become a ^800000Merchant^000000, I can teach you how you can become an ^800000Alchemist^000000.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "Welcome to ^00FF00Yuno^000000, whatever business you have here I do not know.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "What business have you here?";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Keep your arrows to yourself.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "I don't need you to baptise me.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+		check Job_AL = 9,CONT,-;
+		check Job_AL = 10,CONT0,-;
+		check Job_AL = 11,CONT1,-;
+		check Job_AL > 11,CONT2,-;
+				mes "Hello there.";
+				mes "I help people to become ^800000Alchemists^000000.";
+			close;
+		CONT:
+				mes "Hello $charaname.";
+				mes "Have you come for the test?";
+			next;
+				menu "Yes.",-,"No.",EXIT;
+						set Job_AL = 10;
+					START:
+							set @Q = 0;
+							set @Q1 = 0;
+							set @Q2 = 0;
+							set @Q3 = 0;
+							set @Q4 = 0;
+							set @Q5 = 0;
+							set @Q6 = 0;
+							set @Q7 = 0;
+							set @Q8 = 0;
+							set @Q9 = 0;
+							set @Q10 = 0;
+							set @ANS = 0;
+					RND:
+						check @Q < 5,-,DONE;
+								random @RND,10;
+							check @RND < 6,-,SECT1;
+								check @RND < 2,-,SECT1A;
+									check @RND = 0,Q1,-;
+									check @RND = 1,Q2,Q3;
+								SECT1A:
+									check @RND = 3,Q4,-;
+									check @RND = 4,Q5,Q6;
+							SECT1:
+								check @RND < 8,-,SECT1B;
+									check @RND = 6,Q7,Q8;
+								SECT1B:
+									check @RND = 8,Q9,-;
+								check @Q10 = 0,-,RND;
+										set @Q + 1;
+										set @Q10 = 1;
+										mes "[Nicholas]";
+										mes "^0000FFBio-Cannibalize^000000 lasts for this long at level 4 in seconds";
+									next;
+										input @VAR;
+									check @VAR = 70,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q1:
+								check @Q1 = 0,-,RND;
+										set @Q + 1;
+										set @Q1 = 1;
+										mes "[Nicholas]";
+										mes "^0000FFDemonstration^000000 lasts for this long at level 2 in seconds";
+									next;
+										input @VAR;
+									check @VAR = 45,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q2:
+								check @Q2 = 0,-,RND;
+										set @Q + 1;
+										set @Q2 = 1;
+										mes "[Nicholas]";
+										mes "Bonus healing in % given with ^0000FFLearning Potion^000000 level 6";
+									next;
+										input @VAR;
+									check @VAR = 30,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q3:
+								check @Q3 = 0,-,RND;
+										set @Q + 1;
+										set @Q3 = 1;
+										mes "[Nicholas]";
+										mes "^0000FFChemical Protection - Helm^000000 takes this much SP at level 3";
+									next;
+										input @VAR;
+									check @VAR = 30,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q4:
+								check @Q4 = 0,-,RND;
+										set @Q + 1;
+										set @Q4 = 1;
+										mes "[Nicholas]";
+										mes "^FF0000Acid Bottles^000000 require how many items to create? ";
+									next;
+										input @VAR;
+									check @VAR = 7,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q5:
+								check @Q5 = 0,-,RND;
+										set @Q + 1;
+										set @Q5 = 1;
+										mes "[Nicholas]";
+										mes "^FF0000Mine Bottles^000000 require how many items to create?";
+									next;
+										input @VAR;
+									check @VAR = 8,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q6:
+								check @Q6 = 0,-,RND;
+										set @Q + 1;
+										set @Q6 = 1;
+										mes "[Nicholas]";
+										mes "^FF0000White Slim Potions^000000 require how many items to create?";
+									next;
+										input @VAR;
+									check @VAR = 6,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q7:
+								check @Q7 = 0,-,RND;
+										set @Q + 1;
+										set @Q7 = 1;
+										mes "[Nicholas]";
+										mes "^FF0000Yellow Slim Potions^000000 require how many items to create?";
+									next;
+										input @VAR;
+									check @VAR = 6,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q8:
+								check @Q8 = 0,-,RND;
+										set @Q + 1;
+										set @Q8 = 1;
+										mes "[Nicholas]";
+										mes "^FF0000Red Slim Potions^000000 require how many items to create?";
+									next;
+										input @VAR;
+									check @VAR = 6,-,RND;
+											set @ANS + 1;
+										goto RND;
+							Q9:
+								check @Q9 = 0,-,RND;
+										set @Q + 1;
+										set @Q9 = 1;
+										mes "[Nicholas]";
+										mes "^FF0000Red Potions^000000 require how many items to create?";
+									next;
+										input @VAR;
+									check @VAR = 2,-,RND;
+											set @ANS + 1;
+										goto RND;
+							DONE:
+									mes "[Nicholas]";
+									mes "You got $[@ANS] / 5 correct.";
+								next;
+									mes "[Nicholas]";
+								check @ANS = 5,-,FAIL;
+										set Job_AL = 11;
+										mes "Good work.  You got them all.";
+									next;
+										mes "[Nicholas]";
+										additem 7135,3;
+										additem 7136,2;
+										additem 7138,3;
+										mes "Please take these items to ^000080Bain^000000 and ^000080Barin^000000.";
+									close;
+								FAIL:
+										mes "I'm sorry.";
+										mes "You'll need to take the test again.";
+									close;
+						EXIT:
+								mes "[Nicholas]";
+								mes "Oh, all right.";
+							close;
+		CONT0:
+				mes "Will you take the test again?";
+			next;
+				menu "Yes.",START,"No.",EXIT;
+		CONT1:
+				mes "Please take the items to ^000080Bain^000000 and ^000080Barin^000000.";
+			close;
+		CONT2:
+			check Job_AL = 14,CONT3,-;
+					mes "Good luck in becoming an ^800000Alchemist^000000.";
+				close;
+			CONT3:
+					mes "All right.";
+					mes "Go back to ^000080Rasputin^000000 to become an ^800000Alchemist^000000.";
+				close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Don't steal anything, or I'll hunt you down!";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "We're not conducting anything illegal, if that's what you're thinking.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "I don't have time to listen to your lectures.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "We don't need your help, we have everything under control.";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "I'm not interested in whatever you have to sell.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "Keep the area clean, we don't need bodies lying around.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "Don't make a mess, we had the floors cleaned recently.";
+			mes "If you do, we'll clean it with your face.";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "Um... Hello.  Whatever you're looking for isn't here.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "I don't need someone to enlighten me.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Please keep your magic arts to yourself.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Don't think you'll get away with stealing something from here.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Welcome fellow ^800000Alchemist^000000, I'm rather busy now.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "I didn't call to be entertained.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "Hello, sorry but, I don't need to be distracted while I work.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+		check Gender = 0,-,MALE;
+				mes "Well well, who's the lucky man?";
+			close;
+	MALE:
+			mes "I'm sorry, I don't have time to go to your party.";
+		close;
+NEXT19:
+		mes "Go play someplace else.";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Bain - Alchemist Job Quest - Tester 6
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+yuno_in01.vhm,125,160,1	script	Bain	0,0,0,0	750,{
+		mes "[^000080Bain^000000]";
+	check Job = 0,-,NEXT;
+			mes "Sorry, we don't have time to talk with you.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "I'm sorry, but there's nothing suspicious here.";
+			mes "We're conducting an experiment, that's all.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "We don't have anything you're looking for.";
+			mes "Try looking around the shops.";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Keep your arrows in your quiver, we don't need disoriented arrows flying around the house.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "Sorry, we're not interested.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+		check Job_AL = 11,CONT,-;
+		check Job_AL = 12,CONT0,-;
+		check Job_AL = 13,CONT0,-;
+		check Job_AL = 14,CONT1,-;
+				mes "Hello, we're currently taking a break since we're waiting for ingredients.";
+			close;
+	CONT:
+			set @ITEM = 0;
+		checkitem 7135,3,ITEM,-;
+				set @ITEM + 4;
+	ITEM:
+		checkitem 7136,2,ITEM0,-;
+				set @ITEM + 2;
+	ITEM0:
+		checkitem 7138,3,ITEM1,-;
+				set @ITEM + 1;
+	ITEM1:
+		check @ITEM > 0,-,GOOD;
+				set Job_AL = 12;
+				mes "Hey, I thought they said that you were delivering the items we need.";
+			next;
+				mes "[^000080Bain^000000]";
+				mes "Anyways, we need some items:";
+				mes "- 5 ^FF0000Coal^000000";
+				mes "- 5 ^FF0000Portable Furnaces^000000";
+			check @ITEM > 3,-,ITC;
+					mes "- 3 ^FF0000Fire Bottles^000000";
+					set @ITEM - 4;
+		ITC:
+			check @ITEM > 1,-,ITC0;
+					mes "- 2 ^FF0000HCl Bottles^000000";
+					set @ITEM - 2;
+		ITC0:
+			check @ITEM > 0,-,ITC1;
+					mes "- 3 ^FF0000Mine Bottles^000000";
+		ITC1:
+			close;
+		GOOD:
+				set Job_AL = 13;
+				delitem 7135,3;
+				delitem 7136,2;
+				delitem 7138,3;
+				mes "Thanks for the delivery.";
+				mes "We need a few more things though.";
+			next;
+				mes "[^000080Bain^000000]";
+				mes "We're in need of 5 ^FF0000Coal^000000 and ^FF0000Portable Furnaces^000000.";
+				mes "Thanks for your help.";
+			close;
+	CONT0:
+			set @ITEM = 0;
+		checkitem 1003,5,ITEMA,-;
+				set @ITEM + 16;
+	ITEMA:
+		checkitem 612,5,ITEMA0,-;
+				set @ITEM + 8;
+	ITEMA0:
+		check Job_AL = 13,ITEMA3,-;
+			checkitem 7135,3,ITEMA1,-;
+					set @ITEM + 4;
+		ITEMA1:
+			checkitem 7136,2,ITEMA2,-;
+					set @ITEM + 2;
+		ITEMA2:
+			checkitem 7138,3,ITEMA3,-;
+					set @ITEM + 1;
+		ITEMA3:
+				mes "[^000080Bain^000000]";
+			check @ITEM > 0,-,DONE;
+					mes "You're missing:";
+				check @ITEM > 15,-,ITCA;
+						mes "- 5 ^FF0000Coal^000000";
+						set @ITEM - 16;
+			ITCA:
+				check @ITEM > 7,-,ITCA0;
+						mes "- 5 ^FF0000Portable Furnaces^000000";
+						set @ITEM - 8;
+			ITCA0:
+				check @ITEM > 3,-,ITCA1;
+						mes "- 3 ^FF0000Fire Bottles^000000";
+						set @ITEM - 4;
+			ITCA1:
+				check @ITEM > 1,-,ITCA2;
+						mes "- 2 ^FF0000HCl BOttles^000000";
+						set @ITEM - 2;
+			ITCA2:
+				check @ITEM > 0,-,ITCA3;
+						mes "- 3 ^FF0000Mine Bottles^000000";
+			ITCA3:
+				close;
+		DONE:
+				mes "Thanks a lot!";
+			check Job_AL = 13,SKIP,-;
+					delitem 7135,3;
+					delitem 7136,2;
+					delitem 7138,3;
+		SKIP:
+				delitem 1003,5;
+				delitem 612,5;
+		CONT1:
+				set Job_AL = 14
+				mes "Tell ^000080Nicholas^000000 that we have everything we need now.";
+			close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Hey, don't you be stealing ingredients on us.";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "Hello, I didn't expect to see any inspection going on here.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Sorry, we don't have time for baptism.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "Hello, we're a bit busy right now, so could you please go someplace else?";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "We're not in need of a ^800000Blacksmith^000000, so if you'll excuse us, we're busy right now.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "I'm not sure what you're doing here.";
+			mes "There's no gain in trying to hunt within someone's house.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "We don't need anyone executed, thank you.";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "When did someone call for an inspection?";
+			mes "There's nothing suspicious going on here.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "Um... Hello.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Hello, if you need anything, you're sure not to find it here.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Hey, don't take off with anything more than you have now.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Thanks for your help, it's much appreciated.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Sorry, but we're a bit busy right now, so we'd appreciate to be left in silence so we can concentrate.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "As much as we'd like to have you here, we're busy conducting an experiment.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+			mes "We're not up for invitations to any parties if that's what you have in mind.";
+		close;
+NEXT19:
+		mes "Sorry, but whatever you need isn't here.";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Barin - Alchemist Job Quest - Tester 6
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+yuno_in01.vhm,112,154,1	script	Barin	0,0,0,0	749,{
+		mes "[^000080Barin^000000]";
+	check Job = 0,-,NEXT;
+			mes "Sorry, we don't have time to talk with you.";
+		close;
+NEXT:
+	check Job = 1,-,NEXT0;
+			mes "I'm sorry, but there's nothing suspicious here.";
+			mes "We're conducting an experiment, that's all.";
+		close;
+NEXT0:
+	check Job = 2,-,NEXT1;
+			mes "We don't have anything you're looking for.";
+			mes "Try looking around the shops.";
+		close;
+NEXT1:
+	check Job = 3,-,NEXT2;
+			mes "Keep your arrows in your quiver, we don't need disoriented arrows flying around the house.";
+		close;
+NEXT2:
+	check Job = 4,-,NEXT3;
+			mes "Sorry, we're not interested.";
+		close;
+NEXT3:
+	check Job = 5,-,NEXT4;
+		check Job_AL = 11,CONT,-;
+		check Job_AL = 12,CONT0,-;
+		check Job_AL = 13,CONT0,-;
+		check Job_AL = 14,CONT1,-;
+				mes "Hi, we're taking a break to wait for supplies.";
+			close;
+	CONT:
+			set @ITEM = 0;
+		checkitem 7135,3,ITEM,-;
+				set @ITEM + 4;
+	ITEM:
+		checkitem 7136,2,ITEM0,-;
+				set @ITEM + 2;
+	ITEM0:
+		checkitem 7138,3,ITEM1,-;
+				set @ITEM + 1;
+	ITEM1:
+		check @ITEM > 0,-,GOOD;
+				set Job_AL = 12;
+				mes "What the... I thought they told us you were delivering the ingredients.";
+			next;
+				mes "[^000080Barin^000000";
+				mes "Well, you see, we need some things:";
+				mes "- 5 ^FF0000Coal^000000";
+				mes "- 5 ^FF0000Portable Furnaces^000000";
+			check @ITEM > 3,-,ITC;
+					mes "- 3 ^FF0000Fire Bottles^000000";
+					set @ITEM - 4;
+		ITC:
+			check @ITEM > 1,-,ITC0;
+					mes "- 2 ^FF0000HCl Bottles^000000";
+					set @ITEM - 2;
+		ITC0:
+			check @ITEM > 0,-,ITC1;
+					mes "- 3 ^FF0000Mine Bottles^000000";
+		ITC1:
+			close;
+		GOOD:
+				set Job_AL = 13;
+				delitem 7135,3;
+				delitem 7136,2;
+				delitem 7138,3;
+				mes "Thanks a lot for delivering the ingredients.";
+				mes "We just need a few more things and we're set.";
+			next;
+				mes "[^000080Barin^000000";
+				mes "We're need 5 ^FF0000Coal^000000 and ^FF0000Portable Furnaces^000000.";
+				mes "Thanks a lot for all your help.";
+			close;
+	CONT0:
+			set @ITEM = 0;
+		checkitem 1003,5,ITEMA,-;
+				set @ITEM + 16;
+	ITEMA:
+		checkitem 612,5,ITEMA0,-;
+				set @ITEM + 8;
+	ITEMA0:
+		check Job_AL = 13,ITEMA3,-;
+			checkitem 7135,3,ITEMA1,-;
+					set @ITEM + 4;
+		ITEMA1:
+			checkitem 7136,2,ITEMA2,-;
+					set @ITEM + 2;
+		ITEMA2:
+			checkitem 7138,3,ITEMA3,-;
+					set @ITEM + 1;
+		ITEMA3:
+				mes "[^000080Barin^000000";
+			check @ITEM > 0,-,DONE;
+					mes "You would appear to be missing:";
+				check @ITEM > 15,-,ITCA;
+						mes "- 5 ^FF0000Coal^000000";
+						set @ITEM - 16;
+			ITCA:
+				check @ITEM > 7,-,ITCA0;
+						mes "- 5 ^FF0000Portable Furnaces^000000";
+						set @ITEM - 8;
+			ITCA0:
+				check @ITEM > 3,-,ITCA1;
+						mes "- 3 ^FF0000Fire Bottles^000000";
+						set @ITEM - 4;
+			ITCA1:
+				check @ITEM > 1,-,ITCA2;
+						mes "- 2 ^FF0000HCl BOttles^000000";
+						set @ITEM - 2;
+			ITCA2:
+				check @ITEM > 0,-,ITCA3;
+						mes "- 3 ^FF0000Mine Bottles^000000";
+			ITCA3:
+				close;
+		DONE:
+				mes "Thanks a lot!";
+			check Job_AL = 13,SKIP,-;
+					delitem 7135,3;
+					delitem 7136,2;
+					delitem 7138,3;
+		SKIP:
+				delitem 1003,5;
+				delitem 612,5;
+		CONT1:
+				set Job_AL = 14
+				mes "Let ^000080Nicholas^000000 know that we have everything we need now.";
+			close;
+NEXT4:
+	check Job = 6,-,NEXT5;
+			mes "Hey, don't you be stealing ingredients on us.";
+		close;
+NEXT5:
+	check Job = 7,-,NEXT6;
+			mes "Hello, I didn't expect to see any inspection going on here.";
+		close;
+NEXT6:
+	check Job = 8,-,NEXT7;
+			mes "Sorry, we don't have time for baptism.";
+		close;
+NEXT7:
+	check Job = 9,-,NEXT8;
+			mes "Hello, we're a bit busy right now, so could you please go someplace else?";
+		close;
+NEXT8:
+	check Job = 10,-,NEXT9;
+			mes "We're not in need of a ^800000Blacksmith^000000, so if you'll excuse us, we're busy right now.";
+		close;
+NEXT9:
+	check Job = 11,-,NEXT10;
+			mes "I'm not sure what you're doing here.";
+			mes "There's no gain in trying to hunt within someone's house.";
+		close;
+NEXT10:
+	check Job = 12,-,NEXT11;
+			mes "We don't need anyone executed, thank you.";
+		close;
+NEXT11:
+	check Job = 14,-,NEXT12;
+			mes "When did someone call for an inspection?";
+			mes "There's nothing suspicious going on here.";
+		close;
+NEXT12:
+	check Job = 15,-,NEXT13;
+			mes "Um... Hello.";
+		close;
+NEXT13:
+	check Job = 16,-,NEXT14;
+			mes "Hello, if you need anything, you're sure not to find it here.";
+		close;
+NEXT14:
+	check Job = 17,-,NEXT15;
+			mes "Hey, don't take off with anything more than you have now.";
+		close;
+NEXT15:
+	check Job = 18,-,NEXT16;
+			mes "Thanks for your help, it's much appreciated.";
+		close;
+NEXT16:
+	check Job = 19,-,NEXT17;
+			mes "Sorry, but we're a bit busy right now, so we'd appreciate to be left in silence so we can concentrate.";
+		close;
+NEXT17:
+	check Job = 20,-,NEXT18;
+			mes "As much as we'd like to have you here, we're busy conducting an experiment.";
+		close;
+NEXT18:
+	check Job = 22,-,NEXT19;
+			mes "We're not up for invitations to any parties if that's what you have in mind.";
+		close;
+NEXT19:
+		mes "Sorry, but whatever you need isn't here.";
+	close;
+}

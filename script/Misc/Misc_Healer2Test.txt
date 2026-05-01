@@ -1,0 +1,77 @@
+//----------------------------------------------------------------------------------------
+// Healer
+// Script by Kyuushi
+// Over healing fix by L0ne_W0lf
+//----------------------------------------------------------------------------------------
+// Fixes by Black_Dragon
+// - Cost fixed, was originally 2 zeny per HP
+// - Adjusted HP max, may be different on different clients (65535 HP maximum on mine)
+// - Revised the loop
+
+prontera.vhm,162,179,4	script "Sister Lynna"	0,0,0,0	66,{
+	mes "[Sister Lynna]";
+	mes "Hello do you need Healing?";
+	next;
+NEEDHEAL:
+	menu "Please heal my wounds",HEAL,"No, Thank You.",EXIT;
+	close;
+	HEAL:
+		mes "[Sister Lynna]";
+		mes "My standard fee of healing is 1 zeny per 2HP. So How many HP do you wish for me to Heal?";
+		mes "Please note that odd values of HP will be rounded down.";
+		next;
+		input @healAmount;
+		mes "[Sister Lynna]";
+		check @healAmount > 1,-,NOHEAL;
+		check @healAmount < 65536,-,TOOMUCH;
+		set @healAmount / 2;
+		check zeny >= @healAmount,-,NOZENY;
+		set zeny - @healAmount;
+		set @healAmount * 2;
+		check @healAmount >= 10000,HP10000,-;
+	CONTINUE1:
+		check @healAmount >= 1000,HP1000,-;
+	CONTINUE2:
+		check @healAmount >= 100,HP100,-;
+	CONTINUE3:
+		check @healAmount >= 10,HP10,-;
+	CONTINUE4:
+		check @healAmount >= 1,HP1,DONE;
+	HP10000:
+		heal 10000,10000;
+		set @healAmount - 10000;
+		check @healAmount >= 10000,HP10000,CONTINUE1;
+	HP1000:
+		heal 1000,1000;
+		set @healAmount - 1000;
+		check @healAmount >= 1000,HP1000,CONTINUE2;
+	HP100:
+		heal 100,100;
+		set @healAmount - 100;
+		check @healAmount >= 100,HP100,CONTINUE3;
+	HP10:
+		heal 10,10;
+		set @healAmount - 10;
+		check @healAmount >= 10,HP10,CONTINUE4;
+	HP1:
+		heal 1,1;
+		set @healAmount - 1;
+		check @healAmount >= 1,HP1,-;
+	DONE:
+		mes "There you go! Feeling better now? Please be careful in your journey.";
+		emote 0;
+		close;
+	NOZENY:
+		mes "Sorry but you don't have enough zeny. Come again later.";
+		close;
+	NOHEAL:
+		mes "Sorry, but I only heal wounds not scratches... Come again if you have a wound ok?";
+		close;
+	TOOMUCH:
+		mes "Sorry, but the maximum HP you can restore is 65536.";
+		close;
+	EXIT:
+		mes "[Sister Lynna]";
+		mes "Ok... But if your wounded please feel free to return here, I'll tend your wounds.";
+		close;
+}

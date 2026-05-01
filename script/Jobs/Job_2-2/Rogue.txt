@@ -1,0 +1,378 @@
+// Error reports / Fixes by Ramiel
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Yorren - Rogue Job Quest - Starter
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+cmd_fild07.vhm,64,169,2	script	Yorren	0,0,0,0	810,{
+		mes "[^000080Yorren^000000]";
+	check Job = 6,THIEF,-;
+	check Job = 12,ASSASSIN,-;
+	check Job = 17,ROGUE,-;
+			mes "I have no business with you.";
+		close;
+THIEF:
+	check Job_RO = 1,CONT,-;
+			mes "Hey, $charaname.";
+			mes "Have you come to become a ^800000Rogue^000000?";
+		next;
+			menu "Yeah.",-,"No.",EXIT;
+					mes "[^000080Yorren^000000]";
+					set Job_RO = 1;
+					mes "All right.  You may now speak with Malikhan.";
+				close;
+		EXIT:
+				mes "[^000080Yorren^000000]";
+				mes "Leave this place.";
+			close;
+	CONT:
+			mes "Hey $charaname.";
+			mes "Good luck in becoming a ^800000Rogue^000000.";
+		close;
+ASSASSIN:
+		mes "Hey, what're you doing here?";
+	close;
+ROGUE:
+		mes "Welcome back $charaname.";
+		mes "Happy hunting?";
+	close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Malikhan - Rogue Job Quest - Main Session
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+cmd_fild07.vhm,83,178,4	script	Malikhan	0,0,0,0	107,{
+		mes "[^000080Malikhan^000000]";
+	check Job = 6,THIEF,-;
+	check Job = 17,ROGUE,-;
+			mes "...";
+		close;
+ROGUE:
+		mes "Good to see you again.";
+		mes "How are you making out with the goods?";
+	close;
+THIEF:
+	check Job_RO = 1,START,-;
+	check Job_RO = 2,CONT,-;
+	check Job_RO > 2,CONT0,-;
+	START:
+			mes "Sorry about the confusion, I prefer not to talk to people unless ^000080Yorren^000000 approves of them.";
+		next;
+			mes "First collect: 2 ^FF0000Rubies^000000, 3 ^FF0000Blue Gemstones^000000, 2 ^FF0000Crystal Blue^000000, 2 ^FF00001 Carat Diamonds^000000 and 1 ^FF0000Emerald^000000.";
+			set Job_RO = 2;
+		close;
+	CONT:
+			set @ITEM = 0;
+		checkitem 723,2,ITEM,-;
+				set @ITEM + 16;
+	ITEM:
+		checkitem 717,3,ITEM0,-;
+				set @ITEM + 8;
+	ITEM0:
+		checkitem 991,2,ITEM1,-;
+				set @ITEM + 4;
+	ITEM1:
+		checkitem 730,2,ITEM2,-;
+				set @ITEM + 2;
+	ITEM2:
+		checkitem 721,1,ITEM3,-;
+				set @ITEM + 1;
+	ITEM3:
+		check @ITEM > 0,-,DONE;
+				mes "You're missing some items:";
+			check @ITEM > 15,-,ITEM4;
+					mes "- 2 ^FF0000Rubies^000000";
+					set @ITEM - 16;
+		ITEM4:
+			check @ITEM > 7,-,ITEM5;
+					mes "- 3 ^FF0000Blue Gemstones^000000";
+					set @ITEM - 8;
+		ITEM5:
+			check @ITEM > 3,-,ITEM6;
+					mes "- 2 ^FF0000Crystal Blue^000000";
+					set @ITEM - 4;
+		ITEM6:
+			check @ITEM > 1,-,ITEM7;
+					mes "- 2 ^FF00001 Carat Diamonds^000000";
+					set @ITEM - 2;
+		ITEM7:
+			check @ITEM > 0,-,ITEM8;
+					mes "- 1 ^FF0000Emerald^000000";
+		ITEM8:
+			close;
+		DONE:
+				mes "Good, everything's here.";
+				mes "Please visit ^000080Hollengrenn Na^000000, ^000080Aragarm^000000 and ^000080Junior^000000 in that order.";
+				set Job_RO = 3;
+			close;
+	CONT0:
+		check Job_RO = 6,CONT1,-;
+		check Job_RO = 7,CONT2,-;
+		check Job_RO = 8,CONT3,-;
+		check Job_RO = 9,CHECK,-;
+		check Job_RO = 10,GOOD,-;
+				mes "Please visit ^000080Hollengrenn Na^000000, ^000080Aragarm^000000 and ^000080Junior^000000 in that order.";
+			close;
+	CONT1:
+			mes "Enter the password:";
+		next;
+			input @PASS;
+				mes "[^000080Malikhan^000000]";
+		check @PASS == 6429255,-,FAIL;
+				mes "Good, you got the correct password.";
+			next;
+				mes "[^000080Malikhan^000000]";
+				mes "Very well.";
+				mes "Are you ready for the final test?";
+			next;
+				menu "Yes.",-,"No.",WAIT;
+			OKAY:
+					set Job_RO = 8;
+					mes "[^000080Malikhan^000000]";
+					mes "Make your way back here.";
+				next;
+					save "beach_dun",24,218;
+					warp "beach_dun",24,218;
+			WAIT:
+					set Job_RO = 7;
+					mes "[^000080Malikhan^000000]";
+					mes "Come back when you're ready.";
+				close;
+		FAIL:
+				mes "I'm sorry, the password you gave me is incorrect.";
+			close;
+	CONT2:
+			mes "Are you ready?";
+		next;
+			menu "Yes.",OKAY,"No.",WAIT;
+	CONT3:
+			mes "Excellent, you've proven yourself.";
+		next;
+			mes "[^000080Malikhan^000000]";
+	CHECK:
+		check JobLevel > 39,GOOD,-;
+				mes "You need to have a job level of at least 40 first.";
+				set Job_RO = 9;
+			close;
+		GOOD:
+			check SkillPoint = 0,GOOD0,-;
+					mes "You can't transfer unused skill points.";
+					set Job_RO = 10;
+				close;
+			GOOD0:
+					mes "Everything seems all right.";
+					mes "Okay.";
+					jobchange 17;
+					set JobLevel = 1,0;
+				close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Hollengrenn Na - Rogue Job Quest - Job NPC 1
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+cmd_fild09.vhm,120,186,2	script	"Hollengrenn Na"	0,0,0,0	747,{
+		mes "[^000080Hollengrenn Na^000000]";
+	check Job = 6,THIEF,-;
+	check Job = 17,ROGUE,EXIT;
+THIEF:
+	check Job_RO > 2,-,EXIT;
+	check Job_RO < 6,-,EXIT0;
+		check Rogue1 = 0,-,EXIT1;
+				set @ITEM = 0;
+			checkitem  723,1,ITEM,-;
+					set @ITEM + 4;
+		ITEM:
+			checkitem 717,2,ITEM0,-;
+					set @ITEM + 2;
+		ITEM0:
+			checkitem 730,1,ITEM1,-;
+					set @ITEM + 1;
+		ITEM1:
+			check @ITEM > 0,-,DONE;
+					mes "What the heck, you were supposed to deliver some items to me, but they're on you.";
+				next;
+					mes "[^000080Hollengrenn Na^000000]";
+					mes "You owe me:";
+				check @ITEM > 3,-,ITEM2;
+						mes "- 1 ^FF0000Ruby^000000";
+						set @ITEM - 4;
+			ITEM2:
+				check @ITEM > 1,-,ITEM3;
+						mes "- 2 ^FF0000Blue Gemstones^000000";
+						set @ITEM - 2;
+			ITEM3:
+				check @ITEM > 0,-,ITEM4;
+						mes "- 1 ^FF00001 Carat Diamond^000000";
+			ITEM4:
+				close;
+			DONE:
+					set Rogue1 = 1;
+					set Job_RO + 1;
+					delitem 723,1;
+					delitem 717,2;
+					delitem 730,1;
+					mes "Thanks for making the delivery.";
+				next;
+					mes "[^000080Hollengrenn Na^000000]";
+					mes "Squares in a chess board.";
+				close;
+	EXIT0:
+		check Job_RO > 6,CONT,-;
+	EXIT1:
+				mes "Squares in a chess board.";
+			close;
+		CONT:
+				mes "Good luck.";
+			close;
+	EXIT:
+			mes "I have nothing to say to the likes of you.";
+		close;
+	ROGUE:
+			mes "Hey $charaname.";
+			mes "What's up?";
+		close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Aragarm - Rogue Job Quest - Job NPC 2
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+cmd_fild09.vhm,339,134,4	script	Aragarm	0,0,0,0	779,{
+		mes "[^000080Aragarm^000000]";
+	check Job = 6,THIEF,-;
+	check Job = 17,ROGUE,EXIT;
+THIEF:
+	check Job_RO > 2,-,EXIT;
+	check Job_RO < 6,-,EXIT0;
+		check Rogue2 = 0,-,EXIT1;
+				set @ITEM = 0;
+			checkitem  723,1,ITEM,-;
+					set @ITEM + 4;
+		ITEM:
+			checkitem 721,1,ITEM0,-;
+					set @ITEM + 2;
+		ITEM0:
+			checkitem 991,1,ITEM1,-;
+					set @ITEM + 1;
+		ITEM1:
+			check @ITEM > 0,-,DONE;
+					mes "Hey, what's going on here?  You were supposed to deliver items to me!";
+				next;
+					mes "[^000080Aragarm^000000]";
+					mes "You owe me:";
+				check @ITEM > 3,-,ITEM2;
+						mes "- 1 ^FF0000Ruby^000000";
+						set @ITEM - 4;
+			ITEM2:
+				check @ITEM > 1,-,ITEM3;
+						mes "- 1 ^FF0000Emerald^000000";
+						set @ITEM - 2;
+			ITEM3:
+				check @ITEM > 0,-,ITEM4;
+						mes "- 1 ^FF0000Crystal Blue^000000";
+			ITEM4:
+				close;
+			DONE:
+					set Rogue2 = 1;
+					set Job_RO + 1;
+					delitem 723,1;
+					delitem 721,1;
+					delitem 991,1;
+					mes "Thanks for the items.";
+				next;
+					mes "[^000080Aragarm^000000]";
+					mes "The 11th prime number.";
+				close;
+	EXIT0:
+		check Job_RO > 6,CONT,-;
+	EXIT1:
+				mes "The 11th prime number.";
+			close;
+		CONT:
+				mes "Good luck.";
+			close;
+	EXIT:
+		check Job = 17,ROGUE,-;
+				mes "Go away.  I have nothing for you.";
+			close;
+		ROGUE:
+				mes "Cool, you're a ^800000Rogue^000000 too.";
+			close;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Junior - Rogue Job Quest - Job NPC 3
+// By Black Dragon based on the information at RagnaInfo
+//
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+cmd_fild09.vhm,170,282,4	script	Junior	0,0,0,0	779,{
+		mes "[^000080Aragarm^000000]";
+	check Job = 6,THIEF,-;
+	check Job = 17,ROGUE,EXIT;
+THIEF:
+	check Job_RO > 2,-,EXIT;
+	check Job_RO < 6,-,EXIT0;
+		check Rogue3 = 0,-,EXIT1;
+				set @ITEM = 0;
+			checkitem  717,1,ITEM,-;
+					set @ITEM + 4;
+		ITEM:
+			checkitem 991,1,ITEM0,-;
+					set @ITEM + 2;
+		ITEM0:
+			checkitem 730,1,ITEM1,-;
+					set @ITEM + 1;
+		ITEM1:
+			check @ITEM > 0,-,DONE;
+					mes "Hey, what's going on here?  You were supposed to deliver items to me!";
+				next;
+					mes "[^000080Aragarm^000000]";
+					mes "You owe me:";
+				check @ITEM > 3,-,ITEM2;
+						mes "- 1 ^FF0000Blue Gemstone^000000";
+						set @ITEM - 4;
+			ITEM2:
+				check @ITEM > 1,-,ITEM3;
+						mes "- 1 ^FF0000Crystal Blue^000000";
+						set @ITEM - 2;
+			ITEM3:
+				check @ITEM > 0,-,ITEM4;
+						mes "- 1 ^FF00001 Carat Diamond^000000";
+			ITEM4:
+				close;
+			DONE:
+					set Rogue3 = 1;
+					set Job_RO + 1;
+					delitem 717,1;
+					delitem 991,1;
+					delitem 730,1;
+					mes "Thanks a lot.";
+				next;
+					mes "[^000080Aragarm^000000]";
+					mes "The value of the largest double digit hexadecimal value.";
+				close;
+	EXIT0:
+		check Job_RO > 6,CONT,-;
+	EXIT1:
+				mes "The value of the largest double digit hexadecimal value.";
+			close;
+		CONT:
+				mes "Good luck.";
+			close;
+	EXIT:
+			mes "What do you want?";
+		close;
+	ROGUE:
+			mes "Great!  You got the job!.";
+		close;
+}

@@ -1,0 +1,62 @@
+//- Merchant Skills Quests - kobra_k88
+alberta.vhm,119,221,6 script Charlron 107,{
+	mes "[Charlron]";
+		getskilllevel 36 @skill;
+		check @skill > 0 L_Start -;
+//	if (callfunc("Is_Merc_Class")) goto L_Start;
+L_Other:
+	mes "I am a merchant that deals in many things.  My name is Charlron.  If you ever find anything interesting, come back and try to negotiate a deal with me.";
+	close;
+L_Start:
+		getskilllevel 154 @skill;
+		check @skill > 0,L_GotSkill,-;
+		check CHANGECART == 1,L_GetSkill,-;
+	mes "Welcome young one.  Is selling fun for you? I am the merchant Charlron.";
+	next;
+	mes "[Charlron]";
+	mes "Aren't you tired of your old, and plain looking cart? Well I can help.";
+	next;
+	mes "[Charlon]";
+	mes "I have been doing some research on cart design recently and have come up with some new and interesting designs for the cart.";
+	next;
+	mes "[Charlon]";
+	mes "I can change the way your cart looks for you.  Of course some conditions need to be met......";
+	next;
+	mes "[Charlron]";
+		check job == 5,-,L_Start1;
+		check JobLevel < 30,L_JobLvl,-;
+L_Start1:
+	mes "First you will need to bring me these items:";
+	mes "^3355FF50 Trunks,";
+	mes "20 Animal Skin,";
+	mes "10 Iron^000000.";
+	set CHANGECART = 1;
+	close;
+	L_JobLvl:
+		mes "I'm a pretty famous merchant, so I don't really do business with beginners but..........";
+		mes "Once you've reached ^3355FFjob level 30^000000 I may consider doing business with you.";
+		close;
+L_GetSkill:
+		checkitem 1019,50,-,L_Items;
+		checkitem 998,10,-,L_Items;
+		checkitem 919,20,-,L_Items;
+	mes "Oh good, you have all of the items.  Well here you are..... Hmm?... Oh these are the design sheets for your cart.";
+	mes "Now that you have the proper materials, just follow these guides to make your cart look spectactular.";
+	delitem 1019,50;
+	delitem 998,10;
+	delitem 919,20;
+	setskilllevel 154,1;
+	set CHANGECART = 0;
+	mes "[Charlron]";
+	mes "Good luck, see you around";
+	close;
+	L_Items:
+		mes "Come back when you've brought me these items:";
+		mes "^3355FF50 Trunks,";
+		mes "20 Animal Skin,";
+		mes "10 Iron^000000.";
+		close;
+L_GotSkill:
+	mes "Heh heh... It's nice to see fancy looking carts like yours on the streets of town.  Well back to the drawing board....";
+	close;
+}

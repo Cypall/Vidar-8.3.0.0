@@ -1,0 +1,4026 @@
+//DO NOT REMOVE THIS LINE. This line is needed, and will not be read.
+item Spectacles					
+	event OnConsume:					
+		Skill MC_IDENTIFY 1				
+	return					
+						
+item Wing_of_Fly
+	event OnConsume:					
+		Skill	AL_TELEPORT 	1		
+	return					
+						
+item Wing_of_Butterfly					
+	event OnConsume:					
+		Skill	AL_TELEPORT 	3		
+	return					
+						
+item Aloebera					
+	event OnConsume:					
+		Skill	SM_PROVOKE		1	
+	return					
+						
+item Leaf_of_Yggdrasil					
+	event OnConsume:					
+		Skill	ALL_RESURRECTION	1		
+	return					
+						
+item Yggdrasilberry					
+	event OnConsume:					
+		HealAll				
+	return					
+						
+item Seed_of_Yggdrasil					
+	event OnConsume:					
+		HealHP 50				
+		HealSP 50				
+	return					
+							
+item Anodyne					
+	event OnConsume:					
+		Skill	SM_ENDURE		1	
+	return		
+
+item Center_Potion
+	event OnConsume:
+	Condition EFFECTHasteAttack 600 10
+return
+
+item Awakening_Potion
+	event OnConsume:
+	Condition EFFECTHasteAttack 1200 15
+return
+
+item Berserk_Potion
+	event OnConsume:
+	Condition EFFECTHasteAttack 1800 20
+return
+
+item Arrow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Nothing
+	return			
+
+item Crystal_Arrow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Water
+	return			
+	
+item Stone_Arrow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Ground
+	return			
+
+item Fire_Arrow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Fire
+	return			
+
+item Arrow_of_Wind
+	event OnAttack:			
+		BodyAttribute PROPERTY_Wind
+	return			
+
+item Poison_Arrow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Poison
+	return			
+
+item Arrow_of_Counter_Evil
+	event OnAttack:			
+		BodyAttribute PROPERTY_Saint
+	return			
+
+item Silver_Arrow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Saint
+	return			
+
+item Arrow_of_Shadow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Darkness
+	return			
+
+item Incisive_Arrow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Telekinesis
+	return			
+
+item Steel_Arrow
+	event OnAttack:			
+		BodyAttribute PROPERTY_Undead
+	return			
+
+//Weapons and Armor=
+
+item Haedonggum
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 3
+return
+
+item Haedonggum_
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 3
+return
+
+item Nagan
+	event OnStartEquip:
+	EnableSkill TF_DOUBLE 5
+	RaceAddDamage RACE_Human 5
+return
+	event OnFinishEquip:
+	DisableSkill TF_DOUBLE 5
+	RaceSubDamage RACE_Human 5
+return
+
+item Ice_Falchion
+	event OnStartEquip:
+	EnableSkill MG_COLDBOLT 3
+	AddStateAttack BODYFreezing 50
+return
+	event OnAttack:
+	Condition BODYFreezing 5 10
+	AutoSkill MG_COLDBOLT 3 5
+return
+	event OnFinishEquip:
+	DisableSkill MG_COLDBOLT 3
+	SubStateAttack BODYFreezing 50
+return
+
+item Edge
+	event OnStartEquip:
+	AddStateAttack HEALTHCurse 30
+	AddStateAttack HEALTHConfusion 10
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHCurse 30
+	SubStateAttack HEALTHConfusion 10
+return
+
+item Fire_Brand
+	event OnStartEquip:
+	EnableSkill MG_FIREBOLT 3
+return
+	event OnAttack:
+	AutoSkill MG_FIREBOLT 3 5
+return
+	event OnFinishEquip:
+	DisableSkill MG_FIREBOLT 3
+return
+
+item Ceasar's_Sword
+	event OnStartEquip:
+	RaceAddDamage RACE_Plant 25
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Plant 25
+return
+
+item Cutlas
+	event OnStartEquip:
+	EnableSkill SM_BASH 5
+	AddExtParam User VAR_STRAMOUNT 2
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	DisableSkill SM_BASH 5
+	SubExtParam User VAR_STRAMOUNT 2
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Solar_Sword
+	event OnStartEquip:
+	AddHPdrain 100 1
+	SubSPdrain 100 15
+//	SubExtParam User VAR_MAXSPAMOUNT 150
+return
+	event OnFinishEquip:
+	SubHPdrain 100 1
+	AddSPdrain 100 15
+//	AddExtParam User VAR_MAXSPAMOUNT 150
+return
+
+item Excalibur
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Saint 30
+	AddExtParam User VAR_INTAMOUNT 5
+	AddStateTolerace PROPERTY_Darkness 90
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 5
+	AttrSubDamage PROPERTY_Saint 30
+	SubStateTolerace PROPERTY_Darkness 90
+return
+
+item Mysteltain
+	event OnStartEquip:
+	AddStateAttack BODYStoneCurse 10
+	AttrAddDamage PROPERTY_Darkness 15
+	AddExtParam User VAR_DEXAMOUNT 3
+return
+	event OnFinishEquip:
+	SubStateAttack BODYStoneCurse 10
+	AttrSubDamage PROPERTY_Darkness 15
+	SubExtParam User VAR_DEXAMOUNT 3
+return
+
+item Talefing
+	event OnStartEquip:
+//	SubExtParam User VAR_LUKAMOUNT VAR_LUK
+	AddHPdrain 100 35	
+return
+	event OnFinishEquip:
+//	AddExtParam User VAR_LUKAMOUNT VAR_LUK
+	SubHPdrain 100 35
+return
+
+item Immaterial_Sword
+	event OnStartEquip:
+	IndestructibleWeapon 1
+	AddSPdrain 100 1
+return
+	event OnFinishEquip:
+	IndestructibleWeapon 0
+	SubSPdrain 100 1
+return
+
+item Broad_Sword
+	event OnStartEquip:
+	AddExtParam User VAR_ITEMDEFPOWER 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ITEMDEFPOWER 5
+return
+
+item Balmung
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 20
+	AddExtParam User VAR_LUKAMOUNT 20
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 20
+	SubExtParam User VAR_LUKAMOUNT 20
+return
+
+item Broad_Sword_
+	event OnStartEquip:
+	AddExtParam User VAR_ITEMDEFPOWER 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ITEMDEFPOWER 5
+return
+
+item Muramasa
+	event OnStartEquip:
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 30
+	AddExtParam User VAR_ASPD 10
+return
+	event OnAttack:
+	Condition HEALTHCurse 2 25
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 30
+	SubExtParam User VAR_ASPD 10
+return
+
+item Masamune
+	event OnStartEquip:
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 30
+	AddExtParam User VAR_ASPD 2
+	SubExtParam User VAR_STRAMOUNT 5
+	SubExtParam User VAR_DEFPOWERPLUSPERCENT 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 30
+	SubExtParam User VAR_ASPD 2
+	AddExtParam User VAR_STRAMOUNT 5
+	AddExtParam User VAR_DEFPOWERPLUSPERCENT 50
+return
+
+item Dragon_Slayer
+	event OnStartEquip:
+	RaceAddDamage RACE_Dragon 15
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Dragon 15
+return
+
+item Schweizersabel
+	event OnStartEquip:
+	EnableSkill MG_LIGHTNINGBOLT 1
+	AttrAddDamage PROPERTY_Wind 20
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnAttack:
+	AutoSkill MG_LIGHTNINGBOLT 3 5
+return
+	event OnFinishEquip:
+	DisableSkill MG_LIGHTNINGBOLT 1
+	AttrSubDamage PROPERTY_Wind 20
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Zweihander
+	event OnStartEquip:
+	IndestructibleWeapon 1
+return
+	event OnFinishEquip:
+	IndestructibleWeapon 0
+return
+
+item Executioner
+	event OnStartEquip:
+	RaceAddDamage RACE_Human 20
+	SubRaceTolerace RACE_Human 10
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Human 20
+	AddRaceTolerace RACE_Human 10
+return
+
+item Katzbalger
+	event OnStartEquip:
+	AddExtParam User VAR_ITEMDEFPOWER 10
+	AddExtParam User VAR_VITAMOUNT 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ITEMDEFPOWER 10
+	SubExtParam User VAR_VITAMOUNT 5
+return
+
+item Fortune_Sword
+	event OnStartEquip:
+	AddExtParam User VAR_PLUSAVOIDSUCCESSVALUE 20
+	AddExtParam User VAR_LUKAMOUNT 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_PLUSAVOIDSUCCESSVALUE 20
+	SubExtParam User VAR_LUKAMOUNT 5
+return
+
+item Weeder_Knife
+	event OnStartEquip:
+	AddRaceTolerace RACE_Plant 15
+	RaceAddDamage RACE_Plant 15
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Plant 15
+	RaceSubDamage RACE_Plant 15
+return
+
+item Combat_Knife
+	event OnStartEquip:
+	AddRaceTolerace RACE_Human 10
+	RaceAddDamage RACE_Human 10
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Human 10
+	RaceSubDamage RACE_Human 10
+return
+
+item Mama's_Knife
+	event OnStartEquip:
+	RaceAddDamage RACE_Human 3
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 30
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Human 3
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 30
+return
+
+item House_Auger
+	event OnStartEquip:
+	RaceAddDamage RACE_Demon 50
+	RaceAddDamage RACE_Plant 50
+	RaceAddDamage RACE_Insect 50
+	RaceAddDamage RACE_Human 50
+	RaceAddDamage RACE_Angel 50
+	RaceAddDamage RACE_Undead 50
+	RaceAddDamage RACE_Dragon 50
+	RaceAddDamage RACE_Animal 50
+	RaceAddDamage RACE_Fish 50
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Demon 50
+	RaceSubDamage RACE_Plant 50
+	RaceSubDamage RACE_Insect 50
+	RaceSubDamage RACE_Human 50
+	RaceSubDamage RACE_Angel 50
+	RaceSubDamage RACE_Undead 50
+	RaceSubDamage RACE_Dragon 50
+	RaceSubDamage RACE_Animal 50
+	RaceSubDamage RACE_Fish 50
+return
+
+item Bazerald
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 5
+return
+
+item Assassin_Dagger
+	event OnStartEquip:
+	AddExtParam User VAR_MAXSPPERCENT 15
+	AddExtParam User VAR_MAXHPPERCENT 20
+	AddExtParam User VAR_ASPD 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXSPPERCENT 15
+	SubExtParam User VAR_MAXHPPERCENT 20
+	SubExtParam User VAR_ASPD 2
+return
+
+item Exercise
+	event OnStartEquip:
+	RaceAddDamage RACE_Demon 50
+	SubRaceTolerace RACE_Human 10
+	AddRaceTolerace RACE_Demon 5
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Demon 50
+	AddRaceTolerace RACE_Human 10
+	SubRaceTolerace RACE_Demon 5
+return
+
+item Moonlight_Sword
+	event OnStartEquip:
+//	SubExtParam User VAR_HITSUCCESSVALUE 30
+//	AddExtParam User VAR_SPACCELERATION 25
+	AddExtParam User VAR_MAXSPPERCENT 10
+	AddSPdrain 100 3
+//	AddHPdrain 100 3
+return
+	event OnFinishEquip:
+//	AddExtParam User VAR_HITSUCCESSVALUE 30
+//	SubExtParam User VAR_SPACCELERATION 25
+	AddExtParam User VAR_MAXSPPERCENT 10
+	SubSPdrain 100 3
+//	SubHPdrain 100 3
+return
+
+item Sucsamad
+	event OnStartEquip:
+	IndestructibleWeapon 1
+	AttrAddDamage PROPERTY_Ground 10
+	AttrAddDamage PROPERTY_Wind 10
+return
+	event OnFinishEquip:
+	IndestructibleWeapon 0
+	AttrSubDamage PROPERTY_Ground 10
+	AttrSubDamage PROPERTY_Wind 10
+return
+
+item Grimtooth
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Darkness 50
+	AddExtParam User VAR_PLUSAVOIDSUCCESSVALUE 5
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 10
+	SubExtParam User VAR_DEFPOWERPLUSPERCENT 50
+return
+	event OnAttack:
+	Condition Target HEALTHBlind 50
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Darkness 50
+	SubExtParam User VAR_PLUSAVOIDSUCCESSVALUE 5
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 10
+	AddExtParam User VAR_DEFPOWERPLUSPERCENT 50
+return
+
+item Poison_Knife
+	event OnStartEquip:
+	AddStateAttack HEALTHPoison 1000
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHPoison 1000
+return
+
+item Princess_Knife
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+	AddExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_STRAMOUNT 1
+	AddExtParam User VAR_VITAMOUNT 1
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+	SubExtParam User VAR_LUKAMOUNT 1
+	SubExtParam User VAR_STRAMOUNT 1
+	SubExtParam User VAR_VITAMOUNT 1
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Cursed_Knife
+	event OnStartEquip:
+	AddStateAttack HEALTHCurse 200
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHCurse 200
+return
+
+item Katar
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Katar_
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Katar_of_Cold_Icicle
+	event OnStartEquip:
+	AddStateAttack BODYFreezing 50
+return
+	event OnFinishEquip:
+	SubStateAttack BODYFreezing 50
+return
+
+item Katar_of_Thornbush
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 5
+	AddStateAttack HEALTHBlind 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 5
+	SubStateAttack HEALTHBlind 50
+return
+
+item Katar_of_Raging_Blaze
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 5
+	AddStateAttack HEALTHSilence 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 5
+	SubStateAttack HEALTHSilence 50
+return
+
+item Katar_of_Piercing_Wind
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 5
+	AddStateAttack BODYSleep 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 5
+	SubStateAttack BODYSleep 50
+return
+
+item Ghoul_Leg
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 5
+return
+
+item Infiltrator
+	event OnStartEquip:
+	RaceAddDamage RACE_Human 50
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 5
+	AddExtParam User VAR_ITEMDEFPOWER 3
+	AddExtParam User VAR_PLUSAVOIDSUCCESSVALUE 2
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Human 50
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 5
+	SubExtParam User VAR_ITEMDEFPOWER 3
+	SubExtParam User VAR_PLUSAVOIDSUCCESSVALUE 2
+return
+
+item Cleaver
+	event OnStartEquip:
+	RaceAddDamage RACE_Human 5
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Human 5
+return
+
+item War_Axe
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 2
+	AddExtParam User VAR_LUKAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 2
+	SubExtParam User VAR_LUKAMOUNT 2
+return
+
+item Brood_Axe
+	event OnStartEquip:
+	Condition EFFECTHaste 9999 100
+	AddExtParam User VAR_STRAMOUNT 10
+return
+	event OnFinishEquip:
+	Cure EFFECTHaste 100
+	SubExtParam User VAR_STRAMOUNT 10
+return
+
+item Great_Axe
+	event OnStartEquip:
+	AddStateAttack BODYStun 15
+return
+	event OnFinishEquip:
+	SubStateAttack BODYStun 15
+return
+
+item Sabbath
+	event OnStartEquip:
+	RaceAddDamage RACE_Undead 100
+	AttrAddDamage PROPERTY_Darkness 50
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 300
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Undead 100
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 300
+	AttrSubDamage PROPERTY_Darkness 50
+return
+
+item Light_Epsilon
+	event OnStartEquip:
+	RaceAddDamage RACE_Demon 3
+	EnableSkill AL_HEAL 3
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Demon 3
+	DisableSkill AL_HEAL 3
+return
+
+item Slaughter
+	event OnStartEquip:
+	EnableSkill HT_BEASTBANE 10
+	RaceAddDamage RACE_Animal 50
+	AttrAddDamage PROPERTY_Ground 20
+return
+	event OnFinishEquip:
+	DisableSkill HT_BEASTBANE 10
+	RaceSubDamage RACE_Animal 50
+	AttrSubDamage PROPERTY_Ground 20
+return
+
+item Tomahawk
+	event OnStartEquip:
+	EnableSkill TF_THROWSTONE 1
+	EnableSkill TF_PICKSTONE 1
+return
+	event OnFinishEquip:
+	DisableSkill TF_THROWSTONE 1
+	DisableSkill TF_PICKSTONE 1
+return
+
+item Guillotine
+	event OnStartEquip:
+	RaceAddDamage RACE_Demon 80
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Demon 80
+return
+
+item Gungnir
+	event OnStartEquip:
+	AddExtParam User VAR_HITSUCCESSVALUE 30
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_HITSUCCESSVALUE 30
+return
+
+item Gelerdria
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPAMOUNT 800
+	SubExtParam User VAR_MAXSPAMOUNT 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPAMOUNT 800
+	AddExtParam User VAR_MAXSPAMOUNT 50
+return
+
+item Skewer
+	event OnStartEquip:
+	RaceAddDamage RACE_Nothing 25
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Nothing 25
+return
+
+item Tjungkuletti
+	event OnStartEquip:
+	AddSPdrain 100 1
+return
+	event OnFinishEquip:
+	SubSPdrain 100 1
+return
+
+item Pole_Axe
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+	AddExtParam User VAR_INTAMOUNT 2
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+	SUBExtParam User VAR_INTAMOUNT 2
+	SUBExtParam User VAR_DEXAMOUNT 2
+return
+
+item Crescent_Scythe
+	event OnStartEquip:
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 30
+	AddExtParam User VAR_HITSUCCESSVALUE 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 30
+	SubExtParam User VAR_HITSUCCESSVALUE 10
+return
+
+item Vilguisamre
+	event OnStartEquip:
+	RaceAddDamage RACE_Human 5
+	RaceAddDamage RACE_Animal 10
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Human 5
+	RaceSubDamage RACE_Animal 10
+return
+
+item Zephyrus
+	event OnStartEquip:
+	EnableSkill MG_THUNDERSTORM 3
+	AddStateAttack HEALTHSilence 20
+return
+	event OnAttack:
+	AutoSkill MG_THUNDERSTORM 3 5
+return
+	event OnFinishEquip:
+	DisableSkill MG_THUNDERSTORM 3
+	SubStateAttack HEALTHSilence 20
+return
+
+item Longinus's_Spear
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Darkness 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Darkness 20
+return
+
+item Brionac
+	event OnStartEquip:
+	EnableSkill AL_HEAL 5
+	EnableSkill MG_SOULSTRIKE 3
+	RaceAddDamage RACE_Fish 50
+return
+	event OnAttack:
+	AutoSkill MG_SOULSTRIKE 3 5
+return
+	event OnFinishEquip:
+	DisableSkill AL_HEAL 5
+	DisableSkill MG_SOULSTRIKE 3
+	RaceSubDamage RACE_Fish 50
+return
+
+item Hellfire
+	event OnStartEquip:
+	EnableSkill MG_FIREBALL 1
+	AttrAddDamage PROPERTY_Fire 20
+	AddExtParam User VAR_STRAMOUNT 3
+return
+	event OnFinishEquip:
+	DisableSkill MG_FIREBALL 1
+	AttrSubDamage PROPERTY_Fire 20
+	SubExtParam User VAR_STRAMOUNT 3
+return
+
+item Soul_Staff
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 5
+	AddExtParam User VAR_AGIAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 5
+	SubExtParam User VAR_AGIAMOUNT 2
+return
+
+item Wizardy_Staff
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 30
+	AddExtParam User VAR_MAX_MATTPOWER 30
+	AddExtParam User VAR_DEXAMOUNT 2
+	AddExtParam User VAR_INTAMOUNT 6
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 30
+	SubExtParam User VAR_MAX_MATTPOWER 30
+	SubExtParam User VAR_DEXAMOUNT 2
+	SubExtParam User VAR_INTAMOUNT 6
+return
+
+item Stunner
+	event OnStartEquip:
+	AddStateAttack BODYStun 10
+return
+	event OnFinishEquip:
+	SubStateAttack BODYStun 10
+return
+
+item Spike
+	event OnStartEquip:
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 40
+	SubExtParam User VAR_DEFPOWERPLUSPERCENT 33
+return
+	event OnAttack:
+	Condition User HEALTHBlind 30 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 40
+	AddExtParam User VAR_DEFPOWERPLUSPERCENT 33
+return
+
+item Golden_Mace
+	event OnStartEquip:
+	IndestructibleWeapon 1
+	RaceAddDamage RACE_Undead 10
+return
+	event OnFinishEquip:
+	IndestructibleWeapon 0
+	RaceAddDamage RACE_Undead 10
+return
+
+item Long_Mace
+	event OnStartEquip:
+	SubRangeAttackDamage 10
+return
+	event OnFinishEquip:
+	AddRangeAttackDamage 10
+return
+
+item Slash
+	event OnStartEquip:
+	RaceAddDamage RACE_Undead 15
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Undead 15
+return
+
+item Quadrille
+	event OnStartEquip:
+	RaceAddDamage RACE_Undead 10
+	RaceAddDamage RACE_Human 10
+	AttrAddDamage PROPERTY_Ground 10
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Undead 10
+	RaceAddDamage RACE_Human 10
+	AttrSubDamage PROPERTY_Ground 10
+return
+
+item Grand_Cross
+	event OnStartEquip:
+	EnableSkill PR_TURNUNDEAD 3
+return
+	event OnAttack:
+	AutoSkill PR_TURNUNDEAD 3 5
+return
+	event OnFinishEquip:
+	DisableSkill PR_TURNUNDEAD 3
+return
+
+item Mjolnir
+	event OnStartEquip:
+	IndestructibleWeapon 1
+	AddExtParam User VAR_STRAMOUNT 15
+	AddExtParam User VAR_DEXAMOUNT 40
+return
+	event OnFinishEquip:
+	IndestructibleWeapon 0
+	SubExtParam User VAR_STRAMOUNT 15
+	SubExtParam User VAR_DEXAMOUNT 40
+return
+
+item Magic_Instructor's_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+	AddExtParam User VAR_MAXSPAMOUNT 150
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+	SubExtParam User VAR_MAXSPAMOUNT 150
+return
+
+item Gaea_Sword
+	event OnStartEquip:
+	EnableSkill BS_FINDINGORE 1
+return
+	event OnFinishEquip:
+	DisableSkill BS_FINDINGORE 1
+return
+
+item Spanner
+	event OnStartEquip:
+	AddStateAttack BODYStun 10
+	AddStateAttack HEALTHBlind 10
+	AddStateAttack BODYFreezing 10
+	AddStateAttack HEALTHPoison 10
+return
+	event OnFinishEquip:
+	SubStateAttack BODYStun 10
+	SubStateAttack HEALTHBlind 10
+	SubStateAttack BODYFreezing 10
+	SubStateAttack HEALTHPoison 10
+return
+
+item Bible
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Book_of_Billows
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Water 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Water 20
+return
+
+item Book_of_Mother_Earth
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Ground 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Ground 20
+return
+
+item Book_of_Blazing_Sun
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Fire 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Fire 20
+return
+
+item Book_of_Gust_of_Wind
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Wind 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Wind 20
+return
+
+item Book_of_the_Apocalypse
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Water 7
+	AttrAddDamage PROPERTY_Fire 7
+	AttrAddDamage PROPERTY_Wind 7
+	AttrAddDamage PROPERTY_Ground 7
+	SubRaceTolerace RACE_Angel 5
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Water 7
+	AttrSubDamage PROPERTY_Fire 7
+	AttrSubDamage PROPERTY_Wind 7
+	AttrSubDamage PROPERTY_Ground 7
+	AddRaceTolerace RACE_Angel 5
+return
+
+item Girl's_Diary
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Saint 50
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Saint 50
+return
+
+item Rod
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+return
+
+item Rod_
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+return
+
+item Rod__
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+return
+
+item Wand
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 1
+	
+	item Wand_
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 1
+return
+
+item Wand__
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 1
+return
+	
+item Staff
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Staff_
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Staff__
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Arc_Wand
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 3
+return	
+
+item Arc_Wand_
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 3
+return	
+
+item Arc_Wand__
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 3
+return
+
+item Mighty_Staff
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_STRAMOUNT 15
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_STRAMOUNT 15
+return
+
+item Wand_of_Occult
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 3
+return
+
+item Bone_Wand
+	event OnStartEquip:
+	AddExtParam User VAR_MIN_MATTPOWER 15
+	AddExtParam User VAR_MAX_MATTPOWER 15
+	AddExtParam User VAR_INTAMOUNT 4
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MIN_MATTPOWER 15
+	SubExtParam User VAR_MAX_MATTPOWER 15
+	SubExtParam User VAR_INTAMOUNT 4
+return
+
+item Arbalest
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 2
+return
+
+item Arbalest_
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 2
+return
+
+item Rudra's_Bow
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Saint 50
+	EnableSkill AL_HEAL 1
+	EnableSkill AL_CURE 1
+	AddStateTolerace HEALTHPoison 50
+	AddStateTolerace HEALTHConfusion 50
+	AddStateTolerace HEALTHCurse 50
+	AddStateTolerace HEALTHBlind 50
+	AddExtParam User VAR_INTAMOUNT 5
+return
+	event OnFinishEquip:
+	DisableSkill AL_HEAL 1
+	DisableSkill AL_CURE 1
+	AttrSubDamage PROPERTY_Saint 50
+	SubStateTolerace HEALTHPoison 50
+	SubStateTolerace HEALTHConfusion 50
+	SubStateTolerace HEALTHCurse 50
+	SubStateTolerace HEALTHBlind 50
+	SubExtParam User VAR_STRAMOUNT 5
+return
+
+item Steel_Arrow
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnAttack:
+	BodyAttribute PROPERTY_Undead
+return
+	event OnFinishEquip:
+	
+return
+
+item Claw
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+return
+
+item Claw_
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+return
+
+item Kaiser_Knuckle
+	event OnStartEquip:
+	RaceAddDamage RACE_Undead 50
+	AttrAddDamage PROPERTY_Water 10
+	AttrAddDamage PROPERTY_Fire 10
+	AttrAddDamage PROPERTY_Wind 10
+	AttrAddDamage PROPERTY_Ground 10
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Undead 50
+	AttrSubDamage PROPERTY_Water 10
+	AttrSubDamage PROPERTY_Fire 10
+	AttrSubDamage PROPERTY_Wind 10
+	AttrSubDamage PROPERTY_Ground 10
+return
+
+item Berserk
+	event OnStartEquip:
+	AddExtParam User VAR_ASPD 12
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ASPD 12
+return
+
+item Harp
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Harp_
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Tail
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 3
+return
+
+item Tail_
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 3
+return
+
+item Lariat
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+	AddExtParam User VAR_DEXAMOUNT 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+	SubExtParam User VAR_DEXAMOUNT 5
+return
+
+item Rapture_Rose
+	event OnStartEquip:
+	AddStateAttack HEALTHPoison 500
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHPoison 500
+return
+
+item Chemeti
+	event OnStartEquip:
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 30
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 10
+	AddExtParam User VAR_PLUSAVOIDSUCCESSVALUE 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 30
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 10
+	SubExtParam User VAR_PLUSAVOIDSUCCESSVALUE 2
+return
+
+item Memory_Book
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Holyguard
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 2
+return
+
+item Evangelist
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+	AddExtParam User VAR_VITAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+	AddExtParam User VAR_VITAMOUNT 3
+return
+
+//--------------------GM WEAPONS----------------------------
+item Angra_Manyu
+	event OnStartEquip:
+	AddExtParam User VAR_ATTPOWER 8000
+	AddExtParam User VAR_LUKAMOUNT 50
+	AddExtParam User VAR_INTAMOUNT 50
+	AddExtParam User VAR_DEXAMOUNT 50
+	AddExtParam User VAR_STRAMOUNT 50
+	AddExtParam User VAR_VITAMOUNT 50
+	AddExtParam User VAR_AGIAMOUNT 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ATTPOWER 8000
+	SubExtParam User VAR_LUKAMOUNT 50
+	SubExtParam User VAR_INTAMOUNT 50
+	SubExtParam User VAR_DEXAMOUNT 50
+	SubExtParam User VAR_STRAMOUNT 50
+	SubExtParam User VAR_VITAMOUNT 50
+	SubExtParam User VAR_AGIAMOUNT 50
+return
+
+item Ahura_Mazdah
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 1000
+	AddExtParam User VAR_INTAMOUNT 1000
+	AddExtParam User VAR_DEXAMOUNT 1000
+	AddExtParam User VAR_STRAMOUNT 1000
+	AddExtParam User VAR_VITAMOUNT 1000
+	AddExtParam User VAR_AGIAMOUNT 1000
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 100
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 100
+	AddExtParam User VAR_PLUSAVOIDSUCCESSVALUE 100
+	AddExtParam User VAR_HITSUCCESSVALUE 300
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 1000
+	SubExtParam User VAR_INTAMOUNT 1000
+	SubExtParam User VAR_DEXAMOUNT 1000
+	SubExtParam User VAR_STRAMOUNT 1000
+	SubExtParam User VAR_VITAMOUNT 1000
+	SubExtParam User VAR_AGIAMOUNT 1000
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 100
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 100
+	SubExtParam User VAR_PLUSAVOIDSUCCESSVALUE 100
+	SubExtParam User VAR_HITSUCCESSVALUE 300
+return
+//--------------------GM WEAPONS----------------------------
+
+item Sunglasses
+	event OnStartEquip:
+	AddStateTolerace HEALTHBlind 5
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHBlind 5
+return
+
+item Fancy_Flower
+	event OnStartEquip:
+	AddRaceTolerace RACE_Plant 10
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Plant 10
+return
+
+item Bunny_Band
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 2
+return
+
+item Flu_Mask
+	event OnStartEquip:
+	AddStateTolerace HEALTHSilence 10
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHSilence 10
+return
+
+item Tiara
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Crown
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Santa_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 1
+return
+
+item Luxury_Sunglasses
+	event OnStartEquip:
+	AddStateTolerace HEALTHBlind 10
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHBlind 10
+return
+
+item Geek_Glasses
+	event OnStartEquip:
+	AddStateTolerace HEALTHBlind 15
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHBlind 15
+return
+
+item Coronet
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Cute_Ribbon
+	event OnStartEquip:
+	AddExtParam User VAR_MAXSPAMOUNT 20
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXSPAMOUNT 20
+return
+
+item Wizard_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_MAXSPAMOUNT 100
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXSPAMOUNT 100
+return
+
+item Sunflower
+	event OnStartEquip:
+	AddRaceTolerace RACE_Insect 10
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Insect 10
+return
+
+item Angel_Wing
+	event OnStartEquip:
+	AddRaceTolerace RACE_Demon 3
+	AddExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Demon 3
+	SubExtParam User VAR_LUKAMOUNT 1
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Evil_Wing
+	event OnStartEquip:
+	AddRaceTolerace RACE_Angel 3
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Angel 3
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Magestic_Goat
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Munak_Turban
+	event OnStartEquip:
+	AddRaceTolerace RACE_Undead 10
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Undead 10
+return
+
+item Ganster_Mask
+	event OnStartEquip:
+	AddStateTolerace HEALTHSilence 15
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHSilence 15
+return
+
+item Cigar
+	event OnStartEquip:
+	AddRaceTolerace RACE_Insect 3
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Insect 3
+return
+
+item Pipe
+	event OnStartEquip:
+	AddRaceTolerace RACE_Insect 3
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Insect 3
+return
+
+item Romantic_Flower
+	event OnStartEquip:
+	AddRaceTolerace RACE_Plant 3
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Plant 3
+return
+
+item Romantic_Leaf
+	event OnStartEquip:
+	AddRaceTolerace RACE_Plant 3
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Plant 3
+return
+
+item Doctor_Cap
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Ghost_Bandana
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Telekinesis 10
+	AddExtParam User VAR_AGIAMOUNT 2
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Telekinesis 10
+	SubExtParam User VAR_AGIAMOUNT 2
+return
+
+item Sakkat
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Heaven_Ring
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Saint 15
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Saint 15
+return
+
+item Ear_Muffs
+	event OnStartEquip:
+	AddStateTolerace HEALTHCurse 10
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHCurse 10
+return
+
+item Apple_Of_Archer
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 3
+return
+
+item Pirate_Bandana
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Poo_Poo_Hat
+	event OnStartEquip:
+	AddRaceTolerace RACE_Human 10
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Human 10
+return
+
+item Masquerade
+	event OnStartEquip:
+	RaceAddDamage RACE_Human 3
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Human 3
+return
+
+item Welding_Mask
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Fire 10
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Fire 10
+return
+
+item Blinker
+	event OnStartEquip:
+	AddStateTolerace HEALTHBlind 100
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHBlind 100
+return
+
+item Binoculars
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Lord's_Clothes
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Glittering_Clothes
+	event OnStartEquip:
+	AddStateAttack HEALTHBlind 30
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHBlind 30
+return
+
+item Holy_Robe
+	event OnStartEquip:
+	AddRaceTolerace RACE_Demon 15
+	AddAttrTolerace PROPERTY_Darkness 10
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Demon 15
+	SubAttrTolerace PROPERTY_Darkness 10
+return
+
+item Tights
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Tights_
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Mage_Coat
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Thief_Clothes
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Thief_Clothes_
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Ninja_Suit
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Chrystal_Pumps
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 5
+return
+
+item Sleipnir
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPPERCENT 20
+	AddExtParam User VAR_MAXSPPERCENT 20
+	AddExtParam User VAR_SPACCELERATION 10
+	Condition EFFECTHaste 9999 100
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPPERCENT 20
+	SubExtParam User VAR_MAXSPPERCENT 20
+	SubExtParam User VAR_SPACCELERATION 10
+	Cure EFFECTHaste 100
+return
+
+item Cape_Of_Ancient_Lord
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Manteau_of_life
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 10
+return
+
+item Ring
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+return
+
+item Earring
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Necklace
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 2
+return
+
+item Glove
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 2
+return
+
+item Brooch
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 2
+return
+
+item Clip
+	event OnStartEquip:
+	AddExtParam User VAR_MAXSPAMOUNT 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXSPAMOUNT 10
+return
+
+item Rosary
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 2
+return
+
+item Eye_of_Dullahan
+	event OnStartEquip:
+	AddStateTolerace HEALTHPoison 100
+	AddStateTolerace BODYStoneCurse 100
+	AddStateTolerace BODYFreezing 100
+	AddStateTolerace BODYStun 100
+	AddStateTolerace BODYSleep 100
+	AddStateTolerace HEALTHConfusion 100
+	AddStateTolerace HEALTHCurse 100
+	AddStateTolerace HEALTHSilence 100
+	AddStateTolerace HEALTHBlind 100
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHPoison 100
+	SubStateTolerace BODYStoneCurse 100
+	SubStateTolerace BODYFreezing 100
+	SubStateTolerace BODYStun 100
+	SubStateTolerace BODYSleep 100
+	SubStateTolerace HEALTHConfusion 100
+	SubStateTolerace HEALTHCurse 100
+	SubStateTolerace HEALTHSilence 100
+	SubStateTolerace HEALTHBlind 100
+return
+
+item Critical_Ring
+	event OnStartEquip:
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 5
+return
+
+item Celebrant's_Mitten
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Matyr's_Leash
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Ring_
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Earring_
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Necklace_
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 1
+return
+
+item Glove_
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Brooch_
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Rosary_
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_DEXAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_DEXAMOUNT 3
+return
+
+item Megingjard
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 40
+return
+	event OnAttack:
+	Condition EFFECTHasteAttack 9999 100
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 40
+return
+
+item Brisingamen
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 6
+	AddExtParam User VAR_AGIAMOUNT 6
+	AddExtParam User VAR_INTAMOUNT 6
+	AddExtParam User VAR_VITAMOUNT 6
+	AddExtParam User VAR_LUKAMOUNT 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 6
+	SubExtParam User VAR_AGIAMOUNT 6
+	SubExtParam User VAR_INTAMOUNT 6
+	SubExtParam User VAR_VITAMOUNT 6
+	SubExtParam User VAR_LUKAMOUNT 10
+return
+
+item Poring_Card
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 2
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 2
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 1
+return
+
+item Fabre_Card
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 1
+	AddExtParam User VAR_MAXHPAMOUNT 100
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 1
+	SubExtParam User VAR_MAXHPAMOUNT 100
+return
+
+item Pupa_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPAMOUNT 700
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPAMOUNT 700
+return
+
+item Drops_Card
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+	AddExtParam User VAR_HITSUCCESSVALUE 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+	SubExtParam User VAR_HITSUCCESSVALUE 3
+return
+
+item Poring__Card
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Darkness 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Darkness 20
+return
+
+item Lunatic_Card
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 1
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 1
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 1
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 1
+return
+
+item Pecopeco_Egg_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Nothing 20
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Nothing 20
+return
+
+item Picky_Card
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+	AddExtParam User VAR_ATTPOWER 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+	SubExtParam User VAR_ATTPOWER 10
+return
+
+item Chonchon_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 2
+return
+
+item Wilow_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXSPAMOUNT 80
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXSPAMOUNT 80
+return
+
+item Picky__Card
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 1
+	AddExtParam User VAR_MAXHPAMOUNT 100
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 1
+	SubExtParam User VAR_MAXHPAMOUNT 100
+return
+
+item Thief_Bug_Egg_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPAMOUNT 400
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPAMOUNT 400
+return
+
+item Andre_Egg_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPPERCENT 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPPERCENT 5
+return
+
+item Roda_Frog_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPAMOUNT 400
+	AddExtParam User VAR_MAXSPAMOUNT 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPAMOUNT 400
+	SubExtParam User VAR_MAXSPAMOUNT 50
+return
+
+item Condor_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 10
+return
+
+item Thief_Bug_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Savage_Babe_Card
+	event OnStartEquip:
+	AddStateAttack BODYStun 50
+return
+	event OnFinishEquip:
+	SubStateAttack BODYStun 50
+return
+
+item Andre_Larva_Card
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+	AddExtParam User VAR_MAXSPAMOUNT 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+	SubExtParam User VAR_MAXSPAMOUNT 10
+return
+
+item Hornet_Card
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+	AddExtParam User VAR_ATTPOWER 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+	SubExtParam User VAR_ATTPOWER 3
+return
+
+item Farmiliar_Card
+	event OnStartEquip:
+	AddStateAttack HEALTHBlind 50
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHBlind 50
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Rocker_Card
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Spore_Card
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 2
+return
+
+item Desert_Wolf_Babe_Card
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Plankton_Card
+	event OnStartEquip:
+	AddStateAttack BODYSleep 50
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	SubStateAttack BODYSleep 50
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Skeleton_Card
+	event OnStartEquip:
+	AddStateAttack BODYStun 20
+	AddExtParam User VAR_ATTPOWER 10
+return
+	event OnFinishEquip:
+	SubStateAttack BODYStun 20
+	SubExtParam User VAR_ATTPOWER 10
+return
+
+item Thief_bug_Female_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 1
+return
+
+item Kukre_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 2
+return
+
+item Tarou_Card
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+return
+
+item Wolf_Card
+	event OnStartEquip:
+	AddExtParam User VAR_ATTPOWER 10
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ATTPOWER 10
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 1
+return
+
+item Mandragora_Card
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Wind 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Wind 20
+return
+
+item Pecopeco_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPPERCENT 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPPERCENT 10
+return
+
+item Ambernite_Card
+	event OnStartEquip:
+	AddExtParam User VAR_ITEMDEFPOWER 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ITEMDEFPOWER 2
+return
+
+item Poporing_Card
+	event OnStartEquip:
+	EnableSkill TF_DETOXIFY 1
+return
+	event OnFinishEquip:
+	DisableSkill TF_DETOXIFY 1
+return
+
+item Worm_Tail_Card
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 2
+return
+
+item Hydra_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Human 20
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Human 20
+return
+
+item Muka_Card
+	event OnStartEquip:
+	AddExtParam User VAR_HPACCELERATION 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_HPACCELERATION 10
+return
+
+item Snake_Card
+	event OnStartEquip:
+	AddStateAttack HEALTHPoison 50
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHPoison 50
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Zombie_Card
+	event OnStartEquip:
+	AddExtParam User VAR_HPACCELERATION 20
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_HPACCELERATION 20
+return
+
+item Stainer_Card
+	event OnStartEquip:
+	AddStateTolerace HEALTHSilence 20
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHSilence 20
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Creamy_Card
+	event OnStartEquip:
+	EnableSkill AL_TELEPORT 1
+return
+	event OnFinishEquip:
+	DisableSkill AL_TELEPORT 1
+return
+
+item Coco_Card
+	event OnStartEquip:
+	AddStateTolerace BODYSleep 20
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYSleep 20
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Steel_Chonchon_Card
+	event OnStartEquip:
+	AddExtParam User VAR_ITEMDEFPOWER 2
+	AddAttrTolerace PROPERTY_Wind 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ITEMDEFPOWER 2
+	SubAttrTolerace PROPERTY_Wind 10
+return
+
+item Andre_Card
+	event OnStartEquip:
+	AddExtParam User VAR_ATTPOWER 30
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ATTPOWER 30
+return
+
+item Smokie_Card
+	event OnStartEquip:
+	EnableSkill TF_HIDING 1
+return
+	event OnFinishEquip:
+	DisableSkill TF_HIDING 1
+return
+
+item horn_Card
+	event OnStartEquip:
+	SubRangeAttackDamage 35
+return
+	event OnFinishEquip:
+	AddRangeAttackDamage 35
+return
+
+item Martin_Card
+	event OnStartEquip:
+	AddStateTolerace HEALTHBlind 20
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHBlind 20
+return
+
+item Ghostring_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Telekinesis
+	SubExtParam User VAR_HPACCELERATION 25
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+	AddExtParam User VAR_HPACCELERATION 25
+return
+
+item Poison_Spore_Card
+	event OnStartEquip:
+	EnableSkill TF_POISON 3
+return
+	event OnFinishEquip:
+	DisableSkill TF_POISON 3
+return
+
+item Vadon_Card
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Fire 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Fire 20
+return
+
+item Thief_bug_Male_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 2
+return
+
+item Yoyo_Card
+	event OnStartEquip:
+	AddExtParam User VAR_PLUSAVOIDSUCCESSVALUE 5
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_PLUSAVOIDSUCCESSVALUE 5
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Elder_Wilow_Card
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Vitata_Card
+	event OnStartEquip:
+	EnableSkill AL_HEAL 1
+	AddSPconsumption 25
+return
+	event OnFinishEquip:
+	DisableSkill AL_HEAL 1
+	SubSPconsumption 25
+return
+
+item Angeling_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Saint
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+return
+
+item Marina_Card
+	event OnStartEquip:
+	AddStateAttack BODYFreezing 50
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	SubStateAttack BODYFreezing 50
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Dustiness_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Wind 30
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Wind 30
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+
+item Metaller_Card
+	event OnStartEquip:
+	AddStateAttack HEALTHSilence 50
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHSilence 50
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Thara_Frog_Card
+	event OnStartEquip:
+	AddRaceTolerace RACE_Human 30
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Human 30
+return
+
+item Soldier_Andre_Card
+	event OnStartEquip:
+	AddRaceTolerace RACE_Plant 25
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Plant 25
+return
+
+item Goblin_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Animal 20
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Animal 20
+return
+
+item Cornutus_Card
+	event OnStartEquip:
+	IndestructibleArmor 1
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	IndestructibleArmor 0
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Anacondaq_Card
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Poison 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Poison 20
+return
+
+item Caramel_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Insect 20
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Insect 20
+return
+
+item Zerom_Card
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 3
+return
+
+item Kaho_Card
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Ground 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Ground 20
+return
+
+item Orc_Warrior_Card
+	event OnStartEquip:
+	AddRaceTolerace RACE_Animal 30
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Animal 30
+return
+
+item Megalodon_Card
+	event OnStartEquip:
+	AddStateTolerace BODYFreezing 20
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYFreezing 20
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Scorpion_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Plant 20
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Plant 20
+return
+
+item Drainliar_Card
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Water 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Water 20
+return
+
+item Eggyra_Card
+	event OnStartEquip:
+	AddExtParam User VAR_SPACCELERATION 15
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_SPACCELERATION 15
+return
+
+item Orc_Zombie_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Undead 30
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Undead 30
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+
+item Golem_Card
+	event OnStartEquip:
+	IndestructibleWeapon 1
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	IndestructibleWeapon 0
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Pirate_Skel_Card
+	event OnStartEquip:
+	EnableSkill MC_DISCOUNT 5
+return
+	event OnFinishEquip:
+	DisableSkill MC_DISCOUNT 5
+return
+
+item BigFoot_Card
+	event OnStartEquip:
+	AddRaceTolerace RACE_Insect 30
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Insect 30
+return
+
+item Argos_Card
+	event OnStartEquip:
+	AddStateTolerace BODYStoneCurse 20
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYStoneCurse 20
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Magnolia_Card
+	event OnStartEquip:
+	AddStateAttack HEALTHCurse 50
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHCurse 50
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Phen_Card
+	event OnStartEquip:
+	NoDispell 1
+	AddSpellCastTime 25
+return
+	event OnFinishEquip:
+	NoDispell 0
+	SubSpellCastTime 25
+return
+
+item Savage_Card
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 3
+return
+
+item Mantis_Card
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 3
+return
+
+item Flora_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Fish 20
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Fish 20
+return
+
+item Hode_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Ground 30
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Ground 30
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+
+item Desert_Wolf_Card
+	event OnStartEquip:
+	SizeAddDamage Small 15
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	SizeSubDamage Small 15
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Rafflesia_Card
+	event OnStartEquip:
+	AddRaceTolerace RACE_Fish 30
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Fish 30
+return
+
+item Marine_Sphere_Card
+	event OnStartEquip:
+	EnableSkill SM_MAGNUM 3
+return
+	event OnFinishEquip:
+	DisableSkill SM_MAGNUM 3
+return
+
+item Orc_Skeleton_Card
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Saint 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Saint 20
+return
+
+item Soldier_Skeleton_Card
+	event OnStartEquip:
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 8
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 8
+return
+
+item Giearth_Card
+	event OnStartEquip:
+	AddStateTolerace HEALTHConfusion 100
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHConfusion 100
+return
+
+item Frilldora_Card
+	event OnStartEquip:
+	EnableSkill AS_CLOAKING 1
+return
+	event OnFinishEquip:
+	DisableSkill AS_CLOAKING 1
+return
+
+item Sword_Fish_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Water
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Munak_Card
+	event OnStartEquip:
+	AddStateTolerace BODYStoneCurse 15
+	AddAttrTolerace PROPERTY_Ground 5
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYStoneCurse 15
+	SubAttrTolerace PROPERTY_Ground 5
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Kobold_Card
+	event OnStartEquip:
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 4
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 4
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Skel_Worker_Card
+	event OnStartEquip:
+	SizeAddDamage Medium 15
+	AddExtParam User VAR_ATTPOWER 5
+return
+	event OnFinishEquip:
+	SizeSubDamage Medium 15
+	SubExtParam User VAR_ATTPOWER 5
+return
+
+item Obeaune_Card
+	event OnStartEquip:
+	EnableSkill AL_CURE 1
+return
+	event OnFinishEquip:
+	DisableSkill AL_CURE 1
+return
+
+item Archer_Skeleton_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Insect 25
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Insect 25
+return
+
+item Marse_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Water 30
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Water 30
+return
+
+item Zenorc_Card
+	event OnStartEquip:
+	AddStateAttack HEALTHPoison 40
+	AddExtParam User VAR_ATTPOWER 10
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHPoison 40
+	SubExtParam User VAR_ATTPOWER 10
+return
+
+item Matyr_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPPERCENT 10
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPPERCENT 10
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Dokebi_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Wind
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Pasana_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Fire
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Sohee_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXSPPERCENT 15
+	AddExtParam User VAR_SPACCELERATION 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXSPPERCENT 15
+	SubExtParam User VAR_SPACCELERATION 3
+return
+
+item Sand_Man_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Ground
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Whisper_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 20
+	SubAttrTolerace PROPERTY_Telekinesis 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 20
+	AddAttrTolerace PROPERTY_Telekinesis 50
+return
+
+item Horong_Card
+	event OnStartEquip:
+	EnableSkill MG_SIGHT 1
+return
+	event OnFinishEquip:
+	DisableSkill MG_SIGHT 1
+return
+
+item Requiem_Card
+	event OnStartEquip:
+	AddStateAttack HEALTHConfusion 50
+return
+	event OnFinishEquip:
+	SubStateAttack HEALTHConfusion 50
+return
+
+item Marc_Card
+	event OnStartEquip:
+	AddStateTolerace BODYFreezing 100
+	AddAttrTolerace PROPERTY_Water 5
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYFreezing 100
+	SubAttrTolerace PROPERTY_Water 5
+return
+
+item Mummy_Card
+	event OnStartEquip:
+	AddExtParam User VAR_HITSUCCESSVALUE 20
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_HITSUCCESSVALUE 20
+return
+
+item Verit_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPPERCENT 8
+	AddExtParam User VAR_MAXSPPERCENT 8
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPPERCENT 8
+	SubExtParam User VAR_MAXSPPERCENT 8
+return
+
+item Myst_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Poison 30
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Poison 30
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+
+item Jakk_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Fire 30
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Fire 30
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+
+item Ghoul_Card
+	event OnStartEquip:
+	AddStateTolerace HEALTHPoison 20
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHPoison 20
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Strouf_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Demon 20
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Demon 20
+return
+
+item Marduk_Card
+	event OnStartEquip:
+	AddStateTolerace HEALTHSilence 100
+	SubSpellCastTime 5
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHSilence 100
+	AddSpellCastTime 5
+return
+
+item Marionette_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Telekinesis 30
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Telekinesis 30
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+
+item Argiope_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Poison
+	AddStateTolerace HEALTHPoison 5
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+	SubStateTolerace HEALTHPoison 5
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Hunter_Fly_Card
+	event OnStartEquip:
+	AddHPdrain 15 3
+return
+	event OnFinishEquip:
+	SubHPdrain 15 3
+return
+
+item Isis_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Darkness 30
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Darkness 30
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 5
+return
+
+item Side_Winder_Card
+	event OnStartEquip:
+	EnableSkill TF_DOUBLE 1
+return
+	event OnFinishEquip:
+	DisableSkill TF_DOUBLE 1
+return
+
+item Petit_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Dragon 25
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Dragon 25
+return
+
+item Bathory_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Darkness
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+return
+
+item Petit__Card
+	event OnStartEquip:
+	AddRaceTolerace RACE_Dragon 30
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Dragon 30
+return
+
+item Phreeoni_Card
+	event OnStartEquip:
+	AddExtParam User VAR_HITSUCCESSVALUE 100
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_HITSUCCESSVALUE 100
+return
+
+item Deviruchi_Card
+	event OnStartEquip:
+	AddStateTolerace HEALTHBlind 100
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHBlind 100
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Eddga_Card
+	event OnStartEquip:
+	Condition EFFECTEndure 9999 100
+	SubExtParam User VAR_MAXHPPERCENT 25
+return
+	event OnFinishEquip:
+	Cure EFFECTEndure 100
+	AddExtParam User VAR_MAXHPPERCENT 25
+return
+
+item Medusa_Card
+	event OnStartEquip:
+	AddStateTolerace BODYStoneCurse 100
+	AddRaceTolerace RACE_Demon 15
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYStoneCurse 100
+	SubRaceTolerace RACE_Demon 15
+return
+
+item Deviace_Card
+	event OnStartEquip:
+	RaceAddDamage RACE_Human 7
+	RaceAddDamage RACE_Animal 7
+	RaceAddDamage RACE_Plant 7
+	RaceAddDamage RACE_Insect 7
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Human 7
+	RaceSubDamage RACE_Animal 7
+	RaceSubDamage RACE_Plant 7
+	RaceSubDamage RACE_Insect 7
+return
+
+item Minorous_Card
+	event OnStartEquip:
+	SizeAddDamage Large 15
+return
+	event OnFinishEquip:
+	SizeSubDamage Large 15
+return
+
+item Nightmare_Card
+	event OnStartEquip:
+	AddStateTolerace BODYSleep 100
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYSleep 100
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Golden_Bug_Card
+	event OnStartEquip:
+	Magicimmune 1
+	AddSPconsumption 50
+return
+	event OnFinishEquip:
+	Magicimmune 0
+	SubSPconsumption 50
+return
+
+item Baphomet__Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 3
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 3
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 1
+return
+
+item Scorpion_King_Card
+	event OnStartEquip:
+	AttrAddDamage PROPERTY_Undead 20
+return
+	event OnFinishEquip:
+	AttrSubDamage PROPERTY_Undead 20
+return
+
+item Moonlight_Flower_Card
+	event OnStartEquip:
+	Condition EFFECTHaste 9999 100
+	SubExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	Cure EFFECTHaste 100
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+
+item Mistress_Card
+	event OnStartEquip:
+	NoJamstone 1
+	AddSPconsumption 25
+return
+	event OnFinishEquip:
+	NoJamstone 0
+	SubSPconsumption 25
+return
+
+item Raydric_Card
+	event OnStartEquip:
+	AddAttrTolerace PROPERTY_Nothing 15
+return
+	event OnFinishEquip:
+	SubAttrTolerace PROPERTY_Nothing 15
+return
+
+item Dracula_Card
+	event OnStartEquip:
+	AddSPdrain 5 3
+return
+	event OnFinishEquip:
+	SubSPdrain 5 3
+return
+
+item Orc_Lord_Card
+	event OnStartEquip:
+	AddMeleeAttackReflect 30
+return
+	event OnFinishEquip:
+	SubMeleeAttackReflect 30
+return
+
+item Khalitzburg_Card
+	event OnStartEquip:
+	AddRaceTolerace RACE_Demon 50
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Demon 50
+return
+
+item Drake_Card
+	event OnStartEquip:
+	PerfectDamage 1
+return
+	event OnFinishEquip:
+	PerfectDamage 0
+return
+
+item Anubis_Card
+	event OnStartEquip:
+	AddRaceTolerace RACE_Angel 30
+return
+	event OnFinishEquip:
+	SubRaceTolerace RACE_Angel 30
+return
+
+item Joker_Card
+	event OnStartEquip:
+	EnableSkill TF_STEAL 1
+return
+	event OnFinishEquip:
+	DisableSkill TF_STEAL 1
+return
+
+item Evil_Druid_Card
+	event OnStartEquip:
+	BodyAttribute PROPERTY_Undead
+	AddExtParam User VAR_INTAMOUNT 1
+	AddExtParam User VAR_ITEMDEFPOWER 1
+return
+	event OnFinishEquip:
+	BodyAttribute PROPERTY_Nothing
+	SubExtParam User VAR_INTAMOUNT 1
+	SubExtParam User VAR_ITEMDEFPOWER 1
+return
+
+item Doppelganger_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 50
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 50
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 50
+return
+
+item Orc_Hero_Card
+	event OnStartEquip:
+	AddStateTolerace BODYStun 100
+	AddExtParam User VAR_VITAMOUNT 3
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYStun 100
+	SubExtParam User VAR_VITAMOUNT 3
+return
+
+item Osiris_Card
+	event OnStartEquip:
+	Reincarnation 1
+return
+	event OnFinishEquip:
+	Reincarnation 0
+return
+
+item Berzebub_Card
+	event OnStartEquip:
+	SubSpellCastTime 30
+return
+	event OnFinishEquip:
+	AddSpellCastTime 30
+return
+
+item Maya_Card
+	event OnStartEquip:
+	//AddMeleeAttackReflect 30
+	AddMagicAttackReflect 30
+return
+	event OnFinishEquip:
+	//SubMeleeAttackReflect 30
+	SubMagicAttackReflect 30
+return
+
+item Baphomet_Card
+	event OnStartEquip:
+	SplashAttack 1
+	SubExtParam User VAR_HITSUCCESSVALUE 10
+return
+	event OnFinishEquip:
+	SplashAttack 0
+	AddExtParam User VAR_HITSUCCESSVALUE 10
+return
+
+item Pharaoh_Card
+	event OnStartEquip:
+	SubSPconsumption 30
+return
+	event OnFinishEquip:
+	AddSPconsumption 30
+return
+
+item Bongun_Card
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+return
+
+item Orc_Archer_Card
+	event OnStartEquip:
+	AddStateAttack VAR_PLUSATTRANGE 1
+return
+	event OnFinishEquip:
+	SubStateAttack VAR_PLUSATTRANGE 1
+return
+
+item Mimic_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+	AddExtParam User VAR_DEXAMOUNT 2
+	AddExtParam User VAR_LUKAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+	SubExtParam User VAR_DEXAMOUNT 2
+	SubExtParam User VAR_LUKAMOUNT 3
+return
+
+item Wraith_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAX_MATTPOWER 8
+	AddExtParam User VAR_MIN_MATTPOWER 8
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAX_MATTPOWER 8
+	SubExtParam User VAR_MIN_MATTPOWER 8
+return
+
+item Arclouse_Card
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Rideword_Card
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 6
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 6
+return
+
+item Skel_Prisoner_Card
+	event OnStartEquip:
+	EnableSkill AC_CONCENTRATION 3
+return
+	event OnFinishEquip:
+	DisableSkill AC_CONCENTRATION 3
+return
+
+item Zombie_Prisoner_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPPERCENT 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPPERCENT 10
+return
+
+item Dark_Priest_Card
+	event OnStartEquip:
+	SubSPconsumption 15
+return
+	event OnFinishEquip:
+	AddSPconsumption 15
+return
+
+item Mysteltainn_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 3
+	AddExtParam User VAR_AVOIDSUCCESSVALUE 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 3
+	SubExtParam User VAR_AVOIDSUCCESSVALUE 10
+return
+
+item Tirfing_Card
+	event OnStartEquip:
+	AddExtParam User VAR_ATTPOWER 30
+	SubExtParam User VAR_MAXHPPERCENT 22
+	SubSpellCastTime 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_ATTPOWER 30
+	AddExtParam User VAR_MAXHPPERCENT 22
+	AddSpellCastTime 10
+return
+
+item Anolian_Card
+	event OnStartEquip:
+	AddMeleeAttackReflect 10
+return
+	event OnFinishEquip:
+	SubMeleeAttackReflect 10
+return
+
+item Sting_Card
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 4
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 4
+return
+
+item Wander_Man_Card
+	event OnStartEquip:
+	AddExtParam User VAR_HITSUCCESSVALUE 30
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 6
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_HITSUCCESSVALUE 30
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 6
+return
+
+item Cramp_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 3
+	AddExtParam User VAR_CRITICALSUCCESSVALUE 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 3
+	SubExtParam User VAR_CRITICALSUCCESSVALUE 1
+return
+
+item Brilight_Card
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 2
+	AddExtParam User VAR_LUKAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 2
+	SubExtParam User VAR_LUKAMOUNT 3
+return
+
+item High_Orc_Card
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+return
+
+item Stem_Worm_Card
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 2
+return
+
+item Penomena_Card
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPPERCENT 15
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPPERCENT 15
+return
+
+item Orc_Lady_Card
+	event OnStartEquip:
+	EnableSkill WZ_ESTIMATION 1
+return
+	event OnFinishEquip:
+	DisableSkill WZ_ESTIMATION 1
+return
+
+item Headset
+	event OnStartEquip:
+	AddStateTolerace HEALTHCurse 10
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHCurse 10
+return
+
+item Gemmed_Crown
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+	AddExtParam User VAR_LUKAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+	SubExtParam User VAR_LUKAMOUNT 1
+return
+
+item Joker_Jester
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 2
+return
+
+item Oxygen_Mask
+	event OnStartEquip:
+	AddStateTolerace HEALTHPoison 20
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHPoison 20
+return
+
+item Gas_Mask
+	event OnStartEquip:
+	AddStateTolerace HEALTHPoison 30
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHPoison 30
+return
+
+item Lord_Circlet
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+	AddExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+	SubExtParam User VAR_LUKAMOUNT 1
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Horn_Of_Lord_Kaho
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 5
+	AddExtParam User VAR_LUKAMOUNT 20
+	AddExtParam User VAR_INTAMOUNT 5
+	AddExtParam User VAR_VITAMOUNT 10
+	AddExtParam User VAR_AGIAMOUNT 10
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 5
+	SubExtParam User VAR_LUKAMOUNT 20
+	SubExtParam User VAR_INTAMOUNT 5
+	SubExtParam User VAR_VITAMOUNT 10
+	SubExtParam User VAR_AGIAMOUNT 10
+return
+
+item Bone_Helm
+	event OnStartEquip:
+	SubAttrTolerace PROPERTY_Darkness 15
+return
+	event OnFinishEquip:
+	AddAttrTolerace PROPERTY_Darkness 15
+return
+
+item Feather_Bonnet
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Corsair
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 1
+return
+
+item Solar_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Angel_Pitch
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+	AddExtParam User VAR_LUKAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+	SubExtParam User VAR_LUKAMOUNT 1
+return
+
+item Chef_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Nurse_Cap
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Miner's_Helmet
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 2
+return
+
+item Deviruchi_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Magic_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+	AddExtParam User VAR_AGIAMOUNT 1
+	AddExtParam User VAR_MAXSPAMOUNT 50
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+	SubExtParam User VAR_AGIAMOUNT 1
+	SubExtParam User VAR_MAXSPAMOUNT 50
+return
+
+item Sphinx_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+return
+
+item Drooped_Cat
+	event OnStartEquip:
+	AddStateTolerace HEALTHCurse 50
+return
+	event OnFinishEquip:
+	SubStateTolerace HEALTHCurse 50
+return
+
+item Party_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 1
+return
+
+item Straw_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Green_Fresh_Fish
+	event OnStartEquip:
+	RaceAddDamage RACE_Fish 10
+return
+	event OnFinishEquip:
+	RaceSubDamage RACE_Fish 10
+return
+
+item Sombrero
+	event OnStartEquip:
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Ear-wing_of_Demon
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Fox_Mask
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 1
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Burning_Blood_Bandana
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+return
+
+item Indian_Headband
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Teacher's_Pet
+	event OnStartEquip:
+	AddExtParam User VAR_DEXAMOUNT 2
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_DEXAMOUNT 2
+return
+
+item Ear-wing_of_Angel
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+return
+
+item Wool_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 1
+return
+
+item Crown_of_Mistress
+	event OnStartEquip:
+	AddExtParam User VAR_MAXSPAMOUNT 100
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXSPAMOUNT 100
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Annoying_Racoon_Hat
+	event OnStartEquip:
+	AddStateTolerace BODYSleep 20
+return
+	event OnFinishEquip:
+	SubStateTolerace BODYSleep 20
+return
+
+item Sea_Otter_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 1
+return
+
+item Alarm_Mask
+	event OnStartEquip:
+	AddStateTolerace PROPERTY_Darkness 50
+return
+	event OnFinishEquip:
+	SubStateTolerace PROPERTY_Darkness 50
+return
+
+item Ork_Hero_Helmet
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 2
+	AddExtParam User VAR_VITAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 2
+	SubExtParam User VAR_VITAMOUNT 1
+return
+
+item Succubus_Horns
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Incubus_Horns
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+return
+
+item Nun_Hat_
+	event OnStartEquip:
+	AddExtParam User VAR_MAXSPAMOUNT 100
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXSPAMOUNT 100
+return
+
+item Exorcize_Sachet
+	event OnStartEquip:
+	AddExtParam User VAR_STRAMOUNT 1
+	AddExtParam User VAR_AGIAMOUNT 1
+	AddExtParam User VAR_DEXAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_STRAMOUNT 1
+	SubExtParam User VAR_AGIAMOUNT 1
+	SubExtParam User VAR_DEXAMOUNT 1
+return
+
+item Purification_Sachet
+	event OnStartEquip:
+	AddExtParam User VAR_VITAMOUNT 1
+	AddExtParam User VAR_INTAMOUNT 1
+	AddExtParam User VAR_LUKAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_VITAMOUNT 1
+	SubExtParam User VAR_INTAMOUNT 1
+	SubExtParam User VAR_LUKAMOUNT 1
+return
+
+item Two_Year_Anniversary_Hat
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 3
+	AddExtParam User VAR_LUKAMOUNT 3
+	AddExtParam User VAR_STRAMOUNT 3
+	AddExtParam User VAR_VITAMOUNT 3
+	AddExtParam User VAR_AGIAMOUNT 3
+	AddExtParam User VAR_DEXAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 3
+	SubExtParam User VAR_LUKAMOUNT 3
+	SubExtParam User VAR_STRAMOUNT 3
+	SubExtParam User VAR_VITAMOUNT 3
+	SubExtParam User VAR_AGIAMOUNT 3
+	SubExtParam User VAR_DEXAMOUNT 3
+return
+
+item Electric_Guitar
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 2
+	AddExtParam User VAR_AGIAMOUNT 1
+	EnableSkill WZ_JUPITEL 1
+return
+	event OnAttack:
+	AutoSkill WZ_JUPITEL 3 5
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 2
+	SubExtParam User VAR_AGIAMOUNT 1
+	DisableSkill WZ_JUPITEL 1
+return
+
+item Bunny_Slippers
+	event OnStartEquip:
+	AddExtParam User VAR_LUKAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_LUKAMOUNT 3
+return
+
+item Kafra's_Ring
+	event OnStartEquip:
+	AddExtParam User VAR_INTAMOUNT 1
+	AddExtParam User VAR_LUKAMOUNT 1
+	AddExtParam User VAR_STRAMOUNT 1
+	AddExtParam User VAR_VITAMOUNT 1
+	AddExtParam User VAR_AGIAMOUNT 1
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_INTAMOUNT 1
+	SubExtParam User VAR_LUKAMOUNT 1
+	SubExtParam User VAR_STRAMOUNT 1
+	SubExtParam User VAR_VITAMOUNT 1
+	SubExtParam User VAR_AGIAMOUNT 1
+return
+
+item Groom's_Wedding_Band
+	event OnStartEquip:
+	EnableSkill WE_MALE 1
+return
+	event OnFinishEquip:
+	DisableSkill WE_MALE 1
+return
+
+item Bride's_Wedding_band
+	event OnStartEquip:
+	EnableSkill WE_FEMALE 1
+return
+	event OnFinishEquip:
+	DisableSkill WE_FEMALE 1
+return
+
+item Tiger_Mask
+	event OnStartEquip:
+	AddExtParam User VAR_MAXHPAMOUNT 100
+	AddExtParam User VAR_STRAMOUNT 3
+return
+	event OnFinishEquip:
+	SubExtParam User VAR_MAXHPAMOUNT 100
+	SubExtParam User VAR_STRAMOUNT 3
+return
+
+item Neko_Mimi
+	event OnStartEquip:
+	RaceSubDamage RACE_Animal 50
+	AddExtParam User VAR_LUKAMOUNT 2
+return
+	event OnFinishEquip:
+	RaceAddDamage RACE_Animal 50
+	SubExtParam User VAR_LUKAMOUNT 2
+return
+
+item Earth_Spike_Level_3					
+	event OnConsume:					
+		Skill	WZ_EARTHSPIKE 	3		
+	return					
+
+item Earth_Spike_Level_5					
+	event OnConsume:					
+		Skill	WZ_EARTHSPIKE 	5		
+	return					
+
+item Cold_Bolt_Level_3					
+	event OnConsume:					
+		Skill	MG_COLDBOLT 	3		
+	return					
+
+item Cold_Bolt_Level_5					
+	event OnConsume:					
+		Skill	MG_COLDBOLT 	5		
+	return					
+
+item Fire_Bolt_Level_3					
+	event OnConsume:					
+		Skill	MG_FIREBOLT 	3		
+	return					
+
+item Fire_Bolt_Level_5					
+	event OnConsume:					
+		Skill	MG_FIREBOLT 	5		
+	return					
+
+item Lightening_Bolt_Level_3					
+	event OnConsume:					
+		Skill	MG_LIGHTNINGBOLT 	3		
+	return					
+
+item Lightening_Bolt_Level_5					
+	event OnConsume:					
+		Skill	MG_LIGHTNINGBOLT 	5		
+	return					
+
+item Soul_Strike_Level_1					
+	event OnConsume:					
+		Skill	MG_SOULSTRIKE 	1		
+	return					
+
+item Soul_Strike_Level_5					
+	event OnConsume:					
+		Skill	MG_SOULSTRIKE 	5		
+	return					
+
+item Fire_Ball_Level_1					
+	event OnConsume:					
+		Skill	MG_FIREBALL 	1		
+	return					
+
+item Fire_Ball_Level_5					
+	event OnConsume:					
+		Skill	MG_FIREBALL 	5		
+	return					
+
+item Fire_Wall_Level_1					
+	event OnConsume:					
+		Skill	MG_FIREWALL 	3		
+	return					
+
+item Fire_Wall_Level_5					
+	event OnConsume:					
+		Skill	MG_FIREWALL 	5		
+	return					
+
+item Frost_Diver_Level_1					
+	event OnConsume:					
+		Skill	MG_FROSTDIVER 	1		
+	return					
+
+item Frost_Diver_Level_5					
+	event OnConsume:					
+		Skill	MG_FROSTDIVER 	5		
+	return					
+
+item Heal_Level_3					
+	event OnConsume:					
+		Skill	AL_HEAL 	3		
+	return					
+
+item Heal_Level_5					
+	event OnConsume:					
+		Skill	AL_HEAL 	5		
+	return					
+
+item Teleport_Level_1					
+	event OnConsume:					
+		Skill	AL_TELEPORT 	1		
+	return					

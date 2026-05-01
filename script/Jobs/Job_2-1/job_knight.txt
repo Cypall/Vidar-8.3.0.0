@@ -1,0 +1,1867 @@
+//- JOBCHANGE QUEST - KNIGHT - Translated By: Pgro Team (OwNaGe) 
+//- Fixed by: illogik(tk)
+prt_in.vhm,88,101,4 script "Knight Master" 56,{
+	mes "[Knight Master Herman]";
+	check job == 1,ApKnt,-;
+	check job == 7,-,ChkNov;
+	mes "Brother knights, I hope you can remember what I said today.";
+	mes "We knights must follow the oath we agreed upon, even if you die, you've got to follow the oath...";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes "This is the knight guild, What are you doing here?";
+	next;
+	menu "I want to become a Swordsman.",-,"I want to become a knight.",NovMnu_1,"I am just wondering around.",NovMnu_2;
+		mes "[Knight Master Herman]";
+		mes "Oh..so you want to become a Swordsman...";
+		mes "Well, to tell you the truth, you came to the wrong place!";
+		next;
+		mes "[Knight Master Herman]";
+		mes "This is not the Swordsman guild, this is the Knight guild!";
+		mes "If you want to become a Swordsman, go to izlude...";
+		goto TalkCont1;
+NovMnu_1:
+		mes "[Knight Master Herman]";
+		mes "Oh, so you want to become a knight right now...";
+		mes "Well don't you think that you need to become a strong Swordsman before you try for knight?";
+		next;
+		mes "[Knight Master Herman]";
+		mes "First, go to Izlude and become a Swordsman...";
+		mes "When you're strong enough as a Swordsman, come here and apply for knight.";
+		goto TalkCont1;
+NovMnu_2:
+		mes "[Knight Master Herman]";
+		mes "You know, you are wasting your precious time, if you use the time you spend here on battle, I think you would be a lot stronger.";
+TalkCont1:
+	next;
+	mes "[Knight Master Herman]";
+	mes "If you need anything in the future, come ask me.";
+	close;
+DiffClass:
+	mes "Welcome to the Knight Guild, please stay and make yourself at home";
+	close;
+ApKnt:
+	check job_knight_q == 0,-,ChkKnt_M1;
+	mes "This is the Prontera Knight Guild, what are you doing here?";
+	next;
+	menu "I want to become a knight",-,"I am just walking around.",KntMnu_1;
+		mes "[Knight Master Herman]";
+		check gender == 1,-,Grl;
+		mes "Oh, you're that boy that wanted to become a Swordsman!";
+		goto TalkCont2;
+Grl:
+		mes "Oh, you're that girl that wanted to become a Swordsman!";
+TalkCont2:
+		mes "The Prontera Knight Guild will be merging with the Swordsman guild.";
+		next;
+		mes "[Knight Master Herman]";
+		mes "Hi, I am Herman Von Ephesus, Prontera Knight Master.";
+		mes "Every time when I see Swordsman like you I get nervous.";
+		next;
+		mes "[Knight Master Herman]";
+		mes "We only let job level 40 or above apply for knight here.";
+		mes "We can't allow immature swordsman to apply for knight.";
+		next;
+		mes "[Knight Master Herman]";
+		mes "If you apply, you will need to start the knight training now.";
+		mes "Do you want to apply for knight?";
+		next;
+		menu "Yes, I would like to apply for knight.",-,"No, I need more time to decide.",KntMnu_2;
+			mes "[Knight Master Herman]";
+			check joblevel > 40,Sub_1,-;
+			mes "Oh, I am sorry, you can't apply for knight right now!";
+			mes "You got to be at least job level 40.";
+			next;
+			mes "[Knight Master Herman]";
+			mes "Even though I know you're strong, you're still not mature enough to become a knight";
+			mes "Come back after you fight a few more monsters.";
+			close;
+Sub_1:
+			check skillpoints != 0,-,Sub_2;
+			mes "Also, if you have skills that's un-used you can't change your job";
+			mes "Please use up all your skill points then come again.";
+			close;
+Sub_2:
+			set job_knight_q = 1;
+			mes "It would be a honor to help you apply for knight...";
+			mes "You name is $charaname... okay";
+			next;
+			mes "[Knight Master Herman]";
+			mes "Okay now, lets start the knight tests.";
+			mes "You just need to answer the questions that the Knights ask in order to pass the test .";
+			next;
+			mes "[Knight Master Herman]";
+			mes "After the test, every knight needs to agree on an oath, if you do that, you can become a knight .";
+			mes "If you don't agree with the oath, you got to start the test all over again.";
+			next;
+			mes "[Knight Master Herman]";
+			mes "SO you must think hard and be mature. ";
+			mes "I believe you are destined to become one of us.";
+			next;
+			mes "[Knight Master Herman]";
+			mes "Now go find the knight and answer all his questions!.";
+			mes "after the quiz come back here.";
+			close;
+KntMnu_2:
+			mes "[Knight Master Herman]";
+			mes "Hahhaha! you sound like you didn't think about it.";
+			mes "Go and think hard, then come back when you have your decision.";
+			next;
+			mes "[Knight Master Herman]";
+			mes "Get ready for the job change, I'll be waiting for you here";
+			close;
+KntMnu_1:
+	mes "[Knight Master Herman]";
+	mes "Aren't you a strong Swordsman already?";
+	mes "You look like you battled a lot.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "As a Swordsman, you should always think about being a knight.";
+	mes "If you want to become a knight, come talk to me.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Okay just go wonder around now..";
+	close;
+ApKntComp:
+	check job_knight_q == 1,-,ChkKnt_M1;
+	mes "Hey $charaname, What are you doing here?";
+	mes "Don't you need to find someone?";
+	next;
+	mes "[Knight Master Herman]";
+	mes "You guys should always plan a schedule for yourselves.";
+	mes "That way, the knight test will be easier for you.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "First you need to find Andrew Shyloc .";
+	mes "When you find him, he'll test you, good luck.";
+	close;
+ChkKnt_M1:
+	check job_knight_q <= 3,-,ChkKnt_M1_1;
+	mes "Hey $charaname, Hows the test?";
+	mes "Even though its quite hard, I know you can pass it.";
+	close;
+ChkKnt_M1_1:
+	check job_knight_q == 4,-,ChkKnt_M2;
+	mes "Hey $charaname How did the test go?";
+	mes "Don't you need to find someone?";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Oh, so you passed the first test....?";
+	mes "Hey knight, whose the next person he needs to see?";
+	next;
+	mes "[Knight Andrew]";
+	mes "He needs to find James Syracuse!!";
+	mes "How can he become a Swordsman with such poor memory?";
+	next;
+	mes "[Knight Master Herman]";
+	mes "...You hear that? Go find James Syracuse now.";
+	mes "I hope this journey will be easy for you.";
+	close;
+ChkKnt_M2:
+	check job_knight_q == 5,-,ChkKnt_M2_1;
+	mes "Hey $charaname How did the test go?";
+	mes "Well, I think you can pass it even though its hard.";
+	close;
+ChkKnt_M2_1:
+	check job_knight_q == 6,-,ChkKnt_M3;
+	mes "Hey $charaname How was the test?";
+	mes "Oh, you don't know who to find now?";
+	next;
+	mes "[Knight Master Herman]";
+	mes "It looks like you passed the second test... Who do you need to find for third test..?";
+	mes "Hey Syracuse, who does he need to find next?";
+	next;
+	mes "[Knight James Syracuse]";
+	mes "I told him, he needs to find Winzer..";
+	mes "I already told him who to find, its his own fault that he forgot!";
+	next;
+	mes "[Knight Master Herman]";
+	mes "...Okay, then now go find Knight Winzer.";
+	mes "Good luck on your journey.";
+	close;
+ChkKnt_M3:
+	check job_knight_q == 7,-,ChkKnt_M3_1;
+	mes "Hey $charaname How did you do on the test?";
+	mes "Well its hard, but hopefully you can pass it.";
+	close;
+ChkKnt_M3_1:
+	check job_knight_q == 8,-,ChkKnt_M4;
+	mes "Hey $charaname How was the test?";
+	mes "Oh, you don't know who to find eh?";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Looks to me that you finished the third test... Who do you need to find next...?";
+	mes "Hey, Winzer who do he need to find next?";
+	next;
+	mes "[Knight Winzer]";
+	mes ".....Amy Beatrice.";
+	mes ".....That dumb Swordsman.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "...You hear that? now go find Beatrice.";
+	mes "Next time please remember who you need to meet.";
+	close;
+ChkKnt_M4:
+	check job_knight_q == 9,-,ChkKnt_M4_1;
+	mes "Hey $charaname How did the test go?";
+	mes "Its hard eh? but I know you can do it.";
+	close;
+ChkKnt_M4_1:
+	check job_knight_q == 10,-,ChkKnt_M5;
+	mes "Hey $charaname How did you do on the test?";
+	mes "You still don't know who to see?";
+	next;
+	mes "[Knight Master Herman]";
+	mes "You passed for tests, who do you need to meet now...?";
+	mes "Hey Beatrice, who do he need to meet now?";
+	next;
+	mes "[Knight Beatrice]";
+	mes "Oh god, I told him ready~";
+	mes "He can't remember things can't he~";
+	next;
+	mes "[Knight Master Herman]";
+	mes "...You here that? Now go find Edmund.";
+	mes "Swordsman please remember who you need to see next time.";
+	close;
+ChkKnt_M5:
+	check job_knight_q == 11,-,ChkKnt_M5_1;
+	mes "Hey $charaname How was the test?";
+	mes "It looks hard, but I think you can do well on it.";
+	close;
+ChkKnt_M5_1:
+	check job_knight_q == 12,-,ChkKnt_M6;
+	mes "Hey $charaname How did you do?";
+	mes "Oh, you don't remember who you need to find?";
+	next;
+	mes "[Knight Master Herman]";
+	mes "There's only one person left you need to see?";
+	mes "You just need to go find Grey Phospherus.";
+	next;
+	mes "[Knight Edmund]";
+	mes "....................";
+	next;
+	mes "[Knight Edmund]";
+	mes "Oh god, did I choose wrong, because I feel really disappointed right now.";
+	mes "Well, we'll see how you do when you become a knight.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "This is the last test, pay attention and answer the questions correctly.";
+	mes "Also, knights should not always rely on other people.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Okay go now and come back after you're done the test.";
+	mes "When your done, come back here and we'll talk about the results.";
+	close;
+ChkKnt_M6:
+	check job_knight_q == 13,-,ChkKnt_MC;
+	mes "Come back after you're done with the quiz.";
+	mes "We don't have the results now.";
+	close;
+ChkKnt_MC:
+	check job_knight_q == 14,-,ChkKnt_MC_1;
+	check skillpoints != 0,-,ChkKnt_MC_1;
+	mes "Haha you have some un-used skill points.";
+	mes "use them and then come back.";
+	close;
+ChkKnt_MC_1:
+	mes "Yes, you finished all the tests?";
+	mes "But not all the Swordsmen that finishes the test gets to be a knight.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "We need to see how you did on your tests...";
+	mes "Also, we need to see if you qualify to become a knight.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Well I kind of look at how you did on the tests.";
+	mes "but at the end, all seven of us decide if you qualify or not.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "So, I'll ask the knights that tested you for their comment!";
+	mes "Shyloc, What you think?";
+	next;
+	check joblevel == 50,-,Othr;
+	mes "[Knight Andrew]";
+	mes "What can I say, I think he should start over again";
+	mes "I think right now he only qualifies to be a Swordsman.";
+	goto TalkCont_3;
+Othr:
+	mes "[Knight James]";
+	mes "I agree!";
+	check gender == 1,-,Grl_1;
+	mes "I think he'll be a good knight.";
+	goto TalkCont_3;
+Grl_1:
+	mes "I think she'll be a good knight.";
+TalkCont_3:
+	next;
+	mes "[Knight Master Herman]";
+	mes "Okay, if that's what you think.";
+	mes "Winzer what you think?";
+	next;
+	mes "[Knight Winzer]";
+	mes "Well, I think when he becomes a knight, he'll put more time into training.";
+	mes "so, I agree.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Okay Beatrice what you think?";
+	next;
+	mes "[Knight Beatrice]";
+	mes "....................";
+	next;
+	mes "[Knight Beatrice]";
+	mes ".....I agree.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Well, if that's the case, I agree too.";
+	mes "Okay let see what Edmund and Grey have to say?";
+	next;
+	mes "[Knight Emond]";
+	check gender == 1,-,Grl_2;
+	mes "I don't think there's a problem, he's quite polite.";
+	mes "Even though he looks like a small boy, when he become a knight, he'll look like a true man.";
+	goto TalkCont_4;
+Grl_2:
+	mes "Yes, I don't think there's a problem,and I find her quite polite.";
+	mes "so I agree";
+TalkCont_4:
+	next;
+	mes "[Knight Master Herman]";
+	mes "...Well, if thats the case, I think most of you agrees.";
+	mes "Grey what do you have to say? .";
+	next;
+	mes "[Knight Grey]";
+	mes "Even though he don't have enough experience, and skills, one day he'll find the inner strength that lies in him.";
+	check gender == 1,-,Grl_3;
+	mes "One day, he'll find the inner strength and become one of the strongest knights.";
+	goto TalkCont_5;
+Grl_3:
+	mes "One day, she'll find the inner strength and become one of the strongest knights.";
+TalkCont_5:
+	next;
+	mes "[Knight Master Herman]";
+	mes "Well, I got nothing much to say.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "You people said most of it.";
+	check gender == 1,-,Grl_4;
+	mes "I think he has the power to become a knight...";
+	goto TalkCont_6;
+Grl_4:
+	mes "I think she has the power to become a knight...";
+TalkCont_6:
+	next;
+	mes "[Knight Master Herman]";
+	mes "So, I think most of the people agrees.";
+	mes "Well then its settled.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "I here by declare that we all.....";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Agree.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Well, I don't think anyone can get perfect on the ...";
+	mes "Well I think thats a pretty good score for a normal knight.";
+	next;
+	set job_knight_q = 0;
+	jobchange 7;
+	set joblevel = 1,0;
+	mes "[Knight Master Herman]";
+	mes "Okay I now declare that this Swordsman is now a part of the knight guild.";
+	mes "I hope you can use the knight's name to help others.";
+	next;
+	additem 656,7;
+	mes "[Knight Master Herman]";
+	mes "Here's a present for becoming a knight.";
+	mes "I hope you can help other people using the name of the knights.";
+	next;
+	mes "[Knight Master Herman]";
+	mes "Go now and start your glorious path!";
+	close;
+}
+
+prt_in.vhm,75,107,4 script "Knight Andrew" 65,{
+	mes "[Knight Andrew]";
+	check job == 1,ApKnt,-;
+	check job == 7,-,ChkNov;
+	mes "Oh, your one of us , how are you doing?";
+	next;
+	mes "[Knight Andrew]";
+	mes "Its important that you get the right equipments.";
+	mes "If you battle a lot, you should gain a lot of wealth.";
+	next;
+	mes "[Knight Andrew]";
+	mes "Well, we knights should not care that much about wealth and rich.";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes "Oh, its a novice, welcome to the Prontera Knight Guild.";
+	next;
+	mes "[Knight Andrew]";
+	mes "Even though you feel weak now, you will feel strong when you grow.";
+	next;
+	mes "[Knight Andrew]";
+	mes "Just stay safe and live the life of light.";
+	close;
+DiffClass:
+	mes "We knights in Prontera battle for Freedom and Peace.";
+	next;
+	mes "[Knight Andrew]";
+	mes "To make our future better, we can't stop fighting.";
+	close;
+ApKnt:
+	check job_knight_q == 0,DiffClass,-;
+	check job_knight_q == 1,-,ChkKnt_M1;
+	mes "Hi, what are you doing here?";
+	next;
+	menu "I am here to join the knight test.",-,"I am just wondering around.",KntMnu_1;
+	mes "[Knight Andrew]";
+	mes "Oh so your the one that wants to become a knight.";
+	mes "your name is $charaname right?";
+	next;
+	mes "[Knight Andrew]";
+	mes "My name is Andre Slyloc and I am one of the knights in the Prontera Knight Guild.";
+	mes "my job is to test you.";
+	next;
+	mes "[Knight Andrew]";
+	mes "I want to know if you really want to become a knight or not.";
+	mes "i need you to go find me some stuff.";
+	next;
+	mes "[Knight Andrew]";
+	check joblevel == 50,-,KntItms;
+	mes "Yes..? wait.";
+	mes "Wow your a strong Swordsman how did you do that?";
+	next;
+	mes "[Knight Andrew]";
+	mes "Thats amazing I think you can skip my test and go on to the next one.";
+	next;
+	mes "[Knight Andrew]";
+	mes "Now, go find another knight his name is James Syracuse.";
+	mes "The tests you will be doing will be apart of your life, so please try hard.";
+	set job_knight_q = 4;
+	close;
+KntItms:
+	mes "Okay, lets start now.";
+	next;
+	random @knight_m1,2;
+	mes "[Knight Andrew]";
+	mes "First, I need you to gather somethings for me.";
+	check @knight_m1 == 1,-,KntItms_1;
+	set job_knight_q = 2;
+	set kntid1 = 1034;
+	set kntid2 = 7006;
+	set kntid3 = 931;
+	set kntid4 = 1057;
+	set kntid5 = 1055;
+	set kntid6 = 937;
+	goto KntItm_E1;
+KntItms_1:
+	set job_knight_q = 3;
+	set kntid1 = 909;
+	set kntid2 = 950;
+	set kntid3 = 914;
+	set kntid4 = 961;
+	set kntid5 = 705;
+	set kntid6 = 931;
+	goto KntItm_E2;
+KntMnu_1:
+	mes "[Knight Andrew]";
+	mes "Okay, then there's nothing you can do here.";
+	close;
+ChkKnt_M1:
+	check job_knight_q > 3,ChkKnt_M1_C,-;
+	mes "Welcome back, did you find all the things?";
+	mes "Let me take a look...";
+	next;
+	checkitem kntid1,5,-,KntItm_Error;
+	checkitem kntid2,5,-,KntItm_Error;
+	checkitem kntid3,5,-,KntItm_Error;
+	checkitem kntid4,5,-,KntItm_Error;
+	checkitem kntid5,5,-,KntItm_Error;
+	checkitem kntid6,5,-,KntItm_Error;
+	mes "[Knight Andrew]";
+	mes "Yes thats the items I need thanks.";
+	mes "This items are useful to our guild.";
+	next;
+	delitem kntid1,5;
+	delitem kntid2,5;
+	delitem kntid3,5;
+	delitem kntid4,5;
+	delitem kntid5,5;
+	delitem kntid6,5;
+	set job_knight_q = 4;
+	emote 21;
+	mes "[Knight Andrew]";
+	mes "Now, go find James Syracuse for your next test.";
+	mes "Remember to try on the test because these tests are apart of your life.";
+	close;
+KntItm_Error:
+	emote 19;
+	mes "[Knight Andrew]";
+	check job_knight_q == 2,-,KntItem_Err1;
+	mes "...Please wait a little while.";
+	mes "Don't you know your missing a few items?";
+	next;
+	mes "[Knight Andrew]";
+	mes "Do you think that this test is a joke?!!";
+	mes "You must think its a joke, you must have forgotten that you need to collect the items!!";
+	next;
+	mes "[Knight Andrew]";
+	mes "Ahhhhhhhhhh!";
+	next;
+	mes "[Knight Andrew]";
+	mes ".....Hmmmp.";
+	next;
+	mes "[Knight Andrew]";
+	mes "I will give you the list again, now go collect these items.";
+KntItm_E1:
+	mes "5 Blue Hair,";
+	mes "5 wings of red bat,";
+	mes "5 Orcish voucher,";
+	mes "5 Moth Dust,";
+	mes "5 Earthworm Peeling,";
+	mes "5 Venom Canine,";
+	goto KntItm_End;
+KntItem_Err1:
+	mes "...Please wait.";
+	mes "Hey you didn't bring back all the items I told you to?";
+	next;
+	mes "[Knight Andrew]";
+	mes "Do you think this is a game? I bet you forgot what I told you to do!!";
+	mes "yes, I bet you that you forgot...Now i'll tell you again and you better bring it to me!!";
+	next;
+	mes "[Knight Andrew]";
+	mes "Hmmppp!";
+	next;
+	mes "[Knight Andrew]";
+	mes ".....ARG.";
+	next;
+	mes "[Knight Andrew]";
+	mes "I am going to give you another chance, now go and collect these items.";
+KntItm_E2:
+	mes "5 Jellopy,";
+	mes "5 Heart Of Mermaid,";
+	mes "5 Fluff,";
+	mes "5 Clover";
+	mes "5 Conch,";
+	mes "5 Orcish Voucher,";
+KntItm_End:
+	mes "...Please bring the items back to me.";
+	next;
+	next;
+	mes "[Knight Andrew]";
+	mes "I'll wait here for you.";
+	mes "Please Becareful.";
+	close;
+ChkKnt_M1_C:
+	check job_knight_q == 4,-,Spk_1;
+	mes "What other stuff do you want to about? go take the second test now.";
+	mes "Hurry up and go, James Syracuse is waiting for you.";
+	close;
+Spk_1:
+	check job_knight_q == 14,-,Spk_2;
+	mes "Good job, you have passed all the tests.";
+	mes "Now go find the KnightMaster and listen to the results.";
+	close;
+Spk_2:
+	mes "Do you have something to talk to me about? if not don't waste your time here go take the second test.";
+	mes "I want to remind you to be serious when you take the tests.";
+	close;
+}
+
+prt_in.vhm,71,91,0 script "Knight James" 65,{
+	mes "[Knight James]";
+	check job == 1,ApKnt,-;
+	check job == 7,-,ChkNov;
+	mes "Hey, how are you doing... the guild is fine.";
+	next;
+	mes "[Knight James]";
+	mes "We are still recruiting knights.";
+	mes "I hear there's bad knight out there ruining the good name of the Prontera Knight Guild...";
+	next;
+	mes "[Knight James]";
+	mes "If you see him, teach him a lesson.";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes "Novice, how come you are here?";
+	next;
+	mes "[Knight James]";
+	mes "Do you want to become a Knight? well too bad novices can't become knights.";
+	next;
+	mes "[Knight James]";
+	mes "You have to be an experienced Swordsman in order to b a knight.";
+	close;
+DiffClass:
+	mes "Can you attack and defend at the same time if you have a weapon on both hands?";
+	mes "Well.. I don't think so if your going to attack there's no way you can defend yourself.";
+	next;
+	mes "[Knight James]";
+	mes "If you can attack and defend at the same time, you'll be unstoppable";
+	close;
+ApKnt:
+	check job_knight_q == 0,-,ChkKnt;
+	mes "Can you attack and defend at the same time if you have a weapon on both hands?";
+	mes "Well.. I don't think so if your going to attack there's no way you can defend yourself..";
+	next;
+	mes "[Knight James]";
+	mes "If you can attack and defend at the same time, you'll be unstoppable";
+	close;
+ChkKnt:
+	check job_knight_q == 1,-,ChkKnt_M1;
+	mes "Yes, you got something to ask me?";
+	next;
+	menu "Oh, I am here to take the knight test.",-,"Nothing really.",KntMnu_X;
+		mes "[Knight James]";
+		check gender == 1,-,Grl_1;
+		mes "Oh, changing job to an knight eh? You must be the boy that applied for the job change before.";
+		goto TalkCont_1;
+Grl_1:
+		mes "Oh, changing job to an knight eh? You must be the girl that applied for the job change before.";
+TalkCont_1:
+		mes "Your name is $charaname right?";
+		next;
+		mes "[Knight James]";
+		mes "But, I think you should meet someone else before you come here.";
+		mes "I don't think you even know the basics of a knight.";
+		next;
+		mes "[Knight James]";
+		mes "If someone can pass my test, i'll think of a new topic.";
+		close;
+KntMnu_X:
+		mes "[Knight James]";
+		mes "Oh.. Look at you...";
+		close;
+ChkKnt_M1:
+	check job_knight_q <= 3,-,ChkKnt_M2;
+	mes "Yes? Why are you here?";
+	next;
+	menu "I am here to take the Knight Test.",-,"Nothing Really.",KntMnu_X;
+		mes "[Knight James]";
+		mes "HAHA. you idiot, aren't you taking the test right now?";
+		mes "You know you just gave up the test to run here to talk to me?";
+		next;
+		mes "[Knight James]";
+		mes "Stop this immediately and Leave now!";
+		close;
+ChkKnt_M2:
+	check job_knight_q == 4,-,KntM2R;
+	mes "Yes? Why are you here?";
+	next;
+	menu "I am here to take the knight test.",-,"Nothing really.",KntMnu_X;
+		mes "[Knight James]";
+		mes "Oh, so you passed the first test....";
+		mes "Okay.. i'll find some time to test you.";
+		next;
+		mes "[Knight James]";
+		mes "First let me introduce myself, my name is James Syraduse.";
+		mes "I am of course a Knight here at the Prontera Knight Guild.";
+		next;
+		mes "[Knight James]";
+		mes "The test will be about on how much you know about knights?";
+		mes "And I also want to know what you think about the knights...";
+		next;
+		mes "[Knight James]";
+		mes "Dont' be nervous, i'll only ask you a few questions.";
+		mes "Also, i'll only ask you simple questions, since there's a lot of other people waiting?";
+		next;
+Knt_M2R:
+		mes "[Knight James]";
+		mes "Okay lets start, please answer as fast as you can.";
+		next;
+		mes "[Knight James]";
+		mes "Knights are designed to have great attack and great defence at the same time.";
+		mes "Can you tell me which of these swords are not two handed swords?";
+		next;
+		menu "Katzbalger",KntQ1_W1,"Bastard Sword",KntQ1_W2,"Claymore",KntQ1_C,"Flamberge",KntQ1_W3;
+KntQ1_W1:
+	set $@kntswrd = "Katzbalger";
+	goto KntQ1End;
+KntQ1_W2:
+	set $@kntswrd = "Bastard Sword";
+	goto KntQ1End;
+KntQ1_W3:
+	set $@kntswrd = "Claymore";
+ KntQ1End:
+	mes "[Knight James]";
+	set job_knight_q = 5;
+ 	mes "Wrong, $[$@kntswrd] is a two-handed sword";
+	mes "How will manage to become a knight if you don't know about the swords that knight's use?";
+	next;
+	mes "[Knight James]";
+	mes "If you really don't know go talk to the knights in town...";
+	mes "Go and learn some basics before you come back!";
+	close;
+KntQ1_C:
+	mes "[Knight James]";
+	mes "Okay let me ask you a question about the skills.";
+	mes "What skill listed below is not used for Face to Face attacks?";
+	next;
+	menu "Two-Hand Mastery Lv.5",-,"Berserk Lv.3",-,"Endure Lv.10",KntQ2_C,"Bash Lv.10",-;
+		set job_knight_q = 5;
+		mes "[Knight James]";
+		mes "Wrong, if you don't know this, you'll never master the arts of battling!";
+		mes "If you want to become a knight, you got to know what skills does?";
+KntQ_End:
+		next;
+		mes "[Knight James]";
+		mes "If you really don't know go talk to the knights in town...";
+		mes "Go and learn some basics before you come back!";
+		close;
+KntQ2_C:
+	mes "[Knight James]";
+	mes "Also, Knights are different from other classes, Knights can use spears and they have special spear skills.";
+	mes "What skill below is cost most sp to use?";
+	next;
+	menu "Pierce",-,"Spear Boomarang",-,"Spear Stab",KntQ3_C,"Riding",-;
+		set job_knight_q = 5;
+		mes "[Knight James]";
+		mes "Wrong, If you don't know this, it'll be hard for you to master Spear!";
+		mes "How can you not know about these when your a knight, thats just not tolerable?";
+		goto KntQ_End;
+KntQ3_C:
+	mes "[Knight James]";
+	mes "Also Spears can have elements too.";
+	mes "Which element below is the strongest against Dark/Undead?";
+	next;
+	menu "Holy",KntQ4_C,"Wind",-,"Poison",-,"Earth",-;
+		set job_knight_q = 5;
+		mes "[Knight James]";
+		mes "Wrong Wind is not that strong against undead!";
+		mes "These are basic stuff and you don't it how funny?";
+		goto KntQ_End;
+KntQ4_C:
+	mes "[Knight James]";
+	mes "When you become a knight you can ride a pecopeco, but if you do your attack speed drops...";
+	mes "But if you add to Cavalry Mastery the attack speed goes up again.";
+	next;
+	mes "[Knight James]";
+	mes "How much % of the attack speed is raised if you have a level 3 cavalry mastery?";
+	next;
+	menu "70%",-,"80%",KntQ5_C,"90%",-,"100%",-;
+		set job_knight_q = 5;
+		mes "[Knight James]";
+		mes "Wrong if you don't know this I recommend you not to ride a peco";
+		mes "If you want to be a knight and you don't know this... I think you'll have a really hard time?";
+		goto KntQ_End;
+KntQ5_C:
+	mes "[Knight James]";
+	mes "Good, looks like you know lot about knights";
+	mes "OK let me ask you more questions";
+	next;
+	mes "[Knight James]";
+	mes "If you meet a novice somewhere and he's asking for help when he don't actually need it what will you do?";
+	next;
+	menu "Tell the novice to go to a place where he can train",KntQ6_C,"Give him Gold",-,"Give him weapons",-;
+		set job_knight_q = 5;
+		mes "[Knight James]";
+		mes "Do you think you're helping someone when you give them good weapons?";
+		mes "You are basically killing them not helping them. LEAVE NOW!";
+		close;
+KntQ6_C:
+	mes "[Knight James]";
+	mes "Yes thats right, novice should try to be independent too";
+	mes "Its a good choice that you tell them to go to a easier place for them.";
+	next;
+	mes "[Knight James]";
+	mes "If your in a party what will you do?";
+	next;
+	menu "Stand in the front and Protect everyone",KntQ7_C,"wait until others gather around the monster than start attacking",-,"I don't care about killing I just care about the drops",KntQ7_W1;
+		mes "[Knight James]";
+		mes "...What? if you do that you're going to kill everyone";
+		goto KntQ7End;
+KntQ7_W1:
+		mes "[Knight James]";
+		mes "You think that drops are everything don't you?";
+KntQ7End:
+		set job_knight_q = 5;
+		mes "You don't qualify to become a knight... LEAVE NOW!";
+		close;
+KntQ7_C:
+	mes "[Knight James]";
+	mes "Yes, We Knights are important in most battles because we have such good attack and defence";
+	mes "We knight should try our best to help everyone";
+	next;
+	mes "[Knight James]";
+	mes "This is the last question, What do you think being a knight is most important? ";
+	next;
+	menu "The Name",KntQ_C,"The Rich",-,"The Fame",KntQ8_W1;
+		mes "[Knight James]";
+		mes "You're a really greedy person";
+		goto KntQ8End;
+KntQ8_W1:
+		mes "[Knight James]";
+		mes "Did you want to a become a knight because you'll get famous?";
+KntQ8End:
+		set job_knight_q = 5;
+		mes "Leave Now, we don't need your kind here!";
+		close;
+KntQ_C:
+	set job_knight_q = 6;
+	mes "[Knight James]";
+	mes "Yes, thats right the most important thing to us is our name as a knight";
+	mes "You have to always remember that";
+	next;
+	mes "[Knight James]";
+	mes "Okay, The test ended, now go find another knight and continue your tests";
+	next;
+	mes "[Knight James]";
+	mes "Knight Winzer is waiting for you, go now and remember answer his questions honestly";
+	close;
+KntM2R:
+	check job_knight_q == 5,-,ChkKnt_M2_C;
+	mes "What? why are you here again?";
+	next;
+	menu "I want a retake to the knight test.",-,"nothing really.",KntMnu_X;
+		mes "[Knight James]";
+		mes "Oh is that so, Hopefully this time, you'll answer the question correctly.";
+		mes "If you fail this time, you dead you know¡H";
+		next;
+		mes "[Knight James]";
+		mes "Okay test starting no, please start answering¡I";
+		next;
+		goto Knt_M2R;
+ChkKnt_M2_C:
+	check job_knight_q == 6,-,Spk_1;
+	mes "You have something to ask me?";
+	next;
+	menu "I want to take the Knight test",-,"nothing",KntMnu_X;
+		mes "[Knight James]";
+		mes "What? you already took my quiz though, go find someone else";
+		mes "Remember I told you to go find Knight Winzer.";
+		close;
+Spk_1:
+	check job_knight_q == 14,-,Spk_2;
+	mes "Oh, you finished other peoples quiz already?";
+	next;
+	mes "[Knight James]";
+	mes "Okay then go see the KnightMaster  We will go too.";
+	close;
+Spk_2:
+	mes "Yes you have something to ask me? ";
+	mes "Sorry I am really busy right now, also you should be reporting to Knight winzer now!";
+	close;
+}
+
+prt_in.vhm,79,94,4 script "Knight Winzer" 733,{
+	mes "[Knight Winzer]";
+	mes "..........";
+	next;
+	mes "[Knight Winzer]";
+	check job == 1,ApKnt,-;
+	check job == 7,-,ChkNov;
+	mes ".....Don't talk to me.";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes ".....Go play somewhere else.";
+	close;
+DiffClass:
+	mes ".....What are you looking at?";
+	close;
+ApKnt:
+	check job_knight_q == 0,-,ChkKnt;
+	mes ".....Don't talk to me.";
+	close;
+ChkKnt:
+	check job_knight_q <= 5,-,ChkKnt_M3;
+	mes ".....Yes, what do you want?";
+	next;
+	menu "I want to take the knight test.",-,"Nothing.",KntMnu_X;
+		mes "[Knight Winzer]";
+		mes "..........";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....It's not my turn to test you yet.";
+		close;
+KntMnu_X:
+		mes "[Knight Winzer]";
+		mes "..........";
+		close;
+ChkKnt_M3:
+	check job_knight_q <= 7,-,Spk_1;
+	mes ".....Yes? What are you doing here?";
+	next;
+	menu "I am here to take the knight test.",-,"Nothing.",KntMnu_X;
+		mes "[Knight Winzer]";
+		mes "..........";
+		next;
+		set job_knight_q = 7;
+		mes "[Knight Winzer]";
+		mes ".....Follow me.";
+		warp "job_knt",89,101;
+		close;
+Spk_1:
+	check job_knight_q == 14,-,Spk_2;
+	mes "..........";
+	next;
+	mes "[Knight Winzer]";
+	mes ".....??????.";
+	close;
+Spk_2:
+	mes "..........";
+	next;
+	mes "[Knight Winzer]";
+	mes ".....Do you want to fight again?.";
+	close;
+}
+
+job_knt.vhm,89,106,4 script "Knight Winzer" 733,{
+	set job_knight_q = 8;
+	mes "[Knight Winzer]";
+	mes "..........";
+	next;
+	mes "[Knight Winzer]";
+	mes ".....You have a problem?";
+	next;
+	menu "What is this test about?",-,"What way are we using to test?",KntMnu_1,"I want to leave.",KntMnu_2,"Nothing.",KntMnu_X;
+		mes "[Knight Winzer]";
+		mes "..........";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....You are going to fight monsters.";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....You must kill every single monster in the arena.";
+		next;
+		mes "[Knight Winzer]";
+		mes "..........";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....You have to beat three levels.";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....I will give you 3 mins on each level.";
+		next;
+		goto KntMnu_X;
+KntMnu_1:
+		mes "[Knight Winzer]";
+		mes "..........";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....Go to the waiting room first.";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....The test will start soon.";
+		next;
+		mes "[Knight Winzer]";
+		mes "..........";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....If someones in there, you got to wait until they are done.";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....Once someone is done, the next can start.";
+		next;
+		goto KntMnu_X;
+KntMnu_2:
+		mes "[Knight Winzer]";
+		mes "..........";
+		next;
+		mes "[Knight Winzer]";
+		mes ".....Leave.";
+		warp "prt_in",80,100;
+		close;
+KntMnu_X:
+		mes "[Knight Winzer]";
+		mes "..........";
+		close;
+}
+
+job_knt.vhm,89,106,4	script "Knight Winzer " 733,{
+	return;
+OnInit:
+	waitingroom "Waiting Room",2;
+	check \@knightstart = 0,start,-;
+	return;
+start:
+	set \@knightstart = 1;
+	set \@knightarena = 1;
+	resetmymob "job_knt";
+	enablenpc "job_knt","fail1",0;
+	enablenpc "job_knt","fail2",0;
+	enablenpc "job_knt","fail3",0;
+	enablenpc "job_knt","Knight Arena",1;
+	warpallpc "job_knt",43,146,2;
+	enablenpc "job_knt","Knight Winzer ",0;
+	return;
+}
+
+job_knt.vhm,1,1,1 script "Knight Arena" -1,{
+	return;
+OnInit:
+	check \@knightarena == 1,StartTest,-;
+	return;
+StartTest:
+//round1
+	set \@mobsknight = 0;
+	set \@mobsknightcount = 15;
+	callmymob dustiness,39,150,0,0;
+	callmymob dustiness,47,150,0,0;
+	callmymob dustiness,39,142,0,0;
+	callmymob dustiness,47,142,0,0;
+	callmymob piere,43,137,0,0;
+	callmymob andre,43,137,0,0;
+	callmymob deniro,43,137,0,0;
+	callmymob piere,43,155,0,0;
+	callmymob andre,43,155,0,0;
+	callmymob deniro,43,155,0,0;
+	callmymob argos,35,146,0,0;
+	callmymob argos,52,146,0,0;
+	callmymob deniro,43,155,0,0;
+	callmymob argos,35,146,0,0;
+	callmymob argos,52,146,0,0;
+//round 2
+	callmymob frilldora,53,52,0,0;
+	callmymob frilldora,34,52,0,0;
+	callmymob desert_wolf,43,42,0,0;
+	callmymob desert_wolf,43,62,0,0;
+	callmymob drainliar,58,52,0,0;
+	callmymob drainliar,58,52,0,0;
+	callmymob drainliar,29,52,0,0;
+	callmymob drainliar,29,52,0,0;
+	callmymob anacondaq,60,68,0,0;
+	callmymob anacondaq,27,68,0,0;
+	callmymob anacondaq,60,35,0,0;
+	callmymob anacondaq,27,35,0,0;
+//round 3
+	callmymob goblin_1,143,141,0,0;
+	callmymob goblin_2,148,141,0,0;
+	callmymob goblin_3,136,141,0,0;
+	callmymob goblin_4,143,167,0,0;
+	callmymob goblin_5,139,167,0,0;
+	callmymob goblin_archer,147,167,0,0;
+	callmymob steam_goblin,136,158,0,0;
+	npctimer 1;
+	return;
+OnMyMobDead:
+	set \@mobsknight + 1;
+	check \@mobsknight < \@mobsknightcount,-,CheckMob;
+	return;
+CheckMob:
+	check \@knightarena == 1,Round1End,-;
+	check \@knightarena == 2,Round2End,Round3End;
+Round1End:
+	set \@knightarena = 2;
+	broadcast "Proceed to next level",10;
+	set \@mobsknight = 0;
+	set \@mobsknightcount = 12;
+	npctimer 1;
+	warp "job_knt",43,52;
+	return;
+Round2End:
+	set \@knightarena = 3;
+	broadcast "Proceed to next level",10;
+	set \@mobsknight = 0;
+	set \@mobsknightcount = 7;
+	npctimer 1;
+	warp "job_knt",143,152;
+	return;
+Round3End:
+	set \@mobsknight = 0;
+	set \@knightstart = 0;
+	set job_knight_q = 8;
+	enablenpc "job_knt","Knight Winzer ",1;
+	broadcast "Well done. Go see Amy Beatrix",10;
+	npctimer 0;
+	warp "prt_in",80,100;
+	return;
+OnTimer2000:
+	broadcast "You have 3 minutes to complete this level.",10;
+	return;
+OnTimer62000:
+	broadcast "You have 2 minutes left.",10;
+	return;
+OnTimer122000:
+	broadcast "You have 1 minute left.",10;
+	return;
+OnTimer152000:
+	broadcast "You have 30 seconds left.",10;
+	return;
+OnTimer162000:
+	broadcast "You have 10 seconds left.",10;
+	return;
+OnTimer182000:
+	broadcast "Times up! You failed!!",10;
+	resetmymob "job_knt";
+	enablenpc "job_knt","fail1",1;
+	enablenpc "job_knt","fail2",1;
+	enablenpc "job_knt","fail3",1;
+	return;
+OnTimer183000:
+	npctimer 0;
+}
+
+job_knt.vhm,43,146,0	script "fail1" 45,{
+OnTouch:
+	scriptlabel KnightFail;
+	set \@mobsknight = 0;
+	set \@knightstart = 0;
+	enablenpc "job_knt","Knight Winzer ",1;
+	enablenpc "job_knt","knight 1",0;
+	warp "prt_in",80,100;
+}
+
+job_knt.vhm,43,52,0 script "fail2" 45,{
+OnTouch:
+	script KnightFail;
+}
+
+job_knt.vhm,143,152,1 script "fail3" 45,{
+OnTouch:
+	script KnightFail;
+}
+
+prt_in.vhm,69,107,6 script "Knight Beatrix" 728,{
+	mes "[Knight Beatrix]";
+	check job == 1,ApKnt,-;
+	check job == 7,-,ChkNov;
+	mes "Hey...What you doing here? ";
+	next;
+	mes "[Knight Beatrix]";
+	mes "You shouldn't have any probelms with knight. ";
+	mes "I hope your path as a knight is easy to walk on.";
+	next;
+	mes "[Knight Beatrix]";
+	mes "And of course you are on of us.";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes "Wow...A cute novice~ so cute~";
+	next;
+	mes "[Knight Beatrix]";
+	mes "Do you want to be a knight? I bet if you become a knight you'll be really handsome~";
+	next;
+	mes "[Knight Beatrix]";
+	mes "I'll remember you, If you become a knight, come find me~";
+	close;
+DiffClass:
+	mes "Welcome to the Prontera Knight Guild";
+	next;
+	mes "[Knight Beatrix]";
+	mes "There's only our knights here, so relax heheh";
+	close;
+ApKnt:
+	check job_knight_q == 0,-,ChkKnt;
+	mes "Are you here to become a knight? ";
+	next;
+	mes "[Knight Beatrix]";
+	mes "If you are here to become a knight go talk to the Knight Master.";
+	close;
+ChkKnt:
+	check job_knight_q <= 7,-,ChkKnt_M4;
+	mes "Hey, Why are you here? ";
+	next;
+	menu "I want to take the knight test",-,"Nothing",KntMnu_X;
+		mes "[Knight Beatrix]";
+		mes "Good, you've already signed up and I can sense that you have a lot of determination.";
+		next;
+		mes "[Knight Beatrix]";
+		mes "But, too bad its not my turn to test you right now, go find some other knights.";
+		next;
+		mes "[Knight Beatrix]";
+		mes "I would test you now but, its not right so hehehe.";
+		close;
+KntMnu_X:
+		mes "[Knight Beatrix]";
+		mes "Wow, aren't you bored?";
+		close;
+ChkKnt_M4:
+	check job_knight_q == 8,-,ChkKnt_M4_R;
+	mes "Hey. What are you here for?";
+	next;
+	menu "I want to take the knight test",-,"Nothing",KntMnu_X;
+		mes "[Knight Beatrix]";
+		mes "Hey, welcome , so I believe you'll be taking my test... ";
+		next;
+		mes "[Knight Beatrix]";
+		mes "My name is Amy Beatrix, I am of course a knight of the Prontera Knight Guild.";
+		next;
+		mes "[Knight Beatrix]";
+		mes "I will ask you some questions";
+		next;
+		mes "[Knight Beatrix]";
+		mes "You just need to pick the correct answer";
+		next;
+		mes "[Knight Beatrix]";
+		mes "Please listen carefully and pick the right answer. ";
+		next;
+retake:
+	set @knight_t = 0;
+	mes "[Knight Beatrix]";
+	mes "Okay lets start.";
+	next;
+	mes "[Knight Beatrix]";
+	mes "If your trying to find a partner in morroc, What will you do? ";
+	next;
+	menu "Shout and try to look for them",KntQ1,"Make a chatroom and wait",-,"Find someone that needs a knight's help",-;
+		set @knight_t + 10;
+KntQ1:
+	mes "[Knight Beatrix]";
+	mes "You are in a party with a hunter, a priest, a wizard , a blacksmith and an assassin.. ";
+	mes "You six decided to fix in the Pyramids.";
+	next;
+	mes "[Knight Beatrix]";
+	mes "You guys made it to the fourth floor of the pyramid, what will you do now?";
+	next;
+	menu "Check every corner and make sure its safe, then decide what to do",-,"Team up and try to find the monsters",KntQ2,"Stand in front and move slowly",-;
+		set @knight_t + 10;
+KntQ2:
+	mes "[Knight Beatrix]";
+	mes "A bad guy created a mob right in front of you and then the guy disappeared what will you do? ";
+	next;
+	menu "Look after your partners",-,"Fight individually and help each other out",-,"Ride on your peco and RUN like the WIND!",KntQ3;
+		set @knight_t + 10;
+KntQ3:
+	mes "[Knight Beatrix]";
+	mes "Then you guys journey on";
+	mes "After walking for a while, you guys found a fainted person.";
+	next;
+	mes "[Knight Beatrix]";
+	mes "This guy begs you to help him, what will you do?";
+	next;
+	menu "Tell the priest in your party to help.",-,"Ask him how much he'll pay you if you help",KntQ4,"Ignore him.",KntQ4;
+		set @knight_t + 10;
+KntQ4:
+	mes "[Knight Beatrix]";
+	mes "You guys have to go to different places so you guys seperate yourselves into groups";
+	next;
+	mes "[Knight Beatrix]";
+	mes "But before when you guys were having a battle, the monster dropped a very valuable thing what will you do?";
+	next;
+	menu "Give it to the person that earns it most.",-,"Pretend you don't know.",KntQ5,"Decide with the others.",-;
+		set @knight_t + 10;
+KntQ5:
+	mes "[Knight Beatrix]";
+	mes "Since you got a very valuable thing, you wanted to sell it so you return to Prontera.";
+	mes "On the roads, you see a lot of chatrooms";
+	next;
+	mes "[Knight Beatrix]";
+	mes "What will be the best way to get rid of the item you don't want?";
+	next;
+	menu "Sell it to the NPC.",KntQ6,"Create a chatroom and wait for someone that needs it.",-,"Go around looking for someone that needs it",-;
+		set @knight_t + 10;
+KntQ6:
+	mes "[Knight Beatrix]";
+	mes "Someone comes up to you and begs you for money";
+	mes "What will you do?";
+	next;
+	menu "Give him some money and items.",KntQ7,"Ignore him.",KntQ7,"Tell him a place where its suitable for him to earn money.",-;
+		set @knight_t + 10;
+KntQ7:
+	mes "[Knight Beatrix]";
+	mes "This time you wanted to hunt alone in the forests";
+	mes "you are happily riding a pecopeco";
+	next;
+	mes "[Knight Beatrix]";
+	mes "On the road to the forest, you see a guy and he's lost";
+	mes "Whats the best solution? ";
+	next;
+	menu "Tell him where the exit is.",-,"Bring him to the exit.",-,"Drop him a butterfly wing",KntQ8;
+		set @knight_t + 10;
+KntQ8:
+	mes "[Knight Beatrix]";
+	mes "You are in the forest and your busy fighting monsters, but you realize that you just ran out of healing items";
+	mes "Your health is low and your going to die soon";
+	next;
+	mes "[Knight Beatrix]";
+	mes "Suddenly a priest appears";
+	mes "What would you do? ";
+	next;
+	menu "Ask him for a heal and share the drops",-,"ignore him",KntQ9,"tell him to go somewhere else",KntQ9;
+		set @knight_t + 10;
+KntQ9:
+	mes "[Knight Beatrix]";
+	mes "Well you are getting tired and your on your way back to town";
+	next;
+	mes "[Knight Beatrix]";
+	mes "On the road back to town, you see a very valuable object,";
+	mes "What will you do? ";
+	next;
+	menu "Pick it up and keep it.",KntQEnd,"investigate and try to find the owner.",-,"Ignore it.",KntQEnd;
+		set @knight_t + 10;
+KntQEnd:
+	mes "[Knight Beatrix]";
+	mes "Okay, I finished asking my questions";
+	next;
+	check @knight_t == 100,-,KntQChk_1;
+	set job_knight_q = 10;
+	mes "[Knight Beatrix]";
+	mes "Good job, if you keep this up, you'll become one of the best knights";
+	mes "Go find Knight Edmund he'll be the one that will test you now.";
+	next;
+	mes "[Knight Beatrix]";
+	mes "I will talk to the Knight Master about how good you were, now keep up the good work and pass at the tests! get that? ";
+	close;
+KntQChk_1:
+	check @knight_t == 90,-,KntQChk_2;
+	set job_knight_q = 10;
+	mes "[Knight Beatrice]";
+	mes "Even though you didn't do that good, you just passed";
+	mes "Now go take the next text, Knight Edmund is waiting for you.";
+	next;
+	mes "[Knight Beatrice]";
+	mes "Good luck on the next test, I hope you'll pass and become a knight soon.";
+	close;
+KntQChk_2:
+	set job_knight_q = 9;
+	mes "[Knight Beatrice]";
+	mes "I am sorry but, you just failed";
+	mes "I hope next time you come, you'll try harder";
+	next;
+	mes "[Knight Beatrice]";
+	mes "When I ask you a question please think hard about it";
+	mes "I'll let you have a re-test this time";
+	close;
+ChkKnt_M4_R:
+	check job_knight_q == 9,-,ChkKnt_M4_C;
+	mes "Hey. Back for a re-test?";
+	next;
+	menu "I want to retake the knight test",-,"Nothing",KntMnu_X;
+		mes "[Knight Beatrice]";
+		mes "Please listen carefully and pick the right answer this time. ";
+		next;
+		goto retake;
+ChkKnt_M4_C:
+	check job_knight_q == 10,-,Spk_1;
+	mes "Why are you still here??";
+	next;
+	mes "[Knight Beatrice]";
+	mes "I can't test you anymore, go find knight Edmund now.";
+	close;
+Spk_1:
+	check job_knight_q == 14,-,Spk_2;
+	mes "Hey, its time to decide if you make it to the knight guild or not!";
+	next;
+	mes "[Knight Beatrice]";
+	mes "Lets go to the Knight Master Now...";
+	close;
+Spk_2:
+	mes "Yes why are you still here??";
+	next;
+	mes "[Knight Beatrice]";
+	mes "Go find Knight Edmund now and do his test!";
+	close;
+}
+
+prt_in.vhm,70,99,6 script "Knight Edmund" 734,{
+	mes "[Knight Edmund]";
+	check job == 1,ApKnt,-;
+	check job == 7,-,ChkNov;
+	mes "Make your heart into a river.";
+	next;
+	mes "[Knight Edmund]";
+	mes "River will wash out everything in your path...";
+	next;
+	mes "[Knight Edmund]";
+	mes "As a knight you must walk your path like how the river flows in its.";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes "If a tree is planted well, no wind can move it.";
+	next;
+	mes "[Knight Edmund]";
+	mes "If you train well when your a novice, your future will be full of surprises...";
+	next;
+	mes "[Knight Edmund]";
+	mes "You future might be important to this world...";
+	close;
+DiffClass:
+	mes "A lot of people live on this world because of the activities.";
+	next;
+	mes "[Knight Edmund]";
+	mes "Always try to stay alive, never think about death...";
+	close;
+ApKnt:
+	check job_knight_q == 0,-,ChkKnt;
+	mes "People who want to be on the dark side will always have nightmares";
+	next;
+	mes "[Knight Edmund]";
+	mes "If a person gets a nightmare everyday, all his dreams will be crushed...";
+	close;
+ChkKnt:
+	check job_knight_q <= 9,-,ChkKnt_M5;
+	mes "Yes, Swordsman?.";
+	next;
+	menu "I am here to take the knight test.",-,"Nothing.",KntMnu_X;
+		mes "[Knight Edmund]";
+		mes "a Flower grows from a seed...";
+		next;
+		mes "[Knight Edmund]";
+		mes "If a flower skips a process, it'll fail to grow.";
+		next;
+		mes "[Knight Edmund]";
+		mes "Please go talk to another knight and take their test first ...";
+		close;
+KntMnu_X:
+		mes "[Knight Edmund]";
+		mes "......";
+		close;
+ChkKnt_M5:
+	check job_knight_q == 12,ChkKnt_M5_C,-;
+	mes "What are you doing here Swordsman?.";
+	next;
+	menu "I here to take the knight quest.",-,"Nothing.",KntMnu_X;
+		check job_knight_q == 10,-,ChkKnt_M5_1;
+		set job_knight_q = 11;
+		mes "[Knight Edmund]";
+		mes "Oh so its your turn to take my test, I hope you can pass it.";
+		next;
+		mes "[Knight Edmund]";
+		mes "My name is Edmund.";
+		mes "And I am a knight in the prontera Knight Guild.";
+		next;
+		mes "[Knight Edmund]";
+		mes "Knights are like the people that keeps justice and peace in this world...";
+		mes "If you can help people and be nice, you'll be one of the best knights in this world.";
+		next;
+		mes "[Knight Edmund]";
+		mes "Your actions can't be slow, if you decide on something, you got to do it.";
+		mes "Sometimes you can be the water, Weak , but most time you got to be the wind, HARD.";
+		next;
+		mes "[Knight Edmund]";
+		mes "You can't kill monsters because its fun.";
+		mes "And sometimes you'll need time to calm down...";
+		next;
+		mes "[Knight Edmund]";
+		mes "Okay lets start the test now.";
+		enablenpc "job_knt","timer",1;
+		warp "job_knt",143,57;
+		close;
+ChkKnt_M5_1:
+		mes "Last time when you did the test you didn't try hard enough.";
+		mes "A knights weapon should only be used to protect, not to tease weak monsters.";
+		next;
+		mes "[Knight Edmund]";
+		mes "Everything in this world is equal, there shouldn't be any exceptions.";
+		mes "This point shouldn't be kept just when you have tests, it should be kept when you're training in real life...";
+		next;
+		mes "[Knight Edmund]";
+		mes "Okay now, I'll send you to training grounds.";
+		enablenpc "job_knt","timer",1;
+		warp "job_knt",143,57;
+		close;
+ChkKnt_M5_C:
+	check job_knight_q <= 13,-,Spk_1;
+	mes "I already know your heart, you can now go to the next level.";
+	mes "Go find Knight Grey Now....";
+	close;
+Spk_1:
+	mes "You should go to the Knight Master and listen to what we have to say.";
+	close;
+}
+
+job_knt.vhm,0,0,1	script "timer" -1,{
+	return;
+OnInit:
+	npctimer 1;
+	return;
+OnTimer1000:
+	set \@mobsknight = 0;
+	callmymob poring,141,57,0,0;
+	callmymob poring,145,57,0,0;
+	callmymob poring,143,55,0,0;
+	callmymob poring,143,59,0,0;
+	callmymob lunatic,141,55,0,0;
+	callmymob lunatic,141,59,0,0;
+	callmymob lunatic,145,55,0,0;
+	callmymob lunatic,145,59,0,0;
+	callmymob chonchon,139,57,0,0;
+	callmymob chonchon,147,57,0,0;
+	callmymob chonchon,143,53,0,0;
+	callmymob chonchon,143,61,0,0;
+	callmymob black_mushroom,130,69,0,0;
+	callmymob black_mushroom,157,69,0,0;
+	callmymob black_mushroom,130,42,0,0;
+	callmymob black_mushroom,157,42,0,0;
+	callmymob black_mushroom,165,54,0,0;
+	callmymob black_mushroom,165,57,0,0;
+	callmymob black_mushroom,122,54,0,0;
+	callmymob black_mushroom,122,57,0,0;
+	return;
+OnTimer300000:
+	enablenpc "job_knt","timerwarp",1;
+	return;
+OnTimer320000:
+	enablenpc "job_knt","timerwarp",0;
+	return;
+OnMyMobDead:
+	set \@mobsknight + 1;
+	check \@mobsknight < 20,-,mobdead1;
+	return;
+mobdead1:
+	set startarena = 0;
+	set job_knight_q = 12;
+	enablenpc "job_knt","Knight Winzer ",1;
+	enablenpc "job_knt","Knight Winzer",0;
+	enablenpc "job_knt","timerwarp",1;
+	npctimer 1;
+	return;
+}
+
+job_knt.vhm,142,56,1	script "timerwarp" 45,{
+OnTouch:
+	set startarena = 0;
+	set job_knight_q = 12;
+	warp "prt_in",80,100;
+	close;
+OnInit:
+	enablenpc "job_knt","timerwarp",0;
+	return;
+}
+
+prt_in.vhm,84,93,4 script "Knight Grey" 119,{
+	mes "[Knight Grey]";
+	check job == 1,ApKnt,-;
+	check job == 7,-,ChkNov;
+	mes "I don't know how to talk about a claymore... its a knight's best weapon";
+	mes "Yes. ^3355FF' Claymore '^000000 !! every knight should have one!";
+	next;
+	menu "Info About The ^3355FF' Claymore '^000000 ",-,"Buy the Claymore",KntMnu_1,"End talk",KntMnu_2;
+		mes "[Knight Grey]";
+		mes "Claymore is the best sword a knight can get";
+		mes "Its like a knight's best friend";
+		next;
+		mes "[Knight Grey]";
+		mes "Our guild has helped make this beautiful claymore.";
+		mes "For the knights..... ^3355FF74000^000000 .";
+		next;
+		mes "[Knight Grey]";
+		mes "Well if you want to make a claymore you got to find me  ^3355FF' Steel '^000000 .";
+		mes "If you need one come talk to me!";
+		close;
+KntMnu_1:
+	check Zeny >= 74000,-,KntItm_Err;
+	checkitem 999,1,-,KntItm_Err;
+	check job == 1,ChkSwd,-;
+	check job == 7,-,ChkNov;
+ChkSwd:
+	mes "[Knight Grey]";
+	mes "Good, you brought me steel, great I can help you make a Claymore now!";
+	mes "I'll make it right now!!";
+	next;
+	mes "[Knight Grey]";
+	mes "Claymore";
+	mes "Make the claymore mix together with the steel!";
+	mes "Mix it together . . . . .";
+	next;
+	mes "^3355FF-Using strength -^000000";
+	next;
+	mes "[Knight Grey]";
+	mes "Nice, you see the Claymore is complete";
+	mes "You got a very nice item, it'll be useful.";
+	delitem 999,1;
+	set Zeny - 74000;
+	additem 1163,1;
+	close;
+KntItm_Err:
+	mes "[Knight Grey]";
+	mes "I know you want a claymore but you need to bring me these items.";
+	mes "^3355FF74000 Zeny! 1 Steel!^000000.";
+	next;
+	mes "[Knight Grey]";
+	mes "When you get the steel and the money, come back here.";
+	mes "I'll be waiting here...";
+	close;
+KntMnu_2:
+	mes "[Knight Grey]";
+	mes "If your going to be a good knight, you'll need a claymore..";
+	mes "I'll be glad to see you after your training...";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes "Its hard to imagine yourself being strong.";
+	next;
+	mes "[Knight Grey]";
+	mes "Back then, I never dreamed about being a knight.";
+	next;
+	mes "[Knight Grey]";
+	mes "But now, I am proud to be one.";
+	close;
+DiffClass:
+	mes "Young man, don't waste your time .";
+	next;
+	mes "[Knight Grey]";
+	mes "If you waste your time, you won't be able to do something that you want.";
+	close;
+ApKnt:
+	check job_knight_q == 0,DiffClass,-;
+	check job_knight_q == 12,-,ChkKnt_M6_R;
+	mes "Oh its a young Swordsman, what can I do for you?";
+	next;
+	menu "I want to take the knight test.",-,"Nothing.",KntMnu_X;
+	mes "[Knight Grey]";
+	mes "Haha, so you already finished all the other tests eh?";
+	next;
+Retake:
+	set @knight_t = 0;
+	mes "[Knight Grey]";
+	mes "Okay then, lets start my test, its not any different from the other tests.";
+	next;
+	mes "[Knight Grey]";
+	mes "Let me ask you a few questions.";
+	next;
+	mes "[Knight Grey]";
+	mes "First, why are you so determined to become a knight?";
+	next;
+	menu "I want to be stronger...",KntQ1,"I want to help the town...",KntQ2,"I don't think I am good enough right now...",KntQ3;
+KntQ1:
+		mes "[Knight Grey]";
+		mes "To become stronger...yes being a knight does make you stronger.";
+		next;
+		mes "[Knight Grey]";
+		mes "To help the town? so you can show off in front of people";
+		mes "or is it because of fame? or is there another reason?";
+		next;
+		mes "[Knight Grey]";
+		mes "Why do you think a knight will make you better?";
+		next;
+		menu "I can become rich.",KntQ1_1,"I can protect myself.",KntQ1_2,"I can protect other people.",KntQ1_3;
+KntQ1_1:
+			set @knight_t + 10;
+			mes "[Knight Grey]";
+			mes "Even though money and fame is pretty important.";
+			mes "Don't you think a knight will have more important thing to worry about.";
+			goto KntQ_End_1;
+KntQ1_2:
+			mes "[Knight Grey]";
+			mes "Very good idea, first you learn how to protect yourself then you'll protect others...";
+			mes "I really admire that idea.";
+			goto KntQ_End_1;
+KntQ1_3:
+			mes "[Knight Grey]";
+			mes "That's a good idea, helping out others.";
+			mes "But a group of corrupted knights ruined the names of the Prontera Knight Guild...";
+			goto KntQ_End_1;
+KntQ2:
+		mes "[Knight Grey]";
+		mes "Well...A town...";
+		next;
+		mes "[Knight Grey]";
+		mes "there are dangerous things in live.";
+		mes "So you got to be prepared for everything....";
+		next;
+		mes "[Knight Grey]";
+		mes "If you get the power of the Knight, What would you do to help the town?";
+		next;
+		menu "The Town needs me.",KntQ2_1,"I will help the town get rich.",KntQ2_2,"I will protect the citizens of the town.",KntQ2_3;
+KntQ2_1:
+			mes "[Knight Grey]";
+			mes "It doesn't matter where you are and who it is.";
+			mes "If someone asks you for help, you should always help them.";
+			goto KntQ_End_1;
+KntQ2_2:
+			set @knight_t + 10;
+			mes "[Knight Grey]";
+			mes "Even though money and fame is pretty important.";
+			mes "Don't you think a knight will have more important thing to worry about.";
+			goto KntQ_End_1;
+KntQ2_3:
+			mes "[Knight Grey]";
+			mes "That's a good idea, helping out others.";
+			mes "But a group of corrupted knights ruined the names of the Prontera Knight Guild...";
+			goto KntQ_End_1;
+KntQ3:
+			set @knight_t + 5;
+			mes "[Knight Grey]";
+			mes "Your already a successful Swordsman, why would you want to become a knight?";
+			next;
+			mes "[Knight Grey]";
+			mes "I don't know about swordsman but a knight should never give up if he decided to do something.";
+			mes "Some knights give up way too easily and that's what makes them weak.";
+			next;
+			mes "[Knight Grey]";
+			mes "Well, right now what are you not happy about?";
+			next;
+			menu "The skills.",KntQ3_1,"the targets.",KntQ3_2,"the feeling and heart of being a knight.",KntQ3_3;
+KntQ3_1:
+				set @knight_t + 5;
+				mes "[Knight Grey]";
+				mes "Skills can be useful and useless...";
+				mes "If you're a really successful knight, you won't need skills.";
+				goto KntQ_End_1;
+KntQ3_2:
+				set @knight_t - 5;
+				mes "[Knight Grey]";
+				mes "Yes a target is important to a knight.";
+				mes "But right now all you can think about is being knight and that's not a good thing .";
+				goto KntQ_End_1;
+KntQ3_3:
+				set @knight_t + 5;
+				mes "[Knight Grey]";
+				mes "Well..its hard being a knight.";
+				mes "If you think knight is a hard job, you'll be weak, and I bet that a Swordsman will b stronger than you.";
+KntQ_End_1:
+		next;
+		mes "[Knight Grey]";
+		mes "Well I understand how one loves to become a knight.";
+		next;
+		mes "[Knight Grey]";
+		mes "But those knights are usually corrupted and they are bad knights.";
+		next;
+		mes "[Knight Grey]";
+		mes "Also if you become a knight you can't change back into a Swordsman.";
+		mes "Also when you become a knight you are responsible for all your actions.";
+		next;
+		mes "[Knight Grey]";
+		mes "If, you become a knight now, what will be the first thing you do?";
+		next;
+		menu "I would go battle.",KntQ4,"There are people waiting for me.",KntQ5,"I will learn more about knights.",KntQ6;
+KntQ4:
+			mes "[Knight Grey]";
+			mes "Battle..and...?";
+			next;
+			menu "Be the strongest in the shortest time.",KntQ4_1,"I want to know how good I am.",KntQ4_2,"I will go to places where swordsman can't go.",KntQ4_3;
+KntQ4_1:
+				set @knight_t + 10;
+				mes "[Knight Grey]";
+				mes "Don't get too eager.";
+				mes "You  must first train the basics of a knight first you know?";
+				goto KntQ_End_2;
+KntQ4_2:
+				mes "[Knight Grey]";
+				mes "Yes getting to know yourself is a good idea.";
+				mes "Its good to know how strong you are.";
+				goto KntQ_End_2;
+KntQ4_3:
+				mes "[Knight Grey]";
+				mes "Even if your a knight, it doesn't make you that much stronger.";
+				mes "Go and train slowly....";
+				goto KntQ_End_2;
+KntQ5:
+		mes "[Knight Grey]";
+		mes "Whose waiting for you?";
+		next;
+		menu "A friend.",KntQ5_1,"A Villager.",KntQ5_2,"A Lover.",KntQ5_3;
+KntQ5_1:
+			mes "[Knight Grey]";
+			mes "Yes, they will be happy to see you...";
+			mes "As a knight you got to keep calm all the time and protect others.";
+			goto KntQ_End_2;
+KntQ5_2:
+			mes "[Knight Grey]";
+			mes "A villager...oh.";
+			mes "As a knight you got to keep calm all the time and protect others";
+			goto KntQ_End_2;
+KntQ5_3:
+			mes "[Knight Grey]";
+			mes "Did you become a knight because of your lover!";
+			check gender == 1,-,Grl_1;
+			mes "I wish you can protect her anytime anywhere and I hope you'll be willing to sacrifice your life for hers!";
+			goto TalkCont_1;
+Grl_1:
+			mes "I wish you can protect him anytime anywhere and I hope you'll be willing to sacrifice your life for his!";
+TalkCont_1:
+			next;
+			mes "[Knight Grey]";
+			mes "I hope you'll love your lover forever.";
+			mes "Forever and ever.";
+			goto KntQ_End_2;
+KntQ6:
+		mes "[Knight Grey]";
+		mes "What else do you want to know?";
+		next;
+		menu "The easiest place for a knight to stay...",KntQ6_1,"A place where a knight can train...",KntQ6_2,"A place where a knight can earn a lot of cash...",KntQ6_3;
+KntQ6_1:
+			set @knight_t + 5;
+			mes "[Knight Grey]";
+			mes "There's no place in this world that's easy";
+			mes "Even if a knight is in the hardest/ devilfish place in the world, he must try to stay alive.";
+			goto KntQ_End_2;
+KntQ6_2:
+			mes "[Knight Grey]";
+			mes "Go outside and look at those knights.";
+			mes "If you have any questions you can ask them.";
+			goto KntQ_End_2;
+KntQ6_3:
+			set @knight_t + 15;
+			mes "[Knight Grey]";
+			mes "Do you always think about money?";
+			mes "You can't be a knight if you're like that...";
+KntQ_End_2:
+		mes "[Knight Grey]";
+		mes "Oh.. I am sorry I kept you waiting... I just talked a bit too much.";
+		next;
+		check @knight_t == 0,-,KntQChk_1;
+		set job_knight_q = 14;
+		mes "[Knight Grey]";
+		mes "I am glad I can talk to you, it reminds me about myself when I was young.";
+		next;
+		mes "[Knight Grey]";
+		mes "Okay I'll go talk to the Knight Master about the job change.";
+		next;
+		mes "[Knight Grey]";
+		mes "Don't worry.... Go now !";
+		close;
+KntQChk_1:
+	check @knight_t == 5,-,KntQChk_2;
+	set job_knight_q = 14;
+	mes "[Knight Grey]";
+	mes "It was nice talking to you, when you become a knight I think you will have better ideas.";
+	next;
+	mes "[Knight Grey]";
+	mes "Okay I'll go talk to the Knight Master about the job change.";
+	next;
+	mes "[Knight Grey]";
+	mes "Don't worry  I bet you can become a knight!";
+	mes "Go now!";
+	close;
+KntQChk_2:
+	check @knight_t == 10,-,KntQChk_3;
+	set job_knight_q  = 14;
+	mes "[Knight Grey]";
+	mes "It was nice talking to you..even though I am a bit worried about your job change...";
+	next;
+	mes "[Knight Grey]";
+	mes "Okay I'll go talk to the Knight Master about the job change??";
+	next;
+	mes "[Knight Grey]";
+	mes "Don't worry, if you qualify, everyone will agree with your job change...";
+	mes "Go now!";
+	close;
+KntQChk_3:
+	set job_knight_q = 13;
+	mes "[Knight Grey]";
+	mes "It was nice talking to you today...";
+	next;
+	mes "[Knight Grey]";
+	mes "But...you can't become a knight right now.";
+	next;
+	mes "[Knight Grey]";
+	mes "Right now I think its best for you to stay as a Swordsman.";
+	next;
+	mes "[Knight Grey]";
+	mes "If you really want to become a knight, go think about it.";
+	close;
+ChkKnt_M6_R:
+	check job_knight_q == 13,-,ChkKnt_M6_C;
+	mes "Oh.. its you, What do you want?";
+	next;
+	menu "I want to take the knight test again.",-,"Nothing.",KntMnu_X;
+		mes "[Knight Grey]";
+		mes "yes..it looks like you're determined...";
+		next;
+		goto Retake;
+ChkKnt_M6_C:
+	check job_knight_q == 14,-,ChkKnt;
+	mes "Didn't I tell you to go talk to the Knight Master?";
+	next;
+	mes "[Knight Grey]";
+	mes "We will make our decision soon...so come quick!";
+	close;
+ChkKnt:
+	mes "Oh..its a young Swordsman, Can I help you ?";
+	next;
+	menu "I am here to take the knight test.",-,"Nothing.",KntMnu_X;
+		mes "[Knight Grey]";
+		mes "Haha,theres a lot of younger knights here.";
+		next;
+		mes "[Knight Grey]";
+		mes "You should see them all and then come see me.";
+		close;
+KntMnu_X:
+		mes "[Knight Grey]";
+		mes "Take care! Health is very important!";
+		close;
+}

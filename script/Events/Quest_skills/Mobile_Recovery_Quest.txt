@@ -1,0 +1,101 @@
+//- Swordsman Skills Quests - kobra_k88
+izlude_in.vhm,175,130,2 script "Knight De Thomas" 98,{
+	mes "[Knight De Thomas]";
+		getskilllevel 2 @skill;
+		check @skill > 0 L_Start -;
+		getskilllevel 3 @skill;
+		check @skill > 0 L_Start -;
+//	if(callfunc("Is_Sword_Class")) goto L_Start;
+L_Other:
+	mes "I am Thomas De Knight of the Prontera Chivalry.  I am very busy now so please leave me alone.";
+	close;
+L_Start:
+		check MOVHPREC == 1,L_Check,-;
+		getskilllevel 144 @skill;
+		check @skill > 0,L_GotSkill,-;
+	mes "Oh no! You must have been hurt in battle! Are you ok?";
+	mes "It must have been a hard fought battle for you to recieve such serious injuries....";
+	emote 19;
+	next;
+	mes "[Knight De Thomas]";
+	mes "Being a Swordsman or Knight comes with a lot of responsiblity and requires a great deal of self sacrifice.";
+	mes "For Swordsmen and Knights there is a wonderfull skill that can aid in the recovery of HP.";
+	next;
+	mes "[Knight De Thomas]";
+	mes "I present to you..... ^5555FF'Moving HP Recovery'^000000!! This skill allows you to recover HP while moving!";
+	next;
+	mes "[Knight De Thomas]";
+	mes "The skill has not been perfected yet so the amount of HP recovered is a little low.  Still, it is helpful.";
+	mes "What do you think? Would you like to learn this skill?";
+	next;
+	menu "What a great skill! I would like to learn it!!",M_0, "No thank you.",M_End;
+	M_0:
+		mes "[Knight De Thomas]";
+		mes "Very well.  I will tell you what is needed to learn this skill.  First you must have a job level of 35 or greater.";
+		mes "This however doesn't apply to Knights or Crusaders.  You will also need:";
+		mes "^5555FF200 Empty Bottles^000000,";
+		mes "^5555FF1 Padded Armour^000000,";
+		mes "and ^5555FF1 Moth Wings^000000.";
+		next;
+		mes "[Knight De Thomas]";
+		mes "The bottles are proof that you have fought feircely and have used many potions.  The Padded Armor is proof of an experienced fighter.";
+		mes "The Moth Wings..... well... really aren't necessary.  It's just that my niece recieved a bug hunting assignment for summer vacation.......";
+		next;
+		mes "[Knight De Thomas]";
+		mes "I would get them myself... it's just... I must work here all day long so I don't have any time to go out and get them.......";
+		next;
+		mes "[Knight De Thomas]";
+		mes "Don't you think it's sad that I have to stay in once place everyday without even being able to go outside??";
+		mes "Please.... find a pair of Moth Wings for my niece?.... (~sniff~sniff~)....";
+		emote 28;
+		next;
+		mes "[Knight De Thomas]";
+		mes "If you don't..... I won't teach you anything!! Muahahahaha!!";
+		emote 29;
+		set MOVHPREC = 1;
+		close;
+	M_End:
+		mes "[Knight De Thomas]";
+		mes "What?? What did you say?.....";
+		emote 1;
+		close;
+L_Check:
+	mes "Ah, you've come back.  Let's, see... are you ready for HP Moving Recovery?....";
+	next;
+	mes "[Knight De Thomas]";
+		checkitem 713,200,-,L_NoItems;
+		checkitem 1058,1,-,L_NoItems;
+		checkitem 2312,1,-,L_NoItems;
+		check job == 1,-,L_Check1;
+		check JobLevel < 35,L_LowLvl,-;
+L_Check1:
+	mes "Great! You have everything needed to learn this skill.  Take a deep breath.... let us begin.";
+	next;
+	mes "(2 hours later)";
+	next;
+	mes "[Knight De Thomas]";
+	mes "Can you feel it? Can you feel the energy flowing in you while you move around?";
+	mes "Haha! You have just learned HP Moving Recovery!";
+	delitem 713,200;
+	delitem 1058,1;
+	setskilllevel 0x90,1;
+	set MOVHPREC = 0;
+	next;
+	mes "[Knight De Thomas]";
+	mes "Congratulations on learning the new skill and thank you for the Moth Wings! ^_^";
+	emote 21;
+	close;
+	L_NoItems:
+		mes "As I said before you need to bring me these items:";
+		mes "^5555FF200 Empty Bottles^000000,";
+		mes "^5555FF1 Padded Armour^000000,";
+		mes "and ^5555FF1 Moth Wings^000000.";
+		close;
+	L_LowLvl:
+		mes "You are not yet experienced enough to learn this skill.  Come back when you have a job level of at least 35.";
+		close;
+	L_GotSkill:
+		mes "Ah, you're looking well.  That HP Moving Recovery skill must be very helpfull.";
+		mes "Well, continued success on your adventure!";
+		close;
+}

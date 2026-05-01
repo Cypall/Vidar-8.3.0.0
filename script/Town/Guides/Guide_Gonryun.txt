@@ -1,0 +1,51 @@
+gonryun.vhm,163,60,4	script	"Gonryun Guide" 780,{
+	mes "[Ha Wonchi]";
+	mes "Every day people come and go";
+	mes "flowing with life ?filled with ardor.";
+	mes "Welcome to Gonryun!";
+	next;
+	mes "[Ha Wonchi]";
+	mes "If you have business?on behalf of the village";
+	mes "I invite you. If you need to know anything,";
+	mes "please ask me.";
+	next;
+	menu "Village Chief's House",-,"Tools",Tools,"Weapons",Weapons,"Protection",Protect,"Inn",Inn,"Bye.",Bye;
+	viewpoint 1,109,131,0,0xff3355;
+	mes "[Ha Wonchi]";
+	mes "At this location";
+	mes "^ff3355+^000000 on the Minimap";
+	mes "there is the Village Chief's House.";
+	close;
+Tools:
+	viewpoint 1,147,84,1,0xce6300;
+	mes "[Ha Wonchi]";
+	mes "At this location";
+	mes "^ce6300+^000000 on the Minimap";
+	mes "there is a Tools Merchant.";
+	close;
+Weapons:
+	viewpoint 1,174,101,2,0x55ff33;
+	mes "[Ha Wonchi]";
+	mes "At this location";
+	mes "^55ff33+^000000 on the Minimap";
+	mes "there is a Weapons Merchant.";
+	close;
+Protect:
+	viewpoint 1,173,84,3,0x3355ff;
+	mes "[Ha Wonchi]";
+	mes "At this location";
+	mes "^3355ff+^000000 on the Minimap";
+	mes "There is a Protection Merchant.";
+	close;
+Inn:
+	viewpoint 1,215,114,4,0xffffff;
+	mes "[Ha Wonchi]";
+	mes "At this location";
+	mes "^ffffff+^000000 on the Minimap";
+	mes "There is an Inn.";
+	close;
+Bye:
+	mes "Please thoroughly enjoy";
+	mes "our pleasant Gonryun!";
+	close;
+}

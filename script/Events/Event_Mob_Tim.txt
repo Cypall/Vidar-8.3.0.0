@@ -1,0 +1,344 @@
+//---------------------------------------------------------------------- 
+// Event_MobtTim v1.0 : Qpet itens by Luthien 
+//--------------------------------------------------------------------- 
+//--------------------------------------------------------------------- 
+// Iwado - Alberta(inside) 
+// Taming de HunterFly (Monster Juice), Rocker (Singing Flower) 
+// e acessorio para Orc Warrior (Wild Flower) 
+//--------------------------------------------------------------------- 
+alberta_in.vhm,173,76,4 script "Iwado" 0,0,0,0	125,{ 
+	mes "[Iwado]"; 
+	mes "Hello!"; 
+	mes "I have the taming itens for HunterFly (Monster Juice) and Rocker (Singing Flower), and the accessory for Orc Warrior (Wild Flower)."; 
+	mes "I can give them to you, if you bring me some itens."; 
+	mes "Are you interested in some of these?"; 
+	next; 
+	menu "No, thanks",-,"Information",L_MENU_1,"Monster Juice",L_MENU_2,"Singing Flower",L_MENU_3,"Wild Flower",L_MENU_4; 
+	close; 
+L_MENU_1: 
+	mes "[Iwado]"; 
+	mes "Well... You need the following items:"; 
+	mes "1 Animal Gore and 2 Apple for Monster Juice,"; 
+	mes "1 Singing Plant for Singing Flower,"; 
+	mes "1 Clover and 1 Fancy Flower to Wild Flower."; 
+	close; 
+L_MENU_2: 
+	mes "[Iwado]"; 
+	mes "Let me check if you brought the necessary items for Monster Juice."; 
+	next; 
+	checkitem 702,1,-,L_ITEM_1; 
+	checkitem 512,2,-,L_ITEM_1; 
+	mes "[Iwado]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everything is right!!"; 
+	mes "Here is your Monster Juice!"; 
+	next; 
+	delitem 702,1; 
+	delitem 512,2; 
+	additem 626,1; 
+	mes "[Iwado]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!"; 
+	close; 
+L_ITEM_1: 
+	mes "[Iwado]"; 
+	mes "There is something wrong..."; 
+	mes "You need 1 Animal Gore and 2 Apples for Monster Juice."; 
+	mes "Come back when you got all the items."; 
+	close; 
+L_MENU_3: 
+	mes "[Iwado]"; 
+	mes "Let me check if you brought the necessary items for Singing Flower."; 
+	next; 
+	checkitem 707,1,-,L_ITEM_2; 
+	mes "[Iwado]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everything is right!!"; 
+	mes "Here is your Singing Flower!"; 
+	next; 
+	delitem 707,1; 
+	additem 629,1; 
+	mes "[Iwado]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!"; 
+L_ITEM_2: 
+	mes "[Iwado]"; 
+	mes "There is something wrong..."; 
+	mes "You need 1 Singing Plant for Singing Flower."; 
+	mes "Come back when you got all the items."; 
+	close; 
+L_MENU_4: 
+	mes "[Iwado]"; 
+	mes "Let me check if you brough the necessary items for Wild Flower."; 
+	next; 
+	checkitem 705,1,-,L_ITEM_3; 
+	checkitem 2207,1,-,L_ITEM_3; 
+	mes "[Iwado]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everytring is right!!"; 
+	mes "Here is your Wild Flower!"; 
+	next; 
+	delitem 705,1; 
+	delitem 2207,1; 
+	additem 10009,1; 
+	mes "[Iwado]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!"; 
+L_ITEM_3: 
+	mes "[Iwado]"; 
+	mes "There is something wrong..."; 
+	mes "You need 1 Clover and 1 Fancy Flower for Wild Flower."; 
+	mes "Come back when you got all the items."; 
+	close; 
+}
+
+//--------------------------------------------------------------------- 
+// Shogo - Izlude(inside) 
+// Taming de Bapho Jr (Book of Devil), Orc Warrior (Horror of Tribe) e 
+// Munak (No Recipient) 
+//--------------------------------------------------------------------- 
+izlude_in.vhm,129,64,4 script "Shogo" 0,0,0,0	125,{ 
+	mes "[Shogo]"; 
+	mes "Hello!"; 
+	mes "I have the taming items for Baphomet Jr (Book of Devil), Orc Warrior (Horror of Tribe) e Munak (No Recipient)."; 
+	mes "I can give them to you if you bring me some items."; 
+	mes "Are you interested in some of these?"; 
+	next; 
+	menu "No, thanks",-,"Information",L_MENU_1,"Book of Devil",L_MENU_2,"Horror of Tribe",L_MENU_3,"No Recipient",L_MENU_4; 
+	close; 
+L_MENU_1: 
+	mes "[Shogo]"; 
+	mes "Well... You need the following items:"; 
+	mes "2 Horrendous Mouth and 1 Old Magicbook for Book of Devil,"; 
+	mes "1 Chivalry Emblem and 1 Scorpion Tail for Horror of Tribe,"; 
+	mes "1 Old Portrait for No Recipient."; 
+	close; 
+L_MENU_2: 
+	mes "[Shogo]"; 
+	mes "Let me check if you brought the necessary items for Book of Devil."; 
+	next; 
+	checkitem 958,2,-,L_ITEM_1; 
+	checkitem 1006,1,-,L_ITEM_1; 
+	mes "[Shogo]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everything is right!!"; 
+	mes "Here is your Book of Devil!"; 
+	next; 
+	delitem 958,2; 
+	delitem 1006,1; 
+	additem 642,1; 
+	mes "[Shogo]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!"; 
+	close; 
+L_ITEM_1: 
+	mes "[Shogo]"; 
+	mes "There is something wrong..."; 
+	mes "You need 2 Horrendous Mouth and 1 Old Magicbook for Book of Devil."; 
+	mes "Come back when you got all the items."; 
+	close; 
+L_MENU_3: 
+	mes "[Shogo]"; 
+	mes "Let me check if you brought the necessary items for Horror of Tribe."; 
+	next; 
+	checkitem 1004,1,-,L_ITEM_2; 
+	checkitem 904,1,-,L_ITEM_2; 
+	mes "[Shogo]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everything is right!!"; 
+	mes "Here is your Horror of Tribe!"; 
+	next; 
+	delitem 1004,1; 
+	delitem 904,1; 
+	additem 635,1; 
+	mes "[Shogo]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!"; 
+	close; 
+L_ITEM_2: 
+	mes "[Shogo]"; 
+	mes "There is something wrong..."; 
+	mes "You need 1 Chivalry Emblem and 1 Scorpion Tail for Horror of Tribe"; 
+	mes "Come back when you got all the items."; 
+	close; 
+L_MENU_4: 
+	mes "[Shogo]"; 
+	mes "Let me check if you brought the necessary items for No Recipient."; 
+	next; 
+	checkitem 7014,1,-,L_ITEM_3; 
+	mes "[Shogo]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everything is right!!"; 
+	mes "Here is your No Recipient!"; 
+	next; 
+	delitem 7014,1; 
+	additem 636,1; 
+	mes "[Shogo]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!"; 
+	close; 
+L_ITEM_3: 
+	mes "[Shogo]"; 
+	mes "There is something wrong..."; 
+	mes "You need 1 Old Portrait for No Recipient"; 
+	mes "Come back when you got all the items."; 
+	close; 
+}
+
+//-------------------------------------------------------------------------------- 
+// YuU - Al de Baran (inside) 
+// Acessorios para Chonchon, Hunterfly ou Steel Chonchon (Monster Oxygen Mask), 
+// Rocker (Rocker Glasses), Lunatic (Silk Ribbon), Bapho Jr (Skull Helm), 
+// Earth Petite (Stellar Hairpin), Picky (Tiny Egg Shell). 
+//-------------------------------------------------------------------------------- 
+aldeba_in.vhm,168,175,4 script "YuU" 0,0,0,0	125,{ 
+	mes "[YuU]"; 
+	mes "Hello!"; 
+	mes "I have accessories for qPets."; 
+	mes "I can give them to you, if you bring some items."; 
+	mes "Are you interested in some of these?"; 
+	next; 
+	menu "No, thanks",-,"Information",L_MENU_1,"Monster Oxygen Mask",L_MENU_2,"Rocker Glasses",L_MENU_3,"Silk Ribbon",L_MENU_4,"Skull Helm",L_MENU_5,"Stellar Hairpin",L_MENU_6,"Tiny Egg Shell",L_MENU_7; 
+	close; 
+L_MENU_1: 
+	mes "[YuU]"; 
+	mes "There's the requeriments:"; 
+	mes "Monster Oxygen Mask -> 1 Oxygen Mask"; 
+	mes "Rocker Glasses -> 1 Ribbon, 2 Zargon, 400 Zeny"; 
+	mes "Silk Ribbon -> 1 Ribbon"; 
+	mes "Skull Helm -> 1 Bone Helm"; 
+	mes "Stellar Hairpin -> 1 Stellar"; 
+	mes "Tiny Egg Shell -> 1 Egg Shell"; 
+	close; 
+L_MENU_2:
+	mes "[YuU]"; 
+	mes "Let me check if you brought the necessary items for Monster Oxygen Mask."; 
+	next; 
+	checkitem 5004,1,-,L_ITEM_1; 
+	mes "[YuU]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everything is right!"; 
+	mes "Here is your Monster Oxygen Mask!"; 
+	next; 
+	delitem 5004,1; 
+	additem 10002,1; 
+	mes "[YuU]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!!"; 
+	close; 
+L_ITEM_1: 
+	mes "[YuU]"; 
+	mes "There's something wrong..."; 
+	mes "You need 1 Oxygen Mask for Monster Oxygen Mask."; 
+	mes "Come back when you got all the items."; 
+	close; 
+L_MENU_3:
+	mes "[YuU]"; 
+	mes "Let me check if you brought the necessary items for Rocker Glasses."; 
+	next; 
+	checkitem 2209,1,-,L_ITEM_2; 
+	checkitem 912,2,-,L_ITEM_2; 
+	check Zeny >= 400,-,L_ITEM_2; 
+	mes "[YuU]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everything is right!"; 
+	mes "Here is your Rocker Glasses!"; 
+	next; 
+	delitem 2209,1; 
+	delitem 912,2; 
+	set Zeny -= 400,0; 
+	mes "[YuU]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!!"; 
+	close; 
+L_ITEM_2: 
+	mes "[YuU]"; 
+	mes "There's something wrong..."; 
+	mes "You need 1 Ribbon, 2 Zargon and 400 Zeny for Rocker Glasses."; 
+	mes "Come back when you got all the items, and the Zeny."; 
+	close; 
+L_MENU_4:
+	mes "[YuU]"; 
+	mes "Let me check if you brought the necessary items for Silk Ribbon."; 
+	next; 
+	checkitem 2209,1,-,L_ITEM_3; 
+	mes "[YuU]"; 
+	mes "Oh! Well done!!"; 
+	mes "It seems that everything is right!"; 
+	mes "Here is your Silk Ribbon!"; 
+	delitem 2209,1; 
+	additem 10007,1; 
+	mes "[YuU]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!!"; 
+	close; 
+L_ITEM_3: 
+	mes "[YuU]"; 
+	mes "There's something wrong..."; 
+	mes "You need 1 Ribbon for Silk Ribbon."; 
+	mes "Come back when you got all the items."; 
+	close; 
+L_MENU_5:
+	mes "[YuU]"; 
+	mes "Let me check if you brought the necessary items for Skull Helm."; 
+	next; 
+	checkitem 5017,1,-,L_ITEM_4; 
+	mes "[YuU]"; 
+	mes "It seems that everything is right!"; 
+	mes "Here is your Skull Helm!"; 
+	next; 
+	delitem 5017,1; 
+	additem 10001,1; 
+	mes "[YuU]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!!"; 
+	close; 
+L_ITEM_4: 
+	mes "[YuU]"; 
+	mes "There's something wrong..."; 
+	mes "You need 1 Bone Helm for Skull Helm."; 
+	mes "Come back when you got all the items."; 
+	close; 
+L_MENU_6:
+	mes "[YuU]"; 
+	mes "Let me check if you brought the necessary items for Stellar Hairpin."; 
+	next; 
+	checkitem 2294,1,-,L_ITEM_5; 
+	mes "[YuU]"; 
+	mes "It seems that everything is right!"; 
+	mes "Here is your Stellar Hairpin!"; 
+	next; 
+	delitem 2294,1; 
+	additem 10011,1; 
+	mes "[YuU]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!!."; 
+	close; 
+L_ITEM_5: 
+	mes "[YuU]"; 
+	mes "There's something wrong..."; 
+	mes "You need 1 Stellar for Stellar Hairpin."; 
+	mes "Come back when you got all the items."; 
+	close; 
+L_MENU_7:
+	mes "[YuU]"; 
+	mes "Let me check if you brought the necessary items for Tiny Egg Shell."; 
+	next; 
+	checkitem 5015,1,-,L_ITEM_6; 
+	mes "[YuU]"; 
+	mes "It seems that everything is right!"; 
+	mes "Here is your Tiny Egg Shell!"; 
+	next; 
+	delitem 5015,1; 
+	additem 10012,1; 
+	mes "[YuU]"; 
+	mes "I'll be here if you need!"; 
+	mes "Please come back!!"; 
+	close; 
+L_ITEM_6: 
+	mes "[YuU]"; 
+	mes "There's something wrong..."; 
+	mes "You need 1 Egg Shell for Tiny Egg Shell."; 
+	mes "Come back when you got all the items."; 
+	close; 
+}

@@ -1,0 +1,2354 @@
+//===================================================================================
+// 'Louyang, Highlands' Chinese Localization maps
+// NPCs based on dialog from iRO
+// Scripts by L0ne_W0lf
+//===================================================================================
+// Louyang Town outside NPCs
+//===================================================================================
+louyang.vhm,261,123,3	script	"Chi Wu Ping"	824,{
+	mes "[Chi Wu Ping]";
+	mes "I don't feel good...";
+	mes "So...Totally out of it...";
+	next;
+	mes "[Chi Wu Ping]";
+	mes "Oh, my aching body!";
+	mes "All my muscles are sore...";
+	mes "There's only one thing that could";
+	mes "cure all this agonizing...";
+	mes "pain...";
+	next;
+	mes "[Chi Wu Ping]";
+	mes "Hey kid~!";
+	mes "You don't look like a local!";
+	mes "Why don't you follow that road ahead";
+	mes "and check out the big restaurant?";
+	next;
+	mes "[Chi Wu Ping]";
+	mes "The soup they sell there is";
+	mes "probably the healthiest food you";
+	mes "can ever find.";
+	next;
+	mes "[Chi Wu Ping]";
+	mes "I guess you could eat";
+	mes "some of that soup";
+	mes "for your health.";
+	close;
+}
+
+louyang.vhm,297,167,0	script	"Muscular Woman"	815,{
+	mes "[Zhi Ching Li]";
+	mes "...";
+	next;
+	mes "......";
+	next;
+	mes "[Zhi Ching Li]";
+	mes "Please leave me";
+	mes "alone. I am busy.";
+	close;
+}
+
+louyang.vhm,174,150,4	script	"Jiu Chi Ling"	815,{
+	mes "[Jiu Chi Ling]";
+	check quest_soup >= 5,-,Talk;
+		mes "There's a strange rumor going";
+		mes "around that the restraunt is no";
+		mes "longer selling Dragon Soup...";
+		next;
+		mes "[Jiu Chi Ling]";
+		mes "Do you think";
+		mes "my brother did";
+		mes "something bad again!?";
+		mes "I hope not! If he did...";
+		mes "What am I suposed to do?!";
+		close;
+Talk:
+	mes "I'm worried about my brother.";
+	mes "He's young, rebellious and doesn't";
+	mes "listen to anybody...";
+	next;
+	mes "[Jiu Chi Ling]";
+	mes "He just left the";
+	mes "house while he was";
+	mes "complaining about";
+	mes "that restaurant...";
+	next;
+	mes "[Jiu Chi Ling]";
+	mes "^808080*Sigh~~*^000000";
+	mes "I'm not gonna let him";
+	mes "get away this time!";
+	close;
+}
+
+louyang.vhm,274,136,4	script	"Powerful looking guy"	819,{
+	mes "[Akiira]";
+	mes "I am practicing my 'Claw of";
+	mes "Dragon.' I not only need or use the";
+	mes "power of my fists, I must also";
+	mes "condition myself spiritually";
+	next;
+	mes "[Akiira]";
+	mes "Every martial art requires";
+	mes "spiritual training since the";
+	mes "mind controls the body.";
+	mes "If you've trained yourself";
+	mes "spiritually, you can easily";
+	mes "use any part of the body.";
+	next;
+	mes "[Akiira]";
+	mes "If you are considering";
+	mes "studying the martial arts, you";
+	mes "should first attain knowledge";
+	mes "before jumping into the";
+	mes "physical training.";
+	next;
+	mes "[Akiira]";
+	mes "Learn about the martial arts";
+	mes "and meditate on life's truths.";
+	mes "First, you must find peace of mind";
+	mes "before you can hope to master the";
+	mes "mind and body.";
+	close;
+}
+
+louyang.vhm,276,136,4	script	"Fist Master"	819,{
+	mes "[Fist Master]";
+	mes "Finally...";
+	mes "I have mastered";
+	mes "the 'Claw of Dragon'";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "Although there are eight basic";
+	mes "steps, I had to learn the history";
+	mes "of this art, and meditate, focusing";
+	mes "on my spiritual improvement";
+	mes "for three years.";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "After that, my master finally";
+	mes "started to give me the physical";
+	mes "training so I could use the eight";
+	mes "steps of the Claw of the Dragon. I've";
+	mes "devoted myself to this art for";
+	mes "thirty years.";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "I'm very proud that I've";
+	mes "mastered this art ten years earlier";
+	mes "than I expected. Now, I need to";
+	mes "study this form and improve it by";
+	mes "correcting its weak points and";
+	mes "enhancing it's strengths.";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "I guess that would take me about";
+	mes "ten years. But I'm not disheartened";
+	mes "by that at all.";
+	next;
+	mes "[Zhiang Xiau Ji]";
+	mes "When you're learning a martial art,";
+	mes "you can't rush yourself and learn";
+	mes "everything in a short period of";
+	mes "time. It's impossible! Plus, that";
+	mes "isn't the essence of art..";
+	close;
+}
+
+louyang.vhm,272,133,0	script	"Trainee"	819,{
+	scriptlabel Trainee;
+	mes "[Trainee]";
+	mes "Yeeeyap~!";
+	mes "Taaaaaah~~!!";
+	mes "Hooo~";
+	close;
+}
+
+louyang.vhm,274,133,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,276,133,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,278,133,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,272,131,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,274,131,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,276,131,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,278,131,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,272,129,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,274,129,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,276,129,0	script	"Trainee"	819,{
+	script Trainee;
+}
+louyang.vhm,278,129,0	script	"Trainee"	819,{
+	script Trainee;
+}
+
+//===================================================================================
+// Louyang Town Inside NPCs
+//===================================================================================
+// Dragon Castle
+//============================================================
+lou_in01.vhm,99,158,4	script	"Lord"	821,{
+	mes "[Lord Bai Long]";
+	mes "Hahahaha!";
+	mes "Welcome to Louyang!";
+	next;
+	mes "[Lord Bai Long]";
+	mes "Louyang is such a great city.";
+	mes "We're protected this land for forty";
+	mes "years from the invasions of evil";
+	mes "creatures!";
+	next;
+	mes "[Lord Bai Long]";
+	mes "I hope you enjoy";
+	mes "your stay here,";
+	mes "Rune-Midgardian!";
+	next;
+	mes "[Lord Bai Long]";
+	mes "How could I have lost my friend";
+	mes "from our glory days? Hmm...?";
+	mes "Oh, I didn't realize you were still";
+	mes "there...Listening to me.";
+	next;
+	mes "[Lord Bai Long]";
+	mes "I'm sorry, I was just talking to";
+	mes "myself. I hope you have a good time";
+	mes "while you stay here in Louyang.";
+	close;
+}
+
+lou_in01.vhm,111,151,4	script	"Soldier"	825,{
+	mes "[Soldier]";
+	mes "*Yawn* It's so boring here";
+	mes "nowadays. Although, I hear that";
+	mes "a long time ago, things were";
+	mes "much different.";
+	next;
+	mes "[Soldier]";
+	mes "Supposedly, monsters used to";
+	mes "intrude Louyang all the time! Heh,";
+	mes "but that's just rumor. Still,";
+	mes "there are a bunch of rumors going";
+	mes "around that I'm curious about...";
+	close;
+}
+
+lou_in01.vhm,91,151,4	script	"Soldier"	825,{
+	mes "[Soldier]";
+	mes "....z..Z..z...";
+	next;
+	menu "Hey, wake up!",-;
+	mes "[Soldier]";
+	mes "Yeeeesss...Sir!";
+	mes "I was not dozing off~";
+	mes "Seerious...ly...";
+	next;
+	mes "[Soldier]";
+	mes "...";
+	next;
+	mes "[Soldier]";
+	mes "...";
+	mes "......";
+	next;
+	mes "[Soldier]";
+	mes "...";
+	mes "......";
+	mes "....z..Z..z...";
+	close;
+}
+
+lou_in01.vhm,82,139,6	script	"Soldier"	825,{
+	mes "[Soldier]";
+	mes "There is nothing much, but if you";
+	mes "wish to look around this room,";
+	mes "please be my guest.";
+	close;
+}
+
+lou_in01.vhm,45,138,4	script	"Soldier"	825,{
+	mes "[Soldier]";
+	mes "It's strange to see outsiders in";
+	mes "this kind of place. We don't have";
+	mes "any business with you,";
+	mes "so move along.";
+	close;
+}
+
+lou_in01.vhm,102,144,4	script	"Soldier"	825,{
+	mes "[Soldier]";
+	mes "People have been";
+	mes "saying that there's";
+	mes "a scammer at the entrance of town...";
+	menu "...?",-;
+	mes "[Soldier]";
+	mes "But I went there and I didn't";
+	mes "find anyone suspicious. I swear,";
+	mes "everything seemed completely";
+	mes "normal!";
+	close;
+}
+
+lou_in01.vhm,99,144,4	script	"Soldier"	825,{
+	mes "[Soldier]";
+	mes "Ah, don't bother";
+	mes "to listen to this";
+	mes "guy beside of me.";
+	next;
+	mes "[Soldier]";
+	mes "I hope you have a good time while";
+	mes "you're staying in Louyang!";
+	close;
+}
+
+lou_in01.vhm,43,147,1	script	"Hao Chenryu"	750,{
+	mes "[Hao Chenryu]";
+		check event_freedom = 1,-,Talk;
+	mes "Mao told me that eight";
+	mes "Rune Midgardians";
+	mes "would be coming.";
+	mes "But what happened?";
+	mes "I'm confused...";
+	next;
+	mes "[Hao Chenryu]";
+	mes "Mao's plans are flawless,";
+	mes "so I'm sticking to the scenario";
+	mes "he's drawn up. You're either";
+	mes "improvising needlessly, or you're";
+	mes "not really a comrade...";
+	close;
+Talk:
+	mes "Who...";
+	mes "are you...?";
+	next;
+	mes "[Hao Chenryu]";
+	mes "I only trust my comrades in the";
+	mes "cause for Louyang, so leave me";
+	mes "alone. Death before oppression!";
+	mes "Freedom for Louyang!";
+	close;
+}
+
+//===================================================
+// Restaurant
+//===================================================
+lou_in02.vhm,80,173,2	script	"Li Min"	746,{
+	mes "[Li Min]";
+	check quest_soup >= 5,-,Talk;
+		mes "^808080*Sigh*^000000 I cam so dissapointed. I came";
+		mes "all the way down here to taste the";
+		mes "food! I can't believe they don't";
+		mes "sell it anymore!";
+		next;
+		mes "The worst part is that I'm already";
+		mes "addicted to the taste! ^^808080*Sob...*^000000";
+		close;
+Talk:
+	mes "Well, I don really";
+	mes "live here in Louyang.";
+	mes "Still, I come here often";
+	mes "enough to visit.";
+	next;
+	mes "[Li Min]";
+	mes "I just returned";
+	mes "because I've got";
+	mes "a huge craving for the";
+	mes "food I tasted here";
+	mes "a while ago.";
+	next;
+	mes "[Li Min]";
+	mes "For some reason, I can't forget it.";
+	mes "I can't get it out of my mind!";
+	next;
+	mes "[Li Min]";
+	mes "the taste, the texture.";
+	mes "The sweetness, melting down into my";
+	mes "mouth, and it's tempting scent";
+	mes "lingering on my lips...";
+	next;
+	mes "[Li Min]";
+	mes "Ummmmm...";
+	mes "Royal Jelly!";
+	mes "It makes my";
+	mes "mouth water~";
+	close;
+}
+
+lou_in02.vhm,76,181,2	script	Employee	822,{
+	mes "[Huang Jia Xian]";
+	mes "Welcome~";
+	mes "Sorry for making you wait. If you";
+	mes "wish to rest, please go upstairs.";
+	next;
+	mes "[Huang Jia Xian]";
+	mes "Recently, many tourists are";
+	mes "visiting Louyang and although";
+	mes "business is great, we're now";
+	mes "busier than ever.";
+	next;
+	mes "[Huang Jia Xian]";
+	mes "^808080*Sigh~~*^000000";
+	mes "I don't even";
+	mes "have time to eat.";
+	mes "I'm starving...!";
+	close;
+}
+
+lou_in02.vhm,61,175,2	script	Employee	818,{
+	mes "[Ya Hua]";
+	mes "Welcome, welcome!";
+	mes "We have many rooms";
+	mes "available! Why don't";
+	mes "you go upstairs?";
+	mes "Ha ha ha!";
+	check quest_soup >= 5,-,Exit;
+	next;
+	mes "[Ya Hua]";
+	mes "Oh, if by any chance you came to";
+	mes "try the Dragon Soup, I'm sorry, but";
+	mes "it's n longer avaliable.";
+	emote 4;
+	next;
+	mes "But don't be too dissapointed, we";
+	mes "serve many other delicious foods";
+	mes "that you can choose from!";
+	close;	
+Exit:
+	close;
+}
+
+lou_in02.vhm,53,174,6	script	Employee	822,{
+	mes "[Chang Pai]";
+	mes "Welcome, welcome!";
+	mes "We are ready to serve you~!";
+	mes "Now, go ahead and go upstairs~!";
+	close;
+}
+
+lou_in02.vhm,43,169,0	script	"Jiang Rong"	827,{
+	mes "[Jiang Rong]";
+	mes "Dragon Soup is known for it's spicy,";
+	mes "yet sweet and refreshing taste.";
+	next;
+	mes "[Jiang Rong]";
+	mes "It's made with all sorts of";
+	mes "medicinal herbs, so it's good";
+	mes "for your health as well.";
+	next;
+	mes "[Jiang Rong]";
+	mes "Dragon Soup draws out the";
+	mes "unnecessary heat created inside";
+	mes "the body and circulates the blood.";
+	mes "So it helps optimize the body's";
+	mes "functions and promotes longevity";
+	next;
+	mes "[Jiang Rong]";
+	mes "I've eaten Dragon Soup regularly";
+	mes "ever since I was young. Look at me,";
+	mes "don't you think I look so healthy";
+	mes "considering my age?";
+	close;
+}
+
+lou_in02.vhm,42,186,4	script	"Liu Jia Lim"	816,{
+	mes "[Liu Jia Lim]";
+	mes "Do you know what's the best dish at";
+	mes "this restaurant? It's Dragon Soup!";
+	mes "They've been selling it here for as";
+	mes "long as this restaurant has been";
+	mes "around.";
+	next;
+	mes "[Liu Jia Lim]";
+	mes "It's delicate taste comes from";
+	mes "a broth extracted from pure meat";
+	mes "that does not contain any fat. So";
+	mes "it's also a very popular diet foot";
+	mes "for the ladies.";
+	next;
+	mes "[Liu Jia Lim]";
+	mes "It's tasty and really good for your";
+	mes "health. Why don't you order a bowl?";
+	mes "I've never known anyone to taste";
+	mes "Dragon Soup and not love it.";
+	close;
+}
+
+lou_in02.vhm,58,183,4	script	"Assistant Chef"	823,{
+	mes "[Jin Wei Ling]";
+	mes "I used to be";
+	mes "an enthusiastic";
+	mes "Martial artist.";
+	next;
+	mes "[Jin Wei Ling]";
+	mes "Although I became an";
+	mes "assistant chef for a living, I";
+	mes "always think of myself as a martial";
+	mes "artist first.";
+	next;
+	mes "[Jin Wei Ling]";
+	mes "So, I decided to reflect the spirit";
+	mes "of the martial arts into my";
+	mes "cooking. We are often busy";
+	mes "when there are many customers.";
+	next;
+	mes "[Jin Wei Ling]";
+	mes "When we're busy, I can use my";
+	mes "martial arts to cook cuisine much";
+	mes "more quickly! Hahaha~ Martial arts";
+	mes "can be very practical!";
+	next;
+	mes "[Jin Wei Ling]";
+	mes "Waaa~!!!";
+	//effect Fire-cast effect
+	next;
+	mes "[Jin Wei Ling]";
+	mes "Waaa Taaah~!!!!";
+	//effect endure
+	next;
+	mes "[Jin Wei Ling]";
+	mes "Waaa...";
+	mes "Waaaaa Taaah~!!!!";
+	//effect Adrenaline Rush
+	next;
+	mes "^0000FF* Chop chop chop chop chop *^000000";
+	//effect 5 hits
+	next;
+	mes "[Jin Wei Ling]";
+	mes "Hahahaha! Look these perfect";
+	mes "vegetable slices! Muahahahaha!!";
+	mes "I will continue to home my martial";
+	mes "arts though cooking!";
+	emote 21;
+	close;
+}
+
+lou_in02.vhm,62,183,2	script	"Chef"	820,{
+	mes "[Wang Shi Long]";
+	check quest_soup >= 5,-,Talk;
+		mes "^^808080*Moans and Cries*^000000";
+		mes "I guess this is it..!";
+		mes "The end of my family's glory.";
+		mes "Someone stole the base broth";
+		mes "of my dragon soup!";
+		next;
+		mes "[Wang Shi Long]";
+		mes "What should I do, now?";
+		mes "Without Dragon Soup, my family's";
+		mes "restraunt will now just be like";
+		mes "all the others...";
+		close;
+Talk:
+	mes "Hello, are you";
+	mes "one of our customers?";
+	mes "I am Wang Shi Long,";
+	mes "the chef of this";
+	mes "restaurant.";
+	next;
+	mes "[Wang Shi Long]";
+	mes "My family has served food";
+	mes "to Lord Bai Long for a long time.";
+	mes "This restaurant has been handed";
+	mes "down the family line, and I am the";
+	mes "successor~";
+	next;
+	mes "[Wang Shi Long]";
+	mes "Our specialty dish Dragon Soup,";
+	mes "won especially high praise from";
+	mes "Lord Bai Long, who is known for";
+	mes "his extremely discerning sense of";
+	mes "taste.";
+	next;
+	mes "[Wang Shi Long]";
+	mes "I'm also proud to say that we cook";
+	mes "with only the freshest and highest";
+	mes "quality ingredients.";
+	next;
+	mes "[Wang Shi Long]";
+	mes "We've always been popular in";
+	mes "Louyang for hundreds and hundreds";
+	mes "of years because of our high";
+	mes "quality gourmet cuisine.";
+	next;
+	mes "[Wang Shi Long]";
+	mes "In this dry and hot weather,";
+	mes "Dragon Soup is the best food for";
+	mes "any appetite. I suggest that you";
+	mes "try a bowl. You'll be quite";
+	mes "pleased!";
+	close;
+}
+
+lou_in02.vhm,50,185,1	script	"Pot"	111,{
+	scriptlabel broth_pot;
+	check quest_soup = 1,Started,-;
+	check quest_soup >= 5,-,Talk;
+		mes "^0000FFYou found a pot.";
+		mes "However it is empty.^000000";
+		close;
+Started:
+	mes "^0000FFBeneath the shadows,";
+	mes "you find a large pot filled with";
+	mes "a dark, red liquid. What would you";
+	mes "want to do?^000000";
+	next;
+	menu "Take the Pot",-,"Look for another Pot",Another;
+		mes "^0000FFYou take a careful look around";
+		mes "it wouldn't be wise to steal this";
+		mes "now if anyone was watching.^000000";
+		next;
+		mes "^0000FFSince the restaurant";
+		mes "is closed, the whole place";
+		mes "is completely quiet. The";
+		mes "employees are all asleep.^000000";
+		next;
+		mes "^0000FFYou carefully lift the pot, and";
+		mes "although it's heavy, you think";
+		mes "you can carry it.^000000";
+		next;
+		mes "^0000FFAll you have to do now is get";
+		mes "away from this restaurant without";
+		mes "getting caught^000000";
+		goto Rand;
+	Another:
+	mes "^0000FFYou decide to";
+	mes "look for another pot.^000000";
+	close;
+Talk:
+	mes "^0000FFBeneath the shadows,";
+	mes "you find a large pot filled with";
+	mes "a dark, red liquid.^000000";
+	close;
+Rand:
+	npctimer 1;
+	set \@getsoup = 0;
+//	random getsoup,5;
+//	check getsoup < 2,Rand,-;
+//		set quest_soup = getsoup;
+		close;
+OnTimer5000:
+	set \@getsoup = 1;
+	return;
+OnTimer10000:
+	set \@getsoup + 1;
+	return;
+OnTimer15000:
+	set \@getsoup + 1;
+	return;
+OnTimer20000:
+	set \@getsoup + 1;
+	npctimer 0;
+	close;
+}
+
+lou_in02.vhm,48,185,1	script	"Pot"	111,{
+	script broth_pot;
+}
+
+lou_in02.vhm,58,174,0	script	Guard_Trap	-1,{
+	// Should work on a timer set by the Pot NPCs.
+	// The longer you stay within the room where you GET the soup
+	// the greater the chance of getting caught.
+	// Work ontouch
+OnTouch:
+	scriptlabel Guard_Trap;
+	check \@getsoup >= 4,-,exit;
+		mes "[Ya Hau]";
+		mes "Hey? Who are you?!";
+		mes "What are you doing with that pot!";
+		mes "Put that down you thief and get";
+		mes "out of here!";
+		next;
+		mes "^0000FFYou fail to steal the pot.^000000";
+		set quest_soup = 1;
+	exit:
+		close;
+}
+lou_in02.vhm,59,174,0	script	Guard_Trap1	-1,{
+OnTouch:
+	script Guard_Trap;
+}
+lou_in02.vhm,60,174,0	script	Guard_Trap2	-1,{
+OnTouch:
+	script Guard_Trap;
+}
+lou_in02.vhm,61,174,0	script	Guard_Trap3	-1,{
+OnTouch:
+	script Guard_Trap;
+}
+lou_in02.vhm,57,174,0	script	Guard_Trap4	-1,{
+OnTouch:
+	script Guard_Trap;
+}
+lou_in02.vhm,56,174,0	script	Guard_Trap5	-1,{
+OnTouch:
+	script Guard_Trap;
+}
+lou_in02.vhm,55,174,0	script	Guard_Trap6	-1,{
+OnTouch:
+	script Guard_Trap;
+}
+lou_in02.vhm,54,174,0	script	Guard_Trap7	-1,{
+OnTouch:
+	script Guard_Trap;
+}
+
+//============================================================
+// Doctor's Office.
+//============================================================
+lou_in02.vhm,265,69,4	script	"Doctor"	814,{
+	mes "[Hua Tuo]";
+	check Docs_Medicine = 1,Started,-;
+	check Docs_Medicine = 6,Started2,-;
+	check Docs_Medicine = 7,-,Talk;
+		mes "Being strong as a person is not";
+		mes "defined as mere physical strength.";
+		next;
+		mes "[Hua Tuo]";
+		mes "Factors such as intellegence,";
+		mes "experience and knowledge are";
+		mes "also considered when judging one's";
+		mes "strength.";
+		next;
+		mes "[Hua Tuo]";
+		mes "Let's say you're very strong and";
+		mes "given the most powerful weapon.";
+		next;
+		mes "[Hua Tuo]";
+		mes "If you don't know how to use the";
+		mes "weapon's power, you will not be";
+		mes "strong... You'll be weak.";
+		next;
+		mes "[Hua Tuo]";
+		mes "When the tools or weapons";
+		mes "overwhelm your capabilities,";
+		mes "the worst situations result.";
+		close;
+Started2:
+	mes "Ah, finally...";
+	mes "You've brought what I need. Thank";
+	mes "you so much, it's such a relief to";
+	mes "have this medicine on hand again.";
+	next;
+	mes "[Hua Tuo]";
+	mes "I apologize in advanced,";
+	mes "but may I ask you another favor?";
+	mes "I am asking for your help once";
+	mes "more, since I know I can depend on";
+	mes "you. Of course, I will compensate";
+	mes "you for your trouble.";
+	delitem 7252,1;
+	next;
+	menu "I'm sorry...",-,"No problem.",Accept;
+		mes "[Hua Tuo]";
+		mes "Alight...";
+		mes "I understand.";
+		mes "But thank you for helping me out.";
+		mes "Please, take this...";
+		additem 679,2;
+		next;
+		mes "[Hua Tuo]";
+		mes "It's not much, but in this medicine";
+		mes "is an old family secret. I hope";
+		mes "that it will be of use to you in";
+		mes "dangerous situations.";
+		next;
+		mes "[Hua Tuo]";
+		mes "Well then, I will see you around.";
+		mes "Once again, I'd like to thank you";
+		mes "for your help.";
+		set Docs_Medicine = 7;
+		close;
+	Accept:
+		mes "[Missing Dialog]";
+		close;
+Started:
+	mes "You haven't gotten";
+	mes "the medicine yet...?";
+	mes "I hope you can get it";
+	mes "as soon as you can...";
+	close;
+Talk:
+	mes "Hmmm...";
+	mes "I'm in trouble...";
+	next;
+	mes "[Hua Tuo]";
+	emote 19;
+	mes "I cannot do anything without my";
+	mes "medicine. But one of my patients";
+	mes "needs immediate treatment and";
+	mes "I can't leave this office...";
+	next;
+	menu "I can help you.",-,"What a shame!",Shame;
+		mes "[Hua Tuo]";
+		mes "Huh...?";
+		mes "Are...";
+		mes "Are you serious?";
+		next;
+		mes "[Hua Tuo]";
+		mes "This won't take much effort, but it";
+		mes "may be too much to ask this of you,";
+		mes "especially since we have just met.";
+		next;
+		mes "[Hua Tuo]";
+		Menu "If you feel burdened...",-,"I don't mind, I'd be glad to help.",Help;
+			mes "Thank you so";
+			mes "much for saying that";
+			mes "I feel very uncomfortable asking a";
+			mes "favor of someone I have only just";
+			mes "met.";
+			next;
+			mes "[Hua Tuo]";
+			mes "However, I will ask you";
+			mes "if we meet another time.";
+			mes "Now, if you'll excuse me...";
+			close;
+		Help:
+			mes "Hmm, I see.";
+			mes "Well then, let me";
+			mes "ask a favor of you.";
+			next;
+			mes "[Hua Tuo]";
+			mes "As you heard earlier, I need";
+			mes "a special medicine to treat this";
+			mes "patient. However, I'm running out";
+			mes "of the medicine I need.";
+			next;
+			mes "[Hua Tuo]";
+			mes "I will need you to get it for me";
+			mes "since I cannot leave the patients";
+			mes "that are waiting for me right now.";
+			next;
+			mes "[Hua Tuo]";
+			mes "^808080*Sigh*^000000";
+			mes "Misfortunes always seem";
+			mes "to occur one after another, don't";
+			mes "they? My staff is currently too";
+			mes "busy doing other errands.";
+			next;
+			mes "[Hua Tuo]";
+			mes "Please visit the";
+			mes "Tool Shop in town and being me";
+			mes "the medicine that I need. Master";
+			mes "will understand if you tell him";
+			mes "you've been sent by me.";
+			next;
+			mes "[Hua Tuo]";
+			mes "I am sorry for causing you";
+			mes "so much trouble, but if you'll";
+			mes "excuse me, I have other patients";
+			mes "waiting. Please hurry back with";
+			mes "the medicine.";
+			set Docs_Medicine = 1;
+			close;
+	Shame:
+		mes "*Sigh* For some reason, I never";
+		mes "seem to have enough medicine in";
+		mes "stock. Is there no one I can ask to";
+		mes "help me?";
+		close;
+}
+
+lou_in02.vhm,272,55,1	script	"Familiar-Looking Patient"	86,{
+	mes "[??????]";
+	mes "*Cough cough...*";
+	mes "Awww......www...";
+	mes "Aww...wwww..";
+	emote 9;
+	close;
+}
+
+lou_in02.vhm,253,45,4	script	"Employee"	822,{
+	mes "[Song Zhi Du]";
+	check quest_poison <= 2,-,Talk;
+	Started:
+		mes "Well, well. Thank you for you're";
+		mes "trouble. I didn't expect you to";
+		mes "gather all these herbs for us...";
+		next;
+		mes "[Song Zhi Du]";
+		mes "I suppose I underestimaged you. By";
+		mes "the way, do you know anything about";
+		mes "poison?";
+		next;
+		mes "[Song Zhi Du]";
+		menu "Yes, I am kind of interested in it",-,"No, not at all",No;
+			mes "Oh, I see. Well, if you have some";
+			mes "time, why don;t you go visit my old";
+			mes "master in the slums?";
+			next;
+			mes "[Song Zhi Du]";
+			mes "If you two get along, I will tell";
+			mes "you something important.";
+			set quest_poison = 2;
+			close;
+		No:
+			mes "Huh? I see. Well, thank you for";
+			mes "your troubles once again. I hope you";
+			mes "have a good time in Louyang.";
+			close;
+	Talk:
+		mes "[Missing Dialog]";
+		close;
+}
+
+//============================================================
+// Tool shop/Storage Keeper
+//============================================================
+lou_in02.vhm,248,166,2	script	"Tool Shop Master"	824,{
+	mes "[Wang Chuihi]";
+	check Docs_Medicine = 1,Started,-;
+	check Docs_Medicine > 1,-,Talk;
+		mes "I can't understand why outsiders";
+		mes "continue to travel here o Louyang";
+		mes "despite the weather. I'm also";
+		mes "getting tired of keeping my";
+		mes "business here. Sooner of later,";
+		mes "I may have to leave.";
+		close;
+	Started:
+		mes "Darn it!";
+		mes "I hate this";
+		mes "weather...!";
+		next;
+		mes "[Wang Chuihi]";
+		mes "Um? Can I help";
+		mes "you with anything?";
+		emote 1;
+		next;
+		menu "I have to get something for the doctor",-,"I agree, the weather really is bad.",Bad_Weather;
+			mes "[Wang Chuihi]";
+			mes "Huh?";
+			mes "An errand for the doctor?";
+			mes "She must have run out of";
+			mes "medicine again. Go ahead";
+			mes "and check the storage.";
+			next;
+			mes "[Wang Chuihi]";
+			mes "You can find the storage on";
+			mes "the opposite side of this building.";
+			mes "There, you'll find a guy named Jiang";
+			mes "Xiayou. Go ahead and ask him for";
+			mes "the stuff you need.";
+			set Docs_Medicine = 2;
+			close;
+		Bad_Weather:
+			mes "[Wang Chuihi]";
+			mes "Tell me about it. This weather";
+			mes "keeps stressing me out. Damn,";
+			mes "I don't think I'll live very long";
+			mes "if I keep getting aggravated like";
+			mes "this by the weather...";
+			close;
+Talk:
+	mes "My business hasn't been doing";
+	mes "well recently. And what is wrong";
+	mes "with this weather? I don't know";
+	mes "what's going on with the world...";
+	close;
+}
+
+lou_in02.vhm,201,166,4	script	"Storage Keeper"	819,{
+	mes "[Jiang Xiayou]";
+	check Docs_Medicine = 2,Started,-;
+	check Docs_Medicine = 3,Started2,-;
+	check Docs_Medicine = 5,Started3,-;
+	check Docs_Medicine > 5,-,Talk;
+		mes "*Yawn~* I really hope the";
+		mes "weather gets better. Man, now why";
+		mes "did I have to think about the head?";
+		mes "Now I'm depressed...";
+		next;
+		mes "[Jiang Xiayou]";
+		mes "Huh. I guess I should";
+		mes "take care of these things";
+		mes "as soon as I can...";
+		close;
+	Started3:
+		mes "Up finally brought it! Haha,";
+		mes "I just got everything you need,";
+		mes "too. Let me see...";
+		mes "Yup, this is it!";
+		mes "Good, good...";
+		next;
+		mes "^0000FF*Rummage rummage...*^000000";
+		mes "^0000FF......";
+		next;
+		menu "Excuse me",-;
+			mes "[Jiang Xiayou]";
+			mes "Huh?";
+			mes "Ah...";
+			mes "Haha...";
+			mes "Sorry about";
+			mes "that. Hahaha~";
+			next;
+			mes "[Jiang Xiayou]";
+			mes "Ah! Here you go. Even if it was";
+			mes "kind of annoying to do, I guess";
+			mes "we gotta help each other, right?";
+			mes "All right then, I'll see ya around.";
+			additem 7252,1;
+			set  Docs_Medicine = 6;
+			close;
+	Started2:
+		mes "Huh?";
+		mes "Haven't you gone";
+		mes "to City Hall yet?";
+		mes "Whaaaaat a lazy ass.";
+		next;
+		mes "[Jiang Xiayou]";
+		mes "Shouldn't you hurry to get that";
+		mes "medicine to the doc? We're talking";
+		mes "a man's live at stake, that mean";
+		mes "anything to you?";
+		next;
+		mes "[Jiang Xiayou]";
+		mes "I guess you're";
+		mes "the forgetful type...";
+		mes "When the guy asks what";
+		mes "you need, you tell him";
+		mes "'^FF0000Communication Proposal^000000.'";
+		next;
+		mes "[Jiang Xiayou]";
+		mes "Just like that";
+		mes "Now, do to it, tiger.";
+		close;
+	Started:
+		mes "Huh?";
+		mes "What, what are you doing here?";
+		mes "If you don't need anything, you";
+		mes "better get a move on.";
+		next;
+		mes "[Jiang Xiayou]";
+		menu "Sorry about that",-,"It's hot, isn't it?",Hot,"I am on an errand for the doctor",Errand;
+			mes "That's right!";
+			mes "You don't mess with a person in";
+			mes "this hot weather! Now, go away.";
+			mes "Can't you see I'm busy!";
+			close;
+		Hot:
+			mes "You don't have to";
+			mes "ask me that. I can feel";
+			mes "it for myself! Now, I got";
+			mes "a bunch of things to take";
+			mes "care of, so quit bugging me.";
+			mes "Damn, it's hot!";
+			close;
+		Errand:
+			mes "Oh yeah?";
+			mes "Well, why didn't you";
+			mes "say so? Let's see.";
+			mes "Hmmmm...";
+			next;
+			emote 0;
+			next;
+			mes "[Jiang Xiayou]";
+			mes "Actually, could you help me";
+			mes "out first? Don't worry, it's not so";
+			mes "hard but it's pretty important for";
+			mes "me. Once you help me out, I'll";
+			mes "get you what you need.";
+			next;
+			menu "Um, what is it?",-,"Sorry, I'm busy.",Sorry;
+				mes "[Jiang Xiayou]";
+				mes "Cool, thanks. I have to go get";
+				mes "some official documents from";
+				mes "City Hall, but I can't leave this";
+				mes "storage area since no one can take";
+				mes "over my shift.";
+				next;
+				mes "[Jiang Xiayou]";
+				mes "So I want you to go get the";
+				mes "documents from City Hall for me.";
+				mes "I don't think it'll take much of";
+				mes "your time.";
+				next;
+				mes "[Jiang Xiayou]";
+				mes "Just go East from here";
+				mes "and look for the building that";
+				mes "looks sort of like it was made in";
+				mes "gauge form. That's City Hall.";
+				next;
+				mes "[Jiang Xiayou]";
+				mes "I don't get why the government";
+				mes "spent so much money making that";
+				mes "building, but anyway, I hope you";
+				mes "can do that for me.";
+				next;
+				mes "[Jiang Xiayou]";
+				mes "Oh, I almost forgot.";
+				mes "You have to ask for a specific type";
+				mes "of document, so let me tell you";
+				mes "right now.";
+				next;
+				mes "[Jiang Xiayou]";
+				mes "This is important,";
+				mes "so don't forget this";
+				mes "When the guy asks what you need,";
+				mes "you tell him '^FF0000Communication";
+				mes "Proposal^000000.' Just like that?";
+				next;
+				mes "[Jiang Xiayou]";
+				mes "If you don't specify the";
+				mes "documents you need, they won't give";
+				mes "you anything. So be careful";
+				mes "and don't forget!";
+				set  Docs_Medicine = 3;
+				close;
+		Sorry:	
+			mes "Bah~!";
+			mes "Forget it, then!";
+			next;
+			mes "[Jiang Xiayou]";
+			mes "The medicines you're looking for";
+			mes "might be around here, so look";
+			mes "around. If it weren't for the";
+			mes "doctor, I wouldn't even let you";
+			mes "hang around, you know that?";
+			close;
+Talk:
+	mes "^808080*Yawn...*^000000";
+	mes "This is boring...";
+	mes "So boring, it's ridiculous. I don't";
+	mes "wanna waste any more time here";
+	mes "I've got important things to do...";
+	close;
+}
+
+lou_in02.vhm,197,170,0	script	"Supply Stack"	111,{
+	scriptlabel Supply_Stack;
+	mes "^0000FFThere are many things piled up to";
+	mes "the cealing. Since there is too";
+	mes "much stuff jumbled together. it";
+	mes "doesn't seem possible that you'll";
+	mes "find anything in this stack^000000";
+	next;
+	mes "[Jiang Xiayou]";
+	mes "Hey, don't toucha nything! If you";
+	mes "mess anything up, you've gotta pile";
+	mes "it up again, got it? If youdon't";
+	mes "want to clean up after yourself";
+	mes "don't make a mess!";
+	close;
+}
+lou_in02.vhm,191,169,0	script	"Supply Stack"	111,{
+	script Supply_Stack;
+}
+lou_in02.vhm,206,163,0	script	"Supply Stack"	111,{
+	script Supply_Stack;
+}
+lou_in02.vhm,204,168,0	script	"Supply Stack"	111,{
+	script Supply_Stack;
+}
+lou_in02.vhm,207,168,0	script	"Supply Stack"	111,{
+	script Supply_Stack;
+}
+
+//============================================================
+// City Hall
+//============================================================
+lou_in02.vhm,210,47,1	script	"City Hall Officer"	825,{
+	mes "[Jin Chiyuan]";
+	check Docs_Medicine = 3,Started,-;
+	check Docs_Medicine = 4,Started2,-;
+	check Docs_Medicine > 4,-,Talk;
+		mes "Ah~";
+		mes "You met him,";
+		mes "didn't you?";
+		mes "Hahaha...";
+		mes "Enjoy your stay";
+		mes "in Louyang!";
+		emote 18;
+		close;
+	Started2:
+		mes "Haven't you met the officer I told you";
+		mes "about? I've contacted him about";
+		mes "the matter, so you may meet him";
+		mes "upstairs.";
+		next;
+		mes "[Jin Chiyuan]";
+		mes "Hahahaha...";
+		mes "Take care,";
+		mes "Rune-Midgardian.";
+		close;
+	Started:
+		mes "Hm? A Rune-Midgardian?";
+		mes "Now, how may I help you?";
+		next;
+		menu "I need a document",-,"I just dropped by",Cancel;
+			mes "[Jin Chiyuan]";
+			mes "Ah, you do?";
+			mes "Unfortunately, there are many";
+			mes "people waiting in line to procure";
+			mes "government forms, so it will take";
+			mes "a while to handle your request.";
+			next;
+			mes "[Jin Chiyuan]";
+			mes "*Whispers*";
+			mes "Well, there is a way that you can,";
+			mes "shall we say, expediate our";
+			mes "processing your request...";
+			next;
+			menu "Huh? Come again?",-,"A little zeny to cut the red tape, eh?",Bribe;
+				mes "[Jin Chiyuan]";
+				mes "^808080*Ahem!*^000000 Nothing.";
+				mes "Nothing of importance. Now, I'm";
+				mes "very busy, so if you would go fill";
+				mes "out the application over there...";
+				close;
+			Bribe:
+				input @bribe;
+				check @bribe == 10000,Enough,-;
+				Not_Enough:
+					mes "[Jin Chiyuan]";
+					mes "Good lord,";
+					mes "what are you thinking?";
+					mes "What am I, a beggar?!";
+					mes "That's a poor excuse";
+					mes "for a bribe!";
+					next;
+					mes "[Jin Chiyuan]";
+					mes "I mean....";
+					mes "How dare you bribe an officer of";
+					mes "the law! I hope other outsiders are";
+					mes "not like you! Please leave";
+					mes "immediately!";
+					emote 32;
+					close;
+				Enough:
+					check Zeny >= 10000,-,Not_Enough;
+					mes "[Jin Chiyuan]";
+					mes "What...?!";
+					mes "Whats not what I meant,";
+					mes "but if you insist on donating to";
+					mes "our government...";
+					next;
+					mes "[Jin Chiyuan]";
+					mes "^808080*Whispers*^000000";
+					mes "When you go upstairs, another";
+					mes "officer will give you the document";
+					mes "you want. *Ahem* Louyang thanks";
+					mes "you!";
+					set  Docs_Medicine = 4;
+					set Zeny - 10000;
+					close;
+		Cancel:
+			mes "[Jin Chiyuan]";
+			mes "Oh well...";
+			mes "Let me tell you that this is not a";
+			mes "good time for tourists. I hope you";
+			mes "don't wander into places you're";
+			mes "not supposed to be.";
+			next;
+			mes "[Jin Chiyuan]";
+			mes "Quite frankly,";
+			mes "it's a dangerous climate for";
+			mes "curiosity right now. Please,";
+			mes "be careful.";
+			close;
+Talk:
+	mes "[Jin Chiyuan]";
+	mes "^808080*Yawn~*^000000";
+	mes "Gosh, this hot weather is such";
+	mes "a pain. Oh? You look like a";
+	mes "tourist. Are you enjoying your";
+	mes "stay?";
+	next;
+	mes "[Jin Chiyuan]";
+	mes "Although we've been having bad";
+	mes "weather recently, there are many";
+	mes "good places to visit in Louyang.";
+	mes "I hope you have a good time.";
+	close;
+}
+
+lou_in02.vhm,156,38,1	script	"Studying Officer"	822,{
+	mes "[Huang Zhishu]";
+	check Docs_Medicine = 4,Started,-;
+	check Docs_Medicine >= 5,-,Talk;
+		mes "Hmmm...?";
+		mes "Do you think i need to go outside";
+		mes "more often? Well, I guess for some";
+		mes "reason, I don't feel well. I guess";
+		mes "I really should get some fresh air.";
+		mes "^808080*Yawn...*^000000";
+		next;
+		mes "[Huang Zhishu]";
+		mes "But you should get out more often";
+		mes "yourself. It's not a good idea to";
+		mes "always stay home. If you don't get";
+		mes "some exercise when you're young,";
+		mes "it could affect your health later.";
+		close;
+	Started:
+		mes "Huh?";
+		mes "What are you doing here?";
+		mes "Please don't disturb me,";
+		mes "I'm trying to study.";
+		next;
+		mes "^0000FF*Rummage rummage...*^000000";
+		next;
+		menu "Sorry about that.",-,"I came to pick up my documents.",Documents;
+			mes "[Huang Zhishu]";
+			mes "Apology accepted.";
+			mes "Hmmmm...";
+			mes "Oh I see, I see...";
+			next;
+			mes "^0000FF*Rummage rummage...*^000000";
+			mes "^0000FF......";
+			emote 0;
+			close; 
+		Documents:
+			mes "[Huang Zhishu]";
+			mes "Huh?";
+			mes "Ah...";
+			mes "You're the one I'm waiting for.";
+			mes "So what kind of document";
+			mes "did you need?";
+			//input @document_string
+			next;
+			//check @document_string = "Communication Proposal",-,-;
+			mes "[Huang Zhishu]";
+			mes "Let's see now.";
+			mes "You want...";
+			//mes "a $[@document_string]?";
+			next;
+			mes "[Huang Zhishu]";
+			mes "Now where did I put that? You want";
+			mes "a Communication Proposal, huh? I";
+			mes "think I'll need some time to find";
+			mes "it. Ah, right. I think I know where";
+			mes "I put that.";
+			next;
+			mes "...";
+			next;
+			mes "...";
+			mes ".....";
+			next;
+			mes "...";
+			mes ".....";
+			mes ".......";
+			next;
+			mes "...";
+			mes ".....";
+			mes ".......";
+			mes ".........";
+			next;
+			mes "...";
+			mes ".....";
+			mes ".......";
+			mes ".........";
+			mes "............";
+			next;
+			mes "[Huang Zhishu]";
+			mes "Here it is. Someone asked me for";
+			mes "the same document a few days ago";
+			mes "so I was able to find it again";
+			mes "pretty easily. I hope it's useful";
+			mes "to you.";
+			set  Docs_Medicine = 5;
+			close;
+Talk:
+	mes "^808080....^000000";
+	mes "^808080Mumble mumble^000000";
+	next;
+	mes "^0000FFHe appears to be";
+	mes "rummaging around for";
+	mes "some documents and takes";
+	mes "no notice of you^000000";
+	next;
+	menu "Excuse me",-,"Pass Him",Pass;
+		mes "[Huang Zhishu]";
+		mes "Hmmm...?";
+		mes "Well...";
+		mes "...";
+		mes "I see...";
+		mes "^808080Mumble mumble^000000";
+		close;
+	Pass:
+		mes "[Huang Zhishu]";
+		mes "^808080......^000000";
+		mes "^808080Mumble mumble^000000";
+		close;
+}
+
+//============================================================
+// Observation Tower
+//============================================================
+lou_in01.vhm,25,23,4	script	"Friendly Looking Lady"	817,{
+	mes "[Hong Miao]";
+	mes "Welcome.";
+	next;
+	mes "[Hong Miao]";
+	mes "This is an elevator which leads";
+	mes "to the Observation Tower. We are";
+	mes "providing you a safe and fast";
+	mes "transfer service for an affordable";
+	mes "fee. Would you like to use this ";
+	mes "service?";
+	next;
+	menu Information,-,Yes,Yes,"Maybe next time.",Next_Time;
+		mes "[Hong Miao]";
+		mes "After many suggestions and";
+		mes "proposals were sent to the Louyang";
+		mes "tourism office, the Observation";
+		mes "Tower was built do tourists";
+		mes "can enjoy the sights.";
+		next;
+		mes "[Hong Miao]";
+		mes "Due to the geographical";
+		mes "features of Louyang, it's difficult";
+		mes "to enjoy the breath taking view";
+		mes "that our land has to offer.";
+		next;
+		mes "[Hong Miao]";
+		mes "You can come up to the tower by";
+		mes "taking the elevator right here. We";
+		mes "are providing this quick and safe";
+		mes "transfer service for 500 zeny per";
+		mes "person.";
+		close;
+	Yes:
+		mes "[Hong Miao]";
+		mes "Thank for your patronage.";
+		mes "We are trying to provide you with";
+		mes "the best service, Please";
+		mes "come again.";
+		next;
+		set Zeny - 500;
+		warp lou_in01,16,19;
+	Next_Time:
+		mes "[Hong Miao]";
+		mes "Please come";
+		mes "back later.";
+		mes "Have a good day.";
+		close;
+}
+
+louyang.vhm,84,253,0	script	"Exit"	111,{
+	mes "^0000FFThere is some sort";
+	mes "of descent apparatus.";
+	mes "Would you like to use it?^000000";
+	next;	
+	menu Yes,-,No,No;
+		warp lou_in01,10,18;
+	No:
+		close;
+}
+
+//============================================================
+// Inside
+//============================================================
+lou_in02.vhm,77,37,7	script	"Hermit"	824,{
+	mes "[Sun Mao]";
+	check event_freedom = 1,-,Talk;
+		mes "You made a party. Now, why don't";
+		mes "you go recruit more followers? For";
+		mes "now, just add one more person, lest";
+		mes "we arouse the suspicion of our";
+		mes "enemies.";
+		close;
+Talk:
+	mes "Where there's a will,";
+	mes "there's a way. When we";
+	mes "work together, there's";
+	mes "nothing we cannot do.";
+	next;
+	mes "[Sun Mao]";
+	mes "Will you lend us your power, and";
+	mes "help us build a better future? Will";
+	mes "you join our movement for social";
+	mes "reform in Louyang?";
+	next;
+	mes "[Sun Mao]";
+	mes "It doesn't matter if you're a local";
+	mes "or a foreigner, so long as we share";
+	mes "the same goal of creating a better";
+	mes "Louyang, where everyone is treated";
+	mes "as an equal.";
+	next;
+	mes "[Sun Mao]";
+	mes "My name...";
+	mes "is Sun Mao.";
+	mes "This invitation may be sudden, but";
+	mes "I am a man of action. I see in your";
+	mes "face that you too despise";
+	mes "injustice.";
+	next;
+	menu "What am I supposed to do?",-,"I will join you!",Join,"Well, I'm just another tourist...",Tourist;
+		mes "[Sun Mao]";
+		mes "For now, we must recruit as many";
+		mes "members as we can. When we're";
+		mes "ready, we'll start a movement that";
+		mes "will change Louyang, and even the";
+		mes "world!";
+		next;
+		mes "[Sun Mao]";
+		mes "However, we currently do not have";
+		mes "the manpower to carry out the plans";
+		mes "we have laid out. We've been lucky";
+		mes "the lord hasn't found us yet.";
+		next;
+		mes "[Sun Mao]";
+		mes "I wish everyone would understand";
+		mes "out intentions, but the people of";
+		mes "this city are disunited. This is";
+		mes "not the first time I have";
+		mes "approached a foreigner for help...";
+		next;
+		mes "[Sun Mao]";
+		mes "I suppose you understand the";
+		mes "urgency of our cause, and our need";
+		mes "to gather others who see the merit";
+		mes "of our goals.";
+		close;
+	Join:
+		mes "[Sun Mao]";
+		mes "Oh, God must be on my side today";
+		mes "and has sent you to me. Thank you";
+		mes "for making the big decision...";
+		next;
+		mes "[Sun Mao]";
+		mes "I shall then engrave your name";
+		mes "on this blooby pledge board. But";
+		mes "before I do so, I shall ask once";
+		mes "more. Do you truly wish to join us,";
+		mes "though pain and bloodshed?";
+		next;
+		menu "No, wait!",-,"I am 100% sure.",Yes;
+			mes "[Sun Mao]";
+			mes "I understand if you need time to";
+			mes "decide. If you do decide to join";
+			mes "us, please return. Time on our";
+			mes "side, after all.";
+			close;
+		Yes:
+			mes "[Sun Mao]";
+			mes "$charaname...!";
+			mes "Your name is now engraved on this";
+			mes "bloody pledge board. We will fight";
+			mes "together to the death for Louyang's";
+			mes "Future!";
+			next;
+			mes "[Sun Mao]";
+			mes "Now, the most important thing for";
+			mes "our cause is to gather more";
+			mes "recruits and increase our numbers.";	
+			mes "Please find others who will join us";
+			mes "in our fight.";
+			next;
+			mes "[Sun Mao]";
+			mes "However, as to not arouse";
+			mes "suspicion, bring only one new";
+			mes "recruit at a time. Also, we suggest";
+			mes "not to bring a friend in party";
+			mes "with you.";
+			next;
+			mes "[Sun Mao]";
+			mes "Now, I will wait for you here. So";
+			mes "forth and find others who wish for";
+			mes "a better future for Louyang!";
+			set event_freedom = 1;			
+			close;
+	Tourist:
+		mes "[Sun Mao]";
+		mes "Are you...? I see, you may leave";
+		mes "now. Do not reveal what you have";
+		mes "seen or heard in this place";
+		next;
+		mes "[Sun Mao]";
+		mes "If you're a real tourist, you do";
+		mes "now want to get involved in our";
+		mes "business, one way or another.";
+		close;
+}
+
+lou_in02.vhm,122,38,4	script "Poison King"	824,{
+	mes "[Nagash Arses]";
+	mes "It's been 40 years since I came";
+	mes "here. Hahaha, but it doesn't feel";
+	mes "like it's been that long.";
+	next;
+	mes "[Nagash Arses]";
+	mes "In the past, I was one of the";
+	mes "most renowned experts in the use";
+	mes "of poison. I even created a martial";
+	mes "art based on it's use, and formed my";
+	mes "own martial arts organization.";
+	next;
+	mes "[Nagash Arses]";
+	mes "Now, those memories";
+	mes "don't even seem real";
+	mes "anymore. This poem is";
+	mes "all I can remember...";
+	next;
+	mes "[Nagash Arses]";
+	mes "As I lay in bed looking";
+	mes "up at the moonlight,";
+	mes " ";
+	mes "It looks like the ";
+	mes "frost on the ground.";
+	next;
+	mes "[Nagash Arses]";
+	mes "I lift head up to look";
+	mes "at the bright moon,";
+	mes " ";
+	mes "I lower my head";
+	mes "feeling homesick.";
+	next;
+	check quest_poison = 2,Chat2,-;
+		menu "Grin at him.",-,"Lament on his grief.",Grief,"Reprove him.",Reprove,"Listen to the poem again.",Again,"Show him a sad look.",Sad_Face;
+			mes "[Nagash Arses]";
+			mes "Yeah, I don't blame you.";
+			mes "I know I look stupid. Legally,";
+			mes "I'm a criminal after all.";
+			mes "I don't have any friends and";
+			mes "there's no one I can trust.";
+			close;
+		Grief:
+			mes "[Nagash Arses]";
+			mes "How can you sympathize?";
+			mes "I doubt anyone has had";
+			mes "experiences that are";
+			mes "much worse than mine...";
+			close;
+		Reprove:
+			mes "What--? I haven't wrongers you in any";
+			mes "way! Why must you be so mean to an";
+			mes "old man? You don't even know half";
+			mes "of what I've gone though.";
+			close;
+		Again:
+			mes "[Nagash Arses]";
+			mes "As I lay in bed looking";
+			mes "up at the moonlight,";
+			mes " ";
+			mes "It looks like the ";
+			mes "frost on the ground.";
+			next;
+			mes "[Nagash Arses]";
+			mes "I lift head up to look";
+			mes "at the bright moon,";
+			mes " ";
+			mes "I lower my head";
+			mes "feeling homesick.";
+			close;
+		Sad_Face:
+			mes "[Nagash Arses]";
+			mes "Do you miss your hometown";
+			mes "as much as I do? I'm envious";
+			mes "of you, youngster. You have";
+			mes "the freedom to go";
+			mes "wherever you want.";
+			next;
+			mes "[Nagash Arses]";
+			mes "I'm a wanted criminal.";
+			mes "Even if I were free to";
+			mes "travel, I may not have";
+			mes "the strength to try.";
+			next;
+			mes "[Nagash Arses]";
+			mes "Let's not talk about this any";
+			mes "longer. It's reminded me of";
+			mes "my worst memories.";
+			next;
+			mes "[Nagash Arses]";
+			mes "I'm too old to remember anything.";
+			mes "Ha ha ha. Maybe if I saw something";
+			mes "related to poison, I might remember";
+			mes "something.";
+			next;
+			mes "[Nagash Arses]";
+			mes "...";
+			next;
+			mes "[Nagash Arses]";
+			mes "No, no...";
+			mes "I think I'm too old";
+			mes "to remember anything.";
+			mes "Anything at all.";
+			close;
+	Chat2:
+		menu "Ask about the poem.",-,"Ask about his hometown.",Ask_Hometown,"Ask him about use of poison.",Ask_Poison,"Ask about his situation.",Ask_Situation;
+			set @PQcount = 0;
+			mes "[Nagash Arses]";
+			mes "Ah, have you";
+			mes "heard of this poem?";
+			mes "As I grow older, my";
+			mes "memory also drows worse,";
+			mes "but I really like this poem";
+			mes "and don't want to forget it.";
+			next;
+			mes "[Nagash Arses]";
+			mes "I hope you don't";
+			mes "mind helping me";
+			mes "memorize this poem...";
+			next;
+		RandomPQ:
+				random @PQ 13;
+			mes "[Nagash Arses]";
+				check @PQ == 1 PQ_1 -;
+				check @PQ == 2 PQ_2 -;
+				check @PQ == 3 PQ_3 -;
+				check @PQ == 4 PQ_4 -;
+				check @PQ == 5 PQ_5 -;
+				check @PQ == 6 PQ_6 -;
+				check @PQ == 7 PQ_7 -;
+				check @PQ == 8 PQ_8 -;
+				check @PQ == 9 PQ_9 -;
+				check @PQ == 10 PQ_10 -;
+				check @PQ == 11 PQ_11 -;
+				check @PQ == 12 PQ_12 -;
+			mes "^0000FF'It looks like the [] on the";
+			mes "ground.'^000000 In the second line, which";
+			mes "word should be in [ ]?";
+			next;
+			menu "Frost" ChkPQCount "Dew" ChkPQCount "Peddles" ChkPQCount "Snow" ChkPQCount;
+		PQ_1:
+			mes "^0000FFI lower my head feeling [ ].^000000'";
+			mes "Which word should be in [ ]?";
+			next;
+			menu "Homesick" ChkPQCount "Drowsy" ChkPQCount "Loneliness" ChkPQCount "Heartbroken" ChkPQCount;
+		PQ_2:
+			mes "^0000FF'I lift my [ ] to look at the";
+			mes "bright moon.'^000000 In the third line,";
+			mes "which word should be in [ ]?";
+			next;
+			menu "eyes" ChkPQCount "head" ChkPQCount "gaze" ChkPQCount "sights" ChkPQCount;
+		PQ_3:
+			mes "^0000FF'As I lay [ ] looking up at the";
+			mes "moonlight.'^000000 In this first line,";
+			mes "what word should bein [ ]?";
+			next;
+			menu "on the ground" ChkPQCount "with you" ChkPQCount "in bed" ChkPQCount "in the stars" ChkPQCount;
+		PQ_4:
+			mes "in the first two lines, what";
+			mes "is being linked by the poet?";
+			next;
+			menu "Bed and ground." ChkPQCount "Frost and hometown." ChkPQCount "Gloomy." ChkPQCount "Smokey." ChkPQCount "Moonlight and Frost." ChkPQCount;
+		PQ_5:
+			mes "In this land, the image of the moon";
+			mes "often appears in poems expressing";
+			mes "seperation, longing and";
+			mes "homesickness. Why would gazing at";
+			mes "the moon offer comfort?";
+			next;
+			menu "The rabbit ont he moon grants wishes." ChkPQCount "It's sheer beauty eases anxiety" ChkPQCount "Because it wanes and wxes" ChkPQCount "All people and places share hte same moon" ChkPQCount;
+		PQ_6:
+			mes "Ha ha ha! You understand this poem";
+			mes "well! Now, would you repeat the";
+			mes "third line for me again?";
+			next;
+			menu "I look upon the bright moon" ChkPQCount "I lift my head to look at the bright moon." ChkPQCount "I turn my head to look at the bright moon." ChkPQCount "I face the bright moon." ChkPQCount;
+		PQ_7:
+			mes "According to the poem,";
+			mes "where is the location";
+			mes "of the speaker as he is";
+			mes "gazing at the moon?";
+			next;
+			menu "In his hometown" ChkPQCount "In jail" ChkPQCount "In the depths of the cosmos." ChkPQCount "In bed" ChkPQCount;
+		PQ_8:
+			mes "Although this poem is only four";
+			mes "lines long, it's structure can be";
+			mes "easily classified. How would you";
+			mes "describe this poem's structure?";
+			next;
+			menu "Why it's a sonnet" ChkPQCount "It's a prose with erratic caesuras" ChkPQCount "It's a quatrain of course" ChkPQCount "Lambic Pentameter?" ChkPQCount;
+		PQ_9:
+			mes "What do you think is the major";
+			mes "theme of this poem?";
+			next;
+			menu "Tragedy" ChkPQCount "Seperation" ChkPQCount "Love" ChkPQCount "Revenge" ChkPQCount "Buddy Cop Film" ChkPQCount;
+		PQ_10:
+			mes "Why might be one reason why the";
+			mes "bright moonlight looks like frost";
+			mes "on the ground to the poet?";
+			next;
+			menu "He's looking though a frosty window" ChkPQCount "A bright moon glimmers like icicles" ChkPQCount "He's homesick, so the moonlight looks cold." ChkPQCount "It's called 'Poetic Lisense.'" ChkPQCount;
+		PQ_11:
+			mes "How would you describe the overall";
+			mes "mood and tone of the speaker of";
+			mes "this poem?";
+			next;
+			menu "Romantic" ChkPQCount "Wistful" ChkPQCount "Regretful" ChkPQCount "Passionate" ChkPQCount;
+		PQ_12:
+			mes "Ha ha ha! You undestand this poem";
+			mes "well! Now, would you repeat the";
+			mes "first line for me again?";
+			next;
+			menu "When I lay in bed looking up at the moonlight" - "When I lay in bed thinking of the moonlight" - "As I lay in bed looking up at hte moonlight" - "As I lay in bed thinkiing of the moonlight" -;
+			ChkPQCount:
+				set @PQcount + 1;
+				check @PQcount >= 4 - RandomPQ;
+			mes "[Nagash Arses]";
+			mes "Thank you for yout time,";
+			mes "youngster. Oh, and this is";
+			mes "an old, famous poem written";
+			mes "by Li Tai Bai. You know that,";
+			mes "don't you?";
+			close;
+		Ask_Hometown:
+			mes "[Nagash Arses]";
+			mes "Are you asking me";
+			mes "about my hometown...?";
+			mes "As a Rune-Midgardian,";
+			mes "I'm sure you've at least";
+			mes "heard of Morroc...";
+			next;
+			mes "[Nagash Arses]";
+			mes "A city built in the middle of the";
+			mes "desert, its founders had to combat";
+			mes "the harsh and unforgiving forces of";
+			mes "nature everyday.";
+			next;
+			Q_Set-1:
+				mes "[Nagash Arses]";
+				check quest_poison = 3,-,Q_Set-2;
+				mes "Yeah, the blazing sun never";
+				mes "seems to leave, and it's a dry,";
+				mes "desert area, but people still";
+				mes "manage to live there.";
+				next;
+				mes "[Nagash Arses]";
+				mes "Ah~ I miss Morroc, my hometown.";
+				mes "I used to be a member of the";
+				mes "Assassin organization known as the";
+				mes "'Canine of Desert.' Long ago, I was";
+				mes "their poison expert.";
+				next;
+				mes "[Nagash Arses]";
+				menu "Tell him news of Morroc",Tell_News,"Info about 'Canine of Desert’",Info_Canine,"Just listen",Just_Listen;
+			Q_Set-2:
+				menu "Tell him news of Morroc",Tell_News,"Info about 'Canine of Desert’",Info_Canine;
+			Tell_News:
+				//Dialog
+				close;
+			Info_Canine:
+				//Dialog
+				close;
+			Just_Listen:
+				mes "I tried Many things to develop my";
+				mes "poison skills when I was young.";
+				mes "I tried to extract poison from";
+				mes "Muka's needles and from purple";
+				mes "mushrooms. Eventually, I became";
+				mes "an expert of toxins from my";
+				mes "efforts. ";
+				next;
+				mes "[Nagash Arses]";
+				mes "One time I even injected";
+				mes "a poison into my own body";
+				mes "to fully test it. Yeah...";
+				mes "It almost killed me.";
+				next;
+				mes "[Nagash Arses]";
+				mes "I was recognized as the man who";
+				mes "was most highly skilled in the use";
+				mes "of poison in the 'Canine of";
+				mes "Desert,' and I was sent on the most";
+				mes "crucial and dangerous missions.";
+				next;
+				mes "[Nagash Arses]";
+				mes "One day, I was hired by the Alberta";
+				mes "Merchant Guild to assassinate an";
+				mes "enemy that had been threatening";
+				mes "them. However, I never got to";
+				mes "complete that missions.";
+				next;
+				mes "[Nagash Arses]";
+				mes "While I was on the ship to proceed";
+				mes "with my mission, we encountered";
+				mes "heavy wind and waves, and the ship";
+				mes "sank. I believe I was the only";
+				mes "survivor of that accident.";
+				next;
+				mes "[Nagash Arses]";
+				mes "I was floated helplessly on the";
+				mes "ocean and somehow managed";
+				mes "to arrive here, in Louyang. That";
+				mes "was forty years ago.";
+				next;
+				mes "[Nagash Arses]";
+				mes "It seemed that my arrival was";
+				mes "rather timely. Louyang was intruded";
+				mes "by huge mobs of dangerous monsters";
+				mes "that were able to infiltrate";
+				mes "the Castle of the Dragon.";
+				next;
+				mes "[Nagash Arses]";
+				mes "Since I was one of the best";
+				mes "assassins of the 'Canine of";
+				mes "Desert.’ I did far more than my";
+				mes "share fair of monster killing.";
+				next;
+				mes "[Nagash Arses]";
+				mes "It was on the battlefield that";
+				mes "I met Bai Long who is now the Lord of";
+				mes "this town. But back then, he was";
+				mes "known as the 'Street Knight.'";
+				next;
+				mes "[Nagash Arses]";
+				mes "I remember seeing him surrounded";
+				mes "by enemies, and I dove into thick";
+				mes "of battle to keep him from getting";
+				mes "killed. We fought back to back and";
+				mes "managed to stay alive back then.";
+				next;
+				mes "[Nagash Arses]";
+				mes "You have to understand that it's";
+				mes "not easy to let someone back you";
+				mes "up in battle unless there's a solid";
+				mes "trust. Those sights... where the";
+				mes "greatest moments in my life.";
+				next;
+				mes "[Nagash Arses]";
+				mes "Sadly, Many of our comrades,";
+				mes "all of them respectable and highly";
+				mes "skilled in martial artists, fell in";
+				mes "battle. The number of monsters we";
+				mes "had to contend with was just";
+				mes "overwhelming.";
+				next;
+				mes "[Nagash Arses]";
+				mes "Still, I manage to continue my";
+				mes "poison research, even during those";
+				mes "tough times. I studied medicine in";
+				mes "this town and was able to use that";
+				mes "knowledge to enhance my";
+				mes "understanding of poisons.";
+				next;
+				mes "[Nagash Arses]";
+				mes "I created a new skill based on all";
+				mes "of my knowledge, and learned how";
+				mes "to put poison on weapons.";
+				next;
+				mes "[Nagash Arses]";
+				mes "I even learned martial arts in";
+				mes "Louyang, and combined that";
+				mes "knowledge with my poison expertise";
+				mes "to create my own unique fighting";
+				mes "style.";
+				next;
+				mes "[Nagash Arses]";
+				mes "Well, that's my story.";
+				mes "But now, I just miss my";
+				mes "home town. I miss the heat";
+				mes "of the desert, and the glare";
+				mes "of the blazing sun.";
+				set quest_poison = 3;
+				close;
+		Ask_Poison:
+			mes "[Nagash Arses]";
+			mes "Did you just say you";
+			mes "want to learn about the";
+			mes "use of poison?";
+			next;
+			mes "[Nagash Arses]";
+			mes "Why would you want";
+			mes "to learn about it?";
+			mes "Even if I wanted to";
+			mes "teach, I'm too old to";
+			mes "remember everything";
+			mes "clearly...";
+			close;
+		Ask_Situation:
+			mes "You're asking me how";
+			mes "things came to be like";
+			mes "this? Life used to be good.";
+			next;
+			mes "[Nagash Arses]";
+			mes "Ah I told you, I distinguished";
+			mes "myself in the battles with";
+			mes "monsters. I was rewarded with";
+			mes "Louyang citizenship and given";
+			mes "gifts of money.";
+			next;
+			mes "[Nagash Arses]";
+			mes "I was invited to join a martial";
+			mes "arts organization that specialized";
+			mes "in the use of poison. I joined";
+			mes "them, excited about further";
+			mes "broadening my knowldege.";
+			next;
+			mes "[Nagash Arses]";
+			mes "I was stunned by the enormous body";
+			mes "of knowledge about toxins that they";
+			mes "provided. I tried to learn as much";
+			mes "as I could so I could develop my";
+			mes "own, unique poisoning skills.";
+			next;
+			mes "[Nagash Arses]";
+			mes "As I studied with them, together we";
+			mes "started to clear the town of the";
+			mes "remaining monsters. Can you guess";
+			mes "the results of our effors to clean";
+			mes "up the city?";
+			next;
+			mes "[Nagash Arses]";
+			menu "..??",-,"It must have been good.",Went_Good,"I guess it was okay.",Went_Okay,"I don't know, but how did it go?",Dont_Know;
+				mes "Did you even listen to me? It's no";
+				mes "use talking to you if you don't";
+				mes "even care about what I have to";
+				mes "say.";
+				next;
+				mes "[Nagash Arses]";
+				mes "I'm sorry for keeping you from what";
+				mes "you wanted to do. Take care of";
+				mes "yourself, youngster.";
+				close;
+			Went_Good:
+				//Dialog
+				close;
+			Went_Okay:
+				//Dialog
+				close;
+			Dont_Know:
+				//Dialog
+				close;
+}
+
+//===================================================================================
+//Louyang Field
+//===================================================================================
+lou_fild01.vhm,224,348,0	script	"Lady"	817,{
+	mes "[Lady]";
+	random @num,1;
+	check @num = 1,-,Other;
+		mes "You are now at the entrance of Louyang.";
+		next;
+		mes "[Lady]";
+		mes "Louyang is well known";
+		mes "for it's various fireworks.";
+		mes "Would you like to see one?";
+		next;
+		menu "Sure!",-,"No thanks~",Cancel;
+		mes "[Lady]";
+		mes "Alight, there you go!";
+		close;
+		//effect Explosion
+	Other:
+		mes "[Lady]";
+		mes "You're at the";
+		mes "entrance of Louyang.";
+		mes "I hope you enjoy";
+		mes "your stay here~";
+		emote 30;
+		close;
+		//effect Explosion
+	Cancel:
+		mes "[Lady]";
+		mes "Hmpf~!";
+		emote 9;
+		close;
+}
+
+//============================================================
+// Dragon Soup Broth quest
+//============================================================
+lou_fild01.vhm,195,177,4	script	"Jiu Lian Bu"	819,{
+	mes "[Jiu Lian Bu]";
+	check shout_explain = 1,-,Talk2;
+	mes "Hey~";
+	mes "So how ya been, ya smooth criminal?";
+	mes "You wanna visit that place again?";
+	menu "Sure, let's go~",-,"Naw, maybe next time.",Naw;
+		mes "[Jiu Lian Bu]";
+		mes "Ahhh...";
+		mes "All right, let's";
+		mes "get a groove on.";
+		warp lou_fild01,190,170;
+		close;
+	Naw:
+		mes "[Jiu Lian Bu]";		
+		mes "Not in he mood, eh?";
+		mes "No prob. But feel free";
+		mes "to some see me whenever";
+		mes "you want.";
+		close;
+Talk2:
+	check quest_soup > 1,-,Talk1;
+	mes "Wow! You made it!";
+	mes "Let me see...";
+	next;
+	mes "^0000FFJiu Lian Bu takes";
+	mes "a hearty sip of the";
+	mes "broth you managed";
+	mes "to steal for him.^000000";
+	next;
+		mes "[Jiu Lian Bu]";
+		check quest_soup <= 3,-,Right;
+		mes "Ohhh man...";
+		mes "This is sooooo not Dragon Soup";
+		mes "broth. Sorry, but would you go";
+		mes "and try to get it again?";
+		close;
+	Right:
+		mes "Ohhh. Ooh yeah.";
+		mes "This is the stuff.";
+		mes "Muahahahahah~!";
+		mes "This'll put the chef";
+		mes "in agony for awhile!";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "Good job, chum! Heh heh heh,";
+		mes "because you risked your neck for";
+		mes "me, I'm gonna show you an awesome";
+		mes "place! Just follow me~";
+		set shout_explain = 1;
+		set quest_soup = 5;
+		warp lou_fild01,190,170;
+		close;
+	Talk1:
+		check quest_soup = 1,-,Talk;
+		mes "Huh...?";
+		mes "Whoa, I thought you were on your";
+		mes "way to the Restaurant. You better";
+		mes "get a move on,";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "All right them pal. Make sure the";
+		mes "guys who work there don't catch";
+		mes "you. Good luck~";
+		close;
+Talk:
+	mes "Hey~";
+	mes "What's up?";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "II don't like hanging around too";
+	mes "many people, so I came here.";
+	mes "Listening to this stream really";
+	mes "puts my mind at ease.";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "No offense, but I'm upset";
+	mes "at the sheer number up tourists";
+	mes "coming over to Louyang. Sure, I can";
+	mes "understand that our town is";
+	mes "attractive and has beautiful";
+	mes "sights.";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "But I just can't stand crowds of";
+	mes "people. People gather like sheep";
+	mes "to any place that they hear is";
+	mes "popular, and that really bugs me!";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "Speaking of which, there's even";
+	mes "a place in Louyang that's just like";
+	mes "that. Man, I hate that restaurant!";
+	next;
+	menu "What Restaurant?",-,"Ignore Him",Ignore;
+		mes "[Jiu Lian Bu]";
+		mes "West of Louyang, there's";
+		mes "a restaurant build on a bond. It's";
+		mes "been around for a long time,";
+		mes "selling food for ridiculous ";
+		mes "prices!";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "Oh sure, the food and flavors";
+		mes "there have a long history, but I";
+		mes "won't think that justifies how they";
+		mes "charge their patrons!";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "As a young man";
+		mes "who loves his town,";
+		mes "I can't let them manipulate my";
+		mes "people like that!";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "But everyone here knows who";
+		mes "I am, so I can't do anything! I've";
+		mes "already had one too many, shall we";
+		mes "say, 'incidents' with the people";
+		mes "living here already.";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "I've been caught tagging walls,";
+		mes "shoplifting, scamming, stealing a";
+		mes "few girlfriends... So yeah, I'm";
+		mes "not exactly known as a sterling";
+		mes "citizen.";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "Say, wait a minute. The local";
+		mes "people around here aren't too";
+		mes "familiar with you. Hmmmm...";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "Would you sneak into that";
+		mes "restaurant and steal the";
+		mes "Dragon Soup Broth for me?";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "The ^0000FFblue//Dragon Soup Broth^000000 is the";
+		mes "backbone for that restaurant";
+		mes "owner's secret recipe.";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "But they've been cheating their";
+		mes "customers by watering that broth";
+		mes "down and gelling it for a";
+		mes "ridiculous price! Serves them right";
+		mes "if their secret is stolen!";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "If you can steal some of the broth,";
+		mes "I'll pay you back. So whaddya say?";
+		next;
+		menu "I'll do it!",-,"No, stealing is wrong.",Decline;
+			mes "[Jiu Lian Bu]";
+			mes "Grrrrreat!";
+			mes "I knew you'd";
+			mes "see things my way!";
+			next;
+			mes "[Jiu Lian Bu]";
+			mes "Okay,t he restaurant is at the West";
+			mes "side of Louyang. But you gotta be";
+			mes "careful. The workers there watch";
+			mes "over that broth like freakin'";
+			mes "hawks~!";
+			next;
+			mes "[Jiu Lian Bu]";
+			mes "When you finally steal the broth,";
+			mes "make sure you bring it without";
+			mes "spilling any. Okay? Good luck~";
+			set quest_soup = 1;
+			close;
+		Decline:
+			mes "[Jiu Lian Bu]";
+			mes "Stealing?";
+			mes "You may have";
+			mes "a point there.";
+			next;
+			mes "[Jiu Lian Bu]";
+			mes "But then, that restaurant has been";
+			mes "doing that to their customers for";
+			mes "years! So, technically, we'd just be";
+			mes "stealing back.";
+			close;
+	Ignore:
+		mes "[Jiu Lian Bu]";
+		mes "That joint isn't even that great. I";
+		mes "mean, it's so obvious that they rip";
+		mes "off their customers! Dragon Soup?!";
+		mes "More like..Dragon Crap Soup!";
+		close;
+}
+
+lou_fild01.vhm,176,173,4	script	"Jiu Lian Bu"	819,{
+	emote 18;
+	mes "[Jiu Lian Bu]";
+		check shout_explain = 2,-,Explain;
+	mes "So..";
+	mes "Whaddya wanna do?";
+	next;
+	menu Shout,-,Leave,Leave;
+		mes "[Jiu Lian Bu]";
+		mes "Ready~!";
+		mes "Say it loud!";
+		next;
+		//message box prompt
+		//broadcast - lime green map broadcast.
+		mes "[$charaname]";
+		//mes "$[@text]";
+		next;
+		mes "[Jiu Lian Bu]";
+		mes "So, how do you feel?";
+		mes "Don't you feel better now? Hahaha~";
+		close;	
+	Leave:
+		mes "[Jiu Lian Bu]";
+		mes "Ahhh...";
+		mes "All right, let's";
+		mes "get a groove on.";
+		warp lou_fild01,200,174;
+		close;
+Explain:
+	mes "Wo...";
+	mes "Whaddya think?";
+	mes "Prettiest place";
+	mes "in Louyang, isn't it?";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "Whenever I'm depressed";
+	mes "or need to relax, I just sit here";
+	mes "and enjoy the breeze. It helps me";
+	mes "forget all my worries.";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "Heh heh, the best part is, this";
+	mes "place is far away from my older";
+	mes "sister. Man, that yeoman can nag,";
+	mes "nag, nag, all day long.";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "Why don't you sit down and close";
+	mes "your eyes, and feel that soothing";
+	mes "wind. It's pretty refreshin...";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "Also....";
+	mes "I'm a little";
+	mes "embarrassed to";
+	mes "say this but...";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "I'm the kind of guy who speaks his";
+	mes "mind. If there's something you just";
+	mes "wanna say, but can't, it's kind of";
+	mes "like poison in your mind.";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "You know what I'm talking about,";
+	mes "right? If you bottle something up";
+	mes "inside of you, it just causes you";
+	mes "anxiety you don't need.";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "So...";
+	mes "This is what you do.";
+	mes "Clentch your fist, take";
+	mes "a deep breath.";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "And just yell";
+	mes "whatever you want!";
+	mes "if you don't know the words, just";
+	mes "screaming will do.";
+	mes "Let everything out!";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "Ready~!";
+	mes "Say it loud!";
+	next;
+	//message box prompt
+	//broadcast - lime green map broadcast.
+	mes "[$charaname]";
+	//mes "$[@text]";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "So, how do you feel?";
+	mes "Don't you feel better now? Hahaha~";
+	next;
+	mes "[Jiu Lian Bu]";
+	mes "So from now on, whenever you";
+	mes "wanna relieve yourself of stress,";
+	mes "come see me and we'll come back to";
+	mes "this place. Call it my way of saying thanks.";
+	set shout_explain = 2;
+	close;
+}

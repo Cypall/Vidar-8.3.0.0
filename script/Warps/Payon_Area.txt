@@ -1,0 +1,267 @@
+//========================================================================================
+// Entrances 
+// - Updated by L0ne_W0lf
+//========================================================================================
+payon.vhm,122,27,0		warp	warp1049	5,3,pay_fild01.vhm,333,356
+pay_fild01.vhm,333,361,0	warp	warp0957	5,3,payon.vhm,122,31
+payon.vhm,227,330,0		warp	warp1055	4,2,pay_arche.vhm,81,22
+pay_arche.vhm,81,17,0		warp	warp0940	5,2,payon.vhm,227,326
+payon.vhm,268,87,0		warp	warp1056	2,4,pay_fild08.vhm,20,74
+pay_fild08.vhm,17,75,0		warp	warp0979	2,4,payon.vhm,265,93
+//========================================================================================
+
+//========================================================================================
+// Payon Archer Village, and Dungeon
+//========================================================================================
+pay_arche.vhm,36,131,0		warp	warp0938	2,2,pay_dun00.vhm,21,183
+pay_arche.vhm,71,156,0		warp	warp0939	2,2,payon_in02.vhm,82,41
+pay_arche.vhm,92,170,0		warp	warp0941	2,2,payon_in02.vhm,50,7
+pay_arche.vhm,145,165,0		warp	warp0942	2,2,payon_in02.vhm,64,60
+pay_dun00.vhm,21,186,0		warp	warp0943	2,2,pay_arche.vhm,39,131
+pay_dun00.vhm,184,33,0		warp	warp0944	2,7,pay_dun01.vhm,19,33
+pay_dun01.vhm,15,33,0		warp	warp0945	2,6,pay_dun00.vhm,181,33
+pay_dun01.vhm,286,25,0		warp	warp0946	2,7,pay_dun02.vhm,19,63
+pay_dun02.vhm,16,63,0		warp	warp0947	2,7,pay_dun01.vhm,283,28
+pay_dun02.vhm,137,128,0		warp	warp0948	4,1,pay_dun03.vhm,155,159
+pay_dun03.vhm,127,62,0		warp	warp0949	1,2,pay_dun04.vhm,201,204
+pay_dun03.vhm,155,161,0		warp	warp0950	2,1,pay_dun02.vhm,137,126
+pay_dun04.vhm,32,204,0		warp	warp0951	2,1,pay_dun03.vhm,125,62
+pay_dun04.vhm,40,37,0		warp	warp0952	2,2,pay_dun03.vhm,125,62
+pay_dun04.vhm,191,41,0		warp	warp0953	1,1,pay_dun03.vhm,125,62
+pay_dun04.vhm,202,206,0		warp	warp0954	1,1,pay_dun03.vhm,125,62
+//========================================================================================
+
+//========================================================================================
+// Payon Archer Village, and Dungeon
+//========================================================================================
+pay_fild01.vhm,13,152,0		warp	warp0955	2,7,moc_fild03.vhm,299,170
+pay_fild01.vhm,278,14,0		warp	warp0956	13,2,pay_fild02.vhm,83,382
+pay_fild01.vhm,353,14,0		warp	warp0958	20,3,pay_fild02.vhm,160,381
+pay_fild01.vhm,379,201,0	warp	warp0959	2,6,pay_fild07.vhm,23,207
+pay_fild02.vhm,16,175,0		warp	warp0960	2,4,pay_fild11.vhm,294,135
+pay_fild02.vhm,83,386,0		warp	warp0961	13,2,pay_fild01.vhm,278,18
+pay_fild02.vhm,134,16,0		warp	warp0962	5,2,pay_fild05.vhm,127,375
+pay_fild02.vhm,167,390,0	warp	warp0963	20,3,pay_fild01.vhm,354,18
+pay_fild02.vhm,284,108,0	warp	warp0964	2,7,pay_fild03.vhm,20,110
+pay_fild03.vhm,15,110,0		warp	warp0965	2,10,pay_fild02.vhm,280,108
+pay_fild03.vhm,172,281,0	warp	warp0966	5,2,pay_fild07.vhm,167,20
+pay_fild03.vhm,313,16,0		warp	warp0967	4,2,pay_fild06.vhm,305,372
+pay_fild03.vhm,392,63,0		warp	warp0968	2,7,alberta.vhm,19,233
+pay_fild04.vhm,17,165,0		warp	warp0969	2,8,moc_fild01.vhm,376,162
+pay_fild04.vhm,194,17,0		warp	warp0970	7,2,moc_fild02.vhm,350,336
+pay_fild05.vhm,127,378,0	warp	warp0971	4,2,pay_fild02.vhm,134,19
+pay_fild05.vhm,271,284,0	warp	warp0972	2,4,pay_fild06.vhm,31,288
+pay_fild06.vhm,28,288,0		warp	warp0973	2,2,pay_fild05.vhm,268,284
+pay_fild06.vhm,305,375,0	warp	warp0974	6,2,pay_fild03.vhm,313,19
+pay_fild07.vhm,16,200,0		warp	warp0975	3,3,pay_fild01.vhm,371,205
+pay_fild07.vhm,163,17,0		warp	warp0976	5,2,pay_fild03.vhm,177,275
+pay_fild07.vhm,280,382,0	warp	warp0977	4,2,pay_fild08.vhm,160,19
+pay_fild07.vhm,382,290,0	warp	warp0978	2,5,pay_fild10.vhm,19,290
+pay_fild08.vhm,160,16,0		warp	warp0980	4,2,pay_fild07.vhm,280,379
+pay_fild08.vhm,262,91,0		warp	warp0981	2,4,pay_fild09.vhm,19,91
+pay_fild09.vhm,16,91,0		warp	warp0982	2,4,pay_fild08.vhm,259,91
+pay_fild09.vhm,112,16,0		warp	warp0983	4,2,pay_fild10.vhm,112,379
+pay_fild10.vhm,16,290,0		warp	warp0984	2,5,pay_fild07.vhm,379,290
+pay_fild10.vhm,99,13,0		warp	warp0985	1,1,pay_fild10.vhm,148,252
+pay_fild10.vhm,112,382,0	warp	warp0986	3,2,pay_fild09.vhm,112,19
+pay_fild11.vhm,38,330,0		warp	warp0987	4,2,moc_fild03.vhm,179,19
+pay_fild11.vhm,297,135,0	warp	warp0988	2,4,pay_fild02.vhm,19,175
+payon_in02.vhm,10,25,0		warp	warp1036	2,2,payon_in02.vhm,72,67
+payon_in02.vhm,35,67,0		warp	warp1037	2,2,payon_in02.vhm,55,67
+payon_in02.vhm,50,4,0		warp	warp1038	3,1,pay_arche.vhm,92,166
+payon_in02.vhm,52,67,0		warp	warp1039	2,2,payon_in02.vhm,32,67
+payon_in02.vhm,61,33,0		warp	warp1040	2,2,payon_in02.vhm,73,33
+payon_in02.vhm,64,56,0		warp	warp1041	2,2,pay_arche.vhm,141,161
+payon_in02.vhm,70,33,0		warp	warp1042	2,2,payon_in02.vhm,58,33
+payon_in02.vhm,75,67,0		warp	warp1043	2,2,payon_in02.vhm,13,25
+payon_in02.vhm,82,45,0		warp	warp1044	2,2,pay_arche.vhm,74,153
+//========================================================================================
+
+//========================================================================================
+//  Aegis Support Board 
+// http://rorussia.com/asb/
+// ---------------------------------------------------------------------------------------
+//
+// payon.vhm,Town Warps - Warp Locations
+// - Created by Muad_Dib.
+// - Only includes new warps.
+//
+//========================================================================================
+// - Converted from AEGIS script to Vidar by L0ne_W0lf
+//========================================================================================
+
+//Inn
+//========================================================================================
+payon.vhm,223,117,0	warp	payonwarp009	2,2,payon_in01.vhm,175,11
+payon_in01.vhm,172,11,0	warp	payonwarp010	2,2,payon.vhm,219,117
+payon_in01.vhm,180,43,0	warp	payonwarp011	2,2,payon_in01.vhm,181,73
+payon_in01.vhm,181,70,0	warp	payonwarp012 	2,2,payon_in01.vhm,180,40
+payon_in01.vhm,193,92,0	warp	payonwarp013 	2,2,payon_in01.vhm,143,61
+payon_in01.vhm,146,61,0	warp	payonwarp014 	2,2,payon_in01.vhm,193,89
+payon_in01.vhm,133,42,0	warp	payonwarp015 	2,2,payon_in01.vhm,133,18
+payon_in01.vhm,133,21,0	warp	payonwarp016 	2,2,payon_in01.vhm,133,45
+
+
+//Sort of Mill
+//========================================================================================
+payon.vhm,140,85,0	warp	payonwarp017	2,2,payon_in01.vhm,15,51
+payon_in01.vhm,17,51,0	warp	payonwarp018	2,2,payon.vhm,143,85
+payon_in01.vhm,10,59,0	warp	payonwarp019	2,2,payon_in01.vhm,10,83
+payon_in01.vhm,10,80,0	warp	payonwarp020	2,2,payon_in01.vhm,10,56
+payon_in01.vhm,10,38,0	warp	payonwarp021	2,2,payon_in01.vhm,10,14
+payon_in01.vhm,10,17,0	warp	payonwarp022	2,2,payon_in01.vhm,10,41
+
+
+//Weapon Shop
+//========================================================================================
+payon.vhm,135,158,0	warp	payonwarp023	2,2,payon_in01.vhm,20,129
+payon_in01.vhm,23,129,0	warp	payonwarp024	2,2,payon.vhm,138,158
+payon.vhm,130,169,0	warp	payonwarp025	2,2,payon_in01.vhm,13,136
+payon_in01.vhm,13,139,0	warp	payonwarp026	2,2,payon.vhm,130,172
+
+
+//House
+//========================================================================================
+payon.vhm,151,127,0	warp	payonwarp027	2,2,payon_in01.vhm,56,53
+payon_in01.vhm,56,50,0	warp	payonwarp028	2,2,payon.vhm,151,124
+
+
+//Main Castle
+//========================================================================================
+payon.vhm,156,247,0		warp	payonwarp029	2,2,payon_in03.vhm,98,117
+payon_in03.vhm,98,114,0		warp	payonwarp030	2,2,payon.vhm,156,244
+payon_in03.vhm,90,124,0		warp	payonwarp031	2,2,payon_in03.vhm,80,124
+payon_in03.vhm,83,124,0		warp	payonwarp032	2,2,payon_in03.vhm,93,124
+payon_in03.vhm,99,133,0		warp	payonwarp033	2,2,payon_in03.vhm,99,151
+payon_in03.vhm,99,148,0		warp	payonwarp034	2,2,payon_in03.vhm,99,130
+payon_in03.vhm,107,124,0	warp	payonwarp035	2,2,payon_in03.vhm,117,124
+payon_in03.vhm,114,124,0	warp	payonwarp036	2,2,payon_in03.vhm,104,124
+
+
+//Weapon Storage Building
+//========================================================================================
+payon.vhm,189,233,0	warp	payonwarp037	2,2,payon_in03.vhm,149,39
+payon_in03.vhm,146,39,0	warp	payonwarp038	2,2,payon.vhm,186,233
+payon_in03.vhm,158,32,0	warp	payonwarp039	2,2,payon_in03.vhm,130,14
+payon_in03.vhm,130,17,0	warp	payonwarp040	2,2,payon_in03.vhm,158,35
+payon_in03.vhm,172,32,0	warp	payonwarp041	2,2,payon_in03.vhm,160,14
+payon_in03.vhm,160,17,0	warp	payonwarp042	2,2,payon_in03.vhm,172,35
+payon_in03.vhm,186,32,0	warp	payonwarp043	2,2,payon_in03.vhm,190,13
+payon_in03.vhm,190,17,0	warp	payonwarp044	2,2,payon_in03.vhm,186,35
+
+
+//House
+//========================================================================================
+payon.vhm,256,285,0	warp	payonwarp045	2,2,payon_in01.vhm,45,11
+payon_in01.vhm,42,11,0	warp	payonwarp046	2,2,payon.vhm,253,285
+
+
+//Large House
+//========================================================================================
+payon.vhm,127,204,0	warp	payonwarp047	2,2,payon_in03.vhm,81,19
+payon_in03.vhm,85,19,0	warp	payonwarp048	2,2,payon.vhm,131,204
+payon_in03.vhm,74,18,0	warp	payonwarp049	2,2,payon_in03.vhm,62,18
+payon_in03.vhm,67,18,0	warp	payonwarp050	2,2,payon_in03.vhm,78,18
+payon_in03.vhm,46,18,0	warp	payonwarp051	2,2,payon_in03.vhm,35,18
+payon_in03.vhm,39,18,0	warp	payonwarp052	2,2,payon_in03.vhm,51,18
+payon_in03.vhm,28,18,0	warp	payonwarp053	2,2,payon_in03.vhm,17,18
+payon_in03.vhm,21,18,0	warp	payonwarp054	2,2,payon_in03.vhm,32,18
+
+
+//Big Kitchen
+//========================================================================================
+payon.vhm,155,327,0		warp	payonwarp055	2,2,payon_in03.vhm,165,143
+payon_in03.vhm,165,140,0	warp	payonwarp056	2,2,payon.vhm,155,325
+payon_in03.vhm,185,178,0	warp	payonwarp057	2,2,payon_in03.vhm,185,149
+payon_in03.vhm,185,153,0	warp	payonwarp058	2,2,payon_in03.vhm,185,182
+
+
+//House
+//========================================================================================
+payon.vhm,270,152,0		warp	payonwarp060	2,2,payon_in01.vhm,90,9
+payon_in01.vhm,87,9,0		warp	payonwarp059	2,2,payon.vhm,266,152
+payon_in01.vhm,107,71,0		warp	payonwarp061	2,2,payon_in01.vhm,96,37
+payon_in01.vhm,94,37,0		warp	payonwarp062	2,2,payon_in01.vhm,103,71
+
+
+//Upper Castle
+//========================================================================================
+payon.vhm,107,327,0	warp	payonwarp063	2,2,payon_in03.vhm,19,64
+payon_in03.vhm,19,60,0	warp	payonwarp064	2,2,payon.vhm,107,323
+payon_in03.vhm,19,73,0	warp	payonwarp065	2,2,payon_in03.vhm,19,90
+payon_in03.vhm,19,86,0	warp	payonwarp066	2,2,payon_in03.vhm,19,69
+payon_in03.vhm,19,103,0	warp	payonwarp067	2,2,payon_in03.vhm,19,122
+payon_in03.vhm,19,118,0	warp	payonwarp068	2,2,payon_in03.vhm,19,99
+payon_in03.vhm,11,131,0	warp	payonwarp069	2,2,payon_in03.vhm,11,146
+payon_in03.vhm,11,142,0	warp	payonwarp070	2,2,payon_in03.vhm,11,127
+payon_in03.vhm,27,131,0	warp	payonwarp071	2,2,payon_in03.vhm,27,146
+payon_in03.vhm,27,142,0	warp	payonwarp072	2,2,payon_in03.vhm,27,127
+payon_in03.vhm,11,161,0	warp	payonwarp073	2,2,payon_in03.vhm,11,176
+payon_in03.vhm,11,172,0	warp	payonwarp074	2,2,payon_in03.vhm,11,157
+payon_in03.vhm,27,161,0	warp	payonwarp075	2,2,payon_in03.vhm,27,176
+payon_in03.vhm,27,172,0	warp	payonwarp076	2,2,payon_in03.vhm,27,157
+
+//========================================================================================
+// Old Payon Warps.
+// These are only good if your client supports the old payon maps.
+//========================================================================================
+payo2_in01.vhm,12,68,0	warp	warp0989	1,3,payo2.vhm,108,173
+payo2_in01.vhm,22,26,0	warp	warp0990	3,2,payo2_in01.vhm,30,78
+payo2_in01.vhm,26,115,0	warp	warp0991	3,2,payo2_in01.vhm,30,129
+payo2_in01.vhm,26,164,0	warp	warp0992	3,2,payo2_in01.vhm,30,148
+payo2_in01.vhm,30,59,0	warp	warp0993	3,1,payo2_in01.vhm,52,32
+payo2_in01.vhm,30,81,0	warp	warp0994	3,2,payo2_in01.vhm,22,29
+payo2_in01.vhm,30,126,0	warp	warp0995	3,2,payo2_in01.vhm,26,112
+payo2_in01.vhm,30,151,0	warp	warp0996	3,2,payo2_in01.vhm,26,167
+payo2_in01.vhm,47,138,0	warp	warp0997	1,3,payo2.vhm,71,173
+payo2_in01.vhm,52,35,0	warp	warp0998	3,1,payo2_in01.vhm,30,62
+payo2_in01.vhm,60,99,0	warp	warp0999	1,2,payo2_in01.vhm,110,77
+payo2_in01.vhm,60,107,0	warp	warp1000	1,2,payo2_in01.vhm,110,107
+payo2_in01.vhm,60,145,0	warp	warp1001	1,2,payo2_in01.vhm,110,143
+payo2_in01.vhm,60,170,0	warp	warp1002	3,1,payo2_in01.vhm,72,156
+payo2_in01.vhm,70,52,0	warp	warp1003	3,2,payo2_in01.vhm,86,34
+payo2_in01.vhm,70,75,0	warp	warp1004	3,2,payo2_in01.vhm,130,39
+payo2_in01.vhm,72,86,0	warp	warp1005	3,1,payo2.vhm,90,164
+payo2_in01.vhm,72,121,0	warp	warp1006	3,1,payo2_in01.vhm,72,137
+payo2_in01.vhm,72,134,0	warp	warp1007	3,1,payo2_in01.vhm,72,118
+payo2_in01.vhm,72,159,0	warp	warp1008	3,1,payo2_in01.vhm,60,173
+payo2_in01.vhm,83,63,0	warp	warp1009	1,3,payo2.vhm,30,173
+payo2_in01.vhm,83,99,0	warp	warp1010	1,2,payo2_in01.vhm,124,77
+payo2_in01.vhm,83,107,0	warp	warp1011	1,2,payo2_in01.vhm,125,107
+payo2_in01.vhm,83,145,0	warp	warp1012	1,2,payo2_in01.vhm,127,143
+payo2_in01.vhm,86,37,0	warp	warp1013	3,2,payo2_in01.vhm,70,55
+payo2_in01.vhm,98,170,0	warp	warp1014	3,1,payo2.vhm,141,95
+payo2_in01.vhm,101,25,0	warp	warp1015	1,3,payo2.vhm,22,171
+payo2_in01.vhm,111,177,0	warp	warp1016	2,3,payo2_in01.vhm,129,177
+payo2_in01.vhm,113,77,0	warp	warp1017	1,2,payo2_in01.vhm,63,99
+payo2_in01.vhm,113,107,0	warp	warp1018	1,2,payo2_in01.vhm,63,107
+payo2_in01.vhm,113,143,0	warp	warp1019	1,2,payo2_in01.vhm,63,145
+payo2_in01.vhm,122,77,0	warp	warp1020	1,2,payo2_in01.vhm,80,99
+payo2_in01.vhm,122,107,0	warp	warp1021	1,2,payo2_in01.vhm,80,107
+payo2_in01.vhm,124,143,0	warp	warp1022	1,2,payo2_in01.vhm,80,145
+payo2_in01.vhm,126,177,0	warp	warp1023	2,3,payo2_in01.vhm,108,177
+payo2_in01.vhm,130,36,0	warp	warp1024	3,2,payo2_in01.vhm,70,72
+payo2_in01.vhm,134,168,0	warp	warp1025	3,1,payo2.vhm,129,81
+payo2_in01.vhm,143,179,0	warp	warp1026	1,3,payo2_in01.vhm,167,179
+payo2_in01.vhm,145,45,0	warp	warp1027	1,3,payo2.vhm,38,171
+payo2_in01.vhm,160,108,0	warp	warp1028	1,3,payo2.vhm,169,133
+payo2_in01.vhm,164,179,0	warp	warp1029	1,2,payo2_in01.vhm,140,179
+payo2_in01.vhm,167,74,0	warp	warp1030	1,2,payo2_in01.vhm,168,50
+payo2_in01.vhm,168,53,0	warp	warp1031	1,2,payo2_in01.vhm,167,77
+payo2_in01.vhm,170,87,0	warp	warp1032	1,2,payo2_in01.vhm,170,104
+payo2_in01.vhm,170,100,0	warp	warp1033	1,2,payo2_in01.vhm,170,83
+payo2_in01.vhm,170,119,0	warp	warp1034	1,2,payo2_in01.vhm,170,136
+payo2_in01.vhm,170,132,0	warp	warp1035	1,2,payo2_in01.vhm,170,115
+payon-2_in02.vhm,64,56,0	warp	warp1041	2,2,pay_arche.vhm,141,161
+payo2.vhm,22,174,0	warp	warp1045	2,1,payo2_in01.vhm,98,25
+payo2.vhm,30,176,0	warp	warp1046	2,1,payo2_in01.vhm,80,63
+payo2.vhm,38,174,0	warp	warp1047	2,1,payo2_in01.vhm,142,45
+payo2.vhm,68,173,0	warp	warp1048	1,2,payo2_in01.vhm,44,138
+payo2.vhm,90,25,0	warp	warp1049	5,3,pay_fild01.vhm,333,356
+payo2.vhm,90,167,0	warp	warp1050	2,1,payo2_in01.vhm,72,89
+payo2.vhm,111,173,0	warp	warp1051	1,2,payo2_in01.vhm,15,68
+payo2.vhm,133,81,0	warp	warp1052	2,2,payo2_in01.vhm,134,171
+payo2.vhm,141,91,0	warp	warp1053	2,2,payo2_in01.vhm,98,173
+payo2.vhm,172,133,0	warp	warp1054	1,2,payo2_in01.vhm,163,108
+payo2.vhm,175,189,0	warp	warp1055	4,2,pay_arche.vhm,81,22
+payo2.vhm,189,69,0	warp	warp1056	2,4,pay_fild08.vhm,20,74

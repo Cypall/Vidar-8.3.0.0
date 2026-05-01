@@ -1,0 +1,131 @@
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Entry A - Crusader Job Quest - Patience Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_cru.vhm,1,1,0	script	"dead"	0,0,0,0	-1,{
+	scriptlabel "dead";
+		set \@FAIL_CR = 1;
+		set \@CRU_IN = 0;
+	warpallpc "prt_castle",162,27,1;
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Entry - Crusader Job Quest - Patience Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_cru.vhm,23,42,0	script	"Test 2"	0,0,2,0	-1,{
+OnTouch:
+	check \@CRU_IN = 1,-,EXIT;
+		check Job_CR = 6,-,EXIT;
+				set \@CRU_IN = 0;
+				broadcast "Please endure here for 3 minutes.  When the time has passed, you may go through the warp.";
+				resetmymob "job_cru";
+				enablenpc "job_cru",Exit,0;
+				callmob "job_cru",10,43,Ghoul,1423,0,"dead";
+				callmob "job_cru",14,47,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",26,46,Injustice,1446,0,"dead";
+				callmob "job_cru",31,46,Requium,1468,0,"dead";
+				callmob "job_cru",16,52,"Raydric Archer",1453,0,"dead";
+				callmob "job_cru",22,53,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",28,49,Injustice,1446,0,"dead";
+				callmob "job_cru",12,54,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",17,55,Ghoul,1423,0,"dead";
+				callmob "job_cru",21,57,Injustice,1446,0,"dead";
+				callmob "job_cru",30,58,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",11,64,"Raydric Archer",1453,0,"dead";
+				callmob "job_cru",19,67,Injustice,1446,0,"dead";
+				callmob "job_cru",24,62,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",13,70,Ghoul,1423,0,"dead";
+				callmob "job_cru",18,69,Injustice,1446,0,"dead";
+				callmob "job_cru",29,67,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",32,68,Requium,1468,0,"dead";
+				callmob "job_cru",16,75,"Raydric Archer",1453,0,"dead";
+				callmob "job_cru",21,74,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",27,76,Injustice,1446,0,"dead";
+				callmob "job_cru",14,78,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",19,76,Ghoul,1423,0,"dead";
+				callmob "job_cru",24,79,Requium,1468,0,"dead";
+				callmob "job_cru",14,83,"Raydric Archer",1453,0,"dead";
+				callmob "job_cru",18,85,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",22,84,Injustice,1446,0,"dead";
+				callmob "job_cru",33,86,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",13,89,Ghoul,1423,0,"dead";
+				callmob "job_cru",17,92,Injustice,1446,0,"dead";
+				callmob "job_cru",23,90,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",26,88,Ghoul,1423,0,"dead";
+				callmob "job_cru",17,97,Khalitzburg,1438,0,"dead";
+				callmob "job_cru",23,100,Injustice,1446,0,"dead";
+				callmob "job_cru",31,101,Ghoul,1423,0,"dead";
+				callmob "job_cru",13,103,"Raydric Archer",1453,0,"dead";
+				callmob "job_cru",22,105,Injustice,1446,0,"dead";
+				callmob "job_cru",30,107,Khalitzburg,1438,0,"dead";
+			return;
+		EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Timer - Crusader Job Quest - Patience Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_cru.vhm,23,42,0	script	"Test 2"	0,0,2,0	-1,{
+OnTouch:
+	check @TIME = 0,-,EXIT;
+			set @TIME = 1;
+			addnpctimer "Test 2",180000;
+			npctimer 1;
+		return;
+	OnTimer60000:
+			broadcast "2 minutes remaining.";
+		return;
+	OnTimer120000:
+			broadcast "1 minute remaining.";
+		return;
+	OnTimer150000:
+			broadcast "30 seconds remaining.";
+		return;
+	OnTimer175000:
+			broadcast "15 seconds remaining.";
+		return;
+	OnTimer180000:
+			broadcast "You may now exit through the warp above.";
+			set \@JOB_CR = $aid;
+			enablenpc "job_cru",Exit,1;
+			npctimer 0;
+		return;
+EXIT:
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Exit - Crusader Job Quest - Patience Test
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+job_cru.vhm,23,109,0	warp	Exit	1,1,prt_castle.vhm,162,27
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+//
+// Return - Crusader Job Quest - OnTouch event
+// By Black Dragon based on the information at RagnaInfo
+//
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+prt_castle.vhm,162,27,0	script	Return	0,0,2,0	-1,{
+OnTouch:
+	check Job_CR > 5,-,EXIT;
+		check $aid = \@JOB_CR,-,EXIT;
+			check \@FAIL_CR = 0,-,EXIT;
+					set \@JOB_CR = 0;
+					set \@CRU_IN = 0;
+					set Job_CR = 7;
+				close;
+	EXIT:
+		check Job_CR = 5,EXIT0,-;
+			lockitem 0;
+	EXIT0:
+}

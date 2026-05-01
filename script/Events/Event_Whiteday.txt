@@ -1,0 +1,88 @@
+alberta.vhm,188,64,4	script	 	"Sweets Merchant"	91,{
+	mes " [ Maple Sugar ] "; 
+	mes " Hey you! "; 
+	mes " How tasty is your candy? "; 
+	mes " The master.....of Candy craftsman. "; 
+	mes " The candy which was made with utmost effort. "; 
+	next; 
+	mes " [ Maple Sugar ] "; 
+	mes " Which is given from the dear person ";
+	mes " In return of a present...... "; 
+	mes " The heart saw it had, the sweetest thing. "; 
+	next;
+	menu " Where can I get... ",-," I do not need it. ",Lend," The Master? ",L1; 
+		mes " [ Maple Sugar ] ";
+		mes " Here! ";
+		mes " This is the the menu? However, there is a limit. ";
+		mes " You are only allowed to buy ^ff00005^000000 pieces at a time. "; 
+		mes " Well then, please pick your choice. "; 
+		next; 
+		menu " Candy ",-," Stick candy ",L0_1," Well baked cookie ",L0_2;
+			set @maplePrice = 3000;
+			set @mapleItemID = 529; 
+			setstr $@candy = "Candy";
+			goto Linput; 
+L0_1: 
+			set @maplePrice = 4000; 
+			set @mapleItemID = 530; 
+			setstr $@candy = "Sticky Candy";
+			goto Linput; 
+L0_2: 
+			set @maplePrice = 2000; 
+			set @mapleItemID = 538; 
+			setstr $@candy = "Well Baked Cookie";
+Linput:
+			mes " [ Maple Sugar ] "; 
+			mes " That's $[@maplePrice] Zeny each $[$@candy]. "; 
+			mes " How many would you like to buy? "; 
+			next; 
+			input @maplenum;
+			check @maplenum > 5,LError,-;
+			check @maplenum == 0,Lend,-;
+			set @maplePriceT = @maplePrice;
+			set @maplePriceT*@maplenum;
+			check Zeny < @maplePriceT,LError2,-;
+				set Zeny - @maplePriceT;
+				additem @mapleItemID,@maplenum;
+				mes " [ Maple Sugar ] "; 
+				mes " Thank you! ";
+				mes " Here is your candy, it truly is tasty. ";
+				mes " That's the greatest candy in the world! ";
+				mes " Do not get too attached, one way of getting fat. ";
+				mes " Right?  Hey, please pay attention. ";
+				close;
+L1:
+		mes " [ Maple Sugar ] ";
+		mes " Yes, my master, KuuBell. ";
+		mes " He's a Candy craftsman ";
+		mes " The Kirsch way, the orgin of candy making. ";
+		mes " I had to train myself. ";
+		next;
+		mes " [ Maple Sugar ] ";
+		mes " My master is moving this way. ";
+		mes " Movement sale is done, it seems, but...... ";
+		mes " Whether, I stay or go somewhere, ";
+		mes " I don't quite understand... ";
+		mes " Perhaps, somewhere we can meet, Right? ";
+		close;
+LError:
+	mes  " [ Maple Sugar ] ";
+	mes  " Is it that hard to understand?? ";
+	mes  " What were you doing while I was talking? ";
+	mes  " Now, repeat after me: ";
+	mes  " I am only able to buy ^ff00005^000000 pieces. ";
+	close;
+LError2:
+	mes  " [ Maple Sugar ] ";
+	mes  " Unbelievable.... ";
+	mes  " You do not have enough money... ";
+	mes  " Have your money ready in your hands next time. ";
+	mes  " That is all I ask. ";
+	close;
+Lend:
+	mes  " [ Maple Sugar ] ";
+	mes  " So...... regrettable. ";
+	mes  " I will be here when your heart desires one. ";
+	mes  " Please, come back soon! "; 
+	close;
+}

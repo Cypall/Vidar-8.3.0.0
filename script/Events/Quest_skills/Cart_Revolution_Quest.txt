@@ -1,0 +1,126 @@
+//- Merchant Skills Quests - kobra_k88
+alberta.vhm,232,106,6 script Gershaun 57,{
+		getskilllevel 36 @skill;
+		check @skill > 0 L_Start -;
+//	if (callfunc("Is_Merc_Class")) goto L_Start;
+L_Other:
+	mes "[Gershaun]";
+	mes "If it doesn't work, make it work!";
+	mes "If it doesn't work, make it work!";
+	mes "If it doesn't work, make it work!";
+	close;
+L_Start:
+		getskilllevel 153 @skill;
+		check @skill > 0,L_GotSkill,-;
+		check CARTREVO == 1,L_GetSkill,-;
+	mes "[Gershaun]";
+	mes "Hmm... a young merchant.  You must use carts too right? Since to have to do all of that vending.....  But is that all you use your cart for?";
+	emote 20;
+	next;
+	mes "[Gershaun]";
+	mes "I researched some ways of using the cart differently.  One way involved cooking ramen and another involved jump-roping (don't ask).";
+	mes "Still none of my new ideas were satisfactory.";
+	next;
+	menu "I know what you mean.",M_0, "......???",M_1;
+	M_0:
+		mes "[Gershuan]";
+		mes "You KNOW what I MEAN!! HOW the HECK would YOU KNOW what I MEAN????";
+		emote 23;
+		close;
+	M_1:
+		mes "[Gershuan]";
+		mes "In despair, I wandered through the fields with my cart.  Day after day I did this.... I was in a daze....";
+		next;
+		mes "[Gershuan]";
+		mes "Then I crossed paths with a very strong monster! I knew immediately that my life was in danger!";
+		mes "I thought to myself, 'Why me! A weaponless, amorless merchant!?'";
+		emote 0;
+		next;
+		mes "[Gershuan]";
+		mes "I was scared to death... hoping that this would not be the end of me.  With what strength I had left, I tried a desperation move.....";
+		emote 19;
+		next;
+		mes "[Gershuan]";
+		mes "I used my cart to attack the monster!!";
+		emote 0;
+		next;
+		mes "[Gershuan]";
+		mes "Just like that the monster was defeated!! Finally I had found another exellent use for the cart! A WEAPON!!!";
+		next;
+		mes "[Gershuan]";
+		mes "I called my new found discovery ^3355FF'Cart Revolution'^000000!";
+		mes "By using ^FF553312 sp^000000 you can spin your cart around your body doing major damage to an enemy!";
+		emote 5;
+		next;
+		mes "[Gershuan]";
+		mes "The heavier your cart is, the more damage it will do.  Would you like to learn this skill?";
+		next;
+		menu "Yes!!",sM_0, "Actually I want to learn some sushi skills...",sM_1;
+		sM_0:
+			mes "[Gershuan]";
+				check job == 5,-,sM_01;
+				check JobLevel < 35,ssL_LowLvl,-;
+		sM_01:
+			mes "Ok! I will give you the special training for Cart Revolution.  The first thing you will have to do is bring me these items:";
+			mes "^3355FF30 Sticky Mucus,";
+			mes "20 Fly wings,";
+			mes "15 Iron,";
+			mes "5 Tentacles,";
+			mes "2 Grape Juice^000000.";
+			next;
+			mes "[Gershuan]";
+			mes "Come back when you have all of these items.  Good luck.";
+			set CARTREVO = 1;
+			close;
+			ssL_LowLvl:
+				mes "[Gershuan]";
+				mes "Ok! I will give you the special training for Cart Revolution.";
+				mes "But first you will have to get yourself to a ^3355FFjob level of 35^000000! After you've done that, then we can talk.";
+				close;
+		sM_1:
+			mes "[Sushi King Gershuan]";
+			mes "Stupid!! You're waaay to young to even try your hand at sushi!!";
+			emote 6;
+			close;
+L_GetSkill:
+		checkitem 533,2,-,sM_0;
+		checkitem 998,15,-,sM_0;
+		checkitem 938,30,-,sM_0;
+		checkitem 601,20,-,sM_0;
+		checkitem 962,5,-,sM_0;
+	mes "[Gershaun]";
+	mes "It's Good to see you again.  I'm glad you were able to get all of the items.  Take a minute to prepare, for your training is about to take place....";
+	next;
+	mes "[Gershuan]";
+	mes "First make sure your feet are shoulder width apart.  Balance is key! Now get into a good crouch... grasp the handles of the cart firmly but not too tight...";
+	next;
+	mes "[Gershuan]";
+	mes "NOW SWING!!!";
+	next;
+	mes "[Gershuan]";
+	mes "Eh....... that was terrible.... Okay, lets try again.....";
+	emote 4;
+	next;
+	mes "~many hours later~";
+	next;
+	mes "[Gershuan]";
+	mes "YES!!! FINALLY! I could REALLY FEEL the power in that swing!";
+	mes "Give yourself a good pat on the back becuase you have just mastered Cart Revolution!";
+	emote 21;
+	next;
+	delitem 533,2;
+	delitem 998,15;
+	delitem 938,30;
+	delitem 601,20;
+	delitem 962,5;
+	setskilllevel 153,1;
+	set CARTREVO = 0;
+	mes "[Gershuan]";
+	mes "Take care of yourself and remember to fill that cart up so that it can do some major damage.";
+	emote 29;
+	close;
+L_GotSkill:
+	mes "[Gershaun]";
+	mes "So how do you like cart revolution? Remeber, the ^3355FFheavier^000000 the cart, the ^3355FFgreater^000000 the damge.";
+	close;
+}

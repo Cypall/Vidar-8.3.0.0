@@ -1,0 +1,49 @@
+body {
+scrollbar-face-color: #4A618C;
+scrollbar-highlight-color: #007182;
+scrollbar-shadow-color: #352571;
+scrollbar-3dlight-color: #323498;
+scrollbar-arrow-color: #081018;	
+scrollbar-track-color: #293852;
+scrollbar-darkshadow-color: #394D6B;
+background-color: #293852;
+color: #FFFFFF;
+color-2: #8C96B5;
+font-size: 10pt;
+font-family: verdana, sans-serif
+}
+
+p { 
+background: #4A618C;
+color: #FFFFFF;
+border: 1px solid #394D6B;
+padding: 1px;
+}
+
+a {
+text-decoration: underline;
+color: #8C96B5;
+}
+a:visited {
+text-decoration: underline;
+color: #FFFFFF;
+}
+a:hover {
+color: #8C96B5;
+text-decoration: underline;
+background-color: #394563;
+}
+
+hr { 
+height: 5px; 
+border: solid #323498 2px; 
+border-top-width: 5px;
+}
+
+.border2 {
+background: #31384A;
+color: #8C96B5;
+border: 1px solid #081018;
+padding: 1px;
+width: 500px;
+}

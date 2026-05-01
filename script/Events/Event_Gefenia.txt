@@ -1,0 +1,28 @@
+//- Warper
+gef_dun03.vhm,121,103,0	script	"Alice"	791,{
+	checkitem 7025,1,-,Sub1;
+	delitem 7025,1;
+	mes "[Alice]";
+	mes "With this in my hand now I can....";
+	emote 29;
+	next;
+	warp "gefenia01",58,171;
+Sub1:
+	emote 9;
+	mes "[Alice]";
+	mes "If you give me a ' ^3355FFLucifer's Lament^000000 ' and I will reward you..";
+	close;
+}
+
+//- Return
+gefenia01.vhm,58,173,4	script	"Alice"	117,{
+	mes "[Alice]";	
+	mes "Would you like to return?";
+	next;
+menu "Yes.. please",-,"No.. thanks",Sub1;
+	warp "gef_dun03",121,105;
+Sub1:
+	mes "[Alice]";
+	mes "Come back when you are ready to return.";
+	close;
+}

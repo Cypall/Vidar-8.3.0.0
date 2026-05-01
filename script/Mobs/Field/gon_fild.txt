@@ -1,0 +1,14 @@
+//RO-8.0官方怪物分布
+//怪物种类和数量竟可能的和官方靠齐
+//制作：LKM
+//http://coolro.cnnb.net
+
+
+
+//--------------------------------------------------
+//  Gunryun Field 01                               |
+//--------------------------------------------------
+gon_fild01.vhm,0,0,0,0	monster	BABY_LEOPARD 1415,30,0,0,0
+gon_fild01.vhm,0,0,0,0	monster	ZIPPER_BEAR 1417,35,0,0,0
+gon_fild01.vhm,0,0,0,0	monster	RICE_CAKE_BOY 1409,30,0,0,0
+gon_fild01.vhm,0,0,0,0	monster	WILD_GINSENG 1413,10,0,0,0

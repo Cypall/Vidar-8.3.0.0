@@ -1,0 +1,11 @@
+//----------------------------------------------------------------------------------------
+// warp.txt - From Weiss by Kalen, translated by Soulfang (one stupid comment =P)
+// eWeiss Project 2003 - http://revolve.emuxhaven.net/weiss/
+// Edited for Guild Siege (added castle warps from regular maps) - Makenza
+// 
+// new1-1 -> new_zone01 if needed (for Weiss)
+//
+//----------------------------------------------------------------------------------------
+// All warps divided for easier maintainace.
+// Warps that didn't have a real place are contained in 
+// Warps_Misc.txt

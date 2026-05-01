@@ -1,0 +1,32 @@
+//guild_vs1
+guild_vs1.vhm,50,93,0	warp	warpgvg001	1,1,guild_vs1.vhm,50,9
+guild_vs1.vhm,6,50,0	warp	warpgvg002	1,1,guild_vs1.vhm,90,50
+guild_vs1.vhm,50,6,0	warp	warpgvg003	1,1,guild_vs1.vhm,50,90
+guild_vs1.vhm,93,50,0	warp	warpgvg004	1,1,guild_vs1.vhm,9,50
+
+
+//guild_vs2
+guild_vs2.vhm,50,93,0	warp	warpgvg005	1,1,guild_vs2.vhm,50,9
+guild_vs2.vhm,6,50,0 	warp	warpgvg006	1,1,guild_vs2.vhm,90,50
+guild_vs2.vhm,50,6,0 	warp	warpgvg007	1,1,guild_vs2.vhm,50,90
+guild_vs2.vhm,93,50,0	warp	warpgvg008	1,1,guild_vs2.vhm,9,50
+
+
+//guild_vs3
+guild_vs3.vhm,49,12,0	warp	warpgvg009	1,1,guild_vs3.vhm,49,82
+guild_vs3.vhm,49,87,0	warp	warpgvg010	1,1,guild_vs3.vhm,49,17
+guild_vs3.vhm,12,49,0	warp	warpgvg011	1,1,guild_vs3.vhm,82,49 
+guild_vs3.vhm,87,49,0	warp	warpgvg012	1,1,guild_vs3.vhm,17,49
+
+//guild_vs4
+guild_vs4.vhm,50,93,0	warp	warpgvg013	1,1,guild_vs4.vhm,50,9
+guild_vs4.vhm,6,50,0	warp	warpgvg014	1,1,guild_vs4.vhm,90,50
+guild_vs4.vhm,50,6,0	warp	warpgvg015	1,1,guild_vs4.vhm,50,90
+guild_vs4.vhm,93,50,0	warp	warpgvg016	1,1,guild_vs4.vhm,9,50
+
+
+//pvp_2vs2
+pvp_2vs2.vhm,39,59,0	warp	warpgvg017	1,1,pvp_2vs2.vhm,40,17
+pvp_2vs2.vhm,59,40,0	warp	warpgvg018	1,1,pvp_2vs2.vhm,17,39
+pvp_2vs2.vhm,40,20,0	warp	warpgvg019	1,1,pvp_2vs2.vhm,39,62
+pvp_2vs2.vhm,20,39,0	warp	warpgvg020	1,1,pvp_2vs2.vhm,62,40

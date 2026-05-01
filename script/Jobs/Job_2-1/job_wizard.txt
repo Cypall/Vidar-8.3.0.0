@@ -1,0 +1,1077 @@
+//- JOBCHANGE QUEST - Wizard - Translated by: yoshiki 
+//- Fixed by: illogik(tk)
+gef_tower.vhm,111,37,4 script Guildsman 70,{
+	mes "[Guild Clerk]";
+	check job == 2,ApWiz,-;
+	check job == 9,-,ChkNov;
+	check gender == 1,-,Grl_1;
+	mes "What do you need comrade Wizard?";
+	mes "If nothing, please leave..";
+	next;
+	mes "[Guild Clerk]";
+	mes "Of course, asking me out is another thing, heh.";
+	close;
+Grl_1:
+	mes "What does a wizard need of us?";
+	mes "Please leave.";
+	next;
+	mes "[Guild Clerk]";
+	mes "If you get yourself a boyfriend, return though. xD.";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes "Awwww, a little novice!.";
+	mes "How cute! This place is for wizards only!";
+	next;
+	mes "[Guild Clerk]";
+	mes "If you're interested in magic,";
+	mes "^0000FFMagician's^000000 Guild is the place for you.";
+	close;
+DiffClass:
+	mes "Hmm? What brings you to climb all the way up here?";
+	mes "If you have nothing to do here, leave.";
+	mes "This place is for wizards only =P";
+	next;
+	mes "[Guild Clerk]";
+	mes "Don't fall while going down!";
+	close;
+ApWiz:
+	check job_wizard_q == 0,-,ChkWiz_M1;
+	mes "Hey! What brings you all the way up here?";
+	mes "You want to be a wizard, right?";
+	next;
+menu "Of course!",-,"Not really -.-;",WizMnu_1;
+	mes "[Guild Clerk]";
+	mes "Of  course, that's always; the reason.";
+	mes "I'll guide you along!.";
+	next;
+	mes "[Guild Clerk]";
+	mes "My name's Carltin Medichi, I'm a noob wizard -.-;";
+	mes "Relax, you   can call me Carltin.";
+	next;
+	mes "[Carltin]";
+	mes "Even thought many people want to be wizards.";
+	mes "Many fail because of the test.";
+	next;
+	mes "[Carltin]";
+	mes "Job level 40 is required like all 2nd jobs.";
+	mes "Besides, any below that and you won't have";
+	mes "enough magic power.";
+	next;
+	mes "[Carltin]";
+	mes "Well, I'll  tell you about the test.";
+	mes "After you register.";
+	next;
+menu "Sign the form",-,"Let me think about it........",WizMnu_2;
+	mes "[Carltin]";
+	check joblevel < 40,-,ChkWiz;
+	mes "Hey, I told you. You have to be at  least job lvl 40";
+	mes "Don't you remember me telling you -.-;";
+	next;
+	mes "[Carltin]";
+	mes "You're not  in a hurry, go train more.";
+	mes "I'll let you apply  after job 40.";
+	close;
+ChkWiz:
+	check skillpoint != 0,-,ChkWiz_1;
+	mes "Everything looks good, but it seems you have skill points left over.";
+	mes "Reapply after spending them all.";
+	close;
+ChkWiz_1:
+	mes "[Carltin]";
+	mes "Okay, I'll   take good care of this form.";
+	mes "You're name is $charaname right?";
+	next;
+	mes "[Carltin]";
+	mes "Wizard test is divided in 3 parts.";
+	mes "1st is getting a magical item.";
+	mes "2nd is the  Q&A exam";
+	mes "and 3rd is our favorite, the field exam.";
+	next;
+	mes "[Carltin]";
+	mes "People with job lvl 50 can skip the first test.";
+	mes "They already worked hard enough.";
+	next;
+	mes "[Carltin]";
+	check joblevel == 50,-,ChkWiz_2;
+	mes "Wow! You're job level 50!";
+	mes "You must have worked hard! I'm impressed!";
+	next;
+	mes "[Carltin]";
+	mes "Okay, I'll record that you're job 50.";
+	mes "You get to skip the first test, but you still got 2 left.";
+	next;
+	mes "[Carltin]";
+	mes "Now, talk to that man in the corner for the test.";
+	mes "It's hard, so be careful.";
+	set job_wizard_q = 3;
+	close;
+ChkWiz_2:
+	mes "Okay, you're applied. I'll tell you the items you need to bring us.";
+	mes "Remember these!";
+	next;
+	mes "[Carltin]";
+	mes "First test is bring magical items.";
+	mes "Write these down or something!";
+	next;
+	random wizard_m1,3;
+WizM1_Items:
+	mes "[Carltin]";
+	mes "The items you need to bring are...";
+	check wizard_m1 == 1,-,WizM1_Items2;
+	set job_wizard_q = 1;
+	mes "10 red gem stones";
+	mes "10 blue gem stones";
+	mes "10 yellow gemstones";
+	goto TalkCont_1;
+WizM1_Items2:
+	set job_wizard_q = 2;
+	mes "5 Crystal Blues";
+	mes "5 Green Lives";
+	mes "5 Red Bloods";
+	mes "5 Wind of Verdures";
+TalkCont_1:
+	mes "This test isn't THAT hard, so go!";
+	next;
+	mes "[Carltin]";
+	mes "So, good luck!";
+	mes "I'll be waiting!";
+	close;
+WizMnu_1:
+	mes "[Guild Clerk]";
+	mes "What? Nothing?";
+	mes "....";
+	close;
+WizMnu_2:
+	mes "[Carltin]";
+	mes "Ok then, think about it hard!";
+	mes "Applications are always open!";
+	close;
+ChkWiz_M1:
+	mes "Did you get all the items?";
+	mes "Let's see....";
+	next;
+	check job_wizard_q == 1,-,ChkWiz_M1_1;
+	checkitem 716,10,-,WizM1_Items;
+	checkitem 717,10,-,WizM1_Items;
+	checkitem 715,10,-,WizM1_Items;
+	mes "[Carltin]";
+	mes "Great! You've brought everything!";
+	mes "The guild will use these well.";
+	next;
+	delitem 716,10;
+	delitem 717,10;
+	delitem 715,10;
+	goto WizM1_End;
+ChkWiz_M1_1:
+	check job_wizard_q == 2,-,ChkWiz_M1_C;
+	checkitem 991,5,-,WizM1_Items;
+	checkitem 993,5,-,WizM1_Items;
+	checkitem 990,5,-,WizM1_Items;
+	checkitem 992,5,-,WizM1_Items;
+	mes "[Carltin]";
+	mes "Great! You've found them all!";
+	mes "The guild will use  them well.";
+	next;
+	delitem 991,5;
+	delitem 993,5;
+	delitem 990,5;
+	delitem 992,5;
+WizM1_End:
+	set job_wizard_q = 3;
+	mes "[Carltin]";
+	mes "Congrats, you passed the first test.";
+	mes "Don't relax yet, you still got 2 tests left.";
+	next;
+	mes "[Carltin]";
+	mes "Now talk to the man in the  corner for the tests.";
+	mes "It's pretty hard, so be careful.";
+	close;
+ChkWiz_M1_C:
+	check job_wizard_q == 3,-,ChkWiz_M2;
+	mes "Hey, did you go talk to the man?";
+	mes "No? You can't just  become a wizard by getting items >_>.";
+	next;
+	mes "[Carltin]";
+	mes "There's 2 more tests left.";
+	mes "I'll be waiting, so go finish them.";
+	close;
+ChkWiz_M2:
+	check job_wizard_q == 4,-,ChkWiz_M3;
+	mes "o.O You failed the  Q&A test!?";
+	mes "You want to be a wizard and you can't get them >_>";
+	next;
+	mes "[Carltin]";
+	mes "Heh, do you want big sis to give you a hint?";
+	mes "If so, I'm thirsty, so go buy me 1 apple juice =P";
+	next;
+menu "Can I have a hint?",-,"I can pass on my own!",WizMnu_3;
+	mes "[Carltin]";
+	checkitem 531,1,-,ErrWizItem;
+	delitem 531,1;
+	mes "Mmmmmmmmmmmmm, apple juice.";
+	mes "Slurp Slurp";
+	next;
+	mes "[Carltin]";
+	mes "Thx, I'll give you  the hint now.";
+	next;
+	mes "[Carltin]";
+	mes "The man gives you 3 major types of  questions.";
+	mes "Questions about spells, monsters,";
+	mes "and the caster.";
+	next;
+	mes "[Carltin]";
+	mes "It's up to  him to pick the questions.";
+	mes "If  he shaved and cut his hair, he might look cool >_>";
+	mes "But obviously he won't do it -.-;";
+	next;
+	mes "[Carltin]";
+	mes "Now, the questions  about spells,";
+	mes "They're obviously about the spells you've learned.";
+	next;
+	mes "[Carltin]";
+	mes "There WILL be questions about spells you don't";
+	mes "know much about, so go ask  other wizards =P";
+	next;
+	mes "[Carltin]";
+	mes "There's places out there with lots of information";
+	mes "about spells! Such as www.ragnarok.co.kr!";
+	next;
+	mes "[Carltin]";
+	mes "The monster questions,";
+	mes "You COULD just go out there and fight them to learn about them.";
+	next;
+	mes "[Carltin]";
+	mes "Hmm, if I remember right, there's a library";
+	mes "in Prontera that has lots of information.";
+	mes "It's easier to just go there and read about them >_>";
+	next;
+	mes "[Carltin]";
+	mes "Now, the questions about wizards...";
+	mes "You're on your own for this one..";
+	mes "Why? Because YOU'RE a mage.";
+	next;
+	mes "[Carltin]";
+	mes "If you don't know anything about yourself,";
+	mes "how would a stranger like me know?";
+	close;
+ErrWizItem:
+	mes "Well, if you want hints, I want apple juice!.";
+	mes "Otherwise, you're on your own =P.";
+	close;
+WizMnu_3:
+	mes "[Carltin]";
+	mes "That's right! Tests are meant to be done alone!";
+	mes "That's definitely the way a wizard should think!";
+	next;
+	mes "[Carltin]";
+	mes "Good luck!";
+	mes "Mister Examiner is waiting!";
+	close;
+ChkWiz_M3:
+	check job_wizard_q == 5,-,ChkWiz_M3_1;
+	mes "Heh, I could hear you in there.";
+	mes "Working so hard on the questions.";
+	next;
+	mes "[Carltin]";
+	mes "Just one test left!";
+	mes "Finish that and you'll be a wizard!.";
+	next;
+	mes "[Carltin]";
+	mes "Good luck!";
+	mes "The examiner's waiting!";
+	close;
+ChkWiz_M3_1:
+	check job_wizard_q == 6,-,ChkWizSP;
+	mes "Why did you come out during the test?";
+	mes "I never thought you were that weak >_>";
+	next;
+	mes "[Carltin]";
+	check gender == 1,-,Grl_2;
+	mes "How could a powerful mage like you get beaten so easily!!";
+	mes "Go  back in and try harder -.-";
+	goto TalkCont_2;
+Grl_2:
+	mes "You can't act all weak, just because you're a girl! >_>";
+	mes "If  you want to be a wizard, go and pass!";
+	next;
+	mes "[Carltin]";
+	mes "I thought it was hard too,  but it wasn't enough to make me quit!";
+	mes "You have to face hardship sometimes!";
+TalkCont_2:
+	next;
+	mes "[Carltin]";
+	mes "Good luck!";
+	mes "The examiner is waiting for you!";
+ChkWizSP:
+	check skillpoint != 0,-,TalkCont_3;
+	mes "Did you pass?";
+	mes "Uh oh, you have skill points left, go spend them!";
+	close;
+TalkCont_3:
+	mes "Great! You  finished it!";
+	mes "Congrats, congrats, congrats!";
+	next;
+	mes "[Carltin]";
+	mes "Ack, I'm wasting time, I better change you!";
+	next;
+	set wizard_m1 = 0;
+	set wizard_m2 = 0;
+	set job_wizard_q = 0;
+	jobchange 9;
+	set joblevel = 1,0;
+	mes "[Carltin]";
+	mes "Now you're a wizard! Act responsibly!";
+	mes "Make sure when you cast, you know what will happen!";
+	next;
+	mes "[Carltin]";
+	mes "Don't do stupid things like casting in the middle of town!";
+	mes "It  lags and magic is supposed to be used on monsters any ways >_>";
+	next;
+	mes "[Carltin]";
+	mes "Become mightier by  partying with others!";
+	mes "Oh yea, here's a present!";
+	next;
+	mes "[Carltin]";
+	mes "Rustle Rustle";
+	next;
+	additem 505,6;
+	mes "[Carltin]";
+	mes "Use them wisely!";
+	mes "It's a present from me, so you better drink them all!";
+	next;
+	mes "[Carltin]";
+	mes "Well wizard, have a good life!";
+	close;
+}
+
+//- Examiner: Raul Expagarus
+//- Mission 2 do , Mission 3 do, warps from tower to arena
+gef_tower.vhm,102,24,7 script Wizard 735,{
+	mes "[Raul]";
+	check job == 2,ApWiz,-;
+	check job == 9,-,ChkPrst;
+	mes "Cough Cough, what can I do for you?";
+	mes "Hmmm, you're a magic use too...";
+	next;
+	mes "[Raul]";
+	check gender == 1,-,Grl_1;
+	mes "If you're not responsible, you might accidentally learn useless spells.";
+	mes "Instead of that, you might want to focus on learning to use your spells now.";
+	next;
+	mes "[Raul]";
+	mes "In a fight for love, you might become cripples hehe.";
+	close;
+Grl_1:
+	mes "If you're not responsible, you might accidentally learn useless spells";
+	mes "You should learn it with all your heart, otherwise, just quit now.";
+	next;
+	mes "[Raul]";
+	mes "If you don't wish to study like that...............";
+	mes "Heh, go be a housewife.";
+	close;
+ChkPrst:
+	check job == 8,-,ChkNov;
+	mes "Leave holy ones!";
+	mes "Magic is considered a power not from God.......";
+	next;
+	mes "[Raul]";
+	mes "Besides, I'm not feeling too good";
+	mes "Leave now!";
+	close;
+ChkNov:
+	check job == 0,-,DiffClass;
+	mes "What's a little kid like you doing here?";
+	mes "Get out of here!";
+	warp "geffen",120,110;
+DiffClass:
+	mes "Ugh I don't feel good....I feel like I'm trapped in ice........";
+	next;
+	mes "[Raul]";
+	mes "Who're you?! Leave!";
+	close;
+ApWiz:
+	check job_wizard_q == 0,-,ChkWiz_M1;
+	mes "Cough, I don't have any time to talk.";
+	next;
+	mes "[Raul]";
+	mes "Sorry, but please leave.";
+	close;
+ChkWiz_M1:
+	check job_wizard_q <= 2,-,ChkWiz_M2;
+	mes "Heh, a wizard trainee eh?!";
+	next;
+	mes "[Raul]";
+	mes "You COULD just stay as a mage and live a pretty decent life.....";
+	next;
+	mes "[Raul]";
+	mes "Then again, wizards ARE much more upper class.";
+	close;
+ChkWiz_M2:
+	check job_wizard_q == 3,-,ChkWiz_M2_R;
+	mes "I see you've passed the 1st test.";
+	mes "Yes, I'm your test examiner. My name is Raul Expagarus";
+	next;
+	mes "[Raul]";
+	mes "It's not too late! You can still return to a peaceful life in town if you wish.";
+	next;
+	mes "[Raul]";
+	mes "You probably have no clue how dangerous it is to use magic.";
+	next;
+menu "I want to live as a regular magician",-,"I want to continue the test!",WizMnu_1;
+	mes "[Raul]";
+	mes "Good choice, cough cough.";
+	mes "Wizard is a difficult job, magic is not meant for humans to use.........";
+	next;
+	mes "[Raul]";
+	mes "Go down the tower and don't look back.";
+	mes "Use the magic you have now and live a peaceful life.";
+	close;
+WizMnu_1:
+	mes "[Raul]";
+	mes "HA! Here's a little idiot.";
+	mes "Hmph, I'll see how GREAT you do.";
+	next;
+	mes "[Raul]";
+	mes "Lets start the test!";
+	mes "If you miss one, you're screwed! HA!";
+	next;
+	mes "[Raul]";
+	mes "10 questions, get them right!";
+	mes "Even if you miss, I won't tell you the correct answer.";
+	next;
+WizQR:
+	random wizard_m2,4;
+	set @wizard_t = 0;
+	mes "[Raul]";
+	mes "Cough, here's the questions!";
+	next;
+	check wizard_m2 == 2,WizQ2,-;
+	check wizard_m2 == 3,WizQ3,-;
+	mes "[Raul]";
+	mes "1. What isn't required for fire wall?";
+	next;
+menu "Fire Bolt Lv 4",WzQ1,"Fire Ball Lv 5",WzQ1,"Sight Lv 1",WzQ1,"Napalm Beat Lv 4",-;
+	set @wizard_t + 10;
+WzQ1:
+	mes "[Raul]";
+	mes "2. What happens to a monster's element after it's frozen by Frost Diver?";
+	next;
+menu "Changes to Water",-,"Changes to Earth",WzQ2,"Changes to Fire",WzQ2,"Changes to Wind",WzQ2;
+	set @wizard_t + 10;
+WzQ2:
+	mes "[Raul]";
+	mes "3. When you max out Napalm Beat, how many times matk will the dmg be?";
+	next;
+menu "1.6x",WzQ3,"1.7x",-,"2x",WzQ3,"20x",WzQ3;
+	set @wizard_t + 10;
+WzQ3:
+	mes "[Raul]";
+	mes "4. What item is required for stone curse?";
+	next;
+menu "Red Blood",WzQ4,"Blue Gem",WzQ4,"Yellow Gem",WzQ4,"Red Gem",-;
+	set @wizard_t + 10;
+WzQ4:
+	mes "[Raul]";
+	mes "5. What isn't required for Safety Wall?";
+	next;
+menu "Napalm Beat Lv 4",WzQ5,"Soul Strike Lv 5",WzQ5,"SP Recovery Lv. 6",-,"Ice Wall Lv 7",WzQ5;
+	set @wizard_t + 10;
+WzQ5:
+	mes "[Raul]";
+	mes "6. How much SP will you regain every 10 sec with lvl 7 SP Rec.?";
+	next;
+menu "14",WzQ6,"21",-,"28",WzQ6,"35",WzQ6;
+	set @wizard_t + 10;
+WzQ6:
+	mes "[Raul]";
+	mes "7. You have 50% SP, how much dmg will Energy Coat reduce and how much sp will it use??";
+	next;
+menu "dmg 18% SP1.5%",WzQ7,"dmg18% SP2%",-,"dmg 24% SP1.5%",WzQ7,"dmg 24% SP2%",WzQ7;
+	set @wizard_t + 10;
+WzQ7:
+	mes "[Raul]";
+	mes "8. Safety Wall Lv.6's  sp consumed, and no. of hits absorbed?";
+	next;
+menu "40 sp, 6hits",WzQ8,"35 sp, 6hits",WzQ8,"40 sp, 7hits",-,"35 sp, 7hits",WzQ8;
+	set @wizard_t + 10;
+WzQ8:
+	mes "[Raul]";
+	mes "9. Lv. 10 Thunder Storm's Sp Consume";
+	next;
+menu "84",WzQ9,"74",-,"64",WzQ9,"54",WzQ9;
+	set @wizard_t + 10;
+WzQ9:
+	mes "[Raul]";
+	mes "10. What would be a good skill to use in the Izlude Guild Dungeon?";
+	next;
+menu "Lightning Bolt",-,"Fire Bolt",WzQEnd,"Ice Bolt",WzQEnd,"Sight",WzQEnd;
+	set @wizard_t + 10;
+	goto WzQEnd;
+WizQ2:
+	mes "[Raul]";
+	mes "1. What drops a slot guard?";
+	next;
+menu "Thief Bug",WzQ10,"Peco Peco",WzQ10,"Pupa",-,"Mace Kobold",WzQ10;
+	set @wizard_t + 10;
+WzQ10:
+	mes "[Raul]";
+	mes "2. Which monster is the easiest for magicians?";
+	next;
+menu "Flora",-,"Gierth",WzQ11,"Golem",WzQ11,"Myst",WzQ11;
+	set @wizard_t + 10;
+WzQ11:
+	mes "[Raul]";
+	mes "3. What monster is completely immune to Stone Curse?";
+	next;
+menu "Elder Willow",WzQ12,"Evil Druid",-,"Baek-Ryuhn-Oak",WzQ12,"Marc",WzQ12;
+	set @wizard_t + 10;
+WzQ12:
+	mes "[Raul]";
+	mes "4. How much dmg do you do with a wind spell to a Water 3 monster?";
+	next;
+menu "125%",WzQ13,"150%",WzQ13,"175%",WzQ13,"200%",-;
+	set @wizard_t + 10;
+WzQ13:
+	mes "[Raul]";
+	mes "5. Baby Desert Wolves vs Familiar, which one wins?";
+	next;
+menu "Baby Desert Wolf",-,"Farmiliar",WzQ14,"Tie",WzQ14,"Don't Know",WzQ14;
+	set @wizard_t + 10;
+WzQ14:
+	mes "[Raul]";
+	mes "6. Which monster can't be tamed as a pet?";
+	next;
+menu "Poporing",WzQ15,"Roda Frog",-,"Smokie",WzQ15,"Poison Spore",WzQ15;
+	set @wizard_t + 10;
+WzQ15:
+	mes "[Raul]";
+	mes "7. Which monster is weak against fire?.";
+	next;
+menu "Knife Goblins",WzQ16,"Mace Goblin",WzQ16,"Flain Goblin",WzQ16,"Hammer Goblin",-;
+	set @wizard_t + 10;
+WzQ16:
+	mes "[Raul]";
+	mes "8. Which monster has the highest magic def?";
+	next;
+menu "Horong",WzQ17,"ChonChon",WzQ17,"Andre",WzQ17,"Caramel",-;
+	set @wizard_t + 10;
+WzQ17:
+	mes "[Raul]";
+	mes "9. Pick the monster that doesn't belong.";
+	next;
+menu "Poring",WzQ18,"Mastering",WzQ18,"Ghostring",-,"Spore",WzQ18;
+	set @wizard_t + 10;
+WzQ18:
+	mes "[Raul]";
+	mes "10. Which is not a undead?";
+	next;
+menu "Drake",WzQEnd,"Megalodon",WzQEnd,"Deviace",-,"Khalitzburg",WzQEnd;
+	set @wizard_t + 10;
+	goto WzQEnd;
+WizQ3:
+	mes "[Raul]";
+	mes "1. Which is the most important stat?";
+	next;
+menu "INT",-,"AGI",WzQ19,"DEX",WzQ19,"VIT",WzQ19;
+	set @wizard_t + 10;
+WzQ19:
+	mes "[Raul]";
+	mes "2. Which element doesn't have a bolt spell?";
+	next;
+menu "water",WzQ20,"earth",-,"fire",WzQ20,"wind",WzQ20;
+	set @wizard_t + 10;
+WzQ20:
+	mes "[Raul]";
+	mes "3. What is NOT one of the wizard's strong points?";
+	next;
+menu "Weak physical abilities",WzQ21,"Distance Attacks",WzQ21,"Good money maker",-,"High Magic Def",WzQ21;
+	set @wizard_t + 10;
+WzQ21:
+	mes "[Raul]";
+	mes "4. Which town is the home of mages";
+	next;
+menu "Prontera",WzQ22,"Morroc",WzQ22,"Alberta",WzQ22,"Geffen",-;
+	set @wizard_t + 10;
+WzQ22:
+	mes "[Raul]";
+	mes "5. Which card has nothing to do with INT?";
+	next;
+menu "Andre Card",-,"Soldier Andre Card",-,"Baby Desert Wolf Card",WzQ23,"Elder Willow Card",WzQ23;
+	set @wizard_t + 10;
+WzQ23:
+	mes "[Raul]";
+	mes "6. What is superior about the mage class compared to others?";
+	next;
+menu "Close Range Combat",WzQ24,"High Dodge",WzQ24,"Dance Skills",WzQ24,"Magical Power",-;
+	set @wizard_t + 10;
+WzQ24:
+	mes "[Raul]";
+	mes "7. What is the INT bonus at job lvl 40?";
+	next;
+menu "8",WzQ25,"7",WzQ25,"6",WzQ25,"5",-;
+	set @wizard_t + 10;
+WzQ25:
+	mes "[Raul]";
+	mes "8. Which Item can't be equipped by mages?";
+	next;
+menu "Knife",WzQ26,"Cap",-,"Sandel",WzQ26,"Eye of Dullahan",WzQ26;
+	set @wizard_t + 10;
+WzQ26:
+	mes "[Raul]";
+	mes "9. During the mage test, which stone is one of the Catalysts?";
+	next;
+menu "Yellow Gemstone",-,"Red Gemstone",WzQ27,"Blue Gemstone",WzQ27,"Red Blood",WzQ27;
+	set @wizard_t + 10;
+WzQ27:
+	mes "[Raul]";
+	mes "10. Which card has nothing to do with magic?";
+	next;
+menu "Marduk Card",WzQEnd,"Baek-Rhyun-Oak Card",-,"Willow Card",WzQEnd,"Maya Card",WzQEnd;
+	set @wizard_t + 10;
+WzQEnd:
+	mes "[Raul]";
+	mes "Great job, when you get the time afterwards, get something to eat heh.";
+	next;
+	mes "[Raul]";
+	mes "Your score is = $[@wizard_t] ";
+	check @wizard_t == 100,-,ChkWiz;
+	mes "Wonderful! You've passed the 2nd test.";
+	goto WizQComp;
+ChkWiz:
+	check @wizard_t == 90,-,ChkWiz_1;
+	mes "Hmm, you've missed one question, but I'll pass you.";
+WizQComp:
+	next;
+	set job_wizard_q = 5;
+	mes "[Raul]";
+	mes "Don't relax yet! There is still a 3rd test left.";
+	mes "While we prepare for the next test, sit and rest a bit.";
+	close;
+ChkWiz_1:
+	set job_wizard_q = 4;
+	mes "Failed, go study more.";
+	next;
+	mes "[Raul]";
+	mes "You're a long way away.";
+	mes "With that low intelligence, you have no chance of surviving as a wizard.";
+	close;
+ChkWiz_M2_R:
+	check job_wizard_q == 4,-,ChkWiz_M3;
+	mes "Hmph, you want to try again?";
+	next;
+	mes "[Raul]";
+	mes "How can you hate a peaceful life so much?";
+	next;
+	mes "[Raul]";
+	mes "Be that way! If you miss one question, you fail! What do you say!?";
+	next;
+menu "I want to live in peace..........",-,"I want to continue.",WizMnu_2;
+	mes "[Raul]";
+	mes "Good choice.";
+	mes "Wizard is a difficult job, magic was never meant for people to use.";
+	next;
+	mes "[Raul]";
+	mes "Go down and don't look back.";
+	mes "Use what you have now and live in peace.";
+	close;
+WizMnu_2:
+	mes "[Raul]";
+	mes "Heh, another idiot!";
+	mes "Let's see how great you are!";
+	next;
+	goto WizQR;
+ChkWiz_M3:
+	check job_wizard_q == 5,-,ChkWiz_M3_R;
+	mes "Get some rest?";
+	mes "Now, let's start the last test.";
+	next;
+	mes "[Raul]";
+	mes "I'll make a quick explanation of the test, want to hear it?";
+	next;
+menu "No thank you.",-,"Please go on",WizMnu_3;
+	mes "[Raul]";
+	mes "Ignorant fool, go die!";
+	mes "Your corpse will be left as the monsters' food.";
+	next;
+	mes "[Raul]";
+	mes "Be that way, I'll send you now";
+	mes "Have fun getting slaughtered!";
+	goto WizM3_Warp;
+WizMnu_3:
+	mes "[Raul]";
+	mes "Good, a smart one, I will explain now";
+	mes "It may be hard, but do as you're asked and you'll pass.";
+	next;
+	mes "[Raul]";
+	mes "Test is in 3 stages";
+	mes "There are rooms in this order, Room of Water, of Earth, and of Fire.";
+	next;
+	mes "[Raul]";
+	mes "There will be monsters of the elements in their respective rooms.";
+	mes "Use the right spells, and it won't be that difficult.";
+	next;
+	mes "[Raul]";
+	mes "Within the time limit, kill all the monsters,";
+	mes "Then kill the monster guarding the exit.";
+	next;
+	mes "[Raul]";
+	mes "Go through the exit and the test will be over.";
+	mes "Succeed and you'll become a master of magic, a wizard.";
+	next;
+	mes "[Raul]";
+	mes "You seem afraid, its not too late to return....";
+	mes "Give up now and you can return to town.";
+	next;
+menu "I want to take the test.",-,"IM SCARED~ I WANNA GO HOME >_>",WizMnu_4;
+	mes "[Raul]";
+	mes "Kid, you have courage.";
+	mes "We'll start as you wish!!";
+	next;
+	goto WizM3_Warp;
+WizMnu_4:
+	set job_wizard_q = 6;
+	mes "[Raul]";
+	mes "Good choice, it fits you better.";
+	mes "Have a nice peaceful life!";
+	warp "geffen",120,110;
+	close;
+ChkWiz_M3_R:
+	check job_wizard_q == 6,-,ChkWiz_M3_C;
+	set @wizard_t = 0;
+	mes "You want to take the test AGAIN!?";
+	mes "You love magic THAT much!?";
+	next;
+	mes "[Raul]";
+	mes "You failed, so it's time for a quiz!";
+	mes "If you don't like this, then pass the 3rd test.";
+	next;
+	mes "[Raul]";
+	mes "Let's start now hehe.";
+	next;
+	mes "[Raul]";
+	mes "1. Which monster doesn't exist?";
+	next;
+menu "Mantis",WzQ29,"Cunner Tooth",-,"Gierth",WzQ29,"Caramel",WzQ29;
+	set @wizard_t + 20;
+WzQ29:
+	mes "[Raul]";
+	mes "2. Which monster is NOT a animal type?";
+	next;
+menu "Yoyo",WzQ30,"Bigfoot",WzQ30,"Metaller",WzQ30,"Zerom",-;
+	set @wizard_t + 20;
+WzQ30:
+	mes "[Raul]";
+	mes "3. Which monster has no cast sense?";
+	next;
+menu "Marina",-,"Vitata",WzQ31,"Scorpion",WzQ31,"Gierth",WzQ31;
+	set @wizard_t + 20;
+WzQ31:
+	mes "[Raul]";
+	mes "4. What's a good spell to use on Marin Spheres?";
+	next;
+menu "Cold Bolt",WzQ32,"Fire Bolt",WzQ32,"Lightning Bolt",-,"Stone Curse",WzQ32;
+	set @wizard_t + 20;
+WzQ32:
+	mes "[Raul]";
+	mes "5. Which monster can move?";
+	next;
+menu "Hydra",WzQ33,"Mandragora",WzQ33,"Greatest General",WzQ33,"Frilldora",-;
+	set @wizard_t + 20;
+WzQ33:
+	mes "[Raul]";
+	mes "Do it right so I won't have to quiz you again.";
+	next;
+	mes "[Raul]";
+	mes "Your score is $[@wizard_t] ";
+	check @wizard_t == 100,-,ChkWiz_2;
+	mes "If you're so smart, why can't you pass the first test >_>";
+	goto TalkCont_1;
+ChkWiz_2:
+	check @wizard_t == 80,-,ChkWiz_3;
+	mes "Hehe, almost perfect.";
+	mes "´I'll let you try again.";
+	goto TalkCont_1;
+ChkWiz_3:
+	mes "Failed! Go study more!";
+	next;
+	mes "[Raul]";
+	mes "You aren't fit to be a wizard, why do you think you failed!?";
+	close;
+TalkCont_1:
+	next;
+menu "Let's start!",-,"Explain the test again please.",WizMnu_5;
+	mes "[Raul]";
+	mes "I won't help you even if you die this time.";
+	mes "Don't come crying to me if you fail.........again hehe.";
+	next;
+	heal 100,100;
+	mes "[Raul]";
+	mes "I'll send you to the arena now.";
+	mes "Have fun getting your butt whipped!";
+	next;
+	goto WizM3_Warp;
+WizMnu_5:
+	mes "[Raul]";
+	mes "Cough, I'll give you a briefing then.";
+	mes "Even if it seems hard, just do as you're asked, and you'll pass.";
+	next;
+	mes "[Raul]";
+	mes "The test is in 3 stages.";
+	mes "Water Room, Earth Room, and Fire Room. Each with their respective monsters.";
+	next;
+	mes "[Raul]";
+	mes "The monsters shouldn't be that hard.";
+	mes "Just use the right spells and you'll beat them!";
+	next;
+	mes "[Raul]";
+	mes "Within the time limit, kill all the monsters,";
+	mes "Then kill the monster guarding the exit, then leave.";
+	next;
+	mes "[Raul]";
+	mes "Afterwards, you're done with the test.";
+	mes "You can become a master of magic, a wizard.";
+	next;
+	mes "[Raul]";
+	mes "Heh, you seem afraid.";
+	mes "Give up now and I'll send you back to town.";
+	next;
+menu "I want to do the test.",-,"I'M AFRAID! SEND ME BACK HOME!! >_>",WizMnu_6;
+	heal 100,100;
+	mes "[Raul]";
+	mes "Don't make me send you there again!";
+	mes "Pass the test!";
+	next;
+	goto WizM3_Warp;
+WizMnu_6:
+	mes "[Raul]";
+	mes "Good thought, its much more fitting.";
+	mes "Have a nice and ordinary life!";
+	warp "geffen",120,110;
+	close;
+ChkWiz_M3_C:
+	mes "What do you want now?";
+	mes "If you want, I'll let you take the test again, keke.";
+	next;
+	mes "[Raul]";
+	mes "Go, become a wizard.";
+	mes "But be careful! Magic can always destroy you!";
+	close;
+WizM3_Warp:
+	set job_wizard_q = 6;
+	save "geffen",120,107;
+	warp "job_wiz",57,154;
+	close;
+}
+
+//- Arena Helper
+job_wiz.vhm,50,165,4 script Guide 102,{
+	mes "[Guide]";
+	mes "Welcome to the testing grounds!";
+	mes "Please go to the waiting room..";
+	next;
+	mes "[Guide]";
+	mes "Please wait if there is someone in front of you.";
+	mes "Progress will be announced periodically, so just relax until your turn.";
+	next;
+	mes "[Guide]";
+	mes "1 person usually takes 5 - 10 min.";
+	mes "It shouldn't take too long.";
+	close;
+}
+
+//- Waiting Room
+job_wiz.vhm,50,165,4 script "Waiting Room" 111,{
+	return;
+OnInit:
+	waitingroom "Waiting Room",2;
+	check \@startwiz = 0,start,-;
+	return;
+start:
+	set \@startwiz = 1;
+	enablenpc "job_wiz","fail1",0;
+	enablenpc "job_wiz","fail2",0;
+	enablenpc "job_wiz","fail3",0;
+	resetmymob "job_wiz";
+	warpallpc "job_wiz",114,154,2;
+	enablenpc "job_wiz","Wiz Room",1;
+	enablenpc "job_wiz","Waiting Room",0;
+	return;
+}
+
+//- Wiz Room
+job_wiz.vhm,1,1,1 script "Wiz Room" -1,{
+	return;
+OnInit:
+	check \@startwiz == 1,WaterMob1,-;
+	return;
+WaterMob1:
+	set \@mobwiz = 0;
+	set \@mobwizcount = 8;
+	callmymob phen,109,174,0,0;
+	callmymob kukre,118,174,0,0;
+	callmymob vadon,109,165,0,0;
+	callmymob cornutus,118,165,0,0;
+	callmymob marina,101,157,0,0;
+	callmymob marina,126,157,0,0;
+	callmymob kukre,98,170,0,0;
+	callmymob obeaune,129,170,0,0;
+//earth
+	callmymob yoyo,111,102,0,0;
+	callmymob deniro,120,102,0,0;
+	callmymob caramel,111,102,0,0;
+	callmymob hode,120,102,0,0;
+	callmymob savage,111,93,0,0;
+	callmymob giearth,120,93,0,0;
+	callmymob bigfoot,107,98,0,0;
+	callmymob orc_warrior,124,98,0,0;
+	callmymob vitata,104,86,0,0;
+	callmymob mantis,127,86,0,0;
+//fire
+	callmymob zerom,58,110,0,0;
+	callmymob goblin_2,33,110,0,0;
+	callmymob scorpion,40,103,0,0;
+	callmymob frilldora,51,103,0,0;
+	callmymob pecopeco,40,92,0,0;
+	callmymob elder_willow,51,92,0,0;
+	callmymob metaller,37,89,0,0;
+	callmymob desert_wolf,54,89,0,0;
+	npctimer 1;
+	return;
+WaterMob2:
+	set \@mobwiz = 0;
+	set \@mobwizcount = 5;
+	callmymob marine_sphere,114,169,0,0;
+	callmymob hydra,112,169,0,0;
+	callmymob hydra,116,169,0,0;
+	callmymob hydra,114,171,0,0;
+	callmymob hydra,114,167,0,0;
+	warp "job_wiz",98,170;
+	return;
+OnMyMobDead:
+	set \@mobwiz + 1;
+	check \@mobwiz < \@mobwizcount,-,ChkMobCount;
+	return;
+ChkMobCount:
+	check \@startwiz == 1,WaterMobDead1,-;
+	check \@startwiz == 2,WaterMobDead2,-;
+	check \@startwiz == 3,EarthMobDead1,-;
+	check \@startwiz == 4,EarthMobDead2,-;
+	check \@startwiz == 5,FireMobDead1,FireMobDead2;
+WaterMobDead1:
+	set \@startwiz = 2;
+	broadcast "Gate Guards have appeared!",10;
+	goto WaterMob2;
+WaterMobDead2:
+	set \@startwiz = 3;
+	broadcast "$charaname has defeated the Water Room!",10;
+	npctimer 1;
+EarthMob1:
+	set \@mobwiz = 0;
+	set \@mobwizcount = 10;
+	warp "job_wiz",116,82;
+	return;
+EarthMob2:
+	set \@mobwiz = 0;
+	set \@mobwizcount = 7;
+	callmymob flora,116,97,0,0;
+	callmymob mandragora,114,95,0,0;
+	callmymob mandragora,118,95,0,0;
+	callmymob mandragora,114,99,0,0;
+	callmymob mandragora,118,99,0,0;
+	callmymob mandragora,116,94,0,0;
+	callmymob mandragora,116,100,0,0;
+	warp "job_wiz",100,98;
+	return;
+EarthMobDead1:
+	set \@startwiz = 4;
+	broadcast "Gate Guards Appeared!",10;
+	goto EarthMob2;
+EarthMobDead2:
+	set \@startwiz = 5;
+	broadcast "$charaname has defeated the Earth Room!",10;
+	npctimer 1;
+FireMob1:
+	set \@mobwiz = 0;
+	set \@mobwizcount = 8;
+	warp "job_wiz",46,83;
+	return;
+FireMob2:
+	set \@mobwiz = 0;
+	set \@mobwizcount = 3;
+	callmymob greatest_general,44,99,0,0;
+	callmymob horong,44,99,0,0;
+	callmymob horong,45,99,0,0;
+	warp "job_wiz",30,97;
+	return;
+FireMobDead1:
+	set \@startwiz = 6;
+	broadcast "Gate Guards Appeared!",10;
+	goto FireMob2;
+	return;
+FireMobDead2:
+	set \@mobwiz = 0;
+	set \@startwiz = 0;
+	broadcast "Congratulations, $charaname passed the test!",10;
+	broadcast "The test is now over, next in line, please enter.",10;
+	set job_wizard_q = 7;
+	enablenpc "job_wiz","Waiting Room",1;
+	npctimer 0;
+	warp "gef_tower",110,30;
+	return;
+OnTimer1000:
+	broadcast "Testing will begin. Kill all the monsters within the time limit.",10;
+	return;
+OnTimer2000:
+	broadcast "3 min left",10;
+	return;
+OnTimer33000:
+	broadcast "2min 30sec left.",10;
+	return;
+OnTimer63000:
+	broadcast "2min left",10;
+	return;
+OnTimer93000:
+	broadcast "1min 30sec left",10;
+	return;
+OnTimer123000:
+	broadcast "1min left.",10;
+	return;
+OnTimer153000:
+	broadcast "30sec left.",10;
+	return;
+OnTimer173000:
+	broadcast "10 seconds!",10;
+	return;
+OnTimer183000:
+	broadcast "Times up!! You failed!!",10;
+	resetmymob "job_wiz";
+	enablenpc "job_wiz","fail1",1;
+	enablenpc "job_wiz","fail2",1;
+	enablenpc "job_wiz","fail3",1;
+	return;
+OnTimer185000:
+	npctimer 0;
+}
+
+//- Water Room - Failed
+job_wiz.vhm,114,169,1 script "fail1" 45,{
+OnTouch:
+	scriptlabel JobWizFailed;
+	set \@startwiz = 0;
+	enablenpc "job_wiz","Waiting Room",1;
+	enablenpc "job_wiz","Wiz Room",0;
+	warp "geffen",120,110;
+}
+
+//- Earth Room - Failed
+job_wiz.vhm,116,97,1 script "fail2" 45,{
+OnTouch:
+	script JobWizFailed;
+}
+
+//- Fire Room - Failed
+job_wiz.vhm,46,99,1 script "fail3" 45,{
+OnTouch:
+	script JobWizFailed;
+}

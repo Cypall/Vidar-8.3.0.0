@@ -1,0 +1,146 @@
+//====================================================================--
+// Einbroch Area Warp points
+// By L0ne_W0lf
+//====================================================================
+
+//============================================================--
+// Fields 6-10
+//-------------------------------------------------------
+ein_fild06.vhm,252,365,0	warp	Einbroch1	1,1,yuno_fild04.vhm,251,23
+yuno_fild04.vhm,251,21,0	warp	Einbroch2	1,1,ein_fild06.vhm,252,361
+ein_fild06.vhm,356,98,0	warp	Einbroch3	1,1,yuno_fild07.vhm,75,216
+yuno_fild07.vhm,73,216,0	warp	Einbroch4	1,1,ein_fild06.vhm,354,98
+ein_fild06.vhm,134,35,0	warp	Einbroch5	1,1,ein_fild07.vhm,147,359
+ein_fild07.vhm,145,362,0	warp	Einbroch6	1,1,ein_fild06.vhm,134,39
+ein_fild07.vhm,382,263,0	warp	Einbroch7	1,1,yuno_fild11.vhm,35,241
+yuno_fild11.vhm,32,241,0	warp	Einbroch8	1,1,ein_fild07.vhm,379,263
+ein_fild07.vhm,187,42,0	warp	Einbroch9	1,1,ein_fild10.vhm,193,369
+ein_fild10.vhm,193,372,0	warp	Einbroch10	1,1,ein_fild07.vhm,187,45
+ein_fild10.vhm,24,331,0	warp	Einbroch11	1,1,ein_fild09.vhm,326,346
+ein_fild09.vhm,329,346,0	warp	Einbroch12	1,1,ein_fild10.vhm,27,331
+ein_fild09.vhm,34,133,0	warp	Einbroch13	1,1,ein_fild08.vhm,361,128
+ein_fild08.vhm,363,127,0	warp	Einbroch14	1,1,ein_fild09.vhm,36,133
+ein_fild09.vhm,70,352,0	warp	Einbroch15	1,1,einbech.vhm,63,34
+einbech.vhm,63,29,0	warp	Einbroch16	1,1,ein_fild09.vhm,72,350
+ein_fild08.vhm,164,381,0	warp	Einbroch17	1,1,einbroch.vhm,150,26
+einbroch.vhm,150,24,0	warp	Einbroch18	1,1,ein_fild08.vhm,164,379
+
+//============================================================--
+// Dungeon
+//-------------------------------------------------------
+einbech.vhm,139,252,0	warp	Einbroch19	1,1,ein_dun01.vhm,20,18
+ein_dun01.vhm,22,16,0	warp	Einbroch20	1,1,einbech.vhm,139,252
+ein_dun01.vhm,262,255,0	warp	Einbroch21	1,1,ein_dun02.vhm,276,288
+ein_dun02.vhm,286,291,0	warp	Einbroch22	1,1,ein_dun01.vhm,262,258
+
+//==================================================================--
+// Town Links
+//============================================================--
+// Airport - Einbroch
+//-------------------------------------------------------
+einbroch.vhm,64,208,0	warp	Einbroch23	1,1,airport.vhm,142,15
+airport.vhm,142,13,0	warp	Einbroch24	1,1,einbroch.vhm,64,206
+airport.vhm,143,63,0	warp	Einbroch25	1,1,einbroch.vhm,64,236
+einbroch.vhm,64,234,0	warp	Einbroch26	1,1,airport.vhm,143,61
+airport.vhm,160,13,0	warp	Einbroch27	1,1,airport.vhm,48,20
+airport.vhm,48,18,0	warp	Einbroch28	1,1,airport.vhm,162,14
+airport.vhm,125,13,0	warp	Einbroch29	1,1,airport.vhm,19,20
+airport.vhm,19,18,0	warp	Einbroch30	1,1,airport.vhm,123,14
+
+//============================================================--
+// Hotel - Einbroch
+//-------------------------------------------------------
+einbroch.vhm,258,200,0	warp	Einbroch31	1,1,ein_in01.vhm,196,223
+ein_in01.vhm,194,223,0	warp	Einbroch32	1,1,einbroch.vhm,256,200
+ein_in01.vhm,211,231,0	warp	Einbroch33	1,1,ein_in01.vhm,273,232
+ein_in01.vhm,271,232,0	warp	Einbroch34	1,1,ein_in01.vhm,209,231
+ein_in01.vhm,210,215,0	warp	Einbroch35	1,1,ein_in01.vhm,273,218
+ein_in01.vhm,271,218,0	warp	Einbroch36	1,1,ein_in01.vhm,208,215
+ein_in01.vhm,247,202,0	warp	Einbroch37	1,1,ein_in01.vhm,274,174
+ein_in01.vhm,274,176,0	warp	Einbroch38	1,1,ein_in01.vhm,274,204
+ein_in01.vhm,264,202,0	warp	Einbroch39	1,1,ein_in01.vhm,232,175
+ein_in01.vhm,232,177,0	warp	Einbroch40	1,1,ein_in01.vhm,264,204
+ein_in01.vhm,264,247,0	warp	Einbroch41	1,1,ein_in01.vhm,231,274
+ein_in01.vhm,231,272,0	warp	Einbroch42	1,1,ein_in01.vhm,264,245
+ein_in01.vhm,274,247,0	warp	Einbroch43	1,1,ein_in01.vhm,273,274
+ein_in01.vhm,273,272,0	warp	Einbroch44	1,1,ein_in01.vhm,274,245
+ein_in01.vhm,283,223,0	warp	Einbroch45	1,1,ein_in01.vhm,177,276
+ein_in01.vhm,180,276,0	warp	Einbroch46	1,1,ein_in01.vhm,280,223
+
+//============================================================--
+// Research Labratory - Einbroch
+//-------------------------------------------------------
+einbroch.vhm,50,51,0	warp	Einbroch47	1,1,ein_in01.vhm,287,25
+ein_in01.vhm,289,25,0	warp	Einbroch48	1,1,einbroch.vhm,53,51
+
+//============================================================--
+// Weapon Shop - Einbroch
+//-------------------------------------------------------
+einbroch.vhm,217,214,0	warp	Einbroch49	1,1,ein_in01.vhm,107,14
+ein_in01.vhm,107,12,0	warp	Einbroch50	1,1,einbroch.vhm,217,212
+
+//============================================================--
+// Blacksmith - Einbroch
+//-------------------------------------------------------
+einbroch.vhm,255,107,0	warp	Einbroch51	1,1,ein_in01.vhm,14,13
+ein_in01.vhm,14,16,0	warp	Einbroch52	1,1,einbroch.vhm,255,110
+
+//============================================================--
+// Factory - Einbroch
+//-------------------------------------------------------
+einbroch.vhm,179,73,0	warp	Einbroch53	1,1,ein_in01.vhm,80,200
+ein_in01.vhm,80,198,0	warp	Einbroch54	1,1,einbroch.vhm,179,71
+einbroch.vhm,133,80,0	warp	Einbroch55	1,1,ein_in01.vhm,15,212
+ein_in01.vhm,13,212,0	warp	Einbroch56	1,1,einbroch.vhm,130,80
+einbroch.vhm,202,101,0	warp	Einbroch57	1,1,ein_in01.vhm,109,266
+ein_in01.vhm,111,266,0	warp	Einbroch58	1,1,einbroch.vhm,204,101
+einbroch.vhm,202,120,0	warp	Einbroch59	1,1,ein_in01.vhm,109,236
+ein_in01.vhm,111,236,0	warp	Einbroch60	1,1,einbroch.vhm,204,120
+
+//============================================================--
+// House - Einbroch
+//-------------------------------------------------------
+einbroch.vhm,262,161,0	warp	Einbroch61	1,1,ein_in01.vhm,189,99
+ein_in01.vhm,187,99,0	warp	Einbroch62	1,1,einbroch.vhm,262,163
+einbroch.vhm,252,149,0	warp	Einbroch63	1,1,ein_in01.vhm,205,83
+ein_in01.vhm,205,81,0	warp	Einbroch64	1,1,einbroch.vhm,249,151
+
+//============================================================--
+// House - ?
+//-------------------------------------------------------
+//einbroch,,,ein_in01,104,94
+//ein_in01,102,94,einbroch,,
+//downstairs
+//ein_in01,125,87,ein_in01,96,141
+//ein_in01,99,141,ein_in01,122,87
+
+//============================================================--
+// School? - Einbech
+//-------------------------------------------------------
+einbech.vhm,255,109,0	warp	Einbroch65	1,1,ein_in01.vhm,146,152
+ein_in01.vhm,144,152,0	warp	Einbroch66	1,1,einbech.vhm,252,109
+
+//============================================================--
+// Bar - Einbech
+//-------------------------------------------------------
+//einbech,177,138,ein_in01,267,104
+//ein_in01,265,104,eingbech,177,135
+
+//============================================================--
+// Tool Shop - Einbech?
+//-------------------------------------------------------
+// entrance
+//einbech,177,137,ein_in01,190,36
+//ein_in01,190,39,einbech,177,175
+// staircase
+//ein_in01,200,31,einbech,170,145
+//einbech,170,147,ein_in01,200,29
+// Left Room
+//ein_in01,172,18,einbech,0,0
+//einbech,0,0,ein_in01,174,81
+
+//============================================================--
+// Airship - Interior
+//-------------------------------------------------------
+airplane.vhm,256,54,0	warp	Einbroch67	1,1,airplane.vhm,89,67
+airplane.vhm,87,67,0	warp	Einbroch68	1,1,airplane.vhm,251,54

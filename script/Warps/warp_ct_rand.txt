@@ -1,0 +1,193 @@
+//---------------------------------------------------------------------
+// Random warp points for Clock Tower (Green dots on mini-map)
+// Converted by L0ne_W0lf
+//---------------------------------------------------------------------
+
+//---------Random Warps for Floor 2--------------------
+c_tower2.vhm,13,288,0	 script	"c_tower2->RandomB(c2-1_:_RandomB)"	 45,{
+OnTouch:
+	random @ranc2_1,3;
+	check @ranc2_1 == 2,elseif,-;
+	check @ranc2_1 == 3,else,-;
+		warp "c_tower2",13,282;
+	elseif:
+		warp "alde_dun03",175,131;
+	else:
+		warp "c_tower3",235,7;
+}
+
+c_tower2.vhm,223,267,0	 script	"c_tower2->RandomA(c2-3_:_RandomA)"	 45,{
+OnTouch:
+	random @ranc2_3,3;
+	check @ranc2_3 == 2,elseif,-;
+	check @ranc2_3 == 3,else,-;
+		warp "c_tower2",228,267;
+	elseif:
+		warp "alde_dun03",130,130;
+	else:
+		warp "c_tower3",252,29;
+}
+
+//---------Random Warps for Floor 3--------------------
+c_tower3.vhm,163,252,0	 script	"c_tower3->RandomC(c3-9_:_Randomc)"	 45,{
+OnTouch:
+	random @ranc3_9,2;
+	check @ranc3_9 == 2,else,-;
+		warp "c_tower3",168,252;
+	else:
+		warp "alde_dun02",262,41;
+}
+
+c_tower3.vhm,240,7,0	 script	"c_tower3->RandomB(c3-7_:_RandomB)"	 45,{
+OnTouch:
+	random @ranc3_7,3;
+	check @ranc3_7 == 2,elseif,-;
+	check @ranc3_7 == 3,else,-;
+		warp "c_tower2",13,282;
+	elseif:
+		warp "alde_dun03",175,131;
+	else:
+		warp "c_tower3",235,7;
+}
+
+c_tower3.vhm,252,24,0	 script	"c_tower3->RandomA(c3-8_:_RandomA)"	 45,{
+OnTouch:
+	random @ranc3_8,3;
+	check @ranc3_8 == 2,elseif,-;
+	check @ranc3_8 == 3,else,-;
+		warp "c_tower2",228,267;
+	elseif: ranc3_8 == 2
+		warp "alde_dun03",130,130;
+	else:
+		warp "c_tower3",252,29;
+}
+
+//---------Random Warps for Floor 4--------------------
+c_tower4.vhm,75,156,0	 script	"c4-6->RandomC"	 45,{
+OnTouch:
+	random @ranc4_6,4;
+	check @ranc4_6 == 2,elseif,-;
+	check @ranc4_6 == 3,elseif2,-;
+	check @ranc4_6 == 4,else,-;
+		warp "c_tower3",168,252;
+	elseif:
+		warp "alde_dun02",262,41;
+	elseif2:
+		warp "c_tower4",73,154;
+	else:
+		warp "c_tower4",140,149;
+}
+
+c_tower4.vhm,68,79,0	 script	"c4-12->RandomB"	 45,{
+OnTouch:
+	random @ranc4_12,5;
+	check @ranc4_12 == 2,elseif,-;
+	check @ranc4_12 == 3,elseif2,-;
+	check @ranc4_12 == 4,elseif3,-;
+	check @ranc4_12 == 5,else,-;
+		warp "c_tower2",13,282;
+	elseif: ranc4_12 == 2
+		warp "alde_dun03",175,131;
+	elseif2:
+		warp "c_tower3",235,7;
+	elseif3:
+		warp "alde_dun04",84,36;
+	else:
+		warp "c_tower4",65,77;
+}
+
+c_tower4.vhm,142,151,0	 script	"c4-11->RandomC"	 45,{
+OnTouch:
+	random @ranc4_11,4;
+	check @ranc4_11 == 2,elseif,-;
+	check @ranc4_11 == 3,elseif2,-;
+	check @ranc4_11 == 4,else,-;
+		warp "c_tower3",168,252;
+	elseif:
+		warp "alde_dun02",262,41;
+	elseif2:
+		warp "c_tower4",73,154;
+	else:
+		warp "c_tower4",140,149;
+}
+
+c_tower4.vhm,151,96,0	 script	"c4-13->RandomA"	 45,{
+OnTouch:
+	random @ranc4_13,4;
+	check @ranc4_13 == 2,elseif,-;
+	check @ranc4_13 == 3,elseif2,-;
+	check @ranc4_13 == 4,else,-;
+		warp "c_tower2",228,267;
+	elseif:
+		warp "alde_dun03",130,130;
+	elseif2:
+		warp "c_tower3",252,29;
+	else:
+		warp "c_tower4",152,95;
+}
+
+c_tower4.vhm,189,40,0	 script	"c4-1->RandomA"	 45,{
+OnTouch:
+	random @ranc4_1,4;
+	check @ranc4_1 == 2,elseif,-;
+	check @ranc4_1 == 3,elseif2,-;
+	check @ranc4_1 == 4,else,-;
+		warp "c_tower2",228,267;
+	elseif:
+		warp "alde_dun03",130,130;
+	elseif2:
+		warp "c_tower3",252,29;
+	else:
+		warp "c_tower4",152,95;
+}
+
+//---------Random Warps for Clock Tower Underground 1--------------------
+alde_dun02.vhm,267,41,0	 script	"2-3->RandomC"	 45,{
+OnTouch:
+	random @ranb2_3,2;
+	check @ranb2_3 == 2,else,-;
+		warp "c_tower3",168,252;
+	else:
+		warp "alde_dun02",262,41;
+}
+
+//---------Random Warps for Clock Tower basement 2--------------------
+alde_dun03.vhm,130,125,0	 script	"3-1->RandomA"	 45,{
+OnTouch:
+	random @ranb3_1,3;
+	check @ranb3_1 == 2,elseif,-;
+	check @ranb3_1 == 3,else,-;
+		warp "c_tower2",228,267;
+	elseif:
+		warp "alde_dun03",130,130;
+	else:
+		warp "c_tower3",252,29;
+}
+
+alde_dun03.vhm,171,127,0	 script	"3-3->RandomB"	 45,{
+OnTouch:
+	random @ranb3_3,3;
+	check @ranb3_3 == 2,elseif,-;
+	check @ranb3_3 == 3,else,-;
+		warp "c_tower2",13,282;
+	elseif:
+		warp "alde_dun03",175,131;
+	else:
+		warp "c_tower3",235,7;
+}
+
+//---------Random Warps for Clock Tower basement 3--------------------
+alde_dun04.vhm,80,34,0	 script	"4-3->RandomB"	 45,{
+OnTouch:
+	random @ranb4_3,4;
+	check @ranb4_3 == 2,elseif,-;
+	check @ranb4_3 == 3,elseif2,-;
+	check @ranb4_3 == 4,else,-;
+		warp "c_tower2",13,282;
+	elseif:
+		warp "alde_dun03",175,131;
+	elseif2:
+		warp "c_tower3",235,7;
+	else:
+		warp "alde_dun04",84,36;
+}

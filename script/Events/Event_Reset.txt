@@ -1,0 +1,114 @@
+//----------------------------------------------------------------------------------------
+// Reset Girl 
+// Script by Kizashi
+//----------------------------------------------------------------------------------------
+// major fixes by Ramiel
+// Small addition by L0ne_W0lf
+//
+// Vidar - http://www.vidaronline.com
+//----------------------------------------------------------------------------------------
+prontera.vhm,144,178,6      script       "Reset Girl"       0,0,0,0	727,{
+	set @stat_price = 100;
+	set @skill_price = 100;
+	mes "[Reset Girl]";
+	mes "Hello";
+	mes "You can use my services to either reset your stats (^FF0000$[@stat_price] zeny^000000) or reset your skills (^FF0000$[@skill_price] zeny^000000).";
+	menu "Reset Skills",L_Skill,"Reset Stats",L_Stat,"Maybe some other time.",L_Cancel;
+	L_Skill:
+		check zeny >= @skill_price,-,No_Fund;
+		set zeny - @skill_price;
+		mes "[Character Administrator]";
+		mes "You've chosen the reset skill option, here we go...";
+		next;
+		//Platinum skill check
+			getskilllevel 0x93,@chk1;
+			getskilllevel 0x92,@chk2;
+			getskilllevel 0x99,@chk3;
+			getskilllevel 0x9A,@chk4;
+			getskilllevel 0x94,@chk5;
+			getskilllevel 0x9B,@chk6;
+			getskilllevel 0x9D,@chk7;
+			getskilllevel 0x91,@chk8;
+			getskilllevel 0x9C,@chk9;
+			getskilllevel 0x90,@chk10;
+			getskilllevel 0x98,@chk11;
+			getskilllevel 0x96,@chk12;
+			getskilllevel 0x97,@chk13;
+			getskilllevel 0x95,@chk14;
+			getskilllevel 0x8E,@chk15;
+			getskilllevel 0x8F,@chk16;
+			option 0,0;
+			option 1,0;
+			option 2,0;
+			resetskill;
+			//Re-adding lost platinum skills
+			check @chk1 = 1,-,ADD1;
+				setskilllevel 0x93,1;
+			ADD1:
+			check @chk2 = 1,-,ADD2;
+				setskilllevel 0x92,1;
+			ADD2:
+			check @chk3 = 1,-,ADD3;
+				setskilllevel 0x99,1;
+			ADD3:
+			check @chk4 = 1,-,ADD4;
+				setskilllevel 0x9A,1;
+			ADD4:
+			check @chk5 = 1,-,ADD5;
+				setskilllevel 0x94,1;
+			ADD5:
+			check @chk6 = 1,-,ADD6;
+				setskilllevel 0x9B,1;
+			ADD6:
+			check @chk7 = 1,-,ADD7;
+				setskilllevel 0x9D,1;
+			ADD7:
+			check @chk8 = 1,-,ADD8;
+				setskilllevel 0x91,1;
+			ADD8:
+			check @chk9 = 1,-,ADD9;
+				setskilllevel 0x9C,1;
+			ADD9:
+			check @chk10 = 1,-,ADD10;
+				setskilllevel 0x90,1;
+			ADD10:
+			check @chk11 = 1,-,ADD11;
+				setskilllevel 0x98,1;
+			ADD11:
+			check @chk12 = 1,-,ADD12;
+				setskilllevel 0x96,1;
+			ADD12:
+			check @chk13 = 1,-,ADD13;
+				setskilllevel 0x97,1;
+			ADD13:
+			check @chk14 = 1,-,ADD14;
+				setskilllevel 0x95,1;
+			ADD14:
+			check @chk15 = 1,-,ADD15;
+				setskilllevel 0x8E,1;
+			ADD15:
+			check @chk16 = 1,-,ADD16;
+				setskilllevel 0x8F,1;
+			ADD16:
+		mes "[Character Administrator]";
+		mes "There we go, all finished, be more careful with your skills from here on.";
+		close;
+	L_Stat:
+		check zeny >= @stat_price,-,No_Fund;
+		set zeny - @stat_price;
+		mes "[Character Administrator]";
+		mes "You've chosen the reset stat option, here we go...";
+		next;
+		resetstat;
+		mes "[Character Administrator]";
+		mes "There we go, all finished, be more careful with your stats from here on.";
+		close;
+	L_Cancel:
+		mes "[Character Administrator]";
+		mes "Oh, I see...";
+		close;
+	No_Fund:
+		mes "[Character Administrator]";
+		mes "Stat resetting is not free. COme back when you have the zeny.";
+		close;
+}

@@ -1,0 +1,96 @@
+//- Merchant Skills Quests - kobra_k88
+alberta.vhm,89,96,5 script Necko 139,{
+	mes "[!?]";
+	mes "Muahahahahhhahahahahhahah!!";
+	mes "Pukakakakakkakakakakakakaka!!";
+	close;
+}
+
+alberta.vhm,83,96,5 script Necko 98,{
+	mes "[Necko]";
+		getskilllevel 36 @skill;
+		check @skill > 0 L_Start -;
+//	if (callfunc("Is_Merc_Class")) goto L_Start;
+L_Other:
+	mes "Necko's store is closed right now.  Come back later..... Hehe....";
+	close;
+L_Start:
+		getskilllevel 155 @skill;
+		check @skill > 0,L_GotSkill,-;
+		check CRAZYROAR == 1,L_GetSkill,-;
+	mes "Oh! Did you come here because you were intrigued by my boisterous voice? My voice is quite loud, isn't it?";
+	mes "Afterall you did hear it from a far off distance.";
+	emote 1;
+	next;
+	mes "[Necko]";
+	mes "I'll let you in on something....... My voice is more than just loud..... it's actually quite unique......";
+	next;
+	mes "[Necko]";
+		check job == 5,-,L_Start1;
+		check JobLevel < 15,L_JobLvl,-;
+L_Start1:
+	mes "You see, I know a skill that lets me shout in a way that actually helps me.... It is the ^3355FFCrazy Uproar^000000 skill!!!";
+	emote 5;
+	next;
+	mes "[Necko]";
+	mes "Crazy Uproar uses your loud voice to boost your battle spirit!";
+	mes "The skill requires ^FF55338 sp^000000 to use and inturn you will recieve an additional ^3355FF4 STR for 5 min^000000!!";
+	next;
+	mes "[Necko]";
+	mes "This skill is very usefull.  To learn it you must learn the essentials of sound.  There was a singer in Payon that taught sound theory.......";
+	next;
+	mes "[Necko]";
+	mes "Unfortunately that person passed away so you can no longer learn those essentials..............";
+	mes "Aww.... you look disappointed.... Do you really want to learn Crazy Uproar??";
+	next;
+	mes "[Necko]";
+	mes "Hmm..... I will teach you then, that is, if you trully wish to learn.  You will have to train your vocal cords.";
+	mes "You will also need to gather these items:";
+	next;
+	mes "[Necko]";
+	mes "- ^3355FF7 Pearls,";
+	mes "- 1Banana juice,";
+	mes "- 50 Mushroom spores^000000.";
+	next;
+	mes "[Necko]";
+	mes "Come back when you are ready! I think I shall do a little vocal training myself........";
+	mes "Bbooowuuuuuuuuuuuuuuuuuuuuuuuuuh!!";
+	set CRAZYROAR = 1;
+	close;
+	L_JobLvl:
+		mes "Once you've reached a ^3355FFjob level of 15^000000 come back and see me.  I'll tell you all about the secrect to my voice.....";
+		next;
+		mes "[Necko]";
+		mes "Uahahahahahahhahahahahahaha!";
+		mes "Kyukwakakakakkakakakakakkakaka!";
+		close;
+L_GetSkill:
+		checkitem 722,7,-,L_Items;
+		checkitem 532,1,-,L_Items;
+		checkitem 921,50,-,L_Items;
+	mes "Oh You've gathered the items! Very good, very good.  Now it's time to start your training.....";
+	next;
+	mes "[Necko]";
+	mes "Repeat after me: Fa fa fa fa fa.... So so so so so..... La la la la la.... Mi mi mi mi mi mi......";
+	next;
+	mes "~several hours later~";
+	next;
+	mes "[Necko]";
+	mes "Raaaaaawwwwrrrrrrrrrrr!....... Ha ha!! Execellent.  Your voice is now finely tuned for ^3355FFCrazy Uproar^000000.  Good job.";
+	delitem 722,7;
+	delitem 532,1;
+	delitem 921,50;
+	setskilllevel 155,1;
+	set CRAZYROAR = 0;
+	emote 21;
+	close;
+	L_Items:
+	 	mes "You need to get these items for Crazy Uproar:";
+		mes "- ^3355FF7 Pearls,";
+		mes "- 1Banana juice,";
+		mes "- 50 Mushroom spores^000000.";
+		close;
+L_GotSkill:
+	mes "Hello again.  I can tell by the sound of your mighty voice that you are becoming very good at Crazy Uproar.";
+	close;
+}

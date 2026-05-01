@@ -1,0 +1,51 @@
+Name changes are as follows:
+SWORD_FISH 		-> SWORDFISH
+PIRATE_SKEL 		-> PIRATE_SKELETON
+DESERT_WOLF_B 		-> BABY_DESERT_WOLF
+ZHERLTHSH 		-> ZEALOTUS
+STEAM_GOBLIN		-> GOBLIN_STEAMRIDER
+SAGEWORM		-> SAGE_WORM
+FUR_SEAL		-> SEAL
+KNIGHT_OF_WINDSTORM 	-> STORMY_KNIGHT
+BLOOD_BUTTERFLY		-> BLOODY_BUTTERFLY
+WANDER_MAN		-> WANDERER
+
+Statistic changes are as follows:
+Galapagos 	- mode changes
+		- stat changes
+Scorpion 	- mode changes
+Frilldora 	- mode changes
+Clock 		- mode changes
+Grand Peco 	- mode changes
+Goat 		- mode changes
+Karakasa 	- mode changes
+Poison Toad 	- mode changes
+Miyabi ningyo 	- mode changes
+Lava Golem 	- stat changes
+Blazzer 	- stat changes
+The Paper 	- stat changes
+Harpy 		- stat changes
+Demon Pungus 	- stat changes
+Nightmare Terror - stat changes
+Driller 	- stat changes
+Grizzly 	- stat changes
+Diabolic 	- stat changes
+Explosion 	- stat changes
+Sky Deleter 	- stat changes
+Earth Deleter 	- stat changes
+Sleeper 	- stat changes
+Gig 		- stat changes
+Archangeling 	- stat changes
+Antique Firelock - stat changes
+Kapha 		- stat changes
+Deviling	- stat changes
+
+Drop updates are as follows:
+Golapagos
+Karakasa
+Shinobi
+Poison Toad
+Antique Firelock
+Miyabi Ningyo
+Tengu
+Kapha

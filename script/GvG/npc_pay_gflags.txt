@@ -1,0 +1,396 @@
+// ---------------------------------------------------------------------------------------
+// Payon Guild Flags
+// - Converted by L0ne_W0lf
+//========================================================================================
+payon.vhm,167,220,4 script Flag 722,{
+	guildreg "payg_cas01";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas01",212,108;
+		exit:
+			close;
+}
+
+payon.vhm,167,215,4 script Flag 722,{
+	guildreg "payg_cas02";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas02",22,275;
+		exit:
+			close;
+}
+
+payon.vhm,167,210,4 script Flag 722,{
+	guildreg "payg_cas03";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas03",9,263;
+		exit:
+			close;
+}
+
+payon.vhm,167,205,4 script Flag 722,{
+	guildreg "payg_cas04";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas04",40,235;
+		exit:
+			close;
+}
+
+payon.vhm,167,200,4 script Flag 722,{
+	guildreg "payg_cas05";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas05",276,227;
+		exit:
+			close;
+}
+
+//Second set
+payon.vhm,148,48,4 script Flag 722,{
+	guildreg "payg_cas01";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas01",212,108;
+		exit:
+			close;
+}
+
+payon.vhm,152,48,4 script Flag 722,{
+	guildreg "payg_cas02";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas02",22,275;
+		exit:
+			close;
+}
+
+payon.vhm,156,48,4 script Flag 722,{
+	guildreg "payg_cas03";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas03",9,263;
+		exit:
+			close;
+}
+
+payon.vhm,160,48,4 script Flag 722,{
+	guildreg "payg_cas04";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas04",40,235;
+		exit:
+			close;
+}
+
+
+payon.vhm,164,48,4 script Flag 722,{
+	guildreg "payg_cas05";
+	check ismyguild != 0,WARP_TO,-;
+	check guildid == 0,-,START_1;
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As Law of Payon";
+		mes " this guild base isn't taken by";
+		mes " any guild yet.";
+		mes " ";
+		mes "2. In order to take this guild base,";
+		mes " you must defeat all the guardians";
+		mes " that protecting guild base and";
+		mes " eliminate the emperium to";
+		mes " take over the guild base.";
+		close;
+	START_1:
+		mes " [ Kingdom of Payon ]";
+		mes " ";
+		mes "1. As law of Payon this base is now";
+		mes " ^ff0000$guildname^000000 guild's guild";
+		mes " base.";
+		mes " ";
+		mes "2. ^ff0000$guildname^000000 Guild master is";
+		mes " ^ff0000$guildmaster^000000, and any of you";
+		mes " have a beef, raise your sword to ";
+		mes " honor yourself.";
+		close;
+	WARP_TO:
+		mes "[ Vibration of Man's Voice ]";
+		mes "The brave soldiers...";
+		mes "Would you like to go back?";
+		next;
+		menu "Go back to guild base.",-,"Cancel.",exit;
+			warp "payg_cas05",276,227;
+		exit:
+			close;
+}
+

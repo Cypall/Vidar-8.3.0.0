@@ -1,0 +1,14 @@
+//--------------------------------------------------
+//  ayothaya Field 01                              |
+//--------------------------------------------------
+ayo_fild01.vhm,0,0,0,0	monster	"Coco"	1104,25,0,0,0
+ayo_fild01.vhm,0,0,0,0	monster	"Yoyo"	1057,20,0,0,0
+ayo_fild01.vhm,0,0,0,0	monster	"Smokie"	1056,20,0,0,0
+ayo_fild01.vhm,0,0,0,0	monster	"Leaf Cat"	1586,20,0,0,0
+
+//--------------------------------------------------
+//  ayothaya Field 02                              |
+//--------------------------------------------------
+ayo_fild02.vhm,0,0,0,0	monster	"Wootan Fighter"	1499,15,0,0,0
+ayo_fild02.vhm,0,0,0,0	monster	"Beetle"	1494,15,0,0,0
+ayo_fild02.vhm,0,0,0,0	monster	"Leaf Cat"	1586,15,0,0,0
